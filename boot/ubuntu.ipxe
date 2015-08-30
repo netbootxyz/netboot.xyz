@@ -1,0 +1,59 @@
+#!ipxe
+
+# Ubuntu Operating System
+# http://www.ubuntu.org
+
+goto ${menu}
+
+:ubuntu
+set os ubuntu
+iseq ${manufacturer} Xen && set netcfg netcfg/get_ipaddress=${netX/ip} netcfg/get_netmask=${netX/netmask} netcfg/get_gateway=${netX/gateway} netcfg/get_nameservers=${dns} netcfg/confirm_static=true netcfg/choose_interface=eth0 netcfg/disable_autoconfig=true ||
+
+menu Ubuntu ${arch_a}
+item vivid Ubuntu 15.04 Vivid Vervet 
+item utopic Ubuntu 14.10 Utopic Unicorn
+item trusty Ubuntu 14.04 LTS Trusty Tahr
+item saucy Ubuntu 13.10 Saucy Salamander
+item quantal Ubuntu 12.10 Quantal Quetzal
+item precise Ubuntu 12.04 LTS Precise Pangolin
+choose version || goto ubuntu_exit
+set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/${os}
+
+:deb_boot_type
+set dir ${os}/dists/${version}-updates/main/installer-${arch_a}/current/images/netboot/
+
+menu ${os} boot parameters
+item install ${os} install
+item rescue ${os} rescue mode
+item expert ${os} expert install
+item preseed ${os} specify preseed url
+choose --default ${type} type || goto ubuntu
+
+echo ${cls}
+goto deb_${type}
+
+:deb_rescue
+set install_params rescue/enable=true
+goto deb_boot
+
+:deb_expert
+set install_params priority=low
+goto deb_boot
+
+:deb_preseed
+echo -n Specify preseed URL for ${os} ${version}: && read preseedurl
+set install_params auto=true priority=critical preseed/url=${preseedurl}
+goto deb_boot
+
+:deb_install
+:deb_boot
+set dir ${dir}${menu}-installer/${arch_a}
+imgfree
+echo Boot parameters: ${install_params} -- quiet ${params}
+kernel http://${mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params}
+initrd http://${mirror}/${dir}/initrd.gz
+boot
+
+:ubuntu_exit
+clear menu
+chain linux.ipxe

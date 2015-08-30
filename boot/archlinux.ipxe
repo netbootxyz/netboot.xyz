@@ -1,0 +1,12 @@
+#!ipxe
+
+# ArchLinux Operating System
+# http://www.archlinux.org
+
+menu ArchLinux
+item ipxe ArchLinux Graphical Menu
+item ipxe_text ArchLinux Text Menu
+choose version || exit
+
+chain http://releng.archlinux.org/pxeboot/${version}.pxe
+exit

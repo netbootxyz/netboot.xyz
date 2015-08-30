@@ -1,0 +1,71 @@
+#!ipxe
+
+# Fedora Operating System
+# http://wwww.fedora.org
+
+goto ${menu} ||
+
+:fedora
+clear osversion
+clear sku_type
+clear ova
+set os Fedora
+menu Fedora ${arch}
+iseq ${manufacturer} Xen && set netcfg ip=${netX/ip} netmask=${netX/netmask} gateway=${netX/gateway} dns=${dns} ksdevice=eth0 ||
+item 22 ${os} 22
+item 21 ${os} 21
+item 20 ${os} 20
+isset ${osversion} || choose osversion || goto linux_menu
+set ova ${os} ${osversion}
+iseq ${osversion} 20 && goto legacy_sku ||
+iseq ${osversion} 19 && goto legacy_sku ||
+iseq ${osversion} 18 && goto legacy_sku ||
+goto product_sku
+
+:product_sku
+menu ${os} ${arch} sku type
+item Cloud_Atomic ${ova} Cloud Atomic
+item Server ${ova} Server
+item Workstation ${ova} Workstation
+isset ${sku_type} || choose sku_type || goto fedora
+set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
+set ova ${ova} ${sku_type}
+echo ${cls}
+goto boottype
+
+:legacy_sku
+set dir fedora/releases/${osversion}/${os}/${arch}/os
+goto boottype
+
+:boottype
+set repo http://${mirror}/${dir}
+menu ${os} ${arch} boot type
+item normal ${ova}
+item rescue ${ova} rescue
+item kickstart ${ova} specify kickstart url
+isset ${bt} || choose bt || goto fedora
+echo ${cls}
+iseq ${bt} rescue && goto rescue ||
+iseq ${bt} kickstart && goto kickstart ||
+goto bootos_images
+
+:rescue
+set params rescue ||
+goto bootos_images
+
+:kickstart
+echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
+set params ks=${ksurl} ||
+goto bootos_images
+
+:bootos_images
+imgfree
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} initrd=initrd.img
+initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+boot
+goto linux_menu
+
+:linux_menu
+clear menu
+chain linux.ipxe
+exit 0

@@ -1,0 +1,32 @@
+#!ipxe
+
+# OpenBSD Operating System
+# http://www.openbsd.org
+
+:openbsd_menu
+menu Please pick an OpenBSD version
+item 5.7 OpenBSD 5.7
+item 5.6 OpenBSD 5.6
+choose ver || goto openbsd_exit
+
+iseq ${ver} 5.7 && set image_ver 57 ||
+iseq ${ver} 5.6 && set image_ver 56 ||
+
+iseq ${arch} x86_64 && goto openbsd_x64 ||
+set openbsd_arch i386
+goto boot_openbsd
+
+:openbsd_x64
+set openbsd_arch amd64
+goto boot_openbsd
+
+:boot_openbsd
+set src http://ftp.openbsd.org/pub/OpenBSD/${ver}/${openbsd_arch}/install${image_ver}.iso
+imgfree
+initrd ${src}
+chain ${memdisk} iso raw
+exit
+
+:openbsd_exit
+clear menu
+chain bsd.ipxe

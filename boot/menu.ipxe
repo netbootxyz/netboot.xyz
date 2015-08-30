@@ -1,0 +1,106 @@
+#!ipxe
+
+:start
+
+chain --autofree boot.cfg ||
+
+iseq ${cls} serial && goto ignore_cls ||
+set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
+set cls ${cls:string}
+:ignore_cls
+
+isset ${arch} && goto skip_arch_detect ||
+cpuid --ext 29 && set arch x86_64 || set arch i386
+:skip_arch_detect
+isset ${menu} && goto ${menu} ||
+
+isset ${ip} || dhcp || echo DHCP failed
+
+:main_menu
+clear menu
+set space:hex 20:20
+set space ${space:string}
+iseq ${arch} i386 && set arch5 i586 || set arch5 ${arch}
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${boot_domain} [Local IP: ${netX/ip}]
+
+item --gap Default:
+item local ${space} Boot from local hdd
+
+item --gap Operating Systems:
+item linux ${space} Linux Operating Systems
+item bsd ${space} BSD Operating Systems
+item experimental ${space} Experimental Operating Systems
+
+item --gap Tools:
+item utils ${space} Utilities
+item shell ${space} iPXE shell
+item netinfo ${space} Network card info
+
+isset ${menu} && set timeout 0 || set timeout 300000
+choose --timeout ${timeout} --default ${menu} menu || goto local
+echo ${cls}
+goto ${menu} ||
+chain ${menu}.ipxe || goto error
+goto main_menu
+
+:error
+echo Error occured, press any key to return to menu ...
+prompt
+goto main_menu
+
+:local
+echo Booting from local disks ...
+exit 0
+
+:reload
+echo Reloading menu.ipxe ...
+chain menu.ipxe
+
+:netinfo
+menu Network info
+item --gap MAC:
+item mac ${space} ${netX/mac}
+item --gap IP/mask:
+item ip ${space} ${netX/ip}/${netX/netmask}
+item --gap Gateway:
+item gw ${space} ${netX/gateway}
+item --gap Domain:
+item domain ${space} ${netX/domain}
+item --gap DNS:
+item dns ${space} ${netX/dns}
+item --gap DHCP server:
+item dhcpserver ${space} ${netX/dhcp-server}
+item --gap Next-server:
+item nextserver ${space} ${next-server}
+item --gap Filename:
+item filename ${space} ${netX/filename}
+choose empty ||
+goto main_menu
+
+:shell
+echo Type "exit" to return to menu.
+set menu main_menu
+shell
+goto main_menu
+
+:changebits
+iseq ${arch} x86_64 && set arch i386 || set arch x86_64
+goto main_menu
+
+# OS
+:linux
+chain linux.ipxe
+goto main_menu
+
+:bsd
+chain bsd.ipxe
+goto main_menu
+
+:experimental
+chain experimental.ipxe
+goto main_menu
+
+:utils
+chain utils.ipxe
+goto main_menu

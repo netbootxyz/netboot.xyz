@@ -1,0 +1,23 @@
+#!ipxe
+
+# TinyCoreLinux
+# http://tinycorelinux.net/downloads.html
+# For now there is only one menu entry
+
+set tmirror tinycorelinux.net
+
+:tinycore_menu
+set dir 6.x/x86/release
+menu TinyCoreLinux
+item --key c Core Core (8 MB)
+choose version || goto tinycore_exit
+
+echo ${cls}
+
+kernel ${memdisk} iso raw ${params}
+initrd http://${tmirror}/${dir}/${version}-current.iso
+boot
+
+:tinycore_exit
+clear menu
+chain linux.ipxe

@@ -1,0 +1,30 @@
+#!ipxe
+
+# Novell OpenSUSE Operating System
+# http://opensuse.org
+
+menu openSUSE ${arch}
+iseq ${manufacturer} Xen && set netcfg hostip=${netX/ip} netmask=${netX/netmask} gateway=${netX/gateway} nameserver=${dns} ||
+item 13.2 openSUSE 13.2
+item 13.1 openSUSE 13.1
+item 12.3 openSUSE 12.3
+item 12.2 openSUSE 12.2
+item 11.4 openSUSE 11.4
+item factory-tested openSUSE factory-tested
+item tumbleweed openSUSE tumbleweed
+choose version || goto opensuse_exit
+
+set dir opensuse/distribution/${version}/repo/oss
+iseq ${version} tumbleweed && set mirror download.opensuse.org && set dir ${version}/repo/oss ||
+iseq ${version} factory-tested && set dir ${version}/repo/oss/ ||
+
+imgfree
+kernel http://${mirror}/${dir}/boot/${arch}/loader/linux
+initrd http://${mirror}/${dir}/boot/${arch}/loader/initrd
+imgargs linux netsetup=dhcp install=http://${mirror}/${dir} ${params} ${netcfg}
+boot
+
+:opensuse_exit
+clear menu
+chain linux.ipxe
+exit 0

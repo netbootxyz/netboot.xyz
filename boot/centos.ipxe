@@ -1,0 +1,73 @@
+#!ipxe
+
+# CentOS Operating System
+# http://www.centos.org
+
+goto ${menu} ||
+
+:centos
+clear osversion
+set os CentOS
+set ksdevice eth0
+iseq ${manufacturer} Xen && set netcfg ip=${netX/ip} netmask=${netX/netmask} gateway=${netX/gateway} dns=${dns} ||
+menu ${os} ${arch}
+item 7.1.1503 ${os} 7.1
+item 7.0.1406 ${os} 7.0
+item 6.7 ${os} 6.7
+item other Choose other version [o]
+isset ${osversion} || choose osversion || goto linux_menu
+iseq ${osversion} other || goto centos_skip_read_osversion
+echo ${cls}
+echo -n Enter version: ${} && read osversion
+:centos_skip_read_osversion
+set dir ${menu}/${osversion}/os/${arch}
+set repo http://${mirror}/${dir}
+goto boottype
+
+:boottype
+set ova ${os} ${osversion}
+menu ${os} ${arch} boot type
+item graphical ${ova} graphical installer
+item text ${ova} text based installer
+item rescue ${ova} rescue
+item kickstart ${ova} set kickstart url [ ${ksurl} ]
+item kickstart_device ${ova} set ksdevice [ ${ksdevice} ]
+isset ${bt} || choose bt || goto centos
+echo ${cls}
+iseq ${bt} text && goto text ||
+iseq ${bt} rescue && goto rescue ||
+iseq ${bt} kickstart && goto kickstart ||
+iseq ${bt} kickstart_device && goto kickstart_device ||
+goto bootos_images
+
+:text
+set params text ||
+goto bootos_images
+
+:rescue
+set params rescue ||
+goto bootos_images
+
+:kickstart
+echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
+set params ks=${ksurl} ksdevice=${ksdevice} ||
+clear bt
+goto boottype
+
+:kickstart_device
+echo -n Specify ksdevice param for ${os} ${osversion}: && read ksdevice
+set ksdevice ${ksdevice} ||
+clear bt
+goto boottype
+
+:bootos_images
+imgfree
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg}
+initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+boot
+goto linux_menu
+
+:linux_menu
+clear menu
+chain linux.ipxe
+exit 0

@@ -1,0 +1,49 @@
+#!ipxe
+
+menu Utilities
+item --gap Utilities:
+item clonezilla ${space} Clonezilla
+item hdt ${space} Hardware Detection Tool
+item memtest ${space} MemTest86+
+choose --default ${menu} menu || goto utils_exit
+echo ${cls}
+goto ${menu} ||
+chain ${menu}.ipxe || goto error
+goto linux_exit
+
+:hdt
+kernel ${memdisk} iso raw
+initrd http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
+boot
+goto utils_exit
+
+:clonezilla
+set version 2.2.3-25
+iseq ${arch} x86_64 && set cz_arch amd64 || set cz_arch i686-pae
+set project clonezilla
+set iso ${project}_live_stable/${version}/${project}-live-${version}-${cz_arch}.iso
+set czurl http://sourceforge.net/projects/clonezilla/files/${iso}/download
+kernel ${memdisk} iso raw ${params}
+:retry
+iseq ${try} xxxxx && exit ||
+set try ${try}x
+initrd ${czurl} || goto retry
+boot || goto utils_exit
+
+:memtest
+chain utils/memtest.bin ${params} && goto main_menu ||
+echo MEMORY ERROR DETECTED! ${errno}
+echo Press any key to continue ...
+read a
+goto utils_exit
+
+choose --timeout ${timeout} --default ${menu} menu || goto utils_exit
+echo ${cls}
+goto ${menu} ||
+chain ${menu}.ipxe || goto error
+goto linux_exit
+
+:utils_exit
+clear menu
+chain menu.ipxe
+exit 0

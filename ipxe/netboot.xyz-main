@@ -1,0 +1,32 @@
+#!ipxe
+
+:start
+set netboot_xyz_version 1
+echo netboot_xyz iPXE loader v${netboot_xyz_version}
+
+:dhcp  
+dhcp || goto static
+goto start
+
+:static
+echo DHCP Server not found, enabling manual override:
+imgfree
+ifclose net0
+echo -n IP: && read net0/ip
+echo -n Subnet mask: && read net0/netmask
+echo -n Gateway: && read net0/gateway
+echo -n DNS: && read dns
+ifopen net0
+echo Attempting chainload of netboot.xyz...
+goto start || goto failsafe
+
+:start
+chain http://cdn.netboot.xyz/boot.ipxe
+goto boot
+
+:failsafe
+echo Attempt to load netboot.xyz failed... restarting...
+goto start
+
+:boot
+sanboot --no-describe --drive 0x80
