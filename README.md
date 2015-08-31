@@ -1,5 +1,7 @@
 ## netboot.xyz
 
+[![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
+
 ### What is netboot.xyz?
 
 netboot.xyz is a collection of iPXE scripts that allow you to rapidly network boot Operating Systems,
