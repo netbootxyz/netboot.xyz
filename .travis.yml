@@ -6,7 +6,10 @@ language: 'c'
 virtualenv:
   system_site_packages: true
 
-before_install: True
+before_install:
+	- sudo apt-get update -qq
+	- sudo apt-get install -qq genisoimage
+
 install: True
 
 addons:
@@ -17,4 +20,4 @@ addons:
  
 script:
   - 'git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build'
-  - 'cd ipxe_build/src ; make ipxe.kpxe'
+  - 'cd ipxe_build/src ; make bin/ipxe.kpxe'
