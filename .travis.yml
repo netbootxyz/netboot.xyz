@@ -17,4 +17,4 @@ addons:
  
 script:
   - 'git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build'
-  - 'cd ipxe_build/src ; make'
+  - 'cd ipxe_build/src ; make ipxe.kpxe'
