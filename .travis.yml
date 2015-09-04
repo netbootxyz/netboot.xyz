@@ -3,21 +3,12 @@
 sudo: True
 language: 'c'
 
-virtualenv:
-  system_site_packages: true
-
 before_install:
-	- sudo apt-get update -qq
-	- sudo apt-get install -qq genisoimage
+        - sudo apt-get update -qq
+        - sudo apt-get install -qq genisoimage liblzma-dev syslinux
 
 install: True
 
-addons:
-  apt:
-    packages:
-    - genisoimage
-    - liblzma-dev
- 
 script:
   - 'git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build'
-  - 'cd ipxe_build/src ; make bin/ipxe.kpxe'
+  - 'cd ipxe_build/src ; make'
