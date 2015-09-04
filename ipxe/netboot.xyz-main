@@ -1,8 +1,8 @@
 #!ipxe
 
 :start
-set netboot_xyz_version 1
-echo netboot_xyz iPXE loader v${netboot_xyz_version}
+set version 1
+echo netboot.xyz iPXE loader v${version}
 
 :dhcp  
 dhcp || goto static
