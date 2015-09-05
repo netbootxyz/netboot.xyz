@@ -6,7 +6,7 @@ git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build
 cd ipxe_build/src
 for ipxe_config in `ls ../../ipxe/`
 do 
-  make EMBED=../../ipxe/$i
+  make EMBED=../../ipxe/$ipxe_config
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
   mv bin/ipxe.kpxe ../../build/ipxe/$ipxe_config.kpxe
   mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
