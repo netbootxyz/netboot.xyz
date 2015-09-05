@@ -16,9 +16,9 @@ echo -n Gateway: && read net0/gateway
 echo -n DNS: && read dns
 ifopen net0
 echo Attempting chainload of netboot.xyz...
-goto start || goto failsafe
+goto menu || goto failsafe
 
-:start
+:menu
 chain --autofree http://cdn.netboot.xyz/menu.ipxe
 goto boot
 
