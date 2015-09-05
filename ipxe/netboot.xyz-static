@@ -17,7 +17,7 @@ echo Attempting chainload of netboot.xyz...
 goto start || goto failsafe
 
 :start
-chain http://cdn.netboot.xyz/boot.ipxe
+chain http://cdn.netboot.xyz/menu.ipxe
 goto boot
 
 :failsafe
