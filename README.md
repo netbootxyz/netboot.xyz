@@ -10,13 +10,14 @@ having to go track down and download installation media.  It's especially useful
 environments when you don't want to utilize remote attach CD in a Dell DRAC, HP iLO or some other type
 of remote tool.
 
-Check out the new netboot.xyz documentation hosted at ReadTheDocs:	
+TBA - Check out the new netboot.xyz documentation hosted at ReadTheDocs:	
 * [http://netbootxyz.readthedocs.org/en/latest/](http://netbootxyz.readthedocs.org/en/latest/)
 
 Grab these bootloaders and drop them in Fusion/VirtualBox/DRAC/iLO to get started:
 
-* [ISO](http://netboot.xyz/ipxe/netboot.xyz-main.iso)
-* [Floppy/USB](http://netboot.xyz/ipxe/netboot.xyz-main.dsk)
+* [ISO](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.iso)
+* [Floppy/USB](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
+* [Kernel](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn)
 
 #### Feedback
 
