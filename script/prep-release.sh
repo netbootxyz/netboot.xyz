@@ -14,4 +14,4 @@ do
   mv bin/undionly.kpxe ../../build/ipxe/$ipxe_config-undionly.kpxe
 done
 cd ../..
-cp -R boot/* build/
+cp -R src/* build/
