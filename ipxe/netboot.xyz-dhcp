@@ -3,9 +3,11 @@
 :start
 set version 1
 echo netboot.xyz iPXE loader v${version}
+goto dhcp
 
 :dhcp  
 dhcp || goto static
+prompt --key m --timeout 4000 Hit the ${bold}d${boldoff} key to open the debug console && goto debug || goto start
 goto start
 
 :static
@@ -21,7 +23,7 @@ echo Attempting chainload of netboot.xyz...
 goto start || goto failsafe
 
 :start
-chain http://cdn.netboot.xyz/menu.ipxe
+chain --autofree http://cdn.netboot.xyz/menu.ipxe
 goto boot
 
 :failsafe
@@ -30,3 +32,8 @@ goto start
 
 :boot
 sanboot --no-describe --drive 0x80
+
+:debug
+echo Type "exit" to return to menu
+shell
+goto start
