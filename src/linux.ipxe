@@ -8,6 +8,7 @@ iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap Operating Systems:
 item archlinux ${space} ArchLinux
 item centos ${space} CentOS 
+item coreos ${space} CoreOS
 item debian ${space} Debian
 item fedora ${space} Fedora
 item gentoo ${space} Gentoo
@@ -40,6 +41,10 @@ goto linux_menu
 
 :centos
 chain centos.ipxe
+goto linux_menu
+
+:coreos
+chain coreos.ipxe
 goto linux_menu
 
 :debian

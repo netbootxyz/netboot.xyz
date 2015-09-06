@@ -1,0 +1,32 @@
+#!ipxe
+
+# CoreOS
+# https://www.coreos.com
+
+goto ${menu}
+
+:coreos
+set os coreos
+menu ${os}
+item --gap CoreOS:
+item stable ${space} CoreOS Stable Channel
+item beta ${space} CoreOS Beta Channel
+item alpha ${space} CoreOS Alpha Channel
+choose --default ${menu} menu || goto coreos_exit
+echo ${cls}
+goto boot_coreos ||
+goto coreos_exit
+
+:boot_coreos
+set release ${menu}
+set base-url http://${release}.release.core-os.net/amd64-usr/current
+isset cloud-config-url && echo Cloud Config URL is set... || echo -n Please set Cloud Config URL: && read cloud-config-url
+kernel ${base-url}/coreos_production_pxe.vmlinuz cloud-config-url=${cloud-config-url}
+initrd ${base-url}/coreos_production_pxe_image.cpio.gz
+boot
+goto coreos_exit
+
+:coreos_exit
+clear menu
+chain menu.ipxe
+exit 0
