@@ -2,7 +2,10 @@
 
 # CoreOS
 # https://www.coreos.com
-
+# For further info on:
+# iPXE and CoreOS: https://coreos.com/os/docs/latest/booting-with-ipxe.html
+# Setting up Cloud Config: https://github.com/coreos/coreos-cloudinit
+ 
 goto ${menu}
 
 :coreos
