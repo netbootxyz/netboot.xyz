@@ -18,7 +18,6 @@ echo -n Enter version: ${} && read version
 set dir slackware/slackware${sbits}-${version}
 
 imgfree
-imgtrust --allow
 kernel ${mirror}/${dir}/kernels/huge.s/bzImage
 initrd ${mirror}/${dir}/isolinux/initrd.img
 imgargs bzImage load_ramdisk=1 prompt_ramdisk=0 rw printk.time=0 SLACK_KERNEL=huge.s ${params}

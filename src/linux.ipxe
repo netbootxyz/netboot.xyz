@@ -13,6 +13,7 @@ item fedora ${space} Fedora
 item gentoo ${space} Gentoo
 item opensuse ${space} openSUSE
 item scientific ${space} Scientific
+item slackware ${space} Slackware
 item ubuntu ${space} Ubuntu
 item tinycore ${space} TinyCoreLinux
 # Options
@@ -55,4 +56,8 @@ goto linux_menu
 
 :scientific
 chain scientific.ipxe
+goto linux_menu
+
+:slackware
+chain slackware.ipxe
 goto linux_menu
