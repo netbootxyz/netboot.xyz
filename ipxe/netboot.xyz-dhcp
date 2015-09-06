@@ -7,7 +7,6 @@ goto dhcp
 
 :dhcp  
 dhcp || goto static
-prompt --key d --timeout 4000 Hit the ${bold}d${boldoff} key to open the debug console && goto debug || goto menu
 goto menu
 
 :static
