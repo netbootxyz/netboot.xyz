@@ -1,14 +1,3 @@
-#ifndef CONFIG_COLOUR_H
-#define CONFIG_COLOUR_H
-
-/** @file
- *
- * Display colour configuration
- *
- */
-
-FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
-
 #define COLOR_NORMAL_FG		COLOR_CYAN
 #define COLOR_NORMAL_BG		COLOR_BLACK
 
@@ -29,10 +18,3 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 
 #define COLOR_PXE_FG		COLOR_BLACK
 #define COLOR_PXE_BG		COLOR_WHITE
-
-#include <config/named.h>
-#include NAMED_CONFIG(colour.h)
-#include <config/local/colour.h>
-#include LOCAL_NAMED_CONFIG(colour.h)
-
-#endif /* CONFIG_COLOUR_H */
