@@ -12,7 +12,7 @@ cp ipxe/local/* ipxe_build/src/config/local/
 
 # build iPXE disks
 cd ipxe_build/src
-for ipxe_config in `ls ../../ipxe/`
+for ipxe_config in `ls ../../ipxe/*.ipxe`
 do 
   make EMBED=../../ipxe/$ipxe_config
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
