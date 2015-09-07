@@ -1,8 +1,16 @@
 #!/bin/bash
 # prep release for upload to production container
 
+# make ipxe directory to store ipxe disks
 mkdir -p build/ipxe
+
+# pull down upstream iPXE
 git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build
+
+# copy iPXE config overrides into source tree
+cp ipxe/local/* ipxe_build/src/config/local/
+
+# build iPXE disks
 cd ipxe_build/src
 for ipxe_config in `ls ../../ipxe/`
 do 
@@ -14,4 +22,6 @@ do
   mv bin/undionly.kpxe ../../build/ipxe/$ipxe_config-undionly.kpxe
 done
 cd ../..
+
+# copy iPXE src code into build directory
 cp -R src/* build/
