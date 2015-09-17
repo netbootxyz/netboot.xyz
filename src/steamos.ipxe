@@ -1,0 +1,27 @@
+#!ipxe
+
+# SteamOS
+# http://store.steampowered.com/
+
+goto ${menu}
+
+:steamos
+set os steamos
+
+menu SteamOS ${arch_a}
+item brewmaster SteamOS brewmaster
+item alchemist SteamOS alchemist
+choose version || goto steamos_exit
+goto steamos_boot
+
+:steamos_boot
+imgfree
+set mirror repo.steampowered.com
+set dir steamos/dists/${version}/main/installer-amd64/current/images/netboot/debian-installer/amd64
+kernel http://${mirror}/${dir}/linux vga=788 
+initrd http://${mirror}/${dir}/initrd.gz
+boot
+
+:steamos_exit
+clear menu
+chain linux.ipxe
