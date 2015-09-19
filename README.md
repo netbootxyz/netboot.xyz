@@ -10,7 +10,7 @@ having to go track down and download installation media.  It's especially useful
 environments when you don't want to utilize remote attach CD in a Dell DRAC, HP iLO or some other type
 of remote tool.
 
-TBA - Check out the new netboot.xyz documentation hosted at ReadTheDocs:	
+Check out the new netboot.xyz documentation hosted at ReadTheDocs:	
 * [http://netbootxyz.readthedocs.org/en/latest/](http://netbootxyz.readthedocs.org/en/latest/)
 
 Grab these bootloaders and drop them in Fusion/VirtualBox/DRAC/iLO to get started:
