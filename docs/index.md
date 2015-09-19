@@ -8,9 +8,9 @@ You can remote attach the ISO to servers, set it up as a rescue option in Grub, 
 
 Grab these bootloaders and drop them into your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](http://https://github.com/ipxe/ipxe) that will chainload you to [http://cdn.netboot.xyz/menu.ipxe](   http://cdn.netboot.xyz/menu.ipxe).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
 
-* ISO: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.iso)/[static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.iso)
-* Floppy/USB: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)/[static](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
-* Linux Kernel: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn)/[static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
+* ISO: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.iso)
+* Floppy/USB: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
+* Linux Kernel: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
 
 ### Booting Methods
 #### NIC with Embedded iPXE
