@@ -15,9 +15,9 @@ Check out the new netboot.xyz documentation hosted at ReadTheDocs:
 
 Grab these bootloaders and drop them in Fusion/VirtualBox/DRAC/iLO to get started:
 
-* [ISO](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.iso)
-* [Floppy/USB](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
-* [Kernel](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn)
+* ISO: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.iso)
+* Floppy/USB: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
+* Linux Bootable Kernel: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
 
 #### Feedback
 
