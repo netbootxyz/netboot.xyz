@@ -13,6 +13,7 @@ item debian ${space} Debian
 item fedora ${space} Fedora
 item gentoo ${space} Gentoo
 item opensuse ${space} openSUSE
+item rancheros ${space} RancherOS
 item scientific ${space} Scientific
 item slackware ${space} Slackware
 item ubuntu ${space} Ubuntu
@@ -57,6 +58,10 @@ goto linux_menu
 
 :opensuse
 chain opensuse.ipxe
+goto linux_menu
+
+:rancheros
+chain rancheros.ipxe
 goto linux_menu
 
 :scientific
