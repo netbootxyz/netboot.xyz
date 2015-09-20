@@ -1,0 +1,2 @@
+#define IMAGE_COMBOOT
+#define DOWNLOAD_PROTO_HTTPS
