@@ -1,2 +1,0 @@
-### Boot from extlinux
-TBA
