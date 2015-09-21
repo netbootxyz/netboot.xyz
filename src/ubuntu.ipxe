@@ -7,8 +7,6 @@ goto ${menu}
 
 :ubuntu
 set os ubuntu
-iseq ${manufacturer} Xen && set netcfg netcfg/get_ipaddress=${netX/ip} netcfg/get_netmask=${netX/netmask} netcfg/get_gateway=${netX/gateway} netcfg/get_nameservers=${dns} netcfg/confirm_static=true netcfg/choose_interface=eth0 netcfg/disable_autoconfig=true ||
-
 menu Ubuntu ${arch_a}
 item vivid Ubuntu 15.04 Vivid Vervet 
 item utopic Ubuntu 14.10 Utopic Unicorn
@@ -20,7 +18,7 @@ choose version || goto ubuntu_exit
 set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/${os}
 
 :deb_boot_type
-set dir ${os}/dists/${version}-updates/main/installer-${arch_a}/current/images/netboot/
+set dir ${os}/dists/${version}/main/installer-${arch_a}/current/images/netboot/
 
 menu ${os} boot parameters
 item install ${os} install
