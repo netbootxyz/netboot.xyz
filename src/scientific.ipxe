@@ -8,7 +8,6 @@ goto ${menu} ||
 :scientific
 clear osversion
 set os Scientific
-iseq ${manufacturer} Xen && set netcfg ip=${netX/ip} netmask=${netX/netmask} gateway=${netX/gateway} dns=${dns} ksdevice=eth0 ||
 menu ${os} ${arch}
 item 7.0 ${os} 7.0
 item 6.5 ${os} 6.5

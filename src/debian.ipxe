@@ -7,7 +7,6 @@ goto ${menu}
 
 :debian
 set os debian
-iseq ${manufacturer} Xen && set netcfg netcfg/get_ipaddress=${netX/ip} netcfg/get_netmask=${netX/netmask} netcfg/get_gateway=${netX/gateway} netcfg/get_nameservers=${dns} netcfg/confirm_static=true netcfg/choose_interface=eth0 netcfg/disable_autoconfig=true ||
 
 menu Debian ${arch_a}
 item jessie Debian 8.0 (jessie)
