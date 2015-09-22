@@ -11,6 +11,7 @@ clear sku_type
 clear ova
 set os Fedora
 menu Fedora ${arch}
+item 23 ${os} 23 Beta (Development/Test)
 item 22 ${os} 22
 item 21 ${os} 21
 item 20 ${os} 20
@@ -28,6 +29,7 @@ item Server ${ova} Server
 item Workstation ${ova} Workstation
 isset ${sku_type} || choose sku_type || goto fedora
 set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
+iseq ${osversion} 23 && set dir fedora/releases/test/23_Beta/${sku_type}/${arch}/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
