@@ -38,7 +38,7 @@ EOF
 # generate sha256sums for iPXE disks
 for ipxe_disk in `ls build/ipxe/`
 do
-  sha256sum $ipxe_disk >> build/ipxe/netboot.xyz-sha256-checksums.txt
+  sha256sum build/ipxe/$ipxe_disk >> build/ipxe/netboot.xyz-sha256-checksums.txt
 done
 
 # copy iPXE src code into build directory
