@@ -29,7 +29,7 @@ item Server ${ova} Server
 item Workstation ${ova} Workstation
 isset ${sku_type} || choose sku_type || goto fedora
 set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
-iseq ${osversion} 23 && set dir fedora/releases/test/23_Beta/${sku_type}/${arch}/os ||
+iseq ${osversion} 23 && set mirror mirrors.kernel.org && set dir fedora/releases/test/23_Beta/${sku_type}/${arch}/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
