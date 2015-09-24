@@ -29,7 +29,7 @@ done
 cd ../..
 
 # generate header for sha256-checksums file
-cd build/ipxe
+cd build/
 CURRENT_TIME=`date`
 cat > netboot.xyz-sha256-checksums.txt <<EOF
 # netboot.xyz bootloaders generated at $CURRENT_TIME
@@ -39,10 +39,12 @@ cat > netboot.xyz-sha256-checksums.txt <<EOF
 EOF
 
 # generate sha256sums for iPXE disks
+cd ipxe/
 for ipxe_disk in `ls .`
 do
-  sha256sum $ipxe_disk >> netboot.xyz-sha256-checksums.txt
+  sha256sum $ipxe_disk >> ../netboot.xyz-sha256-checksums.txt
 done
+mv ../netboot.xyz-sha256-checksums.txt .
 cd ../..
 
 # copy iPXE src code into build directory
