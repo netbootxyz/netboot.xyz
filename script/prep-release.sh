@@ -30,9 +30,11 @@ cd ../..
 
 # generate header for sha256-checksums file
 cd build/ipxe
+CURRENT_TIME=`date`
 cat > netboot.xyz-sha256-checksums.txt <<EOF
-# netboot.xyz bootloaders generated from https://github.com/ipxe/ipxe
-# Git Hash: $IPXE_HASH
+# netboot.xyz bootloaders generated at $CURRENT_TIME
+# iPXE Commit: https://github.com/ipxe/ipxe/commit/$IPXE_HASH
+# Travis-CI Job: https://travis-ci.org/antonym/netboot.xyz/builds/$TRAVIS_BUILD_ID
 
 EOF
 
