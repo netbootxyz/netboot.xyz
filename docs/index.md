@@ -6,11 +6,11 @@ You can remote attach the ISO to servers, set it up as a rescue option in Grub, 
 
 ### Getting started
 
-Grab these bootloaders and drop them into your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](http://https://github.com/ipxe/ipxe) that will chainload you to [http://cdn.netboot.xyz/menu.ipxe](   http://cdn.netboot.xyz/menu.ipxe).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
+Grab these bootloaders and drop them into your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](http://https://github.com/ipxe/ipxe) that will chainload you to [http://boot.netboot.xyz/menu.ipxe](http://boot.netboot.xyz/menu.ipxe).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
 
-* ISO: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.iso)
-* Floppy/USB: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
-* Linux Kernel: [dhcp](http://cdn.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://cdn.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
+* ISO: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso)
+* Floppy/USB: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
+* Linux Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
 
 ### Booting Methods
 #### NIC with Embedded iPXE
@@ -18,7 +18,7 @@ Grab these bootloaders and drop them into your favorite virtualization tool to s
 If you've already compiled your own iPXE, you can load up the netboot.xyz menu easily by entering CTRL-B when prompted setting DHCP and then chainloading iPXE:
 
     dhcp
-    chain http://cdn.netboot.xyz/menu.ipxe
+    chain http://boot.netboot.xyz/menu.ipxe
 
 If you don't have DHCP on your network, you can manually set your network information:
 
@@ -27,7 +27,7 @@ If you don't have DHCP on your network, you can manually set your network inform
     set net0/gateway <gateway>
     set dns <nameserver>
     ifopen net0
-    chain http://cdn.netboot.xyz/menu.ipxe
+    chain http://boot.netboot.xyz/menu.ipxe
 
 #### Boot from iPXE ISO
 
