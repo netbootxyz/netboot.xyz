@@ -11,6 +11,7 @@ Grab these bootloaders and drop them into your favorite virtualization tool to s
 * ISO: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso)
 * Floppy/USB: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
 * Linux Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
+* SHA256 Checksums: [sha256sums](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
 
 ### Booting Methods
 #### NIC with Embedded iPXE
