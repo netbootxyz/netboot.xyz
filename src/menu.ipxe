@@ -28,8 +28,8 @@ item --gap Default:
 item local ${space} Boot from local hdd
 
 item --gap Operating Systems:
-item linux ${space} Linux Operating Systems
-item bsd ${space} BSD Operating Systems
+item linux ${space} Linux Based
+item bsd ${space} BSD Based
 item hypervisors ${space} Hypervisors
 item --gap Tools:
 item utils ${space} Utilities
