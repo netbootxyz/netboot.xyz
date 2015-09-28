@@ -13,6 +13,10 @@ Grab these bootloaders and drop them into your favorite virtualization tool to s
 * Linux Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
 * SHA256 Checksums: [sha256sums](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
 
+If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
+
+    chain --autofree http://boot.netboot.xyz
+
 ### Booting Methods
 #### NIC with Embedded iPXE
 
