@@ -40,14 +40,13 @@ goto utils_exit
 
 :testpr
 echo This will chainload into a testing branch of netboot.xyz.  You'll need to enter
-echo your Github User and the first part of the commit hash of the commit you want to
-echo test.  This assumes you are testing from your own fork.
+echo your Github User and the first part of the commit hash of the commit you want
+echo to test.  This assumes you are testing from a netboot.xyz repo.
 echo
 echo Specify Github User Name: && read github_user
 echo Specify shortened commit hash of netboot.xyz to be tested ( i.e. 30b7ca ): && read github_hash
 echo
 echo Attempting to chainload:
-echo https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe
 chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe || goto error
 goto utils_exit
 
