@@ -1,0 +1,35 @@
+#!ipxe
+
+# Kali Linux
+# http://www.kali.org
+
+goto ${menu}
+
+:kali
+set os kali
+menu Kali ${arch_a}
+item current Kali Current
+choose version || goto kali_exit
+
+:deb_boot_type
+set dir ${os}/dists/kali-${version}/main/installer-${arch_a}/current/images/netboot
+menu ${os} boot parameters
+item text ${os} text based install
+choose --default ${type} type || goto kali
+
+echo ${cls}
+goto deb_${type}
+
+:deb_text
+set dir ${dir}/debian-installer/${arch_a}
+goto deb_boot
+
+:deb_boot
+imgfree
+kernel http://repo.kali.org/${dir}/linux vga=788 -- quiet
+initrd http://repo.kali.org/${dir}/initrd.gz
+boot
+
+:kali_exit
+clear menu
+chain linux.ipxe
