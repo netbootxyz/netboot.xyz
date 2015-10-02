@@ -6,7 +6,6 @@ before_install:
 script:
 - "./script/prep-release.sh"
 before_deploy:
-- rvm 1.9.3 do gem install net-ssh -v 2.9.2
 - cd build
 deploy:
   provider: cloudfiles
