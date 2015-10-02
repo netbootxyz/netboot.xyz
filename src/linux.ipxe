@@ -12,6 +12,7 @@ item coreos ${space} CoreOS
 item debian ${space} Debian
 item fedora ${space} Fedora
 item gentoo ${space} Gentoo
+item kali ${space} Kali
 item opensuse ${space} openSUSE
 item rancheros ${space} RancherOS
 item scientific ${space} Scientific
