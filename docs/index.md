@@ -63,6 +63,7 @@ where sdX is your usb drive.  Substitute /dev/sdX for /dev/fd0 in the case of us
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
 * [Gentoo](https://gentoo.org)
+* [Kali](https://www.kali.org)
 * [OpenBSD](http://openbsd.org)
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)
