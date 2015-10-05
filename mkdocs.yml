@@ -1,8 +1,9 @@
 site_name: netboot.xyz
 pages:
-- [index.md, Home]
-- [boot_loaders.md, Booting with..., Extlinux/Grub]
-- [boot_vbox.md, Booting with..., Virtual Box]
-- [boot_vmware.md, Booting with..., VMware]
-- [boot_drac.md, Booting with..., Dell DRAC]
-- [boot_ilo.md, Booting with..., HP iLO]
+- Home: 'index.md'
+- Booting with...:
+    - 'Dell DRAC': 'boot_drac.md'
+    - 'Extlinux/Grub': 'boot_loaders.md'
+    - 'HP iLO': 'boot_ilo.md'
+    - 'Virtual Box': 'boot_vbox.md'
+    - 'VMware': 'boot_vmware.md'
