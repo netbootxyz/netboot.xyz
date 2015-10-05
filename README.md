@@ -22,7 +22,7 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 Full documentation is at ReadTheDocs:
 * [http://netbootxyz.readthedocs.org/en/latest/](http://netbootxyz.readthedocs.org/en/latest/)
 
-### What Operating Systems are currently available on netboot.xyz?
+### What Operating Systems are available?
 
 * [ArchLinux](https://www.archlinux.org)
 * [CentOS](https://centos.org)
