@@ -22,6 +22,29 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 Full documentation is at ReadTheDocs:
 * [http://netbootxyz.readthedocs.org/en/latest/](http://netbootxyz.readthedocs.org/en/latest/)
 
+### What Operating Systems are currently available on netboot.xyz?
+
+* [ArchLinux](https://www.archlinux.org)
+* [CentOS](https://centos.org)
+* [CoreOS](https://coreos.com/)
+* [Debian](https://debian.org)
+* [Fedora](https://fedoraproject.org)
+* [FreeBSD](https://freebsd.org)
+* [Gentoo](https://gentoo.org)
+* [Kali](https://www.kali.org)
+* [OpenBSD](http://openbsd.org)
+* [OpenSUSE](http://opensuse.org)
+* [RancherOS](http://rancher.com/rancher-os/)
+* [Scientific](http://scientificlinux.org)
+* [TinyCoreLinux](http://distro.ibiblio.org/tinycorelinux/)
+* [Ubuntu](http://www.ubuntu.com/)
+
+#### Utilities
+
+* [Clonezilla](http://www.clonezilla.org/)
+* [HDT](http://www.hdt-project.org/)
+* [Memtest](http://www.memtest.org/
+
 #### Feedback
 
 Feel free to open up an issue on github or contact me at antony@mes.ser.li
