@@ -43,7 +43,7 @@ Full documentation is at ReadTheDocs:
 
 * [Clonezilla](http://www.clonezilla.org/)
 * [HDT](http://www.hdt-project.org/)
-* [Memtest](http://www.memtest.org/
+* [Memtest](http://www.memtest.org/)
 
 #### Feedback
 
