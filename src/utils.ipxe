@@ -19,7 +19,7 @@ boot
 goto utils_exit
 
 :clonezilla
-set version 2.4.2-32
+set version 2.4.2-61
 iseq ${arch} x86_64 && set cz_arch amd64 || set cz_arch i686-pae
 set project clonezilla
 set iso ${project}_live_stable/${version}/${project}-live-${version}-${cz_arch}.iso
