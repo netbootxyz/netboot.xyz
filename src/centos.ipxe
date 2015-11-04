@@ -11,7 +11,7 @@ set os CentOS
 set ksdevice eth0
 menu ${os} ${arch}
 item 7.1.1503 ${os} 7.1
-item 7.0.1406 ${os} 7.0
+item 7 ${os} 7.0
 item 6.7 ${os} 6.7
 item other Choose other version [o]
 isset ${osversion} || choose osversion || goto linux_menu
@@ -19,7 +19,8 @@ iseq ${osversion} other || goto centos_skip_read_osversion
 echo ${cls}
 echo -n Enter version: ${} && read osversion
 :centos_skip_read_osversion
-set dir ${menu}/${osversion}/os/${arch}
+iseq ${osversion} 6.7 && set dir ${menu}/${osversion}/os/${arch} ||
+set dir ${menu}/${osversion}/os/x86_64
 set repo http://${mirror}/${dir}
 goto boottype
 
