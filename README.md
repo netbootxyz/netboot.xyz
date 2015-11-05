@@ -48,3 +48,7 @@ Full documentation is at ReadTheDocs:
 #### Feedback
 
 Feel free to open up an issue on github or contact me at antony@mes.ser.li
+
+#### Testing New Branches
+
+Under the Utilities menu on netboot.xyz, there's an option for "Test netboot.xyz branch".  If you've forked the code and have developed a new feature branch, you can use this option to chainload into that branch to test and validate the code.  All you need to do is specify your github user name and the name of your branch or abbreviated hash of the commit.
