@@ -1,6 +1,6 @@
 ## What is netboot.xyz?
 
-netboot.xyz is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  iPXE is used to provide a user friendly menu from within the BIOS that lets you easily choose the OS you want along with any specific types of versions or bootable flags.
+[netboot.xyz](http://www.netboot.xyz) is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  iPXE is used to provide a user friendly menu from within the BIOS that lets you easily choose the OS you want along with any specific types of versions or bootable flags.
 
 You can remote attach the ISO to servers, set it up as a rescue option in Grub, or even set your home network to boot to it by default so that it's always available.
 
@@ -81,4 +81,10 @@ where sdX is your usb drive.  Substitute /dev/sdX for /dev/fd0 in the case of us
 
 Pull requests are welcome and encouraged.  Feel free to issue a pull request for new versions or tools that you might find useful.  Once merged into master, travis-ci will regenerate new versions of iPXE from upstream and deploy the latest changes to netboot.xyz.
 
-Feel free to open up an issue on github or contact us via <antony@mes.ser.li>.
+### Testing New Branches
+
+Under the Utilities menu on netboot.xyz, there's an option for "Test netboot.xyz branch".  If you've forked the code and have developed a new feature branch, you can use this option to chainload into that branch to test and validate the code.  All you need to do is specify your github user name and the name of your branch or abbreviated hash of the commit.
+
+### Feedback
+
+Feel free to open up an issue on github or contact me via <antony@mes.ser.li>.
