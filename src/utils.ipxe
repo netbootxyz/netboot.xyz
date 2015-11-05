@@ -48,7 +48,7 @@ echo -n Specify Github User Name: ${} && read github_user
 echo -n Specify branch name or shortened commit hash ( i.e. my_feature or 30b7ca ): ${} && read github_hash
 echo
 echo Attempting to chainload:
-chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe || goto utils_exit
+chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe || echo Unable to find branch... && sleep 5 && goto utils_exit
 goto utils_exit
 
 :utils_exit
