@@ -1,7 +1,11 @@
 #!ipxe
 
 # Basic attempt at mirror rotation
-iseq mirror ${mirror_one} && set mirror ${mirror_two} ||
-iseq mirror ${mirror_two} && set mirror ${mirror_three} ||
-iseq mirror ${mirror_three} && set mirror ${mirror_one} || 
+
+:mirrors
+iseq mirror ${mirror_one} && set mirror ${mirror_two} && goto end ||
+iseq mirror ${mirror_two} && set mirror ${mirror_three} && goto end ||
+iseq mirror ${mirror_three} && set mirror ${mirror_one} && goto end || 
 echo Setting mirror to ${mirror}...
+
+:end
