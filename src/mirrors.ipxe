@@ -3,8 +3,8 @@
 # Basic attempt at mirror rotation
 
 :mirror_start
-iseq ${mirror} mirror.rackspace.com && set mirror mirror.kernel.org && goto mirror_end ||
-iseq ${mirror} mirror.kernel.org && set mirror blah.mirror.blah.com && goto mirror_end ||
+iseq ${mirror} mirror.rackspace.com && set mirror mirrors.kernel.org && goto mirror_end ||
+iseq ${mirror} mirrors.kernel.org && set mirror blah.mirror.blah.com && goto mirror_end ||
 iseq ${mirror} blah.mirror.blah.com && set mirror mirror.rackspace.com && goto mirror_end || 
 echo Setting mirror to ${mirror}...
 
