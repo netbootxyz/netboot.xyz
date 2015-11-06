@@ -3,9 +3,9 @@
 # Basic attempt at mirror rotation
 
 :mirror_start
-iseq ${mirror} ${mirror_one} && set mirror ${mirror_two} && goto mirror_end ||
-iseq ${mirror} ${mirror_two} && set mirror ${mirror_three} && goto mirror_end ||
-iseq ${mirror} ${mirror_three} && set mirror ${mirror_one} && goto mirror_end || 
+iseq ${mirror} mirror.rackspace.com && set mirror mirror.kernel.org && goto mirror_end ||
+iseq ${mirror} mirror.kernel.org && set mirror blah.mirror.blah.com && goto mirror_end ||
+iseq ${mirror} blah.mirror.blah.com && set mirror mirror.rackspace.com && goto mirror_end || 
 echo Setting mirror to ${mirror}...
 
 :mirror_end
