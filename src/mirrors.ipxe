@@ -1,0 +1,10 @@
+#!ipxe
+
+# Basic attempt at mirror rotation
+
+:mirror_start
+iseq ${mirror} mirror.rackspace.com && set mirror mirrors.kernel.org && goto mirror_end ||
+iseq ${mirror} mirrors.kernel.org && set mirror mirror.rackspace.com && goto mirror_end ||
+echo Setting mirror to ${mirror}...
+
+:mirror_end

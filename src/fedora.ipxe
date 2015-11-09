@@ -38,7 +38,6 @@ set dir fedora/releases/${osversion}/${os}/${arch}/os
 goto boottype
 
 :boottype
-set repo http://${mirror}/${dir}
 menu ${os} ${arch} boot type
 item normal ${ova}
 item rescue ${ova} rescue
@@ -47,23 +46,27 @@ isset ${bt} || choose bt || goto fedora
 echo ${cls}
 iseq ${bt} rescue && goto rescue ||
 iseq ${bt} kickstart && goto kickstart ||
-goto bootos_images
+goto boot
 
 :rescue
 set params rescue ||
-goto bootos_images
+goto boot
 
 :kickstart
 echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
 set params ks=${ksurl} ||
-goto bootos_images
+goto boot
 
-:bootos_images
+:boot
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} initrd=initrd.img
-initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
-boot
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} ${netcfg} || goto change_mirror
+initrd http://${mirror}/${dir}/images/pxeboot/initrd.img ||
+boot || 
 goto linux_menu
+
+:change_mirror
+chain --autofree mirrors.ipxe
+goto boot
 
 :linux_menu
 clear menu
