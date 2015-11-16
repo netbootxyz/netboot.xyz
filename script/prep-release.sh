@@ -21,12 +21,14 @@ for ipxe_config in `ls ../../ipxe/disks/`
 do 
   make EMBED=../../ipxe/disks/$ipxe_config
   make bin/ipxe.kpxe EMBED=../../ipxe/disks/$ipxe_config
+  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
   mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
   mv bin/ipxe.lkrn ../../build/ipxe/$ipxe_config.lkrn
   mv bin/ipxe.usb ../../build/ipxe/$ipxe_config.usb
   mv bin/ipxe.kpxe ../../build/ipxe/$ipxe_config.kpxe
   mv bin/undionly.kpxe ../../build/ipxe/$ipxe_config-undionly.kpxe
+  mv bin/ipxe.efi ../../build/ipxe/$ipxe_config.efi
 done
 cd ../..
 
