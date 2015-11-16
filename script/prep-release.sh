@@ -47,7 +47,7 @@ do
   rm config/local/general.h
   make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
   error_check
-  mv bin/ipxe.efi ../../build/ipxe/$ipxe_config.efi
+  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
 done
 
 # return to root
