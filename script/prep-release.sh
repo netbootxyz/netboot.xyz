@@ -21,6 +21,8 @@ for ipxe_config in `ls ../../ipxe/disks/`
 do 
   make EMBED=../../ipxe/disks/$ipxe_config
   make bin/ipxe.kpxe EMBED=../../ipxe/disks/$ipxe_config
+  # EFI doesn't like COMBOOT so turn it off before compile
+  sed -i s/#define IMAGE_COMBOOT/#undef IMAGE_COMBOOT/g config/local/general.h
   make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
   mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
