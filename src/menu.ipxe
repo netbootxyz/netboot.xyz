@@ -27,9 +27,9 @@ menu ${site_name}
 item --gap Default:
 item local ${space} Boot from local hdd
 
-item --gap Operating Systems:
-item linux ${space} Linux Based
-item bsd ${space} BSD Based
+item --gap Installers:
+item linux ${space} Linux Operating Systems
+item bsd ${space} BSD Operating Systems
 item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
