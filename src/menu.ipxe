@@ -30,6 +30,7 @@ item local ${space} Boot from local hdd
 item --gap Installers:
 item linux ${space} Linux Operating Systems
 item bsd ${space} BSD Operating Systems
+item windows ${space} Windows Operating Systems
 item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
@@ -93,6 +94,10 @@ goto main_menu
 
 :bsd
 chain bsd.ipxe
+goto main_menu
+
+:windows
+chain windows.ipxe
 goto main_menu
 
 :hypervisors
