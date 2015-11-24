@@ -6,6 +6,7 @@ before_install:
 script:
 - "./script/prep-release.sh"
 before_deploy:
+- gem install mime-types -v 2.6.2
 - cd build
 deploy:
   provider: cloudfiles
