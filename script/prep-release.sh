@@ -27,7 +27,16 @@ cd ipxe_build/src
 # get current iPXE hash
 IPXE_HASH=`git log -n 1 --pretty=format:"%H"`
 
-# generate standard iPXE disks
+# generate generic iPXE disks
+make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
+mv bin/ipxe.dsk ../../build/ipxe/
+mv bin/ipxe.iso ../../build/ipxe/
+mv bin/ipxe.lkrn ../../build/ipxe/
+mv bin/ipxe.usb ../../build/ipxe/
+mv bin/ipxe.kpxe ../../build/ipxe/
+mv bin/undionly.kpxe ../../build/ipxe/
+
+# generate netboot.xyz iPXE disks
 for ipxe_config in `ls ../../ipxe/disks/`
 do 
   make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe EMBED=../../ipxe/disks/$ipxe_config
@@ -41,14 +50,14 @@ do
 done
 
 # generate EFI iPXE disks
-for ipxe_config in `ls ../../ipxe/disks/`
-do
-  # Remove general.h options for testing, doesn't like COMBOOT
-  rm config/local/general.h
-  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
-  error_check
-  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
-done
+#for ipxe_config in `ls ../../ipxe/disks/`
+#do
+#  # Remove general.h options for testing, doesn't like COMBOOT
+#  rm config/local/general.h
+#  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
+#  error_check
+#  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
+#done
 
 # return to root
 cd ../..
