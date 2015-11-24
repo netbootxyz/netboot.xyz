@@ -38,6 +38,7 @@ Full documentation is at ReadTheDocs:
 * [Scientific](http://scientificlinux.org)
 * [TinyCoreLinux](http://distro.ibiblio.org/tinycorelinux/)
 * [Ubuntu](http://www.ubuntu.com/)
+* [WinPE](http://www.microsoft.com/)
 
 #### Utilities
 

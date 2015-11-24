@@ -70,6 +70,7 @@ where sdX is your usb drive.  Substitute /dev/sdX for /dev/fd0 in the case of us
 * [Scientific](http://scientificlinux.org)
 * [TinyCoreLinux](http://distro.ibiblio.org/tinycorelinux/)
 * [Ubuntu](http://www.ubuntu.com/)
+* [WinPE](http://www.microsoft.com/)
 
 #### Utilities
 
