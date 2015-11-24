@@ -6,7 +6,7 @@ echo netboot.xyz iPXE loader v${version}
 goto static
 
 :static
-echo Please enter in the networking information of your Cloud Server:
+echo Please enter in the networking information of your Server:
 imgfree
 ifclose net0
 echo -n IP: && read net0/ip
