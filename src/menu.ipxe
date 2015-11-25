@@ -28,9 +28,9 @@ item --gap Default:
 item local ${space} Boot from local hdd
 
 item --gap Installers:
-item linux ${space} Linux Operating Systems
-item bsd ${space} BSD Operating Systems
-item windows ${space} Windows Operating Systems
+item linux ${space} Linux Installers
+item bsd ${space} BSD Installers
+item windows ${space} Windows Installers
 item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell

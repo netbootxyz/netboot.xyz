@@ -1,6 +1,6 @@
 #!ipxe
 
-menu Windows 
+menu Windows Installers
 item --gap Windows Boot Environments
 item winpe ${space} Windows Preinstallation Environment (WinPE - x64) 
 choose version || goto windows_exit
