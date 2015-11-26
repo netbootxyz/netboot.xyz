@@ -7,3 +7,5 @@ pages:
     - 'HP iLO': 'boot_ilo.md'
     - 'Virtual Box': 'boot_vbox.md'
     - 'VMware': 'boot_vmware.md'
+- Provider Usage:
+    - 'Digital Ocean': 'usage_digitalocean.md'
