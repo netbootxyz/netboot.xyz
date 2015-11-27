@@ -3,21 +3,16 @@
 menu Utilities
 item --gap Utilities:
 item clonezilla ${space} Clonezilla
+item gparted ${space} GParted
 item hdt ${space} Hardware Detection Tool
 item memtest ${space} MemTest86+
-item partition_wizard ${space} Partition Wizard 9.1
+item partition_wizard ${space} Partition Wizard
 item testpr ${space} Test netboot.xyz branch
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
 goto ${menu} ||
 chain ${menu}.ipxe || goto utils_exit
 goto linux_exit
-
-:hdt
-kernel ${memdisk} iso raw
-initrd http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
-boot
-goto utils_exit
 
 :clonezilla
 set version 2.4.2-61
@@ -31,6 +26,24 @@ iseq ${try} xxxxx && exit ||
 set try ${try}x
 initrd ${czurl} || goto retry
 boot || goto utils_exit
+
+:gparted
+set version 0.24.0-2
+set project gparted
+set iso ${project}-live-stable/${version}/${project}-live-${version}-amd64.iso
+set czurl http://sourceforge.net/projects/gparted/files/${iso}/download
+kernel ${memdisk} iso raw ${params}
+:retry
+iseq ${try} xxxxx && exit ||
+set try ${try}x
+initrd ${czurl} || goto retry
+boot || goto utils_exit
+
+:hdt
+kernel ${memdisk} iso raw
+initrd http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
+boot
+goto utils_exit
 
 :memtest
 chain utils/memtest.bin ${params} && goto main_menu ||
