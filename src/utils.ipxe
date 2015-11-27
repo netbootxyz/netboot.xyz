@@ -5,6 +5,7 @@ item --gap Utilities:
 item clonezilla ${space} Clonezilla
 item hdt ${space} Hardware Detection Tool
 item memtest ${space} MemTest86+
+item partition_wizard ${space} Partition Wizard 9.1
 item testpr ${space} Test netboot.xyz branch
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
@@ -36,6 +37,12 @@ chain utils/memtest.bin ${params} && goto main_menu ||
 echo MEMORY ERROR DETECTED! ${errno}
 echo Press any key to continue ...
 read a
+goto utils_exit
+
+:partition_wizard
+kernel ${memdisk} iso raw
+initrd http://www.partitionwizard.com/download/pwfree91-x64.iso
+boot
 goto utils_exit
 
 :testpr
