@@ -75,8 +75,10 @@ where sdX is your usb drive.  Substitute /dev/sdX for /dev/fd0 in the case of us
 #### Utilities
 
 * [Clonezilla](http://www.clonezilla.org/)
+* [GParted](http://gparted.org)
 * [HDT](http://www.hdt-project.org/)
 * [Memtest](http://www.memtest.org/)
+* [Partition Wizard](http://www.partitionwizard.com)
 
 ### Contributing
 
