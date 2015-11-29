@@ -7,7 +7,6 @@
 set url releases.rancher.com
 menu RancherOS
 item latest RancherOS Latest (20 MB)
-item 033 RancherOS 0.3.3 (20 MB)
 choose version || goto rancheros_exit
 goto ${version}
 
@@ -16,13 +15,10 @@ echo ${cls}
 set folder os/latest
 goto boot
 
-:033
-echo ${cls}
-set folder os/v0.3.3
-goto boot
-
 :boot
-kernel http://${url}/${folder}/vmlinuz rancher.state.autoformat=[/dev/xvda] rancher.password=rancher
+echo Login in with username: rancher, password: rancher
+echo To install: ros install -d /dev/sda1
+kernel http://${url}/${folder}/vmlinuz rancher.state.autoformat=[/dev/sda] rancher.password=rancher
 initrd http://${url}/${folder}/initrd
 boot
 
