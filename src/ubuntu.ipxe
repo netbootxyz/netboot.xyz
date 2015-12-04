@@ -7,7 +7,7 @@ goto ${menu}
 
 :ubuntu
 set os ubuntu
-menu Ubuntu ${arch_a}
+menu Ubuntu Installers ${arch_a}
 item wily Ubuntu 15.10 Wily Werewolf
 item vivid Ubuntu 15.04 Vivid Vervet 
 item utopic Ubuntu 14.10 Utopic Unicorn
@@ -21,11 +21,11 @@ set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname
 :deb_boot_type
 set dir ${os}/dists/${version}/main/installer-${arch_a}/current/images/netboot/
 
-menu ${os} boot parameters
-item install ${os} install
-item rescue ${os} rescue mode
-item expert ${os} expert install
-item preseed ${os} specify preseed url
+menu Ubuntu Installer Boot Parameters:
+item install Ubuntu Install
+item rescue Ubuntu Rescue Mode
+item expert Ubuntu Expert Install
+item preseed Ubuntu Specify preseed url
 choose --default ${type} type || goto ubuntu
 
 echo ${cls}
@@ -40,7 +40,7 @@ set install_params priority=low
 goto deb_boot
 
 :deb_preseed
-echo -n Specify preseed URL for ${os} ${version}: && read preseedurl
+echo -n Specify preseed URL for Ubuntu ${version}: && read preseedurl
 set install_params auto=true priority=critical preseed/url=${preseedurl}
 goto deb_boot
 
