@@ -10,6 +10,7 @@ clear osversion
 set os CentOS
 set ksdevice eth0
 menu ${os} ${arch}
+item 7.2.1511 ${os} 7.2
 item 7.1.1503 ${os} 7.1
 item 7 ${os} 7.0
 item 6.7 ${os} 6.7
