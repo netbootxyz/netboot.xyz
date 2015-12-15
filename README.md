@@ -15,7 +15,7 @@ Grab these bootloaders and drop them in Fusion/VirtualBox/DRAC/iLO to get starte
 * Linux Bootable Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
 * [SHA256 Checksums](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
 
-![netboot.xyz menu](img/netboot.xyz.gif)
+![netboot.xyz menu](http://netbootxyz.readthedocs.org/en/latest/img/netboot.xyz.gif)
 
 If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
 
