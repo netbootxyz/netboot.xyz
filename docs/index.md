@@ -11,9 +11,9 @@ You can remote attach the ISO to servers, set it up as a rescue option in Grub, 
 Grab these bootloaders and drop them into your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](http://https://github.com/ipxe/ipxe) that will chainload you to [http://boot.netboot.xyz/menu.ipxe](http://boot.netboot.xyz/menu.ipxe).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
 
 * ISO: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso)
-* Floppy/USB: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.dsk)
-* Linux Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
-* [SHA256 Checksums](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
+* USB: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb)
+* Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
+* Checksums: [SHA256](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
 
 If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
 
