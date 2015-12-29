@@ -6,11 +6,14 @@ docs_dir: docs
 google_analytics: ['UA-68807-15', 'netboot.xyz']
 pages:
 - Home: 'index.md'
-- Booting with...:
-    - 'Dell DRAC': 'boot_drac.md'
+- Boot from...:
     - 'Extlinux/Grub': 'boot_loaders.md'
-    - 'HP iLO': 'boot_ilo.md'
+    - 'iPXE': 'boot_ipxe.md'
+    - 'ISO': 'boot_iso.md'
+    - 'USB': 'boot_usb.md'
     - 'Virtual Box': 'boot_vbox.md'
     - 'VMware': 'boot_vmware.md'
 - Provider Usage:
     - 'Digital Ocean': 'usage_digitalocean.md'
+    - 'Rackspace': 'usage_rackspace.md'
+theme: flatly
