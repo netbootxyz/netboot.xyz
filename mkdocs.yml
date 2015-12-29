@@ -1,4 +1,9 @@
 site_name: netboot.xyz
+site_description: netboot all the things
+site_author: netboot.xyz
+site_url: http://netboot.xyz
+docs_dir: docs
+google_analytics: ['UA-68807-15', 'netboot.xyz']
 pages:
 - Home: 'index.md'
 - Booting with...:
