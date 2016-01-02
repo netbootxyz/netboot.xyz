@@ -13,6 +13,7 @@ item debian ${space} Debian
 item fedora ${space} Fedora
 item gentoo ${space} Gentoo
 item kali ${space} Kali
+item mageia ${space} Mageia
 item opensuse ${space} openSUSE
 item rancheros ${space} RancherOS
 item scientific ${space} Scientific

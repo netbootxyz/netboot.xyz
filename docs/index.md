@@ -37,6 +37,7 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 * [FreeBSD](https://freebsd.org)
 * [Gentoo](https://gentoo.org)
 * [Kali](https://www.kali.org)
+* [Mageia](http://www.mageia.org)
 * [OpenBSD](http://openbsd.org)
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)
