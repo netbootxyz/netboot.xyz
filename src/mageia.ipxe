@@ -1,0 +1,31 @@
+#!ipxe
+
+# Mageia Operating System
+# http://www.mageia.org/
+
+goto ${menu}
+
+:mageia
+set os Mageia
+isset arch5 && set arch i586
+menu Mageia Installers ${arch}
+item 5 ${os} 5
+item 4 ${os} 4
+item cauldron ${os} cauldron
+choose version || goto mageia_exit
+goto mageia_boot
+
+:mageia_boot
+set server mirrors.kernel.org
+set mirror http://${server}
+set dir mageia/distrib/${version}/${arch}
+set automatic method:http,network:dhcp,server:${server},directory:/${dir}
+imgfree
+kernel ${mirror}/${dir}/isolinux/${arch}/vmlinuz
+initrd ${mirror}/${dir}/isolinux/${arch}/all.rdz
+imgargs vmlinuz automatic=${automatic} vga=788 splash=silent
+boot || goto mageia
+
+:mageia_exit
+clear menu
+chain linux.ipxe
