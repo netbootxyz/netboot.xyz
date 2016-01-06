@@ -7,12 +7,13 @@
 
 These iPXE disks will automatically load into [boot.netboot.xyz](http://boot.netboot.xyz):
 
-* ISO: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso)
-* USB: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb)
-* Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
-* Checksums: [SHA256](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
+* ISO [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso) ] - Typically used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box
+* USB [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) ] - Used for creation of USB Keys
+* Kernel [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn) ] - Used for GRUB/EXTLINUX
+* DHCP [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) | [dhcp-undionly](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) ] - Used for a DHCP boot image file, use undionly if you have NIC issues
+* Checksums [ [SHA256](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt) ] - Checksums are generated during iPXE compile on Travis CI
 
-You can view the embedded scripts [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
+You can view the scripts that are embedded into the images [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
 
 ### What is netboot.xyz?
 
