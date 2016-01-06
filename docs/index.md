@@ -5,12 +5,14 @@
 
 ### Bootloader Downloads
 
-These are pregenerated iPXE disks that will automatically load [boot.netboot.xyz](http://boot.netboot.xyz).
+These iPXE disks will automatically load into [boot.netboot.xyz](http://boot.netboot.xyz):
 
 * ISO: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso)
 * USB: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb)
 * Kernel: [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn)
 * Checksums: [SHA256](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt)
+
+You can view the embedded scripts [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
 
 ### What is netboot.xyz?
 
