@@ -6,6 +6,7 @@ item clonezilla ${space} Clonezilla
 item gparted ${space} GParted
 item hdt ${space} Hardware Detection Tool
 item memtest ${space} MemTest86+
+item netbootcd ${space} NetbootCD.us
 item partition_wizard ${space} Partition Wizard
 item testpr ${space} Test netboot.xyz branch
 choose --default ${menu} menu || goto utils_exit
@@ -51,6 +52,11 @@ echo MEMORY ERROR DETECTED! ${errno}
 echo Press any key to continue ...
 read a
 goto utils_exit
+
+:netbootcd
+kernel http://netbootcd.us/downloads/6.4.1/vmlinuz
+initrd http://netbootcd.us/downloads/6.4.1/nbinit4.gz
+boot
 
 :partition_wizard
 kernel ${memdisk} iso raw
