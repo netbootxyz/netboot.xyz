@@ -7,13 +7,17 @@
 
 These iPXE disks will automatically load into [boot.netboot.xyz](http://boot.netboot.xyz):
 
-* ISO [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso) ] - Typically used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box
-* USB [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) ] - Used for creation of USB Keys
-* Kernel [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn) ] - Used for GRUB/EXTLINUX
-* DHCP [ [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) | [dhcp-undionly](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) ] - Used for a DHCP boot image file, use undionly if you have NIC issues
-* Checksums [ [SHA256](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt) ] - Checksums are generated during iPXE compile on Travis CI
+| Type | DHCP Bootloaders | Static Bootloaders | Description |
+|------|------------------|--------------------|-------------| 
+|ISO| [netboot.xyz-dhcp.iso](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso)| [netboot.xyz-static.iso](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso) | Used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box|
+|USB| [netboot.xyz-dhcp.usb](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [netboot.xyz-static.usb](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) | Used for creation of USB Keys|
+|Kernel| [netboot.xyz-dhcp.lkrn](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [netboot.xyz-static.lkrn](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn) | Used for booting from GRUB/EXTLINUX|
+|DHCP| [netboot.xyz-dhcp.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) | [netboot.xyz-static.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-static.kpxe) | DHCP boot image file, uses built-in iPXE NIC drivers|
+|DHCP-undionly|[netboot.xyz-dhcp-undionly.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) | [netboot.xyz-static-undionly.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-static-undionly.kpxe) | DHCP boot image file, use if you have NIC issues|
 
-You can view the scripts that are embedded into the images [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
+The DHCP bootloaders will automatically get a network address if you have DHCP on your network while the static bootloaders will prompt you for network information.  
+
+SHA256 checksums are generated during each build of iPXE and are located [here](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt).  You can also view the scripts that are embedded into the images [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
 
 ### What is netboot.xyz?
 
