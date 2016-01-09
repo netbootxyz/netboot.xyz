@@ -1,0 +1,25 @@
+#!ipxe
+
+# FreeDOS Operating System
+# http://www.freedos.org
+
+:freedos_menu
+menu FreeDOS
+item --gap FreeDOS
+item freedos_install ${space} FreeDOS 1.1 Source Install
+choose --default ${menu} menu || goto utils_exit
+echo ${cls}
+goto ${menu} ||
+chain ${menu}.ipxe || goto utils_exit
+goto freedos_exit
+
+:freedos_install
+imgfree
+kernel ${memdisk} iso raw
+initrd http://www.freedos.org/download/download/fd11src.iso
+boot
+
+:freedos_exit
+clear menu
+chain menu.ipxe
+exit 0
