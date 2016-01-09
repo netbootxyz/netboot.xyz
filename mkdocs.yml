@@ -10,6 +10,7 @@ pages:
 #    - 'Extlinux/Grub': 'boot_loaders.md'
     - 'iPXE': 'boot_ipxe.md'
     - 'ISO': 'boot_iso.md'
+    - 'TFTP': 'boot_tftp.md'
     - 'USB': 'boot_usb.md'
 #    - 'Virtual Box': 'boot_vbox.md'
 #    - 'VMware': 'boot_vmware.md'
