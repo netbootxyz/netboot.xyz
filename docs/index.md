@@ -75,4 +75,4 @@ Under the Utilities menu on netboot.xyz, there's an option for ["Test netboot.xy
 
 ### Feedback
 
-Feel free to open up an issue on github or contact me at <antony@mes.ser.li>.
+Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on github or follow us on [twitter](https://twitter.com/netbootxyz).

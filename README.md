@@ -59,7 +59,7 @@ Full documentation is at ReadTheDocs:
 
 #### Feedback
 
-Feel free to open up an issue on github or contact me at antony@mes.ser.li
+Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on github or follow us on [twitter](https://twitter.com/netbootxyz).
 
 #### Testing New Branches
 
