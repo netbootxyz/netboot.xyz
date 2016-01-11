@@ -52,7 +52,6 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 * [Scientific](http://scientificlinux.org)
 * [TinyCoreLinux](http://distro.ibiblio.org/tinycorelinux/)
 * [Ubuntu](http://www.ubuntu.com/)
-* [WinPE](http://www.microsoft.com/)
 
 #### Utilities
 

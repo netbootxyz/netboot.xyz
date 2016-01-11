@@ -31,7 +31,6 @@ item --gap Installers:
 item linux ${space} Linux Installers
 item bsd ${space} BSD Installers
 item freedos ${space} FreeDOS Installers
-item windows ${space} Windows Installers
 item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
@@ -99,10 +98,6 @@ goto main_menu
 
 :freedos
 chain freedos.ipxe
-goto main_menu
-
-:windows
-chain windows.ipxe
 goto main_menu
 
 :hypervisors
