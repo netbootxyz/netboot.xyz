@@ -4,9 +4,11 @@
 # http://www.archlinux.org
 
 menu ArchLinux
-item ipxe ArchLinux Graphical Menu
-item ipxe_text ArchLinux Text Menu
+item arch ArchLinux Graphical Menu
+item arch_text ArchLinux Text Menu
 choose version || exit
 
-chain http://releng.archlinux.org/pxeboot/${version}.pxe
+set 209:string cfg/${version}.cfg
+set 210:string http://releng.archlinux.org/pxeboot/boot/
+chain ${210:string}pxelinux.0
 exit
