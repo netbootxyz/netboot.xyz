@@ -3,6 +3,7 @@
 menu Utilities
 item --gap Utilities:
 item clonezilla ${space} Clonezilla
+item dban ${space} DBAN
 item gparted ${space} GParted
 item hdt ${space} Hardware Detection Tool
 item memtest ${space} MemTest86+
@@ -26,6 +27,12 @@ kernel ${memdisk} iso raw ${params}
 iseq ${try} xxxxx && exit ||
 set try ${try}x
 initrd ${czurl} || goto retry
+boot || goto utils_exit
+
+:dban
+set version 2.3.0
+kernel ${memdisk} iso raw
+initrd http://sourceforge.net/projects/dban/files/dban/dban-${version}/dban-${version}_i586.iso/download
 boot || goto utils_exit
 
 :gparted
