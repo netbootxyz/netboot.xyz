@@ -6,7 +6,7 @@ goto ${menu} ||
 menu Linux Installers - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap Operating Systems:
-item archlinux ${space} ArchLinux
+item archlinux ${space} Arch Linux
 item centos ${space} CentOS 
 item coreos ${space} CoreOS
 item debian ${space} Debian

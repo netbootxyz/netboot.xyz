@@ -33,7 +33,7 @@ Full documentation is at ReadTheDocs:
 
 ### What Operating Systems are available?
 
-* [ArchLinux](https://www.archlinux.org)
+* [Arch Linux](https://www.archlinux.org)
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)

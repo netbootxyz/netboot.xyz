@@ -1,11 +1,11 @@
 #!ipxe
 
-# ArchLinux Operating System
+# Arch Linux Operating System
 # http://www.archlinux.org
 
-menu ArchLinux
-item arch ArchLinux Graphical Menu
-item arch_text ArchLinux Text Menu
+menu Arch Linux
+item arch Arch Linux Graphical Menu
+item arch_text Arch Linux Text Menu
 choose version || exit
 
 set 209:string cfg/${version}.cfg

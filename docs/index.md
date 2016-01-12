@@ -37,7 +37,7 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 
 #### What Operating Systems are currently available on netboot.xyz?
 
-* [ArchLinux](https://www.archlinux.org)
+* [Arch Linux](https://www.archlinux.org)
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)
