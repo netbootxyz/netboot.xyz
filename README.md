@@ -57,6 +57,7 @@ Full documentation is at ReadTheDocs:
 * [HDT](http://www.hdt-project.org/)
 * [Memtest](http://www.memtest.org/)
 * [Partition Wizard](http://www.partitionwizard.com)
+* [Super Grub2 Disk](http://www.supergrubdisk.org)
 
 #### Feedback
 
