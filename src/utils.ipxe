@@ -9,6 +9,8 @@ item hdt ${space} Hardware Detection Tool
 item memtest ${space} MemTest86+
 item netbootcd ${space} NetbootCD.us
 item partition_wizard ${space} Partition Wizard
+item supergrub ${space} Super Grub2 Disk
+item --gap netboot.xyz tools:
 item testpr ${space} Test netboot.xyz branch
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
@@ -68,6 +70,12 @@ boot
 :partition_wizard
 kernel ${memdisk} iso raw
 initrd http://www.partitionwizard.com/download/pwfree91-x64.iso
+boot
+goto utils_exit
+
+:supergrub
+kernel ${memdisk} iso raw
+initrd https://forja.cenatic.es/frs/download.php/file/1844/super_grub2_disk_hybrid_2.02s3.iso
 boot
 goto utils_exit
 

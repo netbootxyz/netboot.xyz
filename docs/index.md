@@ -61,6 +61,7 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 * [HDT](http://www.hdt-project.org/)
 * [Memtest](http://www.memtest.org/)
 * [Partition Wizard](http://www.partitionwizard.com)
+* [Super Grub2 Disk](http://www.supergrubdisk.org)
 
 ### Source Code
 
