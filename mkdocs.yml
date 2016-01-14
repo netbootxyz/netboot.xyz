@@ -18,4 +18,4 @@ pages:
 - Provider Usage:
     - 'Digital Ocean': 'usage_digitalocean.md'
     - 'Rackspace': 'usage_rackspace.md'
-theme: flatly
+theme: yeti
