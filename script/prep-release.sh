@@ -50,14 +50,14 @@ do
 done
 
 # generate EFI iPXE disks
-#for ipxe_config in `ls ../../ipxe/disks/`
-#do
-#  # Remove general.h options for testing, doesn't like COMBOOT
-#  rm config/local/general.h
-#  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
-#  error_check
-#  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
-#done
+for ipxe_config in `ls ../../ipxe/disks/`
+do
+  # Remove general.h options for testing, doesn't like COMBOOT
+  rm config/local/general.h
+  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
+  error_check
+  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
+done
 
 # return to root
 cd ../..
