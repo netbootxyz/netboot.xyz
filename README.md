@@ -61,7 +61,7 @@ Full documentation is at ReadTheDocs:
 
 #### Feedback
 
-Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on github or follow us on [twitter](https://twitter.com/netbootxyz).
+Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on github or follow us on [twitter](https://twitter.com/netbootxyz).  We're also on [Freenode IRC](http://freenode.net/) in [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz). 
 
 #### Testing New Branches
 
