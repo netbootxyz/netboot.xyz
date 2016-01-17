@@ -10,6 +10,7 @@ item hdt ${space} Hardware Detection Tool
 item memtest ${space} MemTest86+
 item netbootcd ${space} NetbootCD.us
 item partition_wizard ${space} Partition Wizard
+item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
 item --gap netboot.xyz tools:
 item testpr ${space} Test netboot.xyz branch
@@ -77,6 +78,12 @@ boot
 :partition_wizard
 kernel ${memdisk} iso raw
 initrd http://www.partitionwizard.com/download/pwfree91-x64.iso
+boot
+goto utils_exit
+
+:pogostick
+kernel ${memdisk} iso raw
+initrd http://pogostick.net/~pnh/ntpasswd/cd140201.zip
 boot
 goto utils_exit
 
