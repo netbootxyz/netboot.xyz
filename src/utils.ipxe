@@ -2,7 +2,7 @@
 
 menu Utilities
 item --gap Utilities:
-item avg ${space} AVG Rescue Linux - Offline AV scanning & removal
+item avg ${space} AVG Rescue CD
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted

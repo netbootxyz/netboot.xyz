@@ -55,6 +55,7 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 
 #### Utilities
 
+* [AVG Rescue CD](http://www.avg.com/us-en/avg-rescue-cd)
 * [Clonezilla](http://www.clonezilla.org/)
 * [DBAN](http://www.dban.org/)
 * [GParted](http://gparted.org)
