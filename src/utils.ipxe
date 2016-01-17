@@ -2,6 +2,7 @@
 
 menu Utilities
 item --gap Utilities:
+item avg ${space} AVG Rescue Linux - Offline AV scanning & removal
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
@@ -16,6 +17,12 @@ choose --default ${menu} menu || goto utils_exit
 echo ${cls}
 goto ${menu} ||
 chain ${menu}.ipxe || goto utils_exit
+goto utils_exit
+
+:avg
+kernel ${memdisk} iso raw
+initrd http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_150814a10442.iso
+boot
 goto utils_exit
 
 :clonezilla
