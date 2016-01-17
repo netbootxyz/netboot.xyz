@@ -2,7 +2,8 @@ site_name: netboot.xyz
 site_description: netboot.xyz uses iPXE to boot multiple Operating System installers or utilities over the network from a single menu.
 site_author: netboot.xyz
 site_url: http://netboot.xyz
-copyright: © 2016 Antony Messerli
+repo_url: https://github.com/antonym/netboot.xyz
+copyright: © 2016 <a href="https://twitter.com/ajmesserli">Antony Messerli</a>
 docs_dir: docs
 google_analytics: ['UA-68807-15', 'netboot.xyz']
 pages:
