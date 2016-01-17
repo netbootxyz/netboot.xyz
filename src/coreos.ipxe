@@ -5,29 +5,38 @@
 # For further info on:
 # iPXE and CoreOS: https://coreos.com/os/docs/latest/booting-with-ipxe.html
 # Setting up Cloud Config: https://github.com/coreos/coreos-cloudinit
+# 64-bit only
  
 goto ${menu}
 
 :coreos
-set os coreos
+set os CoreOS
 menu ${os}
 item --gap CoreOS:
 item stable ${space} CoreOS Stable Channel
 item beta ${space} CoreOS Beta Channel
 item alpha ${space} CoreOS Alpha Channel
+item cloud_config ${space} Set cloud-config-url: ${cloud-config-url}
 choose --default ${menu} menu || goto coreos_exit
 echo ${cls}
-goto boot_coreos ||
+goto ${menu} ||
 goto coreos_exit
 
-:boot_coreos
+:stable
+:beta
+:alpha
 set release ${menu}
 set base-url http://${release}.release.core-os.net/amd64-usr/current
-isset cloud-config-url && echo Cloud Config URL is set... || echo -n Please set Cloud Config URL: && read cloud-config-url
-kernel ${base-url}/coreos_production_pxe.vmlinuz cloud-config-url=${cloud-config-url}
+kernel ${base-url}/coreos_production_pxe.vmlinuz ${coreos_params} console=tty0 console=ttyS0 coreos.autologin=tty1 coreos.autologin=ttyS0
 initrd ${base-url}/coreos_production_pxe_image.cpio.gz
 boot
 goto coreos_exit
+
+:cloud_config
+echo -n Please set Cloud Config URL: && read cloud-config-url
+set coreos_params cloud-config-url=${cloud-config-url}
+clear menu
+goto coreos
 
 :coreos_exit
 clear menu
