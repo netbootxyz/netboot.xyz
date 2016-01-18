@@ -1,7 +1,7 @@
 ### Frequently Asked Questions
 
 #### How does this work?
-netboot.xyz uses an open source tool called iPXE.  The bootloader used calls to a webserver that hosts that the iPXE source files.  The iPXE source files contain menus and logic that understand how the various Linux installers operate.  When you select an Operating System, netboot.xyz retrieves the images from the project directory when possible or known and trusted performant mirrors.  The location the file is pulled from is always during retrieval.
+netboot.xyz uses an open source tool called iPXE.  The bootloader used calls to a webserver that hosts that the iPXE source files.  The iPXE source files contain menus and logic that understand how the various Linux installers operate.  When you select an Operating System, netboot.xyz retrieves the images from the project directory when possible or known and trusted performant mirrors.  The location the file is pulled from is always displayed during retrieval.
 
 #### Will my favorite distribution work?
 Usually you need three things to boot up an OS, the vmlinuz, the initramfs, and the rootfs.  Distributions that support an installer kernel hosted on a mirror are typically the easier ones to implement.  Distributions that only release as ISOs typically are harder to implement as we have to use memdisk to load it up into memory.  
