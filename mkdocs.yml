@@ -9,14 +9,14 @@ google_analytics: ['UA-68807-15', 'netboot.xyz']
 pages:
 - Home: 'index.md'
 - Boot from...:
-#    - 'Extlinux/Grub': 'boot_loaders.md'
-    - 'iPXE': 'boot_ipxe.md'
-    - 'ISO': 'boot_iso.md'
-    - 'TFTP': 'boot_tftp.md'
-    - 'USB': 'boot_usb.md'
-#    - 'Virtual Box': 'boot_vbox.md'
-#    - 'VMware': 'boot_vmware.md'
+#    - 'Extlinux/Grub': 'boot-loaders.md'
+    - 'iPXE': 'boot-ipxe.md'
+    - 'ISO': 'boot-iso.md'
+    - 'TFTP': 'boot-tftp.md'
+    - 'USB': 'boot-usb.md'
+#    - 'Virtual Box': 'boot-vbox.md'
+#    - 'VMware': 'boot-vmware.md'
 - Provider Usage:
-    - 'Digital Ocean': 'usage_digitalocean.md'
-    - 'Rackspace': 'usage_rackspace.md'
+    - 'Digital Ocean': 'usage-digitalocean.md'
+    - 'Rackspace': 'usage-rackspace.md'
 theme: yeti
