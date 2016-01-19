@@ -43,7 +43,6 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 * [Debian](https://debian.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
-* [Gentoo](https://gentoo.org)
 * [Kali](https://www.kali.org)
 * [Mageia](http://www.mageia.org)
 * [OpenBSD](http://openbsd.org)
