@@ -95,8 +95,10 @@ boot
 goto utils_exit
 
 :testdistro
-echo This option will allow you to test booting an ISO using memdisk.
-echo -n Specify ISO you want to test: ${} && read distro_iso
+echo This option will allow you to test booting an ISO using memdisk. Please
+echo specify the url of the ISO you want to test and it will automatically
+echo attempt to load the ISO using memdisk.
+echo -n URL: ${} && read distro_iso
 kernel ${memdisk} iso raw
 initrd ${distro_iso}
 boot
