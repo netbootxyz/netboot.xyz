@@ -21,7 +21,7 @@ set openbsd_arch amd64
 goto boot_openbsd
 
 :boot_openbsd
-set src http://ftp.openbsd.org/pub/OpenBSD/${ver}/${openbsd_arch}/install${image_ver}.iso
+set src http://ftp.openbsd.org/pub/OpenBSD/${ver}/${openbsd_arch}/cd${image_ver}.iso
 imgfree
 initrd ${src}
 chain ${memdisk} iso raw
