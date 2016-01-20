@@ -4,7 +4,7 @@
 # http://www.openbsd.org
 
 :openbsd_menu
-menu Please pick an OpenBSD version
+menu OpenBSD
 item 5.8 OpenBSD 5.8
 item 5.7 OpenBSD 5.7
 item snapshots OpenBSD 5.9 Latest Snapshot
