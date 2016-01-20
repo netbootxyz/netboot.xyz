@@ -6,19 +6,19 @@
 goto ${menu}
 
 :debian
-set os debian
+set os Debian
 
-menu Debian ${arch_a}
-item jessie Debian 8.0 (jessie)
-item wheezy Debian 7.0 (wheezy)
-item squeeze Debian 6.0 (squeeze)
-item stretch Debian stretch (testing)
-item sid Debian sid (unstable) 
+menu ${os} - ${arch_a}
+item jessie ${os} 8.0 (jessie)
+item wheezy ${os} 7.0 (wheezy)
+item squeeze ${os} 6.0 (squeeze)
+item stretch ${os} stretch (testing)
+item sid ${os} sid (unstable) 
 choose version || goto debian_exit
-set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/${os}
+set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/debian
 
 :deb_boot_type
-set dir ${os}/dists/${version}/main/installer-${arch_a}/current/images/netboot/
+set dir debian/dists/${version}/main/installer-${arch_a}/current/images/netboot/
 
 menu ${os} boot parameters
 item text ${os} text based install
