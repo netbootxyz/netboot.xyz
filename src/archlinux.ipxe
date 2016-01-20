@@ -3,12 +3,20 @@
 # Arch Linux Operating System
 # http://www.archlinux.org
 
+:archlinux
 menu Arch Linux
 item arch Arch Linux Graphical Menu
 item arch_text Arch Linux Text Menu
-choose version || exit
+choose version || goto linux_menu
+goto boot
 
+:boot
+imgfree
 set 209:string cfg/${version}.cfg
 set 210:string http://releng.archlinux.org/pxeboot/boot/
-chain ${210:string}pxelinux.0
-exit
+chain ${210:string}pxelinux.0 || goto linux_menu
+
+:linux_menu
+clear menu
+chain linux.ipxe
+exit 0
