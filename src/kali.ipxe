@@ -6,13 +6,13 @@
 goto ${menu}
 
 :kali
-set os kali
-menu Kali ${arch_a}
-item current Kali Current
+set os Kali
+menu ${os} ${arch_a}
+item current ${os} Current
 choose version || goto kali_exit
 
 :deb_boot_type
-set dir ${os}/dists/kali-${version}/main/installer-${arch_a}/current/images/netboot
+set dir kali/dists/kali-${version}/main/installer-${arch_a}/current/images/netboot
 menu ${os} boot parameters
 item text ${os} text based install
 choose --default ${type} type || goto kali
