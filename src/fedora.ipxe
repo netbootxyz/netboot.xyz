@@ -39,7 +39,7 @@ goto boottype
 
 :boottype
 menu ${os} ${arch} boot type
-item normal ${ova}
+item normal ${ova} install
 item rescue ${ova} rescue
 item kickstart ${ova} specify kickstart url
 isset ${bt} || choose bt || goto fedora
