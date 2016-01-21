@@ -47,7 +47,7 @@ initrd http://sourceforge.net/projects/dban/files/dban/dban-${version}/dban-${ve
 boot || goto utils_exit
 
 :gparted
-set version 0.24.0-2
+set version 0.25.0-1
 set project gparted
 set iso ${project}-live-stable/${version}/${project}-live-${version}-amd64.iso
 set czurl http://sourceforge.net/projects/gparted/files/${iso}/download
