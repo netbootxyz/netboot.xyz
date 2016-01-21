@@ -1,5 +1,8 @@
 ### Frequently Asked Questions
 
+#### What is this?
+netboot.xyz is tool that allows you to boot your favorite Operating System's installer or various utilities over the network with minimal overhead and all from a single menu system.  It's similar to various tools netbooting tools of the past like boot.kernel.org with a lot more flexibility.  The boot loader is very light weight being under 1MB in size which translates into a very quick time to create a USB key.
+
 #### How does this work?
 netboot.xyz uses an open source tool called iPXE.  The bootloader used calls to a webserver that hosts that the iPXE source files.  The iPXE source files contain menus and logic that understand how the various Linux installers operate.  When you select an Operating System, netboot.xyz retrieves the images from the project directory when possible or known and trusted performant mirrors.  The location the file is pulled from is always displayed during retrieval.
 
