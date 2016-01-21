@@ -6,28 +6,41 @@
 goto ${menu}
 
 :ubuntu
-set os ubuntu
-menu Ubuntu Installers ${arch_a}
-item wily Ubuntu 15.10 Wily Werewolf
-item vivid Ubuntu 15.04 Vivid Vervet 
-item utopic Ubuntu 14.10 Utopic Unicorn
-item trusty Ubuntu 14.04 LTS Trusty Tahr
-item saucy Ubuntu 13.10 Saucy Salamander
-item quantal Ubuntu 12.10 Quantal Quetzal
-item precise Ubuntu 12.04 LTS Precise Pangolin
-choose version || goto ubuntu_exit
-set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/${os}
+set os Ubuntu
+clear ubuntu_version
+set ubuntu_mirror ${mirror}
+menu ${os} Installers - ${arch_a}
+item --gap Latest Releases
+item wily ${space} ${os} 15.10 Wily Werewolf
+item vivid ${space} ${os} 15.04 Vivid Vervet 
+item trusty ${space} ${os} 14.04 LTS Trusty Tahr
+item precise ${space} ${os} 12.04 LTS Precise Pangolin
+item --gap Older Releases
+item older_release ${space} Set release codename...
+choose ubuntu_version || goto ubuntu_exit
+iseq ${ubuntu_version} older_release && goto older_release ||
+goto mirrorcfg
+
+:older_release
+set ubuntu_mirror old-releases.ubuntu.com
+echo Setting mirror to ${ubuntu_mirror}
+clear ubuntu_version
+echo -n Please set enter code name of release: ${} && read ubuntu_version
+set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
+goto deb_boot_type
+
+:mirrorcfg
+set mirrorcfg mirror/suite=${ubuntu_version} mirror/country=manual mirror/http/hostname=${ubuntu_mirror} mirror/http/directory=/ubuntu
+set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
 
 :deb_boot_type
-set dir ${os}/dists/${version}/main/installer-${arch_a}/current/images/netboot/
-
-menu Ubuntu Installer Boot Parameters:
-item install Ubuntu Install
-item rescue Ubuntu Rescue Mode
-item expert Ubuntu Expert Install
-item preseed Ubuntu Specify preseed url
+menu ${os} [${ubuntu_version}] Installer
+item --gap Install types
+item install ${space} Install
+item rescue ${space} Rescue Mode
+item expert ${space} Expert Install
+item preseed ${space} Specify preseed url...
 choose --default ${type} type || goto ubuntu
-
 echo ${cls}
 goto deb_${type}
 
@@ -40,7 +53,7 @@ set install_params priority=low
 goto deb_boot
 
 :deb_preseed
-echo -n Specify preseed URL for Ubuntu ${version}: && read preseedurl
+echo -n Specify preseed URL for ${os} ${ubuntu_version}: && read preseedurl
 set install_params auto=true priority=critical preseed/url=${preseedurl}
 goto deb_boot
 
@@ -48,9 +61,8 @@ goto deb_boot
 :deb_boot
 set dir ${dir}${menu}-installer/${arch_a}
 imgfree
-echo Boot parameters: ${install_params} -- quiet ${params}
-kernel http://${mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params}
-initrd http://${mirror}/${dir}/initrd.gz
+kernel http://${ubuntu_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params}
+initrd http://${ubuntu_mirror}/${dir}/initrd.gz
 boot
 
 :ubuntu_exit
