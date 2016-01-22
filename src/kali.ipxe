@@ -6,9 +6,9 @@
 goto ${menu}
 
 :kali
-set os Kali
+set os Kali Linux
 menu ${os} ${arch_a}
-item current ${os} Current
+item rolling ${os} Rolling Edition (2016.1)
 choose version || goto kali_exit
 
 :deb_boot_type
