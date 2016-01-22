@@ -39,7 +39,7 @@ Full documentation is at ReadTheDocs:
 * [Debian](https://debian.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
-* [Kali](https://www.kali.org)
+* [Kali Linux](https://www.kali.org)
 * [Mageia](http://www.mageia.org)
 * [OpenBSD](http://openbsd.org)
 * [OpenSUSE](http://opensuse.org)

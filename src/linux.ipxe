@@ -11,7 +11,7 @@ item centos ${space} CentOS
 item coreos ${space} CoreOS
 item debian ${space} Debian
 item fedora ${space} Fedora
-item kali ${space} Kali
+item kali ${space} Kali Linux
 item mageia ${space} Mageia
 item opensuse ${space} openSUSE
 item rancheros ${space} RancherOS
