@@ -5,33 +5,35 @@
 
 ### Bootloader Downloads
 
-These iPXE disks will automatically load into [boot.netboot.xyz](http://boot.netboot.xyz):
+These iPXE disks will automatically load into [boot.netboot.xyz](https://boot.netboot.xyz):
 
 | Type | DHCP Bootloaders | Static Bootloaders | Description |
 |------|------------------|--------------------|-------------| 
-|ISO| [netboot.xyz-dhcp.iso](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso)| [netboot.xyz-static.iso](http://boot.netboot.xyz/ipxe/netboot.xyz-static.iso) | Used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box|
-|USB| [netboot.xyz-dhcp.usb](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [netboot.xyz-static.usb](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) | Used for creation of USB Keys|
-|Kernel| [netboot.xyz-dhcp.lkrn](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [netboot.xyz-static.lkrn](http://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn) | Used for booting from GRUB/EXTLINUX|
-|DHCP| [netboot.xyz-dhcp.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) | [netboot.xyz-static.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-static.kpxe) | DHCP boot image file, uses built-in iPXE NIC drivers|
-|DHCP-undionly|[netboot.xyz-dhcp-undionly.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) | [netboot.xyz-static-undionly.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-static-undionly.kpxe) | DHCP boot image file, use if you have NIC issues|
+|ISO| [netboot.xyz-dhcp.iso](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso)| [netboot.xyz-static.iso](https://boot.netboot.xyz/ipxe/netboot.xyz-static.iso) | Used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box|
+|USB| [netboot.xyz-dhcp.usb](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) | [netboot.xyz-static.usb](https://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) | Used for creation of USB Keys|
+|Kernel| [netboot.xyz-dhcp.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.lkrn) | [netboot.xyz-static.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz-static.lkrn) | Used for booting from GRUB/EXTLINUX|
+|DHCP| [netboot.xyz-dhcp.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) | [netboot.xyz-static.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-static.kpxe) | DHCP boot image file, uses built-in iPXE NIC drivers|
+|DHCP-undionly|[netboot.xyz-dhcp-undionly.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) | [netboot.xyz-static-undionly.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-static-undionly.kpxe) | DHCP boot image file, use if you have NIC issues|
 
 The DHCP bootloaders will automatically get a network address if you have DHCP on your network while the static bootloaders will prompt you for network information.  
 
-SHA256 checksums are generated during each build of iPXE and are located [here](http://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt).  You can also view the scripts that are embedded into the images [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
+SHA256 checksums are generated during each build of iPXE and are located [here](https://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt).  You can also view the scripts that are embedded into the images [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
 
 ### What is netboot.xyz?
 
-[netboot.xyz](http://www.netboot.xyz) is a way to select various operating system installers or utilities from one place within the BIOS without the need of having to go retrieve the media to run the tool.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the OS you want along with any specific types of versions or bootable flags.
+[netboot.xyz](http://netboot.xyz) is a way to select various operating system installers or utilities from one place within the BIOS without the need of having to go retrieve the media to run the tool.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the OS you want along with any specific types of versions or bootable flags.
 
 You can remote attach the ISO to servers, set it up as a rescue option in Grub, or even set up your home network to boot to it by default so that it's always available.
 
 ### Getting started
 
-Download the bootloader of your choice from the links above and add it to your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](https://github.com/ipxe/ipxe) that will chainload you to [http://boot.netboot.xyz](http://boot.netboot.xyz).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
+Download the bootloader of your choice from the links above and add it to your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](https://github.com/ipxe/ipxe) that will chainload you to [https://boot.netboot.xyz](https://boot.netboot.xyz).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
 
 If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
 
-    chain --autofree http://boot.netboot.xyz
+    chain --autofree https://boot.netboot.xyz
+
+You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/ipxe/blob/master/src/config/general.h#L56) enabled when compiling iPXE.
 
 ### Operating Systems
 
