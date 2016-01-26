@@ -39,6 +39,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 
 #### What Operating Systems are currently available on netboot.xyz?
 
+* [Antergos](https://antergos.com)
 * [Arch Linux](https://www.archlinux.org)
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
