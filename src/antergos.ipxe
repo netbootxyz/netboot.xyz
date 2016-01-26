@@ -1,0 +1,24 @@
+#!ipxe
+
+# Antergos Operating System
+# https://antergos.com
+
+goto ${menu}
+
+:antergos
+set os Antergos
+menu ${os} Installers
+item x86_64 ${space} ${os} Minimal 64bit [ISO]
+item i686 ${space} ${os} Minimal 32bit [ISO]
+choose version || goto antergos_exit
+goto antergos_boot
+
+:antergos_boot
+kernel ${memdisk} iso raw
+initrd http://repo.antergos.info/iso/release/antergos-minimal-2015.12.29-${version}.iso
+boot
+goto antergos_exit
+
+:antergos_exit
+clear menu
+chain linux.ipxe
