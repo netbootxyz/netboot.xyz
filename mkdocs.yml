@@ -19,5 +19,6 @@ pages:
 - Provider Usage:
     - 'Digital Ocean': 'usage-digitalocean.md'
     - 'Rackspace': 'usage-rackspace.md'
+    - 'Vultr': 'usage-vultr.md'
 - FAQ: 'faq.md'
 theme: yeti
