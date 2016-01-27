@@ -51,6 +51,10 @@ Full documentation is at ReadTheDocs:
 * [TinyCoreLinux](http://distro.ibiblio.org/tinycorelinux/)
 * [Ubuntu](http://www.ubuntu.com/)
 
+#### Hypervisors
+
+* [Citrix XenServer](http://xenserver.org)
+
 #### Utilities
 
 * [AVG Rescue CD](http://www.avg.com/us-en/avg-rescue-cd)

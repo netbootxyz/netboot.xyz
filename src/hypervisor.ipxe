@@ -1,0 +1,22 @@
+#!ipxe
+
+goto ${menu} ||
+
+:hypervisor_menu
+menu Hypervisor Installers - [ ${arch} ]
+item --gap Citrix XenServer
+item xenserver ${space} Citrix XenServer
+choose menu || goto hypervisor_exit
+
+echo ${cls}
+goto ${menu} ||
+chain ${menu}.ipxe || goto error
+goto hypervisor_exit
+
+:hypervisor_exit
+clear menu
+exit 0
+
+:xenserver
+chain xenserver.ipxe
+goto hypervisor_menu
