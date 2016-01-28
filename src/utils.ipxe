@@ -65,7 +65,7 @@ boot
 goto utils_exit
 
 :memtest
-chain utils/memtest.bin ${params} && goto main_menu ||
+chain https://boot.netboot.xyz/utils/memtest.bin ${params} && goto main_menu ||
 echo MEMORY ERROR DETECTED! ${errno}
 echo Press any key to continue ...
 read a
