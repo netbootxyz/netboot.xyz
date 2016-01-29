@@ -7,7 +7,8 @@ item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
 item hdt ${space} Hardware Detection Tool
-item memtest ${space} MemTest86+
+item memtest_420 ${space} Memtest86+ 4.20
+item memtest_501 ${space} Memtest86+ 5.01
 item netbootcd ${space} NetbootCD.us
 item partition_wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
@@ -64,11 +65,12 @@ initrd http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
 boot
 goto utils_exit
 
-:memtest
-chain https://boot.netboot.xyz/utils/memtest.bin ${params} && goto main_menu ||
-echo MEMORY ERROR DETECTED! ${errno}
-echo Press any key to continue ...
-read a
+:memtest_420
+chain https://boot.netboot.xyz/utils/memtest86-4.20.bin && goto main_menu ||
+goto utils_exit
+
+:memtest_501
+chain https://boot.netboot.xyz/utils/memtest86-5.01.bin && goto main_menu ||
 goto utils_exit
 
 :netbootcd
