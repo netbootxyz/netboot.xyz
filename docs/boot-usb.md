@@ -4,8 +4,8 @@
 
 Download a netboot.xyz USB disk:
 
-* [dhcp](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) - Automatically detects your networking
-* [static](http://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) - Prompts for manual entry of your networking information
+* [dhcp](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) - Automatically detects your networking
+* [static](https://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) - Prompts for manual entry of your networking information
 
 ### Creating USB Key on Linux
 

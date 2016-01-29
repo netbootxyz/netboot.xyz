@@ -16,7 +16,7 @@ You can read more about my thoughts and possible solutions [here](https://www.re
 #### My distribution uses ISOs for delivery, how can I see if they work?
 You can do a quick check by loading up netboot.xyz in a virtual environment baremetal.  Make sure you have plenty of RAM as you are loading the ISO into RAM.  Then select the iPXE command line and enter the following;
 
-    kernel http://boot.netboot.xyz/memdisk iso raw
+    kernel https://boot.netboot.xyz/memdisk iso raw
     initrd http://url/to/iso
     boot
 

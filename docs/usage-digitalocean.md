@@ -10,7 +10,7 @@ Tests were done using a [Fedora 23](https://getfedora.org) instance on [Digital 
 
 #### Download an iPXE linux kernel
 
-Obtain an iPXE generic kernel [here](http://boot.netboot.xyz/ipxe/generic-ipxe.lkrn) or [compile your own](http://ipxe.org/download) and save it to /boot/generic-ipxe.lkrn.
+Obtain an iPXE generic kernel [here](https://boot.netboot.xyz/ipxe/generic-ipxe.lkrn) or [compile your own](http://ipxe.org/download) and save it to /boot/generic-ipxe.lkrn.
 
 #### Create a netboot.xyz initrd file
 
@@ -26,7 +26,7 @@ Save as /boot/netboot.xyz-initrd (replace your networking information where appr
     set net0/gateway <instance public gateway>
     set dns <instance dns address>
     ifopen net0
-    chain --autofree http://boot.netboot.xyz
+    chain --autofree https://boot.netboot.xyz
 
 #### Add a Grub2 custom entry
 
