@@ -16,6 +16,7 @@ item opensuse ${space} openSUSE
 item ubuntu ${space} Ubuntu
 item --gap All Others
 item antergos ${space} Antergos
+item architect ${space} Architect Linux
 item coreos ${space} CoreOS
 item rancheros ${space} RancherOS
 item scientific ${space} Scientific
@@ -41,6 +42,10 @@ goto linux_menu
 
 :antergos
 chain antergos.ipxe
+goto linux_menu
+
+:architect
+chain architect.ipxe
 goto linux_menu
 
 :fedora
