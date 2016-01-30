@@ -5,20 +5,21 @@ goto ${menu} ||
 :linux_menu
 menu Linux Installers - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
-item --gap Operating Systems:
-item antergos ${space} Antergos
+item --gap Popular Linux Operating Systems:
 item archlinux ${space} Arch Linux
 item centos ${space} CentOS 
-item coreos ${space} CoreOS
 item debian ${space} Debian
 item fedora ${space} Fedora
 item kali ${space} Kali Linux
 item mageia ${space} Mageia
 item opensuse ${space} openSUSE
+item ubuntu ${space} Ubuntu
+item --gap All Others
+item antergos ${space} Antergos
+item coreos ${space} CoreOS
 item rancheros ${space} RancherOS
 item scientific ${space} Scientific
 item slackware ${space} Slackware
-item ubuntu ${space} Ubuntu
 item tinycore ${space} TinyCoreLinux
 # Options
 item --gap Options:
