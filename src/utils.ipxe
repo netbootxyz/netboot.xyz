@@ -14,6 +14,7 @@ item partition_wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
 item --gap netboot.xyz tools:
+item nbxyz-custom ${space} Set Github User [user: ${github_user}]
 item testdistro ${space} Test Distribution ISO
 item testpr ${space} Test netboot.xyz branch
 choose --default ${menu} menu || goto utils_exit
@@ -72,6 +73,16 @@ goto utils_exit
 :memtest_501
 chain https://boot.netboot.xyz/utils/memtest86-5.01.bin && goto main_menu ||
 goto utils_exit
+
+:nbxyz-custom
+echo EXPERIMENTAL
+echo 
+echo Make sure you have a fork of https://github.com/antonym/netboot.xyz-custom.
+echo You can then customize your fork as needed and set up your own custom options.
+echo Once your username is set, a custom option will appear on the main menu.
+echo
+echo -n Please enter your Github username: ${} && read github_user
+goto utils_exit 
 
 :netbootcd
 kernel http://netbootcd.us/downloads/6.4.1/vmlinuz

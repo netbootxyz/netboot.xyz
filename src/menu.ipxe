@@ -1,7 +1,6 @@
 #!ipxe
 
 :start
-
 chain --autofree boot.cfg ||
 
 iseq ${cls} serial && goto ignore_cls ||
@@ -31,6 +30,8 @@ item --gap Installers:
 item linux ${space} Linux Installers
 item bsd ${space} BSD Installers
 item freedos ${space} FreeDOS Installers
+isset ${github_user} && item --gap Custom Menu: ||
+isset ${github_user} && item nbxyz-custom ${space} ${github_user}'s Custom Menu ||
 item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
@@ -102,6 +103,10 @@ goto main_menu
 
 :hypervisors
 chain hypervisors.ipxe
+goto main_menu
+
+:nbxyz-custom
+chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || 
 goto main_menu
 
 :utils
