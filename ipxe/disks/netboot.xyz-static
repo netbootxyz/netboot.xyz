@@ -1,7 +1,7 @@
 #!ipxe
 
 :start
-set version 1
+set version 1.01
 echo netboot.xyz iPXE loader v${version}
 goto static
 

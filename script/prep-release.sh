@@ -39,7 +39,9 @@ mv bin/undionly.kpxe ../../build/ipxe/generic-undionly.kpxe
 # generate netboot.xyz iPXE disks
 for ipxe_config in `ls ../../ipxe/disks/`
 do 
-  make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe EMBED=../../ipxe/disks/$ipxe_config
+  make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
+  EMBED=../../ipxe/disks/$ipxe_config \ 
+  TRUST=../../script/ca-ipxe-org.crt,../../script/ca-netboot-xyz.crt
   error_check
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
   mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
@@ -81,6 +83,17 @@ done
 cat ../netboot.xyz-sha256-checksums.txt
 mv ../netboot.xyz-sha256-checksums.txt .
 cd ../..
+
+# generate signatures for netboot.xyz source files
+mkdir sigs
+for src_file in `ls src`
+do
+  openssl cms -sign -binary -noattr -in src/$src_file \
+  -signer script/codesign.crt -inkey script/codesign.key -certfile script/ca-netboot-xyz.crt -outform DER \
+  -out sigs/$src_file.sig
+  echo Generated signature for $src_file...
+done
+mv sigs src/
 
 # delete index.html so that we don't overwrite existing content type
 rm src/index.html
