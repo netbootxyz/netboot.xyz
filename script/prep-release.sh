@@ -21,6 +21,9 @@ git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build
 # copy iPXE config overrides into source tree
 cp ipxe/local/* ipxe_build/src/config/local/
 
+# copy certs into source tree
+cp script/*.crt ipxe_build/src/
+
 # build iPXE disks
 cd ipxe_build/src
 
@@ -40,8 +43,7 @@ mv bin/undionly.kpxe ../../build/ipxe/generic-undionly.kpxe
 for ipxe_config in `ls ../../ipxe/disks/`
 do 
   make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
-  EMBED=../../ipxe/disks/$ipxe_config \ 
-  TRUST=../../script/ca-ipxe-org.crt,../../script/ca-netboot-xyz.crt
+  EMBED=../../ipxe/disks/$ipxe_config TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
   error_check
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
   mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
