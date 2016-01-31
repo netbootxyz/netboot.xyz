@@ -31,4 +31,4 @@ exit
 
 :openbsd_exit
 clear menu
-chain bsd.ipxe
+exit 0

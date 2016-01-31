@@ -67,4 +67,4 @@ boot
 
 :ubuntu_exit
 clear menu
-chain linux.ipxe
+exit 0

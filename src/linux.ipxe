@@ -34,7 +34,7 @@ goto linux_exit
 
 :linux_exit
 clear menu
-chain menu.ipxe
+exit 0
 
 :changebits
 iseq ${arch} x86_64 && set arch i386 || set arch x86_64
