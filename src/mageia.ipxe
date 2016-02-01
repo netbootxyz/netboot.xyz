@@ -3,7 +3,7 @@
 # Mageia Operating System
 # http://www.mageia.org/
 
-goto ${menu}
+goto ${menu} ||
 
 :mageia
 set os Mageia

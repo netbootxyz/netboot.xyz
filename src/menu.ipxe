@@ -41,6 +41,13 @@ isset ${menu} && set timeout 0 || set timeout 300000
 choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
 goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
 chain ${menu}.ipxe || goto error
 goto main_menu
 
@@ -88,27 +95,6 @@ goto main_menu
 iseq ${arch} x86_64 && set arch i386 || set arch x86_64
 goto main_menu
 
-# OS
-:linux
-chain linux.ipxe
-goto main_menu
-
-:bsd
-chain bsd.ipxe
-goto main_menu
-
-:freedos
-chain freedos.ipxe
-goto main_menu
-
-:hypervisors
-chain hypervisors.ipxe
-goto main_menu
-
 :nbxyz-custom
-chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || 
-goto main_menu
-
-:utils
-chain utils.ipxe
+chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || goto error
 goto main_menu
