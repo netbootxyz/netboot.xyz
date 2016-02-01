@@ -40,5 +40,4 @@ goto coreos
 
 :coreos_exit
 clear menu
-chain menu.ipxe
 exit 0

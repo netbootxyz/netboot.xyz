@@ -21,4 +21,4 @@ boot
 
 :freedos_exit
 clear menu
-chain menu.ipxe
+exit 0

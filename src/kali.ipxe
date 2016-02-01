@@ -32,4 +32,4 @@ boot
 
 :kali_exit
 clear menu
-chain linux.ipxe
+exit 0

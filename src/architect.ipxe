@@ -20,4 +20,4 @@ goto architect_exit
 
 :architect_exit
 clear menu
-chain linux.ipxe
+exit 0

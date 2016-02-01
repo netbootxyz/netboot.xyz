@@ -135,5 +135,4 @@ goto utils_exit
 
 :utils_exit
 clear menu
-chain menu.ipxe
 exit 0

@@ -18,5 +18,4 @@ chain ${210:string}pxelinux.0 || goto linux_menu
 
 :linux_menu
 clear menu
-chain linux.ipxe
 exit 0

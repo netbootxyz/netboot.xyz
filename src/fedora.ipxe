@@ -70,5 +70,4 @@ goto boot
 
 :linux_menu
 clear menu
-chain linux.ipxe
 exit 0
