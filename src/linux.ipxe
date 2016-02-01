@@ -14,7 +14,7 @@ item kali ${space} Kali Linux
 item mageia ${space} Mageia
 item opensuse ${space} openSUSE
 item ubuntu ${space} Ubuntu
-item --gap All Others
+item --gap All Others:
 item antergos ${space} Antergos
 item architect ${space} Architect Linux
 item coreos ${space} CoreOS
@@ -29,8 +29,15 @@ item changebits ${space} Architecture: ${arch} (${bits}bit)
 choose menu || goto linux_exit
 echo ${cls}
 goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
 chain ${menu}.ipxe || goto error
-goto linux_exit
+goto linux_menu
 
 :linux_exit
 clear menu
@@ -38,48 +45,4 @@ exit 0
 
 :changebits
 iseq ${arch} x86_64 && set arch i386 || set arch x86_64
-goto linux_menu
-
-:antergos
-chain antergos.ipxe
-goto linux_menu
-
-:architect
-chain architect.ipxe
-goto linux_menu
-
-:fedora
-chain fedora.ipxe
-goto linux_menu
-
-:centos
-chain centos.ipxe
-goto linux_menu
-
-:coreos
-chain coreos.ipxe
-goto linux_menu
-
-:debian
-chain debian.ipxe
-goto linux_menu
-
-:ubuntu
-chain ubuntu.ipxe
-goto linux_menu
-
-:opensuse
-chain opensuse.ipxe
-goto linux_menu
-
-:rancheros
-chain rancheros.ipxe
-goto linux_menu
-
-:scientific
-chain scientific.ipxe
-goto linux_menu
-
-:slackware
-chain slackware.ipxe
 goto linux_menu

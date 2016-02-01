@@ -3,7 +3,7 @@
 # Kali Linux
 # http://www.kali.org
 
-goto ${menu}
+goto ${menu} ||
 
 :kali
 set os Kali Linux
