@@ -21,6 +21,9 @@ git clone --depth 1 https://github.com/ipxe/ipxe.git ipxe_build
 # copy iPXE config overrides into source tree
 cp ipxe/local/* ipxe_build/src/config/local/
 
+# copy certs into source tree
+cp script/*.crt ipxe_build/src/
+
 # build iPXE disks
 cd ipxe_build/src
 
@@ -39,7 +42,8 @@ mv bin/undionly.kpxe ../../build/ipxe/generic-undionly.kpxe
 # generate netboot.xyz iPXE disks
 for ipxe_config in `ls ../../ipxe/disks/`
 do 
-  make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe EMBED=../../ipxe/disks/$ipxe_config
+  make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
+  EMBED=../../ipxe/disks/$ipxe_config TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
   error_check
   mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
   mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
@@ -50,14 +54,14 @@ do
 done
 
 # generate EFI iPXE disks
-for ipxe_config in `ls ../../ipxe/disks/`
-do
-  # Remove general.h options for testing, doesn't like COMBOOT
-  rm config/local/general.h
-  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
-  error_check
-  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
-done
+#for ipxe_config in `ls ../../ipxe/disks/`
+#do
+#  # Remove general.h options for testing, doesn't like COMBOOT
+#  rm config/local/general.h
+#  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
+#  error_check
+#  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
+#done
 
 # return to root
 cd ../..
@@ -81,6 +85,17 @@ done
 cat ../netboot.xyz-sha256-checksums.txt
 mv ../netboot.xyz-sha256-checksums.txt .
 cd ../..
+
+# generate signatures for netboot.xyz source files
+mkdir sigs
+for src_file in `ls src`
+do
+  openssl cms -sign -binary -noattr -in src/$src_file \
+  -signer script/codesign.crt -inkey script/codesign.key -certfile script/ca-netboot-xyz.crt -outform DER \
+  -out sigs/$src_file.sig
+  echo Generated signature for $src_file...
+done
+mv sigs src/
 
 # delete index.html so that we don't overwrite existing content type
 rm src/index.html

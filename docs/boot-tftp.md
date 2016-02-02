@@ -3,7 +3,7 @@
 If you want to utilize netboot.xyz from your home or office network, it's relatively easy to set up.  It will allow all of your devices on your network to have netboot.xyz available whenever you need it by just changing the boot order on your device, selecting network boot, or manually selecting the device to boot.
 
 #### DHCP Server Setup
-You will have to tell your DHCP server to provide a "next-server", the address of a TFTP server on your network, and a "filename", the [netboot.xyz DHCP boot file](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe).  When your clients boot up, if they are set to network boot, they'll automatically get a valid DHCP address, pull down the netboot.xyz iPXE bootloader and load up the Operating System menu.  
+You will have to tell your DHCP server to provide a "next-server", the address of a TFTP server on your network, and a "filename", the [netboot.xyz DHCP boot file](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe).  When your clients boot up, if they are set to network boot, they'll automatically get a valid DHCP address, pull down the netboot.xyz iPXE bootloader and load up the Operating System menu.  
 
 Example:
 
@@ -22,5 +22,5 @@ If you use dnsmasq you can add this configuration to /etc/dnsmasq.conf:
 
 #### Regular and Undionly Boot Files
 
-If you experiencing issues with the regular [netboot.xyz-dhcp.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) bootloader, you can try and use the [netboot.xyz-dhcp-undionly.kpxe](http://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) bootloader.  The regular bootloader includes common NIC drivers in the iPXE image, while the undionly loader will piggyback off the NIC boot firmware.
+If you experiencing issues with the regular [netboot.xyz-dhcp.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.kpxe) bootloader, you can try and use the [netboot.xyz-dhcp-undionly.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp-undionly.kpxe) bootloader.  The regular bootloader includes common NIC drivers in the iPXE image, while the undionly loader will piggyback off the NIC boot firmware.
  

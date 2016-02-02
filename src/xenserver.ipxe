@@ -11,9 +11,9 @@ set os Citrix XenServer
 menu ${os} 
 item --gap Stable Releases
 item 6.5.0 ${space} ${os} 6.5 (creedence)
-item --gap Test Releases
-item dundee/beta2 ${space} ${os} Beta 2 (dundee)
-item dundee/beta1 ${space} ${os} Beta 1 (dundee)
+#item --gap Test Releases
+#item dundee/beta2 ${space} ${os} Beta 2 (dundee)
+#item dundee/beta1 ${space} ${os} Beta 1 (dundee)
 choose xs_version || goto hypervisor_menu
 goto determine_type
 
@@ -34,6 +34,7 @@ echo
 kernel http://${xs_mirror}/${xs_type}/boot/xen dom0_max_vcpus=1-2 dom0_mem=752M,max:752M com1=115200,8n1 console=com1,vga
 module http://${xs_mirror}/${xs_type}/boot/vmlinuz xencons=hvc console=hvc0 console=tty0 install 
 module http://${xs_mirror}/${xs_type}/install.img
+prompt Please notate http repo above and press any key to continue...
 boot
 goto hypervisor_menu
 

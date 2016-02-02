@@ -3,7 +3,7 @@
 # Mageia Operating System
 # http://www.mageia.org/
 
-goto ${menu}
+goto ${menu} ||
 
 :mageia
 set os Mageia
@@ -28,4 +28,4 @@ boot || goto mageia
 
 :mageia_exit
 clear menu
-chain linux.ipxe
+exit 0
