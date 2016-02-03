@@ -8,6 +8,22 @@ set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
 set cls ${cls:string}
 :ignore_cls
 
+:version_check
+set latest_version 1.03
+echo ${cls}
+iseq ${version} ${latest_version} && goto version_up2date ||
+echo
+echo Updated version of netboot.xyz is available:
+echo
+echo Running version.....${version}
+echo Updated version.....${latest_version}
+echo
+echo Please download the latest version from netboot.xyz.
+echo
+echo Attempting to chain to latest version...
+chain --autofree http://${boot_domain}/ipxe/netboot.xyz-dhcp-undionly.kpxe ||
+:version_up2date
+
 isset ${arch} && goto skip_arch_detect ||
 cpuid --ext 29 && set arch x86_64 || set arch i386
 :skip_arch_detect
