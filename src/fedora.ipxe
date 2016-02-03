@@ -14,12 +14,8 @@ menu Fedora ${arch}
 item 23 ${os} 23
 item 22 ${os} 22
 item 21 ${os} 21
-item 20 ${os} 20
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
-iseq ${osversion} 20 && goto legacy_sku ||
-iseq ${osversion} 19 && goto legacy_sku ||
-iseq ${osversion} 18 && goto legacy_sku ||
 goto product_sku
 
 :product_sku
@@ -31,10 +27,6 @@ isset ${sku_type} || choose sku_type || goto fedora
 set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
 set ova ${ova} ${sku_type}
 echo ${cls}
-goto boottype
-
-:legacy_sku
-set dir fedora/releases/${osversion}/${os}/${arch}/os
 goto boottype
 
 :boottype
@@ -59,7 +51,7 @@ goto boot
 
 :boot
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} ${netcfg} || goto change_mirror
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} || goto change_mirror
 initrd http://${mirror}/${dir}/images/pxeboot/initrd.img ||
 boot || 
 goto linux_menu
