@@ -17,12 +17,8 @@ goto change_menu
 
 :change_menu
 chain ${menu}.ipxe || goto error
-goto hypervisor_exit
+goto hypervisor_menu
 
 :hypervisor_exit
 clear menu
 exit 0
-
-:xenserver
-chain xenserver.ipxe
-goto hypervisor_menu
