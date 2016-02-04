@@ -53,7 +53,7 @@ item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
-
+item sig_check ${space} Signature Checks [ enabled: ${sigs_enabled} ]
 isset ${menu} && set timeout 0 || set timeout 300000
 choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
@@ -110,6 +110,10 @@ goto main_menu
 
 :changebits
 iseq ${arch} x86_64 && set arch i386 || set arch x86_64
+goto main_menu
+
+:sig_check
+iseq ${sigs_enabled} true && set sigs_enabled false || set sigs_enabled true
 goto main_menu
 
 :nbxyz-custom
