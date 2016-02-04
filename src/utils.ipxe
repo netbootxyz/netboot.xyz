@@ -6,6 +6,7 @@ item avg ${space} AVG Rescue CD
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
+item grml ${space} Grml
 item hdt ${space} Hardware Detection Tool
 item memtest_420 ${space} Memtest86+ 4.20
 item memtest_501 ${space} Memtest86+ 5.01
@@ -46,6 +47,12 @@ boot || goto utils_exit
 set version 2.3.0
 kernel ${memdisk} iso raw
 initrd http://sourceforge.net/projects/dban/files/dban/dban-${version}/dban-${version}_i586.iso/download
+boot || goto utils_exit
+
+:grml
+set grml_version 2014.03
+kernel ${memdisk} iso raw
+initrd http://mirror.rit.edu/grml/grml64-full_${grml_version}.iso
 boot || goto utils_exit
 
 :gparted
