@@ -33,15 +33,10 @@ goto utils_exit
 :clonezilla
 set version 2.4.5-20
 iseq ${arch} x86_64 && set cz_arch amd64 || set cz_arch i686-pae
-set project clonezilla
-set iso ${project}_live_stable/${version}/${project}-live-${version}-${cz_arch}.iso
-set czurl http://sourceforge.net/projects/clonezilla/files/${iso}/download
-kernel ${memdisk} iso raw ${params}
-:retry
-iseq ${try} xxxxx && exit ||
-set try ${try}x
-initrd ${czurl} || goto retry
-boot || goto utils_exit
+kernel ${memdisk} iso raw
+initrd http://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/${version}/clonezilla-live-${version}-${cz_arch}.iso/download
+boot
+goto utils_exit
 
 :dban
 set version 2.3.0
@@ -57,15 +52,10 @@ boot || goto utils_exit
 
 :gparted
 set version 0.25.0-1
-set project gparted
-set iso ${project}-live-stable/${version}/${project}-live-${version}-amd64.iso
-set czurl http://sourceforge.net/projects/gparted/files/${iso}/download
-kernel ${memdisk} iso raw ${params}
-:retry
-iseq ${try} xxxxx && exit ||
-set try ${try}x
-initrd ${czurl} || goto retry
-boot || goto utils_exit
+kernel ${memdisk} iso raw
+initrd http://sourceforge.net/projects/gparted/files/gparted-live-stable/${version}/gparted-live-${version}-amd64.iso/download
+boot
+goto utils_exit
 
 :hdt
 kernel ${memdisk} iso raw
