@@ -1,6 +1,6 @@
 #!ipxe
 
-menu Utilities
+menu Utilities - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Utilities:
 item avg ${space} AVG Rescue CD
 item clonezilla ${space} Clonezilla
@@ -8,10 +8,9 @@ item dban ${space} DBAN
 item gparted ${space} GParted
 item grml ${space} Grml
 item hdt ${space} Hardware Detection Tool
-item memtest_420 ${space} Memtest86+ 4.20
-item memtest_501 ${space} Memtest86+ 5.01
-item netbootcd ${space} NetbootCD.us
-item partition_wizard ${space} Partition Wizard
+item memtest-420 ${space} Memtest86+ 4.20
+item memtest-501 ${space} Memtest86+ 5.01
+item partition-wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
 item --gap netboot.xyz tools:
@@ -25,50 +24,81 @@ chain ${menu}.ipxe || goto utils_exit
 goto utils_exit
 
 :avg
-kernel ${memdisk} iso raw
-initrd http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_150814a10442.iso
-boot
-goto utils_exit
+set util_path download.avg.com/filedir/inst/avg_arl_cdi_all_120_150814a10442.iso
+set util_file avg_arl_cdi_all_120_150814a10442.iso
+goto boot_memdisk
 
 :clonezilla
-set version 2.4.5-20
-iseq ${arch} x86_64 && set cz_arch amd64 || set cz_arch i686-pae
-kernel ${memdisk} iso raw
-initrd http://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/${version}/clonezilla-live-${version}-${cz_arch}.iso/download
-boot
-goto utils_exit
+set util_path sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/2.4.5-20/clonezilla-live-2.4.5-20-amd64.iso/download
+set util_file clonezilla-live-2.4.5-20-amd64.iso
+goto boot_memdisk
 
 :dban
-set version 2.3.0
-kernel ${memdisk} iso raw
-initrd http://sourceforge.net/projects/dban/files/dban/dban-${version}/dban-${version}_i586.iso/download
-boot || goto utils_exit
-
-:grml
-set grml_version 2014.03
-kernel ${memdisk} iso raw
-initrd http://mirror.rit.edu/grml/grml64-full_${grml_version}.iso
-boot || goto utils_exit
+set util_path sourceforge.net/projects/dban/files/dban/dban-2.3.0/dban-2.3.0_i586.iso/download
+set util_file dban-2.3.0_i586.iso
+goto boot_memdisk
 
 :gparted
-set version 0.25.0-1
-kernel ${memdisk} iso raw
-initrd http://sourceforge.net/projects/gparted/files/gparted-live-stable/${version}/gparted-live-${version}-amd64.iso/download
-boot
-goto utils_exit
+set util_path sourceforge.net/projects/gparted/files/gparted-live-stable/0.25.0-1/gparted-live-0.25.0-1-amd64.iso/download
+set util_file gparted-live-0.25.0-1-amd64.iso
+goto boot_memdisk
+
+:grml
+set util_path mirror.rit.edu/grml/grml64-full_2014.03.iso
+set util_file grml64-full_2014.03.iso
+goto boot_memdisk
 
 :hdt
+set util_path www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
+set util_file hdt-0.5.2.iso
+goto boot_memdisk
+
+:memtest-420
+set util_path boot.netboot.xyz/utils/memtest86-4.20.bin
+set util_file memtest86-4.20.bin
+goto boot_memtest
+
+:memtest-501
+set util_path boot.netboot.xyz/utils/memtest86-5.01.bin
+set util_file memtest86-5.01.bin
+goto boot_memtest
+
+:partition-wizard
+set util_path www.partitionwizard.com/download/pwfree91-x64.iso
+set util_file pwfree91-x64.iso
+goto boot_memdisk
+
+:pogostick
+set util_path pogostick.net/~pnh/ntpasswd/cd140201.zip
+set util_file cd140201.zip
+goto boot_memdisk
+
+:supergrub
+set util_path forja.cenatic.es/frs/download.php/file/1844/super_grub2_disk_hybrid_2.02s3.iso
+set util_file super_grub2_disk_hybrid_2.02s3.iso
+goto boot_memdisk
+
+:boot_memdisk
+imgfree
 kernel ${memdisk} iso raw
-initrd http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
+initrd http://${util_path}
+echo
+echo MD5sums:
+md5sum memdisk ${util_file}
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify memdisk ${sigs}memdisk.sig || goto error
+imgverify ${util_file} ${sigs}${menu}/${util_file}.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 goto utils_exit
 
-:memtest_420
-chain https://boot.netboot.xyz/utils/memtest86-4.20.bin && goto main_menu ||
-goto utils_exit
-
-:memtest_501
-chain https://boot.netboot.xyz/utils/memtest86-5.01.bin && goto main_menu ||
+:boot_memtest
+chain https://${util_kernel} && goto main_menu ||
 goto utils_exit
 
 :nbxyz-custom
@@ -80,30 +110,6 @@ echo Once your username is set, a custom option will appear on the main menu.
 echo
 echo -n Please enter your Github username: ${} && read github_user
 goto utils_exit 
-
-:netbootcd
-kernel http://netbootcd.us/downloads/6.4.1/vmlinuz
-initrd http://netbootcd.us/downloads/6.4.1/nbinit4.gz
-boot
-goto utils_exit
-
-:partition_wizard
-kernel ${memdisk} iso raw
-initrd http://www.partitionwizard.com/download/pwfree91-x64.iso
-boot
-goto utils_exit
-
-:pogostick
-kernel ${memdisk} iso raw
-initrd http://pogostick.net/~pnh/ntpasswd/cd140201.zip
-boot
-goto utils_exit
-
-:supergrub
-kernel ${memdisk} iso raw
-initrd https://forja.cenatic.es/frs/download.php/file/1844/super_grub2_disk_hybrid_2.02s3.iso
-boot
-goto utils_exit
 
 :testdistro
 echo This option will allow you to test booting an ISO using memdisk. Please
