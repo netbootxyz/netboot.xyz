@@ -32,7 +32,7 @@ boot
 goto utils_exit
 
 :clonezilla
-set version 2.4.5-20
+set version 2.4.5-23
 iseq ${arch} x86_64 && set cz_arch amd64 || set cz_arch i686-pae
 kernel ${memdisk} iso raw
 initrd http://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/${version}/clonezilla-live-${version}-${cz_arch}.iso/download
