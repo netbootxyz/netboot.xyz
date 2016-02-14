@@ -8,7 +8,7 @@ goto ${menu}
 :debian
 set os Debian
 
-menu ${os} - ${arch_a}
+menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item jessie ${os} 8.0 (jessie)
 item wheezy ${os} 7.0 (wheezy)
 item squeeze ${os} 6.0 (squeeze)
@@ -58,6 +58,18 @@ imgfree
 echo Boot parameters: ${install_params} -- quiet ${params}
 kernel http://${mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params} initrd=initrd.gz
 initrd http://${mirror}/${dir}/initrd.gz
+echo
+echo MD5sums:
+md5sum linux initrd.gz
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify linux ${sigs}${dir}/linux.sig || goto error
+imgverify initrd.gz ${sigs}${dir}/initrd.gz.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 
 :debian_exit
