@@ -51,14 +51,10 @@ goto boot
 
 :boot
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} || goto change_mirror
-initrd http://${mirror}/${dir}/images/pxeboot/initrd.img ||
-boot || 
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params}
+initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+boot
 goto linux_menu
-
-:change_mirror
-chain --autofree mirrors.ipxe
-goto boot
 
 :linux_menu
 clear menu
