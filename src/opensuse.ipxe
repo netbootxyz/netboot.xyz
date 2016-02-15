@@ -10,13 +10,11 @@ item 13.1 openSUSE 13.1
 item 12.3 openSUSE 12.3
 item 12.2 openSUSE 12.2
 item 11.4 openSUSE 11.4
-item factory-tested openSUSE factory-tested
 item tumbleweed openSUSE tumbleweed
 choose version || goto opensuse_exit
 set dir opensuse/distribution/${version}/repo/oss
 iseq ${version} 42.1 && set dir opensuse/distribution/leap/42.1/repo/oss && set arch x86_64 ||
 iseq ${version} tumbleweed && set mirror download.opensuse.org && set dir ${version}/repo/oss ||
-iseq ${version} factory-tested && set dir ${version}/repo/oss/ ||
 
 imgfree
 kernel http://${mirror}/${dir}/boot/${arch}/loader/linux

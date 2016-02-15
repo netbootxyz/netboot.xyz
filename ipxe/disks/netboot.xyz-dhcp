@@ -5,7 +5,7 @@ set version 1.03
 echo netboot.xyz iPXE loader v${version}
 goto dhcp
 
-:dhcp  
+:dhcp
 dhcp || goto static
 goto menu
 
@@ -22,7 +22,7 @@ echo Attempting chainload of netboot.xyz...
 goto menu || goto failsafe
 
 :menu
-chain --autofree https://boot.netboot.xyz/menu.ipxe || echo HTTPS appears to have failed... attemping HTTP
+chain --autofree https://boot.netboot.xyz/menu.ipxe || echo HTTPS appears to have failed... attempting HTTP
 sleep 5
 chain --autofree http://boot.netboot.xyz/menu.ipxe || echo HTTP has failed, localbooting...
 goto boot

@@ -68,6 +68,7 @@ Full documentation is at ReadTheDocs:
 * [Partition Wizard](http://www.partitionwizard.com)
 * [Pogostick - Offline Windows Password and Registry Editor](http://pogostick.net/~pnh/ntpasswd)
 * [Super Grub2 Disk](http://www.supergrubdisk.org)
+* [Ultimate Boot CD](http://www.ultimatebootcd.com)
 
 #### Feedback
 

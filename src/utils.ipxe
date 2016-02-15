@@ -13,6 +13,7 @@ item memtest-501 ${space} Memtest86+ 5.01
 item partition-wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
+item ubcd ${space} Ultimate Boot CD (UBCD)
 item --gap netboot.xyz tools:
 item nbxyz-custom ${space} Set Github User [user: ${github_user}]
 item testdistro ${space} Test Distribution ISO
@@ -134,6 +135,12 @@ echo -n Specify branch name or hash ( i.e. my_feature or 30b7ca ): ${} && read g
 echo
 echo Attempting to chainload:
 chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe || echo Unable to find branch... && sleep 5 && goto utils_exit
+goto utils_exit
+
+:ubcd
+kernel ${memdisk} iso raw
+initrd http://mirror.sysadminguide.net/ubcd/ubcd535.iso
+boot
 goto utils_exit
 
 :utils_exit
