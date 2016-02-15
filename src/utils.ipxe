@@ -79,6 +79,11 @@ set util_path forja.cenatic.es/frs/download.php/file/1844/super_grub2_disk_hybri
 set util_file super_grub2_disk_hybrid_2.02s3.iso
 goto boot_memdisk
 
+:ubcd
+set util_path mirror.sysadminguide.net/ubcd/ubcd535.iso
+set util_file ubcd535.iso
+goto boot_memdisk
+
 :boot_memdisk
 imgfree
 kernel ${memdisk} iso raw
@@ -135,12 +140,6 @@ echo -n Specify branch name or hash ( i.e. my_feature or 30b7ca ): ${} && read g
 echo
 echo Attempting to chainload:
 chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe || echo Unable to find branch... && sleep 5 && goto utils_exit
-goto utils_exit
-
-:ubcd
-kernel ${memdisk} iso raw
-initrd http://mirror.sysadminguide.net/ubcd/ubcd535.iso
-boot
 goto utils_exit
 
 :utils_exit
