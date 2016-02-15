@@ -10,7 +10,7 @@ clear osversion
 clear sku_type
 clear ova
 set os Fedora
-menu Fedora ${arch}
+menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 23 ${os} 23
 item 22 ${os} 22
 item 21 ${os} 21
@@ -53,6 +53,18 @@ goto boot
 imgfree
 kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params}
 initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+echo
+echo MD5sums:
+md5sum vmlinuz initrd.img
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify vmlinuz ${sigs}${dir}/images/pxeboot/vmlinuz.sig || goto error
+imgverify initrd.img ${sigs}${dir}/images/pxeboot/initrd.img.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 goto linux_menu
 

@@ -7,7 +7,7 @@ goto ${menu} ||
 
 :kali
 set os Kali Linux
-menu ${os} ${arch_a}
+menu ${os} - ${arch_a} 
 item rolling ${os} Rolling Edition (2016.1)
 choose version || goto kali_exit
 
@@ -28,6 +28,9 @@ goto deb_boot
 imgfree
 kernel http://repo.kali.org/${dir}/linux vga=788 -- quiet
 initrd http://repo.kali.org/${dir}/initrd.gz
+echo
+echo MD5sums:
+md5sum linux initrd.gz
 boot
 
 :kali_exit

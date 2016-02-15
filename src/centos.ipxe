@@ -9,7 +9,7 @@ goto ${menu} ||
 clear osversion
 set os CentOS
 set ksdevice eth0
-menu ${os} ${arch}
+menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 7.2.1511 ${os} 7.2
 item 7.1.1503 ${os} 7.1
 item 7 ${os} 7.0
@@ -65,6 +65,18 @@ goto boottype
 imgfree
 kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg}
 initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+echo
+echo MD5sums:
+md5sum vmlinuz initrd.img
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify vmlinuz ${sigs}${dir}/images/pxeboot/vmlinuz.sig || goto error
+imgverify initrd.img ${sigs}${dir}/images/pxeboot/initrd.img.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 goto linux_menu
 

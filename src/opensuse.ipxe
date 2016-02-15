@@ -3,7 +3,7 @@
 # OpenSUSE Operating System
 # http://opensuse.org
 
-menu openSUSE ${arch}
+menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 42.1 openSUSE 42.1 (leap)
 item 13.2 openSUSE 13.2
 item 13.1 openSUSE 13.1
@@ -20,6 +20,19 @@ imgfree
 kernel http://${mirror}/${dir}/boot/${arch}/loader/linux
 initrd http://${mirror}/${dir}/boot/${arch}/loader/initrd
 imgargs linux netsetup=dhcp install=http://${mirror}/${dir} ${params} ${netcfg}
+echo
+echo MD5sums:
+md5sum linux initrd
+iseq ${img_sigs_enabled} true && iseq ${version} tumbleweed && goto skip_sigs ||
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify linux ${sigs}${dir}/boot/${arch}/loader/linux.sig || goto error
+imgverify initrd ${sigs}${dir}/boot/${arch}/loader/initrd.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 
 :opensuse_exit

@@ -7,7 +7,7 @@ goto ${menu} ||
 
 :mageia
 set os Mageia
-menu Mageia Installers ${arch}
+menu Mageia - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 5 ${os} 5
 item 4 ${os} 4
 item cauldron ${os} cauldron
@@ -24,6 +24,18 @@ imgfree
 kernel ${mirror}/${dir}/vmlinuz
 initrd ${mirror}/${dir}/all.rdz
 imgargs vmlinuz automatic=${automatic} vga=788 splash=silent
+echo
+echo MD5sums:
+md5sum vmlinuz all.rdz
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify vmlinuz ${sigs}${dir}/vmlinuz.sig || goto error
+imgverify all.rdz ${sigs}${dir}/all.rdz.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot || goto mageia
 
 :mageia_exit

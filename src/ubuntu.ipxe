@@ -9,7 +9,7 @@ goto ${menu}
 set os Ubuntu
 clear ubuntu_version
 set ubuntu_mirror ${mirror}
-menu ${os} Installers - ${arch_a}
+menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item wily ${space} ${os} 15.10 Wily Werewolf
 item vivid ${space} ${os} 15.04 Vivid Vervet 
@@ -22,6 +22,7 @@ iseq ${ubuntu_version} older_release && goto older_release ||
 goto mirrorcfg
 
 :older_release
+set older_release true
 set ubuntu_mirror old-releases.ubuntu.com
 echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
@@ -63,6 +64,19 @@ set dir ${dir}${menu}-installer/${arch_a}
 imgfree
 kernel http://${ubuntu_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params}
 initrd http://${ubuntu_mirror}/${dir}/initrd.gz
+echo
+echo MD5sums:
+md5sum linux initrd.gz
+iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify linux ${sigs}${dir}/linux.sig || goto error
+imgverify initrd.gz ${sigs}${dir}/initrd.gz.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 
 :ubuntu_exit
