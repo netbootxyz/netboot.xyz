@@ -45,6 +45,7 @@ Full documentation is at ReadTheDocs:
 * [FreeBSD](https://freebsd.org)
 * [Kali Linux](https://www.kali.org)
 * [Mageia](http://www.mageia.org)
+* [Manjaro](https://manjaro.github.io)
 * [OpenBSD](http://openbsd.org)
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)

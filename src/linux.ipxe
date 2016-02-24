@@ -12,6 +12,7 @@ item debian ${space} Debian
 item fedora ${space} Fedora
 item kali ${space} Kali Linux
 item mageia ${space} Mageia
+item manjaro ${space} Manjaro Linux
 item opensuse ${space} openSUSE
 item ubuntu ${space} Ubuntu
 item --gap All Others:

@@ -1,0 +1,25 @@
+#!ipxe
+
+# Manjaro Linux Operating System
+# https://manjaro.github.io/
+
+goto ${menu}
+
+:manjaro
+set os Manjaro Linux
+menu ${os} Installers
+item --gap ${os} 16.02
+item cinnamon ${space} ${os} 16.02 Cinnamon Minimal [ISO]
+choose version || goto manjaro_exit
+goto manjaro_boot
+
+:manjaro_boot
+iseq arch x86_64 && set arch_type x86_64 || set arch_type i686
+kernel ${memdisk} iso raw
+initrd https://sourceforge.net/projects/manjarolinux/files/community/Cinnamon/2016.02/${version}-minimal/${arch_type}/manjaro-${version}-minimal-16.02-${arch_type}.iso/download
+boot
+goto manjaro_exit
+
+:manjaro_exit
+clear menu
+exit 0
