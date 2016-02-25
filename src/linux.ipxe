@@ -22,7 +22,7 @@ item coreos ${space} CoreOS
 item rancheros ${space} RancherOS
 item scientific ${space} Scientific
 item slackware ${space} Slackware
-item tinycore ${space} TinyCoreLinux
+item tinycore ${space} Tiny Core Linux
 # Options
 item --gap Options:
 iseq ${arch} x86_64 && set bits 64 || set bits 32

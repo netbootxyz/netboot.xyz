@@ -50,7 +50,7 @@ Full documentation is at ReadTheDocs:
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)
 * [Scientific](http://scientificlinux.org)
-* [TinyCoreLinux](http://distro.ibiblio.org/tinycorelinux/)
+* [Tiny Core Linux](http://tinycorelinux.net)
 * [Ubuntu](http://www.ubuntu.com/)
 
 #### Hypervisors
