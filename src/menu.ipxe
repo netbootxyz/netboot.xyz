@@ -21,7 +21,7 @@ echo
 echo Please download the latest version from netboot.xyz.
 echo
 echo Attempting to chain to latest version...
-chain --autofree http://${boot_domain}/ipxe/netboot.xyz-dhcp-undionly.kpxe ||
+chain --autofree http://${boot_domain}/ipxe/netboot.xyz-dhcp.kpxe ||
 :version_up2date
 
 isset ${arch} && goto skip_arch_detect ||
