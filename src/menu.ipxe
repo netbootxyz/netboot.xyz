@@ -9,9 +9,9 @@ set cls ${cls:string}
 :ignore_cls
 
 :version_check
-set latest_version 1.03
+set latest_version 1.04
 echo ${cls}
-iseq ${version} 1.04 && goto version_up2date ||
+iseq ${version} 1.03 && goto version_up2date ||
 iseq ${version} ${latest_version} && goto version_up2date ||
 echo
 echo Updated version of netboot.xyz is available:
@@ -22,7 +22,7 @@ echo
 echo Please download the latest version from netboot.xyz.
 echo
 echo Attempting to chain to latest version...
-chain --autofree http://${boot_domain}/ipxe/netboot.xyz-dhcp-undionly.kpxe ||
+chain --autofree http://${boot_domain}/ipxe/netboot.xyz-undionly.kpxe ||
 :version_up2date
 
 isset ${arch} && goto skip_arch_detect ||
