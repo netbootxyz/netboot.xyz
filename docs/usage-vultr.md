@@ -6,9 +6,9 @@ netboot.xyz right out of the box.
 ### Boot from ISO
 
 Once you've logged into the console, select ISOs.  In the remote URLs box,
-enter in the URL of a netboot.xyz DHCP ISO and press upload:
+enter in the URL of a netboot.xyz ISO and press upload:
 
-    https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.iso
+    https://boot.netboot.xyz/ipxe/netboot.xyz.iso
 
 Go back to the main console screen and press "Deploy New Instance". Follow
 these steps:

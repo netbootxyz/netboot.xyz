@@ -4,8 +4,7 @@
 
 Download a netboot.xyz USB disk:
 
-* [dhcp](https://boot.netboot.xyz/ipxe/netboot.xyz-dhcp.usb) - Automatically detects your networking
-* [static](https://boot.netboot.xyz/ipxe/netboot.xyz-static.usb) - Prompts for manual entry of your networking information
+* [netboot.xyz](https://boot.netboot.xyz/ipxe/netboot.xyz.usb) 
 
 ### Creating USB Key on Linux
 
@@ -45,7 +44,7 @@ __Run:__
 
 __Execute:__
 
-    sudo dd if=netboot.xyz-dhcp.usb of=/dev/rdiskN bs=1m
+    sudo dd if=netboot.xyz.usb of=/dev/rdiskN bs=1m
 
 * Using /dev/rdisk instead of /dev/disk may be faster
 * If you see the error dd: Invalid number '1m', you are using GNU dd. Use the same command but replace bs=1m with bs=1M
