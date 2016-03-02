@@ -7,25 +7,44 @@ goto ${menu}
 
 :debian
 set os Debian
-
+clear debian_version
+clear older_release
+set debian_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
-item jessie ${os} 8.0 (jessie)
-item wheezy ${os} 7.0 (wheezy)
-item squeeze ${os} 6.0 (squeeze)
-item stretch ${os} stretch (testing)
-item sid ${os} sid (unstable) 
-choose version || goto debian_exit
-set mirrorcfg mirror/suite=${version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/debian
+item --gap Latest Releases
+item jessie ${space} ${os} 8.0 (jessie)
+item wheezy ${space} ${os} 7.0 (wheezy)
+item --gap Testing Releases
+item stretch ${space} ${os} stretch (testing)
+item sid ${space} ${os} sid (unstable) 
+item --gap Older Releases
+item older_release ${space} Set release codename...
+choose debian_version || goto debian_exit
+iseq ${debian_version} older_release && goto older_release ||
+goto mirrorcfg
+
+:older_release
+set older_release true
+set debian_mirror archive.debian.org
+echo Setting mirror to ${debian_mirror}
+clear debian_version
+echo -n Please set enter code name of release: ${} && read debian_version
+set dir debian/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+goto deb_boot_type
+
+:mirrorcfg
+set mirrorcfg mirror/suite=${debian_version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/debian
+set dir debian/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+goto deb_boot_type
 
 :deb_boot_type
-set dir debian/dists/${version}/main/installer-${arch_a}/current/images/netboot/
-
-menu ${os} boot parameters
-item text ${os} text based install
-item graphical ${os} graphical based install
-item rescue ${os} rescue mode 
-item expert ${os} expert install
-item preseed ${os} specify preseed url
+menu ${os} [${debian_version}] Installer
+item --gap Install types
+item text ${space} Text Based Install
+item graphical ${space} Graphical Based Install
+item rescue ${space} Rescue Mode
+item expert ${space} Expert Install
+item preseed ${space} Specify preseed url...
 choose --default ${type} type || goto debian
 
 echo ${cls}
@@ -40,7 +59,7 @@ set install_params priority=low
 goto deb_text
 
 :deb_preseed
-echo -n Specify preseed URL for ${os} ${version}: && read preseedurl
+echo -n Specify preseed URL for ${os} ${debian_version}: && read preseedurl
 set install_params auto=true priority=critical preseed/url=${preseedurl}
 goto deb_text
 
@@ -56,11 +75,12 @@ goto deb_boot
 :deb_boot
 imgfree
 echo Boot parameters: ${install_params} -- quiet ${params}
-kernel http://${mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params} initrd=initrd.gz
-initrd http://${mirror}/${dir}/initrd.gz
+kernel http://${debian_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} -- quiet ${params} initrd=initrd.gz
+initrd http://${debian_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
+iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
