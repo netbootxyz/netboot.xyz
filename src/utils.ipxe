@@ -45,8 +45,8 @@ set util_file gparted-live-0.25.0-3-amd64.iso
 goto boot_memdisk
 
 :grml
-set util_path mirror.rit.edu/grml/grml64-full_2014.03.iso
-set util_file grml64-full_2014.03.iso
+set util_path daily.grml.org/grml64-small_testing/2016-03-24_06-01-08/grml64-small_testing_build1572.iso
+set util_file grml64-small_testing_build1572.iso
 goto boot_memdisk
 
 :hdt
