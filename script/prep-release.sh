@@ -98,7 +98,7 @@ done
 mv sigs src/
 
 # delete index.html so that we don't overwrite existing content type
-rm src/index.html
+#rm src/index.html
 
 # copy iPXE src code into build directory
 cp -R src/* build/
