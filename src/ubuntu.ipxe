@@ -15,6 +15,7 @@ item wily ${space} ${os} 15.10 Wily Werewolf
 item vivid ${space} ${os} 15.04 Vivid Vervet 
 item trusty ${space} ${os} 14.04 LTS Trusty Tahr
 item precise ${space} ${os} 12.04 LTS Precise Pangolin
+item xenial ${space} ${os} 16.04 LTS Xenial Xerus Beta 
 item --gap Older Releases
 item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
@@ -67,6 +68,7 @@ initrd http://${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
+iseq ${ubuntu_version} xenial && echo skipping signature check for xenial beta && goto skip_sigs
 iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
