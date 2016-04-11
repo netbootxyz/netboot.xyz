@@ -26,7 +26,7 @@ item Workstation ${ova} Workstation
 item Cloud_Atomic ${ova} Cloud Atomic
 isset ${sku_type} || choose sku_type || goto fedora
 set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
-iseq ${osversion} 24 && && set mirror mirrors.kernel.org && set dir fedora/releases/test/${osversion}_Alpha/${sku_type}/${arch}/os
+iseq ${osversion} 24 && set mirror mirrors.kernel.org && set dir fedora/releases/test/${osversion}_Alpha/${sku_type}/${arch}/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
