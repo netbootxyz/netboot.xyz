@@ -58,7 +58,7 @@ initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img
-iseq ${osversion} 24 && echo skipping signature check for 24 Alpha && goto skip_sigs 
+iseq ${osversion} 24 && echo skipping signature check for 24 Alpha && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
