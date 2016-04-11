@@ -68,7 +68,7 @@ initrd http://${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
-iseq ${ubuntu_version} xenial && echo skipping signature check for xenial beta && goto skip_sigs
+iseq ${ubuntu_version} xenial && echo skipping signature check for xenial beta && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
