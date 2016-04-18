@@ -11,10 +11,12 @@ clear sku_type
 clear ova
 set os Fedora
 menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
-item 23 ${os} 23
-item 22 ${os} 22
-item 21 ${os} 21
-item 24 ${os} 24 Alpha
+item --gap Latest Releases
+item 23 ${space} ${os} 23
+item 22 ${space} ${os} 22
+item 21 ${space} ${os} 21
+item --gap Pre-Releases
+item 24 ${space} ${os} 24 Alpha
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
