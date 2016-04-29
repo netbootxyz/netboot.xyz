@@ -102,3 +102,6 @@ rm src/index.html
 
 # copy iPXE src code into build directory
 cp -R src/* build/
+
+# generate mkdocs
+mkdocs build
