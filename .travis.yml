@@ -5,7 +5,7 @@ before_install:
 - tar xvf script/secrets.tar -C script/
 - sudo apt-get update -qq
 - sudo apt-get install -qq binutils-dev genisoimage liblzma-dev syslinux
-- pip install mkdocs
+- sudo pip install mkdocs
 script:
 - "./script/prep-release.sh"
 deploy:
