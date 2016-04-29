@@ -8,8 +8,6 @@ before_install:
 - pip install mkdocs
 script:
 - "./script/prep-release.sh"
-before_deploy:
-- cd build
 deploy:
   - provider: s3
     access_key_id:
