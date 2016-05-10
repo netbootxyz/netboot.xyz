@@ -16,7 +16,7 @@ item 23 ${space} ${os} 23
 item 22 ${space} ${os} 22
 item 21 ${space} ${os} 21
 item --gap Pre-Releases
-item 24 ${space} ${os} 24 Alpha
+item 24 ${space} ${os} 24 Beta
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
@@ -28,7 +28,7 @@ item Workstation ${ova} Workstation
 item Cloud_Atomic ${ova} Cloud Atomic
 isset ${sku_type} || choose sku_type || goto fedora
 set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
-iseq ${osversion} 24 && set mirror mirrors.kernel.org && set dir fedora/releases/test/${osversion}_Alpha/${sku_type}/${arch}/os ||
+iseq ${osversion} 24 && set mirror mirrors.kernel.org && set dir fedora/releases/test/${osversion}_Beta/${sku_type}/${arch}/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
@@ -60,7 +60,7 @@ initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img
-iseq ${osversion} 24 && echo skipping signature check for 24 Alpha && goto skip_sigs ||
+iseq ${osversion} 24 && echo skipping signature check for 24 Beta && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
