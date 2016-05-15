@@ -10,8 +10,8 @@ iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 # BSD based systems
 item --gap BSD Based Operating Systems
 item freebsd ${space} FreeBSD
-item openbsd ${space} OpenBSD
 item mirbsd ${space} MirBSD (i386 only)
+item openbsd ${space} OpenBSD
 
 # Options
 item --gap Options:
@@ -38,12 +38,3 @@ exit 0
 :changebits
 iseq ${arch} x86_64 && set arch i386 || set arch x86_64
 goto bsd_menu
-
-#XXX image signature verification missing, how to add?
-:mirbsd
-imgfree
-kernel https://www.mirbsd.org/MirOS/current/bsd4me.com
-module https://www.mirbsd.org/MirOS/current/bsd4me.rd
-module https://www.mirbsd.org/MirOS/webstuff/netboot.xyz/boot.cfg
-boot
-goto bsd_exit
