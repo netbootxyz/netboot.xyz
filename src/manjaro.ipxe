@@ -8,15 +8,29 @@ goto ${menu}
 :manjaro
 set os Manjaro Linux
 menu ${os} Installers
-item --gap ${os} 16.02
-item cinnamon ${space} ${os} 16.02 Cinnamon Minimal [ISO]
-choose version || goto manjaro_exit
+item --gap Official Releases
+item 16.06-rc1 ${space} ${os} 16.06-rc1
+choose manjaro_version || goto manjaro_exit
+
+:manjaro_flavor
+menu ${os} ${manjaro_version} Installer
+item --gap Flavors
+item xfce ${manjaro_version} XFCE
+item kde ${manjaro_version} KDE
+item net ${manjaro_version} Net-Edition
+choose --default ${type} flavor || goto manjaro
+echo ${cls}
+goto mirror_cfg
+
+:mirror_cfg
+set flavor_root ${flavor}
+iseq ${flavor} net && set flavor_root netinstall ||
+set manjaro_initrd http://sourceforge.net/projects/manjarolinux/files/release/${manjaro_version}/${flavor_root}/manjaro-${flavor}-16.06-rc1-x86_64.iso/download
 goto manjaro_boot
 
 :manjaro_boot
-iseq arch x86_64 && set arch_type x86_64 || set arch_type i686
 kernel ${memdisk} iso raw
-initrd https://sourceforge.net/projects/manjarolinux/files/community/Cinnamon/2016.02/${version}-minimal/${arch_type}/manjaro-${version}-minimal-16.02-${arch_type}.iso/download
+initrd ${manjaro_initrd}
 boot
 goto manjaro_exit
 
