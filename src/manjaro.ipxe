@@ -9,7 +9,7 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 16.06-rc2 ${space} ${os} 16.06-rc2
+item 16.06 ${space} ${os} 16.06
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
