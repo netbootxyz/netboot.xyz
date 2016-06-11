@@ -6,17 +6,38 @@
 goto ${menu} ||
 
 :archlinux
+set os Arch Linux
+clear arch_version
+menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 menu Arch Linux
-item arch Arch Linux Graphical Menu
-item arch_text Arch Linux Text Menu
-choose version || goto archlinux_exit
+item --gap Latest Releases
+item 2016.06.01 2016.06.01
+item 2016.05.01 2016.05.01
+item 2016.04.01 2016.04.01
+choose arch_version || goto archlinux_exit
 goto boot
 
 :boot
 imgfree
-set 209:string cfg/${version}.cfg
-set 210:string http://releng.archlinux.org/pxeboot/boot/
-chain ${210:string}pxelinux.0 || goto linux_menu
+iseq ${arch} i386 && set bootarch i686 || set bootarch x86_64
+set dir archlinux/iso/${arch_version}/arch/boot
+set params initrd=archiso.img archiso_http_srv=http://${mirror}/archlinux/iso/${arch_version}/ archisobasedir=arch verify=y ip=dhcp net.ifnames=0
+kernel http://${mirror}/${dir}/${bootarch}/vmlinuz ${params}
+initrd http://${mirror}/${dir}/${bootarch}/archiso.img
+echo
+echo MD5sums:
+md5sum vmlinuz archiso.img
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify vmlinuz ${sigs}${dir}/${bootarch}/vmlinuz.sig || goto error
+imgverify archiso.img ${sigs}${dir}/${bootarch}/archiso.img.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
+boot
+goto archlinux_exit
 
 :archlinux_exit
 clear menu
