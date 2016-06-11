@@ -11,7 +11,6 @@ set cls ${cls:string}
 :version_check
 set latest_version 1.04
 echo ${cls}
-iseq ${version} 1.03 && goto version_up2date ||
 iseq ${version} ${latest_version} && goto version_up2date ||
 echo
 echo Updated version of netboot.xyz is available:
