@@ -15,7 +15,7 @@ pages:
     - 'TFTP': 'boot-tftp.md'
     - 'USB': 'boot-usb.md'
 #    - 'Virtual Box': 'boot-vbox.md'
-#    - 'VMware': 'boot-vmware.md'
+    - 'VMware': 'boot-vmware.md'
 - Provider Usage:
     - 'Digital Ocean': 'usage-digitalocean.md'
     - 'Rackspace': 'usage-rackspace.md'
