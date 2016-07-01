@@ -1,4 +1,4 @@
-### Digital Ocean
+# Digital Ocean
 
 [Digital Ocean](https://m.do.co/c/ab4e8f17ba0d) at one point had iPXE support loaded within their SeaBIOS but has since removed it.  In order to get around this, we'll have to rely on the Grub bootloader instead.
 
@@ -6,13 +6,11 @@ iPXE generates linux bootable kernels so that you can boot iPXE directly from Gr
 
 Tests were done using a [Fedora 23](https://getfedora.org) instance on [Digital Ocean](https://m.do.co/c/ab4e8f17ba0d).
 
-### Booting from Grub2
-
-#### Download an iPXE linux kernel
+### Download an iPXE linux kernel
 
 Obtain an iPXE generic kernel [here](https://boot.netboot.xyz/ipxe/generic-ipxe.lkrn) or [compile your own](http://ipxe.org/download) and save it to /boot/generic-ipxe.lkrn.
 
-#### Create a netboot.xyz initrd file
+### Create a netboot.xyz initrd file
 
 The netboot.xyz initrd file contains the script necessary to bring the instance on the network and reach out to netboot.xyz.
 
@@ -28,7 +26,7 @@ Save as /boot/netboot.xyz-initrd (replace your networking information where appr
     ifopen net0
     chain --autofree https://boot.netboot.xyz
 
-#### Add a Grub2 custom entry
+### Add a Grub2 custom entry
 
 Add the following entry to /etc/grub.d/40_custom:
 
@@ -39,7 +37,7 @@ Add the following entry to /etc/grub.d/40_custom:
         initrd16 /boot/netboot.xyz-initrd
     }
 
-#### Regenerate your grub config
+### Regenerate your grub config
 
 Run grub2-mkconfig right after editing the configuration to add the netboot.xyz entry to your grub menu:
 

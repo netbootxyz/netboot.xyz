@@ -1,4 +1,4 @@
-## netboot.xyz 
+# netboot.xyz 
 [![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
 
 ![netboot.xyz menu](img/netboot.xyz.gif)

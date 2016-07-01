@@ -1,4 +1,4 @@
-### Vultr
+# Vultr
 
 [Vultr](http://www.vultr.com/?ref=6870843) has some great support for using
 netboot.xyz right out of the box.

@@ -1,6 +1,6 @@
-### iPXE
+# iPXE
 
-#### NIC with Embedded iPXE
+### NIC with Embedded iPXE
 
 If you've already compiled your own iPXE, you can load up the netboot.xyz menu easily by entering CTRL-B when prompted setting DHCP and then chainloading iPXE:
 

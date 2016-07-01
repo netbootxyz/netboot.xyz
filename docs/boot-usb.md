@@ -1,4 +1,4 @@
-### Booting from a USB Key
+# Booting from a USB Key
 
 *Warning: Backup your important data before using USB as it will overwrite anything on the USB key.*
 
@@ -6,7 +6,7 @@ Download a netboot.xyz USB disk:
 
 * [netboot.xyz](https://boot.netboot.xyz/ipxe/netboot.xyz.usb) 
 
-### Creating USB Key on Linux
+## Creating USB Key on Linux
 
 Insert a USB key in your compute and find the device name. Then use following command:
 
@@ -20,7 +20,7 @@ where sdX is your usb drive.
 
 The USB key should be ready to eject once finished.
 
-### Creating USB Key on OS X
+### Creating USB Key on MacOS
 
 __Run:__
 

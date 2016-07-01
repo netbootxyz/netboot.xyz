@@ -1,10 +1,10 @@
-## Boot from VMware 
+# Boot from VMware 
 
 ### VMware Fusion
 
 These instructions are for setting up netboot.xyz in a VM on VMware's Fusion for MacOS.
 
-#### Create the VM
+### Create the VM
 
 * Add a new virtual machine.
 * Select "Install from disc or image".
@@ -15,7 +15,7 @@ These instructions are for setting up netboot.xyz in a VM on VMware's Fusion for
 
 This will create your VM.  
 
-#### Running the VM
+### Running the VM
 
 _You'll need to adjust the memory settings of the VM to ensure you'll have enough memory to run the OS installers in memory.  Typically it's good to bump the memory up to 2GB to 4GB._
 
