@@ -11,6 +11,7 @@ iseq ${arch} x86_64 && set sbits 64 || clear sbits
 
 menu ${os}
 item current ${os} Current
+item 14.2 ${os} 14.2
 item 14.1 ${os} 14.1
 item --key o other Choose other version [o]
 choose version || exit 0
