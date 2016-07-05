@@ -51,8 +51,9 @@ item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
-item sig_check ${space} netboot.xyz Signature Checks [ enabled: ${sigs_enabled} ]
-item img_sigs_check ${space} Image Signature Checks [ enabled: ${img_sigs_enabled} ]
+item --gap Signature Checks:
+item sig_check ${space} netboot.xyz [ enabled: ${sigs_enabled} ]
+item img_sigs_check ${space} Images [ enabled: ${img_sigs_enabled} ]
 isset ${github_user} && item --gap Custom Menu: ||
 isset ${github_user} && item nbxyz-custom ${space} ${github_user}'s Custom Menu ||
 isset ${menu} && set timeout 0 || set timeout 300000
