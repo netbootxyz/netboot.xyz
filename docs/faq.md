@@ -21,3 +21,13 @@ You can do a quick check by loading up netboot.xyz in a virtual environment bare
     boot
 
 That should load the ISO and if you make it all the way into the installer, great, your OS may work.  If it fails during initramfs load trying to load the CD device, then it has the issue of not being able to find the ISO in memory.
+
+### Can I create my own configurations?
+
+Yes!  You can fork [netboot.xyz-custom](https://github.com/antonym/netboot.xyz-custom) and create your own menu.  You can then set your Github user from the Utility menu and your menu will show up in the main menu.  If you don't want to set your user every time, you can custom compile the netboot.xyz iPXE code and include your github_user during the compile.  This allows you to create your own menu without the maintenance of everything else.
+
+### What are some good resources for learning more about network booting?
+
+* [The iPXE Project](http://ipxe.org/)
+* [NetworkBoot.org](http://networkboot.org/)
+* [Syslinux Project](http://www.syslinux.org/wiki/index.php?title=The_Syslinux_Project)
