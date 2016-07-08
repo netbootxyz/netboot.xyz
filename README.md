@@ -20,7 +20,7 @@ SHA256 checksums are generated during each build of iPXE and are located [here](
 
 ### What is netboot.xyz?
 
-[netboot.xyz](http://www.netboot.xyz) is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the OS you want along with any specific types of versions or bootable flags.
+[netboot.xyz](http://www.netboot.xyz) is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the operating system you want along with any specific types of versions or bootable flags.
 
 If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
 
@@ -72,7 +72,7 @@ Full documentation is at ReadTheDocs:
 
 #### Feedback
 
-Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on github or follow us on [twitter](https://twitter.com/netbootxyz).  We're also on [Freenode IRC](http://freenode.net/) in [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz). 
+Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github or swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel.  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
 
 #### Testing New Branches
 

@@ -19,7 +19,7 @@ SHA256 checksums are generated during each build of iPXE and are located [here](
 
 ### What is netboot.xyz?
 
-[netboot.xyz](http://netboot.xyz) is a way to select various operating system installers or utilities from one place within the BIOS without the need of having to go retrieve the media to run the tool.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the OS you want along with any specific types of versions or bootable flags.
+[netboot.xyz](http://netboot.xyz) is a way to select various operating system installers or utilities from one place within the BIOS without the need of having to go retrieve the media to run the tool.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the operating system you want along with any specific types of versions or bootable flags.
 
 You can remote attach the ISO to servers, set it up as a rescue option in Grub, or even set up your home network to boot to it by default so that it's always available.
 
@@ -80,7 +80,7 @@ The source code for netboot.xyz is located [here](https://github.com/antonym/net
 
 ### Contributing
 
-New version of an OS out?  Found a new OS that works well with iPXE?  Pull requests are welcomed and encouraged and helps me out a ton!  Feel free to issue a pull request for new versions or tools that you might find useful.  Once merged into master, [Travis CI](https://travis-ci.org/antonym/netboot.xyz) will regenerate new versions of [iPXE from upstream](https://github.com/ipxe/ipxe) and deploy the latest changes to netboot.xyz.
+New version of an operating system out?  Found one that network boots well with iPXE?  Pull requests are welcomed and encouraged and helps me out a ton!  Feel free to issue a pull request for new versions or tools that you might find useful.  Once merged into master, [Travis CI](https://travis-ci.org/antonym/netboot.xyz) will regenerate new versions of [iPXE from upstream](https://github.com/ipxe/ipxe) and deploy the latest changes to netboot.xyz.
 
 ### Testing New Branches
 
@@ -88,4 +88,4 @@ Under the Utilities menu on netboot.xyz, there's an option for ["Test netboot.xy
 
 ### Feedback
 
-Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on github or follow us on [twitter](https://twitter.com/netbootxyz).  We're also on [Freenode IRC](http://freenode.net/) in [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz).
+Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github or swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel.  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
