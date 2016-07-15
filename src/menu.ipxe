@@ -47,6 +47,7 @@ item linux ${space} Linux Installers
 item bsd ${space} BSD Installers
 item freedos ${space} FreeDOS Installers
 item hypervisor ${space} Hypervisor Installers
+item windows ${space} Windows Installers
 item --gap Tools:
 item utils ${space} Utilities
 item shell ${space} iPXE shell
