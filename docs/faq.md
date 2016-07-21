@@ -13,7 +13,7 @@ From [syslinux - memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK): The m
 
 You can read more about my thoughts and possible solutions [here](https://www.reversengineered.com/2016/01/07/booting-linux-isos-with-memdisk-and-ipxe/).
 
-### My distribution uses ISOs for delivery, how can I see if they work?
+## My distribution uses ISOs for delivery, how can I see if they work?
 You can do a quick check by loading up netboot.xyz in a virtual environment baremetal.  Make sure you have plenty of RAM as you are loading the ISO into RAM.  Then select the iPXE command line and enter the following;
 
     kernel https://boot.netboot.xyz/memdisk iso raw
@@ -22,11 +22,11 @@ You can do a quick check by loading up netboot.xyz in a virtual environment bare
 
 That should load the ISO and if you make it all the way into the installer, great, your OS may work.  If it fails during initramfs load trying to load the CD device, then it has the issue of not being able to find the ISO in memory.
 
-### Can I create my own configurations?
+## Can I create my own configurations?
 
 Yes!  You can fork [netboot.xyz-custom](https://github.com/antonym/netboot.xyz-custom) and create your own menu.  You can then set your Github user from the Utility menu and your menu will show up in the main menu.  If you don't want to set your user every time, you can custom compile the netboot.xyz iPXE code and include your github_user during the compile.  This allows you to create your own menu without the maintenance of everything else.
 
-### What are some good resources for learning more about network booting?
+## What are some good resources for learning more about network booting?
 
 * [The iPXE Project](http://ipxe.org/)
 * [NetworkBoot.org](http://networkboot.org/)
