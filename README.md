@@ -41,6 +41,7 @@ Full documentation is at ReadTheDocs:
 * [Debian](https://debian.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
+* [Gentoo](https://gentoo.org)
 * [Kali Linux](https://www.kali.org)
 * [Mageia](http://www.mageia.org)
 * [Manjaro Linux](https://manjaro.github.io)

@@ -45,6 +45,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [Debian](https://debian.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
+* [Gentoo](https://gentoo.org)
 * [Kali Linux](https://www.kali.org)
 * [Mageia](http://www.mageia.org)
 * [Manjaro Linux](https://manjaro.github.io)
