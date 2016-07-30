@@ -24,10 +24,6 @@ item rancheros ${space} RancherOS
 item scientific ${space} Scientific
 item slackware ${space} Slackware
 item tinycore ${space} Tiny Core Linux
-# Options
-item --gap Options:
-iseq ${arch} x86_64 && set bits 64 || set bits 32
-item changebits ${space} Architecture: ${arch} (${bits}bit)
 choose menu || goto linux_exit
 echo ${cls}
 goto ${menu} ||
@@ -44,7 +40,3 @@ goto linux_menu
 :linux_exit
 clear menu
 exit 0
-
-:changebits
-iseq ${arch} x86_64 && set arch i386 || set arch x86_64
-goto linux_menu
