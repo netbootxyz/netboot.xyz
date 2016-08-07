@@ -46,6 +46,13 @@ initrd ${win_base_url}/${win_arch}/bootmgr bootmgr
 initrd ${win_base_url}/${win_arch}/boot/bcd bcd
 initrd ${win_base_url}/${win_arch}/boot/boot.sdi boot.sdi
 initrd ${win_base_url}/${win_arch}/sources/boot.wim boot.wim
+md5sum wimboot
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking wimboot signature...
+imgverify wimboot ${sigs}/wimboot.sig || goto error
+:skip_sigs
 boot
 
 :windows_exit
