@@ -14,6 +14,7 @@ item memtest-501 ${space} Memtest86+ 5.01
 item partition-wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
+item sysrcd ${space} SystemRescueCD
 item ubcd ${space} Ultimate Boot CD (UBCD)
 item --gap netboot.xyz tools:
 item nbxyz-custom ${space} Set Github User [user: ${github_user}]
@@ -82,9 +83,30 @@ set util_file cd140201.zip
 goto boot_memdisk
 
 :supergrub
-set util_path https://sourceforge.net/projects/supergrub2/files/2.02s4/super_grub2_disk_hybrid_2.02s4.iso/download
+set util_path sourceforge.net/projects/supergrub2/files/2.02s4/super_grub2_disk_hybrid_2.02s4.iso/download
 set util_file super_grub2_disk_hybrid_2.02s4.iso
 goto boot_memdisk
+
+:sysrcd
+set sysrcdpath sourceforge.net/projects/netboot-xyz/files/distros/sysresccd-x86/4.8.1
+kernel --name altker64 https://${sysrcdpath}/altker64/download setkmap=no net.ifnames=0 backstore=off
+initrd --name initram.igz https://${sysrcdpath}/initram.igz/download
+initrd --name sysrcd.dat https://${sysrcdpath}/sysrcd.dat/download /sysrcd.dat
+echo
+echo MD5sums:
+md5sum altker64 initram.igz sysrcd.dat
+iseq ${img_sigs_enabled} true && goto verify_sigs_sysrcd || goto skip_sigs_sysrcd
+:verify_sigs_sysrcd
+echo
+echo Checking signatures...
+imgverify altker64 ${sigs}${menu}/altker64.sig || goto error
+imgverify initram.igz ${sigs}${menu}/initram.igz.sig || goto error
+imgverify sysrcd.dat ${sigs}${menu}/sysrcd.dat.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs_sysrcd
+boot
+goto utils_exit
 
 :ubcd
 set util_path mirror.sysadminguide.net/ubcd/ubcd535.iso
