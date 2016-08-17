@@ -51,7 +51,7 @@ iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
 echo Checking wimboot signature...
-imgverify wimboot ${sigs}/wimboot.sig || goto error
+imgverify wimboot ${sigs}wimboot.sig || goto error
 :skip_sigs
 boot
 
