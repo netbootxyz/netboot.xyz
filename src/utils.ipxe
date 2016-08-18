@@ -82,7 +82,7 @@ set util_file cd140201.zip
 goto boot_memdisk
 
 :supergrub
-set util_path https://sourceforge.net/projects/supergrub2/files/2.02s4/super_grub2_disk_hybrid_2.02s4.iso/download
+set util_path sourceforge.net/projects/supergrub2/files/2.02s4/super_grub2_disk_hybrid_2.02s4.iso/download
 set util_file super_grub2_disk_hybrid_2.02s4.iso
 goto boot_memdisk
 
