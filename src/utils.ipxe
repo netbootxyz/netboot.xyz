@@ -133,7 +133,7 @@ boot
 goto utils_exit
 
 :boot_memtest
-chain https://${util_kernel} && goto main_menu ||
+chain https://${util_path} && goto main_menu ||
 goto utils_exit
 
 :nbxyz-custom
