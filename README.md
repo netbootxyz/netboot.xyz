@@ -36,6 +36,7 @@ Full documentation is at ReadTheDocs:
 * [Antergos](https://antergos.com)
 * [Arch Linux](https://www.archlinux.org)
 * [Architect Linux](http://sourceforge.net/projects/architect-linux)
+* [BlackArch Linux](https://blackarch.org)
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)
