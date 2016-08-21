@@ -10,7 +10,6 @@ item archlinux ${space} Arch Linux
 item centos ${space} CentOS 
 item debian ${space} Debian
 item fedora ${space} Fedora
-item kali ${space} Kali Linux
 item mageia ${space} Mageia
 item manjaro ${space} Manjaro Linux
 item opensuse ${space} openSUSE
@@ -18,7 +17,6 @@ item ubuntu ${space} Ubuntu
 item --gap All Others:
 item antergos ${space} Antergos
 item architect ${space} Architect Linux
-item blackarch ${space} BlackArch Linux
 item coreos ${space} CoreOS
 item gentoo ${space} Gentoo Linux
 item rancheros ${space} RancherOS
