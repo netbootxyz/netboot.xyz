@@ -38,16 +38,15 @@ set space ${space:string}
 iseq ${arch} i386 && set arch5 i586 || set arch5 ${arch}
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 menu ${site_name}
-
 item --gap Default:
 item local ${space} Boot from local hdd
-
-item --gap Installers:
-item linux ${space} Linux Installers
-item bsd ${space} BSD Installers
-item freedos ${space} FreeDOS Installers
-item hypervisor ${space} Hypervisor Installers
-item windows ${space} Windows Installers
+item --gap Distributions:
+item linux ${space} Linux Installs
+item bsd ${space} BSD Installs
+item freedos ${space} FreeDOS
+item hypervisor ${space} Hypervisor Installs
+item security ${space} Security Related
+item windows ${space} Windows
 item --gap Tools:
 item utils ${space} Utilities
 iseq ${arch} x86_64 && set bits 64 || set bits 32
