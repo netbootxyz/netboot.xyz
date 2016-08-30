@@ -25,7 +25,7 @@ You can remote attach the ISO to servers, set it up as a rescue option in Grub, 
 
 ### Getting started
 
-Download the bootloader of your choice from the links above and add it to your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](https://github.com/ipxe/ipxe) that will chainload you to [https://boot.netboot.xyz](https://boot.netboot.xyz).  There are two versions of each, one if you have DHCP on your network, and one if you have to set a static IP before connecting outside of your network.
+Download the bootloader of your choice from the links above and add it to your favorite virtualization tool to start testing out netboot.xyz.  These are precompiled versions of the latest version of [iPXE](https://github.com/ipxe/ipxe) that will chainload you to [https://boot.netboot.xyz](https://boot.netboot.xyz).  If you have DHCP it'll automatically attempt to boot from DHCP.  If you need to set a static IP address, hit the 'm' key during boot up for the failsafe menu and choose manual network configuration.
 
 If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
 
