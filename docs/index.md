@@ -1,5 +1,5 @@
 # netboot.xyz 
-[![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
+[![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)[![Gitter](https://badges.gitter.im/antonym/netboot.xyz.svg)](https://gitter.im/antonym/netboot.xyz?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ![netboot.xyz menu](img/netboot.xyz.gif)
 
@@ -92,4 +92,4 @@ Under the Utilities menu on netboot.xyz, there's an option for ["Test netboot.xy
 
 ### Feedback
 
-Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github or swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel.  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
+Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github, swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel, or ping us on [Gitter](https://gitter.im/antonym/netboot.xyz?utm_source=share-link&utm_medium=link&utm_campaign=share-link).  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
