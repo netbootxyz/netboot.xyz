@@ -36,14 +36,12 @@ Full documentation is at ReadTheDocs:
 * [Antergos](https://antergos.com)
 * [Arch Linux](https://www.archlinux.org)
 * [Architect Linux](http://sourceforge.net/projects/architect-linux)
-* [BlackArch Linux](https://blackarch.org)
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
 * [Gentoo](https://gentoo.org)
-* [Kali Linux](https://www.kali.org)
 * [Mageia](http://www.mageia.org)
 * [Manjaro Linux](https://manjaro.github.io)
 * [Microsoft Windows](https://www.microsoft.com)
@@ -58,6 +56,12 @@ Full documentation is at ReadTheDocs:
 #### Hypervisors
 
 * [Citrix XenServer](http://xenserver.org)
+
+#### Security Related
+
+* [BlackArch Linux](https://blackarch.org)
+* [Kali Linux](https://www.kali.org)
+* [Parrot Security](https://www.parrotsec.org)
 
 #### Utilities
 
