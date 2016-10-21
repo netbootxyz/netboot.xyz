@@ -1,0 +1,25 @@
+#!ipxe
+
+# Parrot Security Linux
+# https://www.parrotsec.org
+
+goto ${menu}
+
+:parrotsec
+set os Parrot Security
+menu ${os} Installers
+item --gap Official Releases
+item 3.2 ${space} ${os} 3.2 Netinstall
+choose parrotsec_version || goto parrotsec_exit
+goto parrotsec_boot
+
+:parrotsec_boot
+set parrotsec_initrd http://cloudflare.archive.parrotsec.org/parrot/pool/iso/netinstall/parrot-netinst-${parrotsec_version}-amd64.iso
+kernel ${memdisk} iso raw
+initrd ${parrotsec_initrd}
+boot
+goto parrotsec_exit
+
+:parrotsec_exit
+clear menu
+exit 0
