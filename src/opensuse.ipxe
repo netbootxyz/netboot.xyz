@@ -4,16 +4,17 @@
 # http://opensuse.org
 
 menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
-item 42.1 openSUSE 42.1 (leap)
+item 42.2 openSUSE 42.2
+item 42.1 openSUSE 42.1
 item 13.2 openSUSE 13.2
 item 13.1 openSUSE 13.1
 item 12.3 openSUSE 12.3
 item 12.2 openSUSE 12.2
-item 11.4 openSUSE 11.4
 item tumbleweed openSUSE tumbleweed
 choose version || goto opensuse_exit
 set dir opensuse/distribution/${version}/repo/oss
 iseq ${version} 42.1 && set dir opensuse/distribution/leap/42.1/repo/oss && set arch x86_64 ||
+iseq ${version} 42.2 && set dir opensuse/distribution/leap/42.2/repo/oss && set arch x86_64 ||
 iseq ${version} tumbleweed && set mirror download.opensuse.org && set dir ${version}/repo/oss ||
 
 imgfree
