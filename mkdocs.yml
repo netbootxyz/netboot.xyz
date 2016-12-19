@@ -22,4 +22,3 @@ pages:
     - 'Vultr': 'usage-vultr.md'
 - FAQ: 'faq.md'
 theme: yeti
-use_directory_urls: false
