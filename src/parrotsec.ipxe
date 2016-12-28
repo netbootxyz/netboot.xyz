@@ -9,7 +9,7 @@ goto ${menu}
 set os Parrot Security
 menu ${os} Installers
 item --gap Official Releases
-item 3.2 ${space} ${os} 3.2 Netinstall
+item 3.3 ${space} ${os} 3.3 Netinstall
 choose parrotsec_version || goto parrotsec_exit
 goto parrotsec_boot
 
