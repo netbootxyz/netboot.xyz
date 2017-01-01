@@ -14,18 +14,15 @@ menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item 25 ${space} ${os} 25
 item 24 ${space} ${os} 24
-item 23 ${space} ${os} 23
-item 22 ${space} ${os} 22
-item 21 ${space} ${os} 21
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
 
 :product_sku
 menu ${os} ${arch} sku type
+item Everything ${ova} Everything
 item Server ${ova} Server
 item Workstation ${ova} Workstation
-item Cloud_Atomic ${ova} Cloud Atomic
 isset ${sku_type} || choose sku_type || goto fedora
 set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
 set ova ${ova} ${sku_type}
