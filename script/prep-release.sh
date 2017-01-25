@@ -53,6 +53,17 @@ do
   mv bin/undionly.kpxe ../../build/ipxe/$ipxe_config-undionly.kpxe
 done
 
+# generate netboot.xyz iPXE disk for Google Compute Engine
+for ipxe_config in `ls ../../ipxe/disks/`
+do
+  make bin/ipxe.usb CONFIG=cloud EMBED=../../ipxe/disks/$ipxe_config \
+  TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+  error_check
+  cp -f bin/ipxe.usb disk.raw
+  tar Sczvf $ipxe_config-GCE.tar.gz disk.raw
+  mv $ipxe_config-GCE.tar.gz ../../build/ipxe/$ipxe_config-GCE.tar.gz
+done
+
 # generate EFI iPXE disks
 for ipxe_config in `ls ../../ipxe/disks/`
 do
