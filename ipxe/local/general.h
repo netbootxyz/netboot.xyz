@@ -3,7 +3,7 @@
 #define IMAGE_COMBOOT         /* COMBOOT */
 #define IMAGE_TRUST_CMD	      /* Image trust management commands */
 #define NET_PROTO_IPV6        /* IPv6 protocol */
-#define REBOOT_CMD            /* Reboot command */
-#define VLAN_CMD              /* VLAN commands */
 #define NSLOOKUP_CMD          /* DNS resolving command */
 #define NTP_CMD               /* NTP commands */
+#define REBOOT_CMD            /* Reboot command */
+#define VLAN_CMD              /* VLAN commands */
