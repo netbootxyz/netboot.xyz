@@ -5,5 +5,5 @@
 #define NET_PROTO_IPV6        /* IPv6 protocol */
 #define REBOOT_CMD            /* Reboot command */
 #define VLAN_CMD              /* VLAN commands */
-#define NSLOOKUP_CMD	      /* DNS resolving command */
+#define NSLOOKUP_CMD          /* DNS resolving command */
 #define NTP_CMD               /* NTP commands */
