@@ -6,17 +6,16 @@
 :freedos_menu
 menu FreeDOS
 item --gap FreeDOS
-item freedos_install ${space} FreeDOS 1.1 Source Install
-choose --default ${menu} menu || goto freedos_exit
+item FD12FULL ${space} FreeDOS 1.2 Full Installer
+item FD12LITE ${space} FreeDOS 1.2 Lite Installer
+choose freedos_version || goto freedos_exit
 echo ${cls}
-goto ${menu} ||
-chain ${menu}.ipxe || goto freedos_exit
-goto freedos_exit
+goto freedos_install || goto freedos_exit
 
 :freedos_install
 imgfree
-kernel ${memdisk} iso raw
-initrd http://www.freedos.org/download/download/fd11src.iso
+kernel ${memdisk}
+initrd http://www.freedos.org/download/download/${freedos_version}.zip
 boot
 
 :freedos_exit
