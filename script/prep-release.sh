@@ -40,38 +40,31 @@ mv bin/ipxe.kpxe ../../build/ipxe/generic-ipxe.kpxe
 mv bin/undionly.kpxe ../../build/ipxe/generic-undionly.kpxe
 
 # generate netboot.xyz iPXE disks
-for ipxe_config in `ls ../../ipxe/disks/`
-do 
-  make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
-  EMBED=../../ipxe/disks/$ipxe_config TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-  error_check
-  mv bin/ipxe.dsk ../../build/ipxe/$ipxe_config.dsk
-  mv bin/ipxe.iso ../../build/ipxe/$ipxe_config.iso
-  mv bin/ipxe.lkrn ../../build/ipxe/$ipxe_config.lkrn
-  mv bin/ipxe.usb ../../build/ipxe/$ipxe_config.usb
-  mv bin/ipxe.kpxe ../../build/ipxe/$ipxe_config.kpxe
-  mv bin/undionly.kpxe ../../build/ipxe/$ipxe_config-undionly.kpxe
+make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
+EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+error_check
+mv bin/ipxe.dsk ../../build/ipxe/netboot.xyz.dsk
+mv bin/ipxe.iso ../../build/ipxe/netboot.xyz.iso
+mv bin/ipxe.lkrn ../../build/ipxe/netboot.xyz.lkrn
+mv bin/ipxe.usb ../../build/ipxe/netboot.xyz.usb
+mv bin/ipxe.kpxe ../../build/ipxe/netboot.xyz.kpxe
+mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-undionly.kpxe
 done
 
 # generate netboot.xyz iPXE disk for Google Compute Engine
-for ipxe_config in `ls ../../ipxe/disks/`
-do
-  make bin/ipxe.usb CONFIG=cloud EMBED=../../ipxe/disks/$ipxe_config \
-  TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-  error_check
-  cp -f bin/ipxe.usb disk.raw
-  tar Sczvf $ipxe_config-GCE.tar.gz disk.raw
-  mv $ipxe_config-GCE.tar.gz ../../build/ipxe/$ipxe_config-GCE.tar.gz
+make bin/ipxe.usb CONFIG=cloud EMBED=../../ipxe/disks/netboot.xyz \
+TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+error_check
+cp -f bin/ipxe.usb disk.raw
+tar Sczvf netboot.xyz-gce.tar.gz disk.raw
+mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
 done
 
 # generate EFI iPXE disks
-for ipxe_config in `ls ../../ipxe/disks/`
-do
-  cp config/local/general.h.efi config/local/general.h
-  make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/$ipxe_config
-  error_check
-  mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/$ipxe_config.efi
-done
+cp config/local/general.h.efi config/local/general.h
+make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/netboot.xyz
+error_check
+mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
 
 # return to root
 cd ../..
