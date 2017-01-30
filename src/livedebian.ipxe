@@ -15,13 +15,13 @@ choose livedebian_version || goto livedebian_exit
 :livedebian_flavor
 menu ${os} ${livedebian_version}
 item --gap Flavors
-item cinnamon ${livedebian_version} Cinnamon
-item gnome ${livedebian_version} Gnome
-item kde ${livedebian_version} KDE
-item lxde ${livedebian_version} LXDE
-item mate ${livedebian_version} MATE
-item standard ${livedebian_version} Standard
-item xfce ${livedebian_version} XFCE
+item cinnamon ${space} ${livedebian_version} Cinnamon
+item gnome ${space} ${livedebian_version} Gnome
+item kde ${space} ${livedebian_version} KDE
+item lxde ${space} ${livedebian_version} LXDE
+item mate ${space} ${livedebian_version} MATE
+item standard ${space} ${livedebian_version} Standard
+item xfce ${space} ${livedebian_version} XFCE
 choose --default ${type} flavor || goto livedebian
 echo ${cls}
 goto livedebian_boot
