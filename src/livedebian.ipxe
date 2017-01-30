@@ -1,0 +1,43 @@
+#!ipxe
+
+# Debian Live
+# https://www.debian.org/devel/debian-live/
+
+goto ${menu}
+
+:livedebian
+set os Debian Live
+menu ${os}
+item --gap Versions
+item 8.7.1 ${space} ${os} 8.7.1
+choose livedebian_version || goto livedebian_exit
+
+:livedebian_flavor
+menu ${os} ${livedebian_version}
+item --gap Flavors
+item cinnamon ${livedebian_version} Cinnamon
+item gnome ${livedebian_version} Gnome
+item kde ${livedebian_version} KDE
+item lxde ${livedebian_version} LXDE
+item mate ${livedebian_version} MATE
+item standard ${livedebian_version} Standard
+item xfce ${livedebian_version} XFCE
+choose --default ${type} flavor || goto livedebian
+echo ${cls}
+goto livedebian_boot
+
+:livedebian_boot
+set webboot_host mirrors.kernel.org
+set livedebian_url http://${webboot_host}/debian-cd/${livedebian_version}-live/amd64/webboot/debian-live-${livedebian_version}-amd64-${flavor}-desktop
+imgfree
+kernel ${livedebian_url}.vmlinuz boot=live config hooks=filesystem username=live noeject fetch=${livedebian_url}.squashfs initrd=debian-live-${livedebian_version}-amd64-${flavor}-desktop.initrd.img
+module ${livedebian_url}.initrd.img
+# used to resolve DNS
+module http://${boot_domain}/live-helpers/debian/libresolv.so.2 /lib/libresolv.so.2
+module http://${boot_domain}/live-helpers/debian/libnss_dns.so.2 /lib/libnss_dns.so.2
+boot
+goto livedebian_exit
+
+:livedebian_exit
+clear menu
+exit 0
