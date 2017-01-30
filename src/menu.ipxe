@@ -45,6 +45,7 @@ item linux ${space} Linux Installs
 item bsd ${space} BSD Installs
 item freedos ${space} FreeDOS
 item hypervisor ${space} Hypervisor Installs
+item live ${space} Live Boot
 item security ${space} Security Related
 item windows ${space} Windows
 item --gap Tools:
