@@ -20,7 +20,7 @@ goto ${gentoo_version}
 set gentoopath https://sourceforge.net/projects/netboot-xyz/files/distros/gentoo/amd64/20160204
 echo Please note the gentoo ISO has been regenerated to work with iPXE
 echo using the method here: http://blog.dastrup.com/?p=12
-kernel --name gentoo-kernel ${gentoopath}/kernel/download root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/
+kernel --name gentoo-kernel ${gentoopath}/kernel/download root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ ${console}
 initrd --name gentoo-initrd.img ${gentoopath}/initrd/download
 boot
 goto gentoo

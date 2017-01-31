@@ -47,7 +47,7 @@ goto bootos_images
 
 :bootos_images
 imgfree
-kernel http://ftp1.scientificlinux.org/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg}
+kernel http://ftp1.scientificlinux.org/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console}
 initrd http://ftp1.scientificlinux.org/${dir}/images/pxeboot/initrd.img
 boot
 goto linux_menu

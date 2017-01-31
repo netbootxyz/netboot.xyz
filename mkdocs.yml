@@ -18,6 +18,7 @@ pages:
     - 'VMware': 'boot-vmware.md'
 - Provider Usage:
     - 'Digital Ocean': 'usage-digitalocean.md'
+    - 'Google Compute Engine': 'usage-gce.md'
     - 'Rackspace': 'usage-rackspace.md'
     - 'Vultr': 'usage-vultr.md'
 - FAQ: 'faq.md'
