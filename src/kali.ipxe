@@ -26,7 +26,7 @@ goto deb_boot
 
 :deb_boot
 imgfree
-kernel http://repo.kali.org/${dir}/linux vga=788 -- quiet
+kernel http://repo.kali.org/${dir}/linux vga=788 ${console} -- quiet
 initrd http://repo.kali.org/${dir}/initrd.gz
 echo
 echo MD5sums:
