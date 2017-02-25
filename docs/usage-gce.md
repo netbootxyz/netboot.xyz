@@ -1,5 +1,7 @@
 # Google Compute Engine (GCE)
 
+## Using with netboot.xyz
+
 **Experimental, currently doesn't work on any images that utilize memdisk as console output cannot be altered.**
 
 *Note: Functionality will be limited as the console is Serial Over Lan.  Distros that utilize memdisk may not provide output while other distros that are retrieved via kernel allow for altering of the console settings during load.  This includes most of the utility tools.  I'll probably look at filtering out options that don't work in the future.  Console may work during the install but may stop working on first boot if it's not set during the install.*
@@ -49,3 +51,27 @@ To create a usable image for GCE:
 To get the installers to work to output serial, when the GCE disk is detected, the console on the kernel command line is set to:
 
     console=ttyS0,115200n8
+
+## Using without netboot.xyz (standard iPXE)
+
+When building your script, you will want it to look something like this:
+
+    #!ipxe
+
+    echo Google Compute Engine - iPXE boot via metadata
+    ifstat ||
+    dhcp ||
+    route ||
+    chain -ar http://metadata.google.internal/computeMetadata/v1/instance/attributes/ipxeboot
+
+Then when provisioning your instance, you can specify your custom iPXE script file:
+
+    # Create shared boot image
+    make bin/ipxe.usb CONFIG=cloud EMBED=config/cloud/gce.ipxe
+
+    # Configure per-instance boot script
+    gcloud compute instances add-metadata <instance> \
+           --metadata-from-file ipxeboot=boot.ipxe
+
+This lets your custom compiled iPXE boot and then immediately chain to your
+custom iPXE script.
