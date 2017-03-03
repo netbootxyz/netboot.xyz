@@ -11,7 +11,6 @@ set os CentOS
 set ksdevice eth0
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 7.3.1611 ${os} 7.3
-item 7.2.1511 ${os} 7.2
 item 6.8 ${os} 6.8
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
