@@ -5,9 +5,10 @@ chain --autofree boot.cfg ||
 iseq ${cls} serial && goto ignore_cls ||
 set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
 set cls ${cls:string}
+set ipxe_disk netboot.xyz-undionly.kpxe
 :ignore_cls
 iseq ${ipxe_cloud_config} gce && set console console=ttyS0,115200n8 || goto version_check
-iseq ${ipxe_cloud_config} packet && set console console=ttyS1,115200n8 || goto version_check
+iseq ${ipxe_cloud_config} packet && set console console=ttyS1,115200n8 && set ipxe_disk netboot.xyz-packet.kpxe || goto version_check
 
 :version_check
 set latest_version 1.04
@@ -22,7 +23,7 @@ echo
 echo Please download the latest version from netboot.xyz.
 echo
 echo Attempting to chain to latest version...
-chain --autofree http://${boot_domain}/ipxe/netboot.xyz-undionly.kpxe ||
+chain --autofree http://${boot_domain}/ipxe/${ipxe_disk} ||
 :version_up2date
 
 isset ${arch} && goto skip_arch_detect ||
