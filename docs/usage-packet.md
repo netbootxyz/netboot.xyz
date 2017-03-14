@@ -25,6 +25,12 @@ deployed, e.g. `ewr1`.
 The current list of facilities is [here](https://www.packet.net/locations/). The
 netboot.xyz iPXE menu will appear and you can complete installation from there.
 
+> **Please Note:** By default, devices are set to boot from the local disk. During
+> provisioning, Packet sets the next boot to PXE. This happens once, which means that
+> if you don't install an operating system before rebooting, it won't reload the
+> netboot.xyz menu and you may be forced to delete the device and reprovision using
+> Custom iPXE.
+
 ### Networking
 
 Devices that are provisioned via Custom iPXE will be able to DHCP for the life of
