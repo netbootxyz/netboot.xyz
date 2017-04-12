@@ -2,6 +2,7 @@
 
 menu Utilities - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Utilities:
+item alt_linux_rescue ${space} ALT Linux Rescue
 item avg ${space} AVG Rescue CD
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
@@ -25,6 +26,17 @@ echo ${cls}
 goto ${menu} ||
 chain ${menu}.ipxe || goto utils_exit
 goto utils_exit
+
+:alt_linux_rescue
+iseq ${arch} x86_64 && goto alt_linux_rescue_x64 ||
+set util_path nightly.altlinux.org/sisyphus/tested/regular-rescue-latest-i586.iso
+set util_file regular-rescue-latest-i586.iso
+goto boot_memdisk
+
+:alt_linux_rescue_x64
+set util_path nightly.altlinux.org/sisyphus/tested/regular-rescue-latest-x86_64.iso
+set util_file regular-rescue-latest-x86_64.iso
+goto boot_memdisk
 
 :avg
 set util_path download.avg.com/filedir/inst/avg_arl_cdi_all_120_150814a10442.iso
