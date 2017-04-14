@@ -29,13 +29,13 @@ goto utils_exit
 
 :alt_linux_rescue
 iseq ${arch} x86_64 && goto alt_linux_rescue_x64 ||
-set util_path nightly.altlinux.org/sisyphus/tested/regular-rescue-latest-i586.iso
-set util_file regular-rescue-latest-i586.iso
+set util_path nightly.altlinux.org/p8/release/alt-p8-rescue-20170312-i586.iso
+set util_file alt-p8-rescue-20170312-i586.iso
 goto boot_memdisk
 
 :alt_linux_rescue_x64
-set util_path nightly.altlinux.org/sisyphus/tested/regular-rescue-latest-x86_64.iso
-set util_file regular-rescue-latest-x86_64.iso
+set util_path nightly.altlinux.org/p8/release/alt-p8-rescue-20170312-x86_64.iso
+set util_file alt-p8-rescue-20170312-x86_64.iso
 goto boot_memdisk
 
 :avg
