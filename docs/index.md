@@ -69,6 +69,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 
 #### Utilities
 
+* [ALT Linux Rescue](https://en.altlinux.org/Rescue)
 * [AVG Rescue CD](http://www.avg.com/us-en/avg-rescue-cd)
 * [Clonezilla](http://www.clonezilla.org/)
 * [DBAN](http://www.dban.org/)
