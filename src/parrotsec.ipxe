@@ -9,12 +9,12 @@ goto ${menu}
 set os Parrot Security
 menu ${os} Installers
 item --gap Official Releases
-item 3.3 ${space} ${os} 3.3 Netinstall
+item stable ${space} ${os} Stable Netinstall
 choose parrotsec_version || goto parrotsec_exit
 goto parrotsec_boot
 
 :parrotsec_boot
-set parrotsec_initrd http://cloudflare.archive.parrotsec.org/parrot/pool/iso/netinstall/parrot-netinst-${parrotsec_version}-amd64.iso
+set parrotsec_initrd https://mirrordirector.archive.parrotsec.org/parrot/dists/${parrotsec_version}/main/installer-${arch_a}/current/images/netboot/mini.iso
 kernel ${memdisk} iso raw
 initrd ${parrotsec_initrd}
 boot
