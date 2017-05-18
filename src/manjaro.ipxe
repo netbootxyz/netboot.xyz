@@ -9,7 +9,7 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 17.0 ${space} ${os} 17.0
+item 17.0.1 ${space} ${os} 17.0.1
 item net ${space} ${os} 16.08 Net Install
 choose manjaro_version || goto manjaro_exit
 
