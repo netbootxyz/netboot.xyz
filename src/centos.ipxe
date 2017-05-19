@@ -11,10 +11,10 @@ set os CentOS
 set ksdevice eth0
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 7.3.1611 ${os} 7.3
-item 6.8 ${os} 6.8
+item 6.9 ${os} 6.9
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
-iseq ${osversion} 6.8 && set dir ${menu}/${osversion}/os/${arch} ||
+iseq ${osversion} 6.9 && set dir ${menu}/${osversion}/os/${arch} ||
 set dir ${menu}/${osversion}/os/x86_64
 set repo http://${mirror}/${dir}
 goto boottype
