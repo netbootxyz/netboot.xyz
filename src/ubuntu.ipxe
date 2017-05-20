@@ -34,7 +34,7 @@ set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/n
 goto deb_boot_type
 
 :mirrorcfg
-set mirrorcfg mirror/suite=${ubuntu_version} mirror/country=manual mirror/http/hostname=${ubuntu_mirror} mirror/http/directory=/ubuntu
+set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
 
 :deb_boot_type
