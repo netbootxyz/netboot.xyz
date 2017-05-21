@@ -55,8 +55,9 @@ set util_file dban-2.3.0_i586.iso
 goto boot_memdisk
 
 :gparted
-set util_path sourceforge.net/projects/gparted/files/gparted-live-stable/0.26.0-1/gparted-live-0.26.0-1-amd64.iso/download
-set util_file gparted-live-0.26.0-1-amd64.iso
+set gparted_version 0.28.1-1
+set util_path sourceforge.net/projects/gparted/files/gparted-live-stable/${gparted_version}/gparted-live-${gparted_version}-amd64.iso/download
+set util_file gparted-live-${gparted_version}-amd64.iso
 goto boot_memdisk
 
 :grml-full
