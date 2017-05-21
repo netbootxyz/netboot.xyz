@@ -50,8 +50,9 @@ set util_file clonezilla-live-${clonezilla_version}-amd64.iso
 goto boot_memdisk
 
 :dban
-set util_path sourceforge.net/projects/dban/files/dban/dban-2.3.0/dban-2.3.0_i586.iso/download
-set util_file dban-2.3.0_i586.iso
+set dban_version 2.3.0
+set util_path sourceforge.net/projects/dban/files/dban/dban-${dban_version}/dban-${dban_version}_i586.iso/download
+set util_file dban-${dban_version}_i586.iso
 goto boot_memdisk
 
 :gparted
