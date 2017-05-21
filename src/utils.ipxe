@@ -39,8 +39,9 @@ set util_file alt-p8-rescue-20170312-x86_64.iso
 goto boot_memdisk
 
 :avg
-set util_path download.avg.com/filedir/inst/avg_arl_cdi_all_120_150814a10442.iso
-set util_file avg_arl_cdi_all_120_150814a10442.iso
+set avg_version 160420a12074
+set util_path download.avg.com/filedir/inst/avg_arl_cdi_all_120_${avg_version}.iso
+set util_file avg_arl_cdi_all_120_${avg_version}.iso
 goto boot_memdisk
 
 :clonezilla
