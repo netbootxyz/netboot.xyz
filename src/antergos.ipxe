@@ -7,7 +7,7 @@ goto ${menu}
 
 :antergos
 set os Antergos
-set antergos_version 17.1
+set antergos_version 17.5
 menu ${os} Installers
 item x86_64 ${space} ${os} ${antergos_version} Minimal 64bit [ISO]
 choose antergos_arch || goto antergos_exit

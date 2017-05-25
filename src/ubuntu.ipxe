@@ -11,6 +11,7 @@ clear ubuntu_version
 set ubuntu_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item zesty ${space} ${os} 17.04 Zesty Zapus
 item yakkety ${space} ${os} 16.10 Yakkety Yak
 item xenial ${space} ${os} 16.04 LTS Xenial Xerus
 item wily ${space} ${os} 15.10 Wily Werewolf
@@ -33,7 +34,7 @@ set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/n
 goto deb_boot_type
 
 :mirrorcfg
-set mirrorcfg mirror/suite=${ubuntu_version} mirror/country=manual mirror/http/hostname=${ubuntu_mirror} mirror/http/directory=/ubuntu
+set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
 
 :deb_boot_type

@@ -33,7 +33,7 @@ set dir debian/dists/${debian_version}/main/installer-${arch_a}/current/images/n
 goto deb_boot_type
 
 :mirrorcfg
-set mirrorcfg mirror/suite=${debian_version} mirror/country=manual mirror/http/hostname=${mirror} mirror/http/directory=/debian
+set mirrorcfg mirror/suite=${debian_version}
 set dir debian/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
 goto deb_boot_type
 
