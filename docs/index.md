@@ -43,6 +43,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)
+* [Devuan](https://devuan.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
 * [Gentoo](https://gentoo.org)
