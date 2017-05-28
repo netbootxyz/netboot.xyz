@@ -39,6 +39,7 @@ Full documentation is at ReadTheDocs:
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)
+* [Devuan](https://devuan.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
 * [Gentoo](https://gentoo.org)

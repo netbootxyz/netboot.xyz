@@ -1,0 +1,84 @@
+#!ipxe
+
+# Devuan Operating System
+# http://www.devuan.org
+
+goto ${menu}
+
+:devuan
+set os Devuan
+clear devuan_version
+clear older_release
+set devuan_mirror auto.mirror.devuan.org
+menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
+item --gap Latest Releases
+item jessie ${space} ${os} 1.0 (jessie)
+item --gap Testing Releases
+item stretch ${space} ${os} ascii (testing)
+item sid ${space} ${os} ceres (unstable) 
+choose devuan_version || goto devuan_exit
+goto mirrorcfg
+
+:mirrorcfg
+set mirrorcfg mirror/suite=${devuan_version}
+set dir devuan/dists/${devuan_version}/main/installer-${arch_a}/current/images/netboot/
+goto devuan_boot_type
+
+:devuan_boot_type
+menu ${os} [${devuan_version}] Installer
+item --gap Install types
+item text ${space} Text Based Install
+item graphical ${space} Graphical Based Install
+item rescue ${space} Rescue Mode
+item expert ${space} Expert Install
+item preseed ${space} Specify preseed url...
+choose --default ${type} type || goto devuan
+
+echo ${cls}
+goto devuan_${type}
+
+:devuan_rescue
+set install_params rescue/enable=true
+goto devuan_text
+
+:devuan_expert
+set install_params priority=low
+goto devuan_text
+
+:devuan_preseed
+echo -n Specify preseed URL for ${os} ${devuan_version}: && read preseedurl
+set install_params auto=true priority=critical preseed/url=${preseedurl}
+goto devuan_text
+
+:devuan_text
+set dir ${dir}debian-installer/${arch_a}
+goto devuan_boot
+
+:devuan_graphical
+set dir ${dir}gtk/debian-installer/${arch_a}
+set install_params vga=788
+goto devuan_boot
+
+:devuan_boot
+imgfree
+echo Boot parameters: ${install_params} -- quiet ${params}
+kernel http://${devuan_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} ${console} -- quiet ${params} initrd=initrd.gz
+initrd http://${devuan_mirror}/${dir}/initrd.gz
+echo
+echo MD5sums:
+md5sum linux initrd.gz
+iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify linux ${sigs}${dir}/linux.sig || goto error
+imgverify initrd.gz ${sigs}${dir}/initrd.gz.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
+boot
+
+:devuan_exit
+clear menu
+exit 0
