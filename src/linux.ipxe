@@ -16,7 +16,6 @@ item opensuse ${space} openSUSE
 item ubuntu ${space} Ubuntu
 item --gap All Others:
 item antergos ${space} Antergos
-item architect ${space} Architect Linux
 item coreos ${space} CoreOS
 item devuan ${space} Devuan
 item gentoo ${space} Gentoo Linux

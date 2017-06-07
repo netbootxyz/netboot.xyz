@@ -40,7 +40,6 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 
 * [Antergos](https://antergos.com)
 * [Arch Linux](https://www.archlinux.org)
-* [Architect Linux](http://sourceforge.net/projects/architect-linux)
 * [CentOS](https://centos.org)
 * [CoreOS](https://coreos.com/)
 * [Debian](https://debian.org)
