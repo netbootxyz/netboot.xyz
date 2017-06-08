@@ -1,0 +1,51 @@
+#!ipxe
+
+# Grml Live Linux
+# https://grml.org
+
+goto ${menu}
+
+:livegrml
+set os Grml Live Linux
+menu ${os}
+item --gap Versions
+item grml-full ${space} ${os} 2017.05 Full
+item grml-small ${space} ${os} 2017.05 Small
+choose livegrml_version || goto livegrml_exit
+echo ${cls}
+goto ${livegrml_version} ||
+chain ${menu}.ipxe || goto livegrml_exit
+goto livegrml_exit
+
+:grml-full
+set util_path download.grml.org/grml64-full_2017.05.iso
+set util_file grml64-full_2017.05.iso
+goto boot_memdisk
+
+:grml-small
+set util_path download.grml.org/grml64-small_2017.05.iso
+set util_file grml64-small_2017.05.iso
+goto boot_memdisk
+
+:boot_memdisk
+imgfree
+kernel ${memdisk} iso raw
+initrd --name ${util_file} http://${util_path}
+echo
+echo MD5sums:
+md5sum memdisk ${util_file}
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify memdisk ${sigs}memdisk.sig || goto error
+imgverify ${util_file} ${sigs}${menu}/${util_file}.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
+boot
+goto livegrml_exit
+
+:livegrml_exit
+clear menu
+exit 0
