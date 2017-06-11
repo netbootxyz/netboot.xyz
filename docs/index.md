@@ -1,5 +1,5 @@
 # netboot.xyz 
-[![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz) [![Gitter](https://badges.gitter.im/antonym/netboot.xyz.svg)](https://gitter.im/antonym/netboot.xyz?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
 
 ![netboot.xyz menu](img/netboot.xyz.gif)
 
