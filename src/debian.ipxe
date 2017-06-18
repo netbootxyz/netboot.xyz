@@ -12,10 +12,11 @@ clear older_release
 set debian_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item stretch ${space} ${os} 9.0 (stretch)
 item jessie ${space} ${os} 8.0 (jessie)
 item wheezy ${space} ${os} 7.0 (wheezy)
 item --gap Testing Releases
-item stretch ${space} ${os} stretch (testing)
+item buster ${space} ${os} buster (testing)
 item sid ${space} ${os} sid (unstable) 
 item --gap Older Releases
 item older_release ${space} Set release codename...
