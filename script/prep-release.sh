@@ -66,9 +66,9 @@ mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
 
 # generate EFI iPXE disks
 cp config/local/general.h.efi config/local/general.h
-cat config/local/general.h
 make clean
-make bin-x86_64-efi/ipxe.efi EMBED=../../ipxe/disks/netboot.xyz
+make bin-x86_64-efi/ipxe.efi \
+EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
 error_check
 mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
 
