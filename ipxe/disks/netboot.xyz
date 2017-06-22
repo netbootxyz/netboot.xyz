@@ -14,6 +14,7 @@ echo ${bold}${fg_gre}netboot.xyz ${fg_whi}v${version}${boldoff}
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp
+echo
 dhcp || goto netconfig
 goto menu
 
