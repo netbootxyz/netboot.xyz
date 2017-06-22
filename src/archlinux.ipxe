@@ -21,7 +21,7 @@ imgfree
 iseq ${arch} i386 && set bootarch i686 || set bootarch x86_64
 set dir archlinux/iso/${arch_version}/arch/boot
 set params initrd=archiso.img archiso_http_srv=http://${mirror}/archlinux/iso/${arch_version}/ archisobasedir=arch verify=y ip=dhcp net.ifnames=0 ${console}
-kernel http://${mirror}/${dir}/${bootarch}/vmlinuz ${params}
+kernel http://${mirror}/${dir}/${bootarch}/vmlinuz ${params} initrd=archiso.img
 initrd http://${mirror}/${dir}/${bootarch}/archiso.img
 echo
 echo MD5sums:

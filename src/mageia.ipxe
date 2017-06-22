@@ -23,7 +23,7 @@ set automatic method:http,network:dhcp,server:${server},directory:/${dir}
 imgfree
 kernel ${mirror}/${dir}/vmlinuz
 initrd ${mirror}/${dir}/all.rdz
-imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console}
+imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console} initrd=all.rdz
 echo
 echo MD5sums:
 md5sum vmlinuz all.rdz

@@ -57,7 +57,7 @@ goto boottype
 
 :bootos_images
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console}
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console} initrd=initrd.img
 initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:

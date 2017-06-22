@@ -20,7 +20,7 @@ iseq ${version} tumbleweed && set mirror download.opensuse.org && set dir ${vers
 imgfree
 kernel http://${mirror}/${dir}/boot/${arch}/loader/linux
 initrd http://${mirror}/${dir}/boot/${arch}/loader/initrd
-imgargs linux netsetup=dhcp install=http://${mirror}/${dir} ${params} ${netcfg} ${console}
+imgargs linux netsetup=dhcp install=http://${mirror}/${dir} ${params} ${netcfg} ${console} initrd=initrd
 echo
 echo MD5sums:
 md5sum linux initrd

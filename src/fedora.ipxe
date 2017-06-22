@@ -51,7 +51,7 @@ goto boot
 
 :boot
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} ${console}
+kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} ${console} initrd=initrd.img
 initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
