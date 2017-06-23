@@ -17,12 +17,12 @@ goto mageia_boot
 :mageia_boot
 set server mirrors.kernel.org
 set mirror http://${server}
-set dir mageia/distrib/${version}/x86_64/isolinux/x86_64
-iseq ${arch} i386 && set dir mageia/distrib/${version}/i586/isolinux/i386 ||
+set dir mageia/distrib/${version}/x86_64 && set dir2 isolinux/x86_64 ||
+iseq ${arch} i386 && set dir mageia/distrib/${version}/i586 && set dir2 isolinux/i386 ||
 set automatic method:http,network:dhcp,server:${server},directory:/${dir}
 imgfree
-kernel ${mirror}/${dir}/vmlinuz
-initrd ${mirror}/${dir}/all.rdz
+kernel ${mirror}/${dir}/${dir2}/vmlinuz
+initrd ${mirror}/${dir}/${dir2}/all.rdz
 imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console} initrd=all.rdz
 echo
 echo MD5sums:
@@ -31,8 +31,8 @@ iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
 echo Checking signatures...
-imgverify vmlinuz ${sigs}${dir}/vmlinuz.sig || goto error
-imgverify all.rdz ${sigs}${dir}/all.rdz.sig || goto error
+imgverify vmlinuz ${sigs}${dir}/${dir2}/vmlinuz.sig || goto error
+imgverify all.rdz ${sigs}${dir}/${dir2}/all.rdz.sig || goto error
 echo Signatures verified!
 echo
 :skip_sigs
