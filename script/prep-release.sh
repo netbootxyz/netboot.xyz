@@ -69,9 +69,12 @@ cp config/local/general.h.efi config/local/general.h
 make clean
 make bin-x86_64-efi/ipxe.efi \
 EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+mkdir -p efi_tmp/EFI/BOOT/
+cp bin-x86_64-efi/ipxe.efi efi_tmp/EFI/BOOT/bootx64.efi
+genisoimage -o ipxe.eiso efi_tmp
 error_check
 mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
-
+mv ipxe.eiso ../../build/ipxe/netboot.xyz-efi.iso
 # return to root
 cd ../..
 
