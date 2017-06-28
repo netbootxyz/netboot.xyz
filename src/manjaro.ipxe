@@ -9,23 +9,21 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 17.0.1 ${space} ${os} 17.0.1
-item net ${space} ${os} 16.08 Net Install
+item 17.0.2 ${space} ${os} 17.0.2
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
-iseq ${manjaro_version} net && set flavor net && goto mirror_cfg ||
 menu ${os} ${manjaro_version} Installer
 item --gap Flavors
-item xfce ${manjaro_version} XFCE
+item gnome ${manjaro_version} Gnome
 item kde ${manjaro_version} KDE
+item xfce ${manjaro_version} XFCE
 choose --default ${type} flavor || goto manjaro
 echo ${cls}
 goto mirror_cfg
 
 :mirror_cfg
 set flavor_root ${flavor}
-iseq ${flavor} net && set manjaro_initrd http://sourceforge.net/projects/manjarolinux/files/archive/16.08/netinstall/manjaro-net-16.08-x86_64.iso/download && goto manjaro_boot ||
 set manjaro_initrd http://sourceforge.net/projects/manjarolinux/files/release/${manjaro_version}/${flavor_root}/manjaro-${flavor}-${manjaro_version}-stable-x86_64.iso/download
 goto manjaro_boot
 
