@@ -1,21 +1,21 @@
 #!ipxe
 
-# CoreOS
+# Container Linux by CoreOS
 # https://www.coreos.com
 # For further info on:
-# iPXE and CoreOS: https://coreos.com/os/docs/latest/booting-with-ipxe.html
+# iPXE and CoreOS Container Linux: https://coreos.com/os/docs/latest/booting-with-ipxe.html
 # Setting up Cloud Config: https://github.com/coreos/coreos-cloudinit
 # 64-bit only
  
 goto ${menu}
 
 :coreos
-set os CoreOS
+set os Container Linux
 menu ${os}
-item --gap CoreOS:
-item stable ${space} CoreOS Stable Channel
-item beta ${space} CoreOS Beta Channel
-item alpha ${space} CoreOS Alpha Channel
+item --gap ${os}:
+item stable ${space} ${os} Stable Channel
+item beta ${space} ${os} Beta Channel
+item alpha ${space} ${os} Alpha Channel
 item cloud_config ${space} Set cloud-config-url: ${cloud-config-url}
 choose --default ${menu} menu || goto coreos_exit
 echo ${cls}

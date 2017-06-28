@@ -37,7 +37,7 @@ Full documentation is at ReadTheDocs:
 * [Antergos](https://antergos.com)
 * [Arch Linux](https://www.archlinux.org)
 * [CentOS](https://centos.org)
-* [CoreOS](https://coreos.com/)
+* [CoreOS Container Linux](https://coreos.com/)
 * [Debian](https://debian.org)
 * [Devuan](https://devuan.org)
 * [Fedora](https://fedoraproject.org)
