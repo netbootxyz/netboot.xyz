@@ -19,6 +19,7 @@ pages:
 - Provider Usage:
     - 'Digital Ocean': 'usage-digitalocean.md'
     - 'Google Compute Engine': 'usage-gce.md'
+    - 'OpenStack': 'usage-openstack.md'
     - 'Packet': 'usage-packet.md'
     - 'Rackspace': 'usage-rackspace.md'
     - 'Vultr': 'usage-vultr.md'
