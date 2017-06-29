@@ -50,12 +50,6 @@ mv bin/ipxe.usb ../../build/ipxe/netboot.xyz.usb
 mv bin/ipxe.kpxe ../../build/ipxe/netboot.xyz.kpxe
 mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-undionly.kpxe
 
-# generate netboot.xyz-packet iPXE disk
-make bin/undionly.kpxe \
-EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-error_check
-mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-packet.kpxe
-
 # generate netboot.xyz iPXE disk for Google Compute Engine
 make bin/ipxe.usb CONFIG=cloud EMBED=../../ipxe/disks/netboot.xyz-gce \
 TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
@@ -63,6 +57,20 @@ error_check
 cp -f bin/ipxe.usb disk.raw
 tar Sczvf netboot.xyz-gce.tar.gz disk.raw
 mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
+
+# generate netboot.xyz-packet iPXE disk
+make bin/undionly.kpxe \
+EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+error_check
+mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-packet.kpxe
+
+# generate netboot.xyz-packet-arm64 iPXE disk
+cp config/local/general.h.efi config/local/general.h
+make clean
+make bin-arm64-efi/ipxe.efi \
+EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+error_check
+mv bin/ipxe.efi ../../build/ipxe/netboot.xyz-packet-arm64.efi
 
 # generate EFI iPXE disks
 cp config/local/general.h.efi config/local/general.h
