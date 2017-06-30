@@ -9,7 +9,8 @@ goto ${menu}
 set os Debian Live
 menu ${os}
 item --gap Versions
-item 8.8.0 ${space} ${os} 8.8.0
+item 9.0.1 ${space} ${os} 9.0.1
+item current ${space} ${os} Fallback
 choose livedebian_version || goto livedebian_exit
 
 :livedebian_flavor
