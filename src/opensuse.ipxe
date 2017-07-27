@@ -4,22 +4,17 @@
 # http://opensuse.org
 
 menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
-item 42.2 openSUSE 42.2
-item 42.1 openSUSE 42.1
-item 13.2 openSUSE 13.2
-item 13.1 openSUSE 13.1
-item 12.3 openSUSE 12.3
-item 12.2 openSUSE 12.2
+item 42.3 openSUSE Leap 42.3
+item 42.2 openSUSE Leap 42.2
+item 42.1 openSUSE Leap 42.1
 item tumbleweed openSUSE tumbleweed
 choose version || goto opensuse_exit
-set dir opensuse/distribution/${version}/repo/oss
-iseq ${version} 42.1 && set dir opensuse/distribution/leap/42.1/repo/oss && set arch x86_64 ||
-iseq ${version} 42.2 && set dir opensuse/distribution/leap/42.2/repo/oss && set arch x86_64 ||
+set dir opensuse/distribution/leap/${version}/repo/oss
 iseq ${version} tumbleweed && set mirror download.opensuse.org && set dir ${version}/repo/oss ||
 
 imgfree
-kernel http://${mirror}/${dir}/boot/${arch}/loader/linux
-initrd http://${mirror}/${dir}/boot/${arch}/loader/initrd
+kernel http://${mirror}/${dir}/boot/x86_64/loader/linux
+initrd http://${mirror}/${dir}/boot/x86_64/loader/initrd
 imgargs linux netsetup=dhcp install=http://${mirror}/${dir} ${params} ${netcfg} ${console} initrd=initrd
 echo
 echo MD5sums:
@@ -29,8 +24,8 @@ iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
 echo Checking signatures...
-imgverify linux ${sigs}${dir}/boot/${arch}/loader/linux.sig || goto error
-imgverify initrd ${sigs}${dir}/boot/${arch}/loader/initrd.sig || goto error
+imgverify linux ${sigs}${dir}/boot/x86_64/loader/linux.sig || goto error
+imgverify initrd ${sigs}${dir}/boot/x86_64/loader/initrd.sig || goto error
 echo Signatures verified!
 echo
 :skip_sigs
