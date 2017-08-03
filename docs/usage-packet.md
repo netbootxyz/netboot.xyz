@@ -28,8 +28,8 @@ netboot.xyz iPXE menu will appear and you can complete installation from there.
 > **Please Note:** By default, devices are set to boot from the local disk. During
 > provisioning, Packet sets the next boot to PXE. This happens once, which means that
 > if you don't install an operating system before rebooting, it won't reload the
-> netboot.xyz menu and you may be forced to delete the device and reprovision using
-> Custom iPXE.
+> netboot.xyz menu. However, you can set your device to always boot to iPXE
+> first by enabling that option under 'server actions' through the customer portal.
 
 ### Networking
 
