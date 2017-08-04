@@ -12,12 +12,8 @@ set ubuntu_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item zesty ${space} ${os} 17.04 Zesty Zapus
-item yakkety ${space} ${os} 16.10 Yakkety Yak
 item xenial ${space} ${os} 16.04 LTS Xenial Xerus
-item wily ${space} ${os} 15.10 Wily Werewolf
-item vivid ${space} ${os} 15.04 Vivid Vervet 
 item trusty ${space} ${os} 14.04 LTS Trusty Tahr
-item precise ${space} ${os} 12.04 LTS Precise Pangolin
 item --gap Older Releases
 item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
