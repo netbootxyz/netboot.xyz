@@ -6,7 +6,7 @@ before_install:
 - tar xvf script/secrets.tar -C script/
 - sudo apt-get update -qq
 - sudo apt-get install -qq binutils-dev genisoimage liblzma-dev syslinux
-- sudo pip install mkdocs mkdocs-bootswatch
+- sudo pip install mkdocs mkdocs-bootswatch awscli
 script:
 - "./script/prep-release.sh"
 deploy:
@@ -32,6 +32,12 @@ deploy:
     skip_cleanup: true
     on:
       repo: antonym/netboot.xyz
+
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "/*"
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_SITE --paths "/*"
+
 notifications:
   email:
     - antony@mes.ser.li
