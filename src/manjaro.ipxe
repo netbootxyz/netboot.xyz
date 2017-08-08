@@ -13,8 +13,9 @@ item 17.0.2 ${space} ${os} 17.0.2
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
-menu ${os} ${manjaro_version} Installer
+menu ${os} ${manjaro_version} Installers
 item --gap Flavors
+item architect ${manjaro_version} Architect
 item gnome ${manjaro_version} Gnome
 item kde ${manjaro_version} KDE
 item xfce ${manjaro_version} XFCE
