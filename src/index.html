@@ -1,6 +1,6 @@
 #!ipxe
-####       boot.netboot.xyz initial loader       ####
-#### see http://netboot.xyz for more information ####
+####       boot.netboot.xyz initial loader        ####
+#### see https://netboot.xyz for more information ####
 set conn_type https
 chain --autofree https://boot.netboot.xyz/menu.ipxe || echo HTTPS failed... attempting HTTP...
 set conn_type http
