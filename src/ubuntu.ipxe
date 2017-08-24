@@ -27,11 +27,16 @@ echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
 echo -n Please set enter code name of release: ${} && read ubuntu_version
 set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
+set httpboot_version NONE
 goto deb_boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
+set httpboot_version NONE
+iseq ${ubuntu_version} trusty && set httpboot_version 14.04.1 ||
+iseq ${ubuntu_version} xenial && set httpboot_version 16.04 ||
+iseq ${ubuntu_version} yakkety && set httpboot_version 16.10 ||
 
 :deb_boot_type
 menu ${os} [${ubuntu_version}] Installer
@@ -39,6 +44,7 @@ item --gap Install types
 item install ${space} Install
 item rescue ${space} Rescue Mode
 item expert ${space} Expert Install
+iseq ${httpboot_version} NONE || item httpboot ${space} Live System (via HTTPFS2)
 item preseed ${space} Specify preseed url...
 choose --default ${type} type || goto ubuntu
 echo ${cls}
@@ -76,6 +82,13 @@ imgverify initrd.gz ${sigs}${dir}/initrd.gz.sig || goto error
 echo Signatures verified!
 echo
 :skip_sigs
+boot
+
+:deb_httpboot
+imgfree
+nslookup release_host_ip releases.ubuntu.com || set release_host_ip 91.189.88.160
+kernel http://live-httpboot.sourceforge.net/ubuntu/0.2/${ubuntu_version}_${httpboot_version}_${arch_a}_vmlinuz root=/dev/nfs boot=casper hostsentry=${release_host_ip}:releases.ubuntu.com netboot=http nfsroot=http://releases.ubuntu.com/${ubuntu_version}/ubuntu-${httpboot_version}-desktop-${arch_a}.iso --
+initrd http://live-httpboot.sourceforge.net/ubuntu/0.2/${ubuntu_version}_${httpboot_version}_${arch_a}_initrd.lz
 boot
 
 :ubuntu_exit
