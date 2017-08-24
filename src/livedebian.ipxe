@@ -15,22 +15,22 @@ choose livedebian_version || goto livedebian_exit
 :livedebian_flavor
 menu ${os} ${livedebian_version}
 item --gap Flavors
-item cinnamon ${space} ${livedebian_version} Cinnamon
-item gnome ${space} ${livedebian_version} Gnome
-item kde ${space} ${livedebian_version} KDE
-item lxde ${space} ${livedebian_version} LXDE
-item mate ${space} ${livedebian_version} MATE
+item cinnamon-desktop ${space} ${livedebian_version} Cinnamon
+item gnome-desktop ${space} ${livedebian_version} Gnome
+item kde-desktop ${space} ${livedebian_version} KDE
+item lxde-desktop ${space} ${livedebian_version} LXDE
+item mate-desktop ${space} ${livedebian_version} MATE
 item standard ${space} ${livedebian_version} Standard
-item xfce ${space} ${livedebian_version} XFCE
+item xfce-desktop ${space} ${livedebian_version} XFCE
 choose --default ${type} flavor || goto livedebian
 echo ${cls}
 goto livedebian_boot
 
 :livedebian_boot
 set webboot_host cdimage.debian.org
-set livedebian_url http://${webboot_host}/cdimage/archive/${livedebian_version}-live/amd64/webboot/debian-live-${livedebian_version}-amd64-${flavor}-desktop
+set livedebian_url http://${webboot_host}/cdimage/archive/${livedebian_version}-live/amd64/webboot/debian-live-${livedebian_version}-amd64-${flavor}
 imgfree
-kernel ${livedebian_url}.vmlinuz boot=live config hooks=filesystem username=live noeject ${console} fetch=${livedebian_url}.squashfs initrd=debian-live-${livedebian_version}-amd64-${flavor}-desktop.initrd.img
+kernel ${livedebian_url}.vmlinuz boot=live config hooks=filesystem username=live noeject ${console} fetch=${livedebian_url}.squashfs initrd=debian-live-${livedebian_version}-amd64-${flavor}.initrd.img
 module ${livedebian_url}.initrd.img
 # used to resolve DNS
 module http://${boot_domain}/live-helpers/debian/libresolv.so.2 /lib/libresolv.so.2
