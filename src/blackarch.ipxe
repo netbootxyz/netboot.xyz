@@ -9,7 +9,7 @@ goto ${menu}
 set os BlackArch Linux
 menu ${os} Installers
 item --gap Official Releases
-item 2017.06.14 ${space} ${os} 2017.06.14
+item 2017.08.30 ${space} ${os} 2017.08.30
 choose blackarch_version || goto blackarch_exit
 goto blackarch_boot
 
