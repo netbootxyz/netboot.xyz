@@ -10,10 +10,6 @@ item 11.0 FreeBSD 11.0
 item 10.3 FreeBSD 10.3
 choose ver || goto freebsd_exit
 
-iseq ${ver} 11.1 && set image_ver_major 11 ||
-iseq ${ver} 11.0 && set image_ver_major 11 ||
-iseq ${ver} 10.3 && set image_ver_major 10 ||
-
 iseq ${ver} 11.1 && set image_ver 11.1-RELEASE ||
 iseq ${ver} 11.0 && set image_ver 11.0-RELEASE ||
 iseq ${ver} 10.3 && set image_ver 10.3-RELEASE ||
@@ -27,7 +23,10 @@ set freebsd_arch amd64
 goto boot_freebsd
 
 :boot_freebsd
-set src http://mfsbsd.vx.sk/files/images/${image_ver_major}/mfsbsd-${image_ver}-${freebsd_arch}.img
+iseq ${ver} 11.1 && set image_subdir 11 ||
+iseq ${ver} 11.0 && set image_subdir 11 ||
+iseq ${ver} 10.3 && set image_subdir 10/${freebsd_arch} ||
+set src http://mfsbsd.vx.sk/files/images/${image_subdir}/mfsbsd-${image_ver}-${freebsd_arch}.img
 imgfree
 echo This loads an mfsbsd installer (http://mfsbsd.vx.sk/).  
 echo Root password for all images: mfsroot
