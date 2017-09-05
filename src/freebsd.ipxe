@@ -23,10 +23,10 @@ set freebsd_arch amd64
 goto boot_freebsd
 
 :boot_freebsd
-set src https://download.freebsd.org/ftp/releases/ISO-IMAGES/${ver}/FreeBSD-${image_ver}-${freebsd_arch}-bootonly.iso
+set src https://download.freebsd.org/ftp/releases/ISO-IMAGES/${ver}/FreeBSD-${image_ver}-${freebsd_arch}-mini-memstick.img
 imgfree
 initrd ${src}
-chain ${memdisk} iso raw
+chain ${memdisk} harddisk raw
 exit
 
 :freebsd_exit
