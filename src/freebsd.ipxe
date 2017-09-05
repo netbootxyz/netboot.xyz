@@ -23,8 +23,20 @@ set freebsd_arch amd64
 goto boot_freebsd
 
 :boot_freebsd
-set src https://download.freebsd.org/ftp/releases/ISO-IMAGES/${ver}/FreeBSD-${image_ver}-${freebsd_arch}-mini-memstick.img
+iseq ${ver} 11.1 && set image_subdir 11 ||
+iseq ${ver} 11.0 && set image_subdir 11 ||
+iseq ${ver} 10.3 && set image_subdir 10/${freebsd_arch} ||
+set src http://mfsbsd.vx.sk/files/images/${image_subdir}/mfsbsd-${image_ver}-${freebsd_arch}.img
 imgfree
+echo This loads an mfsbsd installer (http://mfsbsd.vx.sk/).  
+echo Root password for all images: mfsroot
+echo You'll need to configure networking manually for the installer disk as 
+echo it uses dhcp by default:
+echo ifconfig xn0 inet <public ip> netmask 255.255.255.0
+echo route delete default; route add default <public ip x.x.x.1>
+echo echo "nameserver x.x.x.x" > /etc/resolv.conf
+echo Once network is configured, you can launch the usual installer:
+echo bsdinstall
 initrd ${src}
 chain ${memdisk} harddisk raw
 exit
