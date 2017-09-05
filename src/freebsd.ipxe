@@ -6,17 +6,17 @@
 :freebsd_menu
 menu Please pick a FreeBSD version
 item 11.1 FreeBSD 11.1
-item 10.2 FreeBSD 10.2
-item 10.1 FreeBSD 10.1
-item 10.0 FreeBSD 10.0
+item 11.0 FreeBSD 11.0
+item 10.3 FreeBSD 10.3
 choose ver || goto freebsd_exit
 
 iseq ${ver} 11.1 && set image_ver_major 11 ||
+iseq ${ver} 11.0 && set image_ver_major 11 ||
+iseq ${ver} 10.3 && set image_ver_major 10 ||
 
 iseq ${ver} 11.1 && set image_ver 11.1-RELEASE ||
-iseq ${ver} 10.2 && set image_ver 10.2-RELEASE ||
-iseq ${ver} 10.1 && set image_ver 10.1-RELEASE ||
-iseq ${ver} 10.0 && set image_ver 10.0-RELEASE ||
+iseq ${ver} 11.0 && set image_ver 11.0-RELEASE ||
+iseq ${ver} 10.3 && set image_ver 10.3-RELEASE ||
 
 iseq ${arch} x86_64 && goto freebsd_x64 ||
 set freebsd_arch i386
@@ -27,7 +27,6 @@ set freebsd_arch amd64
 goto boot_freebsd
 
 :boot_freebsd
-# set src http://boot.rackspace.com/distros/freebsd/${ver}/FreeBSD-${image_ver}-${freebsd_arch}-bootonly-mfsbsd.hd
 set src http://mfsbsd.vx.sk/files/images/${image_ver_major}/mfsbsd-${image_ver}-${freebsd_arch}.img
 imgfree
 echo This loads an mfsbsd installer (http://mfsbsd.vx.sk/).  
