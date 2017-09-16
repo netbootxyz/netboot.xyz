@@ -7,7 +7,6 @@ item avg ${space} AVG Rescue CD
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
-item hdt ${space} Hardware Detection Tool
 item memtest-420 ${space} Memtest86+ 4.20
 item memtest-501 ${space} Memtest86+ 5.01
 item partition-wizard ${space} Partition Wizard
@@ -58,11 +57,6 @@ goto boot_memdisk
 set gparted_version 0.28.1-1
 set util_path sourceforge.net/projects/gparted/files/gparted-live-stable/${gparted_version}/gparted-live-${gparted_version}-amd64.iso/download
 set util_file gparted-live-${gparted_version}-amd64.iso
-goto boot_memdisk
-
-:hdt
-set util_path www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/hdt-0.5.2.iso
-set util_file hdt-0.5.2.iso
 goto boot_memdisk
 
 :memtest-420

@@ -77,7 +77,6 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [DBAN](http://www.dban.org/)
 * [GParted](http://gparted.org)
 * [Grml](http://grml.org)
-* [HDT](http://www.hdt-project.org/)
 * [Memtest](http://www.memtest.org/)
 * [Partition Wizard](http://www.partitionwizard.com)
 * [Pogostick - Offline Windows Password and Registry Editor](http://pogostick.net/~pnh/ntpasswd)
