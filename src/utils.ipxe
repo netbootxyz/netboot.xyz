@@ -42,7 +42,7 @@ set util_file avg_arl_cdi_all_120_${avg_version}.iso
 goto boot_memdisk
 
 :clonezilla
-set clonezilla_version 2.5.0-25
+set clonezilla_version 2.5.2-31
 set util_path sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/${clonezilla_version}/clonezilla-live-${clonezilla_version}-amd64.iso/download
 set util_file clonezilla-live-${clonezilla_version}-amd64.iso
 goto boot_memdisk
