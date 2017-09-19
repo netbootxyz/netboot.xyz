@@ -55,6 +55,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [OpenBSD](http://openbsd.org)
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)
+* [Red Hat Enterprise Linux](https://www.redhat.com/)
 * [Scientific](http://scientificlinux.org)
 * [Tiny Core Linux](http://tinycorelinux.net)
 * [Ubuntu](http://www.ubuntu.com/)

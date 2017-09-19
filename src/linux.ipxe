@@ -20,6 +20,7 @@ item coreos ${space} CoreOS
 item devuan ${space} Devuan
 item gentoo ${space} Gentoo Linux
 item rancheros ${space} RancherOS
+item rhel ${space} Red Hat Enterprise Linux
 item scientific ${space} Scientific
 item slackware ${space} Slackware
 item tinycore ${space} Tiny Core Linux

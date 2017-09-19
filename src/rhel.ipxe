@@ -1,0 +1,49 @@
+#!ipxe
+
+# Redhat Enterprise Linux (RHEL)
+# https://www.redhat.com
+
+set rhel_arch x86_64
+goto ${menu} ||
+
+:rhel
+set os Red Hat Enterprise Linux
+clear rhel_version
+menu ${os}
+item --gap Installers
+item rhel_install ${space} Load ${os} Installer...
+item --gap Options:
+item arch_set ${space} Architecture [ ${rhel_arch} ]
+item url_set ${space} Base URL [ ${rhel_base_url} ]
+choose rhel_version || goto rhel_exit
+goto ${rhel_version}
+
+:arch_set
+iseq ${rhel_arch} x86_64 && set rhel_arch i386 || set rhel_arch x86_64
+goto rhel
+
+:url_set
+echo Set the HTTP URL of an extracted RHEL ISO without the trailing slash:
+echo e.g. http://www.mydomain.com/rhel/7
+echo
+echo -n URL: ${} && read rhel_base_url
+echo
+echo netboot.xyz will attempt to load the following files:
+echo ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz
+echo ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
+echo
+prompt Press any key to return to RHEL Menu...
+goto rhel
+
+:rhel_install
+isset ${rhel_base_url} && goto boot || echo URL not set... && goto url_set
+
+:boot
+imgfree
+kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz repo=${rhel_base_url}/os/${rhel_arch} ${console} initrd=initrd.img
+initrd ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
+md5sum vmlinuz initrd.img
+boot
+
+:rhel_exit
+exit 0
