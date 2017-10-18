@@ -5,12 +5,14 @@
 
 :openbsd_menu
 menu OpenBSD
+item 6.2 OpenBSD 6.2
 item 6.1 OpenBSD 6.1
 item 6.0 OpenBSD 6.0
 item 5.9 OpenBSD 5.9
 item snapshots OpenBSD 6.2 Latest Snapshot
 choose ver || goto openbsd_exit
 
+iseq ${ver} 6.2 && set image_ver 62 ||
 iseq ${ver} 6.1 && set image_ver 61 ||
 iseq ${ver} 6.0 && set image_ver 60 ||
 iseq ${ver} 5.9 && set image_ver 59 ||
