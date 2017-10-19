@@ -11,6 +11,7 @@ clear ubuntu_version
 set ubuntu_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item artful ${space} ${os} 17.10 Artful Aardvark
 item zesty ${space} ${os} 17.04 Zesty Zapus
 item xenial ${space} ${os} 16.04 LTS Xenial Xerus
 item trusty ${space} ${os} 14.04 LTS Trusty Tahr
