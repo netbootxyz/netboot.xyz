@@ -6,7 +6,7 @@ before_install:
 - tar xvf script/secrets.tar -C script/
 - sudo apt-get update -qq
 - sudo apt-get install -qq binutils-dev genisoimage liblzma-dev syslinux
-- sudo pip install mkdocs mkdocs-bootswatch awscli
+- sudo pip install mkdocs==0.16.3 mkdocs-bootswatch awscli
 script:
 - "./script/prep-release.sh"
 deploy:
