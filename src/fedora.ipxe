@@ -25,7 +25,7 @@ item Everything ${ova} Everything
 item Server ${ova} Server
 item Workstation ${ova} Workstation
 isset ${sku_type} || choose sku_type || goto fedora
-set dir fedora/releases/${osversion}/${sku_type}/${arch}/os
+set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${arch}/os
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
@@ -52,8 +52,8 @@ goto boot
 
 :boot
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${mirror}/${dir} ${params} ${console} initrd=initrd.img
-initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+kernel http://${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${fedora_mirror}/${dir} ${params} ${console} initrd=initrd.img
+initrd http://${fedora_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img

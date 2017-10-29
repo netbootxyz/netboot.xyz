@@ -9,7 +9,6 @@ goto ${menu}
 set os Devuan
 clear devuan_version
 clear older_release
-set devuan_mirror auto.mirror.devuan.org
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item jessie ${space} ${os} 1.0 (jessie)
@@ -21,7 +20,7 @@ goto mirrorcfg
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${devuan_version}
-set dir devuan/dists/${devuan_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${devuan_base_dir}/dists/${devuan_version}/main/installer-${arch_a}/current/images/netboot/
 goto devuan_boot_type
 
 :devuan_boot_type
