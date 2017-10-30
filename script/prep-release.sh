@@ -21,15 +21,6 @@ cd ipxe_build/src
 # get current iPXE hash
 IPXE_HASH=`git log -n 1 --pretty=format:"%H"`
 
-# generate generic iPXE disks
-make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
-mv bin/ipxe.dsk ../../build/ipxe/generic-ipxe.dsk
-mv bin/ipxe.iso ../../build/ipxe/generic-ipxe.iso
-mv bin/ipxe.lkrn ../../build/ipxe/generic-ipxe.lkrn
-mv bin/ipxe.usb ../../build/ipxe/generic-ipxe.usb
-mv bin/ipxe.kpxe ../../build/ipxe/generic-ipxe.kpxe
-mv bin/undionly.kpxe ../../build/ipxe/generic-undionly.kpxe
-
 # generate netboot.xyz iPXE disks
 make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
 EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
