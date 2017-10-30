@@ -1,16 +1,7 @@
 #!/bin/bash
 # prep release for upload to production container
 
-function error_check()
-{
-
-	if [ $? -eq 1 ]
-	then
-	  echo "Error encountered... failing..."
-	  exit 1
-	fi
-
-}
+set -e
 
 # make ipxe directory to store ipxe disks
 mkdir -p build/ipxe
@@ -42,7 +33,6 @@ mv bin/undionly.kpxe ../../build/ipxe/generic-undionly.kpxe
 # generate netboot.xyz iPXE disks
 make bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe \
 EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-error_check
 mv bin/ipxe.dsk ../../build/ipxe/netboot.xyz.dsk
 mv bin/ipxe.iso ../../build/ipxe/netboot.xyz.iso
 mv bin/ipxe.lkrn ../../build/ipxe/netboot.xyz.lkrn
@@ -53,7 +43,6 @@ mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-undionly.kpxe
 # generate netboot.xyz iPXE disk for Google Compute Engine
 make bin/ipxe.usb CONFIG=cloud EMBED=../../ipxe/disks/netboot.xyz-gce \
 TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-error_check
 cp -f bin/ipxe.usb disk.raw
 tar Sczvf netboot.xyz-gce.tar.gz disk.raw
 mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
@@ -61,16 +50,7 @@ mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
 # generate netboot.xyz-packet iPXE disk
 make bin/undionly.kpxe \
 EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-error_check
 mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-packet.kpxe
-
-# generate netboot.xyz-packet-arm64 iPXE disk
-cp config/local/general.h.efi config/local/general.h
-make clean
-make bin-arm64-efi/ipxe.efi \
-EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-error_check
-mv bin/ipxe.efi ../../build/ipxe/netboot.xyz-packet-arm64.efi
 
 # generate EFI iPXE disks
 cp config/local/general.h.efi config/local/general.h
@@ -80,7 +60,6 @@ EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
 mkdir -p efi_tmp/EFI/BOOT/
 cp bin-x86_64-efi/ipxe.efi efi_tmp/EFI/BOOT/bootx64.efi
 genisoimage -o ipxe.eiso efi_tmp
-error_check
 mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
 mv ipxe.eiso ../../build/ipxe/netboot.xyz-efi.iso
 # return to root
