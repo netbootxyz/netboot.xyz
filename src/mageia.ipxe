@@ -8,6 +8,7 @@ goto ${menu} ||
 :mageia
 set os Mageia
 menu Mageia - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
+item 6 ${os} 6
 item 5 ${os} 5
 item 4 ${os} 4
 item cauldron ${os} cauldron
@@ -15,14 +16,12 @@ choose version || goto mageia_exit
 goto mageia_boot
 
 :mageia_boot
-set server mirrors.kernel.org
-set mirror http://${server}
-set dir mageia/distrib/${version}/x86_64 && set dir2 isolinux/x86_64 ||
-iseq ${arch} i386 && set dir mageia/distrib/${version}/i586 && set dir2 isolinux/i386 ||
-set automatic method:http,network:dhcp,server:${server},directory:/${dir}
+set dir ${mageia_base_dir}/distrib/${version}/x86_64 && set dir2 isolinux/x86_64 ||
+iseq ${arch} i386 && set dir ${mageia_base_dir}/distrib/${version}/i586 && set dir2 isolinux/i386 ||
+set automatic method:http,network:dhcp,server:${mageia_mirror},directory:/${dir}
 imgfree
-kernel ${mirror}/${dir}/${dir2}/vmlinuz
-initrd ${mirror}/${dir}/${dir2}/all.rdz
+kernel http://${mageia_mirror}/${dir}/${dir2}/vmlinuz
+initrd http://${mageia_mirror}/${dir}/${dir2}/all.rdz
 imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console} initrd=all.rdz
 echo
 echo MD5sums:

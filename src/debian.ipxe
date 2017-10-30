@@ -9,7 +9,6 @@ goto ${menu}
 set os Debian
 clear debian_version
 clear older_release
-set debian_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item stretch ${space} ${os} 9.0 (stretch)
@@ -30,12 +29,12 @@ set debian_mirror archive.debian.org
 echo Setting mirror to ${debian_mirror}
 clear debian_version
 echo -n Please set enter code name of release: ${} && read debian_version
-set dir debian/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
 goto deb_boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${debian_version}
-set dir debian/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
 goto deb_boot_type
 
 :deb_boot_type

@@ -15,8 +15,8 @@ item 6.9 ${os} 6.9
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
 iseq ${osversion} 6.9 && set dir ${menu}/${osversion}/os/${arch} ||
-set dir ${menu}/${osversion}/os/x86_64
-set repo http://${mirror}/${dir}
+set dir ${centos_base_dir}/${osversion}/os/x86_64
+set repo http://${centos_mirror}/${dir}
 goto boottype
 
 :boottype
@@ -57,8 +57,8 @@ goto boottype
 
 :bootos_images
 imgfree
-kernel http://${mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console} initrd=initrd.img
-initrd http://${mirror}/${dir}/images/pxeboot/initrd.img
+kernel http://${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console} initrd=initrd.img
+initrd http://${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img

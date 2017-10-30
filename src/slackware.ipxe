@@ -19,13 +19,13 @@ iseq ${version} other || goto skip_read_version
 echo ${cls}
 echo -n Enter version: ${} && read version
 :skip_read_version
-set dir slackware/slackware${sbits}-${version}
+set dir ${slackware_base_dir}/slackware${sbits}-${version}
 goto boot
 
 :boot
 imgfree
-kernel http://${mirror}/${dir}/kernels/huge.s/bzImage
-initrd http://${mirror}/${dir}/isolinux/initrd.img
+kernel http://${slackware_mirror}/${dir}/kernels/huge.s/bzImage
+initrd http://${slackware_mirror}/${dir}/isolinux/initrd.img
 imgargs bzImage load_ramdisk=1 prompt_ramdisk=0 rw printk.time=0 SLACK_KERNEL=huge.s ${params} ${console}
 isset ${debug} && prompt ||
 boot

@@ -8,7 +8,6 @@ goto ${menu}
 :ubuntu
 set os Ubuntu
 clear ubuntu_version
-set ubuntu_mirror ${mirror}
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item artful ${space} ${os} 17.10 Artful Aardvark
@@ -27,12 +26,12 @@ set ubuntu_mirror old-releases.ubuntu.com
 echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
 echo -n Please set enter code name of release: ${} && read ubuntu_version
-set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
 goto deb_boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
-set dir ubuntu/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/
 
 :deb_boot_type
 menu ${os} [${ubuntu_version}] Installer
