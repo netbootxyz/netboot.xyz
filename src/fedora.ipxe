@@ -12,6 +12,7 @@ clear ova
 set os Fedora
 menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item 27 ${space} ${os} 27
 item 26 ${space} ${os} 26
 item 25 ${space} ${os} 25
 item 24 ${space} ${os} 24
