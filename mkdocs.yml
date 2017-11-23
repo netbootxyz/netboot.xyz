@@ -24,4 +24,5 @@ pages:
     - 'Rackspace': 'usage-rackspace.md'
     - 'Vultr': 'usage-vultr.md'
 - FAQ: 'faq.md'
+- Contributing: 'contributing.md'
 theme: yeti
