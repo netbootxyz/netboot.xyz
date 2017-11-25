@@ -25,6 +25,7 @@ chain --autofree http://${boot_domain}/ipxe/${ipxe_disk} ||
 
 isset ${arch} && goto skip_arch_detect ||
 cpuid --ext 29 && set arch x86_64 || set arch i386
+iseq ${buildarch} arm64 && set arch arm64 ||
 :skip_arch_detect
 isset ${menu} && goto ${menu} ||
 
