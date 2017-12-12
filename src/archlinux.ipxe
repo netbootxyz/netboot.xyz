@@ -11,9 +11,9 @@ clear arch_version
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 menu Arch Linux
 item --gap Latest Releases
+item 2017.12.01 2017.12.01
 item 2017.11.01 2017.11.01
 item 2017.10.01 2017.10.01
-item 2017.09.01 2017.09.01
 choose arch_version || goto archlinux_exit
 goto boot
 
