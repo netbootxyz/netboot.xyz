@@ -7,12 +7,12 @@ goto ${menu} ||
 
 :scientific
 clear osversion
-set os Scientific
+set os Scientific Linux
 menu ${os} ${arch}
-item 7.2 ${os} 7.2
-item 7.1 ${os} 7.1
-item 7.0 ${os} 7.0
-item 6.7 ${os} 6.7
+item 7.4 ${os} 7.4
+item 7.3 ${os} 7.3
+item 6.9 ${os} 6.9
+item 6.8 ${os} 6.8
 item other Choose other version [o]
 isset ${osversion} || choose osversion || goto linux_menu
 iseq ${osversion} other || goto scientific_skip_read_osversion
