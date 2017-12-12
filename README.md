@@ -52,7 +52,7 @@ Full documentation is at ReadTheDocs:
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)
 * [Red Hat Enterprise Linux](https://www.redhat.com/)
-* [Scientific](http://scientificlinux.org)
+* [Scientific Linux](http://scientificlinux.org)
 * [Tiny Core Linux](http://tinycorelinux.net)
 * [Ubuntu](http://www.ubuntu.com/)
 
