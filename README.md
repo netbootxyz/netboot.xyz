@@ -43,6 +43,7 @@ Full documentation is at ReadTheDocs:
 * [Devuan](https://devuan.org)
 * [Fedora](https://fedoraproject.org)
 * [FreeBSD](https://freebsd.org)
+* [FreeDOS](http://www.freedos.org)
 * [Gentoo](https://gentoo.org)
 * [Mageia](http://www.mageia.org)
 * [Manjaro Linux](https://manjaro.github.io)
