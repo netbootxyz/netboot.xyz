@@ -18,18 +18,18 @@ really easy to go explore new operating systems and tools from one location.
 ### Help keep netboot.xyz updated
 
 If you noticed one of your favorite operating system or tool has been updated,
-feel free to open a Pull Request to get the operating system updated.  It will
-be reviewed and merged once validated.
+feel free to open a [Pull Request] to get the operating system updated.  It 
+will be reviewed and merged once validated.
 
 ### Add support for new OS and Utilities
 
 Do you have a favorite utility that you use often but isn't on netboot.xyz?
-Feel free to request it being added or submit a Pull Request.
+Feel free to request it being added or submit a [Pull Request].
 
 ### Ask your distribution to become netboot friendly
 
 If you don't see support for your favorite distribution in netboot.xyz, please
-open up an issue with netboot.xyz and if possible, open up an issue with the
+open up an [issue] with netboot.xyz and if possible, open up an issue with the
 distribution.
 
 Ask for the distribution to provide a way to load installer kernels from
@@ -45,7 +45,9 @@ especially when you may have limited bandwidth.
 ### Submit ideas
 
 I'm always looking for new ideas to make the tool more useful, if you have an
-idea, feel free to open up a [Github Issue](https://github.com/antonym/netboot.xyz/issues/new)
-or open up a [Pull Request](https://github.com/antonym/netboot.xyz/pulls).
+idea, feel free to open up a Github [issue] or open up a [Pull Request].
 
 ## Enjoy and have fun!
+
+[issue]: https://github.com/antonym/netboot.xyz/issues/new
+[Pull Request]: https://github.com/antonym/netboot.xyz/pulls
