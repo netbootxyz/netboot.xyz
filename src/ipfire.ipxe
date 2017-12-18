@@ -1,0 +1,13 @@
+#!ipxe
+
+# IPFire 
+# https://www.ipfire.org/
+
+goto ${menu}
+
+:ipfire
+chain http://boot.ipfire.org/menu.gpxe || goto ipfire_exit
+
+:ipfire_exit
+clear menu
+exit 0

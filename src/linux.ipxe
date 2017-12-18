@@ -19,6 +19,7 @@ item antergos ${space} Antergos
 item coreos ${space} CoreOS
 item devuan ${space} Devuan
 item gentoo ${space} Gentoo Linux
+item ipfire ${space} IPFire
 item rancheros ${space} RancherOS
 item rhel ${space} Red Hat Enterprise Linux
 item scientific ${space} Scientific
