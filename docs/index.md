@@ -75,6 +75,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 
 * [ALT Linux Rescue](https://en.altlinux.org/Rescue)
 * [AVG Rescue CD](http://www.avg.com/us-en/avg-rescue-cd)
+* [Breakin](http://www.advancedclustering.com/products/software/breakin/)
 * [Clonezilla](http://www.clonezilla.org/)
 * [DBAN](http://www.dban.org/)
 * [GParted](http://gparted.org)
