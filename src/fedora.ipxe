@@ -23,8 +23,11 @@ menu ${os} ${arch} sku type
 item Everything ${ova} Everything
 item Server ${ova} Server
 item Workstation ${ova} Workstation
+item Atomic ${ova} Atomic
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${arch}/os
+iseq ${sku_type} Atomic && iseq ${osversion} 27 && set dir fedora-alt/atomic/stable/Fedora-Atomic-27-20171211.0/Atomic/x86_64/os ||
+iseq ${sku_type} Atomic && iseq ${osversion} 26 && set dir fedora-alt/atomic/stable/Fedora-Atomic-26-20171030.0/Atomic/x86_64/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
