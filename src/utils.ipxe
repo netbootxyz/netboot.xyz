@@ -4,6 +4,7 @@ menu Utilities - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Utilities:
 item alt_linux_rescue ${space} ALT Linux Rescue
 item avg ${space} AVG Rescue CD
+item breakin ${space} Breakin
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
@@ -39,6 +40,12 @@ goto boot_memdisk
 set avg_version 160420a12074
 set util_path download.avg.com/filedir/inst/avg_arl_cdi_all_120_${avg_version}.iso
 set util_file avg_arl_cdi_all_120_${avg_version}.iso
+goto boot_memdisk
+
+:breakin
+set breakin_version 4.26.1-53
+set util_path www.advancedclustering.com/wp-content/uploads/2017/02/bootimage-${breakin_version}.iso
+set util_file bootimage-${breakin_version}.iso
 goto boot_memdisk
 
 :clonezilla

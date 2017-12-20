@@ -70,6 +70,7 @@ Full documentation is at ReadTheDocs:
 #### Utilities
 
 * [AVG Rescue CD](http://www.avg.com/us-en/avg-rescue-cd)
+* [Breakin](http://www.advancedclustering.com/products/software/breakin/)
 * [Clonezilla](http://www.clonezilla.org/)
 * [DBAN](http://www.dban.org/)
 * [GParted](http://gparted.org)
