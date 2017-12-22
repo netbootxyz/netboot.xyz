@@ -82,31 +82,6 @@ goto main_menu
 echo Booting from local disks ...
 exit 0
 
-:reload
-echo Reloading menu.ipxe ...
-chain menu.ipxe
-
-:netinfo
-menu Network info
-item --gap MAC:
-item mac ${space} ${netX/mac}
-item --gap IP/mask:
-item ip ${space} ${netX/ip}/${netX/netmask}
-item --gap Gateway:
-item gw ${space} ${netX/gateway}
-item --gap Domain:
-item domain ${space} ${netX/domain}
-item --gap DNS:
-item dns ${space} ${netX/dns}
-item --gap DHCP server:
-item dhcpserver ${space} ${netX/dhcp-server}
-item --gap Next-server:
-item nextserver ${space} ${next-server}
-item --gap Filename:
-item filename ${space} ${netX/filename}
-choose empty ||
-goto main_menu
-
 :shell
 echo Type "exit" to return to menu.
 set menu main_menu
