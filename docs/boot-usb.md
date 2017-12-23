@@ -58,7 +58,7 @@ and remove your flash media when the command completes.
 
 ### Creating USB Key on Windows
 
-Check out [Universal USB Installer](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/) to install the ISO file to a USB key.
+Check out [Rufus](https://rufus.akeo.ie/) to install the ISO file to a USB key.
 
 ### Booting
 
