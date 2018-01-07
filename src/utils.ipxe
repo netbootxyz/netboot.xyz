@@ -8,7 +8,6 @@ item breakin ${space} Breakin
 item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
-item memtest-420 ${space} Memtest86+ 4.20
 item memtest-501 ${space} Memtest86+ 5.01
 item partition-wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
@@ -66,14 +65,9 @@ set util_path sourceforge.net/projects/gparted/files/gparted-live-stable/${gpart
 set util_file gparted-live-${gparted_version}-amd64.iso
 goto boot_memdisk
 
-:memtest-420
-set util_path boot.netboot.xyz/utils/memtest86-4.20.bin
-set util_file memtest86-4.20.bin
-goto boot_memtest
-
 :memtest-501
-set util_path boot.netboot.xyz/utils/memtest86-5.01.bin
-set util_file memtest86-5.01.bin
+set util_path boot.netboot.xyz/utils/memtest86-5.01.0
+set util_file memtest86-5.01.0
 goto boot_memtest
 
 :partition-wizard
