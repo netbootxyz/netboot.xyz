@@ -18,7 +18,7 @@ goto boot
 :boot
 echo Login in with username: rancher, password: rancher
 echo To install: ros install -d /dev/sda1
-kernel http://${url}/${folder}/vmlinuz rancher.state.autoformat=[/dev/sda] rancher.password=rancher
+kernel http://${url}/${folder}/vmlinuz rancher.state.autoformat=[/dev/sda] rancher.password=rancher initrd=initrd
 initrd http://${url}/${folder}/initrd
 boot
 
