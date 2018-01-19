@@ -53,6 +53,17 @@ cp bin-x86_64-efi/ipxe.efi efi_tmp/EFI/BOOT/bootx64.efi
 genisoimage -o ipxe.eiso efi_tmp
 mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
 mv ipxe.eiso ../../build/ipxe/netboot.xyz-efi.iso
+
+# generate EFI arm64 iPXE disk
+make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 bin-arm64-efi/ipxe.efi \ 
+EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+mv bin-arm64-efi/ipxe.efi ../../build/ipxe/netboot.xyz-arm64.efi
+
+# generate netboot.xyz-packet-arm64 iPXE disk
+make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 bin-arm64-efi/ipxe.efi \
+EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+mv bin-arm64-efi/ipxe.efi ../../build/ipxe/netboot.xyz-packet-arm64.efi
+
 # return to root
 cd ../..
 

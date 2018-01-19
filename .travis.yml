@@ -5,7 +5,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_7d306b01dc1f_key -iv $encrypted_7d306b01dc1f_iv -in script/secrets.tar.enc -out script/secrets.tar -d
 - tar xvf script/secrets.tar -C script/
 - sudo apt-get update -qq
-- sudo apt-get install -qq binutils-dev genisoimage liblzma-dev syslinux
+- sudo apt-get install -qq binutils-dev binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu genisoimage liblzma-dev syslinux 
 - sudo pip install mkdocs==0.16.3 mkdocs-bootswatch awscli
 script:
 - "./script/prep-release.sh"
