@@ -9,7 +9,7 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 17.1.0 ${space} ${os} 17.1.0
+item 17.1.2 ${space} ${os} 17.1.2
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
