@@ -3,7 +3,7 @@ site_description: netboot.xyz uses iPXE to network boot Operating System install
 site_author: netboot.xyz
 site_url: https://netboot.xyz
 repo_url: https://github.com/antonym/netboot.xyz
-copyright: © 2017 <a href="https://twitter.com/@ntonym">Antony Messerli</a>
+copyright: © 2018 <a href="https://twitter.com/@ntonym">Antony Messerli</a>
 docs_dir: docs
 google_analytics: ['UA-68807-15', 'netboot.xyz']
 pages:
