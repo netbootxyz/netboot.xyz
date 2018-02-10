@@ -68,6 +68,14 @@ EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.c
 bin-arm64-efi/snp.efi
 mv bin-arm64-efi/snp.efi ../../build/ipxe/netboot.xyz-packet-arm64.efi
 
+# generate arm64 experimental
+cp config/local/nap.h.efi config/local/nap.h
+make clean
+make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
+EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt \
+bin-arm64-efi/snp.efi
+mv bin-arm64-efi/snp.efi ../../build/ipxe/netboot.xyz-arm64-experimental.efi
+
 # return to root
 cd ../..
 
