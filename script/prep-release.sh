@@ -70,6 +70,7 @@ mv bin-arm64-efi/snp.efi ../../build/ipxe/netboot.xyz-packet-arm64.efi
 
 # generate arm64 experimental
 cp config/local/nap.h.efi config/local/nap.h
+cp config/local/usb.h.efi config/local/usb.h
 make clean
 make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
 EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt \
