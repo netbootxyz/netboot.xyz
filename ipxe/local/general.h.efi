@@ -4,5 +4,7 @@
 #define NET_PROTO_IPV6        /* IPv6 protocol */
 #define NSLOOKUP_CMD          /* DNS resolving command */
 #define NTP_CMD               /* NTP commands */
+#define PCI_CMD               /* PCI commands */
 #define REBOOT_CMD            /* Reboot command */
+#define TIME_CMD              /* Time commands */
 #define VLAN_CMD              /* VLAN commands */
