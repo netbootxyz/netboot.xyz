@@ -1,0 +1,31 @@
+#!ipxe
+
+# IPFire 
+# https://www.ipfire.org/
+
+goto ${menu} ||
+
+:ipfire
+clear osversion
+set os IPFire
+menu ${os} - ${arch}
+item 2.19-core116 ${space} ${os} 2.19 Core 116
+item 2.19-core115 ${space} ${os} 2.19 Core 115
+isset ${osversion} || choose osversion || goto linux_menu
+echo ${cls}
+set dir https://${ipfire_mirror}/${ipfire_base_dir}/${osversion}
+echo ${dir}
+goto ipfire_images
+
+#https://mirror1.ipfire.org/releases/ipfire-boot/v2.0/ipxe.kpxe
+
+:ipfire_images
+imgfree
+kernel ${dir}/images/${arch}/vmlinuz ${params} ${netcfg} ${console} vga=791
+initrd ${dir}/images/${arch}/instroot
+boot
+goto ipfire_exit
+
+:ipfire_exit
+clear menu
+exit 0
