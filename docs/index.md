@@ -50,6 +50,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [FreeBSD](https://freebsd.org)
 * [FreeDOS](http://www.freedos.org)
 * [Gentoo](https://gentoo.org)
+* [IPFire](https://www.ipfire.org)
 * [Mageia](http://www.mageia.org)
 * [Manjaro Linux](https://manjaro.github.io)
 * [Microsoft Windows](https://www.microsoft.com)

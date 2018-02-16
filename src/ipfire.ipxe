@@ -1,0 +1,39 @@
+#!ipxe
+
+# IPFire
+# https://www.ipfire.org/
+
+goto ${menu} ||
+
+:ipfire
+clear osversion
+set os IPFire
+menu ${os} - Image Sig Checks: [${img_sigs_enabled}]
+item 2.19-core118 ${space} ${os} 2.19 Core 118
+isset ${osversion} || choose osversion || goto linux_menu
+echo ${cls}
+set ipfire_mirror downloads.ipfire.org
+set dir releases/ipfire-2.x/${osversion}/images/x86_64
+goto ipfire_images
+
+:ipfire_images
+imgfree
+kernel https://${ipfire_mirror}/${dir}/vmlinuz ${console} vga=791 initrd=instroot
+initrd https://${ipfire_mirror}/${dir}/instroot
+echo
+echo MD5sums:
+md5sum vmlinuz instroot
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify vmlinuz ${sigs}ipfire/${dir}/vmlinuz.sig || goto error
+imgverify instroot ${sigs}ipfire/${dir}/instroot.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
+boot
+
+:ipfire_exit
+clear menu
+exit 0
