@@ -1,0 +1,29 @@
+#!ipxe
+
+# Alpine Linux
+# https://alpinelinux.org
+
+goto ${menu}
+
+:alpinelinux
+set os Alpine Linux
+iseq ${arch} x86_64 && set bootarch x86_64 || set bootarch x86
+
+menu ${os} [${bootarch}]
+item latest-stable Latest stable
+item edge Edge (development)
+choose version || goto alpine_exit
+goto boot
+
+:boot
+set base-url http://dev.alpinelinux.org/~clandmeter/netboot/${version}/${bootarch}
+set repo-url http://${alpinelinux_mirror}/${alpinelinux_base_dir}/${version}/main
+imgfree
+kernel ${base-url}/vmlinuz-vanilla alpine_repo=${repo-url} modules=loop,squashfs modloop=${base-url}/modloop-vanilla quiet nomodeset
+initrd ${base-url}/initramfs-vanilla
+boot
+goto alpine_exit
+
+:alpine_exit
+clear menu
+exit 0

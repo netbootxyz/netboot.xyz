@@ -15,6 +15,7 @@ item manjaro ${space} Manjaro Linux
 item opensuse ${space} openSUSE
 item ubuntu ${space} Ubuntu
 item --gap All Others:
+item alpinelinux ${space} Alpine Linux (Experimental)
 item antergos ${space} Antergos
 item coreos ${space} CoreOS
 item devuan ${space} Devuan
