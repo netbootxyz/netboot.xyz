@@ -6,7 +6,7 @@ before_install:
 - tar xvf script/secrets.tar -C script/
 - sudo apt-get update -qq
 - sudo apt-get install -qq binutils-dev binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu genisoimage liblzma-dev syslinux 
-- sudo pip install mkdocs==0.16.3 mkdocs-bootswatch awscli
+- sudo pip install mkdocs==0.16.3 mkdocs-bootswatch awscli tornado==4.5.3
 script:
 - "./script/prep-release.sh"
 deploy:
