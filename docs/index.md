@@ -34,7 +34,7 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 
     chain --autofree https://boot.netboot.xyz
 
-You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/ipxe/blob/master/src/config/general.h#L56) enabled when compiling iPXE.
+You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/ipxe/blob/master/src/config/general.h#L57) enabled when compiling iPXE.
 
 ### Operating Systems
 
