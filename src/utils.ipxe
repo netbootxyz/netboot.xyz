@@ -15,9 +15,9 @@ item supergrub ${space} Super Grub2 Disk
 item sysrcd ${space} SystemRescueCD
 item ubcd ${space} Ultimate Boot CD (UBCD)
 item --gap netboot.xyz tools:
-item nbxyz-custom ${space} Set Github User [user: ${github_user}]
+item nbxyz-custom ${space} Set Github username [user: ${github_user}]
 item testdistro ${space} Test Distribution ISO
-item testpr ${space} Test netboot.xyz branch
+item testpr ${space} Test forked netboot.xyz branch or hash
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
 goto ${menu} ||
@@ -146,7 +146,7 @@ goto utils_exit
 
 :testdistro
 echo This option will allow you to test booting an ISO using memdisk. Please
-echo specify the url of the ISO you want to test and it will automatically
+echo specify the URL of the ISO you want to test and it will automatically
 echo attempt to load the ISO using memdisk.
 echo -n URL: ${} && read distro_iso
 kernel ${memdisk} iso raw
@@ -156,17 +156,17 @@ goto utils_exit
 
 :testpr
 clear github_user
-clear github_hash
-echo This will chainload into a testing branch of netboot.xyz.  You'll need to enter
-echo your Github User and the first part of the commit hash of the commit you want
-echo to test or the branch name.  This assumes you are testing from a netboot.xyz 
+clear github_branch_or_hash
+echo This will chainload into a testing branch of netboot.xyz. You'll need to enter
+echo your Github username and the first part of the commit hash of the commit you want
+echo to test or the branch name. This assumes you are testing from a forked netboot.xyz
 echo repo.
 echo
-echo -n Specify Github User Name: ${} && read github_user
-echo -n Specify branch name or hash ( i.e. my_feature or 30b7ca ): ${} && read github_hash
+echo -n Specify Github username: ${} && read github_user
+echo -n Specify Github branch name or commit hash ( i.e. my_feature or 30b7ca ): ${} && read github_branch_or_hash
 echo
-echo Attempting to chainload:
-chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_hash}/src/menu.ipxe || echo Unable to find branch... && sleep 5 && goto utils_exit
+echo Attempting to chainload branch or hash:
+chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz/${github_branch_or_hash}/src/menu.ipxe || echo Unable to find Github branch or hash... && sleep 5 && goto utils_exit
 goto utils_exit
 
 :utils_exit
