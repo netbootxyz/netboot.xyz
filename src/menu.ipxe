@@ -35,7 +35,6 @@ isset ${ip} || dhcp || echo DHCP failed
 clear menu
 set space:hex 20:20
 set space ${space:string}
-iseq ${arch} i386 && set arch5 i586 || set arch5 ${arch}
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 menu ${site_name}
 item --gap Default:
