@@ -9,7 +9,7 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 17.1.5 ${space} ${os} 17.1.5
+item 17.1.5 ${space} ${os} 17.1.7
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
@@ -25,7 +25,7 @@ goto mirror_cfg
 
 :mirror_cfg
 set flavor_root ${flavor}
-iseq ${flavor} architect && set ${manjaro_version} 17.0.4 ||
+iseq ${flavor} architect && set ${manjaro_version} 17.1.7 ||
 set manjaro_initrd http://sourceforge.net/projects/manjarolinux/files/release/${manjaro_version}/${flavor_root}/manjaro-${flavor}-${manjaro_version}-stable-x86_64.iso/download
 goto manjaro_boot
 
