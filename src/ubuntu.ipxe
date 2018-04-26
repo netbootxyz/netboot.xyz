@@ -10,7 +10,7 @@ set os Ubuntu
 clear ubuntu_version
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
-# item bionic ${space} ${os} 18.04 LTS Bionic Beaver
+item bionic ${space} ${os} 18.04 LTS Bionic Beaver
 item artful ${space} ${os} 17.10 Artful Aardvark
 item xenial ${space} ${os} 16.04 LTS Xenial Xerus
 item trusty ${space} ${os} 14.04 LTS Trusty Tahr
