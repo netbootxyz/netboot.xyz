@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
 
-![netboot.xyz menu](http://netbootxyz.readthedocs.org/en/latest/img/netboot.xyz.gif)
+![netboot.xyz menu](https://netboot.xyz/images/netboot.xyz.gif)
 
 ### Bootloader Downloads
 
