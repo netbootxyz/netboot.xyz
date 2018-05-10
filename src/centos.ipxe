@@ -10,7 +10,7 @@ clear osversion
 set os CentOS
 set ksdevice eth0
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
-item 7.4.1708 ${os} 7.4
+item 7.5.1804 ${os} 7.5
 item 6.9 ${os} 6.9
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
