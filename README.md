@@ -31,8 +31,8 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 
 You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/ipxe/blob/master/src/config/general.h#L56) enabled in iPXE.
 
-Full documentation is at ReadTheDocs:
-* [http://netbootxyz.readthedocs.org/en/latest/](http://netbootxyz.readthedocs.org/en/latest/)
+Full documentation is at netboot.xyz:
+* [https://netboot.xyz](https://netboot.xyz)
 
 ### What Operating Systems are available?
 
