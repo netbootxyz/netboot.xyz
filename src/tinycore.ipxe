@@ -6,8 +6,8 @@
 set tinycore_mirror tinycorelinux.net
 
 :tinycore_menu
-set dir 7.x/x86/release
-menu Tiny Core Linux 7.x
+set dir 9.x/x86/release
+menu Tiny Core Linux 9.x
 item Core ${space} Core [ISO]
 item TinyCore ${space} TinyCore [ISO]
 item CorePlus ${space} CorePlus [ISO]
