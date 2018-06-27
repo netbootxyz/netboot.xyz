@@ -15,7 +15,8 @@ goto antergos_boot
 
 :antergos_boot
 kernel ${memdisk} iso raw
-initrd http://repo.antergos.info/iso/release/antergos-minimal-${antergos_version}-${antergos_arch}.iso
+#initrd http://repo.antergos.info/iso/release/antergos-minimal-${antergos_version}-${antergos_arch}.iso
+initrd https://antergos.com/download/antergos-minimal-iso/ #this link forwards to the 'latest' minimal iso, can ipxe handle that?
 boot
 goto antergos_exit
 
