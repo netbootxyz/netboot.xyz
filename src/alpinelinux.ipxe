@@ -6,21 +6,36 @@
 goto ${menu}
 
 :alpinelinux
+clear alpine_version
 set os Alpine Linux
 iseq ${arch} x86_64 && set bootarch x86_64 || set bootarch x86
-
-menu ${os} [${bootarch}]
-item latest-stable Latest stable
-item edge Edge (development)
-choose version || goto alpine_exit
+menu ${os} [${bootarch}] - Image Sig Checks: [${img_sigs_enabled}]
+item --gap Latest Releases
+item v3.8 ${space} ${os} 3.8.0
+item --gap Development Releases
+item edge ${space} ${os} Edge (development)
+choose alpine_version || goto alpine_exit
 goto boot
 
 :boot
-set base-url http://dev.alpinelinux.org/~clandmeter/netboot/${version}/${bootarch}
-set repo-url http://${alpinelinux_mirror}/${alpinelinux_base_dir}/${version}/main
+set base-url http://${alpinelinux_mirror}
+set dir ${alpinelinux_base_dir}/${alpine_version}/releases/${bootarch}/netboot
+set repo-url ${base-url}/${alpinelinux_base_dir}/${alpine_version}/main
 imgfree
-kernel ${base-url}/vmlinuz-vanilla alpine_repo=${repo-url} modules=loop,squashfs modloop=${base-url}/modloop-vanilla quiet nomodeset
-initrd ${base-url}/initramfs-vanilla
+kernel ${base-url}/${dir}/vmlinuz-vanilla alpine_repo=${repo-url} modules=loop,squashfs modloop=${base-url}/modloop-vanilla quiet nomodeset
+initrd ${base-url}/${dir}/initramfs-vanilla
+echo
+echo MD5sums:
+md5sum vmlinuz-vanilla initramfs-vanilla
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify vmlinuz-vanilla ${sigs}${dir}/vmlinuz-vanilla.sig || goto error
+imgverify initramfs-vanilla ${sigs}${dir}/initramfs-vanilla.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
 boot
 goto alpine_exit
 
