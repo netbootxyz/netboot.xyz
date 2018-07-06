@@ -8,7 +8,6 @@ goto ${menu} ||
 :centos
 clear osversion
 set os CentOS
-set ksdevice eth0
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 7.5.1804 ${os} 7.5
 item 6.9 ${os} 6.9
@@ -45,7 +44,7 @@ goto bootos_images
 
 :kickstart
 echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
-set params ks=${ksurl} ksdevice=${ksdevice} ||
+set params ks=${ksurl} ||
 clear bt
 goto boottype
 
@@ -57,7 +56,7 @@ goto boottype
 
 :bootos_images
 imgfree
-kernel http://${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console} initrd=initrd.img
+kernel http://${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} BOOTIF=${netX/mac} ip=dhcp initrd=initrd.img
 initrd http://${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
