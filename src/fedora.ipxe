@@ -54,7 +54,7 @@ goto boot
 
 :boot
 imgfree
-kernel http://${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${fedora_mirror}/${dir} ${params} ${console} initrd=initrd.img
+kernel http://${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${fedora_mirror}/${dir} ${params} ${console} BOOTIF=${netX/mac} ip=dhcp initrd=initrd.img
 initrd http://${fedora_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
