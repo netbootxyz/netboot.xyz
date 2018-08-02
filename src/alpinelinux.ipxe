@@ -22,7 +22,7 @@ set base-url http://${alpinelinux_mirror}
 set dir ${alpinelinux_base_dir}/${alpine_version}/releases/${bootarch}/netboot
 set repo-url ${base-url}/${alpinelinux_base_dir}/${alpine_version}/main
 imgfree
-kernel ${base-url}/${dir}/vmlinuz-vanilla alpine_repo=${repo-url} modules=loop,squashfs modloop=${base-url}/modloop-vanilla quiet nomodeset
+kernel ${base-url}/${dir}/vmlinuz-vanilla alpine_repo=${repo-url} modules=loop,squashfs modloop=${base-url}/${dir}/modloop-vanilla quiet nomodeset
 initrd ${base-url}/${dir}/initramfs-vanilla
 echo
 echo MD5sums:
