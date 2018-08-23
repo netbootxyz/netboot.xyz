@@ -8,7 +8,7 @@ goto ${menu} ||
 :kali
 set os Kali Linux
 menu ${os} - ${arch_a} 
-item rolling ${os} Rolling Edition (2018.1)
+item rolling ${os} Rolling Edition (2018.2)
 choose version || goto kali_exit
 
 :deb_boot_type
