@@ -26,7 +26,7 @@ item Workstation ${ova} Workstation
 item Atomic ${ova} Atomic
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${arch}/os
-iseq ${sku_type} Atomic && iseq ${osversion} 28 && set dir fedora-alt/atomic/stable/Fedora-Atomic-28-20180515.1/AtomicHost/x86_64/os ||
+iseq ${sku_type} Atomic && iseq ${osversion} 28 && set dir fedora-alt/atomic/stable/Fedora-Atomic-28-20180806.0/AtomicHost/x86_64/os ||
 iseq ${sku_type} Atomic && iseq ${osversion} 27 && set dir fedora-alt/atomic/stable/Fedora-Atomic-27-20180419.0/Atomic/x86_64/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
