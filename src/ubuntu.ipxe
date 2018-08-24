@@ -1,7 +1,7 @@
 #!ipxe
 
 # Ubuntu Operating System
-# http://www.ubuntu.org
+# https://www.ubuntu.com
 
 goto ${menu}
 
