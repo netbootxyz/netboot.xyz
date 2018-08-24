@@ -9,7 +9,7 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 17.1.10 ${space} ${os} 17.1.10
+item 17.1.12 ${space} ${os} 17.1.12
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
@@ -24,7 +24,7 @@ goto mirror_cfg
 
 :mirror_cfg
 set flavor_root ${flavor}
-iseq ${flavor} architect && set ${manjaro_version} 17.1.10 ||
+iseq ${flavor} architect && set ${manjaro_version} 17.1.11 ||
 set manjaro_initrd http://ftp.acc.umu.se//mirror/osdn.net/storage/g/m/ma/manjaro/${flavor_root}/${manjaro_version}/manjaro-${flavor}-${manjaro_version}-stable-x86_64.iso
 goto manjaro_boot
 
