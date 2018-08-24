@@ -9,7 +9,7 @@ goto ${menu}
 set os Debian Live
 menu ${os}
 item --gap Versions
-item 8.9.0 ${space} ${os} 8.9.0
+item 8.11.0 ${space} ${os} 8.11.0
 choose livedebian_version || goto livedebian_exit
 
 :livedebian_flavor
@@ -28,7 +28,7 @@ goto livedebian_boot
 
 :livedebian_boot
 set webboot_host cdimage.debian.org
-set livedebian_url http://${webboot_host}/cdimage/archive/${livedebian_version}-live/amd64/webboot/debian-live-${livedebian_version}-amd64-${flavor}
+set livedebian_url http://cdimage.debian.org/cdimage/archive/${livedebian_version}-live/amd64/webboot/debian-live-${livedebian_version}-amd64-${flavor}
 imgfree
 kernel ${livedebian_url}.vmlinuz boot=live config hooks=filesystem username=live noeject ${console} fetch=${livedebian_url}.squashfs initrd=debian-live-${livedebian_version}-amd64-${flavor}.initrd.img
 module ${livedebian_url}.initrd.img
