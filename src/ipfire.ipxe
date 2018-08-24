@@ -1,15 +1,22 @@
 #!ipxe
 
-# IPFire
-# https://www.ipfire.org/
+# IPFire - Open Source Firewall
+# Website : https://www.ipfire.org
+# Download: https://downloads.ipfire.org
+# NetBoot : https://downloads.ipfire.org/releases/ipfire-2.x/2.19-core119/images/i586/vmlinuz
+#           https://downloads.ipfire.org/releases/ipfire-2.x/2.19-core119/images/x86_64/vmlinuz
 
 goto ${menu} ||
 
 :ipfire
-clear osversion
 set os IPFire
+clear osversion
+
 menu ${os} - Image Sig Checks: [${img_sigs_enabled}]
-item 2.19-core118 ${space} ${os} 2.19 Core 118
+item --gap Latest Releases
+item 2.19-core119 ${space} ${os} 2.19 Core 119 (2018-03-13)
+item 2.19-core118 ${space} ${os} 2.19 Core 118 (2018-02-14)
+item 2.19-core117 ${space} ${os} 2.19 Core 117 (2018-01-04)
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
 set ipfire_mirror downloads.ipfire.org
