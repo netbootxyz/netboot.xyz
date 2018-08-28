@@ -9,7 +9,7 @@ goto ${menu} ||
 clear osversion
 set os IPFire
 menu ${os} - Image Sig Checks: [${img_sigs_enabled}]
-item 2.19-core118 ${space} ${os} 2.19 Core 118
+item 2.21-core122 ${space} ${os} 2.21 Core 122
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
 set ipfire_mirror downloads.ipfire.org
