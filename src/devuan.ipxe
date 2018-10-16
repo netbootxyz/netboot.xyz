@@ -11,10 +11,10 @@ clear devuan_version
 clear older_release
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item ascii ${space} ${os} ascii (stable)
 item jessie ${space} ${os} 1.0 (jessie)
 item --gap Testing Releases
-item stretch ${space} ${os} ascii (testing)
-item sid ${space} ${os} ceres (unstable) 
+item beowulf ${space} ${os} beowulf (testing)
 choose devuan_version || goto devuan_exit
 goto mirrorcfg
 
