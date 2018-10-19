@@ -5,15 +5,17 @@
 
 :openbsd_menu
 menu OpenBSD
+item 6.4 OpenBSD 6.4
 item 6.3 OpenBSD 6.3
 item 6.2 OpenBSD 6.2
 item 6.1 OpenBSD 6.1
-item snapshots OpenBSD 6.2 Latest Snapshot
+item snapshots OpenBSD 6.4 Latest Snapshot
 choose ver || goto openbsd_exit
+iseq ${ver} 6.4 && set image_ver 64 ||
 iseq ${ver} 6.3 && set image_ver 63 ||
 iseq ${ver} 6.2 && set image_ver 62 ||
 iseq ${ver} 6.1 && set image_ver 61 ||
-iseq ${ver} snapshots && set image_ver 63 ||
+iseq ${ver} snapshots && set image_ver 64 ||
 
 iseq ${arch} x86_64 && goto openbsd_x64 ||
 set openbsd_arch i386
