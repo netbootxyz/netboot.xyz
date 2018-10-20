@@ -10,8 +10,7 @@ clear osversion
 set os Citrix XenServer
 menu ${os} 
 item --gap Stable Releases
-item 7.0.0 ${space} ${os} 7.0 (dundee)
-item 6.5.0 ${space} ${os} 6.5 (creedence)
+item 7.6.0 ${space} ${os} 7.6 (Current Release)
 choose xs_version || goto hypervisor_menu
 goto determine_type
 
