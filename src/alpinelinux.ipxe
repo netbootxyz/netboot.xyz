@@ -11,7 +11,7 @@ set os Alpine Linux
 iseq ${arch} x86_64 && set bootarch x86_64 || set bootarch x86
 menu ${os} [${bootarch}] - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
-item v3.8 ${space} ${os} 3.8.0
+item v3.8 ${space} ${os} 3.8.1
 item --gap Development Releases
 item edge ${space} ${os} Edge (development)
 choose alpine_version || goto alpine_exit
