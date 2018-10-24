@@ -10,10 +10,10 @@ clear osversion
 set os CentOS
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 7.5.1804 ${os} 7.5
-item 6.9 ${os} 6.9
+item 6.10 ${os} 6.10
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
-iseq ${osversion} 6.9 && set dir ${menu}/${osversion}/os/${arch} ||
+iseq ${osversion} 6.10 && set dir ${menu}/${osversion}/os/${arch} ||
 set dir ${centos_base_dir}/${osversion}/os/x86_64
 set repo http://${centos_mirror}/${dir}
 goto boottype
