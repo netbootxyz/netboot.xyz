@@ -64,10 +64,6 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [Tiny Core Linux](http://tinycorelinux.net)
 * [Ubuntu](http://www.ubuntu.com/)
 
-#### Hypervisors
-
-* [Citrix XenServer](http://xenserver.org)
-
 #### Security Related
 
 * [BlackArch Linux](https://blackarch.org)
