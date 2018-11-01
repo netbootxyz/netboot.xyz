@@ -12,8 +12,8 @@ clear ova
 set os Fedora
 menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item 29 ${space} ${os} 29
 item 28 ${space} ${os} 28
-item 27 ${space} ${os} 27
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
@@ -26,8 +26,8 @@ item Workstation ${ova} Workstation
 item Atomic ${ova} Atomic
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${arch}/os
+iseq ${sku_type} Atomic && iseq ${osversion} 29 && set dir fedora-alt/atomic/stable/Fedora-Atomic-29-20181030.0/AtomicHost/x86_64/os ||
 iseq ${sku_type} Atomic && iseq ${osversion} 28 && set dir fedora-alt/atomic/stable/Fedora-Atomic-28-20180806.0/AtomicHost/x86_64/os ||
-iseq ${sku_type} Atomic && iseq ${osversion} 27 && set dir fedora-alt/atomic/stable/Fedora-Atomic-27-20180419.0/Atomic/x86_64/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
