@@ -6,6 +6,10 @@ Download a netboot.xyz USB disk:
 
 * [netboot.xyz](https://boot.netboot.xyz/ipxe/netboot.xyz.usb) 
 
+## GUI Tool (Windows/Linux/macOS)
+
+If you prefer a graphical tool to write the image to USB, check out [Etcher](https://balena.io/etcher) as a simple and easy to use tool for Linux/Mac/Windows. You download the correct version for your operating system, extract and/or run it, then select the image you want to write, and the target USB/SD card you want to write it to. If it doesn't recognize the image's extension but you know it is a bootable USB/SD image, you can change the extension to .bin or .img to allow Etcher to "see" it and write it to your drive.
+
 ## Creating USB Key on Linux
 
 Insert a USB key in your compute and find the device name. Then use following command:
