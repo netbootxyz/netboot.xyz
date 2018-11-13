@@ -9,7 +9,6 @@ item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
 item memtest-501 ${space} Memtest86+ 5.01
-item partition-wizard ${space} Partition Wizard
 item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
 item sysrcd ${space} SystemRescueCD
@@ -69,11 +68,6 @@ goto boot_memdisk
 set util_path boot.netboot.xyz/utils/memtest86-5.01.0
 set util_file memtest86-5.01.0
 goto boot_memtest
-
-:partition-wizard
-set util_path www.partitionwizard.com/download/pwfree91-x64.iso
-set util_file pwfree91-x64.iso
-goto boot_memdisk
 
 :pogostick
 set util_path pogostick.net/~pnh/ntpasswd/cd140201.zip
