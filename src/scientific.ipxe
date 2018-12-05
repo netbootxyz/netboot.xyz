@@ -9,8 +9,8 @@ goto ${menu} ||
 clear osversion
 set os Scientific Linux
 menu ${os} ${arch}
+item 7.6 ${os} 7.6
 item 7.5 ${os} 7.5
-item 7.4 ${os} 7.4
 item 6.10 ${os} 6.10
 item 6.9 ${os} 6.9
 item other Choose other version [o]
