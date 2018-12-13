@@ -1,10 +1,10 @@
-# Digital Ocean
+# DigitalOcean
 
-[Digital Ocean](https://m.do.co/c/ab4e8f17ba0d) at one point had iPXE support loaded within their SeaBIOS but has since removed it.  In order to get around this, we'll have to rely on the Grub bootloader instead.
+[DigitalOcean](https://m.do.co/c/ab4e8f17ba0d) at one point had iPXE support loaded within their SeaBIOS but has since removed it.  In order to get around this, we'll have to rely on the Grub bootloader instead.
 
 iPXE generates linux bootable kernels so that you can boot iPXE directly from Grub.  It then treats the initrd as an embedded script which contains your networking and details to load up netboot.xyz.
 
-Tests were done using a [Fedora 23](https://getfedora.org) instance on [Digital Ocean](https://m.do.co/c/ab4e8f17ba0d).
+Tests were done using a [Fedora 23](https://getfedora.org) instance on [DigitalOcean](https://m.do.co/c/ab4e8f17ba0d).
 
 ### Download an iPXE linux kernel
 
