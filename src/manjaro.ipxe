@@ -9,7 +9,7 @@ goto ${menu}
 set os Manjaro Linux
 menu ${os} Installers
 item --gap Official Releases
-item 18.0 ${space} ${os} 18.0
+item 18.0.2 ${space} ${os} 18.0.2
 choose manjaro_version || goto manjaro_exit
 
 :manjaro_flavor
