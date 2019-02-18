@@ -25,10 +25,11 @@ set freebsd_arch amd64
 goto boot_freebsd
 
 :boot_freebsd
-iseq ${ver} 11.2 && set image_subdir 11 ||
-iseq ${ver} 11.1 && set image_subdir 11 ||
-iseq ${ver} 11.0 && set image_subdir 11 ||
-iseq ${ver} 10.3 && set image_subdir 10/${freebsd_arch} ||
+iseq ${ver} 12.0 && set image_subdir 12/${freebsd_arch} ||
+iseq ${ver} 11.2 && set image_subdir 11/${freebsd_arch} ||
+iseq ${ver} 11.1 && set image_subdir 11/${freebsd_arch} ||
+iseq ${ver} 11.0 && set image_subdir 11/${freebsd_arch} ||
+iseq ${ver} 10.4 && set image_subdir 10/${freebsd_arch} ||
 set src http://mfsbsd.vx.sk/files/images/${image_subdir}/mfsbsd-${image_ver}-${freebsd_arch}.img
 imgfree
 echo This loads an mfsbsd installer (http://mfsbsd.vx.sk/).
