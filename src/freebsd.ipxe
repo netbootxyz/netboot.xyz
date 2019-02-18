@@ -5,16 +5,18 @@
 
 :freebsd_menu
 menu Please pick a FreeBSD version
+item 12.0 FreeBSD 12.0
 item 11.2 FreeBSD 11.2
 item 11.1 FreeBSD 11.1
 item 11.0 FreeBSD 11.0
-item 10.3 FreeBSD 10.3
+item 10.4 FreeBSD 10.4
 choose ver || goto freebsd_exit
 
+iseq ${ver} 12.0 && set image_ver 12.0-RELEASE ||
 iseq ${ver} 11.2 && set image_ver 11.2-RELEASE ||
 iseq ${ver} 11.1 && set image_ver 11.1-RELEASE ||
 iseq ${ver} 11.0 && set image_ver 11.0-RELEASE ||
-iseq ${ver} 10.3 && set image_ver 10.3-RELEASE ||
+iseq ${ver} 10.4 && set image_ver 10.4-RELEASE ||
 
 iseq ${arch} x86_64 && goto freebsd_x64 ||
 set freebsd_arch i386
@@ -30,7 +32,7 @@ iseq ${ver} 11.2 && set image_subdir 11/${freebsd_arch} ||
 iseq ${ver} 11.1 && set image_subdir 11/${freebsd_arch} ||
 iseq ${ver} 11.0 && set image_subdir 11/${freebsd_arch} ||
 iseq ${ver} 10.4 && set image_subdir 10/${freebsd_arch} ||
-set src http://mfsbsd.vx.sk/files/images/${image_subdir}/mfsbsd-${image_ver}-${freebsd_arch}.img
+set src https://mfsbsd.vx.sk/files/images/${image_subdir}/mfsbsd-${image_ver}-${freebsd_arch}.img
 imgfree
 echo This loads an mfsbsd installer (http://mfsbsd.vx.sk/).
 echo Root password for all images: mfsroot
