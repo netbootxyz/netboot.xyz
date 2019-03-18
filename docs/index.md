@@ -56,6 +56,7 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [Manjaro Linux](https://manjaro.github.io)
 * [Microsoft Windows](https://www.microsoft.com)
 * [MirOS](https://www.mirbsd.org)
+* [NixOS](https://nixos.org)
 * [OpenBSD](http://openbsd.org)
 * [OpenSUSE](http://opensuse.org)
 * [RancherOS](http://rancher.com/rancher-os/)
