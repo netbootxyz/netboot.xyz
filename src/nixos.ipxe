@@ -6,9 +6,11 @@
 set os Nixos Linux
 menu ${os}
 item --gap Official Releases
+item 19.03 ${space} Nixos 19.03
 item 18.09 ${space} Nixos 18.09
 item unstable ${space} Nixos unstable
 choose version || goto nixos_exit
+iseq ${version} 19.03 && set link https://hydra.nixos.org/job/nixos/release-19.03/nixos.netboot.x86_64-linux/latest-finished/download/netboot.ipxe ||
 iseq ${version} 18.09 && set link https://hydra.nixos.org/job/nixos/release-18.09/nixos.netboot.x86_64-linux/latest-finished/download/netboot.ipxe ||
 iseq ${version} unstable && set link https://hydra.nixos.org/job/nixos/trunk-combined/nixos.netboot.x86_64-linux/latest-finished/download/netboot.ipxe ||
 chain ${link}
