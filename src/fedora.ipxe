@@ -14,7 +14,6 @@ menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item 30 ${space} ${os} 30
 item 29 ${space} ${os} 29
-item 28 ${space} ${os} 28
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
