@@ -4,6 +4,7 @@
 # http://opensuse.org
 set distro opensuse
 menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
+item 15.1 openSUSE Leap 15.1
 item 15.0 openSUSE Leap 15.0
 item 42.3 openSUSE Leap 42.3
 item tumbleweed openSUSE tumbleweed
