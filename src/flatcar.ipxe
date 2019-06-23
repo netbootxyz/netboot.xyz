@@ -35,8 +35,8 @@ boot
 goto flatcar_exit
 
 :ignition_config
-echo -n Please set Ignition URL: && read ignition-config-url
-set flatcar_params flatcar.config.url=${ignition-config-url}
+echo -n Please set Ignition URL: && read flatcar.config.url
+set flatcar_params flatcar.config.url=${flatcar.config.url}
 clear menu
 goto flatcar
 
