@@ -4,7 +4,7 @@
 # https://www.flatcar.com
 # For further info on:
 # iPXE and flatcar Container Linux: https://docs.flatcar-linux.org/os/booting-with-ipxe/
-# Setting up Cloud Config: https://github.com/flatcar-linux/coreos-cloudinit
+# Setting up Ignition: https://docs.flatcar-linux.org/os/provisioning/
 # 64-bit only
 
 goto ${menu}
@@ -17,7 +17,7 @@ item stable ${space} ${os} Stable Channel
 item beta ${space} ${os} Beta Channel
 item alpha ${space} ${os} Alpha Channel
 item edge ${space} ${os} Edge Channel
-item cloud_config ${space} Set cloud-config-url: ${cloud-config-url}
+item ignition_config ${space} Set flatcar.config.url: ${flatcar.config.url}
 choose --default ${menu} menu || goto flatcar_exit
 echo ${cls}
 goto ${menu} ||
@@ -36,7 +36,7 @@ goto flatcar_exit
 
 :cloud_config
 echo -n Please set Cloud Config URL: && read cloud-config-url
-set flatcar_params cloud-config-url=${cloud-config-url}
+set flatcar_params flatcar.first_boot=1 flatcar.config.url=${cloud-config-url}
 clear menu
 goto flatcar
 
