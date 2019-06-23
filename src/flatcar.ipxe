@@ -36,7 +36,7 @@ goto flatcar_exit
 
 :cloud_config
 echo -n Please set Cloud Config URL: && read cloud-config-url
-set flatcar_params flatcar.first_boot=1 flatcar.config.url=${cloud-config-url}
+set flatcar_params "flatcar.first_boot=1 flatcar.config.url=${cloud-config-url}"
 clear menu
 goto flatcar
 
