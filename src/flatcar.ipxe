@@ -1,0 +1,45 @@
+#!ipxe
+
+# Container Linux by flatcar
+# https://www.flatcar.com
+# For further info on:
+# iPXE and flatcar Container Linux: https://flatcar.com/os/docs/latest/booting-with-ipxe.html
+# Setting up Cloud Config: https://github.com/flatcar/flatcar-cloudinit
+# 64-bit only
+
+goto ${menu}
+
+:flatcar
+set os Flatcar Linux
+menu ${os}
+item --gap ${os}:
+item stable ${space} ${os} Stable Channel
+item beta ${space} ${os} Beta Channel
+item alpha ${space} ${os} Alpha Channel
+item edge ${space} ${os} Edge Channel
+item cloud_config ${space} Set cloud-config-url: ${cloud-config-url}
+choose --default ${menu} menu || goto flatcar_exit
+echo ${cls}
+goto ${menu} ||
+goto flatcar_exit
+
+:stable
+:beta
+:alpha
+:edge
+set release ${menu}
+set base-url http://${release}.release.core-os.net/amd64-usr/current
+kernel ${base-url}/flatcar_production_pxe.vmlinuz ${flatcar_params} ${console} flatcar.autologin=tty1 flatcar.autologin=ttyS0 initrd=flatcar_production_pxe_image.cpio.gz
+initrd ${base-url}/flatcar_production_pxe_image.cpio.gz
+boot
+goto flatcar_exit
+
+:cloud_config
+echo -n Please set Cloud Config URL: && read cloud-config-url
+set flatcar_params cloud-config-url=${cloud-config-url}
+clear menu
+goto flatcar
+
+:flatcar_exit
+clear menu
+exit 0
