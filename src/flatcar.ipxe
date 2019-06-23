@@ -34,7 +34,7 @@ initrd ${base-url}/flatcar_production_pxe_image.cpio.gz
 boot
 goto flatcar_exit
 
-:cloud_config
+:ignition_config
 echo -n Please set Ignition URL: && read ignition-config-url
 set flatcar_params flatcar.config.url=${ignition-config-url}
 clear menu
