@@ -29,7 +29,7 @@ goto flatcar_exit
 :edge
 set release ${menu}
 set base-url http://${release}.release.flatcar-linux.net/amd64-usr/current
-kernel ${base-url}/flatcar_production_pxe.vmlinuz ${flatcar_params} ${console} flatcar.autologin=tty1 flatcar.autologin=ttyS0 initrd=flatcar_production_pxe_image.cpio.gz
+kernel ${base-url}/flatcar_production_pxe.vmlinuz ${flatcar_firstboot} ${flatcar_params} ${console} flatcar.autologin=tty1 flatcar.autologin=ttyS0 initrd=flatcar_production_pxe_image.cpio.gz
 initrd ${base-url}/flatcar_production_pxe_image.cpio.gz
 boot
 goto flatcar_exit
@@ -37,6 +37,7 @@ goto flatcar_exit
 :ignition_config
 echo -n Please set Ignition URL: && read flatcar.config.url
 set flatcar_params flatcar.config.url=${flatcar.config.url}
+set flatcar_firstboot flatcar.first_boot=1
 clear menu
 goto flatcar
 
