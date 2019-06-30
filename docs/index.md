@@ -52,7 +52,6 @@ You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/
 * [Gentoo](https://gentoo.org)
 * [IPFire](https://www.ipfire.org)
 * [Mageia](http://www.mageia.org)
-* [Manjaro Linux](https://manjaro.github.io)
 * [Microsoft Windows](https://www.microsoft.com)
 * [MirOS](https://www.mirbsd.org)
 * [NixOS](https://nixos.org)
