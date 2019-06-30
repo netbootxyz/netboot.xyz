@@ -16,7 +16,6 @@ item opensuse ${space} openSUSE
 item ubuntu ${space} Ubuntu
 item --gap All Others:
 item alpinelinux ${space} Alpine Linux
-item coreos ${space} CoreOS
 item devuan ${space} Devuan
 item flatcar ${space} Flatcar
 item gentoo ${space} Gentoo Linux

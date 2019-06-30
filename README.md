@@ -39,7 +39,6 @@ Full documentation is at netboot.xyz:
 * [Alpine Linux](https://alpinelinux.org)
 * [Arch Linux](https://www.archlinux.org)
 * [CentOS](https://centos.org)
-* [CoreOS Container Linux](https://coreos.com/)
 * [Debian](https://debian.org)
 * [Devuan](https://devuan.org)
 * [Fedora](https://fedoraproject.org)
