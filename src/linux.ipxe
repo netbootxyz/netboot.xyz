@@ -7,7 +7,7 @@ menu Linux Installers - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap Popular Linux Operating Systems:
 item archlinux ${space} Arch Linux
-item centos ${space} CentOS 
+item centos ${space} CentOS
 item debian ${space} Debian
 item fedora ${space} Fedora
 item mageia ${space} Mageia
@@ -18,6 +18,7 @@ item --gap All Others:
 item alpinelinux ${space} Alpine Linux
 item coreos ${space} CoreOS
 item devuan ${space} Devuan
+item flatcar ${space} Flatcar
 item gentoo ${space} Gentoo Linux
 item ipfire ${space} IPFire
 item nixos ${space} NixOS

@@ -43,6 +43,7 @@ Full documentation is at netboot.xyz:
 * [Debian](https://debian.org)
 * [Devuan](https://devuan.org)
 * [Fedora](https://fedoraproject.org)
+* [Flatcar Linux](https://www.flatcar-linux.org)
 * [FreeBSD](https://freebsd.org)
 * [FreeDOS](http://www.freedos.org)
 * [Gentoo](https://gentoo.org)
@@ -87,4 +88,3 @@ Under the **Utilities** menu on netboot.xyz, there's an option for ["Test netboo
 #### Feedback
 
 Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github, swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel, or ping us on [Gitter](https://gitter.im/antonym/netboot.xyz?utm_source=share-link&utm_medium=link&utm_campaign=share-link).  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
-
