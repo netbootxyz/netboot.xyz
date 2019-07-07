@@ -48,9 +48,12 @@ cp config/local/general.h.efi config/local/general.h
 make clean
 make bin-x86_64-efi/ipxe.efi \
 EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-mkdir -p efi_tmp/EFI/BOOT/
-cp bin-x86_64-efi/ipxe.efi efi_tmp/EFI/BOOT/bootx64.efi
-genisoimage -o ipxe.eiso efi_tmp
+mkdir -p efi_tmp
+dd if=/dev/zero of=efi_tmp/ipxe.img count=2880
+mformat -i efi_tmp/ipxe.img -m 0xf8
+mmd -i efi_tmp/ipxe.img ::efi ::efi/boot
+mcopy -i efi_tmp/ipxe.img bin-x86_64-efi/ipxe.efi ::efi/boot/bootx64.efi
+genisoimage -o ipxe.eiso -eltorito-platform 0xef -eltorito-boot ipxe.img -no-emul-boot efi_tmp
 mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
 mv ipxe.eiso ../../build/ipxe/netboot.xyz-efi.iso
 
