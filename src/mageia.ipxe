@@ -3,6 +3,9 @@
 # Mageia Operating System
 # http://www.mageia.org/
 
+# No way to set the network interface by MAC address, let the installer ask the question
+isset ${dhcp-server} && set network dhcp || set network static,ip:${ip},netmask:${netmask},gateway:${gateway},dns:${dns}
+
 goto ${menu} ||
 
 :mageia
@@ -18,7 +21,7 @@ goto mageia_boot
 :mageia_boot
 set dir ${mageia_base_dir}/distrib/${version}/x86_64 && set dir2 isolinux/x86_64 ||
 iseq ${arch} i386 && set dir ${mageia_base_dir}/distrib/${version}/i586 && set dir2 isolinux/i386 ||
-set automatic method:http,network:dhcp,server:${mageia_mirror},directory:/${dir}
+set automatic method:http,network:${network},server:${mageia_mirror},directory:/${dir}
 imgfree
 kernel http://${mageia_mirror}/${dir}/${dir2}/vmlinuz
 initrd http://${mageia_mirror}/${dir}/${dir2}/all.rdz
