@@ -3,6 +3,9 @@
 # Redhat Enterprise Linux (RHEL)
 # https://www.redhat.com
 
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none:${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
 set rhel_arch x86_64
 goto ${menu} ||
 
@@ -40,7 +43,7 @@ isset ${rhel_base_url} && goto boot || echo URL not set... && goto url_set
 
 :boot
 imgfree
-kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz repo=${rhel_base_url}/os/${rhel_arch} ${console} BOOTIF=${netX/mac} ip=dhcp initrd=initrd.img
+kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz repo=${rhel_base_url}/os/${rhel_arch} ${console} ${ipparam} initrd=initrd.img
 initrd ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
 md5sum vmlinuz initrd.img
 boot

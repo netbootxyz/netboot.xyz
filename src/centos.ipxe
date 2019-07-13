@@ -3,6 +3,9 @@
 # CentOS Operating System
 # http://www.centos.org
 
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none:${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
 goto ${menu} ||
 
 :centos
@@ -56,7 +59,7 @@ goto boottype
 
 :bootos_images
 imgfree
-kernel http://${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} BOOTIF=${netX/mac} ip=dhcp initrd=initrd.img
+kernel http://${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam} initrd=initrd.img
 initrd http://${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:

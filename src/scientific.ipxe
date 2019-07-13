@@ -3,6 +3,9 @@
 # Scientific Linux Operating System
 # https://www.scientificlinux.org/
 
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none:${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
 goto ${menu} ||
 
 :scientific
@@ -47,7 +50,7 @@ goto bootos_images
 
 :bootos_images
 imgfree
-kernel http://ftp1.scientificlinux.org/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console}
+kernel http://ftp1.scientificlinux.org/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${netcfg} ${console} ${ipparam}
 initrd http://ftp1.scientificlinux.org/${dir}/images/pxeboot/initrd.img
 boot
 goto linux_menu
