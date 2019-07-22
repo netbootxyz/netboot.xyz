@@ -16,6 +16,7 @@ item ubuntu ${space} Ubuntu
 item --gap All Others:
 item alpinelinux ${space} Alpine Linux
 item devuan ${space} Devuan
+item coreos ${space} Fedora CoreOS (Preview)
 item flatcar ${space} Flatcar
 item gentoo ${space} Gentoo Linux
 item ipfire ${space} IPFire
