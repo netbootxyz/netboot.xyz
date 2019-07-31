@@ -3,6 +3,9 @@
 # Fedora Operating System
 # https://getfedora.org/
 
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none:${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
 goto ${menu} ||
 
 :fedora
@@ -54,7 +57,7 @@ goto boot
 
 :boot
 imgfree
-kernel http://${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${fedora_mirror}/${dir} ${params} ${console} BOOTIF=${netX/mac} ip=dhcp initrd=initrd.img
+kernel http://${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${fedora_mirror}/${dir} ${params} ${console} ${ipparam} initrd=initrd.img
 initrd http://${fedora_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:

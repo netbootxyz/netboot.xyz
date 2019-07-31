@@ -2,6 +2,60 @@
 
 # OpenSUSE Operating System
 # http://opensuse.org
+
+isset ${dhcp-server} || goto static_ip
+set netsetup netsetup=dhcp
+goto goto_menu
+
+:static_ip
+# Need to convert netmask into prefix, because otherwise the installer
+# accepts it but configures the network with /32 prefix, which installs
+# fine but breaks connectivity to devices in the same network.
+set prefix 32
+
+iseq ${netmask} 0.0.0.0 && set prefix 0 ||
+
+iseq ${netmask} 128.0.0.0 && set prefix 1 ||
+iseq ${netmask} 192.0.0.0 && set prefix 2 ||
+iseq ${netmask} 224.0.0.0 && set prefix 3 ||
+iseq ${netmask} 240.0.0.0 && set prefix 4 ||
+iseq ${netmask} 248.0.0.0 && set prefix 5 ||
+iseq ${netmask} 252.0.0.0 && set prefix 6 ||
+iseq ${netmask} 254.0.0.0 && set prefix 7 ||
+iseq ${netmask} 255.0.0.0 && set prefix 8 ||
+
+iseq ${netmask} 255.128.0.0 && set prefix 9 ||
+iseq ${netmask} 255.192.0.0 && set prefix 10 ||
+iseq ${netmask} 255.224.0.0 && set prefix 11 ||
+iseq ${netmask} 255.240.0.0 && set prefix 12 ||
+iseq ${netmask} 255.248.0.0 && set prefix 13 ||
+iseq ${netmask} 255.252.0.0 && set prefix 14 ||
+iseq ${netmask} 255.254.0.0 && set prefix 15 ||
+iseq ${netmask} 255.255.0.0 && set prefix 16 ||
+
+iseq ${netmask} 255.255.128.0 && set prefix 17 ||
+iseq ${netmask} 255.255.192.0 && set prefix 18 ||
+iseq ${netmask} 255.255.224.0 && set prefix 19 ||
+iseq ${netmask} 255.255.240.0 && set prefix 20 ||
+iseq ${netmask} 255.255.248.0 && set prefix 21 ||
+iseq ${netmask} 255.255.252.0 && set prefix 22 ||
+iseq ${netmask} 255.255.254.0 && set prefix 23 ||
+iseq ${netmask} 255.255.255.0 && set prefix 24 ||
+
+iseq ${netmask} 255.255.255.128 && set prefix 25 ||
+iseq ${netmask} 255.255.255.192 && set prefix 26 ||
+iseq ${netmask} 255.255.255.224 && set prefix 27 ||
+iseq ${netmask} 255.255.255.240 && set prefix 28 ||
+iseq ${netmask} 255.255.255.248 && set prefix 29 ||
+iseq ${netmask} 255.255.255.252 && set prefix 30 ||
+iseq ${netmask} 255.255.255.254 && set prefix 31 ||
+iseq ${netmask} 255.255.255.255 && set prefix 32 ||
+
+set netsetup netsetup=hostip,gateway,nameserver hostip=${ip}/${prefix} gateway=${gateway} nameserver=${dns}
+
+:goto_menu
+set netsetup ${netsetup} BOOTIF=${netX/mac}
+
 set distro opensuse
 menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item 15.1 openSUSE Leap 15.1
@@ -15,7 +69,7 @@ iseq ${version} tumbleweed && set dir ${version}/repo/oss ||
 imgfree
 kernel http://${opensuse_mirror}/${dir}/boot/x86_64/loader/linux
 initrd http://${opensuse_mirror}/${dir}/boot/x86_64/loader/initrd
-imgargs linux netsetup=dhcp install=http://${opensuse_mirror}/${dir} ${params} ${netcfg} ${console} initrd=initrd
+imgargs linux ${netsetup} install=http://${opensuse_mirror}/${dir} ${params} ${netcfg} ${console} initrd=initrd
 echo
 echo MD5sums:
 md5sum linux initrd
