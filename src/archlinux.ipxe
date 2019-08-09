@@ -24,6 +24,8 @@ clear arch_version
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 menu Arch Linux
 item --gap Latest Releases
+item 2019.08.01 2019.08.01
+item 2019.07.01 2019.07.01
 item 2019.06.01 2019.06.01
 choose arch_version || goto archlinux_exit
 goto boot
@@ -31,9 +33,9 @@ goto boot
 :boot
 imgfree
 set dir ${archlinux_base_dir}/iso/${arch_version}/arch/boot
-set params initrd=archiso.img archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${console}
-kernel http://${archlinux_mirror}/${dir}/x86_64/vmlinuz ${params} initrd=archiso.img
-initrd http://${archlinux_mirror}/${dir}/x86_64/archiso.img
+set params initrd=archiso.img archiso_http_srv=https://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${console}
+kernel https://${archlinux_mirror}/${dir}/x86_64/vmlinuz ${params} initrd=archiso.img
+initrd https://${archlinux_mirror}/${dir}/x86_64/archiso.img
 echo
 echo MD5sums:
 md5sum vmlinuz archiso.img
