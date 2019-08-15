@@ -9,8 +9,8 @@ goto ${menu}
 set os Grml Live Linux
 menu ${os}
 item --gap Versions
-item grml-full ${space} ${os} 2017.05 Full
-item grml-small ${space} ${os} 2017.05 Small
+item grml-full ${space} ${os} 2018.12 Full
+item grml-small ${space} ${os} 2018.12 Small
 choose livegrml_version || goto livegrml_exit
 echo ${cls}
 goto ${livegrml_version} ||
@@ -18,13 +18,13 @@ chain ${menu}.ipxe || goto livegrml_exit
 goto livegrml_exit
 
 :grml-full
-set util_path download.grml.org/grml64-full_2017.05.iso
-set util_file grml64-full_2017.05.iso
+set util_path download.grml.org/grml64-full_2018.12.iso
+set util_file grml64-full_2018.12.iso
 goto boot_memdisk
 
 :grml-small
-set util_path download.grml.org/grml64-small_2017.05.iso
-set util_file grml64-small_2017.05.iso
+set util_path download.grml.org/grml64-small_2018.12.iso
+set util_file grml64-small_2018.12.iso
 goto boot_memdisk
 
 :boot_memdisk
