@@ -9,7 +9,6 @@ item clonezilla ${space} Clonezilla
 item dban ${space} DBAN
 item gparted ${space} GParted
 item memtest-501 ${space} Memtest86+ 5.01
-item pogostick ${space} Pogostick - Offline Windows Password and Registry Editor
 item supergrub ${space} Super Grub2 Disk
 item sysrcd ${space} SystemRescueCD
 item ubcd ${space} Ultimate Boot CD (UBCD)
@@ -68,11 +67,6 @@ goto boot_memdisk
 set util_path boot.netboot.xyz/utils/memtest86-5.01.0
 set util_file memtest86-5.01.0
 goto boot_memtest
-
-:pogostick
-set util_path pogostick.net/~pnh/ntpasswd/cd140201.zip
-set util_file cd140201.zip
-goto boot_memdisk
 
 :supergrub
 set util_path sourceforge.net/projects/supergrub2/files/2.02s10-beta5/super_grub2_disk_2.02s10-beta5/super_grub2_disk_hybrid_2.02s10-beta5.iso/download
