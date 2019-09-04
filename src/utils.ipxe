@@ -46,20 +46,20 @@ set util_file bootimage-${breakin_version}.iso
 goto boot_memdisk
 
 :clonezilla
-set clonezilla_version 2.6.0-37
-set util_path sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/${clonezilla_version}/clonezilla-live-${clonezilla_version}-amd64.iso/download
+set clonezilla_version 2.6.2-15
+set util_path master.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/${clonezilla_version}/clonezilla-live-${clonezilla_version}-amd64.iso
 set util_file clonezilla-live-${clonezilla_version}-amd64.iso
 goto boot_memdisk
 
 :dban
 set dban_version 2.3.0
-set util_path sourceforge.net/projects/dban/files/dban/dban-${dban_version}/dban-${dban_version}_i586.iso/download
+set util_path master.dl.sourceforge.net/project/dban/dban/dban-${dban_version}/dban-${dban_version}_i586.iso
 set util_file dban-${dban_version}_i586.iso
 goto boot_memdisk
 
 :gparted
-set gparted_version 0.33.0-2
-set util_path sourceforge.net/projects/gparted/files/gparted-live-stable/${gparted_version}/gparted-live-${gparted_version}-amd64.iso/download
+set gparted_version 1.0.0-3
+set util_path master.dl.sourceforge.net/project/gparted/gparted-live-stable/${gparted_version}/gparted-live-${gparted_version}-amd64.iso
 set util_file gparted-live-${gparted_version}-amd64.iso
 goto boot_memdisk
 
@@ -69,15 +69,16 @@ set util_file memtest86-5.01.0
 goto boot_memtest
 
 :supergrub
-set util_path sourceforge.net/projects/supergrub2/files/2.02s10-beta5/super_grub2_disk_2.02s10-beta5/super_grub2_disk_hybrid_2.02s10-beta5.iso/download
-set util_file super_grub2_disk_hybrid_2.02s4.iso
+set supergrub_version 2.04s1
+set util_path master.dl.sourceforge.net/project/supergrub2/${supergrub_version}/super_grub2_disk_${supergrub_version}/super_grub2_disk_hybrid_${supergrub_version}.iso
+set util_file super_grub2_disk_hybrid_${supergrub_version}.iso
 goto boot_memdisk
 
 :sysrcd
-set sysrcdpath sourceforge.net/projects/netboot-xyz/files/distros/sysresccd-x86/4.8.1
-kernel --name altker64 https://${sysrcdpath}/altker64/download setkmap=no net.ifnames=0 backstore=off
-initrd --name initram.igz https://${sysrcdpath}/initram.igz/download
-initrd --name sysrcd.dat https://${sysrcdpath}/sysrcd.dat/download /sysrcd.dat
+set sysrcdpath master.dl.sourceforge.net/project/netboot-xyz/distros/sysresccd-x86/4.8.1
+kernel --name altker64 https://${sysrcdpath}/altker64 setkmap=no net.ifnames=0 backstore=off
+initrd --name initram.igz https://${sysrcdpath}/initram.igz
+initrd --name sysrcd.dat https://${sysrcdpath}/sysrcd.dat /sysrcd.dat
 echo
 echo MD5sums:
 md5sum altker64 initram.igz sysrcd.dat

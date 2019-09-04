@@ -17,11 +17,11 @@ choose gentoo_version || goto gentoo_exit
 goto ${gentoo_version}
 
 :20160204
-set gentoopath https://sourceforge.net/projects/netboot-xyz/files/distros/gentoo/amd64/20160204
+set gentoopath https://master.dl.sourceforge.net/project/netboot-xyz/distros/gentoo/amd64/20160204
 echo Please note the gentoo ISO has been regenerated to work with iPXE
 echo using the method here: http://blog.dastrup.com/?p=12
-kernel --name gentoo-kernel ${gentoopath}/kernel/download root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ ${console}
-initrd --name gentoo-initrd.img ${gentoopath}/initrd/download
+kernel --name gentoo-kernel ${gentoopath}/kernel root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ ${console}
+initrd --name gentoo-initrd.img ${gentoopath}/initrd
 boot
 goto gentoo
 
