@@ -12,12 +12,13 @@ goto ${menu} ||
 clear osversion
 set os CentOS
 menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
-item 7.6.1810 ${os} 7.6
-item 6.10 ${os} 6.10
+item 8.0.1905 ${os} 8.0
+item 8-stream ${os} 8.0 Stream
+item 7.7.1908 ${os} 7.7
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
-iseq ${osversion} 6.10 && set dir ${menu}/${osversion}/os/${arch} ||
-set dir ${centos_base_dir}/${osversion}/os/x86_64
+set dir ${centos_base_dir}/${osversion}/BaseOS/${arch}/os
+iseq ${osversion} 7.7.1908 && set dir ${centos_base_dir}/${osversion}/os/${arch} ||
 set repo http://${centos_mirror}/${dir}
 goto boottype
 
@@ -64,6 +65,7 @@ initrd http://${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img
+iseq ${osversion} 8-stream && echo Rolling release, skipping sig checks && goto skip_sigs ||
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs
 echo
