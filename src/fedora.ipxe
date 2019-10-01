@@ -17,7 +17,7 @@ menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item 30 ${space} ${os} 30
 item 29 ${space} ${os} 29
-iseq ${arch} x86_64 && item 31_Beta ${space} ${os} 31_Beta ||
+iseq ${arch} x86_64 && item 31_Beta ${space} ${os} 31 Beta ||
 iseq ${arch} x86_64 && item rawhide ${space} ${os} rawhide ||
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
