@@ -17,8 +17,8 @@ menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 item 30 ${space} ${os} 30
 item 29 ${space} ${os} 29
-iseq ${arch} x86_64 && item 31 Beta ${space} ${os} 31 Beta ||
-iseq ${arch} x86_64 && item rawhide ${space} ${os} rawhide ||
+iseq ${arch} x86_64 && item 31 Beta ${space} ${os} 31_Beta ||
+iseq ${arch} x86_64 && item Rawhide ${space} ${os} rawhide ||
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
@@ -32,7 +32,7 @@ item Atomic ${ova} Atomic
 iseq ${arch} x86_64 && item Silverblue ${ova} Silverblue ||
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${arch}/os
-iseq ${osversion} 31 Beta && set dir ${fedora_base_dir}/test/${osversion}/${sku_type}/${arch}/os ||
+iseq ${osversion} 31_Beta && set dir ${fedora_base_dir}/test/${osversion}/${sku_type}/${arch}/os ||
 iseq ${osversion} rawhide && set dir ${fedora_base_dir}/development/${osversion}/${sku_type}/${arch}/os ||
 iseq ${sku_type} Atomic && iseq ${osversion} 29 && set dir fedora-alt/atomic/stable/Fedora-Atomic-29-20181025.1/AtomicHost/x86_64/os ||
 set ova ${ova} ${sku_type}
