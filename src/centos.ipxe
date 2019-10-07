@@ -2,8 +2,10 @@
 
 # CentOS Operating System
 # http://www.centos.org
-
-isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none:${dns}
+# https://anaconda-installer.readthedocs.io/en/latest/boot-options.html
+# ip=<ip>::<gateway>:<netmask>:<hostname>:<interface>:none
+# nameserver is separated
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
 
 goto ${menu} ||
