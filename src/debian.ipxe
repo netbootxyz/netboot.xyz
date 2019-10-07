@@ -75,7 +75,7 @@ goto deb_boot
 :deb_boot
 imgfree
 echo Boot parameters: ${install_params} -- quiet ${params}
-kernel http://${debian_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} ${console} -- quiet ${params} initrd=initrd.gz
+kernel http://${debian_mirror}/${dir}/linux ${install_params} ${mirrorcfg} ${console} -- quiet ${params} initrd=initrd.gz
 initrd http://${debian_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
