@@ -41,6 +41,7 @@ item --gap Default:
 item local ${space} Boot from local hdd
 item --gap Distributions:
 iseq ${menu_linux} 1 && item linux ${space} Linux Installs ||
+iseq ${menu_linux_arm} 1 && item linux-arm ${space} Linux Installs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
 iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS || 
 iseq ${menu_live} 1 && item live ${space} Live Boot ||
@@ -48,6 +49,7 @@ iseq ${menu_security} 1 && item security ${space} Security Related ||
 iseq ${menu_windows} 1 && item windows ${space} Windows ||
 item --gap Tools:
 iseq ${menu_utils} 1 && item utils ${space} Utilities ||
+iseq ${menu_utils_arm} 1 && item utils-arm ${space} Utilities ||
 iseq ${arch} x86_64 && set bits 64 || set bits 32
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
