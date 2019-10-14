@@ -21,6 +21,7 @@ item --gap Older Releases
 item older_release ${space} Set release codename...
 choose debian_version || goto debian_exit
 iseq ${debian_version} older_release && goto older_release ||
+iseq ${debian_version} sid && set debian_mirror d-i.debian.org ||
 goto mirrorcfg
 
 :older_release
@@ -35,6 +36,7 @@ goto deb_boot_type
 :mirrorcfg
 set mirrorcfg mirror/suite=${debian_version}
 set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+iseq ${debian_version} sid && set dir daily-images/${arch_a}/daily/netboot/ ||
 goto deb_boot_type
 
 :deb_boot_type
