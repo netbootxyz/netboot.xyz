@@ -48,6 +48,7 @@ Full documentation is at netboot.xyz:
 * [Gentoo](https://gentoo.org)
 * [IPFire](https://www.ipfire.org)
 * [Mageia](http://www.mageia.org)
+* [Manjaro Linux](https://manjaro.org)
 * [Microsoft Windows](https://www.microsoft.com)
 * [MirOS](https://www.mirbsd.org)
 * [NixOS](https://nixos.org)
