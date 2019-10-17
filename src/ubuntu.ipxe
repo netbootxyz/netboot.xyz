@@ -10,6 +10,7 @@ set os Ubuntu
 clear ubuntu_version
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item eoan ${space} ${os} 19.10 Eoan Ermine
 item disco ${space} ${os} 19.04 Disco Dingo
 item bionic ${space} ${os} 18.04 LTS Bionic Beaver
 item xenial ${space} ${os} 16.04 LTS Xenial Xerus
