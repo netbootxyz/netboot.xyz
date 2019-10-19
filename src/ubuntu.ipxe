@@ -10,7 +10,7 @@ set os Ubuntu
 clear ubuntu_version
 menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
-item eoan ${space} ${os} 19.10 Eoan Ermine
+iseq ${arch_a} x86_64 && item eoan ${space} ${os} 19.10 Eoan Ermine ||
 item disco ${space} ${os} 19.04 Disco Dingo
 item bionic ${space} ${os} 18.04 LTS Bionic Beaver
 item xenial ${space} ${os} 16.04 LTS Xenial Xerus
@@ -32,7 +32,8 @@ goto deb_boot_type
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
-iseq ${ubuntu_version} disco && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/ ||
+iseq ${ubuntu_version} eoan && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/ ||
+
 
 :deb_boot_type
 menu ${os} [${ubuntu_version}] Installer
