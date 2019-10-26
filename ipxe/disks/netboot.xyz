@@ -5,6 +5,7 @@ set boldoff ${esc:string}[22m
 set fg_gre ${esc:string}[32m
 set fg_cya ${esc:string}[36m
 set fg_whi ${esc:string}[37m
+set TFTP_ERR Local TFTP failed... attempting remote HTTPS
 set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
 set version 1.04
@@ -44,6 +45,7 @@ echo Attempting chainload of netboot.xyz...
 goto menu || goto failsafe
 
 :menu
+chain --autofree tftp://${next-server}/menu.ipxe || echo ${TFTP_ERR}
 set conn_type https
 chain --autofree https://boot.netboot.xyz/menu.ipxe || echo ${HTTPS_ERR}
 sleep 5
