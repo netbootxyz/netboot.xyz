@@ -32,8 +32,15 @@ If you already have iPXE up and running on the network, you can hit netboot.xyz 
 
 You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/ipxe/blob/master/src/config/general.h#L56) enabled in iPXE.
 
-Full documentation is at netboot.xyz:
-* [https://netboot.xyz](https://netboot.xyz)
+### Documentation
+
+See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get started with are:
+
+* [Downloads](https://netboot.xyz/downloads/)
+* [Booting Methods](https://netboot.xyz/booting/)
+* [FAQ](https://netboot.xyz/faq/)
+
+If you'd like to contribute to the documentation, the netboot.xyz documenation is located at [netboot.xyz-docs](https://github.com/antonym/netboot.xyz-docs).
 
 ### What Operating Systems are available?
 
@@ -79,10 +86,10 @@ Full documentation is at netboot.xyz:
 * [SystemRescueCD](https://www.system-rescue-cd.org)
 * [Ultimate Boot CD](http://www.ultimatebootcd.com)
 
-#### Testing New Branches
+### Testing New Branches
 
 Under the **Utilities** menu on netboot.xyz, there's an option for ["Test netboot.xyz branch"](https://github.com/antonym/netboot.xyz/blob/master/src/utils.ipxe#L157).  If you've forked the code and have developed a new feature branch, you can use this option to chainload into that branch to test and validate the code.  All you need to do is specify your Github user name and the name of your branch or abbreviated hash of the commit. Also, disable the signature verification for *netboot.xyz* under **Signatures Checks**.
 
-#### Feedback
+### Feedback
 
 Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github, swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel, or ping us on [Discord](https://discord.gg/An6PA2a).  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!

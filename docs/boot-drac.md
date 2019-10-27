@@ -1,2 +1,0 @@
-# Dell DRAC
-TBA
