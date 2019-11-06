@@ -38,7 +38,7 @@ cp -f bin/ipxe.usb disk.raw
 tar Sczvf netboot.xyz-gce.tar.gz disk.raw
 mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
 
-# generate netboot.xyz-packet iPXE disk
+# generate netboot.xyz-packet legacy iPXE disk
 make bin/undionly.kpxe \
 EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
 mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-packet.kpxe
@@ -56,6 +56,11 @@ mcopy -i efi_tmp/ipxe.img bin-x86_64-efi/ipxe.efi ::efi/boot/bootx64.efi
 genisoimage -o ipxe.eiso -eltorito-alt-boot -e ipxe.img -no-emul-boot efi_tmp
 mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz.efi
 mv ipxe.eiso ../../build/ipxe/netboot.xyz-efi.iso
+
+# generate netboot.xyz-packet efi iPXE disk
+make bin-x86_64-efi/ipxe.efi \
+EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
+mv bin-x86_64-efi/ipxe.efi ../../build/ipxe/netboot.xyz-packet.efi
 
 # iPXE workaround
 # http://lists.ipxe.org/pipermail/ipxe-devel/2018-August/006254.html
