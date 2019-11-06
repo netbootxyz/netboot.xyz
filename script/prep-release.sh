@@ -107,7 +107,7 @@ EOF
 cd ipxe/
 for ipxe_disk in `ls .`
 do
-  sha256sum $ipxe_disk >> ../netboot.xyz-sha256-checksums.txt
+  sha256sum -b $ipxe_disk >> ../netboot.xyz-sha256-checksums.txt
 done
 cat ../netboot.xyz-sha256-checksums.txt
 mv ../netboot.xyz-sha256-checksums.txt .
