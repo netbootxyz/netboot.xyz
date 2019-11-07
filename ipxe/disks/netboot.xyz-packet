@@ -12,7 +12,7 @@ set version 1.04
 set ipxe_cloud_config packet
 
 :start
-echo ${bold}${fg_gre}netboot.xyz ${fg_whi}v${version} for ${fg_red}packet.net${fg_whi}${boldoff}
+echo ${bold}${fg_gre}netboot.xyz ${fg_whi}v${version} for ${fg_red}packet.com${fg_whi}${boldoff}
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp

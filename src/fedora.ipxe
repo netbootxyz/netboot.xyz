@@ -15,6 +15,7 @@ clear ova
 set os Fedora
 menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
+item 31 ${space} ${os} 31
 item 30 ${space} ${os} 30
 item 29 ${space} ${os} 29
 iseq ${arch} x86_64 && item rawhide ${space} ${os} rawhide ||
