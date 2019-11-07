@@ -1,0 +1,347 @@
+---
+
+boot_domain: boot.mydomain.com
+boot_version: 1.00
+
+ipxe_repo: https://github.com/ipxe/ipxe.git
+ipxe_branch: master
+ipxe_source_dir: /usr/src/ipxe
+
+netbootxyz_repo: https://github.com/antonym/netboot.xyz.git
+netbootxyz_branch: master
+netbootxyz_root: /var/www/html
+
+releases:
+  alpinelinux:
+    name: "Alpine Linux"
+    mirror: "http://dl-cdn.alpinelinux.org"
+    base_dir: "alpine"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "3.10"
+        code_name: "v3.10"
+      - name: "Edge (development)"
+        code_name: "edge"
+  archlinux:
+    name: "Arch Linux"
+    mirror: "mirror.rackspace.com"
+    base_dir: "archlinux"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "2019.10.01"
+        code_name: "2019.10.01"
+  blackarch:
+    name: "BlackArch"
+    enabled: true
+    menu: "security"
+    versions:
+      - name: "2019.06.01"
+        code_name: "2019.06.01"
+  centos:
+    name: "CentOS"
+    mirror: "http://mirror.centos.org"
+    base_dir: "centos"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "8.0"
+        code_name: "8.0.1905"
+      - name: "8.0 Stream"
+        code_name: "8-stream"
+      - name: "7.7"
+        code_name: "7.7.1908"
+  coreos:
+    name: "CoreOS"
+    enabled: true
+    menu: "linux"    
+    versions:
+      - name: "30"
+        code_name: "beta"
+  debian:
+    name: "Debian"      
+    mirror: "deb.debian.org"
+    archive_mirror: "archive.debian.org"
+    base_dir: "debian"
+    enabled: true
+    menu: "linux"    
+    versions:
+      stable:
+        - name: "9.0 (stretch)"
+          code_name: "stretch"
+        - name: "8.0 (jessie)"
+          code_name: "jessie"
+        - name: "7.0 (jessie)"
+          code_name: "wheezy"
+      testing:
+        - name: "buster (testing)"
+          code_name: "buster"
+        - name: "sid (unstable)"
+          code_name: "sid"
+  devuan:
+    name: "Devuan"
+    mirror: "auto.mirror.devuan.org"
+    base_dir: "devuan"
+    enabled: true
+    menu: "linux"
+    versions:
+      stable:
+        - name: "ascii (stable)"
+          code_name: "ascii"
+        - name: "1.0 (jessie)"
+          code_name: "jessie"
+      testing:
+        - name: "beowulf (testing)"
+          code_name: "beowulf"
+  fedora:
+    name: "Fedora"
+    mirror: "mirrors.kernel.org"
+    base_dir: "fedora"
+    enabled: true
+    menu: "linux"    
+    versions:
+      - name: "31"
+        code_name: "31"
+      - name: "30"
+        code_name: "30"
+      - name: "29"
+        code_name: "29"
+  flatcar:
+    name: "Container Linux by Flatcar"
+    mirror: ""
+    enabled: true
+    menu: "linux"    
+    versions:
+      - name: "Stable Channel"
+        code_name: "stable"
+      - name: "Beta Channel"
+        code_name: "beta"
+      - name: "Alpha Channel"
+        code_name: "edge"
+  freebsd:
+    name: "FreeBSD"
+    menu: "bsd"
+    versions:
+      - name: "FreeBSD 12.0"
+        code_name: "12.0"
+        image_subdir: "12"
+      - name: "FreeBSD 11.2"
+        code_name: "11.2"
+        image_subdir: "11"
+      - name: "FreeBSD 11.1"
+        code_name: "11.1"
+        image_subdir: "11"
+      - name: "FreeBSD 11.0"
+        code_name: "11.0"
+        image_subdir: "11"
+      - name: "FreeBSD 10.4"
+        code_name: "10.4"
+        image_subdir: "10"
+  freedos:
+    name: "FreeDOS"
+    mirror: "http://www.freedos.org"
+    base_dir: "/download/download/"
+    enabled: true
+    menu: "dos"
+    versions:
+      - name: "1.2 Full Installer"
+        code_name: "FD12FULL"
+      - name: "1.2 Lite Installer"
+        code_name: "FD12LITE"
+  gentoo:
+    name: "Gentoo"
+    mirror: ""
+    menu: "linux"
+    versions:
+      - name: "TBA"
+        code_name: "TBA"
+  ipfire:
+    name: "IPFire"
+    mirror: "downloads.ipfire.org"
+    menu: "linux"
+    versions:
+      - name: "2.21 Core 126"
+        code_name: "2.21-core126"
+  kail:
+    name: "Kali Linux"
+    mirror: "http://http.kali.org"
+    base_dir: "kali"
+    enabled: true
+    menu: "security"
+    versions:
+      - name: "Rolling Edition (2019.2)"
+        code_name: "rolling"
+  livedebian:
+    name: "Debian Live"
+    mirror: "http://cdimage.debian.org"
+    base_dir: "cdimage/archive"
+    enabled: true
+    menu: "live"
+    versions:
+      - name: "8.11.0"
+        code_name: "8.11.0"
+    flavors:
+      - name: "Cinnamon"
+        code_name: "cinnamon-desktop"
+      - name: "Gnome"
+        code_name: "gnome-desktop"
+      - name: "KDE"
+        code_name: "kde-desktop"
+      - name: "LXDE"
+        code_name: "lxde-desktop"
+      - name: "MATE"
+        code_name: "mate-desktop"
+      - name: "Standard"
+        code_name: "standard"
+      - name: "XFCE"
+        code_name: "xfce-desktop"
+  livegrml:
+    name: "Grml Live Linux"
+    mirror: "http://download.grml.org"
+    enabled: true
+    menu: "live"
+    versions:
+      - name: "2018.12 Full"
+        code_name: "grml-full"
+      - name: "2018.12 Small"
+        code_name: "grml-small"
+  mageia:
+    name: "Mageia"
+    mirror: "http://mirrors.kernel.org"
+    base_dir: "mageia"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "7.1"
+        code_name: "7.1"
+      - name: "cauldron"
+        code_name: "cauldron"
+  mirbsd:
+    name: "MirOS"
+    mirror: "https://www.mirbsd.org/"
+    base_dir: "MirOS"
+    enabled: true
+    menu: "bsd"
+    versions:
+      - name: "Latest (i386)"
+        code_name: "mirbsd"
+  nixos:
+    name: "NixOS"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "Nixos 19.09"
+        code_name: "19.09"
+      - name: "Nixos 19.03"
+        code_name: "19.03"
+      - name: "Nixox Unstable"
+        code_name: "unstable"
+  openbsd:
+    name: "OpenBSD"
+    mirror: "ftp.openbsd.org"
+    base_dir: "pub/OpenBSD"
+    enabled: true
+    menu: "bsd"
+    versions:
+      - name: "OpenBSD 6.6"
+        code_name: "6.6"
+        image_ver: "66"
+      - name: "OpenBSD 6.5"
+        code_name: "6.5"
+        image_ver: "65"
+      - name: "OpenBSD 6.4"
+        code_name: "6.4"
+        image_ver: "64"
+      - name: "OpenBSD 6.3"
+        code_name: "6.3"
+        image_ver: "63"
+      - name: "OpenBSD 6.6 Latest Snapshot"
+        code_name: "snapshots"
+        image_ver: "66"
+  opensuse:
+    name: "OpenSUSE"
+    mirror: ""
+    base_dir: ""
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "openSUSE Leap 15.1"
+        code_name: "15.1"
+      - name: "openSUSE Leap 15.0"
+        code_name: "15.0"
+      - name: "openSUSE Leap 42.3"
+        code_name: "42.3"
+      - name: "openSUSE tumbleweed"
+        code_name: "tumbleweed"
+  parrotsec:
+    name: "Parrot Security"
+    mirror: "https://mirrordirector.archive.parrotsec.org"
+    base_dir: "parrot"
+    enabled: true
+    menu: "security"
+    versions:
+      - name: "Stable Netinstall"
+        code_name: "stable"
+  rancheros:
+    name: "RancherOS"
+    mirror: "releases.rancher.com"
+    base_dir: "os/latest"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "Latest (20 MB)"
+        code_name: "latest"
+  scientific:
+    name: "Scientific Linux"
+    mirror: "ftp1.scientificlinux.org"
+    base_dir: ""
+    menu: "linux"
+    versions:
+      - name: "7.7"
+        code_name: "7.7"
+      - name: "7.6"
+        code_name: "7.6"
+      - name: "6.10"
+        code_name: "6.10"
+      - name: "6.9"
+        code_name: "6.9" 
+  slackware:
+    name: "Slackware"
+    mirror: "mirror.rackspace.com"
+    base_dir: "slackware"
+    menu: "linux"
+    versions:
+      - name: "Current"
+        code_name: "current"
+      - name: "14.2"
+        code_name: "14.2"
+      - name: "14.1"
+        code_name: "14.1"
+  tinycore:
+    name: "Tiny Core Linux"
+    mirror: "tinycorelinux.net"
+    menu: "linux"
+    versions:
+      - name: "Core [ISO]"
+        code_name: "Core"
+      - name: "TinyCore [ISO]"
+        code_name: "TinyCore"
+      - name: "CorePlus [ISO]"
+        code_name: "CorePlus"
+  ubuntu:
+    name: "Ubuntu"
+    mirror: "archive.ubuntu.com"
+    archive_mirror: "old-releases.ubuntu.com"
+    base_dir: "ubuntu"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "19.10 Eoan Ermine"
+        code_name: "eoan"
+      - name: "19.04 Disco Dingo"
+        code_name: "disco"
+      - name: "18.04 LTS Bionic Beaver"
+        code_name: "bionic"
+      - name: "16.04 LTS Xenial Xerus"
+        code_name: "xenial"

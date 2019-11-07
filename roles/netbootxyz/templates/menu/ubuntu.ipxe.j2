@@ -1,0 +1,83 @@
+#!ipxe
+
+# Ubuntu Operating System
+# https://www.ubuntu.com
+
+goto ${menu}
+
+:ubuntu
+set os Ubuntu
+clear ubuntu_version
+menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
+item --gap Latest Releases
+{% for item in releases.ubuntu.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+item --gap Older Releases
+item older_release ${space} Set release codename...
+choose ubuntu_version || goto ubuntu_exit
+iseq ${ubuntu_version} older_release && goto older_release ||
+goto mirrorcfg
+
+:older_release
+set older_release true
+set ubuntu_mirror {{ releases.ubuntu.archive_mirror }}
+echo Setting mirror to ${ubuntu_mirror}
+clear ubuntu_version
+echo -n Please set enter code name of release: ${} && read ubuntu_version
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
+goto deb_boot_type
+
+:mirrorcfg
+set mirrorcfg mirror/suite=${ubuntu_version}
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
+iseq ${ubuntu_version} eoan && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}/main/installer-${arch_a}/current/images/netboot/ ||
+
+:deb_boot_type
+menu ${os} [${ubuntu_version}] Installer
+item --gap Install types
+item install ${space} Install
+item rescue ${space} Rescue Mode
+item expert ${space} Expert Install
+item preseed ${space} Specify preseed url...
+choose --default ${type} type || goto ubuntu
+echo ${cls}
+goto deb_${type}
+
+:deb_rescue
+set install_params rescue/enable=true
+goto deb_boot
+
+:deb_expert
+set install_params priority=low
+goto deb_boot
+
+:deb_preseed
+echo -n Specify preseed URL for ${os} ${ubuntu_version}: && read preseedurl
+set install_params auto=true priority=critical preseed/url=${preseedurl}
+goto deb_boot
+
+:deb_install
+:deb_boot
+set dir ${dir}${menu}-installer/${arch_a}
+imgfree
+kernel http://${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} ${console} -- quiet ${params} initrd=initrd.gz
+initrd http://${ubuntu_mirror}/${dir}/initrd.gz
+echo
+echo MD5sums:
+md5sum linux initrd.gz
+iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
+iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
+:verify_sigs
+echo
+echo Checking signatures...
+imgverify linux ${sigs}${dir}/linux.sig || goto error
+imgverify initrd.gz ${sigs}${dir}/initrd.gz.sig || goto error
+echo Signatures verified!
+echo
+:skip_sigs
+boot
+
+:ubuntu_exit
+clear menu
+exit 0

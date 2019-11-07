@@ -1,0 +1,128 @@
+---
+  - name: Adds python packages if python is not present
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal python-yaml)
+
+  - name: Gathering facts
+    setup:
+
+  - name: Gather variables for each operating system
+    include_vars: "{{ item }}"
+    with_first_found:
+      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
+      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+      - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+      - "{{ ansible_distribution | lower }}.yml"
+      - "{{ ansible_os_family | lower }}.yml"
+
+  - name: Install required packages
+    package:
+      name: "{{ item }}"
+      state: latest
+    with_items: "{{ netbootxyz_packages }}"
+
+  - name: Check out latest iPXE sources
+    git:
+      repo: "{{ ipxe_repo }}"
+      dest: /usr/src/ipxe
+      version: "{{ ipxe_branch }}"
+
+  - name: Check out latest netboot.xyz sources
+    git:
+      repo: "{{ netbootxyz_repo }}"
+      dest: /usr/src/netboot.xyz
+      version: "{{ netbootxyz_branch }}"
+
+  - name: Copy iPXE Bootloader template to iPXE source directory
+    template:
+      src: disks/ipxe-bootloader.j2
+      dest: /usr/src/ipxe/src/ipxe-bootloader
+
+  - name: Copy netboot.xyz colour.h iPXE config
+    file:
+      src: /usr/src/netboot.xyz/ipxe/local/colour.h
+      dest: /usr/src/ipxe/src/config/local/colour.h
+      state: link
+
+  - name: Copy netboot.xyz general.h iPXE config
+    file:
+      src: /usr/src/netboot.xyz/ipxe/local/general.h
+      dest: /usr/src/ipxe/src/config/local/general.h
+      state: link
+
+  - name: Touch iPXE config local files
+    file:
+      path: "{{ item }}"
+      state: touch
+    with_items:
+    - /usr/src/ipxe/src/config/local/console.h
+    - /usr/src/ipxe/src/config/local/umalloc.h
+    - /usr/src/ipxe/src/config/local/nap.h
+    - /usr/src/ipxe/src/config/local/timer.h
+    - /usr/src/ipxe/src/config/local/branding.h
+    - /usr/src/ipxe/src/config/local/serial.h
+    - /usr/src/ipxe/src/config/local/reboot.h
+    - /usr/src/ipxe/src/config/local/sanboot.h
+    - /usr/src/ipxe/src/config/local/fault.h
+    - /usr/src/ipxe/src/config/local/dhcp.h
+    - /usr/src/ipxe/src/config/local/sideband.h
+    - /usr/src/ipxe/src/config/local/entropy.h
+    - /usr/src/ipxe/src/config/local/crypto.h
+    - /usr/src/ipxe/src/config/local/usb.h
+    - /usr/src/ipxe/src/config/local/settings.h
+
+  - name: Create iPXE file directory
+    file:
+      path: /var/www/html/ipxe
+      state: directory
+
+  - name: Compile iPXE bootloader for Legacy BIOS
+    shell: "{{ item }}"
+    with_items:
+    - make EMBED=ipxe-bootloader bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
+    args:
+      chdir: /usr/src/ipxe/src
+
+  - name: Copy iPXE files for Legacy BIOS to http directory
+    copy:
+      src: /usr/src/ipxe/src/bin/{{ item }}
+      dest: /var/www/html/ipxe/{{ boot_domain }}-{{ item }}
+      remote_src: True
+    with_items:
+    - ipxe.dsk
+    - ipxe.iso
+    - ipxe.lkrn
+    - ipxe.usb
+    - ipxe.kpxe
+    - undionly.kpxe
+
+  - name: Copy netboot.xyz general.h.efi iPXE config
+    file:
+      src: /usr/src/netboot.xyz/ipxe/local/general.h.efi
+      dest: /usr/src/ipxe/src/config/local/general.h
+      state: link
+
+  - name: Compile iPXE bootloader for EFI
+    shell: "{{ item }}"
+    with_items:
+    - make clean
+    - make EMBED=ipxe-bootloader bin-x86_64-efi/ipxe.efi
+    args:
+      chdir: /usr/src/ipxe/src
+
+  - name: Generate iPXE EFI ISO Disk
+    shell: "{{ item }}"
+    with_items:
+    - mkdir -p efi_tmp/EFI/BOOT/
+    - cp bin-x86_64-efi/ipxe.efi efi_tmp/EFI/BOOT/bootx64.efi
+    - genisoimage -o ipxe-efi.iso efi_tmp
+    args:
+      chdir: /usr/src/ipxe/src
+
+  - name: Copy iPXE EFI builds to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
+      remote_src: True
+    with_items:
+      - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ boot_domain }}-ipxe.efi" }
+      - { src: "ipxe-efi.iso", dest: "{{ boot_domain }}-ipxe-efi.iso" }

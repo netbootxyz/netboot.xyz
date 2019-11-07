@@ -1,0 +1,8 @@
+---
+netbootxyz_packages:
+  - apache2
+  - build-essential
+  - genisoimage
+  - git
+  - liblzma-dev
+  - syslinux

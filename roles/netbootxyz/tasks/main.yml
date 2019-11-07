@@ -1,0 +1,8 @@
+---
+  - include: generate_menus.yml
+    when:
+    - generate_menus | default(true) | bool
+
+  - include: generate_disks.yml
+    when:
+    - generate_disks | default(true) | bool

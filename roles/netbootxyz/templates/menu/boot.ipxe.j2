@@ -1,0 +1,134 @@
+#!ipxe
+
+:global_vars
+# set site name
+set site_name netboot.xyz
+
+# set boot domain
+set boot_domain boot.netboot.xyz
+
+# set location of memdisk
+set memdisk http://${boot_domain}/memdisk
+
+# signature check enabled?
+set sigs_enabled true
+
+# image signatures check enabled?
+set img_sigs_enabled true
+
+# set location of signatures for sources
+set sigs http://${boot_domain}/sigs/
+
+# set location of latest iPXE
+set ipxe_disk netboot.xyz-undionly.kpxe
+
+##################
+# official mirrors
+##################
+:mirrors
+### Alpine Linux
+set alpinelinux_mirror dl-cdn.alpinelinux.org
+set alpinelinux_base_dir alpine
+
+### ArchLinux
+set archlinux_mirror mirror.rackspace.com
+set archlinux_base_dir archlinux
+
+### CentOS
+set centos_mirror mirror.centos.org
+set centos_base_dir centos
+
+### Devuan
+set devuan_mirror auto.mirror.devuan.org
+set devuan_base_dir devuan
+
+### Fedora
+set fedora_mirror mirrors.kernel.org
+set fedora_base_dir fedora
+
+### Mageia
+set mageia_mirror mirrors.kernel.org
+set mageia_base_dir mageia
+
+### OpenSUSE
+set opensuse_mirror download.opensuse.org
+set opensuse_base_dir distribution/leap
+
+### Slackware
+set slackware_mirror mirror.rackspace.com
+set slackware_base_dir slackware
+
+### Ubuntu
+set ubuntu_mirror archive.ubuntu.com
+set ubuntu_base_dir ubuntu
+
+
+#################################################
+# determine architectures and enable menu options
+#################################################
+:architectures
+set menu_linux 1
+set menu_bsd 1
+set menu_freedos 1
+set menu_live 1
+set menu_security 1
+set menu_windows 1
+set menu_utils 1
+iseq ${buildarch} i386 && goto x86_64 ||
+iseq ${buildarch} x86_64 && goto x86_64 ||
+iseq ${buildarch} arm64 && goto arm64 ||
+goto architectures_end
+:x86_64
+goto architectures_end
+:arm64
+set menu_freedos 0
+set menu_live 0
+set menu_security 0
+set menu_windows 0
+set menu_utils 0
+goto architectures_end
+:architectures_end
+goto clouds
+
+###################################
+# set iPXE cloud provider specifics
+###################################
+:clouds
+iseq ${ipxe_cloud_config} gce && goto gce ||
+iseq ${ipxe_cloud_config} packet && goto packet ||
+goto clouds_end
+
+:gce
+set console console=ttyS0,115200n8
+goto clouds_end
+
+:packet
+iseq ${buildarch} i386 && goto packet_x86_64 ||
+iseq ${buildarch} x86_64 && goto packet_x86_64 ||
+iseq ${buildarch} arm64 && goto packet_arm64 ||
+goto clouds_end
+
+:packet_x86_64
+set console console=ttyS1,115200n8
+set ipxe_disk netboot.xyz-packet.kpxe
+set menu_freedos 0
+set menu_windows 0
+set menu_utils 0
+goto clouds_end
+
+:packet_arm64
+set console console=ttyAMA0,115200
+set ipxe_disk netboot.xyz-packet-arm64.efi
+set menu_bsd 0
+set menu_freedos 0
+set menu_live 0
+set menu_security 0
+set menu_windows 0
+set menu_utils 0
+goto clouds_end
+
+:clouds_end
+goto end
+
+:end
+exit

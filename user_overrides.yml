@@ -1,0 +1,15 @@
+---
+
+# overrides defaults in netbootxyz role
+generate_menus: true
+generate_disks: false
+
+# set desired boot domain 
+boot_domain: boot.mydomain.com
+
+# set overrides from standard netboot.xyz defaults
+release_overrides:
+  alpinelinux:
+    name: "ALPINELINUX"
+  fedora:
+    mirror: "iad.mirror.rackspace.com"
