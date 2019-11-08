@@ -1,0 +1,27 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+menu Live Ubuntu Default (Unity) - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap Live Ubuntu Default (Unity)
+item bionic-18.04-default ${space} Bionic Beaver 18.04
+choose menu || goto live_exit
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:bionic-18.04-default
+kernel ${live_endpoint}${ubuntu-18.04-live-kernel}vmlinuz boot=casper netboot=http fetch=${live_endpoint}${ubuntu-18.04-default-squash}filesystem.squashfs initrd=initrd
+initrd ${live_endpoint}${ubuntu-18.04-live-kernel}initrd
+boot
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto live_menu
+
+:live_exit
+clear menu
+exit 0
+
