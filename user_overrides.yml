@@ -4,8 +4,14 @@
 generate_menus: true
 generate_disks: false
 
-# set desired boot domain 
-boot_domain: boot.mydomain.com
+# set desired site name
+#site_name: mysitename.com
+
+# set desired boot domain
+#boot_domain: boot.mysitename.com
+
+# set boot version
+#boot_version: 1.00
 
 # set overrides from standard netboot.xyz defaults
 release_overrides:

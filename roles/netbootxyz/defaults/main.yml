@@ -1,13 +1,14 @@
 ---
 
-boot_domain: boot.mydomain.com
-boot_version: 1.00
+site_name: netboot.xyz
+boot_domain: boot.netboot.xyz
+boot_version: 1.04
 
 ipxe_repo: https://github.com/ipxe/ipxe.git
 ipxe_branch: master
 ipxe_source_dir: /usr/src/ipxe
 
-netbootxyz_repo: https://github.com/antonym/netboot.xyz.git
+netbootxyz_repo: https://github.com/netbootxyz/netboot.xyz.git
 netbootxyz_branch: master
 netbootxyz_root: /var/www/html
 
@@ -53,7 +54,9 @@ releases:
       - name: "7.7"
         code_name: "7.7.1908"
   coreos:
-    name: "CoreOS"
+    name: "Fedora CoreOS"
+    mirror: "https://builds.coreos.fedoraproject.org"
+    base_dir: "prod/streams/testing/builds"
     enabled: true
     menu: "linux"    
     versions:
@@ -118,6 +121,8 @@ releases:
       - name: "Beta Channel"
         code_name: "beta"
       - name: "Alpha Channel"
+        code_name: "alpha"
+      - name: "Edge Channel"
         code_name: "edge"
   freebsd:
     name: "FreeBSD"
@@ -141,7 +146,7 @@ releases:
   freedos:
     name: "FreeDOS"
     mirror: "http://www.freedos.org"
-    base_dir: "/download/download/"
+    base_dir: "download/download"
     enabled: true
     menu: "dos"
     versions:
@@ -163,7 +168,7 @@ releases:
     versions:
       - name: "2.21 Core 126"
         code_name: "2.21-core126"
-  kail:
+  kali:
     name: "Kali Linux"
     mirror: "http://http.kali.org"
     base_dir: "kali"
@@ -244,19 +249,19 @@ releases:
     enabled: true
     menu: "bsd"
     versions:
-      - name: "OpenBSD 6.6"
+      - name: "6.6"
         code_name: "6.6"
         image_ver: "66"
-      - name: "OpenBSD 6.5"
+      - name: "6.5"
         code_name: "6.5"
         image_ver: "65"
-      - name: "OpenBSD 6.4"
+      - name: "6.4"
         code_name: "6.4"
         image_ver: "64"
-      - name: "OpenBSD 6.3"
+      - name: "6.3"
         code_name: "6.3"
         image_ver: "63"
-      - name: "OpenBSD 6.6 Latest Snapshot"
+      - name: "6.6 Latest Snapshot"
         code_name: "snapshots"
         image_ver: "66"
   opensuse:

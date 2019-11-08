@@ -2,10 +2,10 @@
 
 :global_vars
 # set site name
-set site_name netboot.xyz
+set site_name {{ site_name }}
 
 # set boot domain
-set boot_domain boot.netboot.xyz
+set boot_domain {{ boot_domain }}
 
 # set location of memdisk
 set memdisk http://${boot_domain}/memdisk
@@ -24,46 +24,6 @@ set ipxe_disk netboot.xyz-undionly.kpxe
 
 # set location of custom netboot.xyz live assets
 set live_endpoint https://github.com/netbootxyz
-
-##################
-# official mirrors
-##################
-:mirrors
-### Alpine Linux
-set alpinelinux_mirror dl-cdn.alpinelinux.org
-set alpinelinux_base_dir alpine
-
-### ArchLinux
-set archlinux_mirror mirror.rackspace.com
-set archlinux_base_dir archlinux
-
-### CentOS
-set centos_mirror mirror.centos.org
-set centos_base_dir centos
-
-### Devuan
-set devuan_mirror auto.mirror.devuan.org
-set devuan_base_dir devuan
-
-### Fedora
-set fedora_mirror mirrors.kernel.org
-set fedora_base_dir fedora
-
-### Mageia
-set mageia_mirror mirrors.kernel.org
-set mageia_base_dir mageia
-
-### OpenSUSE
-set opensuse_mirror download.opensuse.org
-set opensuse_base_dir distribution/leap
-
-### Slackware
-set slackware_mirror mirror.rackspace.com
-set slackware_base_dir slackware
-
-### Ubuntu
-set ubuntu_mirror archive.ubuntu.com
-set ubuntu_base_dir ubuntu
 
 ##############################
 # netboot-xyz hosted endpoints
@@ -120,7 +80,7 @@ goto clouds_end
 
 :packet_x86_64
 set console console=ttyS1,115200n8
-set ipxe_disk netboot.xyz-packet.kpxe
+iseq ${platform} efi && set ipxe_disk netboot.xyz-packet.efi || set ipxe_disk netboot.xyz-packet.kpxe
 set menu_freedos 0
 set menu_windows 0
 set menu_utils 0

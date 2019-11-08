@@ -95,6 +95,14 @@
     - ipxe.kpxe
     - undionly.kpxe
 
+  - name: Copy helper apps
+    copy:
+      src: "{{ item }}"
+      dest: "{{ netbootxyz_root }}"
+    with_items:
+      - memdisk
+      - wimboot
+
   - name: Copy netboot.xyz general.h.efi iPXE config
     file:
       src: /usr/src/netboot.xyz/ipxe/local/general.h.efi

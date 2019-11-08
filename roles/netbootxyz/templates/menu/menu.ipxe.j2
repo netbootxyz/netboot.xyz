@@ -12,12 +12,12 @@ set latest_version 1.04
 echo ${cls}
 iseq ${version} ${latest_version} && goto version_up2date ||
 echo
-echo Updated version of netboot.xyz is available:
+echo Updated version of {{ site_name }} is available:
 echo
 echo Running version.....${version}
 echo Updated version.....${latest_version}
 echo
-echo Please download the latest version from netboot.xyz.
+echo Please download the latest version from {{ site_name }}.
 echo
 echo Attempting to chain to latest version...
 chain --autofree http://${boot_domain}/ipxe/${ipxe_disk} ||
@@ -40,8 +40,8 @@ menu ${site_name}
 item --gap Default:
 item local ${space} Boot from local hdd
 item --gap Distributions:
-iseq ${menu_live} 1 && item live ${space} Live CDs ||
 iseq ${menu_linux} 1 && item linux ${space} Linux Network Installs ||
+iseq ${menu_live} 1 && item live ${space} Live CDs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
 iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS || 
 iseq ${menu_security} 1 && item security ${space} Security Related ||

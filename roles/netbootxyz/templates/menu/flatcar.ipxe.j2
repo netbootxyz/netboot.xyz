@@ -1,0 +1,45 @@
+#!ipxe
+
+# Container Linux by flatcar
+# https://www.flatcar.com
+# For further info on:
+# iPXE and flatcar Container Linux: https://docs.flatcar-linux.org/os/booting-with-ipxe/
+# Setting up Ignition: https://docs.flatcar-linux.org/os/provisioning/
+# 64-bit only
+
+goto ${menu}
+
+:flatcar
+set os {{ releases.flatcar.name }}
+menu ${os}
+item --gap ${os}
+{% for item in releases.flatcar.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+item ignition_config ${space} Set flatcar.config.url: ${flatcar.config.url}
+choose --default ${menu} menu || goto flatcar_exit
+echo ${cls}
+goto ${menu} ||
+goto flatcar_exit
+
+:stable
+:beta
+:alpha
+:edge
+set release ${menu}
+set base-url http://${release}.release.flatcar-linux.net/amd64-usr/current
+kernel ${base-url}/flatcar_production_pxe.vmlinuz ${flatcar_firstboot} ${flatcar_params} ${console} flatcar.autologin=tty1 flatcar.autologin=ttyS0 initrd=flatcar_production_pxe_image.cpio.gz
+initrd ${base-url}/flatcar_production_pxe_image.cpio.gz
+boot
+goto flatcar_exit
+
+:ignition_config
+echo -n Please set Ignition URL: && read flatcar.config.url
+set flatcar_params flatcar.config.url=${flatcar.config.url}
+set flatcar_firstboot flatcar.first_boot=1
+clear menu
+goto flatcar
+
+:flatcar_exit
+clear menu
+exit 0
