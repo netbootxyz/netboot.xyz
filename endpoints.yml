@@ -10,6 +10,6 @@ endpoints:
     - initrd
     - vmlinuz
   ubuntu-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/18.04.3-51dd7e49/
+    path: /ubuntu-squash/releases/download/18.04.3-990e20c5/
     files:
     - filesystem.squashfs
