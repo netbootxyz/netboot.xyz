@@ -13,3 +13,8 @@ endpoints:
     path: /ubuntu-squash/releases/download/18.04.3-990e20c5/
     files:
     - filesystem.squashfs
+  debian-10-live-kernel:
+    path: /debian-core-10/releases/download/4.19.67-2-04fe0fb9/
+    files:
+    - initrd
+    - vmlinuz
