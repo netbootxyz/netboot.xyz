@@ -18,3 +18,8 @@ endpoints:
     files:
     - initrd
     - vmlinuz
+  debian-9-live-kernel:
+    path: /debian-core-9/releases/download/4.9.189-3-152f39d8/
+    files:
+    - initrd
+    - vmlinuz
