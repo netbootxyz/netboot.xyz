@@ -42,13 +42,6 @@ endpoints:
     - vmlinuz
     os: manjaro
     version: 18.x
-  'debian-10-default-squash:':
-    path: /debian-squash/releases/download/10.1.0-40d0678e/
-    files:
-    - filesystem.squashfs
-    os: debian
-    version: '10'
-    flavor: core
   debian-10-default-squash:
     path: /debian-squash/releases/download/10.1.0-600c59c0/
     files:
