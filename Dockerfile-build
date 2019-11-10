@@ -26,6 +26,6 @@ RUN \
 FROM alpine:3.10
 
 COPY --from=builder /var/www/html/ /mnt/
-COPY docker-root/ /
+COPY docker-build-root/ /
 
 ENTRYPOINT [ "/dumper.sh" ]
