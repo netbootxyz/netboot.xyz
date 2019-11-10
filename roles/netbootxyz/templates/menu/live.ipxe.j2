@@ -6,6 +6,8 @@ goto ${menu} ||
 menu Live Boot Distributions - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap Live Boot Distributions
+item live-debian ${space} Debian Live
+item live-manjaro ${space} Manjaro Live
 item live-ubuntu ${space} Ubuntu Live
 choose menu || goto live_exit
 echo ${cls}
