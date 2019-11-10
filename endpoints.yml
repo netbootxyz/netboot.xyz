@@ -1,16 +1,16 @@
 endpoints:
   ubuntu-19.10-live-kernel:
-    path: /ubuntu-core-19.10/releases/download/5.3.0.18.21-60558c66-1.1/
-    files:
-    - initrd
-    - vmlinuz
-  ubuntu-18.04-live-kernel:
-    path: /ubuntu-core-18.04/releases/download/4.15.0.20.23-f27a244c/
+    path: /ubuntu-core-19.10/releases/download/5.3.0.18.21-83679d1e/
     files:
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 18.04
+    version: 19.1
+  ubuntu-18.04-live-kernel:
+    path: /ubuntu-core-18.04/releases/download/4.15.0.20.23-81ae0834/
+    files:
+    - initrd
+    - vmlinuz
   ubuntu-18.04-default-squash:
     path: /ubuntu-squash/releases/download/18.04.3-5b9d4326/
     files:
