@@ -5,10 +5,12 @@ endpoints:
     - initrd
     - vmlinuz
   ubuntu-18.04-live-kernel:
-    path: /ubuntu-core-18.04/releases/download/4.15.0.20.23-81ae0834/
+    path: /ubuntu-core-18.04/releases/download/4.15.0.20.23-f27a244c/
     files:
     - initrd
     - vmlinuz
+    os: ubuntu
+    version: 18.04
   ubuntu-18.04-default-squash:
     path: /ubuntu-squash/releases/download/18.04.3-5b9d4326/
     files:
