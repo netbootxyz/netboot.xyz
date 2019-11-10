@@ -19,10 +19,12 @@ endpoints:
     version: '18.04'
     flavor: core
   debian-10-live-kernel:
-    path: /debian-core-10/releases/download/4.19.67-2-04fe0fb9/
+    path: /debian-core-10/releases/download/4.19.67-2-76176a24/
     files:
     - initrd
     - vmlinuz
+    os: debian
+    version: '10'
   debian-9-live-kernel:
     path: /debian-core-9/releases/download/4.9.189-3-44deb8e4/
     files:
