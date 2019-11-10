@@ -14,19 +14,19 @@ endpoints:
     files:
     - filesystem.squashfs
   debian-10-live-kernel:
-    path: /debian-core-10/releases/download/4.19.67-2-04fe0fb9/
+    path: /debian-core-10/releases/download/4.19.67-2-cb2c17ba/
     files:
     - initrd
     - vmlinuz
+    os: debian
+    version: 10
   debian-9-live-kernel:
     path: /debian-core-9/releases/download/4.9.189-3-152f39d8/
     files:
     - initrd
     - vmlinuz
   manjaro-18.x-live-kernel:
-    path: /manjaro-core-18.x/releases/download/5.3.8-8ec3175f/
+    path: /manjaro-core-18.x/releases/download/5.3.8-d0e4054f/
     files:
     - initrd
     - vmlinuz
-    os: manjaro
-    version: 18.x
