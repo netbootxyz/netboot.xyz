@@ -4,6 +4,8 @@ endpoints:
     files:
     - initrd
     - vmlinuz
+    os: ubuntu
+    version: '19.10'
   ubuntu-18.04-live-kernel:
     path: /ubuntu-core-18.04/releases/download/4.15.0.20.23-fe234d14/
     files:
