@@ -23,3 +23,8 @@ endpoints:
     files:
     - initrd
     - vmlinuz
+  manjaro-18.x-live-kernel:
+    path: /manjaro-core-18.x/releases/download/5.3.8-79f86aee/
+    files:
+    - initrd
+    - vmlinuz
