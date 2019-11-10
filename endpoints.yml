@@ -50,3 +50,12 @@ endpoints:
     version: '10'
     flavor: core
     kernel: debian-10-live-kernel
+  manjaro-18.1.0-default-squash:
+    path: /manjaro-squash/releases/download/18.1.0-f48d62ba/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    os: manjaro
+    version: 18.1.0
+    flavor: architect
+    kernel: manjaro-18.x-live-kernel
