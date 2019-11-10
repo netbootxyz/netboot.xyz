@@ -3,11 +3,11 @@
 goto ${menu} ||
 
 :live_menu
-menu Live Ubuntu Default (Unity) - Current Arch [ ${arch} ]
+menu Live Debian Default - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
-item --gap Live Ubuntu Default (Unity)
+item --gap Live Debian
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key %}
+{% if value.os == "debian" and 'squash' in key %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}
@@ -17,16 +17,16 @@ goto ${menu} ||
 iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key %}
+{% if value.os == "debian" and 'squash' in key %}
 {% set kernel_name = value.kernel %}
 :{{ key }}
+imgfree
 set fetch_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
-kernel ${live_endpoint}{{ value.path }}vmlinuz boot=casper netboot=http fetch=${fetch_url} initrd=initrd
+kernel ${live_endpoint}{{ value.path }}vmlinuz boot=live fetch=${fetch_url} initrd=initrd
 initrd ${live_endpoint}{{ value.path }}initrd
 boot
-
 {% endif %}
 {% endfor %}
 {% endif %}
