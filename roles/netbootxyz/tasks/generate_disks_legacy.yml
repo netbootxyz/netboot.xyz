@@ -1,0 +1,36 @@
+---
+
+  - name: Copy netboot.xyz local legacy iPXE configs
+    copy:
+      src: "ipxe/local/{{ item }}"
+      dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
+    with_items:
+      - colour.h
+      - crypto.h
+      - general.h
+
+  - name: Compile iPXE bootloader for Legacy BIOS
+    shell: "{{ item }}"
+    with_items:
+    - make clean
+    - make EMBED=ipxe-bootloader bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
+    args:
+      chdir: "{{ ipxe_source_dir }}/src"
+
+  - name: Copy iPXE files for Legacy BIOS to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ site_name }}{{ item }}"
+      remote_src: True
+    with_items:
+    - ".dsk"
+    - ".iso"
+    - ".lkrn"
+    - ".usb"
+    - ".kpxe"
+
+  - name: Copy undionly.kpxe for Legacy BIOS to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ site_name }}-undionly.kpxe"
+      remote_src: True

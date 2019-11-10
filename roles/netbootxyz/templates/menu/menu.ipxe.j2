@@ -1,7 +1,7 @@
 #!ipxe
 
 :start
-chain --autofree boot.ipxe ||
+chain --autofree boot.cfg ||
 iseq ${cls} serial && goto ignore_cls ||
 set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
 set cls ${cls:string}

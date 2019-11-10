@@ -8,22 +8,22 @@ set site_name {{ site_name }}
 set boot_domain {{ boot_domain }}
 
 # set location of memdisk
-set memdisk http://${boot_domain}/memdisk
+set memdisk {{ memdisk_location }}
 
 # signature check enabled?
-set sigs_enabled true
+set sigs_enabled {{ sigs_enabled | default(false) | bool }}
 
 # image signatures check enabled?
-set img_sigs_enabled true
+set img_sigs_enabled {{ img_sigs_enabled | default(false) | bool }}
 
 # set location of signatures for sources
-set sigs http://${boot_domain}/sigs/
+set sigs {{ sigs_location }}
 
 # set location of latest iPXE
 set ipxe_disk netboot.xyz-undionly.kpxe
 
 # set location of custom netboot.xyz live assets
-set live_endpoint https://github.com/netbootxyz
+set live_endpoint {{ live_endpoint }}
 
 ##############################
 # netboot-xyz hosted endpoints

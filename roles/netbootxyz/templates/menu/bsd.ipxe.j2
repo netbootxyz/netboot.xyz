@@ -9,7 +9,7 @@ iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 
 # BSD based systems
 item --gap BSD Based Operating Systems
-{% for key, value in releases.items() | sort %}
+{% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.enabled is defined and value.menu == "bsd" and value.enabled | bool %}
 item {{ key }} ${space} {{ value.name }}
 {% endif %}

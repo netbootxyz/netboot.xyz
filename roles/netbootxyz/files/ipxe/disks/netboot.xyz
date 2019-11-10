@@ -5,26 +5,21 @@ set boldoff ${esc:string}[22m
 set fg_gre ${esc:string}[32m
 set fg_cya ${esc:string}[36m
 set fg_whi ${esc:string}[37m
-set TFTP_ERR Local TFTP failed... attempting remote HTTPS 
 set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
-set boot_domain {{ boot_domain }}
-set version {{ boot_version }}
+set version 1.04
 
 :start
-echo ${bold}${fg_gre}${boot_domain} - ${fg_whi}v${version}${boldoff}
-echo ${bold}${fg_whi}Powered by${fg_gre}netboot.xyz${boldoff}
+echo ${bold}${fg_gre}netboot.xyz ${fg_whi}v${version}${boldoff}
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp
 echo
 dhcp || goto netconfig
-isset ${next-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
-isset ${next-server} && iseq ${filename} {{ site_name }}.efi && goto tftpmenu ||
 goto menu
 
 :failsafe
-menu ${boot_domain} Failsafe Menu
+menu netboot.xyz Failsafe Menu
 item localboot Boot to local drive
 item netconfig Manual network configuration
 item retry Retry boot
@@ -45,22 +40,15 @@ echo -n Subnet mask: && read net${net}/netmask
 echo -n Gateway: && read net${net}/gateway
 echo -n DNS: && read dns
 ifopen net${net}
-echo Attempting chainload of ${boot_domain}...
+echo Attempting chainload of netboot.xyz...
 goto menu || goto failsafe
 
-:tftpmenu
-chain --autofree tftp://${next-server}/menu.ipxe || echo ${TFTP_ERR} && goto menu
-
 :menu
-{% if bootloader_https_enabled | bool %}
 set conn_type https
-chain --autofree https://${boot_domain}/menu.ipxe || echo ${HTTPS_ERR}
+chain --autofree https://boot.netboot.xyz/menu.ipxe || echo ${HTTPS_ERR}
 sleep 5
-{% endif %}
-{% if bootloader_http_enabled | bool %}
 set conn_type http
-chain --autofree http://${boot_domain}/menu.ipxe || echo ${HTTP_ERR}
-{% endif %}
+chain --autofree http://boot.netboot.xyz/menu.ipxe || echo ${HTTP_ERR}
 goto localboot
 
 :localboot

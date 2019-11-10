@@ -2,7 +2,7 @@
 
 # overrides defaults in netbootxyz role
 generate_menus: true
-generate_disks: false
+generate_disks: true
 
 # set desired site name
 #site_name: mysitename.com
@@ -12,6 +12,10 @@ generate_disks: false
 
 # set boot version
 #boot_version: 1.00
+
+#bootloader_tftp_enabled: false
+#bootloader_https_enabled: true
+#bootloader_http_enabled: true
 
 # set overrides from standard netboot.xyz defaults
 release_overrides:

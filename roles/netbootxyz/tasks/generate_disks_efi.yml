@@ -1,0 +1,44 @@
+---
+
+  - name: Copy netboot.xyz local EFI iPXE configs
+    copy:
+      src: "ipxe/local/{{ item }}"
+      dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
+    with_items:
+      - colour.h
+      - crypto.h
+
+  - name: Copy netboot.xyz general.h.efi iPXE config
+    copy:
+      src: "ipxe/local/general.h.efi"
+      dest: "{{ ipxe_source_dir }}/src/config/local/general.h"
+
+  - name: Compile iPXE bootloader for EFI
+    shell: "{{ item }}"
+    with_items:
+    - make clean
+    - make EMBED=ipxe-bootloader bin-x86_64-efi/ipxe.efi
+    args:
+      chdir: "{{ ipxe_source_dir }}/src"
+
+  - name: Generate iPXE EFI ISO Disk
+    shell: "{{ item }}"
+    with_items:
+      - mkdir -p efi_tmp
+      - dd if=/dev/zero of=efi_tmp/ipxe.img count=2880
+      - mformat -i efi_tmp/ipxe.img -m 0xf8 -f 2880
+      - mmd -i efi_tmp/ipxe.img ::efi ::efi/boot
+      - mcopy -i efi_tmp/ipxe.img bin-x86_64-efi/ipxe.efi ::efi/boot/bootx64.efi
+      - genisoimage -o ipxe-efi.eiso -eltorito-alt-boot -e ipxe.img -no-emul-boot efi_tmp
+    args:
+      chdir: "{{ ipxe_source_dir }}/src"
+      warn: false
+
+  - name: Copy iPXE EFI builds to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
+      remote_src: True
+    with_items:
+      - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ site_name }}.efi" }
+      - { src: "ipxe-efi.eiso", dest: "{{ site_name }}-efi.iso" }

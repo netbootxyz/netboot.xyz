@@ -1,17 +1,27 @@
 ---
 
+### site configuration ###
 site_name: netboot.xyz
 boot_domain: boot.netboot.xyz
 boot_version: 1.04
+
+sigs_enabled: false
+img_sigs_enabled: false
+sigs_location: "http://${boot_domain}/sigs/"
+memdisk_location: "http://${boot_domain}/memdisk"
 
 ipxe_repo: https://github.com/ipxe/ipxe.git
 ipxe_branch: master
 ipxe_source_dir: /usr/src/ipxe
 
-netbootxyz_repo: https://github.com/netbootxyz/netboot.xyz.git
-netbootxyz_branch: master
+live_endpoint: "https://github.com/netbootxyz"
 netbootxyz_root: /var/www/html
 
+bootloader_tftp_enabled: false
+bootloader_https_enabled: true
+bootloader_http_enabled: true
+
+### release values ###
 releases:
   alpinelinux:
     name: "Alpine Linux"
@@ -126,6 +136,7 @@ releases:
         code_name: "edge"
   freebsd:
     name: "FreeBSD"
+    enabled: false
     menu: "bsd"
     versions:
       - name: "FreeBSD 12.0"
@@ -157,14 +168,16 @@ releases:
   gentoo:
     name: "Gentoo"
     mirror: ""
+    enabled: false
     menu: "linux"
     versions:
-      - name: "TBA"
-        code_name: "TBA"
+      - name: "Minimal CD 20160204 (amd64)"
+        code_name: "20160204"
   ipfire:
     name: "IPFire"
     mirror: "downloads.ipfire.org"
     menu: "linux"
+    enabled: true
     versions:
       - name: "2.21 Core 126"
         code_name: "2.21-core126"
@@ -301,6 +314,7 @@ releases:
     name: "Scientific Linux"
     mirror: "ftp1.scientificlinux.org"
     base_dir: ""
+    enabled: true
     menu: "linux"
     versions:
       - name: "7.7"
@@ -315,6 +329,7 @@ releases:
     name: "Slackware"
     mirror: "mirror.rackspace.com"
     base_dir: "slackware"
+    enabled: true
     menu: "linux"
     versions:
       - name: "Current"
@@ -326,6 +341,7 @@ releases:
   tinycore:
     name: "Tiny Core Linux"
     mirror: "tinycorelinux.net"
+    enabled: true
     menu: "linux"
     versions:
       - name: "Core [ISO]"

@@ -1,11 +1,11 @@
 ---
   - name: Combine overrides with defaults
     set_fact: 
-      _my_releases: "{{ releases|combine(release_overrides, recursive=True) }}"
+      _releases: "{{ releases|combine(release_overrides, recursive=True) }}"
 
   - name: Set releases with user overrides
     set_fact:
-      releases: "{{ _my_releases }}"
+      releases: "{{ _releases }}"
 
   - name: Generate directories
     file:
@@ -15,6 +15,10 @@
   - name: Dump releases vars for debugging
     debug:
       var: releases
+
+  - name: Dump endpoint vars for debugging
+    debug:
+      var: endpoints
 
   - name: Generate netboot.xyz source files templates
     template:
