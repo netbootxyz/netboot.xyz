@@ -48,3 +48,10 @@ endpoints:
     os: debian
     version: '10'
     flavor: core
+  debian-10-default-squash:
+    path: /debian-squash/releases/download/10.1.0-36e1d734/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '10'
+    flavor: core
