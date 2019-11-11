@@ -99,3 +99,11 @@ endpoints:
     version: '18.04'
     flavor: MATE
     kernel: ubuntu-18.04-live-kernel
+  ubuntu-18.04-server-squash:
+    path: /ubuntu-squash/releases/download/18.04.3-ade0b2cc/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '18.04'
+    flavor: server
+    kernel: ubuntu-18.04-live-kernel
