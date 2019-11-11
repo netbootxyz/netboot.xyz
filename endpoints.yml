@@ -59,3 +59,11 @@ endpoints:
     version: 18.1.0
     flavor: architect
     kernel: manjaro-18.x-live-kernel
+  ubuntu-18.04-xfce-squash:
+    path: /ubuntu-squash/releases/download/18.04.3-d9bd73c3/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '18.04'
+    flavor: xfce
+    kernel: ubuntu-18.04-live-kernel
