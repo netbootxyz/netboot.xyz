@@ -83,3 +83,11 @@ endpoints:
     version: '18.04'
     flavor: LXDE
     kernel: ubuntu-18.04-live-kernel
+  ubuntu-18.04-Budgie-squash:
+    path: /ubuntu-squash/releases/download/18.04.3-fbf44fff/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '18.04'
+    flavor: Budgie
+    kernel: ubuntu-18.04-live-kernel
