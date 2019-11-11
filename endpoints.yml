@@ -36,7 +36,7 @@ endpoints:
     os: debian
     version: 9
   manjaro-18.x-live-kernel:
-    path: /manjaro-core-18.x/releases/download/5.3.8-5c2c1182/
+    path: /manjaro-core-18.x/releases/download/5.3.8-25c643fa/
     files:
     - initrd
     - vmlinuz
