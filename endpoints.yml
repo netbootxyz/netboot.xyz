@@ -123,3 +123,11 @@ endpoints:
     version: '19.10'
     flavor: xfce
     kernel: ubuntu-19.10-live-kernel
+  ubuntu-19.10-KDE-squash:
+    path: /ubuntu-squash/releases/download/9854741e-b243fefb/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '19.10'
+    flavor: KDE
+    kernel: ubuntu-19.10-live-kernel
