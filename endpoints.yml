@@ -131,3 +131,11 @@ endpoints:
     version: '19.10'
     flavor: KDE
     kernel: ubuntu-19.10-live-kernel
+  ubuntu-19.10-LXDE-squash:
+    path: /ubuntu-squash/releases/download/8b8b0336-f53591b5/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '19.10'
+    flavor: LXDE
+    kernel: ubuntu-19.10-live-kernel
