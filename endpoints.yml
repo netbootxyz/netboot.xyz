@@ -139,3 +139,11 @@ endpoints:
     version: '19.10'
     flavor: LXDE
     kernel: ubuntu-19.10-live-kernel
+  ubuntu-19.10-MATE-squash:
+    path: /ubuntu-squash/releases/download/b8a2a185-48069fc4/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '19.10'
+    flavor: MATE
+    kernel: ubuntu-19.10-live-kernel
