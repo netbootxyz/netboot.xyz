@@ -155,3 +155,11 @@ endpoints:
     version: '19.10'
     flavor: Budgie
     kernel: ubuntu-18.04-live-kernel
+  debian-10-xfce-squash:
+    path: /debian-squash/releases/download/10.1.0-a0eae41d/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '10'
+    flavor: xfce
+    kernel: debian-10-live-kernel
