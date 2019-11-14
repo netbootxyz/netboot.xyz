@@ -147,3 +147,11 @@ endpoints:
     version: '19.10'
     flavor: MATE
     kernel: ubuntu-19.10-live-kernel
+  ubuntu-19.10-Budgie-squash:
+    path: /ubuntu-squash/releases/download/945f7f4b-bda09025/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '19.10'
+    flavor: Budgie
+    kernel: ubuntu-18.04-live-kernel
