@@ -115,3 +115,11 @@ endpoints:
     version: '18.04'
     flavor: kylin
     kernel: ubuntu-18.04-live-kernel
+  ubuntu-19.10-xfce-squash:
+    path: /ubuntu-squash/releases/download/862cad91-9437400f/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '19.10'
+    flavor: xfce
+    kernel: ubuntu-19.10-live-kernel
