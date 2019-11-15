@@ -2,6 +2,7 @@
 
 :start
 chain --autofree boot.cfg ||
+ntp {{ time_server }}
 iseq ${cls} serial && goto ignore_cls ||
 set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
 set cls ${cls:string}
@@ -57,7 +58,7 @@ item sig_check ${space} netboot.xyz [ enabled: ${sigs_enabled} ]
 item img_sigs_check ${space} Images [ enabled: ${img_sigs_enabled} ]
 isset ${github_user} && item --gap Custom Menu: ||
 isset ${github_user} && item nbxyz-custom ${space} ${github_user}'s Custom Menu ||
-isset ${menu} && set timeout 0 || set timeout 300000
+isset ${menu} && set timeout 0 || set timeout {{ boot_timeout }}
 choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
 goto ${menu} ||
