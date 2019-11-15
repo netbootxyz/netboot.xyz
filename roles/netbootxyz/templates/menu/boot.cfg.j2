@@ -25,14 +25,6 @@ set ipxe_disk netboot.xyz-undionly.kpxe
 # set location of custom netboot.xyz live assets
 set live_endpoint {{ live_endpoint }}
 
-##############################
-# netboot-xyz hosted endpoints
-##############################
-
-{% for key, value in endpoints.iteritems() %}
-set {{ key }} {{ value['path'] }}
-{% endfor %}
-
 #################################################
 # determine architectures and enable menu options
 #################################################
