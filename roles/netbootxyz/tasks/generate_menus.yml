@@ -1,11 +1,19 @@
 ---
-  - name: Combine overrides with defaults
+  - name: Combine overrides with release defaults
     set_fact: 
       _releases: "{{ releases|combine(release_overrides, recursive=True) }}"
 
   - name: Set releases with user overrides
     set_fact:
       releases: "{{ _releases }}"
+
+  - name: Combine overrides with utilities defaults
+    set_fact: 
+      _utilities: "{{ utilities|combine(utilities_overrides, recursive=True) }}"
+
+  - name: Set utility with user overrides
+    set_fact:
+      utilities: "{{ _utilities }}"
 
   - name: Generate directories
     file:

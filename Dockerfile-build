@@ -20,7 +20,7 @@ COPY . /ansible
 RUN \
  echo "**** running ansible ****" && \
  cd /ansible && \
- ansible-playbook -i inventory/all netbootxyz.yml
+ ansible-playbook -i inventory/all site.yml
 
 # runtime stage
 FROM alpine:3.10

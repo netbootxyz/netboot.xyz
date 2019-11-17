@@ -43,15 +43,21 @@ set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
 set kernel_url ${live_endpoint}{{ value.path }}
-goto boot
 {% endif %}
 {% endfor %}
+goto {{ value.version }}-boot
 {% endif %}
 {% endfor %}
 
-:boot
+:18.04-boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=casper netboot=http fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip-dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:19.10-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
 initrd ${kernel_url}initrd
 boot
 

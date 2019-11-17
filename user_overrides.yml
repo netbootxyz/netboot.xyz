@@ -17,9 +17,13 @@ generate_disks: true
 #bootloader_https_enabled: true
 #bootloader_http_enabled: true
 
-# set overrides from standard netboot.xyz defaults
-release_overrides:
-  alpinelinux:
-    name: "ALPINELINUX"
-  fedora:
-    mirror: "iad.mirror.rackspace.com"
+# set release overrides from standard netboot.xyz defaults
+#release_overrides:
+#  alpinelinux:
+#    name: "ALPINELINUX"
+#  fedora:
+#    mirror: "mirrors.kernel.org"
+
+# set utilities_overrides from standard netboot.xyz defaults
+#utilities_overrides:
+  
