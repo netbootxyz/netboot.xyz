@@ -43,7 +43,7 @@ endpoints:
     os: manjaro
     version: 18.x
   debian-10-default-squash:
-    path: /debian-squash/releases/download/10.1.0-600c59c0/
+    path: /debian-squash/releases/download/10.2.0-600c59c0/
     files:
     - filesystem.squashfs
     os: debian
