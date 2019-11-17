@@ -148,7 +148,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-18.04-live-kernel
   debian-10-xfce-squash:
-    path: /debian-squash/releases/download/10.1.0-a0eae41d/
+    path: /debian-squash/releases/download/10.2.0-a0eae41d/
     files:
     - filesystem.squashfs
     os: debian
