@@ -16,7 +16,7 @@ set os Fedora
 menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 {% for item in releases.fedora.versions %}
-item {{ item.name }} ${space} ${os} {{ item.name }}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
 iseq ${arch} x86_64 && item rawhide ${space} ${os} rawhide ||
 isset ${osversion} || choose osversion || goto linux_menu

@@ -239,15 +239,6 @@ releases:
         code_name: "7.1"
       - name: "cauldron"
         code_name: "cauldron"
-  mirbsd:
-    name: "MirOS"
-    mirror: "https://www.mirbsd.org/"
-    base_dir: "MirOS"
-    enabled: true
-    menu: "bsd"
-    versions:
-      - name: "Latest (i386)"
-        code_name: "mirbsd"
   nixos:
     name: "NixOS"
     enabled: true
@@ -370,3 +361,62 @@ releases:
         code_name: "bionic"
       - name: "16.04 LTS Xenial Xerus"
         code_name: "xenial"
+
+# utility values
+utilities:
+  avg:
+    name: "AVG Rescue CD"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "160420a12074"
+    util_path: "http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_160420a12074.iso"
+  breakin:
+    name: "Breakin"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "4.26.1-53"
+    util_path: "http://www.advancedclustering.com/wp-content/uploads/2017/02/bootimage-4.26.1-53.iso"
+  clonezilla:
+    name: "Clonezilla"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "2.6.2-15"
+    util_path: "http://master.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.6.2-15/clonezilla-live-2.6.2-15-amd64.iso"
+  dban:
+    name: "DBAN"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "2.3.0"
+    util_path: "http://master.dl.sourceforge.net/project/dban/dban/dban-2.3.0/dban-2.3.0_i586.iso"
+  gparted:
+    name: "GParted"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "1.0.0-3"
+    util_path: "http://master.dl.sourceforge.net/project/gparted/gparted-live-stable/1.0.0-3/gparted-live-1.0.0-3-amd64.iso"
+  memtest:
+    name: "Memtest"
+    enabled: true
+    menu: "pcbios"
+    type: "memtest"
+    version: "5.01.0"
+    util_path: "https://boot.netboot.xyz/utils/memtest86-5.01.0"
+  supergrub:
+    name: "SuperGRUB"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "2.04s1"
+    util_path: "http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso"
+  ubcd:
+    name: "Ultimate Boot CD (UBCD)"
+    enabled: true
+    menu: "pcbios"
+    type: "memdisk"
+    version: "538"
+    util_path: "http://mirror.sysadminguide.net/ubcd/ubcd538.iso"
