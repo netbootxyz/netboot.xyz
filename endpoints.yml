@@ -164,7 +164,7 @@ endpoints:
     flavor: gnome
     kernel: debian-10-live-kernel
   debian-10-cinnamon-squash:
-    path: /debian-squash/releases/download/10.1.0-51162b7a/
+    path: /debian-squash/releases/download/10.2.0-51162b7a/
     files:
     - filesystem.squashfs
     os: debian
