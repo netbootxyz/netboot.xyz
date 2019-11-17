@@ -180,7 +180,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-19.10-live-kernel
   debian-10-kde-squash:
-    path: /debian-squash/releases/download/10.1.0-88a7a1a3/
+    path: /debian-squash/releases/download/10.2.0-88a7a1a3/
     files:
     - filesystem.squashfs
     os: debian
