@@ -16,6 +16,8 @@
     - make EMBED=ipxe-bootloader bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
     args:
       chdir: "{{ ipxe_source_dir }}/src"
+    tags:
+    - skip_ansible_lint
 
   - name: Copy iPXE files for Legacy BIOS to http directory
     copy:

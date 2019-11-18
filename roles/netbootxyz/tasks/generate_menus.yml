@@ -1,32 +1,28 @@
 ---
   - name: Combine overrides with release defaults
-    set_fact: 
+    set_fact:
       _releases: "{{ releases|combine(release_overrides, recursive=True) }}"
+    when: release_overrides is defined
 
   - name: Set releases with user overrides
     set_fact:
       releases: "{{ _releases }}"
+    when: release_overrides is defined
 
   - name: Combine overrides with utilities defaults
-    set_fact: 
+    set_fact:
       _utilities: "{{ utilities|combine(utilities_overrides, recursive=True) }}"
+    when: utilities_overrides is defined
 
   - name: Set utility with user overrides
     set_fact:
       utilities: "{{ _utilities }}"
+    when: utilities_overrides is defined
 
   - name: Generate directories
     file:
       path: "{{ netbootxyz_root }}"
       state: directory
-
-  - name: Dump releases vars for debugging
-    debug:
-      var: releases
-
-  - name: Dump endpoint vars for debugging
-    debug:
-      var: endpoints
 
   - name: Generate netboot.xyz source files templates
     template:
@@ -34,3 +30,5 @@
       dest: "{{ netbootxyz_root }}/{{ item.path | regex_replace('.j2','') }}"
     with_filetree: "templates/menu/"
     when: item.state == "file"
+    tags:
+    - skip_ansible_lint
