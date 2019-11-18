@@ -140,13 +140,13 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-19.10-live-kernel
   ubuntu-19.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/945f7f4b-bda09025/
+    path: /ubuntu-squash/releases/download/945f7f4b-85bee8cf/
     files:
     - filesystem.squashfs
     os: ubuntu
     version: '19.10'
     flavor: Budgie
-    kernel: ubuntu-18.04-live-kernel
+    kernel: ubuntu-19.10-live-kernel
   debian-10-xfce-squash:
     path: /debian-squash/releases/download/10.2.0-a0eae41d/
     files:
