@@ -30,7 +30,7 @@
   - name: Install required packages
     package:
       name: "{{ item }}"
-      state: latest
+      state: present
     with_items: "{{ netbootxyz_packages }}"
 
   - name: Check out latest iPXE sources

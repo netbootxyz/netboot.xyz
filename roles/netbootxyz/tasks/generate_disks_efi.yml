@@ -20,6 +20,8 @@
     - make EMBED=ipxe-bootloader bin-x86_64-efi/ipxe.efi
     args:
       chdir: "{{ ipxe_source_dir }}/src"
+    tags:
+    - skip_ansible_lint
 
   - name: Generate iPXE EFI ISO Disk
     shell: "{{ item }}"
@@ -33,6 +35,8 @@
     args:
       chdir: "{{ ipxe_source_dir }}/src"
       warn: false
+    tags:
+    - skip_ansible_lint
 
   - name: Copy iPXE EFI builds to http directory
     copy:
