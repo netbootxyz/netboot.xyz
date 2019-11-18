@@ -20,7 +20,7 @@ This is a seperate repo for now but will more than likely roll into the existing
 To generate, run:
 
 ```
-ansible-playbook -i inventory/all site.yml
+ansible-playbook -i inventory site.yml
 ```
 
 The build output will be located in /var/www/html on Debian OSs.
