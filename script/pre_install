@@ -2,4 +2,4 @@
 
 # Install aws cli
 
-pip install awscli tornado
+pip install --user awscli tornado

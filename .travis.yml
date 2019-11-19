@@ -13,8 +13,6 @@ jobs:
   include:
     - stage: development
       if: branch = development AND tag IS blank AND type != pull_request
-      before_install:
-        - ./script/pre_install
       script:
         - ./script/build_release dev
       after_failure:
@@ -40,6 +38,8 @@ jobs:
         - echo test
     - stage: release
       if: branch = master AND type != pull_request
+      before_install:
+        - ./script/pre_install
       script:
         - echo test
       deploy:
