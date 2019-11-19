@@ -33,36 +33,36 @@ echo ${cls}
 goto ${flavor} ||
 
 :debian-10-cinnamon-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-51162b7a/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-51162b7a/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-default-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-600c59c0/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-600c59c0/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-gnome-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-787d3b4a/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-787d3b4a/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-kde-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-88a7a1a3/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-88a7a1a3/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-lxde-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-30a4aa90/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-30a4aa90/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-lxqt-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-39d7e341/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-39d7e341/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-mate-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-466ca031/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-466ca031/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :debian-10-xfce-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/10.1.0-a0eae41d/filesystem.squashfs
-set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2-4acbfed0/
+set squash_url ${live_endpoint}/debian-squash/releases/download/10.2.0-a0eae41d/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 
 :boot
