@@ -26,6 +26,8 @@ jobs:
           upload-dir: $TRAVIS_COMMIT
           region: us-west-2
           skip_cleanup: true
+          on:
+            branch: development
       after_deploy:
         - ./script/message dev-push
     - stage: pull-request
