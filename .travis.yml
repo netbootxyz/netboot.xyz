@@ -24,38 +24,96 @@ jobs:
           bucket: $BUCKET_DEV
           local_dir: s3out
           upload-dir: $TRAVIS_COMMIT
-          region: us-west-2
           skip_cleanup: true
           on:
             branch: development
       after_deploy:
         - ./script/message dev-push
+
+
     - stage: pull-request
       if: type = pull_request
       script:
-        - echo test
+        - ./script/build_release pr
+
+
     - stage: release-canidate
       if: branch = development AND tag IS present AND type != pull_request
-      script:
-        - echo test
-    - stage: release
-      if: branch = master AND type != pull_request
       before_install:
         - ./script/pre_install
       script:
-        - echo test
+        - ./script/build_release rc
+      after_failure:
+        - ./script/message failure
       deploy:
         - provider: s3
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_LIVE
-          local_dir: s3out
+          local_dir: s3out-latest
+          upload-dir: rc
           skip_cleanup: true
+          on:
+            branch: development
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_LIVE
+          local_dir: s3out
+          upload-dir: $TRAVIS_TAG
+          skip_cleanup: true
+          on:
+            branch: development
+        - provider: releases
+          api_key: $GITHUB_TOKEN
+          file_glob: true
+          file: githubout/*
+          prerelease: true
+          skip_cleanup: true
+          on:
+            branch: development
+      after_deploy:
+        - aws configure set preview.cloudfront true
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "rc/*" "rc/ipxe/*"
+        - ./script/message rc-push
+
+    - stage: release
+      if: branch = master AND type != pull_request
+      before_install:
+        - ./script/pre_install
+      script:
+        - ./script/build_release release
+      after_failure:
+        - ./script/message failure
+      before_deploy:
+        - export RELEASE_TAG=$(cat version.txt)
+        - git tag ${RELEASE_TAG}
+      deploy:
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_LIVE
+          local_dir: s3out-latest
+          skip_cleanup: true
+          on:
+            branch: master
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_LIVE
+          local_dir: s3out
+          upload-dir: $RELEASE_TAG
+          skip_cleanup: true
+          on:
+            branch: master
         - provider: releases
           api_key: $GITHUB_TOKEN
           file_glob: true
           file: githubout/*
           skip_cleanup: true
+          on:
+            branch: development
       after_deploy:
         - aws configure set preview.cloudfront true
-        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "/*"
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "/*" "/ipxe/*"
+        - ./script/message live-push

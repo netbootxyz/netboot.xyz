@@ -3,8 +3,13 @@
 TYPE=$1
 
 if [ "${TYPE}" == "dev-push" ]; then
-  BOOT_URL="https://${BUCKET_DEV}.s3-us-west-2.amazonaws.com/${TRAVIS_COMMIT}/index.html"
+  BOOT_URL="https://${BUCKET_DEV}.s3-us-east-1.amazonaws.com/${TRAVIS_COMMIT}/index.html"
+elif [ "${TYPE}" == "rc-push" ]; then
+  BOOT_URL="https://boot.netboot.xyz/${TRAVIS_TAG}/index.html"
+elif [ "${TYPE}" == "live-push" ]; then
+  BOOT_URL="https://boot.netboot.xyz/$(cat version.txt)/index.html"
 fi
+
 
 # send status to discord
 if [ "${TYPE}" == "failure" ]; then
@@ -14,7 +19,7 @@ if [ "${TYPE}" == "failure" ]; then
     "embeds": [
       {
         "color": 16711680,
-        "description": "__**Failed to Build**__ \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**External Version:**  '${EXTERNAL_VERSION}'\n**Status:**  Failure\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
+        "description": "__**Failed to Build**__ \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**Status:**  Failure\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
       }
     ],
     "username": "Travis CI"
@@ -27,7 +32,7 @@ else
     "embeds": [
       {
         "color": 1681177,
-        "description": "__**Boot Menu Published**__ \n**Files:** '${BOOT_URL}' \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**External Version:**  '${EXTERNAL_VERSION}'\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
+        "description": "__**Boot Menu Published**__ \n**Files:** '${BOOT_URL}' \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
       }
     ],
     "username": "Travis CI"

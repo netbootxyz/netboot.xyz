@@ -1,5 +1,4 @@
 #!/bin/bash
 
 # Install aws cli
-
-pip install --user awscli tornado
+sudo pip install awscli tornado
