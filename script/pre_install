@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Install aws cli
+
+pip install awscli tornado

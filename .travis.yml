@@ -1,0 +1,59 @@
+sudo: true
+
+language: bash
+
+services:
+  - docker
+
+env:
+  global:
+    - DEBIAN_FRONTEND="noninteractive"
+
+jobs:
+  include:
+    - stage: development
+      if: branch = development AND tag IS blank AND type != pull_request
+      before_install:
+        - ./script/pre_install
+      script:
+        - ./script/build_release dev
+      after_failure:
+        - ./script/message failure
+      deploy:
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_DEV
+          local_dir: s3out
+          upload-dir: $TRAVIS_COMMIT
+          region: us-west-2
+          skip_cleanup: true
+      after_deploy:
+        - ./script/message dev-push
+    - stage: pull-request
+      if: type = pull_request
+      script:
+        - echo test
+    - stage: release-canidate
+      if: branch = development AND tag IS present AND type != pull_request
+      script:
+        - echo test
+    - stage: release
+      if: branch = master AND type != pull_request
+      script:
+        - echo test
+      deploy:
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_LIVE
+          local_dir: s3out
+          skip_cleanup: true
+        - provider: releases
+          api_key: $GITHUB_TOKEN
+          file_glob: true
+          file: githubout/*
+          skip_cleanup: true
+      after_deploy:
+        - aws configure set preview.cloudfront true
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "/*"

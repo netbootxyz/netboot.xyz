@@ -1,0 +1,28 @@
+#!/bin/bash
+
+TYPE=$1
+
+# Set boot domain
+if [[ "${TYPE}" == "dev" ]]; then
+  BOOT_DOMAIN="${BUCKET_DEV}.s3-us-west-2.amazonaws.com/${TRAVIS_COMMIT}"
+fi
+sed -i \
+  "/^#boot_domain/c\boot_domain: ${BOOT_DOMAIN}" \
+  user_overrides.yml
+
+# Build release
+docker build -t localbuild -f Dockerfile-build .
+docker run --rm -it -v $(pwd):/buildout localbuild
+
+# Generate folder outputs
+mkdir -p s3out
+cp -r buildout/* s3out/
+cp script/index.html s3out/
+mkdir -p githubout
+mv buildout/ipxe/* githubout/
+cd buildout
+rm -Rf ipxe
+tar -czf menus.tar.gz *
+mv menus.tar.gz ../githubout
+cd ..
+

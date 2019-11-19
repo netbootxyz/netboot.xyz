@@ -1,0 +1,36 @@
+#!/bin/bash
+
+TYPE=$1
+
+if [ "${TYPE}" == "dev-push" ]; then
+  BOOT_URL="https://${BUCKET_DEV}.s3-us-west-2.amazonaws.com/${TRAVIS_COMMIT}/index.html"
+fi
+
+# send status to discord
+if [ "${TYPE}" == "failure" ]; then
+  curl -X POST --data \
+  '{
+    "avatar_url": "https://avatars.io/twitter/travisci",
+    "embeds": [
+      {
+        "color": 16711680,
+        "description": "__**Failed to Build**__ \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**External Version:**  '${EXTERNAL_VERSION}'\n**Status:**  Failure\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
+      }
+    ],
+    "username": "Travis CI"
+  }' \
+  ${DISCORD_HOOK_URL}
+else
+  curl -X POST --data \
+  '{
+    "avatar_url": "https://avatars.io/twitter/travisci",
+    "embeds": [
+      {
+        "color": 1681177,
+        "description": "__**Boot Menu Published**__ \n**Files:** '${BOOT_URL}' \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**External Version:**  '${EXTERNAL_VERSION}'\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
+      }
+    ],
+    "username": "Travis CI"
+  }' \
+  ${DISCORD_HOOK_URL}
+fi
