@@ -172,7 +172,7 @@ endpoints:
     flavor: cinnamon
     kernel: debian-10-live-kernel
   ubuntu-19.10-kylin-squash:
-    path: /ubuntu-squash/releases/download/e7831484-1d80183a/
+    path: /ubuntu-squash/releases/download/e7831484-762c8439/
     files:
     - filesystem.squashfs
     os: ubuntu
