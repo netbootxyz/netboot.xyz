@@ -3,11 +3,11 @@
 TYPE=$1
 
 if [ "${TYPE}" == "dev-push" ]; then
-  BOOT_URL="https://${BUCKET_DEV}.s3-us-east-1.amazonaws.com/${TRAVIS_COMMIT}/index.html"
+  BOOT_URL="https://${BUCKET_DEV}.s3-website-us-east-1.amazonaws.com/${TRAVIS_COMMIT}/index.html"
 elif [ "${TYPE}" == "rc-push" ]; then
-  BOOT_URL="https://boot.netboot.xyz/${TRAVIS_TAG}/index.html"
+  BOOT_URL="https://staging.boot.netboot.xyz/${TRAVIS_TAG}/index.html"
 elif [ "${TYPE}" == "live-push" ]; then
-  BOOT_URL="https://boot.netboot.xyz/$(cat version.txt)/index.html"
+  BOOT_URL="https://staging.boot.netboot.xyz/$(cat version.txt)/index.html"
 fi
 
 

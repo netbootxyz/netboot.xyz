@@ -37,7 +37,7 @@ jobs:
         - ./script/build_release pr
 
 
-    - stage: release-canidate
+    - stage: release-candidate
       if: branch = development AND tag IS present AND type != pull_request
       before_install:
         - ./script/pre_install
