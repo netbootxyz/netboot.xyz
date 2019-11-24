@@ -13,7 +13,7 @@ fi
 
 # send status to discord
 if [ "${TYPE}" == "failure" ]; then
-  curl -X POST --data \
+  curl -X POST -H "Content-Type: application/json" --data \
   '{
     "avatar_url": "https://avatars.io/twitter/travisci",
     "embeds": [
@@ -26,7 +26,7 @@ if [ "${TYPE}" == "failure" ]; then
   }' \
   ${DISCORD_HOOK_URL}
 else
-  curl -X POST --data \
+  curl -X POST -H "Content-Type: application/json" --data \
   '{
     "avatar_url": "https://avatars.io/twitter/travisci",
     "embeds": [
