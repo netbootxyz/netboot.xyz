@@ -12,8 +12,8 @@ goto ${menu} ||
 clear osversion
 clear sku_type
 clear ova
-set os Fedora
-menu Fedora - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
+set os {{ releases.fedora.name }}
+menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Latest Releases
 {% for item in releases.fedora.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -60,8 +60,8 @@ goto boot
 
 :boot
 imgfree
-kernel http://${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=http://${fedora_mirror}/${dir} ${params} ${console} ${ipparam} initrd=initrd.img
-initrd http://${fedora_mirror}/${dir}/images/pxeboot/initrd.img
+kernel ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=${fedora_mirror}/${dir} ${params} ${console} ${ipparam} initrd=initrd.img
+initrd ${fedora_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img

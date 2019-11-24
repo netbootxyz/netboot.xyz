@@ -62,13 +62,14 @@ menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
 choose version || goto opensuse_exit
-set dir ${opensuse_base_dir}/${version}/repo/oss
+set opensuse_mirror {{ releases.opensuse.mirror }}
+set dir {{ releases.opensuse.base_dir }}/${version}/repo/oss
 iseq ${version} tumbleweed && set dir ${version}/repo/oss ||
 
 imgfree
-kernel http://${opensuse_mirror}/${dir}/boot/x86_64/loader/linux
-initrd http://${opensuse_mirror}/${dir}/boot/x86_64/loader/initrd
-imgargs linux ${netsetup} install=http://${opensuse_mirror}/${dir} ${params} ${console} initrd=initrd
+kernel ${opensuse_mirror}/${dir}/boot/x86_64/loader/linux
+initrd ${opensuse_mirror}/${dir}/boot/x86_64/loader/initrd
+imgargs linux ${netsetup} install=${opensuse_mirror}/${dir} ${params} ${console} initrd=initrd
 echo
 echo MD5sums:
 md5sum linux initrd

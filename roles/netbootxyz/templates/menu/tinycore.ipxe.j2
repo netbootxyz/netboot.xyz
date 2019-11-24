@@ -16,7 +16,7 @@ choose version || goto tinycore_exit
 echo ${cls}
 
 kernel ${memdisk} iso raw ${params}
-initrd http://${tinycore_mirror}/${dir}/${version}-current.iso
+initrd ${tinycore_mirror}/${dir}/${version}-current.iso
 boot
 
 :tinycore_exit

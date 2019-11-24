@@ -24,8 +24,8 @@ goto boot
 
 :boot
 imgfree
-kernel http://${slackware_mirror}/${dir}/kernels/huge.s/bzImage
-initrd http://${slackware_mirror}/${dir}/isolinux/initrd.img
+kernel ${slackware_mirror}/${dir}/kernels/huge.s/bzImage
+initrd ${slackware_mirror}/${dir}/isolinux/initrd.img
 imgargs bzImage load_ramdisk=1 prompt_ramdisk=0 rw printk.time=0 SLACK_KERNEL=huge.s ${params} ${console}
 isset ${debug} && prompt ||
 boot

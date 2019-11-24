@@ -41,8 +41,8 @@
 
   - name: Copy iPXE Bootloader template to iPXE source directory
     template:
-      src: disks/ipxe-bootloader.j2
-      dest: "{{ ipxe_source_dir }}/src/ipxe-bootloader"
+      src: "disks/{{ bootloader_filename }}.j2"
+      dest: "{{ ipxe_source_dir }}/src/{{ bootloader_filename }}"
 
   - name: Touch iPXE config local files
     file:

@@ -22,7 +22,7 @@ set openbsd_arch amd64
 goto boot_openbsd
 
 :boot_openbsd
-set src http://{{ releases.openbsd.mirror }}/{{ releases.openbsd.base_dir }}/${ver}/${openbsd_arch}/cd${image_ver}.iso
+set src {{ releases.openbsd.mirror }}/{{ releases.openbsd.base_dir }}/${ver}/${openbsd_arch}/cd${image_ver}.iso
 imgfree
 initrd ${src}
 chain ${memdisk} iso raw
