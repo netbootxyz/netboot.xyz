@@ -22,7 +22,7 @@ echo ${cls}
 echo -n Enter version: ${} && read osversion
 :scientific_skip_read_osversion
 set dir linux/scientific/${osversion}/${arch}/os
-set repo http://ftp1.scientificlinux.org/${dir}
+set repo {{ releases.scientific.mirror }}/${dir}
 
 goto boottype
 
@@ -49,8 +49,8 @@ goto bootos_images
 
 :bootos_images
 imgfree
-kernel http://ftp1.scientificlinux.org/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam}
-initrd http://ftp1.scientificlinux.org/${dir}/images/pxeboot/initrd.img
+kernel {{ releases.scientific.mirror }}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam}
+initrd {{ releases.scientific.mirror }}/${dir}/images/pxeboot/initrd.img
 boot
 goto linux_menu
 

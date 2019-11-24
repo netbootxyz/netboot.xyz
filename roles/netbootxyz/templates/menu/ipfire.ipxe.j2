@@ -20,8 +20,8 @@ goto ipfire_images
 
 :ipfire_images
 imgfree
-kernel https://${ipfire_mirror}/${dir}/vmlinuz ${console} vga=791 initrd=instroot
-initrd https://${ipfire_mirror}/${dir}/instroot
+kernel ${ipfire_mirror}/${dir}/vmlinuz ${console} vga=791 initrd=instroot
+initrd ${ipfire_mirror}/${dir}/instroot
 echo
 echo MD5sums:
 md5sum vmlinuz instroot

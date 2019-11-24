@@ -17,7 +17,7 @@
     shell: "{{ item }}"
     with_items:
     - make clean
-    - make EMBED=ipxe-bootloader bin-x86_64-efi/ipxe.efi
+    - make EMBED={{ bootloader_filename }} bin-x86_64-efi/ipxe.efi
     args:
       chdir: "{{ ipxe_source_dir }}/src"
     tags:

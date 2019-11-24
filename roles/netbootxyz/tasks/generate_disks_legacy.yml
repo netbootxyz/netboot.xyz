@@ -13,7 +13,7 @@
     shell: "{{ item }}"
     with_items:
     - make clean
-    - make EMBED=ipxe-bootloader bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
+    - make EMBED={{ bootloader_filename }} bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
     args:
       chdir: "{{ ipxe_source_dir }}/src"
     tags:
