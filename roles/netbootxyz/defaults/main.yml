@@ -12,18 +12,29 @@ img_sigs_enabled: false
 sigs_location: "http://${boot_domain}/sigs/"
 memdisk_location: "http://${boot_domain}/memdisk"
 
-ipxe_repo: https://github.com/ipxe/ipxe.git
+ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_branch: master
 ipxe_source_dir: /usr/src/ipxe
 
 live_endpoint: "https://github.com/netbootxyz"
 netbootxyz_root: /var/www/html
 
-bootloader_filename: ipxe-bootloader
+generate_menus: true
+generate_disks: true
+generate_checksums: true
+
 bootloader_tftp_enabled: false
 bootloader_https_enabled: true
 bootloader_http_enabled: true
+bootloader_build: true
+bootloader_disks:
+  - "netboot.xyz"
 
+#bootloader_multiple: true
+#bootloader_disks:
+#  - "netboot.xyz"
+#  - "netboot.xyz-packet"
+    
 ### release values ###
 releases:
   alpinelinux:

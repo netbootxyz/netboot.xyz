@@ -44,5 +44,5 @@
       dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
       remote_src: True
     with_items:
-      - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ site_name }}.efi" }
-      - { src: "ipxe-efi.eiso", dest: "{{ site_name }}-efi.iso" }
+      - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ bootloader_filename }}.efi" }
+      - { src: "ipxe-efi.eiso", dest: "{{ bootloader_filename }}-efi.iso" }

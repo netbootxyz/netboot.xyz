@@ -1,0 +1,6 @@
+# {{ site_name }} bootloaders generated at {{ current_date.stdout }}
+# iPXE Commit: {{ ipxe_repo }}/commit/{{ ipxe_git_checkout.after }}
+
+{% for item in netboot_disks_stat.results %}
+{{ item.stdout }}
+{% endfor %}

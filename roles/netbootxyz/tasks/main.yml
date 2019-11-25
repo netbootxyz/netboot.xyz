@@ -4,5 +4,13 @@
     - generate_menus | default(true) | bool
 
   - include: generate_disks.yml
+    with_items:
+    - "{{ bootloader_disks }}"
+    loop_control:
+      loop_var: bootloader_file
     when:
     - generate_disks | default(true) | bool
+
+  - include: generate_checksums.yml
+    when:
+    - generate_checksums | default(true) | bool

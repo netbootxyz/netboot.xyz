@@ -3,6 +3,7 @@
 # overrides defaults in netbootxyz role
 generate_menus: true
 generate_disks: true
+generate_checksums: true
 
 # set desired site name
 #site_name: mysitename.com
