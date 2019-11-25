@@ -12,6 +12,10 @@
       - "{{ ansible_distribution | lower }}.yml"
       - "{{ ansible_os_family | lower }}.yml"
 
+  - name: Set var to bootloader of loop
+    set_fact:
+      bootloader_filename: "{{ bootloader_file }}"
+
   - name: Create iPXE file directories
     file:
       path: "{{ item }}"
@@ -38,7 +42,9 @@
       repo: "{{ ipxe_repo }}"
       dest: "{{ ipxe_source_dir }}"
       version: "{{ ipxe_branch }}"
-
+      force: true
+    register: ipxe_git_checkout
+    
   - name: Copy iPXE Bootloader template to iPXE source directory
     template:
       src: "disks/{{ bootloader_filename }}.j2"

@@ -22,7 +22,7 @@
   - name: Copy iPXE files for Legacy BIOS to http directory
     copy:
       src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
-      dest: "{{ netbootxyz_root }}/ipxe/{{ site_name }}{{ item }}"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
       remote_src: True
     with_items:
     - ".dsk"
@@ -34,5 +34,5 @@
   - name: Copy undionly.kpxe for Legacy BIOS to http directory
     copy:
       src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
-      dest: "{{ netbootxyz_root }}/ipxe/{{ site_name }}-undionly.kpxe"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
       remote_src: True

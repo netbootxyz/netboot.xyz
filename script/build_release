@@ -4,7 +4,7 @@ TYPE=$1
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
-  BOOT_DOMAIN="${BUCKET_DEV}.s3-website-us-east-1.amazonaws.com/${TRAVIS_COMMIT}"
+  BOOT_DOMAIN="s3.amazonaws.com/${BUCKET_DEV}/${TRAVIS_COMMIT}"
 elif [[ "${TYPE}" == "pr" ]]; then
   BOOT_DOMAIN="test.com"
 elif [[ "${TYPE}" == "rc" ]]; then
