@@ -23,7 +23,6 @@ docker run --rm -it -v $(pwd):/buildout localbuild
 # Generate folder outputs
 mkdir -p s3out
 cp -r buildout/* s3out/
-cp script/index.html s3out/
 mkdir -p githubout
 mv buildout/ipxe/* githubout/
 cd buildout
