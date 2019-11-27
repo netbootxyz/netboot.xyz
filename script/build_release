@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 TYPE=$1
 
 # Set boot domain
