@@ -8,12 +8,13 @@ set fg_whi ${esc:string}[37m
 set TFTP_ERR Local TFTP failed... attempting remote HTTPS 
 set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
+set site_name {{ site_name }}
 set boot_domain {{ boot_domain }}
 set version {{ boot_version }}
 
 :start
-echo ${bold}${fg_gre}${boot_domain} - ${fg_whi}v${version}${boldoff}
-echo ${bold}${fg_whi}Powered by${fg_gre}netboot.xyz${boldoff}
+echo ${bold}${fg_gre}${site_name} - ${fg_whi}v${version}${boldoff}
+iseq ${site_name} netboot.xyz || echo ${bold}${fg_whi}Powered by ${fg_gre}netboot.xyz${fg_whi}${boldoff}
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp

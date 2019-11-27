@@ -22,6 +22,7 @@
       state: directory
     with_items:
       - "{{ netbootxyz_root }}/ipxe"
+      - "{{ cert_dir }}"
 
   - name: Copy helper apps
     copy:
@@ -44,7 +45,7 @@
       version: "{{ ipxe_branch }}"
       force: true
     register: ipxe_git_checkout
-    
+      
   - name: Copy iPXE Bootloader template to iPXE source directory
     template:
       src: "disks/{{ bootloader_filename }}.j2"
@@ -70,3 +71,8 @@
       - src/config/local/crypto.h
       - src/config/local/usb.h
       - src/config/local/settings.h
+
+  - name: Retrieve iPXE CA
+    get_url:
+      url: "{{ ipxe_ca_url }}"
+      dest: "{{ cert_dir }}/{{ ipxe_ca_filename }}"

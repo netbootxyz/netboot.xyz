@@ -5,30 +5,48 @@ site_name: netboot.xyz
 boot_domain: boot.netboot.xyz
 boot_version: 1.04
 boot_timeout: 300000
-
 time_server: "0.pool.ntp.org"
 sigs_enabled: false
 img_sigs_enabled: false
-sigs_location: "http://${boot_domain}/sigs/"
-memdisk_location: "http://${boot_domain}/memdisk"
 
+# helper app locations
+memdisk_location: "http://${boot_domain}/memdisk"
+wimboot_location: "http://${boot_domain}/wimboot"
+
+# iPXE upstream repo settings
 ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_branch: master
-ipxe_source_dir: /usr/src/ipxe
 
-live_endpoint: "https://github.com/netbootxyz"
+ipxe_source_dir: /usr/src/ipxe
 netbootxyz_root: /var/www/html
 
+# live os settings
+live_endpoint: "https://github.com/netbootxyz"
+
+# generates menus
 generate_menus: true
-generate_disks: true
+
+# generates signatures for source files
 generate_checksums: true
 
-bootloader_tftp_enabled: false
+# bootloader options
+generate_disks: true
 bootloader_https_enabled: true
 bootloader_http_enabled: true
-bootloader_build: true
 bootloader_disks:
   - "netboot.xyz"
+
+# signature generation
+generate_signatures: false
+sigs_dir: "{{ netbootxyz_root }}/sigs"
+sigs_location: "http://${boot_domain}/sigs/"
+cert_dir: "/etc/netbootxyz/certs"
+ipxe_trust_args: "TRUST={{ ipxe_ca_location }}"
+ipxe_ca_url: http://ca.ipxe.org/ca.crt
+ipxe_ca_filename: ca-ipxe-org.crt
+codesign_cert_filename: codesign.crt
+codesign_key_filename: codesign.key
+cert_file_filename : ca-netboot-xyz.crt
 
 #bootloader_multiple: true
 #bootloader_disks:
@@ -204,7 +222,7 @@ releases:
     enabled: true
     menu: "security"
     versions:
-      - name: "Rolling Edition (2019.2)"
+      - name: "Rolling Edition (2019.4)"
         code_name: "rolling"
   livedebian:
     name: "Debian Live"
