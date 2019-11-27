@@ -3,6 +3,13 @@
     when:
     - generate_menus | default(true) | bool
 
+  - include: generate_signatures.yml
+    when:
+    - generate_signatures | default(false) | bool
+    - codesign_cert_location is defined
+    - codesign_key_location is defined
+    - cert_file_location is defined
+
   - include: generate_disks.yml
     with_items:
     - "{{ bootloader_disks }}"
@@ -14,3 +21,4 @@
   - include: generate_checksums.yml
     when:
     - generate_checksums | default(true) | bool
+

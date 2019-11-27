@@ -41,7 +41,7 @@ goto windows
 isset ${win_base_url} && goto boot || echo URL not set... && goto url_set
 
 :boot
-kernel http://${boot_domain}/wimboot
+kernel {{ wimboot_location }}
 initrd ${win_base_url}/${win_arch}/bootmgr bootmgr
 initrd ${win_base_url}/${win_arch}/boot/bcd bcd
 initrd ${win_base_url}/${win_arch}/boot/boot.sdi boot.sdi
