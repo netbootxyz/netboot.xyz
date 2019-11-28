@@ -246,3 +246,12 @@ endpoints:
     os: fedora
     version: 31
     flavor: KDE
+  fedora-31-LXDE:
+    path: /fedora-assets/releases/download/1.9-c23f0dc4/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 31
+    flavor: LXDE
