@@ -220,13 +220,14 @@ endpoints:
     flavor: Unity
     kernel: ubuntu-19.10-live-kernel
   fedora-31-gnome:
-    path: /fedora-assets/releases/download/1.9-26baa768/
+    path: /fedora-assets/releases/download/1.9-808bb0da/
     files:
     - vmlinuz
     - initrd
     - squashfs.img
     version: 31
     flavor: GNOME
+    os: fedora
   fedora-31-Cinnamon:
     path: /fedora-assets/releases/download/1.9-200b24ce/
     files:
