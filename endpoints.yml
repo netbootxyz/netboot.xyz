@@ -227,3 +227,11 @@ endpoints:
     - squashfs.img
     version: 31
     flavor: GNOME
+  fedora-31-Cinnamon:
+    path: /fedora-assets/releases/download/1.9-200b24ce/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    version: 31
+    flavor: Cinnamon
