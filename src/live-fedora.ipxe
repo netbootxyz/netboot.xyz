@@ -1,0 +1,69 @@
+#!ipxe
+
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
+goto ${menu} ||
+
+:live_menu
+set os Fedora Live
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item 31 ${space} ${os} 31
+choose live_version || goto live_exit
+menu ${os} ${live_version}
+item --gap ${os} Flavors
+goto ${live_version}
+
+:31
+item fedora-31-Cinnamon ${space} Fedora 31 Cinnamon
+item fedora-31-KDE ${space} Fedora 31 Kde
+item fedora-31-LXDE ${space} Fedora 31 Lxde
+item fedora-31-LXQt ${space} Fedora 31 Lxqt
+item fedora-31-MATE_Compiz ${space} Fedora 31 Mate_compiz
+item fedora-31-SoaS ${space} Fedora 31 Soas
+item fedora-31-Xfce ${space} Fedora 31 Xfce
+item fedora-31-gnome ${space} Fedora 31 Gnome
+goto flavor_select
+
+:flavor_select
+choose flavor || goto live_menu
+echo ${cls}
+goto ${flavor} ||
+
+:fedora-31-Cinnamon
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-5a52a02a/
+goto boot
+:fedora-31-KDE
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-dfbbe3cc/
+goto boot
+:fedora-31-LXDE
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-c23f0dc4/
+goto boot
+:fedora-31-LXQt
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-19db8480/
+goto boot
+:fedora-31-MATE_Compiz
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-29013501/
+goto boot
+:fedora-31-SoaS
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-28104ec6/
+goto boot
+:fedora-31-Xfce
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-00e3a627/
+goto boot
+:fedora-31-gnome
+set live_url ${live_endpoint}/fedora-assets/releases/download/1.9-808bb0da/
+goto boot
+
+:boot
+imgfree
+kernel ${live_url}vmlinuz ${ipparam} root=live:${live_url}squashfs.img ro rd.live.image rd.lvm=0 rd.luks=0 rd.md=0 rd.dm=0 initrd=initrd
+initrd ${live_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+
