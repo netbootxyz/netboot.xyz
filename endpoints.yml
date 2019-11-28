@@ -264,3 +264,12 @@ endpoints:
     os: fedora
     version: 31
     flavor: LXQt
+  fedora-31-MATE_Compiz:
+    path: /fedora-assets/releases/download/1.9-29013501/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 31
+    flavor: MATE_Compiz
