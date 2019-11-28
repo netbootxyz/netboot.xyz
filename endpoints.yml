@@ -219,3 +219,11 @@ endpoints:
     version: '19.10'
     flavor: Unity
     kernel: ubuntu-19.10-live-kernel
+  fedora-31-gnome:
+    path: /fedora-assets/releases/download/1.9-26baa768/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    version: 31
+    flavor: GNOME
