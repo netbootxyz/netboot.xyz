@@ -229,10 +229,11 @@ endpoints:
     flavor: GNOME
     os: fedora
   fedora-31-Cinnamon:
-    path: /fedora-assets/releases/download/1.9-200b24ce/
+    path: /fedora-assets/releases/download/1.9-5a52a02a/
     files:
     - vmlinuz
     - initrd
     - squashfs.img
     version: 31
     flavor: Cinnamon
+    os: fedora
