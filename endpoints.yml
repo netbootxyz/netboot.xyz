@@ -255,3 +255,12 @@ endpoints:
     os: fedora
     version: 31
     flavor: LXDE
+  fedora-31-LXQt:
+    path: /fedora-assets/releases/download/1.9-19db8480/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 31
+    flavor: LXQt
