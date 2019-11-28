@@ -302,3 +302,14 @@ endpoints:
     version: 18.1.0
     flavor: GNOME
     kernel: manjaro-18.x-live-kernel
+  manjaro-18.1.0-kde-squash:
+    path: /manjaro-squash/releases/download/18.1.0-d11f560a/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - mhwdfs.sfs
+    - desktopfs.sfs
+    os: manjaro
+    version: 18.1.0
+    flavor: KDE
+    kernel: manjaro-18.x-live-kernel
