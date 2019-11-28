@@ -237,3 +237,12 @@ endpoints:
     version: 31
     flavor: Cinnamon
     os: fedora
+  fedora-31-KDE:
+    path: /fedora-assets/releases/download/1.9-dfbbe3cc/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 31
+    flavor: KDE
