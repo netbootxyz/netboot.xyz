@@ -273,3 +273,12 @@ endpoints:
     os: fedora
     version: 31
     flavor: MATE_Compiz
+  fedora-31-SoaS:
+    path: /fedora-assets/releases/download/1.9-28104ec6/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 31
+    flavor: SoaS
