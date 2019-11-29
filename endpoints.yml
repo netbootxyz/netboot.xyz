@@ -355,3 +355,10 @@ endpoints:
     version: rolling
     flavor: MATE
     kernel: kali-rolling-live-kernel
+  kali-rolling-live-kernel:
+    path: /debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+    files:
+    - initrd
+    - vmlinuz
+    os: kali
+    version: rolling
