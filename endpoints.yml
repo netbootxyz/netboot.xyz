@@ -331,3 +331,11 @@ endpoints:
     os: elementary-os
     version: '5'
     kernel: ubuntu-18.04-live-kernel
+  kali-xfce-squash:
+    path: /debian-squash/releases/download/2019.4-919e521e/
+    files:
+    - filesystem.squashfs
+    os: kali
+    version: rolling
+    flavor: xfce
+    kernel: kali-rolling-live-kernel
