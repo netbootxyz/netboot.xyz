@@ -1,0 +1,64 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Kali Linux
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item rolling ${space} ${os} Rolling
+choose live_version || goto live_exit
+menu ${os} ${live_version}
+item --gap ${os} Flavors
+goto ${live_version}
+
+:rolling
+item kali-gnome-squash ${space} Kali Rolling GNOME
+item kali-kde-squash ${space} Kali Rolling KDE
+item kali-light-squash ${space} Kali Rolling LIGHT
+item kali-lxde-squash ${space} Kali Rolling LXDE
+item kali-mate-squash ${space} Kali Rolling MATE
+item kali-xfce-squash ${space} Kali Rolling XFCE
+goto flavor_select
+
+:flavor_select
+choose flavor || goto live_menu
+echo ${cls}
+goto ${flavor} ||
+
+:kali-gnome-squash
+set squash_url ${live_endpoint}/debian-squash/releases/download/2019.4-734e93c5/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+goto boot
+:kali-kde-squash
+set squash_url ${live_endpoint}/debian-squash/releases/download/2019.4-d761db15/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+goto boot
+:kali-light-squash
+set squash_url ${live_endpoint}/debian-squash/releases/download/2019.4-544b485d/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+goto boot
+:kali-lxde-squash
+set squash_url ${live_endpoint}/debian-squash/releases/download/2019.4-78e57944/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+goto boot
+:kali-mate-squash
+set squash_url ${live_endpoint}/debian-squash/releases/download/2019.4-0e4d0210/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+goto boot
+:kali-xfce-squash
+set squash_url ${live_endpoint}/debian-squash/releases/download/2019.4-00ef2578/filesystem.squashfs
+set kernel_url ${live_endpoint}/debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+goto boot
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live components username=root hostname=kali fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+
