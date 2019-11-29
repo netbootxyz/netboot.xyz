@@ -378,3 +378,11 @@ endpoints:
     version: rolling
     flavor: Gnome
     kernel: kali-rolling-live-kernel
+  kali-lxde-squash:
+    path: /debian-squash/releases/download/2019.4-78e57944/
+    files:
+    - filesystem.squashfs
+    os: kali
+    version: rolling
+    flavor: LXDE
+    kernel: kali-rolling-live-kernel
