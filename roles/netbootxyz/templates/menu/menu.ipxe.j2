@@ -53,11 +53,19 @@ iseq ${arch} x86_64 && set bits 64 || set bits 32
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
+{% if sigs_menu | bool %}
 item --gap Signature Checks:
 item sig_check ${space} netboot.xyz [ enabled: ${sigs_enabled} ]
 item img_sigs_check ${space} Images [ enabled: ${img_sigs_enabled} ]
-isset ${github_user} && item --gap Custom Menu: ||
-isset ${github_user} && item nbxyz-custom ${space} ${github_user}'s Custom Menu ||
+{% endif %}
+{% if custom_github_menus | bool %}
+isset ${github_user} && item --gap Custom Github Menu: ||
+isset ${github_user} && item custom-github ${space} ${github_user}'s Custom Menu ||
+{% endif %}
+{% if custom_generate_menus | bool %}
+item --gap Custom User Menus: ||
+item custom-user ${space} Custom User Menus
+{% endif %}
 isset ${menu} && set timeout 0 || set timeout {{ boot_timeout }}
 choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
@@ -99,6 +107,10 @@ goto main_menu
 iseq ${img_sigs_enabled} true && set img_sigs_enabled false || set img_sigs_enabled true
 goto main_menu
 
-:nbxyz-custom
+:custom-github
 chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || goto error
+goto main_menu
+
+:custom-user
+chain custom/custom.ipxe
 goto main_menu

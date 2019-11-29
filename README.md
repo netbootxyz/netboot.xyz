@@ -42,3 +42,6 @@ If you want to override the defaults, you can put overrides in user_overrides.ym
 
 Also note many user customizations are located in the boot.cfg file for the IPXE menus. A high level of customization can be achieved using our stock build output and hosting this along with the menus locally. 
 
+## Self Hosted Custom Options
+
+In addition to being able to host netboot.xyz locally, you can also create your own custom templates for custom menus within netboot.xyz.  Please see [Custom User Menus](etc/netbootxyz/custom/README.md) for more information.

@@ -1,0 +1,18 @@
+---
+
+  - name: Generate directories
+    file:
+      path: "{{ item }}"
+      state: directory
+    with_items:
+      - "{{ custom_templates_dir }}"
+      - "{{ netbootxyz_root }}/custom"
+
+  - name: Generate custom user menu templates
+    template:
+      src: "{{ item.src }}"
+      dest: "{{ netbootxyz_root }}/custom/{{ item.path | regex_replace('.j2','') }}"
+    with_filetree: "{{ custom_templates_dir }}"
+    when: item.state == "file"
+    tags:
+    - skip_ansible_lint

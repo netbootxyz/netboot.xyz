@@ -6,6 +6,9 @@ boot_domain: boot.netboot.xyz
 boot_version: 1.04
 boot_timeout: 300000
 time_server: "0.pool.ntp.org"
+
+# signature checking
+sigs_menu: false
 sigs_enabled: false
 img_sigs_enabled: false
 
@@ -19,6 +22,7 @@ ipxe_branch: master
 
 ipxe_source_dir: /usr/src/ipxe
 netbootxyz_root: /var/www/html
+netbootxyz_conf_dir: /etc/netbootxyz
 
 # live os settings
 live_endpoint: "https://github.com/netbootxyz"
@@ -35,6 +39,13 @@ bootloader_https_enabled: true
 bootloader_http_enabled: true
 bootloader_disks:
   - "netboot.xyz"
+
+# custom menus
+# custom_github_menus allows for github custom menus
+# custom_generate_menus allows for self hosted custom menus to be added
+custom_github_menus: true
+custom_generate_menus: false
+custom_templates_dir: "{{ netbootxyz_conf_dir }}/custom"
 
 # signature generation
 generate_signatures: false

@@ -3,6 +3,10 @@
     when:
     - generate_menus | default(true) | bool
 
+  - include: generate_menus_custom.yml
+    when:
+    - custom_generate_menus | default(false) | bool
+
   - include: generate_signatures.yml
     when:
     - generate_signatures | default(false) | bool
