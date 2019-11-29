@@ -339,3 +339,11 @@ endpoints:
     version: rolling
     flavor: xfce
     kernel: kali-rolling-live-kernel
+  kali-light-squash:
+    path: /debian-squash/releases/download/2019.4-544b485d/
+    files:
+    - filesystem.squashfs
+    os: kali
+    version: rolling
+    flavor: light
+    kernel: kali-rolling-live-kernel
