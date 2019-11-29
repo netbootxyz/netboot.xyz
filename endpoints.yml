@@ -393,3 +393,10 @@ endpoints:
     - vmlinuz
     os: tails
     version: '4.0'
+  tails-4.0-default-squash:
+    path: /debian-squash/releases/download/4.0-41d3900f/
+    files:
+    - filesystem.squashfs
+    os: tails
+    version: '4.0'
+    kernel: tails-4.0-live-kernel
