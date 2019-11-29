@@ -407,3 +407,10 @@ endpoints:
     os: pop
     version: '19.10'
     kernel: ubuntu-19.10-live-kernel
+  pop-18.04-default-squash:
+    path: /ubuntu-squash/releases/download/57-b1e9a9cc/
+    files:
+    - filesystem.squashfs
+    os: pop
+    version: '18.04'
+    kernel: ubuntu-18.04-live-kernel
