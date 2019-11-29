@@ -1,0 +1,36 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Tails
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item tails-4.0-default-squash ${space} ${os} 4.0
+choose live_version || goto live_exit
+goto ${live_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "tails" and 'squash' in key %}
+{% set kernel_name = value.kernel %}
+:{{ key }}
+set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
+{% for key, value in endpoints.items() | sort %}
+{% if key == kernel_name %}
+set kernel_url ${live_endpoint}{{ value.path }}
+{% endif %}
+{% endfor %}
+goto boot
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd nopersistence noprompt timezone=Etc/UTC block.events_dfl_poll_msecs=1000 splash noautologin module=Tails slab_nomerge slub_debug=FZP mce=0 vsyscall=none page_poison=1 mds=full,nosmt
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
