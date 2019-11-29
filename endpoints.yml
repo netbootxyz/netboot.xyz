@@ -347,3 +347,11 @@ endpoints:
     version: rolling
     flavor: light
     kernel: kali-rolling-live-kernel
+  kali-mate-squash:
+    path: /debian-squash/releases/download/2019.4-ccf312cd/
+    files:
+    - filesystem.squashfs
+    os: kali
+    version: rolling
+    flavor: MATE
+    kernel: kali-rolling-live-kernel
