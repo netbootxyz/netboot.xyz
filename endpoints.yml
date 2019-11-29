@@ -362,3 +362,11 @@ endpoints:
     - vmlinuz
     os: kali
     version: rolling
+  kali-kde-squash:
+    path: /debian-squash/releases/download/2019.4-d761db15/
+    files:
+    - filesystem.squashfs
+    os: kali
+    version: rolling
+    flavor: KDE
+    kernel: kali-rolling-live-kernel
