@@ -401,7 +401,7 @@ endpoints:
     version: '4.0'
     kernel: tails-4.0-live-kernel
   pop-19.10-default-squash:
-    path: /ubuntu-squash/releases/download/10-115d425e/
+    path: /ubuntu-squash/releases/download/10-317de200/
     files:
     - filesystem.squashfs
     os: pop
