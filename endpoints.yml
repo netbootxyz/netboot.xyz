@@ -332,7 +332,7 @@ endpoints:
     version: '5'
     kernel: ubuntu-18.04-live-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2019.4-919e521e/
+    path: /debian-squash/releases/download/2019.4-00ef2578/
     files:
     - filesystem.squashfs
     os: kali
