@@ -2,7 +2,7 @@
 
 :start
 chain --autofree boot.cfg ||
-ntp {{ time_server }}
+ntp {{ time_server }} ||
 iseq ${cls} serial && goto ignore_cls ||
 set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
 set cls ${cls:string}
