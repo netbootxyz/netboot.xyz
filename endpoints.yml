@@ -446,3 +446,11 @@ endpoints:
     version: '19'
     flavor: MATE
     kernel: ubuntu-18.04-live-kernel
+  mint-19-cinnamon-squash:
+    path: /ubuntu-squash/releases/download/19.2-0830904d/
+    files:
+    - filesystem.squashfs
+    os: mint
+    version: '19'
+    flavor: Cinnamon
+    kernel: ubuntu-18.04-live-kernel
