@@ -314,7 +314,7 @@ endpoints:
     flavor: KDE
     kernel: manjaro-18.x-live-kernel
   manjaro-18.1.0-xfce-squash:
-    path: /manjaro-squash/releases/download/18.1.0-fe18a2cc/
+    path: /manjaro-squash/releases/download/18.1.0-5dc05378/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -323,7 +323,7 @@ endpoints:
     os: manjaro
     version: 18.1.0
     flavor: XFCE
-    kernel: manjaro-18.x-live-kernel
+    kernel: manjaro-18.1.0-gui-kernel
   elementaryos-5-default-squash:
     path: /ubuntu-squash/releases/download/5-8bd33b19/
     files:
