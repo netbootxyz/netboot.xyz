@@ -414,3 +414,11 @@ endpoints:
     os: pop
     version: '18.04'
     kernel: ubuntu-18.04-live-kernel
+  manjaro-18.1.0-architect-kernel:
+    path: /manjaro-core-18.x/releases/download/4.19.69-1-MANJARO-6946b4cf/
+    files:
+    - initrd
+    - vmlinuz
+    os: manjaro
+    flavor: architect
+    version: 18.1.0
