@@ -292,7 +292,7 @@ endpoints:
     version: 31
     flavor: Xfce
   manjaro-18.1.0-gnome-squash:
-    path: /manjaro-squash/releases/download/18.1.0-ebd2dd2f/
+    path: /manjaro-squash/releases/download/18.1.0-f94efa23/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -301,7 +301,7 @@ endpoints:
     os: manjaro
     version: 18.1.0
     flavor: GNOME
-    kernel: manjaro-18.x-live-kernel
+    kernel: manjaro-18.1.0-gui-kernel
   manjaro-18.1.0-kde-squash:
     path: /manjaro-squash/releases/download/18.1.0-d11f560a/
     files:
