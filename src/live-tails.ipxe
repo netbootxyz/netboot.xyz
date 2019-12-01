@@ -18,7 +18,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd nopersistence noprompt timezone=Etc/UTC block.events_dfl_poll_msecs=1000 splash noautologin module=Tails slab_nomerge slub_debug=FZP mce=0 vsyscall=none page_poison=1 mds=full,nosmt
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd nopersistence noprompt timezone=Etc/UTC block.events_dfl_poll_msecs=1000 splash noautologin module=Tails slab_nomerge slub_debug=FZP mce=0 vsyscall=none page_poison=1 mds=full,nosmt union=aufs
 initrd ${kernel_url}initrd
 boot
 
