@@ -1,0 +1,221 @@
+#!ipxe
+
+# SliTaz Operating System
+# http://www.slitaz.org
+set slitaz_mirror http://mirror1.slitaz.org/
+
+:slitaz
+set os SliTaz
+clear slitaz_version
+menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
+item --gap SliTaz releases
+item slitaztiny ${space} ${os} Tiny
+item slitaznext ${space} ${os} next
+item slitazrolling ${space} ${os} rolling (renewed every Sunday)
+item slitaz50 ${space} ${os} 5.0
+item slitaz40 ${space} ${os} 4.0
+item slitaz30 ${space} ${os} 3.0
+item slitaz20 ${space} ${os} 2.0
+item slitaz20 ${space} ${os} 1.0
+choose slitaz_version || goto slitaz
+goto ${slitaz_version}
+
+:slitaztiny
+clear boot
+sanboot ${slitaz_mirror}iso/1.0/flavors/slitaz-tiny-1.0.iso ||
+goto slitaz
+
+:slitaznext
+menu ${os} next
+clear boot
+item next170915 Slitaz next 15/09/2017
+item next170930 Slitaz next 30/09/2017
+item next180107 Slitaz next lxqt 07/01/2018
+choose boot || goto slitaz
+goto ${boot}
+
+:slitazrolling
+menu ${os} rolling
+clear boot
+item rolling5 Slitaz rolling 5in1 (autoselect 32bits or 64bits arch)
+item rolling64 Slitaz rolling 64 bits (no 32bits arch support)
+item rollingloram Slitaz rolling loram
+choose boot || goto slitaz
+goto ${boot}
+
+:slitaz50
+menu ${os} 5.0
+clear boot
+item core5RC1 Slitaz 5.0 RC1 02/05/2014
+item core5RC2 Slitaz 5.0 RC2 19/05/2014
+item core5RC3 Slitaz 5.0 RC3 20/05/2015
+choose boot || goto slitaz
+goto ${boot}
+
+:slitaz40
+menu ${os} 4.0
+clear boot
+item core4 Slitaz 4.0 standard
+item loram4 Slitaz 4.0 loram
+item firefox4 Slitaz 4.0 firefox
+item kids4 Slitaz 4.0 kids
+item tiny4 Slitaz 4.0 tiny
+item tinytext4 Slitaz 4.0 tiny text
+choose boot || goto slitaz
+goto ${boot}
+
+:slitaz30
+menu ${os} 3.0
+clear boot
+item core3 Slitaz 3.0 standard
+item loram3 Slitaz 3.0 loram
+item firefox3 Slitaz 3.0 firefox
+item tiny3 Slitaz 3.0 tiny
+item tinytext3 Slitaz 3.0 tiny text
+choose boot || goto slitaz
+goto ${boot}
+
+:slitaz20
+menu ${os} 2.0
+clear boot
+item core2 Slitaz 2.0 standard
+item loram2 Slitaz 2.0 loram
+item tiny2 Slitaz 2.0 tiny
+item tinytext2 Slitaz 2.0 tiny text
+choose boot || goto slitaz
+goto ${boot}
+
+:slitaz10
+menu ${os} 1.0
+clear boot
+item core1 Slitaz 1.0 standard
+item loram1 Slitaz 1.0 loram
+item tiny1 Slitaz 1.0 tiny
+choose boot || goto slitaz
+goto ${boot}
+
+:core1
+sanboot ${slitaz_mirror}iso/1.0/flavors/slitaz-1.0-4in1.iso ||
+goto slitaz
+
+:loram1
+sanboot ${slitaz_mirror}iso/1.0/flavors/slitaz-loram-1.0.iso ||
+goto slitaz
+
+:tiny1
+sanboot ${slitaz_mirror}iso/1.0/flavors/slitaz-tiny-1.0.iso ||
+goto slitaz
+
+:core2
+sanboot ${slitaz_mirror}iso/2.0/flavors/slitaz-2.0-3in1.iso ||
+goto slitaz
+
+:loram2
+sanboot ${slitaz_mirror}iso/2.0/flavors/slitaz-loram.iso ||
+goto slitaz
+
+:tiny2
+imgfree
+kernel ${slitaz_mirror}boot/2.0/bzImage rw root=/dev/null vga=normal autologin
+initrd ${slitaz_mirror}boot/2.0/rootfs-tiny.gz
+boot ||
+goto slitaz
+
+:tinytext2
+imgfree
+kernel ${slitaz_mirror}boot/2.0/bzImage rw root=/dev/null vga=normal screen=text
+initrd ${slitaz_mirror}boot/2.0/rootfs-tiny.gz
+boot ||
+goto slitaz
+
+:core3
+sanboot ${slitaz_mirror}iso/3.0/flavors/slitaz-3.0-3in1.iso ||
+goto slitaz
+
+:loram3
+sanboot ${slitaz_mirror}iso/3.0/flavors/slitaz-3.0-loram.iso ||
+goto slitaz
+
+:firefox3
+sanboot ${slitaz_mirror}iso/3.0/flavors/slitaz-3.0-firefox.iso ||
+goto slitaz
+
+:tiny3
+imgfree
+kernel ${slitaz_mirror}boot/3.0/bzImage rw root=/dev/null vga=normal autologin
+initrd ${slitaz_mirror}boot/3.0/rootfs-tiny.gz
+boot ||
+goto slitaz
+
+:tinytext3
+imgfree
+kernel ${slitaz_mirror}boot/3.0/bzImage rw root=/dev/null vga=normal screen=text
+initrd ${slitaz_mirror}boot/3.0/rootfs-tiny.gz
+boot ||
+goto slitaz
+
+:core4
+sanboot ${slitaz_mirror}iso/4.0/slitaz-4.0.iso ||
+goto slitaz
+
+:loram4
+sanboot ${slitaz_mirror}iso/4.0/flavors/slitaz-4.0-loram.iso ||
+goto slitaz
+
+:firefox4
+sanboot ${slitaz_mirror}iso/4.0/flavors/slitaz-4.0-firefox.iso ||
+goto slitaz
+
+:kids4
+sanboot ${slitaz_mirror}iso/4.0/flavors/slitaz-4.0-kids.iso ||
+goto slitaz
+
+:tiny4
+imgfree
+kernel ${slitaz_mirror}boot/4.0/bzImage rw root=/dev/null vga=normal autologin
+initrd ${slitaz_mirror}boot/4.0/rootfstiny.gz
+boot || 
+goto slitaz
+
+:tinytext4
+imgfree
+kernel ${slitaz_mirror}boot/4.0/bzImage rw root=/dev/null vga=normal screen=text
+initrd ${slitaz_mirror}boot/4.0/rootfstiny.gz
+boot ||
+goto slitaz
+
+:core5RC1
+sanboot ${slitaz_mirror}iso/5.0/slitaz-5.0-rc1.iso ||
+goto slitaz
+
+:core5RC2
+sanboot ${slitaz_mirror}iso/5.0/slitaz-5.0-rc2.iso ||
+goto slitaz
+
+:core5RC3
+sanboot ${slitaz_mirror}iso/5.0/slitaz-5.0-rc3.iso ||
+goto slitaz
+
+:rolling5
+sanboot ${slitaz_mirror}iso/rolling/slitaz-rolling-core-5in1.iso ||
+goto slitaz
+
+:rolling64
+sanboot ${slitaz_mirror}iso/rolling/slitaz-rolling-core64.iso ||
+goto slitaz
+
+:rollingloram
+sanboot ${slitaz_mirror}iso/rolling/slitaz-rolling-loram.iso ||
+goto slitaz
+
+:next170915
+sanboot ${slitaz_mirror}iso/next/slitaz-next-170915.iso ||
+goto slitaz
+
+:next170930
+sanboot ${slitaz_mirror}iso/next/slitaz-next-170930.iso ||
+goto slitaz
+
+:next180107
+sanboot ${slitaz_mirror}iso/next/slitaz-lxqt.iso ||
+goto slitaz
