@@ -422,3 +422,11 @@ endpoints:
     os: manjaro
     flavor: architect
     version: 18.1.0
+  manjaro-18.1.0-gui-kernel:
+    path: /manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/
+    files:
+    - initrd
+    - vmlinuz
+    os: manjaro
+    flavor: gui
+    version: 18.1.0
