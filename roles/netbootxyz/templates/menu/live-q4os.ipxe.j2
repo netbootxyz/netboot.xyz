@@ -12,7 +12,7 @@ choose live_version || goto live_exit
 goto ${live_version}
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "q4os" and 'squash' in key %}
+{% if value.os == "Q4OS" and 'squash' in key %}
 {% set kernel_name = value.kernel %}
 :{{ value.version }}
 set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
