@@ -462,3 +462,11 @@ endpoints:
     version: '15'
     flavor: GNOME
     kernel: ubuntu-18.04-live-kernel
+  zorin-15-xfce-squash:
+    path: /ubuntu-squash/releases/download/15-24926a26/
+    files:
+    - filesystem.squashfs
+    os: zorin
+    version: '15'
+    flavor: XFCE
+    kernel: ubuntu-18.04-live-kernel
