@@ -503,7 +503,7 @@ endpoints:
     flavor: plasma
     kernel: debian-10-live-kernel
   voyager-bionic-squash:
-    path: /ubuntu-squash/releases/download/bionic-539182bf/
+    path: /ubuntu-squash/releases/download/bionic-c535c643/
     files:
     - filesystem.squashfs
     os: Voyager
