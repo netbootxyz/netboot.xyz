@@ -1,0 +1,41 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Voyager Live
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item bionic ${space} ${os} Bionic
+item buster ${space} ${os} Buster
+item eoan ${space} ${os} Eoan
+choose live_version || goto live_exit
+
+:bionic
+set squash_url ${live_endpoint}{{ endpoints["voyager-bionic-squash"].path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ endpoints["ubuntu-18.04-live-kernel"].path }}
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:buster
+set squash_url ${live_endpoint}{{ endpoints["voyager-buster-squash"].path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ endpoints["debian-10-live-kernel"].path }}
+imgfree
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:eoan
+set squash_url ${live_endpoint}{{ endpoints["voyager-eoan-squash"].path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ endpoints["ubuntu-19.10-live-kernel"].path }}
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
