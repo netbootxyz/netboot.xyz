@@ -454,3 +454,11 @@ endpoints:
     version: '19'
     flavor: Cinnamon
     kernel: ubuntu-18.04-live-kernel
+  zorin-15-gnome-squash:
+    path: /ubuntu-squash/releases/download/15-171ddffc/
+    files:
+    - filesystem.squashfs
+    os: zorin
+    version: '15'
+    flavor: GNOME
+    kernel: ubuntu-18.04-live-kernel
