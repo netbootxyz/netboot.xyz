@@ -502,3 +502,11 @@ endpoints:
     version: '3.9'
     flavor: plasma
     kernel: debian-10-live-kernel
+  voyager-bionic-squash:
+    path: /ubuntu-squash/releases/download/bionic-539182bf/
+    files:
+    - filesystem.squashfs
+    os: Voyager
+    version: bionic
+    flavor: bionic
+    kernel: ubuntu-18.04-live-kernel
