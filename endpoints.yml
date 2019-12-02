@@ -510,3 +510,11 @@ endpoints:
     version: bionic
     flavor: bionic
     kernel: ubuntu-18.04-live-kernel
+  voyager-buster-squash:
+    path: /debian-squash/releases/download/buster-1e606829/
+    files:
+    - filesystem.squashfs
+    os: Voyager
+    version: buster
+    flavor: buster
+    kernel: debian-10-live-kernel
