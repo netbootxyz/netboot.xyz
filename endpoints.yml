@@ -494,3 +494,11 @@ endpoints:
     version: '3.9'
     flavor: trinity
     kernel: debian-10-live-kernel
+  q4os-3.9-plasma-squash:
+    path: /debian-squash/releases/download/3.9-8b894afb/
+    files:
+    - filesystem.squashfs
+    os: Q4OS
+    version: '3.9'
+    flavor: plasma
+    kernel: debian-10-live-kernel
