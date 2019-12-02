@@ -518,3 +518,11 @@ endpoints:
     version: buster
     flavor: buster
     kernel: debian-10-live-kernel
+  voyager-eoan-squash:
+    path: /ubuntu-squash/releases/download/eoan-5a6a8fab/
+    files:
+    - filesystem.squashfs
+    os: Voyager
+    version: eoan
+    flavor: eoan
+    kernel: ubuntu-19.10-live-kernel
