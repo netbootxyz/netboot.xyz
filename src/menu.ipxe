@@ -53,6 +53,7 @@ iseq ${menu_utils_arm} 1 && item utils-arm ${space} Utilities ||
 iseq ${arch} x86_64 && set bits 64 || set bits 32
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
+item news ${space} netboot.xyz news
 item netinfo ${space} Network card info
 item --gap Signature Checks:
 item sig_check ${space} netboot.xyz [ enabled: ${sigs_enabled} ]
