@@ -478,3 +478,11 @@ endpoints:
     version: '10'
     flavor: LXDE
     kernel: ubuntu-18.04-live-kernel
+  backbox-6-default-squash:
+    path: /ubuntu-squash/releases/download/6-b44ce5ee/
+    files:
+    - filesystem.squashfs
+    os: BackBox
+    version: '6'
+    flavor: default
+    kernel: ubuntu-18.04-live-kernel
