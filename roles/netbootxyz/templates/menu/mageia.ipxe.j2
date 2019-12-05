@@ -18,12 +18,12 @@ choose version || goto mageia_exit
 goto mageia_boot
 
 :mageia_boot
-set dir {{ releases.mageia.base_dir }}/distrib/${version}/x86_64 && set dir2 isolinux/x86_64 ||
+set dir ${mageia_base_dir}/distrib/${version}/x86_64 && set dir2 isolinux/x86_64 ||
 iseq ${arch} i386 && set dir ${mageia_base_dir}/distrib/${version}/i586 && set dir2 isolinux/i386 ||
 set automatic method:http,network:${network},server:${mageia_mirror},directory:/${dir}
 imgfree
-kernel {{ releases.mageia.mirror }}/${dir}/${dir2}/vmlinuz
-initrd {{ releases.mageia.mirror }}/${dir}/${dir2}/all.rdz
+kernel ${mageia_mirror}/${dir}/${dir2}/vmlinuz
+initrd ${mageia_mirror}/${dir}/${dir2}/all.rdz
 imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console} initrd=all.rdz
 echo
 echo MD5sums:

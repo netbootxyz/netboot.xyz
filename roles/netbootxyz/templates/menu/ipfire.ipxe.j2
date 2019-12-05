@@ -14,8 +14,7 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
-set ipfire_mirror {{ releases.ipfire.mirror }}
-set dir releases/ipfire-2.x/${osversion}/images/x86_64
+set dir ${ipfire_base_dir}/${osversion}/images/x86_64
 goto ipfire_images
 
 :ipfire_images

@@ -21,8 +21,8 @@ iseq ${osversion} other || goto scientific_skip_read_osversion
 echo ${cls}
 echo -n Enter version: ${} && read osversion
 :scientific_skip_read_osversion
-set dir linux/scientific/${osversion}/${arch}/os
-set repo {{ releases.scientific.mirror }}/${dir}
+set dir ${scientific_base_dir}/${osversion}/${arch}/os
+set repo ${scientific_mirror}/${dir}
 
 goto boottype
 
@@ -49,8 +49,8 @@ goto bootos_images
 
 :bootos_images
 imgfree
-kernel {{ releases.scientific.mirror }}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam}
-initrd {{ releases.scientific.mirror }}/${dir}/images/pxeboot/initrd.img
+kernel ${scientific_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam}
+initrd ${scientific_mirror}/${dir}/images/pxeboot/initrd.img
 boot
 goto linux_menu
 

@@ -25,6 +25,18 @@ set ipxe_disk netboot.xyz-undionly.kpxe
 # set location of custom netboot.xyz live assets
 set live_endpoint {{ live_endpoint }}
 
+##################
+# official mirrors
+##################
+:mirrors
+{% for key, value in releases.items() | sort(attribute='1.name') %}
+{% if value.mirror is defined and value.base_dir is defined %}
+### {{ value.name }}
+set {{ key }}_mirror {{ value.mirror }}
+set {{ key }}_base_dir {{ value.base_dir }}
+
+{% endif %}
+{% endfor %}
 #################################################
 # determine architectures and enable menu options
 #################################################

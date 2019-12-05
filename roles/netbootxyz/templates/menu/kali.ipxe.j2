@@ -14,7 +14,7 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 choose version || goto kali_exit
 
 :deb_boot_type
-set dir kali/dists/kali-${version}/main/installer-${arch_a}/current/images/netboot
+set dir ${kali_base_dir}/dists/kali-${version}/main/installer-${arch_a}/current/images/netboot
 menu ${os} boot parameters
 item text ${os} text based install
 choose --default ${type} type || goto kali
@@ -28,8 +28,8 @@ goto deb_boot
 
 :deb_boot
 imgfree
-kernel http://http.kali.org/${dir}/linux vga=788 ${console} -- quiet initrd=initrd.gz
-initrd http://http.kali.org/${dir}/initrd.gz
+kernel ${kali_mirror}/${dir}/linux vga=788 ${console} -- quiet initrd=initrd.gz
+initrd ${kali_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz

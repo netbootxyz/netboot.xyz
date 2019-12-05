@@ -17,7 +17,7 @@ goto freedos_install || goto freedos_exit
 :freedos_install
 imgfree
 kernel ${memdisk}
-initrd {{ releases.freedos.mirror }}/{{ releases.freedos.base_dir }}/${freedos_version}.zip
+initrd ${freedos_mirror}/${freedos_base_dir}/${freedos_version}.zip
 boot
 
 :freedos_exit

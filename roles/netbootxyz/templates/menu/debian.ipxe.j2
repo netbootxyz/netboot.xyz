@@ -30,13 +30,13 @@ set debian_mirror {{ releases.debian.archive_mirror }}
 echo Setting mirror to ${debian_mirror}
 clear debian_version
 echo -n Please set enter code name of release: ${} && read debian_version
-set dir {{ releases.debian.base_dir }}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
 goto deb_boot_type
 
 :mirrorcfg
-set debian_mirror {{ releases.debian.mirror }}
+set debian_mirror ${debian_mirror}
 set mirrorcfg mirror/suite=${debian_version}
-set dir {{ releases.debian.base_dir }}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
 goto deb_boot_type
 
 :deb_boot_type

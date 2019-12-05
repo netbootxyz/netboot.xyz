@@ -221,6 +221,7 @@ releases:
   ipfire:
     name: "IPFire"
     mirror: "https://downloads.ipfire.org"
+    base_dir: "releases/ipfire-2.x"
     menu: "linux"
     enabled: true
     versions:
@@ -235,30 +236,6 @@ releases:
     versions:
       - name: "Rolling Edition (2019.4)"
         code_name: "rolling"
-  livedebian:
-    name: "Debian Live"
-    mirror: "http://cdimage.debian.org"
-    base_dir: "cdimage/archive"
-    enabled: true
-    menu: "live"
-    versions:
-      - name: "8.11.0"
-        code_name: "8.11.0"
-    flavors:
-      - name: "Cinnamon"
-        code_name: "cinnamon-desktop"
-      - name: "Gnome"
-        code_name: "gnome-desktop"
-      - name: "KDE"
-        code_name: "kde-desktop"
-      - name: "LXDE"
-        code_name: "lxde-desktop"
-      - name: "MATE"
-        code_name: "mate-desktop"
-      - name: "Standard"
-        code_name: "standard"
-      - name: "XFCE"
-        code_name: "xfce-desktop"
   livegrml:
     name: "Grml Live Linux"
     mirror: "http://download.grml.org"
@@ -349,7 +326,7 @@ releases:
   scientific:
     name: "Scientific Linux"
     mirror: "http://ftp1.scientificlinux.org"
-    base_dir: ""
+    base_dir: "linux/scientific"
     enabled: true
     menu: "linux"
     versions:

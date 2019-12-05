@@ -25,7 +25,7 @@ goto coreos_exit
 :beta
 :alpha
 set release ${menu}
-set base_url https://builds.coreos.fedoraproject.org/prod/streams/testing/builds
+set base_url ${coreos_mirror}/${coreos_base_dir}
 set build_version 30.20191014.0
 kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-kernel nomodeset rd.neednet=1 coreos.inst=yes coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} ${console} coreos.inst.image_url=${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-metal.raw.xz initrd=fedora-coreos-${build_version}-installer-initramfs.img
 initrd ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-initramfs.img
