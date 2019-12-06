@@ -17,7 +17,7 @@ set squash_url ${live_endpoint}/debian-squash/releases/download/3.9-a721c7cc/fil
 set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 :q4os-plasma-squash
-set squash_url ${live_endpoint}/debian-squash/releases/download/3.9-a721c7cc/filesystem.squashfs
+set squash_url ${live_endpoint}/debian-squash/releases/download/3.9-8b894afb/filesystem.squashfs
 set kernel_url ${live_endpoint}/debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
 goto boot
 
