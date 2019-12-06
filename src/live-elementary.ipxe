@@ -7,12 +7,12 @@ set os elementary OS
 menu ${os} - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap ${os} Versions
-item elementaryos-5-default-squash ${space} ${os} 5.0 (Juno)
+item elementaryos-5-default-squash ${space} ${os} 5.1 (Hera)
 choose live_version || goto live_exit
 goto ${live_version}
 
 :elementaryos-5-default-squash
-set squash_url ${live_endpoint}/ubuntu-squash/releases/download/5-8bd33b19/filesystem.squashfs
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/5-14ff2c98/filesystem.squashfs
 set kernel_url ${live_endpoint}/ubuntu-core-18.04/releases/download/4.15.0.20.23-91c3d317/
 goto boot
 
