@@ -9,6 +9,10 @@ item --gap Live Boot Distributions
 item live-debian ${space} Debian Live
 item live-fedora ${space} Fedora Live
 item live-ubuntu ${space} Ubuntu Live
+item live-kali ${space} Kali Live
+item live-tails ${space} Tails Live
+item žlive-elementary ${space} elementary OS Live
+item live-q4os ${space} Q4OS Live
 choose menu || goto live_exit
 echo ${cls}
 goto ${menu} ||
