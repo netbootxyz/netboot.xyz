@@ -1,0 +1,52 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+menu Manjaro Live - Current Arch [ ${arch} ]
+item --gap Currently during boot you need to press ctrl+d/ctrl+c
+item --gap repeatedly when init hangs on starting a download
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap Manjaro Live
+item manjaro-18.1.0-default-squash ${space} Manjaro 18.1.0 Architect
+item manjaro-18.1.0-gnome-squash ${space} Manjaro 18.1.0 Gnome
+item manjaro-18.1.0-kde-squash ${space} Manjaro 18.1.0 Kde
+item manjaro-18.1.0-xfce-squash ${space} Manjaro 18.1.0 Xfce
+choose menu || goto live_exit
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:manjaro-18.1.0-default-squash
+imgfree
+set fetch_url ${live_endpoint}/manjaro-squash/releases/download/18.1.0-a9fc9ad4/
+kernel ${live_endpoint}/manjaro-core-18.x/releases/download/4.19.69-1-MANJARO-6946b4cf/vmlinuz misobasedir=manjaro ip=dhcp miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us systemdshow_status=1 apparmor=1 security=apparmor
+initrd ${live_endpoint}/manjaro-core-18.x/releases/download/4.19.69-1-MANJARO-6946b4cf/initrd
+boot
+:manjaro-18.1.0-gnome-squash
+imgfree
+set fetch_url ${live_endpoint}/manjaro-squash/releases/download/18.1.0-f94efa23/
+kernel ${live_endpoint}/manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/vmlinuz misobasedir=manjaro ip=dhcp miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us systemdshow_status=1 apparmor=1 security=apparmor
+initrd ${live_endpoint}/manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/initrd
+boot
+:manjaro-18.1.0-kde-squash
+imgfree
+set fetch_url ${live_endpoint}/manjaro-squash/releases/download/18.1.0-a3f2c12b/
+kernel ${live_endpoint}/manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/vmlinuz misobasedir=manjaro ip=dhcp miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us systemdshow_status=1 apparmor=1 security=apparmor
+initrd ${live_endpoint}/manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/initrd
+boot
+:manjaro-18.1.0-xfce-squash
+imgfree
+set fetch_url ${live_endpoint}/manjaro-squash/releases/download/18.1.0-5dc05378/
+kernel ${live_endpoint}/manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/vmlinuz misobasedir=manjaro ip=dhcp miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us systemdshow_status=1 apparmor=1 security=apparmor
+initrd ${live_endpoint}/manjaro-core-18.x/releases/download/5.2.11-1-MANJARO-e2cddd8e/initrd
+boot
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto live_menu
+
+:live_exit
+clear menu
+exit 0
+
