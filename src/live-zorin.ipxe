@@ -1,0 +1,44 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Zorin Live
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item 15 ${space} ${os} 15
+choose live_version || goto live_exit
+menu ${os} ${live_version}
+item --gap ${os} Flavors
+goto ${live_version}
+
+:15
+item zorin-15-gnome-squash ${space} Zorin 15 Gnome
+item zorin-15-xfce-squash ${space} Zorin 15 Xfce
+goto flavor_select
+
+:flavor_select
+choose flavor || goto live_menu
+echo ${cls}
+goto ${flavor} ||
+
+:zorin-15-gnome-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/15-171ddffc/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-core-18.04/releases/download/4.15.0.20.23-91c3d317/
+goto 15-boot
+:zorin-15-xfce-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/15-24926a26/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-core-18.04/releases/download/4.15.0.20.23-91c3d317/
+goto 15-boot
+
+:15-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+

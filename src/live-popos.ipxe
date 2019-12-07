@@ -1,0 +1,39 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Pop OS
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item 18.04 ${space} ${os} 18.04
+item 19.10 ${space} ${os} 19.10
+choose live_version || goto live_exit
+goto ${live_version}
+
+:18.04
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/57-b1e9a9cc/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-core-18.04/releases/download/4.15.0.20.23-91c3d317/
+goto 18.04-boot
+:19.10
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/10-317de200/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-core-19.10/releases/download/5.3.0.18.21-aa695b8a/
+goto 19.10-boot
+
+:18.04-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:19.10-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+

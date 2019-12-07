@@ -6,9 +6,19 @@ goto ${menu} ||
 menu Live Boot Distributions - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap Live Boot Distributions
-item live-debian ${space} Debian Live
-item live-fedora ${space} Fedora Live
-item live-ubuntu ${space} Ubuntu Live
+item live-backbox ${space} BackBox
+item live-debian ${space} Debian
+item live-elementary ${space} elementary OS
+item live-fedora ${space} Fedora
+item live-kali ${space} Kali
+item live-q4os ${space} Q4OS
+item live-manjaro ${space} Manjaro
+item live-mint ${space} Mint
+item live-peppermint ${space} Peppermint
+item live-popos ${space} Pop OS
+item live-ubuntu ${space} Ubuntu
+item live-voyager ${space} Voyager
+item live-zorin ${space} Zorin OS
 choose menu || goto live_exit
 echo ${cls}
 goto ${menu} ||

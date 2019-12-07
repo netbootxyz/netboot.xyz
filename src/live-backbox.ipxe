@@ -1,0 +1,28 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os BackBox
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item 6 ${space} ${os} 6
+choose live_version || goto live_exit
+goto ${live_version}
+
+:6
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/6-b44ce5ee/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-core-18.04/releases/download/4.15.0.20.23-91c3d317/
+goto 6-boot
+
+:6-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+
