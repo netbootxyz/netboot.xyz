@@ -44,6 +44,11 @@ jobs:
         - ./script/pre_install
       script:
         - ./script/build_release rc
+      workspaces:
+        create:
+          name: githubassets
+          paths:
+            - githubout 
       after_failure:
         - ./script/message failure
       deploy:
@@ -71,6 +76,8 @@ jobs:
       if: branch = RC AND type != pull_request
       before_install:
         - ./script/pre_install
+      workspaces:
+        use: githubassets
       script: skip
       before_deploy:
         - export RELEASE_TAG=$(cat version.txt)-RC
@@ -93,6 +100,11 @@ jobs:
       if: branch = master AND type != pull_request
       script:
         - ./script/build_release release
+      workspaces:
+        create:
+          name: githubassets
+          paths:
+            - githubout 
       after_failure:
         - ./script/message failure
       deploy:
@@ -119,6 +131,8 @@ jobs:
       if: branch = master AND type != pull_request
       before_install:
         - ./script/pre_install
+      workspaces:
+        use: githubassets
       script: skip
       before_deploy:
         - export RELEASE_TAG=$(cat version.txt)
