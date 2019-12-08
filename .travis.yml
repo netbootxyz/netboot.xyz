@@ -66,7 +66,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_LIVE
           local_dir: s3out
-          upload-dir: $TRAVIS_TAG
+          upload-dir: $RELEASE_TAG
           skip_cleanup: true
           on:
             branch: RC
