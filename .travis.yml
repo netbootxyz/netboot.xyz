@@ -44,9 +44,6 @@ jobs:
         - ./script/pre_install
       script:
         - ./script/build_release rc
-        - export RELEASE_TAG=$(cat version.txt)-RC
-        - git tag ${RELEASE_TAG}
-        - ./script/message rc-push
       after_failure:
         - ./script/message failure
       deploy:
@@ -70,6 +67,14 @@ jobs:
           skip_cleanup: true
           on:
             branch: RC
+    - stage: rc-github
+      if: branch = RC AND type != pull_request
+      before_install:
+        - ./script/pre_install
+      before_deploy:
+        - export RELEASE_TAG=$(cat version.txt)-RC
+        - git tag ${RELEASE_TAG}
+      deploy:
         - provider: releases
           api_key: $GITHUB_TOKEN
           file_glob: true
@@ -78,15 +83,15 @@ jobs:
           skip_cleanup: true
           on:
             branch: RC
+      after_deploy:
+        - aws configure set preview.cloudfront true
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "rc/*" "rc/ipxe/*"
+        - ./script/message rc-push
 
     - stage: release
       if: branch = master AND type != pull_request
-      before_install:
-        - ./script/pre_install
       script:
         - ./script/build_release release
-        - export RELEASE_TAG=$(cat version.txt)
-        - git tag ${RELEASE_TAG}
       after_failure:
         - ./script/message failure
       deploy:
@@ -109,6 +114,14 @@ jobs:
           skip_cleanup: true
           on:
             branch: master
+    - stage: release-github
+      if: branch = master AND type != pull_request
+      before_install:
+        - ./script/pre_install
+      before_deploy:
+        - export RELEASE_TAG=$(cat version.txt)
+        - git tag ${RELEASE_TAG}
+      deploy:
         - provider: releases
           api_key: $GITHUB_TOKEN
           file_glob: true
