@@ -71,6 +71,7 @@ jobs:
       if: branch = RC AND type != pull_request
       before_install:
         - ./script/pre_install
+      script: skip
       before_deploy:
         - export RELEASE_TAG=$(cat version.txt)-RC
         - git tag ${RELEASE_TAG}
@@ -118,6 +119,7 @@ jobs:
       if: branch = master AND type != pull_request
       before_install:
         - ./script/pre_install
+      script: skip
       before_deploy:
         - export RELEASE_TAG=$(cat version.txt)
         - git tag ${RELEASE_TAG}
