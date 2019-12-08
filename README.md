@@ -1,95 +1,47 @@
-## netboot.xyz
+## netboot.xyz - v2 - Under Construction
 
-[![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
-[![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
+** THIS IS A WORK IN PROGRESS, DO NOT USE **
 
-![netboot.xyz menu](https://netboot.xyz/images/netboot.xyz.gif)
+** Templates are incomplete and still being worked ** 
 
-### Bootloader Downloads
+netboot.xyz rewritten in ansible to generate standalone netboot environments.
 
-These iPXE disks will automatically load into [boot.netboot.xyz](https://boot.netboot.xyz):
+The goal is to use this to generate the primary netboot.xyz site 
+but at the same time allow it to be customizable for any type of environment or user.
 
-| Type | Bootloader | Description |
-|------|------------|-------------|
-|ISO (Legacy)| [netboot.xyz.iso](https://boot.netboot.xyz/ipxe/netboot.xyz.iso)| Used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box (Legacy) |
-|ISO (EFI)|[netboot.xyz-efi.iso](https://boot.netboot.xyz/ipxe/netboot.xyz-efi.iso)| Same as ISO (Legacy) but used for EFI BIOS, works in Virtual Box EFI mode |
-|Floppy| [netboot.xyz.dsk](https://boot.netboot.xyz/ipxe/netboot.xyz.dsk)| Used for 1.44 MB floppies, Virtual floppies like DRAC/iLO, VMware, Virtual Box|
-|USB| [netboot.xyz.usb](https://boot.netboot.xyz/ipxe/netboot.xyz.usb)| Used for creation of USB Keys|
-|Kernel| [netboot.xyz.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn)| Used for booting from GRUB/EXTLINUX|
-|DHCP| [netboot.xyz.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe)| DHCP boot image file, uses built-in iPXE NIC drivers|
-|DHCP-undionly| [netboot.xyz-undionly.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe)| DHCP boot image file, use if you have NIC issues|
-|EFI| [netboot.xyz.efi](https://boot.netboot.xyz/ipxe/netboot.xyz.efi)| EFI boot image file|
+The source files are now templates in order to make things a bit easier to generate.
 
-SHA256 checksums are generated during each build of iPXE and are located [here](https://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt).  You can also view the scripts that are embedded into the images [here](https://github.com/antonym/netboot.xyz/tree/master/ipxe/disks).
+This is a seperate repo for now but will more than likely roll into the existing repo.
 
-### What is netboot.xyz?
+# Building locally
 
-[netboot.xyz](http://www.netboot.xyz) is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the operating system you want along with any specific types of versions or bootable flags.
+## With Ansible
 
-If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
+To generate, run:
 
-    chain --autofree https://boot.netboot.xyz
+```
+ansible-playbook -i inventory site.yml
+```
 
-You'll need to make sure to have [DOWNLOAD_PROTO_HTTPS](https://github.com/ipxe/ipxe/blob/master/src/config/general.h#L56) enabled in iPXE.
+The build output will be located in /var/www/html on Debian OSs.
 
-### Documentation
+## With Docker
 
-See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get started with are:
+```
+docker build -t localbuild -f Dockerfile-build .
+docker run --rm -it -v $(pwd):/buildout localbuild
+```
 
-* [Downloads](https://netboot.xyz/downloads/)
-* [Booting Methods](https://netboot.xyz/booting/)
-* [FAQ](https://netboot.xyz/faq/)
+The build output will be in the generated folder `buildout`
 
-If you'd like to contribute to the documentation, the netboot.xyz documenation is located at [netboot.xyz-docs](https://github.com/antonym/netboot.xyz-docs).
+## Local Overides
 
-### What Operating Systems are available?
+Ansible will handle source generation as well as ipxe disk generation with your settings.  The disk generation was worked on a while back so it needs work to catch it up to the existing state of netboot.xyz.
 
-* [Alpine Linux](https://alpinelinux.org)
-* [Arch Linux](https://www.archlinux.org)
-* [CentOS](https://centos.org)
-* [Debian](https://debian.org)
-* [Devuan](https://devuan.org)
-* [Fedora](https://fedoraproject.org)
-* [Flatcar Linux](https://www.flatcar-linux.org)
-* [FreeBSD](https://freebsd.org)
-* [FreeDOS](http://www.freedos.org)
-* [Gentoo](https://gentoo.org)
-* [IPFire](https://www.ipfire.org)
-* [Mageia](http://www.mageia.org)
-* [Microsoft Windows](https://www.microsoft.com)
-* [MirOS](https://www.mirbsd.org)
-* [NixOS](https://nixos.org)
-* [OpenBSD](http://openbsd.org)
-* [OpenSUSE](http://opensuse.org)
-* [RancherOS](http://rancher.com/rancher-os/)
-* [Red Hat Enterprise Linux](https://www.redhat.com/)
-* [Scientific Linux](http://scientificlinux.org)
-* [Tiny Core Linux](http://tinycorelinux.net)
-* [Ubuntu](http://www.ubuntu.com/)
+If you want to override the defaults, you can put overrides in user_overrides.yml.  See file for examples.
 
-#### Security Related
+Also note many user customizations are located in the boot.cfg file for the IPXE menus. A high level of customization can be achieved using our stock build output and hosting this along with the menus locally. 
 
-* [BlackArch Linux](https://blackarch.org)
-* [Kali Linux](https://www.kali.org)
-* [Parrot Security](https://www.parrotsec.org)
+## Self Hosted Custom Options
 
-#### Utilities
-
-* [AVG Rescue CD](https://www.avg.com/en-ww/download.prd-arl.)
-* [Breakin](http://www.advancedclustering.com/products/software/breakin/)
-* [Clonezilla](http://www.clonezilla.org/)
-* [DBAN](http://www.dban.org/)
-* [GParted](http://gparted.org)
-* [Grml](http://grml.org)
-* [Memtest](http://www.memtest.org/)
-* [Super Grub2 Disk](http://www.supergrubdisk.org)
-* [SystemRescueCD](https://www.system-rescue-cd.org)
-* [Ultimate Boot CD](http://www.ultimatebootcd.com)
-
-### Testing New Branches
-
-Under the **Utilities** menu on netboot.xyz, there's an option for ["Test netboot.xyz branch"](https://github.com/antonym/netboot.xyz/blob/master/src/utils.ipxe#L157).  If you've forked the code and have developed a new feature branch, you can use this option to chainload into that branch to test and validate the code.  All you need to do is specify your Github user name and the name of your branch or abbreviated hash of the commit. Also, disable the signature verification for *netboot.xyz* under **Signatures Checks**.
-
-### Feedback
-
-Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github, swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel, or ping us on [Discord](https://discord.gg/An6PA2a).  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
+In addition to being able to host netboot.xyz locally, you can also create your own custom templates for custom menus within netboot.xyz.  Please see [Custom User Menus](etc/netbootxyz/custom/README.md) for more information.

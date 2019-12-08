@@ -1,0 +1,38 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+menu Live Boot Distributions - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap Live Boot Distributions
+item live-backbox ${space} BackBox
+item live-debian ${space} Debian
+item live-elementary ${space} elementary OS
+item live-fedora ${space} Fedora
+item live-kali ${space} Kali
+item live-q4os ${space} Q4OS
+item live-manjaro ${space} Manjaro
+item live-mint ${space} Mint
+item live-peppermint ${space} Peppermint
+item live-popos ${space} Pop OS
+item live-tails ${space} Tails
+item live-ubuntu ${space} Ubuntu
+item live-voyager ${space} Voyager
+item live-zorin ${space} Zorin OS
+choose menu || goto live_exit
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto live_menu
+
+:live_exit
+clear menu
+exit 0

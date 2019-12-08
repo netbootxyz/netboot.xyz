@@ -1,0 +1,59 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Debian Live
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item buster ${space} ${os} 10 (buster)
+choose live_version || goto live_exit
+menu ${os} ${live_version}
+item --gap ${os} Flavors
+goto ${live_version}
+
+:stretch
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "debian" and 'squash' in key and value.version == "9" %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% endif %}
+{% endfor %}
+goto flavor_select
+
+:buster
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "debian" and 'squash' in key and value.version == "10" %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% endif %}
+{% endfor %}
+goto flavor_select
+
+:flavor_select
+choose flavor || goto live_menu
+echo ${cls}
+goto ${flavor} ||
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "debian" and 'squash' in key %}
+{% set kernel_name = value.kernel %}
+:{{ key }}
+set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
+{% for key, value in endpoints.items() | sort %}
+{% if key == kernel_name %}
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0

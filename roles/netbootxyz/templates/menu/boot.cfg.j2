@@ -1,0 +1,108 @@
+#!ipxe
+
+:global_vars
+# set site name
+set site_name {{ site_name }}
+
+# set boot domain
+set boot_domain {{ boot_domain }}
+
+# set location of memdisk
+set memdisk {{ memdisk_location }}
+
+# signature check enabled?
+set sigs_enabled {{ sigs_enabled | default(false) | bool }}
+
+# image signatures check enabled?
+set img_sigs_enabled {{ img_sigs_enabled | default(false) | bool }}
+
+# set location of signatures for sources
+set sigs {{ sigs_location }}
+
+# set location of latest iPXE
+set ipxe_disk netboot.xyz-undionly.kpxe
+
+# set location of custom netboot.xyz live assets
+set live_endpoint {{ live_endpoint }}
+
+##################
+# official mirrors
+##################
+:mirrors
+{% for key, value in releases.items() | sort(attribute='1.name') %}
+{% if value.mirror is defined and value.base_dir is defined %}
+### {{ value.name }}
+set {{ key }}_mirror {{ value.mirror }}
+set {{ key }}_base_dir {{ value.base_dir }}
+
+{% endif %}
+{% endfor %}
+#################################################
+# determine architectures and enable menu options
+#################################################
+:architectures
+set menu_linux 1
+set menu_bsd 1
+set menu_freedos 1
+set menu_live 1
+set menu_security 1
+set menu_windows 1
+set menu_utils 1
+iseq ${buildarch} i386 && goto x86_64 ||
+iseq ${buildarch} x86_64 && goto x86_64 ||
+iseq ${buildarch} arm64 && goto arm64 ||
+goto architectures_end
+:x86_64
+goto architectures_end
+:arm64
+set menu_freedos 0
+set menu_live 0
+set menu_security 0
+set menu_windows 0
+set menu_utils 0
+goto architectures_end
+:architectures_end
+goto clouds
+
+###################################
+# set iPXE cloud provider specifics
+###################################
+:clouds
+iseq ${ipxe_cloud_config} gce && goto gce ||
+iseq ${ipxe_cloud_config} packet && goto packet ||
+goto clouds_end
+
+:gce
+set console console=ttyS0,115200n8
+goto clouds_end
+
+:packet
+iseq ${buildarch} i386 && goto packet_x86_64 ||
+iseq ${buildarch} x86_64 && goto packet_x86_64 ||
+iseq ${buildarch} arm64 && goto packet_arm64 ||
+goto clouds_end
+
+:packet_x86_64
+set console console=ttyS1,115200n8
+iseq ${platform} efi && set ipxe_disk netboot.xyz-packet.efi || set ipxe_disk netboot.xyz-packet.kpxe
+set menu_freedos 0
+set menu_windows 0
+set menu_utils 0
+goto clouds_end
+
+:packet_arm64
+set console console=ttyAMA0,115200
+set ipxe_disk netboot.xyz-packet-arm64.efi
+set menu_bsd 0
+set menu_freedos 0
+set menu_live 0
+set menu_security 0
+set menu_windows 0
+set menu_utils 0
+goto clouds_end
+
+:clouds_end
+goto end
+
+:end
+exit

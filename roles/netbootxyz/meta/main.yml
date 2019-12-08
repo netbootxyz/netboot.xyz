@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Antony Messerli
+  description: Installs a self hosted version of netboot.xyz
+  license: Apache-2.0
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Centos
+      versions:
+        - all
+  galaxy_tags:
+    - system
+dependencies: []

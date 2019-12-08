@@ -1,0 +1,47 @@
+---
+
+  - name: Copy netboot.xyz local legacy iPXE configs
+    copy:
+      src: "ipxe/local/{{ item }}"
+      dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
+    with_items:
+      - colour.h
+      - crypto.h
+      - general.h
+
+  - name: Set trust file to ipxe ca
+    set_fact:
+      trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
+    when: not generate_signatures
+
+  - name: Combine trust args if set
+    set_fact:
+      trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }},{{ cert_dir }}/{{ cert_file_filename }}"
+    when: generate_signatures | bool
+
+  - name: Compile iPXE bootloader for Legacy BIOS
+    shell: |
+      make clean
+      make EMBED={{ bootloader_filename }} TRUST={{ trust_files }} bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
+    args:
+      chdir: "{{ ipxe_source_dir }}/src"
+    tags:
+    - skip_ansible_lint
+
+  - name: Copy iPXE files for Legacy BIOS to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
+      remote_src: True
+    with_items:
+    - ".dsk"
+    - ".iso"
+    - ".lkrn"
+    - ".usb"
+    - ".kpxe"
+
+  - name: Copy undionly.kpxe for Legacy BIOS to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
+      remote_src: True

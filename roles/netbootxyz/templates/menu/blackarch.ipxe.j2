@@ -1,0 +1,27 @@
+#!ipxe
+
+# BlackArch Linux Operating System
+# https://blackarch.org/
+
+goto ${menu}
+
+:blackarch
+set os {{ releases.blackarch.name }}
+menu ${os} Installers
+item --gap Official Releases
+{% for item in releases.blackarch.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose blackarch_version || goto blackarch_exit
+goto blackarch_boot
+
+:blackarch_boot
+set blackarch_initrd http://distro.ibiblio.org/blackarch/iso/blackarch-linux-netinst-${blackarch_version}-x86_64.iso
+kernel ${memdisk} iso raw
+initrd ${blackarch_initrd}
+boot
+goto blackarch_exit
+
+:blackarch_exit
+clear menu
+exit 0

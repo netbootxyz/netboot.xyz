@@ -1,0 +1,11 @@
+---
+
+  - include: generate_disks_base.yml
+
+  - include: generate_disks_legacy.yml
+    when:
+    - generate_disks_legacy | default(true) | bool
+
+  - include: generate_disks_efi.yml
+    when:
+    - generate_disks_efi | default(true) | bool

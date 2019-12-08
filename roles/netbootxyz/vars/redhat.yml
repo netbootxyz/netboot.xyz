@@ -1,0 +1,10 @@
+---
+netbootxyz_packages:
+  - dosfstools
+  - gcc
+  - genisoimage
+  - git
+  - httpd
+  - minizip-devel
+  - syslinux
+  - xz-devel

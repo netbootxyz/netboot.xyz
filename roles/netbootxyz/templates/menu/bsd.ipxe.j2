@@ -1,0 +1,41 @@
+#!ipxe
+
+goto ${menu} ||
+
+:bsd_menu
+
+menu BSD Installers - Current Selected Architecture [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+
+# BSD based systems
+item --gap BSD Based Operating Systems
+{% for key, value in releases.items() | sort(attribute='1.name') %}
+{% if value.enabled is defined and value.menu == "bsd" and value.enabled | bool %}
+item {{ key }} ${space} {{ value.name }}
+{% endif %}
+{% endfor %}
+# Options
+item --gap Options:
+iseq ${arch} x86_64 && set bits 64 || set bits 32
+item changebits ${space} Architecture: ${arch} (${bits}bit)
+choose menu || goto bsd_exit
+
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto bsd_menu
+
+:bsd_exit
+clear menu
+exit 0
+
+:changebits
+iseq ${arch} x86_64 && set arch i386 || set arch x86_64
+goto bsd_menu

@@ -1,0 +1,78 @@
+---
+
+  - name: Gathering facts
+    setup:
+
+  - name: Gather variables for each operating system
+    include_vars: "{{ item }}"
+    with_first_found:
+      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
+      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+      - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+      - "{{ ansible_distribution | lower }}.yml"
+      - "{{ ansible_os_family | lower }}.yml"
+
+  - name: Set var to bootloader of loop
+    set_fact:
+      bootloader_filename: "{{ bootloader_file }}"
+
+  - name: Create iPXE file directories
+    file:
+      path: "{{ item }}"
+      state: directory
+    with_items:
+      - "{{ netbootxyz_root }}/ipxe"
+      - "{{ cert_dir }}"
+
+  - name: Copy helper apps
+    copy:
+      src: "{{ item }}"
+      dest: "{{ netbootxyz_root }}"
+    with_items:
+      - memdisk
+      - wimboot
+
+  - name: Install required packages
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ netbootxyz_packages }}"
+
+  - name: Check out latest iPXE sources
+    git:
+      repo: "{{ ipxe_repo }}"
+      dest: "{{ ipxe_source_dir }}"
+      version: "{{ ipxe_branch }}"
+      force: true
+    register: ipxe_git_checkout
+      
+  - name: Copy iPXE Bootloader template to iPXE source directory
+    template:
+      src: "disks/{{ bootloader_filename }}.j2"
+      dest: "{{ ipxe_source_dir }}/src/{{ bootloader_filename }}"
+
+  - name: Touch iPXE config local files
+    file:
+      path: "{{ ipxe_source_dir }}/{{ item }}"
+      state: touch
+    with_items:
+      - src/config/local/console.h
+      - src/config/local/umalloc.h
+      - src/config/local/nap.h
+      - src/config/local/timer.h
+      - src/config/local/branding.h
+      - src/config/local/serial.h
+      - src/config/local/reboot.h
+      - src/config/local/sanboot.h
+      - src/config/local/fault.h
+      - src/config/local/dhcp.h
+      - src/config/local/sideband.h
+      - src/config/local/entropy.h
+      - src/config/local/crypto.h
+      - src/config/local/usb.h
+      - src/config/local/settings.h
+
+  - name: Retrieve iPXE CA
+    get_url:
+      url: "{{ ipxe_ca_url }}"
+      dest: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
