@@ -115,7 +115,7 @@ jobs:
           file: githubout/*
           skip_cleanup: true
           on:
-            branch: development
+            branch: master
       after_deploy:
         - aws configure set preview.cloudfront true
         - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "/*" "/ipxe/*"
