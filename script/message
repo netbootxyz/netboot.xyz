@@ -5,7 +5,7 @@ TYPE=$1
 if [ "${TYPE}" == "dev-push" ]; then
   BOOT_URL="https://s3.amazonaws.com/${BUCKET_DEV}/${TRAVIS_COMMIT}/index.html"
 elif [ "${TYPE}" == "rc-push" ]; then
-  BOOT_URL="https://staging.boot.netboot.xyz/${TRAVIS_TAG}/index.html"
+  BOOT_URL="https://staging.boot.netboot.xyz/$(cat version.txt)-RC/index.html"
 elif [ "${TYPE}" == "live-push" ]; then
   BOOT_URL="https://staging.boot.netboot.xyz/$(cat version.txt)/index.html"
 fi

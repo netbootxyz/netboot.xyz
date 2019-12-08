@@ -43,11 +43,10 @@ jobs:
         - ./script/pre_install
       script:
         - ./script/build_release rc
-      after_failure:
-        - ./script/message failure
-      before_deploy:
         - export RELEASE_TAG=$(cat version.txt)-RC
         - git tag ${RELEASE_TAG}
+      after_failure:
+        - ./script/message failure
       deploy:
         - provider: s3
           access_key_id: $AWS_ACCESS_KEY_ID
@@ -86,11 +85,10 @@ jobs:
         - ./script/pre_install
       script:
         - ./script/build_release release
-      after_failure:
-        - ./script/message failure
-      before_deploy:
         - export RELEASE_TAG=$(cat version.txt)
         - git tag ${RELEASE_TAG}
+      after_failure:
+        - ./script/message failure
       deploy:
         - provider: s3
           access_key_id: $AWS_ACCESS_KEY_ID
