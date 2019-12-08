@@ -19,6 +19,7 @@ jobs:
         - ./script/message failure
       deploy:
         - provider: s3
+          edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_DEV
@@ -49,6 +50,7 @@ jobs:
         - ./script/message failure
       deploy:
         - provider: s3
+          edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_LIVE
@@ -58,6 +60,7 @@ jobs:
           on:
             branch: RC
         - provider: s3
+          edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_LIVE
@@ -74,10 +77,6 @@ jobs:
           skip_cleanup: true
           on:
             branch: RC
-      after_deploy:
-        - aws configure set preview.cloudfront true
-        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "rc/*" "rc/ipxe/*"
-        - ./script/message rc-push
 
     - stage: release
       if: branch = master AND type != pull_request
@@ -91,6 +90,7 @@ jobs:
         - ./script/message failure
       deploy:
         - provider: s3
+          edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_LIVE
@@ -99,6 +99,7 @@ jobs:
           on:
             branch: master
         - provider: s3
+          edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_LIVE
