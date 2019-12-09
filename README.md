@@ -1,7 +1,7 @@
 ## netboot.xyz
 
 [![Build Status](https://travis-ci.org/antonym/netboot.xyz.svg?branch=master)](https://travis-ci.org/antonym/netboot.xyz)
-[![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
+[![Financial Contributors on Open Collective](https://opencollective.com/netbootxyz/all/badge.svg?label=financial+contributors)](https://opencollective.com/netbootxyz) [![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
 
 ![netboot.xyz menu](https://netboot.xyz/images/netboot.xyz.gif)
 
@@ -93,3 +93,33 @@ Under the **Utilities** menu on netboot.xyz, there's an option for ["Test netboo
 ### Feedback
 
 Feel free to open up an [issue](https://github.com/antonym/netboot.xyz/issues) on Github, swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel, or ping us on [Discord](https://discord.gg/An6PA2a).  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/antonym/netboot.xyz/graphs/contributors"><img src="https://opencollective.com/netbootxyz/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/netbootxyz/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/netbootxyz"><img src="https://opencollective.com/netbootxyz/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/netbootxyz/contribute)]
+
+<a href="https://opencollective.com/netbootxyz/organization/0/website"><img src="https://opencollective.com/netbootxyz/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/1/website"><img src="https://opencollective.com/netbootxyz/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/2/website"><img src="https://opencollective.com/netbootxyz/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/3/website"><img src="https://opencollective.com/netbootxyz/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/4/website"><img src="https://opencollective.com/netbootxyz/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/5/website"><img src="https://opencollective.com/netbootxyz/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/6/website"><img src="https://opencollective.com/netbootxyz/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/7/website"><img src="https://opencollective.com/netbootxyz/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/8/website"><img src="https://opencollective.com/netbootxyz/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/netbootxyz/organization/9/website"><img src="https://opencollective.com/netbootxyz/organization/9/avatar.svg"></a>
