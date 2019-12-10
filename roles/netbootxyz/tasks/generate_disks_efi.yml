@@ -58,7 +58,7 @@
       warn: false
     tags:
     - skip_ansible_lint
- 
+
   - name: Copy iPXE EFI builds to http directory
     copy:
       src: "{{ ipxe_source_dir }}/src/{{ item.src }}"

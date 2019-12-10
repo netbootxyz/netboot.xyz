@@ -53,13 +53,13 @@ See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get
 
 If you'd like to contribute to the documentation, the netboot.xyz documenation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
 
-# Self Hosting netboot.xyz
+### Self Hosting netboot.xyz
 
 For those users who want to deploy their own netboot.xyz environment, you can leverage
 the same scripts that are used to deploy the hosted environment. The source scripts are
 all ansible templates and can be generated and customized to your preference.
 
-## With Ansible
+#### With Ansible
 
 To generate, run:
 
@@ -69,7 +69,7 @@ ansible-playbook -i inventory site.yml
 
 The build output will be located in /var/www/html by default.
 
-## With Docker
+#### With Docker
 
 ```
 docker build -t localbuild -f Dockerfile-build .
@@ -78,7 +78,7 @@ docker run --rm -it -v $(pwd):/buildout localbuild
 
 The build output will be in the generated folder `buildout`
 
-## Local Overides
+#### Local Overides
 
 Ansible will handle source generation as well as ipxe disk generation with your settings.  The disk generation was worked on a while back so it needs work to catch it up to the existing state of netboot.xyz.
 
@@ -86,13 +86,13 @@ If you want to override the defaults, you can put overrides in user_overrides.ym
 
 Also note many user customizations are located in the boot.cfg file for the IPXE menus. A high level of customization can be achieved using our stock build output and hosting this along with the menus locally. 
 
-## Self Hosted Custom Options
+#### Self Hosted Custom Options
 
 In addition to being able to host netboot.xyz locally, you can also create your own custom templates for custom menus within netboot.xyz.  Please see [Custom User Menus](etc/netbootxyz/custom/README.md) for more information.
 
-## What Operating Systems are currently available on netboot.xyz?
+### What Operating Systems are currently available on netboot.xyz?
 
-### Operating Systems
+#### Operating Systems
 
 | Name       | URL             | Installer Kernel | Live OS       |
 |------------|-----------------|------------------|---------------|
@@ -144,5 +144,4 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 
 ### Feedback
 
-Feel free to open up an [issue](https://github.com/netbootxyz/netboot.xyz/issues) on Github, swing by [Freenode IRC](http://freenode.net/) in the [#netbootxyz](http://webchat.freenode.net/?channels=#netbootxyz) channel, or ping us on [Discord](https://discord.gg/An6PA2a).  Follow us on [Twitter](https://twitter.com/netbootxyz) or like us on [Facebook](https://www.facebook.com/netboot.xyz)!
-
+Feel free to open up an [issue](https://github.com/netbootxyz/netboot.xyz/issues) on Github or ping us on [Discord](https://discord.gg/An6PA2a).  Follow us on [Twitter](https://twitter.com/netbootxyz) and like us on [Facebook](https://www.facebook.com/netboot.xyz)!

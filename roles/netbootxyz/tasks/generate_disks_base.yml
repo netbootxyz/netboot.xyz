@@ -45,7 +45,7 @@
       version: "{{ ipxe_branch }}"
       force: true
     register: ipxe_git_checkout
-      
+
   - name: Copy iPXE Bootloader template to iPXE source directory
     template:
       src: "disks/{{ bootloader_filename }}.j2"
