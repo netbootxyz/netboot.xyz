@@ -51,6 +51,8 @@ jobs:
             - githubout 
       after_failure:
         - ./script/message failure
+      before_deploy:
+        - export RELEASE_TAG=$(cat version.txt)-RC
       deploy:
         - provider: s3
           edge: true
@@ -107,6 +109,8 @@ jobs:
             - githubout 
       after_failure:
         - ./script/message failure
+      before_deploy:
+        - export RELEASE_TAG=$(cat version.txt)
       deploy:
         - provider: s3
           edge: true
