@@ -7,7 +7,7 @@ RUN \
 	ansible \
 	apache2  \
 	build-essential \
-        dosfstools \
+	dosfstools \
 	genisoimage \
 	git \
 	liblzma-dev \
