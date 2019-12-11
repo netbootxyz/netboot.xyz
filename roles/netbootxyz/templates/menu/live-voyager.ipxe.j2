@@ -11,6 +11,7 @@ item bionic ${space} ${os} Bionic
 item buster ${space} ${os} Buster
 item eoan ${space} ${os} Eoan
 choose live_version || goto live_exit
+goto ${live_version}
 
 :bionic
 set squash_url ${live_endpoint}{{ endpoints["voyager-bionic-squash"].path }}filesystem.squashfs
