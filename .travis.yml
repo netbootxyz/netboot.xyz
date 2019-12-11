@@ -11,6 +11,16 @@ env:
 
 jobs:
   include:
+    - stage: test
+      if: type = pull_request
+      language: python
+      install:
+        - pip install ansible ansible-lint
+        - ansible-lint --version
+      script:
+        - ansible-playbook -i inventory site.yml --syntax-check
+        - ansible-lint -v roles/netbootxyz
+
     - stage: development
       if: branch = development AND type != pull_request
       script:
@@ -31,12 +41,10 @@ jobs:
       after_deploy:
         - ./script/message dev-push
 
-
     - stage: pull-request
       if: type = pull_request
       script:
         - ./script/build_release pr
-
 
     - stage: release-candidate
       if: branch = RC AND type != pull_request
@@ -72,6 +80,7 @@ jobs:
           skip_cleanup: true
           on:
             branch: RC
+
     - stage: rc-github
       if: branch = RC AND type != pull_request
       before_install:
@@ -127,6 +136,7 @@ jobs:
           skip_cleanup: true
           on:
             branch: master
+
     - stage: release-github
       if: branch = master AND type != pull_request
       before_install:
