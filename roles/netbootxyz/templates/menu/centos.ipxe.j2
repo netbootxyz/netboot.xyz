@@ -19,7 +19,7 @@ isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
 set dir ${centos_base_dir}/${osversion}/BaseOS/${arch}/os
 iseq ${osversion} 7.7.1908 && set dir ${centos_base_dir}/${osversion}/os/${arch} ||
-set repo ${centos_mirror}/${centos_base_dir}
+set repo ${centos_mirror}/${dir}
 goto boottype
 
 :boottype

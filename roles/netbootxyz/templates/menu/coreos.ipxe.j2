@@ -2,6 +2,7 @@
 
 # Fedora CoreOS (Preview)
 # https://getfedora.org/coreos/
+# https://github.com/coreos/coreos-installer/blob/master/README.md#installing-from-pxe
 
 goto ${menu}
 
@@ -16,19 +17,16 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
 item install_dev ${space} Set install device: ${install_device}
 item ignition_config ${space} Set ignition config url: ${ignition_url}
-choose --default ${menu} menu || goto coreos_exit
+choose --default ${core_version} core_version || goto coreos_exit
 echo ${cls}
-goto ${menu} ||
+goto core_boot ||
 goto coreos_exit
 
-:stable
-:beta
-:alpha
-set release ${menu}
+:core_boot
 set base_url ${coreos_mirror}/${coreos_base_dir}
-set build_version 30.20191014.0
-kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-kernel nomodeset rd.neednet=1 coreos.inst=yes coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} ${console} coreos.inst.image_url=${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-metal.raw.xz initrd=fedora-coreos-${build_version}-installer-initramfs.img
-initrd ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-initramfs.img
+set build_version ${core_version}
+kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-kernel-x86_64 nomodeset rd.neednet=1 coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} ${console} coreos.inst.stream=testing initrd=fedora-coreos-${build_version}-installer-initramfs.x86_64.img
+initrd ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-initramfs.x86_64.img
 boot
 goto coreos_exit
 
