@@ -173,8 +173,6 @@ releases:
         code_name: "beta"
       - name: "Alpha Channel"
         code_name: "alpha"
-      - name: "Edge Channel"
-        code_name: "edge"
   freebsd:
     name: "FreeBSD"
     enabled: false
@@ -221,8 +219,8 @@ releases:
     menu: "linux"
     enabled: true
     versions:
-      - name: "2.21 Core 126"
-        code_name: "2.21-core126"
+      - name: "2.23 Core 138"
+        code_name: "2.23-core138"
   kali:
     name: "Kali Linux"
     mirror: "http://http.kali.org"
@@ -262,8 +260,6 @@ releases:
         code_name: "19.09"
       - name: "Nixos 19.03"
         code_name: "19.03"
-      - name: "Nixox Unstable"
-        code_name: "unstable"
   openbsd:
     name: "OpenBSD"
     mirror: "http://ftp.openbsd.org"
@@ -357,8 +353,6 @@ releases:
         code_name: "Core"
       - name: "TinyCore [ISO]"
         code_name: "TinyCore"
-      - name: "CorePlus [ISO]"
-        code_name: "CorePlus"
   ubuntu:
     name: "Ubuntu"
     mirror: "http://archive.ubuntu.com"
@@ -397,8 +391,8 @@ utilities:
     enabled: true
     menu: "pcbios"
     type: "memdisk"
-    version: "2.6.2-15"
-    util_path: "http://master.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.6.2-15/clonezilla-live-2.6.2-15-amd64.iso"
+    version: "2.6.4-10"
+    util_path: "http://master.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.6.4-10/clonezilla-live-2.6.4-10-amd64.iso"
   dban:
     name: "DBAN"
     enabled: true
