@@ -24,7 +24,7 @@
   - name: Generate ipxe disk checksums
     template:
       src: checksums.txt.j2
-      dest: "{{ netbootxyz_root }}/ipxe/checksums.txt"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ site_name }}-sha256-checksums.txt"
 
   - name: Generate netboot.xyz index template
     template:
