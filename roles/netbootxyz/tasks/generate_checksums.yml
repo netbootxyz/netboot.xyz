@@ -2,10 +2,14 @@
   - name: Register a listing of all created iPXE bootloaders
     command: ls -I checksums.txt {{ netbootxyz_root }}/ipxe/
     register: netboot_disks
+    tags:
+      - skip_ansible_lint
 
   - name: Generate date
     command: date
     register: current_date
+    tags:
+      - skip_ansible_lint
 
   - name: Gather stat listing of directory
     command: sha256sum -b {{ item }}
@@ -14,6 +18,8 @@
     args:
       chdir: "{{ netbootxyz_root }}/ipxe/"
     register: netboot_disks_stat
+    tags:
+      - skip_ansible_lint
 
   - name: Generate ipxe disk checksums
     template:

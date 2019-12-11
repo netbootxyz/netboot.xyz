@@ -2,6 +2,8 @@
   - name: Gather list of source files
     command: ls {{ netbootxyz_root }}
     register: source_files
+    tags:
+      - skip_ansible_lint
 
   - name: Create directories for signatures
     file:
@@ -12,7 +14,7 @@
 
   - name: Generate signatures for source files
     shell: |
-      openssl cms -sign -binary -noattr -in {{ netbootxyz_root }}/{{ item }} \ 
+      openssl cms -sign -binary -noattr -in {{ netbootxyz_root }}/{{ item }} \
       -signer {{ codesign_cert_location }} -inkey {{ codesign_key_location }} -certfile {{ cert_file_location }} -outform DER \
       -out {{ sigs_dir }}/{{ item }}.sig
     args:
