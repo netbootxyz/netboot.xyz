@@ -8,8 +8,9 @@ set cls:hex 1b:5b:4a  # ANSI clear screen sequence - "^[[J"
 set cls ${cls:string}
 :ignore_cls
 
+{% if 'x' in boot_version %}
 :version_check
-set latest_version 1.04
+set latest_version {{ boot_version }}
 echo ${cls}
 iseq ${version} ${latest_version} && goto version_up2date ||
 echo
@@ -23,6 +24,7 @@ echo
 echo Attempting to chain to latest version...
 chain --autofree http://${boot_domain}/ipxe/${ipxe_disk} ||
 :version_up2date
+{% endif %}
 
 isset ${arch} && goto skip_arch_detect ||
 cpuid --ext 29 && set arch x86_64 || set arch i386
