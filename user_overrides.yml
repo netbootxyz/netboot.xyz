@@ -12,7 +12,7 @@ generate_checksums: true
 #boot_domain: boot.mysitename.com
 
 # set boot version
-#boot_version: 1.00
+#boot_version: "2.x"
 
 #bootloader_tftp_enabled: false
 #bootloader_https_enabled: true

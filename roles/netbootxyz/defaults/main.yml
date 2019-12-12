@@ -3,7 +3,7 @@
 ### site configuration ###
 site_name: netboot.xyz
 boot_domain: boot.netboot.xyz
-boot_version: 1.04
+boot_version: "2.x"
 boot_timeout: 300000
 time_server: "0.pool.ntp.org"
 
