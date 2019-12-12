@@ -1,0 +1,45 @@
+#!ipxe
+set esc:hex 1b
+set bold ${esc:string}[1m
+set ital ${esc:string}[3m
+set under ${esc:string}[4m
+set boldoff ${esc:string}[22m
+set italoff ${esc:string}[23m
+set underoff ${esc:string}[24m
+set fs_bla ${esc:string}[30m
+set fg_red ${esc:string}[31m
+set fg_gre ${esc:string}[32m
+set fg_yel ${esc:string}[33m
+set fg_blu ${esc:string}[34m
+set fg_mag ${esc:string}[35m
+set fg_cya ${esc:string}[36m
+set fg_whi ${esc:string}[37m
+
+:netnews
+menu ${fg_cya}${bold}netboot.xyz updates
+item exit ${bold}Exit back to main menu...${boldoff}
+item --gap --  --------------------------------------------------------------------------
+item news ${fg_gre}${bold}Self Hosting and Live Booting - November 29, 2019
+item news ${fg_gre}${bold}Full Article: ${fg_whi}${bold}https://netboot.xyz/blog/
+item news
+item news ${fg_yel}${bold}* Self hosting options using Ansible and Docker (soon)
+item news ${fg_yel}${bold}* Live Boot options now available with more on the way
+item news ${fg_yel}${bold}${space}Allows you to PXE boot into a Live Desktop from Github
+item news ${fg_yel}${bold}* netboot.xyz repo moving to netbootxyz org on github
+item --gap --  --------------------------------------------------------------------------
+item news ${fg_cya}${bold}Follow us on Twitter: ${fg_whi}${bold}@netbootxyz
+item --gap --  --------------------------------------------------------------------------
+item news ${fg_gre}${bold}Join us on Discord: ${fg_whi}${bold}https://discord.gg/An6PA2a
+item --gap --  --------------------------------------------------------------------------
+item news ${fg_gre}${bold}Sponsorship: ${fg_whi}${bold}https://opencollective.com/netbootxyz
+item --gap --  --------------------------------------------------------------------------
+choose selected || goto exit
+goto ${selected}
+
+:news
+clear menu
+goto netnews
+
+:exit
+clear menu
+exit

@@ -54,6 +54,7 @@ iseq ${menu_utils} 1 && item utils-${platform} ${space} Utilities ||
 iseq ${arch} x86_64 && set bits 64 || set bits 32
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
+item news ${space} netboot.xyz news
 item netinfo ${space} Network card info
 {% if sigs_menu | bool %}
 item --gap Signature Checks:
@@ -107,6 +108,11 @@ goto main_menu
 
 :img_sigs_check
 iseq ${img_sigs_enabled} true && set img_sigs_enabled false || set img_sigs_enabled true
+goto main_menu
+
+:news
+chain https://boot.netboot.xyz/news.ipxe ||
+chain news.ipxe || goto error
 goto main_menu
 
 :custom-github
