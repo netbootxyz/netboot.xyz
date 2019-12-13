@@ -32,6 +32,7 @@ generate_menus: true
 
 # generates signatures for source files
 generate_checksums: true
+checksums_filename: "{{ site_name }}-sha256-checksums.txt"
 
 # bootloader options
 generate_disks: true
@@ -428,3 +429,51 @@ utilities:
     type: "memdisk"
     version: "538"
     util_path: "http://mirror.sysadminguide.net/ubcd/ubcd538.iso"
+
+bootloaders:
+  legacy:
+    - type: "ISO"
+      ipxe_bin: "ipxe.iso"
+      output_bin: ".iso"
+      desc: "Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box"
+    - type: "USB"
+      ipxe_bin: "ipxe.usb"
+      output_bin: ".usb"
+      desc: "Used for creation of USB Keys"
+    - type: "Kernel"
+      ipxe_bin: "ipxe.lkrn"
+      output_bin: ".lkrn"
+      desc: "Used for booting from GRUB/EXTLINUX"
+    - type: "Floppy"
+      ipxe_bin: "ipxe.dsk"
+      output_bin: ".dsk"
+      desc: "Virtual floppy disk for DRAC/iLO, VMware, Virtual Box, etc"
+    - type: "DHCP"
+      ipxe_bin: "ipxe.kpxe"
+      output_bin: ".kpxe"
+      desc: "DHCP boot image file, uses built-in iPXE NIC drivers"
+    - type: "DHCP-undionly"
+      ipxe_bin: "undionly.kpxe"
+      output_bin: "-undionly.kpxe"
+      desc: "DHCP boot image file, use if you have NIC issues"
+  uefi:
+    - type: "ISO"
+      ipxe_bin: "ipxe-efi.eiso"
+      output_bin: "-efi.iso"
+      desc: "EFI BIOS, works in Virtual Box EFI mode"
+    - type: "USB"
+      ipxe_bin: "ipxe-efi.usb"
+      output_bin: "-efi.usb"
+      desc: "Used for booting from GRUB/EXTLINUX"
+    - type: "DHCP"
+      ipxe_bin: "ipxe.efi"
+      output_bin: ".efi"
+      desc: "DHCP EFI boot image file, uses built-in iPXE NIC drivers"
+    - type: "DHCP-snp"
+      ipxe_bin: "snp.efi"
+      output_bin: "-snp.efi"
+      desc: "EFI w/ Simple Network Protocol, attempts to boot all net devices"
+    - type: "DHCP-snponly"
+      ipxe_bin: "snponly.efi"
+      output_bin: "-snponly.efi"
+      desc: "EFI w/ Simple Network Protocol, only boots from device chained from"
