@@ -35,13 +35,6 @@ endpoints:
     - vmlinuz
     os: debian
     version: 9
-  manjaro-18.x-live-kernel:
-    path: /manjaro-core-18.x/releases/download/5.3.8-25c643fa/
-    files:
-    - initrd
-    - vmlinuz
-    os: manjaro
-    version: 18.x
   debian-10-default-squash:
     path: /debian-squash/releases/download/10.2.0-600c59c0/
     files:
@@ -455,7 +448,7 @@ endpoints:
     flavor: Cinnamon
     kernel: ubuntu-18.04-live-kernel
   zorin-15-gnome-squash:
-    path: /ubuntu-squash/releases/download/15-171ddffc/
+    path: /ubuntu-squash/releases/download/15-ad033efa/
     files:
     - filesystem.squashfs
     os: zorin
@@ -463,7 +456,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-18.04-live-kernel
   zorin-15-xfce-squash:
-    path: /ubuntu-squash/releases/download/15-24926a26/
+    path: /ubuntu-squash/releases/download/15-f5884501/
     files:
     - filesystem.squashfs
     os: zorin
