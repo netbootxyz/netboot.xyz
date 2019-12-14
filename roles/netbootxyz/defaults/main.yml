@@ -3,7 +3,7 @@
 ### site configuration ###
 site_name: netboot.xyz
 boot_domain: boot.netboot.xyz
-boot_version: 1.04
+boot_version: "2.x"
 boot_timeout: 300000
 time_server: "0.pool.ntp.org"
 
@@ -32,6 +32,7 @@ generate_menus: true
 
 # generates signatures for source files
 generate_checksums: true
+checksums_filename: "{{ site_name }}-sha256-checksums.txt"
 
 # bootloader options
 generate_disks: true
@@ -84,15 +85,15 @@ releases:
     enabled: true
     menu: "linux"
     versions:
-      - name: "2019.10.01"
-        code_name: "2019.10.01"
+      - name: "2019.12.01"
+        code_name: "2019.12.01"
   blackarch:
     name: "BlackArch"
     enabled: true
     menu: "security"
     versions:
-      - name: "2019.06.01"
-        code_name: "2019.06.01"
+      - name: "2019.09.01"
+        code_name: "2019.09.01"
   centos:
     name: "CentOS"
     mirror: "http://mirror.centos.org"
@@ -110,11 +111,11 @@ releases:
     name: "Fedora CoreOS"
     mirror: "https://builds.coreos.fedoraproject.org"
     base_dir: "prod/streams/testing/builds"
-    enabled: true
+    enabled: false
     menu: "linux"    
     versions:
-      - name: "30"
-        code_name: "beta"
+      - name: "31"
+        code_name: "31.20191127.1"
   debian:
     name: "Debian"      
     mirror: "http://deb.debian.org"
@@ -128,10 +129,6 @@ releases:
           code_name: "buster"
         - name: "9.0 (stretch)"
           code_name: "stretch"
-        - name: "8.0 (jessie)"
-          code_name: "jessie"
-        - name: "7.0 (jessie)"
-          code_name: "wheezy"
       testing:
         - name: "bullseye (testing)"
           code_name: "bullseye"
@@ -141,7 +138,7 @@ releases:
     name: "Devuan"
     mirror: "http://auto.mirror.devuan.org"
     base_dir: "devuan"
-    enabled: true
+    enabled: false
     menu: "linux"
     versions:
       stable:
@@ -177,8 +174,6 @@ releases:
         code_name: "beta"
       - name: "Alpha Channel"
         code_name: "alpha"
-      - name: "Edge Channel"
-        code_name: "edge"
   freebsd:
     name: "FreeBSD"
     enabled: false
@@ -225,8 +220,8 @@ releases:
     menu: "linux"
     enabled: true
     versions:
-      - name: "2.21 Core 126"
-        code_name: "2.21-core126"
+      - name: "2.23 Core 138"
+        code_name: "2.23-core138"
   kali:
     name: "Kali Linux"
     mirror: "http://http.kali.org"
@@ -266,8 +261,6 @@ releases:
         code_name: "19.09"
       - name: "Nixos 19.03"
         code_name: "19.03"
-      - name: "Nixox Unstable"
-        code_name: "unstable"
   openbsd:
     name: "OpenBSD"
     mirror: "http://ftp.openbsd.org"
@@ -361,8 +354,6 @@ releases:
         code_name: "Core"
       - name: "TinyCore [ISO]"
         code_name: "TinyCore"
-      - name: "CorePlus [ISO]"
-        code_name: "CorePlus"
   ubuntu:
     name: "Ubuntu"
     mirror: "http://archive.ubuntu.com"
@@ -401,8 +392,8 @@ utilities:
     enabled: true
     menu: "pcbios"
     type: "memdisk"
-    version: "2.6.2-15"
-    util_path: "http://master.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.6.2-15/clonezilla-live-2.6.2-15-amd64.iso"
+    version: "2.6.4-10"
+    util_path: "http://master.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.6.4-10/clonezilla-live-2.6.4-10-amd64.iso"
   dban:
     name: "DBAN"
     enabled: true
@@ -438,3 +429,51 @@ utilities:
     type: "memdisk"
     version: "538"
     util_path: "http://mirror.sysadminguide.net/ubcd/ubcd538.iso"
+
+bootloaders:
+  legacy:
+    - type: "ISO"
+      ipxe_bin: "ipxe.iso"
+      output_bin: ".iso"
+      desc: "Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box"
+    - type: "USB"
+      ipxe_bin: "ipxe.usb"
+      output_bin: ".usb"
+      desc: "Used for creation of USB Keys"
+    - type: "Kernel"
+      ipxe_bin: "ipxe.lkrn"
+      output_bin: ".lkrn"
+      desc: "Used for booting from GRUB/EXTLINUX"
+    - type: "Floppy"
+      ipxe_bin: "ipxe.dsk"
+      output_bin: ".dsk"
+      desc: "Virtual floppy disk for DRAC/iLO, VMware, Virtual Box, etc"
+    - type: "DHCP"
+      ipxe_bin: "ipxe.kpxe"
+      output_bin: ".kpxe"
+      desc: "DHCP boot image file, uses built-in iPXE NIC drivers"
+    - type: "DHCP-undionly"
+      ipxe_bin: "undionly.kpxe"
+      output_bin: "-undionly.kpxe"
+      desc: "DHCP boot image file, use if you have NIC issues"
+  uefi:
+    - type: "ISO"
+      ipxe_bin: "ipxe-efi.eiso"
+      output_bin: "-efi.iso"
+      desc: "EFI BIOS, works in Virtual Box EFI mode"
+    - type: "USB"
+      ipxe_bin: "ipxe-efi.usb"
+      output_bin: "-efi.usb"
+      desc: "Used for booting from GRUB/EXTLINUX"
+    - type: "DHCP"
+      ipxe_bin: "ipxe.efi"
+      output_bin: ".efi"
+      desc: "DHCP EFI boot image file, uses built-in iPXE NIC drivers"
+    - type: "DHCP-snp"
+      ipxe_bin: "snp.efi"
+      output_bin: "-snp.efi"
+      desc: "EFI w/ Simple Network Protocol, attempts to boot all net devices"
+    - type: "DHCP-snponly"
+      ipxe_bin: "snponly.efi"
+      output_bin: "-snponly.efi"
+      desc: "EFI w/ Simple Network Protocol, only boots from device chained from"

@@ -1,19 +1,28 @@
 #!/bin/bash
-
 set -e
 
 TYPE=$1
+HARD_RELEASE="2.x"
+HARD_RC="2.x-RC"
+LIVE_URL="staging.boot.netboot.xyz"
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
   BOOT_DOMAIN="s3.amazonaws.com/${BUCKET_DEV}/${TRAVIS_COMMIT}"
+  BOOT_VERSION="Development"
 elif [[ "${TYPE}" == "pr" ]]; then
   BOOT_DOMAIN="test.com"
+  BOOT_VERSION="test"
 elif [[ "${TYPE}" == "rc" ]]; then
-  BOOT_DOMAIN="staging.boot.netboot.xyz/$(cat version.txt)-RC"
+  BOOT_VERSION=$(cat version.txt)-RC
+  BOOT_DOMAIN="${LIVE_URL}/${BOOT_VERSION}"
 elif [[ "${TYPE}" == "release" ]]; then
-  BOOT_DOMAIN="staging.boot.netboot.xyz/$(cat version.txt)"
+  BOOT_VERSION=$(cat version.txt)
+  BOOT_DOMAIN="${LIVE_URL}/${BOOT_VERSION}"
 fi
+sed -i \
+  "/^#boot_version/c\boot_version: \"${BOOT_VERSION}\"" \
+  user_overrides.yml
 sed -i \
   "/^#boot_domain/c\boot_domain: ${BOOT_DOMAIN}" \
   user_overrides.yml
@@ -39,14 +48,16 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
   rm -Rf buildout/
   if [[ "${TYPE}" == "release" ]]; then
     sed -i \
-      "/^boot_domain/c\boot_domain: staging.boot.netboot.xyz" \
+      -e "/^boot_version/c\boot_version: \"${HARD_RELEASE}\"" \
+      -e "/^boot_domain/c\boot_domain: ${LIVE_URL}" \
       user_overrides.yml
     docker build -t localbuild -f Dockerfile-build .
     docker run --rm -it -v $(pwd):/buildout localbuild
   fi
   if [[ "${TYPE}" == "rc" ]]; then
     sed -i \
-      "/^boot_domain/c\boot_domain: staging.boot.netboot.xyz/rc" \
+      -e "/^boot_version/c\boot_version: \"${HARD_RC}\"" \
+      -e "/^boot_domain/c\boot_domain: ${LIVE_URL}/rc" \
       user_overrides.yml
     docker build -t localbuild -f Dockerfile-build .
     docker run --rm -it -v $(pwd):/buildout localbuild

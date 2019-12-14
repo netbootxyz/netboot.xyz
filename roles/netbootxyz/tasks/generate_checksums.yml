@@ -1,6 +1,6 @@
 ---
   - name: Register a listing of all created iPXE bootloaders
-    command: ls -I checksums.txt {{ netbootxyz_root }}/ipxe/
+    command: ls -I {{ checksums_filename }} {{ netbootxyz_root }}/ipxe/
     register: netboot_disks
     tags:
       - skip_ansible_lint
@@ -24,7 +24,7 @@
   - name: Generate ipxe disk checksums
     template:
       src: checksums.txt.j2
-      dest: "{{ netbootxyz_root }}/ipxe/checksums.txt"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ checksums_filename }}"
 
   - name: Generate netboot.xyz index template
     template:
