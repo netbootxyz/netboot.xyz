@@ -10,6 +10,9 @@ set boot_domain {{ boot_domain }}
 # set location of memdisk
 set memdisk {{ memdisk_location }}
 
+# set location of custom netboot.xyz live assets
+set live_endpoint {{ live_endpoint }}
+
 # signature check enabled?
 set sigs_enabled {{ sigs_enabled | default(false) | bool }}
 
@@ -20,10 +23,7 @@ set img_sigs_enabled {{ img_sigs_enabled | default(false) | bool }}
 set sigs {{ sigs_location }}
 
 # set location of latest iPXE
-set ipxe_disk netboot.xyz-undionly.kpxe
-
-# set location of custom netboot.xyz live assets
-set live_endpoint {{ live_endpoint }}
+iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
 
 ##################
 # official mirrors
