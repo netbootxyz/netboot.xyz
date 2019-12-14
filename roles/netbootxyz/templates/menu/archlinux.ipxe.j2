@@ -1,0 +1,46 @@
+#!ipxe
+
+# Arch Linux Operating System
+# http://www.archlinux.org
+
+isset ${dhcp-server} || goto static_ip
+set ipparam BOOTIF=${netX/mac} ip=dhcp
+set real_archlinux_mirror ${archlinux_mirror}
+goto goto_menu
+
+:static_ip
+# Arch Linux cannot use DNS if booted with a static IP
+# See https://bugs.archlinux.org/task/63174
+# Remove this hack when the above bug is properly resolved
+nslookup real_archlinux_mirror ${archlinux_mirror}
+set ipparam BOOTIF=${netX/mac} ip=${ip}::${gateway}:${netmask}
+
+:goto_menu
+goto ${menu} ||
+
+:archlinux
+set os {{ releases.archlinux.name }}
+clear arch_version
+menu ${os} - ${arch}
+item --gap Latest Releases
+{% for item in releases.archlinux.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose arch_version || goto archlinux_exit
+goto boot
+
+:boot
+imgfree
+set dir ${archlinux_base_dir}/iso/${arch_version}/arch/boot
+set params initrd=archiso.img archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${console}
+kernel http://${archlinux_mirror}/${dir}/x86_64/vmlinuz ${params} initrd=archiso.img
+initrd http://${archlinux_mirror}/${dir}/x86_64/archiso.img
+echo
+echo MD5sums:
+md5sum vmlinuz archiso.img
+boot
+goto archlinux_exit
+
+:archlinux_exit
+clear menu
+exit 0

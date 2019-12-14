@@ -1,0 +1,40 @@
+#!ipxe
+
+# Kali Linux
+# http://www.kali.org
+
+goto ${menu} ||
+
+:kali
+set os {{ releases.kali.name }}
+menu ${os} - ${arch_a}
+{% for item in releases.kali.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose version || goto kali_exit
+
+:deb_boot_type
+set dir ${kali_base_dir}/dists/kali-${version}/main/installer-${arch_a}/current/images/netboot
+menu ${os} boot parameters
+item text ${os} text based install
+choose --default ${type} type || goto kali
+
+echo ${cls}
+goto deb_${type}
+
+:deb_text
+set dir ${dir}/debian-installer/${arch_a}
+goto deb_boot
+
+:deb_boot
+imgfree
+kernel ${kali_mirror}/${dir}/linux vga=788 ${console} -- quiet initrd=initrd.gz
+initrd ${kali_mirror}/${dir}/initrd.gz
+echo
+echo MD5sums:
+md5sum linux initrd.gz
+boot
+
+:kali_exit
+clear menu
+exit 0

@@ -1,0 +1,32 @@
+FROM ubuntu:bionic as builder
+
+RUN \
+ echo "**** install deps ****" && \
+ apt-get update && \
+ apt-get install -y \
+	ansible \
+	apache2  \
+	build-essential \
+	dosfstools \
+	genisoimage \
+	git \
+	liblzma-dev \
+	python-minimal \
+	python-yaml \
+	syslinux
+
+# repo for build
+COPY . /ansible
+
+RUN \
+ echo "**** running ansible ****" && \
+ cd /ansible && \
+ ansible-playbook -i inventory site.yml
+
+# runtime stage
+FROM alpine:3.10
+
+COPY --from=builder /var/www/html/ /mnt/
+COPY docker-build-root/ /
+
+ENTRYPOINT [ "/dumper.sh" ]

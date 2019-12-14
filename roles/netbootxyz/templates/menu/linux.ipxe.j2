@@ -1,0 +1,29 @@
+#!ipxe
+
+goto ${menu} ||
+
+:linux_menu
+menu Linux Installers - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap Linux Distros:
+{% for key, value in releases.items() | sort(attribute='1.name') %}
+{% if value.enabled is defined and value.menu == "linux" and value.enabled | bool %}
+item {{ key }} ${space} {{ value.name }}
+{% endif %}
+{% endfor %}
+choose menu || goto linux_exit
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto linux_menu
+
+:linux_exit
+clear menu
+exit 0

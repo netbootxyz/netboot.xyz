@@ -1,0 +1,37 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Peppermint
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item 10 ${space} ${os} 10
+choose live_version || goto live_exit
+goto ${live_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "peppermint" and 'squash' in key %}
+{% set kernel_name = value.kernel %}
+:{{ value.version }}
+set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
+{% for key, value in endpoints.items() | sort %}
+{% if key == kernel_name %}
+set kernel_url ${live_endpoint}{{ value.path }}
+{% endif %}
+{% endfor %}
+goto {{ value.version }}-boot
+{% endif %}
+{% endfor %}
+
+:10-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+

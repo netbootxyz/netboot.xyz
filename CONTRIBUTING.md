@@ -49,5 +49,5 @@ idea, feel free to open up a Github [issue] or open up a [Pull Request].
 
 ## Enjoy and have fun!
 
-[issue]: https://github.com/antonym/netboot.xyz/issues/new
-[Pull Request]: https://github.com/antonym/netboot.xyz/pulls
+[issue]: https://github.com/netbootxyz/netboot.xyz/issues/new
+[Pull Request]: https://github.com/netbootxyz/netboot.xyz/pulls

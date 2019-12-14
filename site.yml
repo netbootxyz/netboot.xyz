@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  user: root
+  roles:
+    - netbootxyz
+  vars_files:
+    - endpoints.yml
+    - user_overrides.yml

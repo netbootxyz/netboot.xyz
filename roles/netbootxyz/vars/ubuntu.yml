@@ -1,0 +1,14 @@
+---
+netbootxyz_packages:
+  - apache2
+  - binutils-dev
+  - binutils-aarch64-linux-gnu
+  - dosfstools
+  - gcc-aarch64-linux-gnu
+  - build-essential
+  - genisoimage
+  - git
+  - isolinux
+  - liblzma-dev
+  - syslinux
+  - syslinux-common

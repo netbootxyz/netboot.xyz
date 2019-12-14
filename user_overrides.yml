@@ -1,0 +1,31 @@
+---
+
+# overrides defaults in netbootxyz role
+generate_menus: true
+generate_disks: true
+generate_checksums: true
+
+# set desired site name
+#site_name: mysitename.com
+
+# set desired boot domain
+#boot_domain: boot.mysitename.com
+
+# set boot version
+#boot_version: "2.x"
+
+#bootloader_tftp_enabled: false
+#bootloader_https_enabled: true
+#bootloader_http_enabled: true
+
+# set release overrides from standard netboot.xyz defaults
+#release_overrides:
+#  alpinelinux:
+#    name: "Alpine Linux"
+#  fedora:
+#    mirror: "mirrors.kernel.org"
+
+# set utilities_overrides from standard netboot.xyz defaults
+#utilities_overrides:
+#  supergrub:
+#    enabled: false

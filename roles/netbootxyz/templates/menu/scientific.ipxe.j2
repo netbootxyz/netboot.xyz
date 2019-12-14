@@ -1,0 +1,59 @@
+#!ipxe
+
+# Scientific Linux Operating System
+# https://www.scientificlinux.org/
+
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
+goto ${menu} ||
+
+:scientific
+clear osversion
+set os Scientific Linux
+menu ${os} ${arch}
+{% for item in releases.scientific.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+item other Choose other version [o]
+isset ${osversion} || choose osversion || goto linux_menu
+iseq ${osversion} other || goto scientific_skip_read_osversion
+echo ${cls}
+echo -n Enter version: ${} && read osversion
+:scientific_skip_read_osversion
+set dir ${scientific_base_dir}/${osversion}/${arch}/os
+set repo ${scientific_mirror}/${dir}
+
+goto boottype
+
+:boottype
+set ova ${os} ${osversion}
+menu ${os} ${arch} boot type
+item normal ${ova}
+item rescue ${ova} rescue
+item kickstart ${ova} specify kickstart url
+isset ${bt} || choose bt || goto scientific
+echo ${cls}
+iseq ${bt} rescue && goto rescue ||
+iseq ${bt} kickstart && goto kickstart ||
+goto bootos_images
+
+:rescue
+set params rescue ||
+goto bootos_images
+
+:kickstart
+echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
+set params ks=${ksurl} ||
+goto bootos_images
+
+:bootos_images
+imgfree
+kernel ${scientific_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam}
+initrd ${scientific_mirror}/${dir}/images/pxeboot/initrd.img
+boot
+goto linux_menu
+
+:linux_menu
+clear menu
+exit 0
