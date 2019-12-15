@@ -205,12 +205,12 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   ubuntu-19.10-default-squash:
-    path: /ubuntu-squash/releases/download/ee829212-575f2ecf/
+    path: /ubuntu-squash/releases/download/ee829212-78d4b89c/
     files:
     - filesystem.squashfs
     os: ubuntu
     version: '19.10'
-    flavor: Unity
+    flavor: GNOME
     kernel: ubuntu-19.10-live-kernel
   fedora-31-gnome:
     path: /fedora-assets/releases/download/1.9-808bb0da/
