@@ -14,12 +14,12 @@ endpoints:
     os: ubuntu
     version: '18.04'
   ubuntu-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/18.04.3-9e60a38f/
+    path: /ubuntu-squash/releases/download/18.04.3-ec9c7fcb/
     files:
     - filesystem.squashfs
     os: ubuntu
     version: '18.04'
-    flavor: Unity
+    flavor: GNOME
     kernel: ubuntu-18.04-live-kernel
   debian-10-live-kernel:
     path: /debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
