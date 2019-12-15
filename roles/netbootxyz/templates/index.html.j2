@@ -42,14 +42,12 @@ chain --autofree http://{{ boot_domain }}/menu.ipxe || echo HTTP failed, localbo
        <th> Description </th>
     </tr>
     <!-- table rows -->
-    {% for bootloader_name in bootloader_disks %}
     {% for item in bootloaders.legacy %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ bootloader_name }}{{ item.output_bin }}">{{ bootloader_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ bootloader_name }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
-    {% endfor %}
     {% endfor %}
   </table>
 
@@ -63,14 +61,12 @@ chain --autofree http://{{ boot_domain }}/menu.ipxe || echo HTTP failed, localbo
        <th> Description </th>
     </tr>
     <!-- table rows -->
-    {% for bootloader_name in bootloader_disks %}
     {% for item in bootloaders.uefi %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ bootloader_name }}{{ item.output_bin }}">{{ bootloader_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ bootloader_name }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
-    {% endfor %}
     {% endfor %}
   </table>
   </div>
