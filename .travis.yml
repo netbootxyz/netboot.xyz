@@ -1,14 +1,10 @@
 sudo: true
-
 language: bash
-
 services:
   - docker
-
 env:
   global:
     - DEBIAN_FRONTEND="noninteractive"
-
 jobs:
   include:
     - stage: test
@@ -23,6 +19,8 @@ jobs:
 
     - stage: development
       if: branch = development AND type != pull_request
+      before_install:
+        - ./script/retrieve_certs
       script:
         - ./script/build_release dev
       after_failure:
@@ -49,7 +47,7 @@ jobs:
     - stage: release-candidate
       if: branch = RC AND type != pull_request
       before_install:
-        - ./script/pre_install
+        - ./script/retrieve_certs
       script:
         - ./script/build_release rc
       workspaces:
@@ -109,6 +107,8 @@ jobs:
 
     - stage: release
       if: branch = master AND type != pull_request
+      before_install:
+        - ./script/retrieve_certs
       script:
         - ./script/build_release release
       workspaces:

@@ -58,8 +58,12 @@ item netinfo ${space} Network card info
 item about ${space} About netboot.xyz
 {% if sigs_menu | bool %}
 item --gap Signature Checks:
-item sig_check ${space} netboot.xyz [ enabled: ${sigs_enabled} ]
+{% if sigs_enabled | bool %}
+item sig_check ${space} {{ site_name }} [ enabled: ${sigs_enabled} ]
+{% endif %}
+{% if img_sigs_enabled | bool %}
 item img_sigs_check ${space} Images [ enabled: ${img_sigs_enabled} ]
+{% endif %}
 {% endif %}
 {% if custom_github_menus | bool %}
 isset ${github_user} && item --gap Custom Github Menu: ||

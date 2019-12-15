@@ -15,7 +15,7 @@
   - name: Generate signatures for source files
     shell: |
       openssl cms -sign -binary -noattr -in {{ netbootxyz_root }}/{{ item }} \
-      -signer {{ codesign_cert_location }} -inkey {{ codesign_key_location }} -certfile {{ cert_file_location }} -outform DER \
+      -signer {{ codesign_cert_filename }} -inkey {{ codesign_key_filename }} -certfile {{ cert_file_filename }} -outform DER \
       -out {{ sigs_dir }}/{{ item }}.sig
     args:
       chdir: "{{ cert_dir }}"
