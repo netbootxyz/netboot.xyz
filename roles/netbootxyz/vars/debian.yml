@@ -4,6 +4,7 @@ netbootxyz_packages:
   - binutils-dev
   - binutils-aarch64-linux-gnu
   - dosfstools
+  - figlet
   - gcc-aarch64-linux-gnu
   - build-essential
   - genisoimage
