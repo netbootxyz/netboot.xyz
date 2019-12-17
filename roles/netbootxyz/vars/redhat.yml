@@ -1,6 +1,7 @@
 ---
 netbootxyz_packages:
   - dosfstools
+  - figlet
   - gcc
   - genisoimage
   - git
