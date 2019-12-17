@@ -464,7 +464,7 @@ bootloaders:
     - type: "USB"
       ipxe_bin: "ipxe-efi.usb"
       output_bin: "-efi.usb"
-      desc: "Used for booting from GRUB/EXTLINUX"
+      desc: "Used for creation of USB Keys"
     - type: "DHCP"
       ipxe_bin: "ipxe.efi"
       output_bin: ".efi"
