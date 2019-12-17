@@ -7,4 +7,5 @@ netbootxyz_packages:
   - httpd
   - minizip-devel
   - syslinux
+  - toilet
   - xz-devel

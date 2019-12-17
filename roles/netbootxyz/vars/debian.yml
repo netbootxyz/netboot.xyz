@@ -12,3 +12,4 @@ netbootxyz_packages:
   - liblzma-dev
   - syslinux
   - syslinux-common
+  - toilet
