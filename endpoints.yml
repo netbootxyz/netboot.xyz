@@ -464,7 +464,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-18.04-live-kernel
   peppermint-10-default-squash:
-    path: /ubuntu-squash/releases/download/10-3bce362b/
+    path: /ubuntu-squash/releases/download/20191210-08367a34/
     files:
     - filesystem.squashfs
     os: peppermint
