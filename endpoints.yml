@@ -424,7 +424,7 @@ endpoints:
     flavor: gui
     version: 18.1.0
   mint-19-xfce-squash:
-    path: /ubuntu-squash/releases/download/19.2-69724a44/
+    path: /ubuntu-squash/releases/download/19.3-69724a44/
     files:
     - filesystem.squashfs
     os: mint
