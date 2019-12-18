@@ -432,7 +432,7 @@ endpoints:
     flavor: xfce
     kernel: ubuntu-18.04-live-kernel
   mint-19-mate-squash:
-    path: /ubuntu-squash/releases/download/19.2-0b1e2ee6/
+    path: /ubuntu-squash/releases/download/19.3-0b1e2ee6/
     files:
     - filesystem.squashfs
     os: mint
