@@ -36,6 +36,9 @@ checksums_filename: "{{ site_name }}-sha256-checksums.txt"
 
 # bootloader options
 generate_disks: true
+generate_disks_legacy: true
+generate_disks_efi: true
+generate_disks_arm: false
 bootloader_https_enabled: true
 bootloader_http_enabled: true
 bootloader_disks:
