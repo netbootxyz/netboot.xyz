@@ -24,6 +24,27 @@
       path: "{{ netbootxyz_root }}"
       state: directory
 
+  - name: Get current menu version
+    shell: cat version.txt
+    register: menu_version
+    when:
+      - generate_version_file | bool
+    tags:
+      - skip_ansible_lint
+
+  - name: Set menu version
+    set_fact:
+      upstream_version: "{{ menu_version.stdout }}"
+    when:
+      - generate_version_file | bool
+
+  - name: Generate version.ipxe for upstream
+    template:
+      src: "version.ipxe.j2"
+      dest: "{{ netbootxyz_root }}/version.ipxe"
+    when:
+      - generate_version_file | bool
+
   - name: Generate netboot.xyz source files templates
     template:
       src: "{{ item.src }}"
