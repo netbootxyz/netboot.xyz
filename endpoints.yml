@@ -519,3 +519,13 @@ endpoints:
     version: eoan
     flavor: eoan
     kernel: ubuntu-19.10-live-kernel
+  kde-neon-user:
+    path: /ubuntu-squash/releases/download/20191205-1116-0e301ad7/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: neon
+    version: '18.04'
+    flavor: user
+    kernel: kde-neon-user
