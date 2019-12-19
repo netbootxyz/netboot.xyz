@@ -53,6 +53,7 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
       -e "/^boot_version/c\boot_version: \"${HARD_RELEASE}\"" \
       -e "/^boot_domain/c\boot_domain: ${LIVE_URL}" \
       user_overrides.yml
+    echo "upstream_version: ${BOOT_VERSION}" >> script/netbootxyz-overrides.yml
     docker build -t localbuild -f ${DOCKER_FILE} .
     docker run --rm -it -v $(pwd):/buildout localbuild
   fi
@@ -61,6 +62,7 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
       -e "/^boot_version/c\boot_version: \"${HARD_RC}\"" \
       -e "/^boot_domain/c\boot_domain: ${LIVE_URL}/rc" \
       user_overrides.yml
+    echo "upstream_version: ${BOOT_VERSION}" >> script/netbootxyz-overrides.yml
     docker build -t localbuild -f ${DOCKER_FILE} .
     docker run --rm -it -v $(pwd):/buildout localbuild
   fi
