@@ -484,13 +484,15 @@ endpoints:
     flavor: default
     kernel: backbox-6-default-squash
   q4os-3.9-default-squash:
-    path: /debian-squash/releases/download/3.9-a721c7cc/
+    path: /debian-squash/releases/download/3.9-7c9b0332/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Q4OS
     version: '3.9'
     flavor: trinity
-    kernel: debian-10-live-kernel
+    kernel: q4os-3.9-default-squash
   q4os-3.9-plasma-squash:
     path: /debian-squash/releases/download/3.9-8b894afb/
     files:
