@@ -468,13 +468,15 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-18.04-live-kernel
   peppermint-10-default-squash:
-    path: /ubuntu-squash/releases/download/20191210-08367a34/
+    path: /ubuntu-squash/releases/download/20191210-9c6b8ab1/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: peppermint
     version: '10'
     flavor: LXDE
-    kernel: ubuntu-18.04-live-kernel
+    kernel: peppermint-10-default-squash
   backbox-6-default-squash:
     path: /ubuntu-squash/releases/download/6-ff530dc8/
     files:
