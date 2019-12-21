@@ -512,13 +512,15 @@ endpoints:
     flavor: plasma
     kernel: q4os-3.9-default-squash
   voyager-bionic-squash:
-    path: /ubuntu-squash/releases/download/bionic-c535c643/
+    path: /ubuntu-squash/releases/download/bionic-0e8c475e/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Voyager
     version: bionic
     flavor: bionic
-    kernel: ubuntu-18.04-live-kernel
+    kernel: voyager-bionic-squash
   voyager-buster-squash:
     path: /debian-squash/releases/download/buster-1e606829/
     files:
