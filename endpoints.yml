@@ -181,7 +181,7 @@ endpoints:
     flavor: kde
     kernel: debian-10-live-kernel
   debian-10-lxde-squash:
-    path: /debian-squash/releases/download/10.2.0-30a4aa90/
+    path: /debian-squash/releases/download/10.2.0-857dadd8/
     files:
     - filesystem.squashfs
     os: debian
