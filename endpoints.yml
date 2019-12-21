@@ -530,13 +530,15 @@ endpoints:
     flavor: buster
     kernel: debian-10-live-kernel
   voyager-eoan-squash:
-    path: /ubuntu-squash/releases/download/eoan-5a6a8fab/
+    path: /ubuntu-squash/releases/download/eoan-6d5edebf/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Voyager
     version: eoan
     flavor: eoan
-    kernel: ubuntu-19.10-live-kernel
+    kernel: voyager-eoan-squash
   kde-neon-user:
     path: /ubuntu-squash/releases/download/20191205-1116-0e301ad7/
     files:
