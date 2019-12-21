@@ -426,13 +426,13 @@ endpoints:
     flavor: gui
     version: 18.1.0
   mint-19-xfce-squash:
-    path: /ubuntu-squash/releases/download/19.3-69724a44/
+    path: /ubuntu-squash/releases/download/19.3-2ab2d1ac/
     files:
     - filesystem.squashfs
     os: mint
     version: '19'
     flavor: xfce
-    kernel: ubuntu-18.04-live-kernel
+    kernel: mint-19-cinnamon-squash
   mint-19-mate-squash:
     path: /ubuntu-squash/releases/download/19.3-0b1e2ee6/
     files:
