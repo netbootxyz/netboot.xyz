@@ -403,12 +403,15 @@ endpoints:
     version: '19.10'
     kernel: ubuntu-19.10-live-kernel
   pop-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/57-b1e9a9cc/
+    path: /ubuntu-squash/releases/download/58-600b3df6/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: pop
     version: '18.04'
-    kernel: ubuntu-18.04-live-kernel
+    kernel: pop-18.04-default-squash
+    flavor: intel-amd
   manjaro-18.1.0-architect-kernel:
     path: /manjaro-core-18.x/releases/download/4.19.69-1-MANJARO-6946b4cf/
     files:
