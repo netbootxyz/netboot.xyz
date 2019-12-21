@@ -565,3 +565,13 @@ endpoints:
     version: '18.04'
     flavor: nvidia
     kernel: pop-18.04-nvidia-squash
+  pop-19.10-nvidia-squash:
+    path: /ubuntu-squash/releases/download/10-3882d464/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '19.10'
+    flavor: nvidia
+    kernel: pop-19.10-nvidia-squash
