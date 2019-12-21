@@ -529,3 +529,13 @@ endpoints:
     version: '18.04'
     flavor: user
     kernel: kde-neon-user
+  regolith-current:
+    path: /ubuntu-squash/releases/download/1.2-cba1b427/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: regolith
+    version: current
+    flavor: ubuntu
+    kernel: regolith-current
