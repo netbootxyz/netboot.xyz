@@ -442,13 +442,15 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-18.04-live-kernel
   mint-19-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/19.3-0830904d/
+    path: /ubuntu-squash/releases/download/19.3-07dde199/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: mint
     version: '19'
     flavor: Cinnamon
-    kernel: ubuntu-18.04-live-kernel
+    kernel: mint-19-cinnamon-squash
   zorin-15-gnome-squash:
     path: /ubuntu-squash/releases/download/15-ad033efa/
     files:
