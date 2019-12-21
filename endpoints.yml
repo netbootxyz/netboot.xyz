@@ -458,13 +458,15 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-19-cinnamon-squash
   zorin-15-gnome-squash:
-    path: /ubuntu-squash/releases/download/15-ad033efa/
+    path: /ubuntu-squash/releases/download/15-0d68e4b7/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: zorin
     version: '15'
     flavor: GNOME
-    kernel: ubuntu-18.04-live-kernel
+    kernel: zorin-15-gnome-squash
   zorin-15-xfce-squash:
     path: /ubuntu-squash/releases/download/15-f5884501/
     files:
