@@ -349,7 +349,7 @@ endpoints:
     flavor: MATE
     kernel: kali-rolling-live-kernel
   kali-rolling-live-kernel:
-    path: /debian-core-10/releases/download/2019.4-3ed8bff4/
+    path: /debian-core-10/releases/download/2019.4-e865a2ba/
     files:
     - initrd
     - vmlinuz
