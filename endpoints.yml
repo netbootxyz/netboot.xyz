@@ -472,13 +472,15 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-18.04-live-kernel
   backbox-6-default-squash:
-    path: /ubuntu-squash/releases/download/6-b44ce5ee/
+    path: /ubuntu-squash/releases/download/6-ff530dc8/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: BackBox
     version: '6'
     flavor: default
-    kernel: ubuntu-18.04-live-kernel
+    kernel: backbox-6-default-squash
   q4os-3.9-default-squash:
     path: /debian-squash/releases/download/3.9-a721c7cc/
     files:
