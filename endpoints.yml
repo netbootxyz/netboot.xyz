@@ -494,13 +494,13 @@ endpoints:
     flavor: trinity
     kernel: q4os-3.9-default-squash
   q4os-3.9-plasma-squash:
-    path: /debian-squash/releases/download/3.9-8b894afb/
+    path: /debian-squash/releases/download/3.9-1a29e21a/
     files:
     - filesystem.squashfs
     os: Q4OS
     version: '3.9'
     flavor: plasma
-    kernel: debian-10-live-kernel
+    kernel: q4os-3.9-default-squash
   voyager-bionic-squash:
     path: /ubuntu-squash/releases/download/bionic-c535c643/
     files:
