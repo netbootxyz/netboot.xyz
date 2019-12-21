@@ -18,8 +18,8 @@ goto current-boot
 
 :user-boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
-initrd ${kernel_url}initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url}
+initrd ${kernel_url}initrd.lz
 boot
 
 :live_exit
