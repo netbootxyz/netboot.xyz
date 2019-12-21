@@ -530,7 +530,7 @@ endpoints:
     flavor: user
     kernel: kde-neon-user
   regolith-current:
-    path: /ubuntu-squash/releases/download/1.2-cba1b427/
+    path: /ubuntu-squash/releases/download/1.2-e759dca4/
     files:
     - initrd
     - vmlinuz
