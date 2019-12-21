@@ -318,12 +318,14 @@ endpoints:
     flavor: XFCE
     kernel: manjaro-18.1.0-gui-kernel
   elementaryos-5-default-squash:
-    path: /ubuntu-squash/releases/download/5-14ff2c98/
+    path: /ubuntu-squash/releases/download/5-5d6d224c/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: elementary-os
     version: '5'
-    kernel: ubuntu-18.04-live-kernel
+    kernel: elementaryos-5-default-squash
   kali-xfce-squash:
     path: /debian-squash/releases/download/2019.4-00ef2578/
     files:
