@@ -552,3 +552,13 @@ endpoints:
     version: current
     flavor: ubuntu
     kernel: regolith-current
+  pop-18.04-nvidia-squash:
+    path: /ubuntu-squash/releases/download/58-316fd7f7/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '18.04'
+    flavor: nvidia
+    kernel: pop-18.04-nvidia-squash
