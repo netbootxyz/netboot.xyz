@@ -468,13 +468,13 @@ endpoints:
     flavor: GNOME
     kernel: zorin-15-gnome-squash
   zorin-15-xfce-squash:
-    path: /ubuntu-squash/releases/download/15-f5884501/
+    path: /ubuntu-squash/releases/download/15-8af7469b/
     files:
     - filesystem.squashfs
     os: zorin
     version: '15'
     flavor: XFCE
-    kernel: ubuntu-18.04-live-kernel
+    kernel: zorin-15-gnome-squash
   peppermint-10-default-squash:
     path: /ubuntu-squash/releases/download/20191210-9c6b8ab1/
     files:
