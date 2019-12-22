@@ -583,3 +583,12 @@ endpoints:
     version: '19.10'
     flavor: nvidia
     kernel: pop-19.10-nvidia-squash
+  linux-lite-4-squash:
+    path: /ubuntu-squash/releases/download/4.6-816de7f4/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: lite
+    version: '4'
+    kernel: linux-lite-4-squash
