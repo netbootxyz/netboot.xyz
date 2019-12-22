@@ -1,14 +1,10 @@
 sudo: true
-
 language: bash
-
 services:
   - docker
-
 env:
   global:
     - DEBIAN_FRONTEND="noninteractive"
-
 jobs:
   include:
     - stage: test
@@ -23,6 +19,8 @@ jobs:
 
     - stage: development
       if: branch = development AND type != pull_request
+      before_install:
+        - ./script/retrieve_certs
       script:
         - ./script/build_release dev
       after_failure:
@@ -49,7 +47,7 @@ jobs:
     - stage: release-candidate
       if: branch = RC AND type != pull_request
       before_install:
-        - ./script/pre_install
+        - ./script/retrieve_certs
       script:
         - ./script/build_release rc
       workspaces:
@@ -66,7 +64,7 @@ jobs:
           edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
-          bucket: $BUCKET_LIVE
+          bucket: $BUCKET_STAGING
           local_dir: s3out-latest
           upload-dir: rc
           skip_cleanup: true
@@ -76,7 +74,7 @@ jobs:
           edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
-          bucket: $BUCKET_LIVE
+          bucket: $BUCKET_STAGING
           local_dir: s3out
           upload-dir: $RELEASE_TAG
           skip_cleanup: true
@@ -104,11 +102,13 @@ jobs:
             branch: RC
       after_deploy:
         - aws configure set preview.cloudfront true
-        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "rc/*" "rc/ipxe/*"
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_STAGING --paths "rc/*" "rc/ipxe/*"
         - ./script/message rc-push
 
     - stage: release
       if: branch = master AND type != pull_request
+      before_install:
+        - ./script/retrieve_certs
       script:
         - ./script/build_release release
       workspaces:
@@ -125,7 +125,7 @@ jobs:
           edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
-          bucket: $BUCKET_LIVE
+          bucket: $BUCKET_PROD
           local_dir: s3out-latest
           skip_cleanup: true
           on:
@@ -134,7 +134,7 @@ jobs:
           edge: true
           access_key_id: $AWS_ACCESS_KEY_ID
           secret_access_key: $AWS_SECRET_ACCESS_KEY
-          bucket: $BUCKET_LIVE
+          bucket: $BUCKET_PROD
           local_dir: s3out
           upload-dir: $RELEASE_TAG
           skip_cleanup: true
@@ -161,5 +161,5 @@ jobs:
             branch: master
       after_deploy:
         - aws configure set preview.cloudfront true
-        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_BOOT --paths "/*" "/ipxe/*"
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID_PROD --paths "/*" "/ipxe/*"
         - ./script/message live-push

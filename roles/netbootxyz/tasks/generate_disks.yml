@@ -9,3 +9,7 @@
   - include: generate_disks_efi.yml
     when:
     - generate_disks_efi | default(true) | bool
+
+  - include: generate_disks_arm.yml
+    when:
+    - generate_disks_arm | default(false) | bool

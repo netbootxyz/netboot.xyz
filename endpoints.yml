@@ -1,28 +1,28 @@
 endpoints:
   ubuntu-19.10-live-kernel:
-    path: /ubuntu-core-19.10/releases/download/5.3.0.18.21-aa695b8a/
+    path: /ubuntu-core-19.10/releases/download/19.10-055f9330/
     files:
     - initrd
     - vmlinuz
     os: ubuntu
     version: '19.10'
   ubuntu-18.04-live-kernel:
-    path: /ubuntu-core-18.04/releases/download/4.15.0.20.23-91c3d317/
+    path: /ubuntu-core-18.04/releases/download/18.04.3-a9604c5c/
     files:
     - initrd
     - vmlinuz
     os: ubuntu
     version: '18.04'
   ubuntu-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/18.04.3-9e60a38f/
+    path: /ubuntu-squash/releases/download/18.04.3-ec9c7fcb/
     files:
     - filesystem.squashfs
     os: ubuntu
     version: '18.04'
-    flavor: Unity
+    flavor: GNOME
     kernel: ubuntu-18.04-live-kernel
   debian-10-live-kernel:
-    path: /debian-core-10/releases/download/4.19.67-2+deb10u1-4acbfed0/
+    path: /debian-core-10/releases/download/10.2.0-a6a0d71a/
     files:
     - initrd
     - vmlinuz
@@ -36,7 +36,7 @@ endpoints:
     os: debian
     version: 9
   debian-10-default-squash:
-    path: /debian-squash/releases/download/10.2.0-600c59c0/
+    path: /debian-squash/releases/download/10.2.0-261680b8/
     files:
     - filesystem.squashfs
     os: debian
@@ -141,7 +141,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-19.10-live-kernel
   debian-10-xfce-squash:
-    path: /debian-squash/releases/download/10.2.0-a0eae41d/
+    path: /debian-squash/releases/download/10.2.0-88850720/
     files:
     - filesystem.squashfs
     os: debian
@@ -149,7 +149,7 @@ endpoints:
     flavor: xfce
     kernel: debian-10-live-kernel
   debian-10-gnome-squash:
-    path: /debian-squash/releases/download/10.2.0-787d3b4a/
+    path: /debian-squash/releases/download/10.2.0-7190cd0e/
     files:
     - filesystem.squashfs
     os: debian
@@ -157,7 +157,7 @@ endpoints:
     flavor: gnome
     kernel: debian-10-live-kernel
   debian-10-cinnamon-squash:
-    path: /debian-squash/releases/download/10.2.0-51162b7a/
+    path: /debian-squash/releases/download/10.2.0-aa8809e8/
     files:
     - filesystem.squashfs
     os: debian
@@ -173,7 +173,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-19.10-live-kernel
   debian-10-kde-squash:
-    path: /debian-squash/releases/download/10.2.0-88a7a1a3/
+    path: /debian-squash/releases/download/10.2.0-ed31d8ba/
     files:
     - filesystem.squashfs
     os: debian
@@ -181,7 +181,7 @@ endpoints:
     flavor: kde
     kernel: debian-10-live-kernel
   debian-10-lxde-squash:
-    path: /debian-squash/releases/download/10.2.0-30a4aa90/
+    path: /debian-squash/releases/download/10.2.0-857dadd8/
     files:
     - filesystem.squashfs
     os: debian
@@ -189,7 +189,7 @@ endpoints:
     flavor: lxde
     kernel: debian-10-live-kernel
   debian-10-lxqt-squash:
-    path: /debian-squash/releases/download/10.2.0-39d7e341/
+    path: /debian-squash/releases/download/10.2.0-be320467/
     files:
     - filesystem.squashfs
     os: debian
@@ -197,7 +197,7 @@ endpoints:
     flavor: lxqt
     kernel: debian-10-live-kernel
   debian-10-mate-squash:
-    path: /debian-squash/releases/download/10.2.0-466ca031/
+    path: /debian-squash/releases/download/10.2.0-c7211dca/
     files:
     - filesystem.squashfs
     os: debian
@@ -205,12 +205,12 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   ubuntu-19.10-default-squash:
-    path: /ubuntu-squash/releases/download/ee829212-575f2ecf/
+    path: /ubuntu-squash/releases/download/ee829212-78d4b89c/
     files:
     - filesystem.squashfs
     os: ubuntu
     version: '19.10'
-    flavor: Unity
+    flavor: GNOME
     kernel: ubuntu-19.10-live-kernel
   fedora-31-gnome:
     path: /fedora-assets/releases/download/1.9-808bb0da/
@@ -318,12 +318,14 @@ endpoints:
     flavor: XFCE
     kernel: manjaro-18.1.0-gui-kernel
   elementaryos-5-default-squash:
-    path: /ubuntu-squash/releases/download/5-14ff2c98/
+    path: /ubuntu-squash/releases/download/5-5d6d224c/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: elementary-os
     version: '5'
-    kernel: ubuntu-18.04-live-kernel
+    kernel: elementaryos-5-default-squash
   kali-xfce-squash:
     path: /debian-squash/releases/download/2019.4-00ef2578/
     files:
@@ -349,7 +351,7 @@ endpoints:
     flavor: MATE
     kernel: kali-rolling-live-kernel
   kali-rolling-live-kernel:
-    path: /debian-core-10/releases/download/5.3.9-3kali1-e9b26579/
+    path: /debian-core-10/releases/download/2019.4-e865a2ba/
     files:
     - initrd
     - vmlinuz
@@ -394,19 +396,25 @@ endpoints:
     version: '4.0'
     kernel: tails-4.0-live-kernel
   pop-19.10-default-squash:
-    path: /ubuntu-squash/releases/download/10-317de200/
+    path: /ubuntu-squash/releases/download/10-bdc3fe0a/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: pop
     version: '19.10'
-    kernel: ubuntu-19.10-live-kernel
+    kernel: pop-19.10-default-squash
+    flavor: intel-amd
   pop-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/57-b1e9a9cc/
+    path: /ubuntu-squash/releases/download/58-600b3df6/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: pop
     version: '18.04'
-    kernel: ubuntu-18.04-live-kernel
+    kernel: pop-18.04-default-squash
+    flavor: intel-amd
   manjaro-18.1.0-architect-kernel:
     path: /manjaro-core-18.x/releases/download/4.19.69-1-MANJARO-6946b4cf/
     files:
@@ -424,15 +432,15 @@ endpoints:
     flavor: gui
     version: 18.1.0
   mint-19-xfce-squash:
-    path: /ubuntu-squash/releases/download/19.2-69724a44/
+    path: /ubuntu-squash/releases/download/19.3-2ab2d1ac/
     files:
     - filesystem.squashfs
     os: mint
     version: '19'
     flavor: xfce
-    kernel: ubuntu-18.04-live-kernel
+    kernel: mint-19-cinnamon-squash
   mint-19-mate-squash:
-    path: /ubuntu-squash/releases/download/19.2-0b1e2ee6/
+    path: /ubuntu-squash/releases/download/19.3-0b1e2ee6/
     files:
     - filesystem.squashfs
     os: mint
@@ -440,82 +448,156 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-18.04-live-kernel
   mint-19-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/19.2-0830904d/
+    path: /ubuntu-squash/releases/download/19.3-07dde199/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: mint
     version: '19'
     flavor: Cinnamon
-    kernel: ubuntu-18.04-live-kernel
+    kernel: mint-19-cinnamon-squash
   zorin-15-gnome-squash:
-    path: /ubuntu-squash/releases/download/15-ad033efa/
+    path: /ubuntu-squash/releases/download/15-0d68e4b7/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: zorin
     version: '15'
     flavor: GNOME
-    kernel: ubuntu-18.04-live-kernel
+    kernel: zorin-15-gnome-squash
   zorin-15-xfce-squash:
-    path: /ubuntu-squash/releases/download/15-f5884501/
+    path: /ubuntu-squash/releases/download/15-8af7469b/
     files:
     - filesystem.squashfs
     os: zorin
     version: '15'
     flavor: XFCE
-    kernel: ubuntu-18.04-live-kernel
+    kernel: zorin-15-gnome-squash
   peppermint-10-default-squash:
-    path: /ubuntu-squash/releases/download/10-3bce362b/
+    path: /ubuntu-squash/releases/download/20191210-9c6b8ab1/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: peppermint
     version: '10'
     flavor: LXDE
-    kernel: ubuntu-18.04-live-kernel
+    kernel: peppermint-10-default-squash
   backbox-6-default-squash:
-    path: /ubuntu-squash/releases/download/6-b44ce5ee/
+    path: /ubuntu-squash/releases/download/6-ff530dc8/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: BackBox
     version: '6'
     flavor: default
-    kernel: ubuntu-18.04-live-kernel
+    kernel: backbox-6-default-squash
   q4os-3.9-default-squash:
-    path: /debian-squash/releases/download/3.9-a721c7cc/
+    path: /debian-squash/releases/download/3.9-7c9b0332/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Q4OS
     version: '3.9'
     flavor: trinity
-    kernel: debian-10-live-kernel
+    kernel: q4os-3.9-default-squash
   q4os-3.9-plasma-squash:
-    path: /debian-squash/releases/download/3.9-8b894afb/
+    path: /debian-squash/releases/download/3.9-1a29e21a/
     files:
     - filesystem.squashfs
     os: Q4OS
     version: '3.9'
     flavor: plasma
-    kernel: debian-10-live-kernel
+    kernel: q4os-3.9-default-squash
   voyager-bionic-squash:
-    path: /ubuntu-squash/releases/download/bionic-c535c643/
+    path: /ubuntu-squash/releases/download/bionic-0e8c475e/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Voyager
     version: bionic
     flavor: bionic
-    kernel: ubuntu-18.04-live-kernel
+    kernel: voyager-bionic-squash
   voyager-buster-squash:
-    path: /debian-squash/releases/download/buster-1e606829/
+    path: /debian-squash/releases/download/buster-e9d36b68/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Voyager
     version: buster
     flavor: buster
-    kernel: debian-10-live-kernel
+    kernel: voyager-buster-squash
   voyager-eoan-squash:
-    path: /ubuntu-squash/releases/download/eoan-5a6a8fab/
+    path: /ubuntu-squash/releases/download/eoan-6d5edebf/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: Voyager
     version: eoan
     flavor: eoan
-    kernel: ubuntu-19.10-live-kernel
+    kernel: voyager-eoan-squash
+  kde-neon-user:
+    path: /ubuntu-squash/releases/download/20191205-1116-0e301ad7/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: neon
+    version: '18.04'
+    flavor: user
+    kernel: kde-neon-user
+  regolith-current:
+    path: /ubuntu-squash/releases/download/1.2-e759dca4/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: regolith
+    version: current
+    flavor: ubuntu
+    kernel: regolith-current
+  pop-18.04-nvidia-squash:
+    path: /ubuntu-squash/releases/download/58-316fd7f7/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '18.04'
+    flavor: nvidia
+    kernel: pop-18.04-nvidia-squash
+  pop-19.10-nvidia-squash:
+    path: /ubuntu-squash/releases/download/10-3882d464/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '19.10'
+    flavor: nvidia
+    kernel: pop-19.10-nvidia-squash
+  linux-lite-4-squash:
+    path: /ubuntu-squash/releases/download/4.6-816de7f4/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: lite
+    version: '4'
+    kernel: linux-lite-4-squash
+  deepin-15-squash:
+    path: /debian-squash/releases/download/15.11-f87a92e4/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Deepin
+    version: '15'
+    kernel: deepin-15-squash
