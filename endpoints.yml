@@ -592,3 +592,12 @@ endpoints:
     os: lite
     version: '4'
     kernel: linux-lite-4-squash
+  deepin-15-squash:
+    path: /debian-squash/releases/download/15.11-f87a92e4/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Deepin
+    version: '15'
+    kernel: deepin-15-squash
