@@ -1,0 +1,27 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Deepin
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item 15 ${space} ${os} 15
+choose live_version || goto live_exit
+goto ${live_version}
+
+:15
+set squash_url ${live_endpoint}{{ endpoints["deepin-15-squash"].path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ endpoints["deepin-15-squash"].path }}
+goto live-boot
+
+:15-boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} union=overlay livecd-installer initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
