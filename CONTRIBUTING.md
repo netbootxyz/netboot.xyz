@@ -44,8 +44,18 @@ especially when you may have limited bandwidth.
 
 ### Submit ideas
 
-I'm always looking for new ideas to make the tool more useful, if you have an
+We are always looking for new ideas to make the tool more useful, if you have an
 idea, feel free to open up a Github [issue] or open up a [Pull Request].
+
+### Communication Channels
+
+* [Discord](https://discord.gg/An6PA2a) Chat Server for netboot.xyz discussions, questions, and development
+* Follow us on [Twitter](https://twitter.com/netbootxyz) at [@netbootxyz](https://twitter.com/netbootxyz)
+  for the latest updates
+
+### Donate
+
+We have set up an [Open Collective](https://opencollective.com/netbootxyz) to open the project up to those who wish to donate to help out the project. This may cover hosting and domain fees, hardware for validation testing, or anything else that comes up in maintaining a project like this. Every little bit will help! If you enjoy the work we do, please support us!
 
 ## Enjoy and have fun!
 
