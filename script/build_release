@@ -4,21 +4,25 @@ set -e
 TYPE=$1
 HARD_RELEASE="2.x"
 HARD_RC="2.x-RC"
-LIVE_URL="staging.boot.netboot.xyz"
+DEV_URL="dev.boot.netboot.xyz"
+STAGING_URL="staging.boot.netboot.xyz"
+PROD_URL="boot.netboot.xyz"
+DOCKER_FILE="Dockerfile-build.production"
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
-  BOOT_DOMAIN="s3.amazonaws.com/${BUCKET_DEV}/${TRAVIS_COMMIT}"
+  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${TRAVIS_COMMIT}"
   BOOT_VERSION="Development"
 elif [[ "${TYPE}" == "pr" ]]; then
   BOOT_DOMAIN="test.com"
   BOOT_VERSION="test"
+  DOCKER_FILE="Dockerfile-build"
 elif [[ "${TYPE}" == "rc" ]]; then
   BOOT_VERSION=$(cat version.txt)-RC
-  BOOT_DOMAIN="${LIVE_URL}/${BOOT_VERSION}"
+  BOOT_DOMAIN="${STAGING_URL}/${BOOT_VERSION}"
 elif [[ "${TYPE}" == "release" ]]; then
   BOOT_VERSION=$(cat version.txt)
-  BOOT_DOMAIN="${LIVE_URL}/${BOOT_VERSION}"
+  BOOT_DOMAIN="${PROD_URL}/${BOOT_VERSION}"
 fi
 sed -i \
   "/^#boot_version/c\boot_version: \"${BOOT_VERSION}\"" \
@@ -28,7 +32,7 @@ sed -i \
   user_overrides.yml
 
 # Build release
-docker build -t localbuild -f Dockerfile-build .
+docker build -t localbuild -f ${DOCKER_FILE} .
 docker run --rm -it -v $(pwd):/buildout localbuild
 
 # Generate folder outputs
@@ -41,7 +45,9 @@ rm -Rf ipxe
 tar -czf menus.tar.gz *
 mv menus.tar.gz ../githubout
 cd ..
-
+if [[ "${TYPE}" == "dev" ]]; then
+  cp githubout/menus.tar.gz s3out/
+fi
 
 # Latest style endpoints for RC and Live
 if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
@@ -49,17 +55,17 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
   if [[ "${TYPE}" == "release" ]]; then
     sed -i \
       -e "/^boot_version/c\boot_version: \"${HARD_RELEASE}\"" \
-      -e "/^boot_domain/c\boot_domain: ${LIVE_URL}" \
+      -e "/^boot_domain/c\boot_domain: ${PROD_URL}" \
       user_overrides.yml
-    docker build -t localbuild -f Dockerfile-build .
+    docker build -t localbuild -f ${DOCKER_FILE} .
     docker run --rm -it -v $(pwd):/buildout localbuild
   fi
   if [[ "${TYPE}" == "rc" ]]; then
     sed -i \
       -e "/^boot_version/c\boot_version: \"${HARD_RC}\"" \
-      -e "/^boot_domain/c\boot_domain: ${LIVE_URL}/rc" \
+      -e "/^boot_domain/c\boot_domain: ${STAGING_URL}/rc" \
       user_overrides.yml
-    docker build -t localbuild -f Dockerfile-build .
+    docker build -t localbuild -f ${DOCKER_FILE} .
     docker run --rm -it -v $(pwd):/buildout localbuild
   fi
   mkdir -p s3out-latest

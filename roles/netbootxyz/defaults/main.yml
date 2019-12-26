@@ -29,6 +29,7 @@ live_endpoint: "https://github.com/netbootxyz"
 
 # generates menus
 generate_menus: true
+generate_version_file: false
 
 # generates signatures for source files
 generate_checksums: true
@@ -36,6 +37,9 @@ checksums_filename: "{{ site_name }}-sha256-checksums.txt"
 
 # bootloader options
 generate_disks: true
+generate_disks_legacy: true
+generate_disks_efi: true
+generate_disks_arm: false
 bootloader_https_enabled: true
 bootloader_http_enabled: true
 bootloader_disks:
@@ -74,8 +78,8 @@ releases:
     enabled: true
     menu: "linux"
     versions:
-      - name: "3.10"
-        code_name: "v3.10"
+      - name: "3.11"
+        code_name: "v3.11"
       - name: "Edge (development)"
         code_name: "edge"
   archlinux:
@@ -464,7 +468,7 @@ bootloaders:
     - type: "USB"
       ipxe_bin: "ipxe-efi.usb"
       output_bin: "-efi.usb"
-      desc: "Used for booting from GRUB/EXTLINUX"
+      desc: "Used for creation of USB Keys"
     - type: "DHCP"
       ipxe_bin: "ipxe.efi"
       output_bin: ".efi"

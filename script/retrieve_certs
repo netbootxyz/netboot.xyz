@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# retrieve certs
+git clone https://$GIT_USER:$GIT_AUTH@$GIT_URL certs
+cp certs/certs.tar.enc .
+openssl aes-256-cbc -K $encrypted_9ca5918f08ba_key -iv $encrypted_9ca5918f08ba_iv -in certs.tar.enc -out certs.tar -d
+tar xf certs.tar -C certs

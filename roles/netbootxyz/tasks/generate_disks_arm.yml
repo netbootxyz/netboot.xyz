@@ -1,0 +1,55 @@
+---
+
+    - name: Copy netboot.xyz local EFI iPXE configs
+      copy:
+        src: "ipxe/local/{{ item }}"
+        dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
+      with_items:
+        - colour.h
+        - console.h
+        - crypto.h
+
+    - name: Copy netboot.xyz general.h.efi iPXE config
+      copy:
+        src: "ipxe/local/general.h.efi"
+        dest: "{{ ipxe_source_dir }}/src/config/local/general.h"
+
+    - name: Set trust file to ipxe ca
+      set_fact:
+        trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
+      when: not generate_signatures
+
+    - name: Combine trust files if set
+      set_fact:
+        trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }},{{ cert_dir }}/{{ cert_file_filename }}"
+      when: generate_signatures | bool
+
+    # iPXE workaround
+    # http://lists.ipxe.org/pipermail/ipxe-devel/2018-August/006254.html
+    # apply patch to fix arm64 builds on amd64 builds
+    - name: iPXE Workaround for arm
+      shell: sed -i '/WORKAROUND_CFLAGS/d' arch/arm64/Makefile
+      args:
+        chdir: "{{ ipxe_source_dir }}/src"
+      tags:
+      - skip_ansible_lint
+
+    - name: Compile iPXE bootloader for EFI arm64
+      shell: |
+        make clean
+        make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
+        EMBED={{ bootloader_filename }} \
+             TRUST={{ trust_files }} \
+             bin-arm64-efi/snp.efi
+      args:
+        chdir: "{{ ipxe_source_dir }}/src"
+      tags:
+      - skip_ansible_lint
+
+    - name: Copy iPXE arm64 EFI builds to http directory
+      copy:
+        src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
+        dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
+        remote_src: True
+      with_items:
+        - { src: "bin-arm64-efi/snp.efi", dest: "{{ bootloader_filename }}-arm64.efi" }

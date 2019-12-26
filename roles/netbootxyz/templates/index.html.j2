@@ -1,3 +1,15 @@
+#!ipxe
+####       {{ boot_domain }} initial loader        ####
+#### see https://netboot.xyz for more information ####
+{% if bootloader_https_enabled | bool %}
+set conn_type https
+chain --autofree https://{{ boot_domain }}/menu.ipxe || echo HTTPS failed... attempting HTTP...
+{% endif %}
+{% if bootloader_http_enabled | bool %}
+set conn_type http
+chain --autofree http://{{ boot_domain }}/menu.ipxe || echo HTTP failed, localbooting...
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,12 +23,7 @@
   </style>
   <body>
   <div style="font-family: monospace, fixed; font-weight: bold;">
-  <span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;_&#160;&#160;&#160;_&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;_&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
-  <span style="">&#160;_&#160;__&#160;&#160;&#160;___|&#160;|_|&#160;|__&#160;&#160;&#160;___&#160;&#160;&#160;___&#160;|&#160;|_&#160;&#160;__&#160;&#160;___&#160;&#160;&#160;_&#160;____</span><br />
-  <span style="">|&#160;&#39;_&#160;\&#160;/&#160;_&#160;\&#160;__|&#160;&#39;_&#160;\&#160;/&#160;_&#160;\&#160;/&#160;_&#160;\|&#160;__|&#160;\&#160;\/&#160;/&#160;|&#160;|&#160;|_&#160;&#160;/</span><br />
-  <span style="">|&#160;|&#160;|&#160;|&#160;&#160;__/&#160;|_|&#160;|_)&#160;|&#160;(_)&#160;|&#160;(_)&#160;|&#160;|_&#160;_&#160;&gt;&#160;&#160;&lt;|&#160;|_|&#160;|/&#160;/&#160;</span><br />
-  <span style="">|_|&#160;|_|\___|\__|_.__/&#160;\___/&#160;\___/&#160;\__(_)_/\_\\__,&#160;/___|</span><br />
-  <span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|___/&#160;&#160;&#160;&#160;&#160;</span><br />
+  {{ index_title.stdout }}
   <p>
   Version: {{ boot_version }}<br>
   Powered by <a href=https://netboot.xyz>netboot.xyz</a>
@@ -30,14 +37,12 @@
        <th> Description </th>
     </tr>
     <!-- table rows -->
-    {% for bootloader_name in bootloader_disks %}
     {% for item in bootloaders.legacy %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ bootloader_name }}{{ item.output_bin }}">{{ bootloader_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
-    {% endfor %}
     {% endfor %}
   </table>
 
@@ -51,16 +56,18 @@
        <th> Description </th>
     </tr>
     <!-- table rows -->
-    {% for bootloader_name in bootloader_disks %}
     {% for item in bootloaders.uefi %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ bootloader_name }}{{ item.output_bin }}">{{ bootloader_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
-    {% endfor %}
   </table>
+
+  <p>Checksums<p>
+
+  <a href="ipxe/{{ site_name }}-sha256-checksums.txt">SHA256 checksums</a>
   </div>
   </body>
 </html>

@@ -26,6 +26,12 @@
       src: checksums.txt.j2
       dest: "{{ netbootxyz_root }}/ipxe/{{ checksums_filename }}"
 
+  - name: Generate site name banner for index
+    shell: toilet -f standard {{ site_name }} --html | grep span
+    register: index_title
+    tags:
+      - skip_ansible_lint
+
   - name: Generate netboot.xyz index template
     template:
       src: index.html.j2

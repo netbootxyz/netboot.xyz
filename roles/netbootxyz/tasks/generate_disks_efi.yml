@@ -6,6 +6,7 @@
       dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
     with_items:
       - colour.h
+      - console.h
       - crypto.h
 
   - name: Copy netboot.xyz general.h.efi iPXE config
@@ -74,3 +75,13 @@
       - { src: "bin-x86_64-efi/snponly.efi", dest: "{{ bootloader_filename }}-snponly.efi" }
       - { src: "ipxe-efi.eiso", dest: "{{ bootloader_filename }}-efi.iso" }
       - { src: "ipxe-efi.usb", dest: "{{ bootloader_filename }}-efi.usb" }
+    when: bootloader_filename != "netboot.xyz-packet"
+
+  - name: Copy iPXE EFI builds to http directory for packet
+    copy:
+      src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
+      remote_src: True
+    with_items:
+      - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ bootloader_filename }}.efi" }
+    when: bootloader_filename == "netboot.xyz-packet"

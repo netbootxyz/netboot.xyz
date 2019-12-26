@@ -1,31 +1,33 @@
-## netboot.xyz - v2 - Under Construction
+## netboot.xyz
 
 [![Build Status](https://travis-ci.com/netbootxyz/netboot.xyz.svg?branch=master)](https://travis-ci.com/netbootxyz/netboot.xyz)
 [![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
+[![Release](https://img.shields.io/github/v/release/netbootxyz/netboot.xyz?color=hunter%20green)](https://github.com/netbootxyz/netboot.xyz/releases/latest)
 
 ![netboot.xyz menu](https://netboot.xyz/images/netboot.xyz.gif)
 
 ### Bootloader Downloads
 
-#### EFI Boot Loaders
+#### Legacy (PCBIOS) iPXE Bootloaders
 
 | Type | Bootloader | Description |
 |------|------------|-------------|
-|ISO|[netboot.xyz-efi.iso](https://boot.netboot.xyz/ipxe/netboot.xyz-efi.iso)| Same as ISO (Legacy) but used for EFI BIOS, works in Virtual Box EFI mode |
-|USB|[netboot.xyz-efi.usb](https://boot.netboot.xyz/ipxe/netboot.xyz-efi.usb)| Used for creation of USB Keys|
-|DHCP| [netboot.xyz.efi](https://boot.netboot.xyz/ipxe/netboot.xyz.efi)| DHCP EFI boot image file, uses built-in iPXE NIC drivers|
-|DHCP-snp|[netboot.xyz-snp.efi]() | DHCP EFI boot image file, use if you have NIC issues... need to build|
-
-#### Legacy Boot Loaders
-
-| Type | Bootloader | Description |
-|------|------------|-------------|
-|ISO| [netboot.xyz.iso](https://boot.netboot.xyz/ipxe/netboot.xyz.iso)| Used for CD/DVD, Virtual CDs like DRAC/iLO, VMware, Virtual Box (Legacy) |
-|Floppy| [netboot.xyz.dsk](https://boot.netboot.xyz/ipxe/netboot.xyz.dsk)| Used for 1.44 MB floppies, Virtual floppies like DRAC/iLO, VMware, Virtual Box|
+|ISO| [netboot.xyz.iso](https://boot.netboot.xyz/ipxe/netboot.xyz.iso)| Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box |
 |USB| [netboot.xyz.usb](https://boot.netboot.xyz/ipxe/netboot.xyz.usb)| Used for creation of USB Keys|
-|Kernel| [netboot.xyz.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn)| Used for booting from GRUB/EXTLINUX|
+|Kernel| [netboot.xyz.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn)|Used for booting from GRUB/EXTLINUX|
+|Floppy| [netboot.xyz.dsk](https://boot.netboot.xyz/ipxe/netboot.xyz.dsk)| Virtual floppy disk for DRAC/iLO, VMware, Virtual Box, etc|
 |DHCP| [netboot.xyz.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe)| DHCP boot image file, uses built-in iPXE NIC drivers|
 |DHCP-undionly| [netboot.xyz-undionly.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe)| DHCP boot image file, use if you have NIC issues|
+
+#### UEFI iPXE Bootloaders
+
+| Type | Bootloader | Description |
+|------|------------|-------------|
+|ISO| [netboot.xyz-efi.iso](https://boot.netboot.xyz/ipxe/netboot.xyz-efi.iso)| Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box |
+|USB| [netboot.xyz-efi.usb](https://boot.netboot.xyz/ipxe/netboot.xyz-efi.usb)| Used for creation of USB Keys|
+|DHCP| [netboot.xyz.efi](https://boot.netboot.xyz/ipxe/netboot.xyz.efi)| DHCP boot image file, uses built-in iPXE NIC drivers|
+|DHCP-snp |	[netboot.xyz-snp.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-snp.efi)| EFI w/ Simple Network Protocol, attempts to boot all net devices|
+|DHCP-snponly | [netboot.xyz-snponly.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-snponly.efi)| EFI w/ Simple Network Protocol, only boots from device chained from|
 
 SHA256 checksums are generated during each build of iPXE and are located [here](https://boot.netboot.xyz/ipxe/netboot.xyz-sha256-checksums.txt).  You can also view the scripts that are embedded into the images [here](https://github.com/netbootxyz/netboot.xyz/tree/master/ipxe/disks).
 
@@ -48,18 +50,19 @@ This will load the appropriate netboot.xyz kernel with all of the proper options
 See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get started with are:
 
 * [Downloads](https://netboot.xyz/downloads/)
+* [Self Hosting](https://netboot.xyz/selfhosting/)
 * [Booting Methods](https://netboot.xyz/booting/)
 * [FAQ](https://netboot.xyz/faq/)
 
-If you'd like to contribute to the documentation, the netboot.xyz documenation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
+If you'd like to contribute to the documentation, the netboot.xyz documentation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
 
 ### Self Hosting netboot.xyz
 
-For those users who want to deploy their own netboot.xyz environment, you can leverage
-the same scripts that are used to deploy the hosted environment. The source scripts are
-all ansible templates and can be generated and customized to your preference.
+For those users who want to deploy their own netboot.xyz environment,  you can leverage the same scripts that are used to deploy the hosted environment. The source scripts are all Ansible templates and can be generated and customized to your preference.
 
-#### With Ansible
+Please see the [self-hosting docs](https://netboot.xyz/selfhosting/) for more information but in short:
+
+#### Deploying using Ansible
 
 To generate, run:
 
@@ -69,7 +72,7 @@ ansible-playbook -i inventory site.yml
 
 The build output will be located in /var/www/html by default.
 
-#### With Docker
+#### Deploying with Docker
 
 ```
 docker build -t localbuild -f Dockerfile-build .
@@ -78,13 +81,11 @@ docker run --rm -it -v $(pwd):/buildout localbuild
 
 The build output will be in the generated folder `buildout`
 
-#### Local Overides
+#### Local Overrides
 
-Ansible will handle source generation as well as ipxe disk generation with your settings.  The disk generation was worked on a while back so it needs work to catch it up to the existing state of netboot.xyz.
+Ansible will handle source generation as well as iPXE disk generation with your settings.  It will generate Legacy (PCBIOS) and UEFI iPXE disks that can be used to load into your netboot.xyz environment. If you want to override the defaults, you can put overrides in user_overrides.yml.  See `user_overrides.yml` for examples. 
 
-If you want to override the defaults, you can put overrides in user_overrides.yml.  See file for examples.
-
-Also note many user customizations are located in the boot.cfg file for the IPXE menus. A high level of customization can be achieved using our stock build output and hosting this along with the menus locally. 
+Using the overrides file, you can override all of the settings from the defaults/main.yml so that you can easily change the boot mirror URLs when the menus are rendered.  If you prefer to do this after the fact, you can also edit the boot.cfg to make changes, but keep in mind those changes will not be saved when you redeploy the menu.
 
 #### Self Hosted Custom Options
 
