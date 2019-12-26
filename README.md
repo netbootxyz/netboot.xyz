@@ -50,18 +50,19 @@ This will load the appropriate netboot.xyz kernel with all of the proper options
 See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get started with are:
 
 * [Downloads](https://netboot.xyz/downloads/)
+* [Self Hosting](https://netboot.xyz/selfhosting/)
 * [Booting Methods](https://netboot.xyz/booting/)
 * [FAQ](https://netboot.xyz/faq/)
 
-If you'd like to contribute to the documentation, the netboot.xyz documenation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
+If you'd like to contribute to the documentation, the netboot.xyz documentation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
 
 ### Self Hosting netboot.xyz
 
-For those users who want to deploy their own netboot.xyz environment, you can leverage
-the same scripts that are used to deploy the hosted environment. The source scripts are
-all ansible templates and can be generated and customized to your preference.
+For those users who want to deploy their own netboot.xyz environment,  you can leverage the same scripts that are used to deploy the hosted environment. The source scripts are all Ansible templates and can be generated and customized to your preference.
 
-#### With Ansible
+Please see the [self-hosting docs](https://netboot.xyz/selfhosting/) for more information but in short:
+
+#### Deploying using Ansible
 
 To generate, run:
 
@@ -71,7 +72,7 @@ ansible-playbook -i inventory site.yml
 
 The build output will be located in /var/www/html by default.
 
-#### With Docker
+#### Deploying with Docker
 
 ```
 docker build -t localbuild -f Dockerfile-build .
@@ -80,13 +81,11 @@ docker run --rm -it -v $(pwd):/buildout localbuild
 
 The build output will be in the generated folder `buildout`
 
-#### Local Overides
+#### Local Overrides
 
-Ansible will handle source generation as well as ipxe disk generation with your settings.  The disk generation was worked on a while back so it needs work to catch it up to the existing state of netboot.xyz.
+Ansible will handle source generation as well as iPXE disk generation with your settings.  It will generate Legacy (PCBIOS) and UEFI iPXE disks that can be used to load into your netboot.xyz environment. If you want to override the defaults, you can put overrides in user_overrides.yml.  See `user_overrides.yml` for examples. 
 
-If you want to override the defaults, you can put overrides in user_overrides.yml.  See file for examples.
-
-Also note many user customizations are located in the boot.cfg file for the IPXE menus. A high level of customization can be achieved using our stock build output and hosting this along with the menus locally. 
+Using the overrides file, you can override all of the settings from the defaults/main.yml so that you can easily change the boot mirror URLs when the menus are rendered.  If you prefer to do this after the fact, you can also edit the boot.cfg to make changes, but keep in mind those changes will not be saved when you redeploy the menu.
 
 #### Self Hosted Custom Options
 
