@@ -45,7 +45,9 @@ rm -Rf ipxe
 tar -czf menus.tar.gz *
 mv menus.tar.gz ../githubout
 cd ..
-
+if [[ "${TYPE}" == "dev" ]]; then
+  cp githubout/menus.tar.gz s3out/
+fi
 
 # Latest style endpoints for RC and Live
 if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then

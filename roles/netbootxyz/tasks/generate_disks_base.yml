@@ -56,7 +56,6 @@
       path: "{{ ipxe_source_dir }}/{{ item }}"
       state: touch
     with_items:
-      - src/config/local/console.h
       - src/config/local/umalloc.h
       - src/config/local/nap.h
       - src/config/local/timer.h

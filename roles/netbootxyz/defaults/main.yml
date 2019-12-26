@@ -78,8 +78,8 @@ releases:
     enabled: true
     menu: "linux"
     versions:
-      - name: "3.10"
-        code_name: "v3.10"
+      - name: "3.11"
+        code_name: "v3.11"
       - name: "Edge (development)"
         code_name: "edge"
   archlinux:

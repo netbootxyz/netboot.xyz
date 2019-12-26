@@ -6,6 +6,7 @@
         dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
       with_items:
         - colour.h
+        - console.h
         - crypto.h
 
     - name: Copy netboot.xyz general.h.efi iPXE config
