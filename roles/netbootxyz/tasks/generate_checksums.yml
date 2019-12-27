@@ -31,6 +31,7 @@
     register: index_title
     tags:
       - skip_ansible_lint
+    when: ansible_os_family == "Debian"
 
   - name: Generate netboot.xyz index template
     template:
