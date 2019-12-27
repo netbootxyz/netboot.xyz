@@ -44,7 +44,7 @@
       mformat -i efi_tmp/ipxe.img -m 0xf8 -f 2880
       mmd -i efi_tmp/ipxe.img ::efi ::efi/boot
       mcopy -i efi_tmp/ipxe.img bin-x86_64-efi/ipxe.efi ::efi/boot/bootx64.efi
-      genisoimage -o ipxe-efi.eiso -eltorito-alt-boot -e ipxe.img -no-emul-boot efi_tmp
+      genisoimage -o ipxe-efi.eiso -eltorito-alt-boot -eltorito-boot ipxe.img -no-emul-boot efi_tmp
     args:
       chdir: "{{ ipxe_source_dir }}/src"
       warn: false
