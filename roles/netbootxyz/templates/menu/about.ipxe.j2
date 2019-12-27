@@ -16,8 +16,6 @@ set fg_cya ${esc:string}[36m
 set fg_whi ${esc:string}[37m
 
 :netabout
-echo Attempting to retrieve latest upstream version...
-chain https://boot.netboot.xyz/version.ipxe ||
 menu ${fg_cya}${bold}About netboot.xyz (Version: {{ boot_version }})
 item exit ${bold}Exit back to main menu...${boldoff}
 item --gap --  --------------------------------------------------------------------------
