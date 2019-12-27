@@ -24,7 +24,11 @@ exit
   </style>
   <body>
   <div style="font-family: monospace, fixed; font-weight: bold;">
+  {% if index_title is defined %}
   {{ index_title.stdout }}
+  {% else %}
+  <h1>{{ site_name }}</h1>
+  {% endif %}
   <p>
   Version: {{ boot_version }}<br>
   Powered by <a href=https://netboot.xyz>netboot.xyz</a>
