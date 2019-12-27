@@ -9,6 +9,7 @@ chain --autofree https://{{ boot_domain }}/menu.ipxe || echo HTTPS failed... att
 set conn_type http
 chain --autofree http://{{ boot_domain }}/menu.ipxe || echo HTTP failed, localbooting...
 {% endif %}
+exit
 
 <!DOCTYPE html>
 <html lang="en">
