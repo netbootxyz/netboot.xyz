@@ -14,7 +14,7 @@ goto ${live_version}
 :15
 set squash_url ${live_endpoint}{{ endpoints["deepin-15-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["deepin-15-squash"].path }}
-goto live-boot
+goto 15-boot
 
 :15-boot
 imgfree
