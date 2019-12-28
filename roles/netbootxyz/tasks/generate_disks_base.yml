@@ -12,6 +12,12 @@
       - "{{ ansible_distribution | lower }}.yml"
       - "{{ ansible_os_family | lower }}.yml"
 
+  - name: Ensure EPEL is enabled
+    yum:
+      name: epel-release
+      state: present
+    when: ansible_os_family == "RedHat"
+
   - name: Set var to bootloader of loop
     set_fact:
       bootloader_filename: "{{ bootloader_file }}"

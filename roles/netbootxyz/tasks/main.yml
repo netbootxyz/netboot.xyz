@@ -7,10 +7,6 @@
     when:
     - custom_generate_menus | default(false) | bool
 
-  - include: generate_signatures.yml
-    when:
-    - generate_signatures | default(false) | bool
-
   - include: generate_disks.yml
     with_items:
     - "{{ bootloader_disks }}"
@@ -23,3 +19,6 @@
     when:
     - generate_checksums | default(true) | bool
 
+  - include: generate_signatures.yml
+    when:
+    - generate_signatures | default(false) | bool
