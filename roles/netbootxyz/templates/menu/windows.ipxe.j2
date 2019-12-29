@@ -30,6 +30,7 @@ echo -n URL: ${} && read win_base_url
 echo
 echo netboot.xyz will attempt to load the following files:
 echo ${win_base_url}/${win_arch}/bootmgr
+echo ${win_base_url}/${win_arch}/bootmgr.efi
 echo ${win_base_url}/${win_arch}/boot/bcd
 echo ${win_base_url}/${win_arch}/boot/boot.sdi
 echo ${win_base_url}/${win_arch}/sources/boot.wim
@@ -41,18 +42,13 @@ goto windows
 isset ${win_base_url} && goto boot || echo URL not set... && goto url_set
 
 :boot
+imgfree
 kernel {{ wimboot_location }}
-initrd ${win_base_url}/${win_arch}/bootmgr bootmgr
-initrd ${win_base_url}/${win_arch}/boot/bcd bcd
-initrd ${win_base_url}/${win_arch}/boot/boot.sdi boot.sdi
-initrd ${win_base_url}/${win_arch}/sources/boot.wim boot.wim
-md5sum wimboot
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking wimboot signature...
-imgverify wimboot ${sigs}wimboot.sig || goto error
-:skip_sigs
+initrd -n bootmgr     ${win_base_url}/${win_arch}/bootmgr       bootmgr ||
+initrd -n bootmgr.efi ${win_base_url}/${win_arch}/bootmgr.efi   bootmgr.efi ||      
+initrd -n bcd         ${win_base_url}/${win_arch}/boot/bcd      bcd
+initrd -n boot.sdi    ${win_base_url}/${win_arch}/boot/boot.sdi boot.sdi   
+initrd -n boot.wim    ${win_base_url}/${win_arch}/boot/boot.wim boot.wim
 boot
 
 :windows_exit
