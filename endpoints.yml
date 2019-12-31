@@ -593,7 +593,7 @@ endpoints:
     version: '4'
     kernel: linux-lite-4-squash
   deepin-15-squash:
-    path: /debian-squash/releases/download/15.11-f87a92e4/
+    path: /debian-squash/releases/download/15.11-e47e1f2c/
     files:
     - filesystem.squashfs
     - initrd
