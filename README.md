@@ -53,6 +53,7 @@ See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get
 * [Self Hosting](https://netboot.xyz/selfhosting/)
 * [Booting Methods](https://netboot.xyz/booting/)
 * [FAQ](https://netboot.xyz/faq/)
+* [Blog](https://blog.netboot.xyz/)
 
 If you'd like to contribute to the documentation, the netboot.xyz documentation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
 
