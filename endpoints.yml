@@ -546,7 +546,6 @@ endpoints:
   kde-neon-user:
     path: /ubuntu-squash/releases/download/20191226-1116-4cec4542/
     files:
-    - initrd
     - vmlinuz
     - filesystem.squashfs
     - initrd.lz
