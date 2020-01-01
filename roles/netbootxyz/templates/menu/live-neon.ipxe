@@ -14,7 +14,7 @@ goto ${live_version}
 :user
 set squash_url ${live_endpoint}{{ endpoints["kde-neon-user"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["kde-neon-user"].path }}
-goto live-boot
+goto user-boot
 
 :user-boot
 imgfree

@@ -29,3 +29,7 @@ generate_checksums: true
 #utilities_overrides:
 #  supergrub:
 #    enabled: false
+
+# set licensed media locations in boot.cfg
+# win_base_url:
+# rhel_base_url: 
