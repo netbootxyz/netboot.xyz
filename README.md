@@ -100,9 +100,11 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |------------|-----------------|------------------|---------------|
 |Alpine Linux| https://alpinelinux.org | Yes              | No            |
 |Arch Linux | https://www.archlinux.org| Yes              | No            |
+|Backbox|https://www.backbox.org | No | Yes |
 |BlackArch Linux|https://blackarch.org| ISO - Memdisk | No                |
 |CentOS| https://centos.org | Yes | No |
 |Debian| https://debian.org | Yes | Yes|
+|Deepin| https://www.deepin.org | No | Yes |
 |Devuan| https://devuan.org | Yes | No |
 |Elementary OS| https://elementary.io | No | Yes |
 |Fedora| https://fedoraproject.org | Yes | Yes |
@@ -112,6 +114,9 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Gentoo|https://gentoo.org| Not Working | No |
 |IPFire|https://www.ipfire.org| Yes | No |
 |Kali Linux|https://www.kali.org| Yes | Yes |
+|KDE Neon|https://neon.kde.org | No | Yes |
+|Linux Lite| https://www.linuxliteos.com | No | Yes |
+|Q4OS|https://q4os.org | No | Yes |
 |Mageia|https://www.mageia.org| Yes | No |
 |Manjaro|https://manjaro.org| No | Yes |
 |Mint|https://linuxmint.com| No | Yes |
@@ -121,14 +126,18 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |OpenBSD|https://openbsd.org| Yes | No |
 |OpenSUSE|https://opensuse.org| Yes | No |
 |Parrot Security|https://www.parrotsec.org| ISO | No |
+|Peppermint|https://peppermintos.com | No | Yes |
 |Pop OS|https://system76.com/pop| No | Yes |
 |RancherOS|https://rancher.com/rancher-os| Yes | No |
 |Red Hat Enterprise Linux|https://www.redhat.com| User supplied media | No |
+|Regolith|https://regolith-linux.org| No | Yes |
 |Scientific Linux|https://scientificlinux.org| Yes | No |
 |Slackware|https://www.slackware.com| Yes | No |
 |Tails|https://tails.boum.org | No | Yes |
 |Tiny Core Linux|https://tinycorelinux.net| ISO - Memdisk | No |
 |Ubuntu|https://www.ubuntu.com| Yes | Yes |
+|Voyager|https://voyagerlive.org | No | Yes |
+|Zoris OS|https://zorinos.com| No | Yes |
 
 ### Utilities
 
