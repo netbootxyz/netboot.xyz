@@ -544,11 +544,12 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20191205-1116-0e301ad7/
+    path: /ubuntu-squash/releases/download/20191226-1116-4cec4542/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
+    - initrd.lz
     os: neon
     version: '18.04'
     flavor: user
