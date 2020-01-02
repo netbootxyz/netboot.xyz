@@ -89,15 +89,15 @@ releases:
     enabled: true
     menu: "linux"
     versions:
-      - name: "2019.12.01"
-        code_name: "2019.12.01"
+      - name: "2020.01.01"
+        code_name: "2020.01.01"
   blackarch:
     name: "BlackArch"
     enabled: true
     menu: "security"
     versions:
-      - name: "2019.09.01"
-        code_name: "2019.09.01"
+      - name: "2020.01.01"
+        code_name: "2020.01.01"
   centos:
     name: "CentOS"
     mirror: "http://mirror.centos.org"
