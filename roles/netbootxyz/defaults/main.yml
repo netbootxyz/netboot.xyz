@@ -180,24 +180,8 @@ releases:
         code_name: "alpha"
   freebsd:
     name: "FreeBSD"
-    enabled: false
+    enabled: true
     menu: "bsd"
-    versions:
-      - name: "FreeBSD 12.0"
-        code_name: "12.0"
-        image_subdir: "12"
-      - name: "FreeBSD 11.2"
-        code_name: "11.2"
-        image_subdir: "11"
-      - name: "FreeBSD 11.1"
-        code_name: "11.1"
-        image_subdir: "11"
-      - name: "FreeBSD 11.0"
-        code_name: "11.0"
-        image_subdir: "11"
-      - name: "FreeBSD 10.4"
-        code_name: "10.4"
-        image_subdir: "10"
   freedos:
     name: "FreeDOS"
     mirror: "http://www.freedos.org"

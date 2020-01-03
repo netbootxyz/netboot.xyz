@@ -109,7 +109,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Elementary OS| https://elementary.io | No | Yes |
 |Fedora| https://fedoraproject.org | Yes | Yes |
 |Flatcar Linux|https://www.flatcar-linux.org| Yes | No |
-|FreeBSD|https://freebsd.org| No, disk image | No |
+|FreeBSD|https://freebsd.org| Yes, disk image | No |
 |FreeDOS|http://www.freedos.org| ISO - Memdisk| No |
 |Gentoo|https://gentoo.org| Not Working | No |
 |IPFire|https://www.ipfire.org| Yes | No |
