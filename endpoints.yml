@@ -615,3 +615,10 @@ endpoints:
     - special-edition.img
     os: freebsd
     version: '9'
+  mfsbsd-10:
+    path: /asset-mirror/releases/download/10.3-b257c1ce/
+    files:
+    - default.img
+    - special-edition.img
+    os: freebsd
+    version: '10'
