@@ -636,3 +636,13 @@ endpoints:
     - special-edition.img
     os: freebsd
     version: '12'
+  q4os-3.10-default-squash:
+    path: /debian-squash/releases/download/3.10-0e917808/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Q4OS
+    version: '3.10'
+    flavor: trinity
+    kernel: q4os-3.10-default-squash
