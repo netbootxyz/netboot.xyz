@@ -8,7 +8,8 @@ set fg_cya ${esc:string}[36m
 set fg_whi ${esc:string}[37m
 set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
-set version 1.04
+set ipxe_version ${version}
+set version {{ boot_version }}
 set ipxe_cloud_config packet
 
 :start
