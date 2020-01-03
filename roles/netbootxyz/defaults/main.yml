@@ -215,7 +215,7 @@ releases:
     mirror: "http://http.kali.org"
     base_dir: "kali"
     enabled: true
-    menu: "security"
+    menu: "linux"
     versions:
       - name: "Rolling Edition (2019.4)"
         code_name: "rolling"
