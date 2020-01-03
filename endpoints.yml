@@ -601,3 +601,10 @@ endpoints:
     os: Deepin
     version: '15'
     kernel: deepin-15-squash
+  mfsbsd-8:
+    path: /asset-mirror/releases/download/8.4-b6071b6e/
+    files:
+    - default.img
+    - special-edition.img
+    os: freebsd
+    version: '8'
