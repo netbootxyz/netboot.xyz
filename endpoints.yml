@@ -654,3 +654,12 @@ endpoints:
     version: '3.10'
     flavor: plasma
     kernel: q4os-3.10-default-squash
+  feren-squash:
+    path: /ubuntu-squash/releases/download/12-2019-37ab2592/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: feren
+    version: standard
+    kernel: feren-squash
