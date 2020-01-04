@@ -1,0 +1,26 @@
+#!/bin/bash
+# Used for processing pci.ids into ipxe format
+# https://raw.githubusercontent.com/pciutils/pciids/master/pci.ids
+
+if [[ ! -n "$1" || ! -n "$2" ]]; then
+  echo "Please set PCIIDS file location and PCIIDS output file location..."
+  echo "pciids_gen pci.ids pciids.ipxe"
+  exit 1
+fi
+
+PCIIDS_FILE=$1
+PCIIDS_IPXE=$2
+
+awk ' \
+  BEGIN { \
+    print "#!ipxe\ngoto ${vendor}${device} || goto ${vendor} || exit" \
+  } \
+  /^[0-9a-f]{4}/ { \
+    vendor=substr($1,1,4); \
+    printf ":%s\nset ven %s\nexit\n", vendor, substr($0,7) \
+  } \
+  /^\t[0-9a-f]{4}/ { \
+    printf ":%s%s\nset dev %s\ngoto %s\n", \
+    vendor, substr($0, 2, 4), substr($0, 8), vendor \
+  } \
+' ${PCIIDS_FILE} > ${PCIIDS_IPXE}
