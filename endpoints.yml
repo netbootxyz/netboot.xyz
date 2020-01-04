@@ -663,3 +663,12 @@ endpoints:
     os: feren
     version: standard
     kernel: feren-squash
+  feren-classic-squash:
+    path: /ubuntu-squash/releases/download/12-2019-2464b883/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: feren
+    version: standard
+    kernel: feren-classic-squash
