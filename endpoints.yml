@@ -702,3 +702,13 @@ endpoints:
     version: ubuntu
     flavor: stable
     kernel: clonezilla-ubuntu-stable
+  clonezilla-ubuntu-testing:
+    path: /ubuntu-squash/releases/download/20191226-6edb0075/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: ubuntu
+    flavor: testing
+    kernel: clonezilla-ubuntu-testing
