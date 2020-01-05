@@ -682,3 +682,13 @@ endpoints:
     version: debian
     flavor: stable
     kernel: clonezilla-debian-stable
+  clonezilla-debian-testing:
+    path: /debian-squash/releases/download/2.6.5-8-9840b479/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: debian
+    flavor: testing
+    kernel: clonezilla-debian-testing
