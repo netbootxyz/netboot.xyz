@@ -672,3 +672,13 @@ endpoints:
     os: feren
     version: classic
     kernel: feren-classic-squash
+  clonezilla-debian-stable:
+    path: /debian-squash/releases/download/2.6.4-10-3f4ea5e2/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: debian
+    flavor: stable
+    kernel: clonezilla-debian-stable
