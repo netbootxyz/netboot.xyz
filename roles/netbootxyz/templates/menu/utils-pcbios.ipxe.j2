@@ -2,8 +2,8 @@
 
 menu Utilities - Image Sig Checks: [${img_sigs_enabled}]
 item --gap Utilities:
-{% for key, value in utilities.items() | sort(attribute='1.name') %}
-{% if value.enabled | bool and value.menu == "pcbios" %}
+{% for key, value in utilitiespcbios.items() | sort(attribute='1.name') %}
+{% if value.enabled %}
 item {{ key }} ${space} {{ value.name }}
 {% endif %}
 {% endfor %}
@@ -17,8 +17,8 @@ goto ${menu} ||
 chain ${menu}.ipxe || goto utils_exit
 goto utils_exit
 
-{% for key, value in utilities.items() | sort %}
-{% if value.enabled | bool and value.menu == "pcbios" %}
+{% for key, value in utilitiespcbios.items() | sort %}
+{% if value.enabled | bool and value.type == "memdisk" %}
 :{{ key }}
 set util_path {{ value.util_path }}
 set util_file {{ value.util_path | basename }}

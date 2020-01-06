@@ -1,0 +1,45 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Clonezilla
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+item debian ${space} ${os} Debian Based
+item ubuntu ${space} ${os} Ubuntu Based
+choose live_version || goto live_exit
+menu ${os} ${live_version}
+item --gap ${os} Flavors
+goto ${live_version}
+
+:debian
+{% for key, value in endpoints.items() %}
+{% if value.os == "clonezilla" and value.version == "debian" %}
+item {{ value.path }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | title }}
+{% endif %}
+{% endfor %}
+choose path || goto live_menu
+goto clonezilla-boot
+
+:ubuntu
+{% for key, value in endpoints.items() %}
+{% if value.os == "clonezilla" and value.version == "ubuntu" %}
+item {{ value.path }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | title }}
+{% endif %}
+{% endfor %}
+choose path || goto live_menu
+goto clonezilla-boot
+
+:clonezilla-boot
+imgfree
+set url ${live_endpoint}${path}
+kernel ${url}vmlinuz boot=live username=user union=overlay config components noswap edd=on nomodeset ocs_live_run="ocs-live-general" ocs_live_batch=no net.ifnames=0 nosplash noprompt fetch=${url}filesystem.squashfs initrd=initrd
+initrd ${url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
+
