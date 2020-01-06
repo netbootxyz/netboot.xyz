@@ -1,0 +1,38 @@
+#!ipxe
+
+goto ${menu} ||
+
+:dban_menu
+menu DBAN {{ endpoints.dban.version }} (Darik's Boot and Nuke)
+set kernel_url ${live_endpoint}{{ endpoints.dban.path }}DBAN.BZI
+item --gap THIS SOFTWARE DESTROYS DATA
+item --gap EVERY BOOT OPTION IS DESTRUCTIVE
+item --gap DO NOT PROCEED IF YOU DO NOT KNOW WHAT THIS IS
+item dban_exit ${space} Go Back
+item dban_options ${space} Proceed I know what I am doing
+choose menu || goto dban_exit
+goto ${menu}
+
+:dban_options
+clear menu
+menu DBAN {{ endpoints.dban.version }} (Darik's Boot and Nuke)
+item --gap Choose a wipe method:
+item dodshort ${space} Wipe all disks with the short DoD 5220.22-M method
+item dod522022m ${space} Wipe all disks with the DoD 5220.22-M method
+item dod3pass ${space} Wipe all disks with the DoD 5220.22-M method (3 pass)
+item ops2 ${space} Wipe all disks with the RCMP TSSIT OPS-II method
+item gutmann ${space} Wipe all disks with the Gutmann method
+item prng ${space} Wipe all disks with the PRNG Stream method
+item quick ${space} Wipe all disks with the Quick Erase method
+choose nuke_method || goto dban_exit
+goto dban_boot
+
+
+:dban_boot
+imgfree
+kernel ${kernel_url} nuke="dwipe --autonuke --method ${nuke_method}" silent vga=785
+boot
+
+:dban_exit
+clear menu
+exit 0
