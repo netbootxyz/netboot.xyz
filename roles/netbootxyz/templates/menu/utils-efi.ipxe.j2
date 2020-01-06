@@ -18,37 +18,15 @@ chain ${menu}.ipxe || goto utils_exit
 goto utils_exit
 
 {% for key, value in utilitiesefi.items() | sort %}
-{% if value.enabled | bool and value.type == "memdisk" %}
+{% if value.enabled | bool and value.type == "direct" %}
 :{{ key }}
-set util_path {{ value.util_path }}
-set util_file {{ value.util_path | basename }}
-set util_version {{ value.version }}
-goto boot_{{ value.type }}
-{% endif %}
-{% endfor %}
-
-:boot_memdisk
 imgfree
-kernel ${memdisk} iso raw
-initrd --name ${util_file} ${util_path}
-echo
-echo MD5sums:
-md5sum memdisk ${util_file}
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify memdisk ${sigs}memdisk.sig || goto error
-imgverify ${util_file} ${sigs}${menu}/${util_file}.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
+kernel {{ value.kernel }}
+initrd {{ value.initrd }}
 boot
 goto utils_exit
-
-:boot_memtest
-chain https://${util_path} && goto main_menu ||
-goto utils_exit
+{% endif %}
+{% endfor %}
 
 :nbxyz-custom
 echo EXPERIMENTAL

@@ -374,13 +374,13 @@ utilitiespcbios:
   breakin:
     name: "Breakin"
     enabled: true
-    type: "memdisk"
-    version: "4.26.1-53"
-    util_path: "http://www.advancedclustering.com/wp-content/uploads/2017/02/bootimage-4.26.1-53.iso"
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
-    type: "live"
+    type: "ipxemenu"
   dban:
     name: "DBAN"
     enabled: true
@@ -414,10 +414,16 @@ utilitiespcbios:
 
 # efi utility values
 utilitiesefi:
+  breakin:
+    name: "Breakin"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
-    type: "live"
+    type: "ipxemenu"
 
 bootloaders:
   legacy:

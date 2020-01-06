@@ -27,6 +27,17 @@ goto boot_{{ value.type }}
 {% endif %}
 {% endfor %}
 
+{% for key, value in utilitiespcbios.items() | sort %}
+{% if value.enabled | bool and value.type == "direct" %}
+:{{ key }}
+imgfree
+kernel {{ value.kernel }}
+initrd {{ value.initrd }}
+boot
+goto utils_exit
+{% endif %}
+{% endfor %}
+
 :boot_memdisk
 imgfree
 kernel ${memdisk} iso raw
@@ -46,8 +57,10 @@ echo
 boot
 goto utils_exit
 
-:boot_memtest
-chain https://${util_path} && goto main_menu ||
+:memtest
+imgfree
+kernel {{ utilitiespcbios.memtest.util_path }}
+boot
 goto utils_exit
 
 :nbxyz-custom
