@@ -3,10 +3,6 @@
     when:
     - generate_menus | default(true) | bool
 
-  - include: generate_pciids.yml
-    when:
-    - generate_pciids | default(true) | bool
-
   - include: generate_menus_custom.yml
     when:
     - custom_generate_menus | default(false) | bool

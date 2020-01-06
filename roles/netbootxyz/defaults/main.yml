@@ -36,8 +36,7 @@ generate_checksums: true
 checksums_filename: "{{ site_name }}-sha256-checksums.txt"
 
 # pciids
-generate_pciids: true
-pciids_url: https://raw.githubusercontent.com/pciutils/pciids/master/pci.ids
+pciids_url: https://raw.githubusercontent.com/netbootxyz/pciids/master/pciids.ipxe
 
 # bootloader options
 generate_disks: true
