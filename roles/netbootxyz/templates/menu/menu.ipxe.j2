@@ -57,6 +57,7 @@ iseq ${arch} x86_64 && set bits 64 || set bits 32
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
+item lspci ${space} PCI Device List
 item about ${space} About netboot.xyz
 {% if sigs_menu | bool %}
 item --gap Signature Checks:

@@ -60,6 +60,7 @@ iseq ${buildarch} x86_64 && goto x86_64 ||
 iseq ${buildarch} arm64 && goto arm64 ||
 goto architectures_end
 :x86_64
+iseq ${platform} efi && goto efi ||
 goto architectures_end
 :arm64
 set menu_freedos 0
@@ -67,6 +68,12 @@ set menu_live 0
 set menu_security 0
 set menu_windows 0
 set menu_utils 0
+iseq ${platform} efi && goto efi ||
+goto architectures_end
+:efi
+set menu_bsd 0
+set menu_freedos 0
+set menu_security 0
 goto architectures_end
 :architectures_end
 goto clouds
