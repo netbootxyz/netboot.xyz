@@ -719,3 +719,9 @@ endpoints:
     - initrd
     os: breakin
     version: 4.26.1
+  dban:
+    path: /asset-mirror/releases/download/2.3.0-e4cb6d46/
+    files:
+    - DBAN.BZI
+    os: dban
+    version: 2.3.0
