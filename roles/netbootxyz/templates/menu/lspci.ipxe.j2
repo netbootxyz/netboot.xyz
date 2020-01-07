@@ -3,7 +3,8 @@
 # gather pci devices and list them
 clear addr
 pciscan addr && goto pciscan_found ||
-echo No pci devices found...
+echo No PCI devices found...
+sleep 5
 exit
 :pciscan_found
 

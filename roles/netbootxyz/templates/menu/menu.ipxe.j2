@@ -118,8 +118,7 @@ iseq ${img_sigs_enabled} true && set img_sigs_enabled false || set img_sigs_enab
 goto main_menu
 
 :about
-chain https://boot.netboot.xyz/about.ipxe ||
-chain about.ipxe || goto error
+chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe 
 goto main_menu
 
 :custom-github
