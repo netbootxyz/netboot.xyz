@@ -53,3 +53,8 @@
     when: item.state == "file"
     tags:
     - skip_ansible_lint
+
+  - name: Retrieve pciids.ipxe
+    get_url:
+      url: "{{ pciids_url }}"
+      dest: "{{ netbootxyz_root }}/pciids.ipxe"

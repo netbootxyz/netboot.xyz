@@ -1,0 +1,35 @@
+#!ipxe
+
+# gather pci devices and list them
+clear addr
+pciscan addr && goto pciscan_found ||
+echo No PCI devices found...
+sleep 5
+exit
+:pciscan_found
+
+set spaces2:hex 20:20
+set spaces4:hex 20:20:20:20
+
+imgfetch pciids.ipxe
+iseq ${sigs_enabled} true && goto verify_sigs || goto skip_verify
+:verify_sigs
+imgverify pciids.ipxe ${sigs}pciids.ipxe.sig ||
+:skip_verify
+
+clear addr
+menu PCI device list
+:scan pciscan addr || goto scan_done
+  clear ven
+  clear dev
+  set vendor ${pci/${addr}.0.2}
+  set device ${pci/${addr}.2.2}
+  chain pciids.ipxe
+  item --gap ${addr:busdevfn} ${spaces4:string} ${ven}
+  item b${addr:busdevfn} ${spaces2:string} ${vendor}:${device} ${dev}
+  goto scan
+:scan_done
+choose press_enter ||
+
+imgfree pciids.ipxe
+exit

@@ -6,28 +6,22 @@
 :freebsd_menu
 set os {{ releases.freebsd.name }}
 menu ${os}
-{% for item in releases.freebsd.versions %}
-item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "freebsd" %}
+item {{ value.path }} ${space} ${os} {{ value.version }}
+{% endif %}
 {% endfor %}
 choose ver || goto freebsd_exit
+goto type_select
 
-{% for item in releases.freebsd.versions %}
-iseq ${ver} {{ item.code_name }} && set image_ver {{ item.code_name }}-RELEASE ||
-{% endfor %}
-
-iseq ${arch} x86_64 && goto freebsd_x64 ||
-set freebsd_arch i386
-goto boot_freebsd
-
-:freebsd_x64
-set freebsd_arch amd64
+:type_select
+menu ${os}
+item default.img ${space} Default
+item special-edition.img ${space} Special Edition
+choose type || goto freebsd_exit
 goto boot_freebsd
 
 :boot_freebsd
-{% for item in releases.freebsd.versions %}
-iseq ${ver} {{ item.code_name }} && set image_subdir {{ item.image_subdir }}/${freebsd_arch} ||
-{% endfor %}
-set src https://mfsbsd.vx.sk/files/images/${image_subdir}/mfsbsd-${image_ver}-${freebsd_arch}.img
 imgfree
 echo This loads an mfsbsd installer (http://mfsbsd.vx.sk/).
 echo Root password for all images: mfsroot
@@ -38,7 +32,7 @@ echo route delete default; route add default <public ip x.x.x.1>
 echo echo "nameserver x.x.x.x" > /etc/resolv.conf
 echo Once network is configured, you can launch the usual installer:
 echo bsdinstall
-initrd ${src}
+initrd ${live_endpoint}${ver}${type}
 chain ${memdisk} harddisk raw
 exit
 

@@ -108,8 +108,9 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Devuan| https://devuan.org | Yes | No |
 |Elementary OS| https://elementary.io | No | Yes |
 |Fedora| https://fedoraproject.org | Yes | Yes |
+|Feren OS| https://ferenos.weebly.com/ | Yes | No |
 |Flatcar Linux|https://www.flatcar-linux.org| Yes | No |
-|FreeBSD|https://freebsd.org| No, disk image | No |
+|FreeBSD|https://freebsd.org| Yes, disk image | No |
 |FreeDOS|http://www.freedos.org| ISO - Memdisk| No |
 |Gentoo|https://gentoo.org| Not Working | No |
 |IPFire|https://www.ipfire.org| Yes | No |
@@ -144,9 +145,9 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Name       | URL                     | Installer Kernel | Live OS |
 |------------|-------------------------|------------------|---------|
 |ALT Linux Rescue|https://en.altlinux.org/Rescue| ISO - Memdisk | - |
-|Breakin|http://www.advancedclustering.com/products/software/breakin/| ISO - Memdisk | - |
-|Clonezilla|http://www.clonezilla.org/| ISO - Memdisk | - |
-|DBAN|http://www.dban.org/| ISO - Memdisk | - |
+|Breakin|http://www.advancedclustering.com/products/software/breakin/| Yes | Yes |
+|Clonezilla|http://www.clonezilla.org/| - | Yes |
+|DBAN|http://www.dban.org/| Yes | Yes |
 |GParted|http://gparted.org| ISO - Memdisk | - |
 |Grml|http://grml.org| ISO - Memdisk | - |
 |Memtest|http://www.memtest.org/| Yes | - |

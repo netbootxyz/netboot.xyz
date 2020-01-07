@@ -57,6 +57,7 @@ iseq ${arch} x86_64 && set bits 64 || set bits 32
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
+item lspci ${space} PCI Device List
 item about ${space} About netboot.xyz
 {% if sigs_menu | bool %}
 item --gap Signature Checks:
@@ -117,8 +118,7 @@ iseq ${img_sigs_enabled} true && set img_sigs_enabled false || set img_sigs_enab
 goto main_menu
 
 :about
-chain https://boot.netboot.xyz/about.ipxe ||
-chain about.ipxe || goto error
+chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe 
 goto main_menu
 
 :custom-github
