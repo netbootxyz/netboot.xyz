@@ -413,7 +413,7 @@ utilitiespcbios:
 utilitiesefi:
   breakin:
     name: "Breakin"
-    enabled: true
+    enabled: false
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
@@ -423,7 +423,7 @@ utilitiesefi:
     type: "ipxemenu"
   dban:
     name: "DBAN"
-    enabled: true
+    enabled: false
     type: "ipxemenu"
 
 bootloaders:
