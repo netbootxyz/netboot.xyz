@@ -14,7 +14,8 @@ set os Red Hat Enterprise Linux
 clear rhel_version
 menu ${os}
 item --gap Installers
-item rhel_install ${space} Load ${os} Installer...
+item rhel_install ${space} ${os} Graphical Install
+item rhel_install_text ${space} ${os} Text Install
 item --gap Options:
 item arch_set ${space} Architecture [ ${rhel_arch} ]
 item url_set ${space} Base URL [ ${rhel_base_url} ]
@@ -38,12 +39,17 @@ echo
 prompt Press any key to return to RHEL Menu...
 goto rhel
 
+:rhel_install_text
+set params text
+goto rhel_install
+
 :rhel_install
 isset ${rhel_base_url} && goto boot || echo URL not set... && goto url_set
+goto boot
 
 :boot
 imgfree
-kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz repo=${rhel_base_url}/os/${rhel_arch} ${console} ${ipparam} initrd=initrd.img
+kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz repo=${rhel_base_url}/os/${rhel_arch} ${console} ${ipparam} ${params} initrd=initrd.img
 initrd ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
 md5sum vmlinuz initrd.img
 boot
