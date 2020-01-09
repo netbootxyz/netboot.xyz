@@ -307,6 +307,10 @@ releases:
     versions:
       - name: "Latest (20 MB)"
         code_name: "latest"
+  rhel:
+    name: "Red Hat Enterprise Linux"
+    enabled: true
+    menu: "linux"
   scientific:
     name: "Scientific Linux"
     mirror: "http://ftp1.scientificlinux.org"
