@@ -11,7 +11,7 @@ item --gap netboot.xyz tools:
 item nbxyz-custom ${space} Set Github username [user: ${github_user}]
 item testdistro ${space} Test Distribution ISO
 item testpr ${space} Test forked netboot.xyz branch or hash
-item nbxyz netboot.xyz endpoints
+item nbxyz ${space} netboot.xyz endpoints
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
 goto ${menu} ||

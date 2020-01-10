@@ -10,7 +10,7 @@ item {{ key }} ${space} {{ value.name }}
 item --gap netboot.xyz tools:
 item nbxyz-custom ${space} Set Github username [user: ${github_user}]
 item testpr ${space} Test forked netboot.xyz branch or hash
-item nbxyz netboot.xyz endpoints
+item nbxyz ${space} netboot.xyz endpoints
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
 goto ${menu} ||
