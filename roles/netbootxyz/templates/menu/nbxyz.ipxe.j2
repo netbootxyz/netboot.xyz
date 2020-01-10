@@ -1,0 +1,41 @@
+#!ipxe
+
+# netboot.xyz endpoints
+# used for accessing the latest internet build menus
+goto ${menu} ||
+
+:nbxyz
+set os netboot.xyz internet endpoints
+clear nbxyz_version
+menu ${os}
+item --gap Endpoints
+item nbxyz-rolling ${space} ${os} Production Rolling (boot.netboot.xyz)
+item nbxyz-prod ${space} ${os} Production Release (boot.netboot.xyz)
+item nbxyz-staging ${space} ${os} Staging (staging.boot.netboot.xyz)
+item nbxyz-dev ${space} ${os} Development (dev.boot.netboot.xyz)
+item --gap Options:
+choose nbxyz_version || goto nbxyz_exit
+goto ${nbxyz_version}
+
+:nbxyz-rolling
+chain --autofree https://boot.netboot.xyz ||
+chain --autofree http://boot.netboot.xyz ||
+goto nbxyz
+
+:nbxyz-prod
+chain https://boot.netboot.xyz/version.ipxe ||
+chain --autofree https://boot.netboot.xyz/${upstream_version} ||
+goto nbxyz
+
+:nbxyz-staging
+chain https://staging.boot.netboot.xyz/version.ipxe ||
+chain --autofree https://staging.boot.netboot.xyz/${upstream_version} ||
+goto nbxyz
+
+:nbxyz-dev
+chain https://s3.amazonaws.com/dev.boot.netboot.xyz/version.ipxe ||
+chain --autofree https://s3.amazonaws.com/dev.boot.netboot.xyz/${upstream_version} ||
+goto nbxyz
+
+:nbxyz_exit
+exit 0

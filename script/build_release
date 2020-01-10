@@ -11,8 +11,8 @@ DOCKER_FILE="Dockerfile-build.production"
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
-  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${TRAVIS_COMMIT}"
-  BOOT_VERSION="Development"
+  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${BOOT_VERSION}"
+  BOOT_VERSION="${TRAVIS_COMMIT}"
 elif [[ "${TYPE}" == "pr" ]]; then
   BOOT_DOMAIN="test.com"
   BOOT_VERSION="test"
@@ -37,7 +37,9 @@ docker run --rm -it -v $(pwd):/buildout localbuild
 
 # Generate folder outputs
 mkdir -p s3out
+mkdir -p s3outver
 cp -r buildout/* s3out/
+cp buildout/version.ipxe s3outver/
 mkdir -p githubout
 mv buildout/ipxe/* githubout/
 cd buildout
