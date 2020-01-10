@@ -46,8 +46,12 @@ jobs:
           on:
             branch: development
       after_deploy:
-        - ./script/message dev-push
-
+        - >
+          if ! [ "$AFTER_DEPLOY_RUN" ]; then
+            export AFTER_DEPLOY_RUN=1;
+            ./script/message dev-push
+          fi
+          
     - stage: pull-request
       if: type = pull_request
       script:
