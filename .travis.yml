@@ -36,6 +36,15 @@ jobs:
           skip_cleanup: true
           on:
             branch: development
+        - provider: s3
+          edge: true
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_DEV
+          local_dir: s3outver
+          skip_cleanup: true
+          on:
+            branch: development
       after_deploy:
         - ./script/message dev-push
 
@@ -77,6 +86,15 @@ jobs:
           bucket: $BUCKET_STAGING
           local_dir: s3out
           upload-dir: $RELEASE_TAG
+          skip_cleanup: true
+          on:
+            branch: RC
+        - provider: s3
+          edge: true
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: $BUCKET_STAGING
+          local_dir: s3outver
           skip_cleanup: true
           on:
             branch: RC
