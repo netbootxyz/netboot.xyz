@@ -11,11 +11,11 @@ DOCKER_FILE="Dockerfile-build.production"
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
+  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${TRAVIS_COMMIT}"
   BOOT_VERSION="${TRAVIS_COMMIT}"
-  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${BOOT_VERSION}"
 elif [[ "${TYPE}" == "pr" ]]; then
-  BOOT_VERSION="test"
   BOOT_DOMAIN="test.com"
+  BOOT_VERSION="test"
   DOCKER_FILE="Dockerfile-build"
 elif [[ "${TYPE}" == "rc" ]]; then
   BOOT_VERSION=$(cat version.txt)-RC
