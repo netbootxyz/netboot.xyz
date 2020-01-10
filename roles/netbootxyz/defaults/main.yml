@@ -29,7 +29,7 @@ live_endpoint: "https://github.com/netbootxyz"
 
 # generates menus
 generate_menus: true
-generate_version_file: false
+generate_version_file: true
 
 # generates signatures for source files
 generate_checksums: true
