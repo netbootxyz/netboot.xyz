@@ -765,3 +765,13 @@ endpoints:
     version: rolling
     flavor: xfce-min
     kernel: sparky-rolling-mingui
+  sparky-rolling-gui:
+    path: /debian-squash/releases/download/2019.12-d29aa310/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: rolling
+    flavor: xfce
+    kernel: sparky-rolling-gui
