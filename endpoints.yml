@@ -775,3 +775,13 @@ endpoints:
     version: rolling
     flavor: xfce
     kernel: sparky-rolling-gui
+  sparky-rolling-lxqt:
+    path: /debian-squash/releases/download/2019.12-ddb8d501/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: rolling
+    flavor: lxqt
+    kernel: sparky-rolling-lxqt
