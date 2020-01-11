@@ -53,6 +53,7 @@ kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz repo=${rhel_base_
 initrd ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
 md5sum vmlinuz initrd.img
 boot
+goto rhel
 
 :rhel_exit
 exit 0
