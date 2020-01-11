@@ -725,3 +725,13 @@ endpoints:
     - DBAN.BZI
     os: dban
     version: 2.3.0
+  sparky-stable-mingui:
+    path: /debian-squash/releases/download/5.9-12006f2d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: stable
+    flavor: xfce-min
+    kernel: sparky-stable-mingui
