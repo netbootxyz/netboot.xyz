@@ -1,6 +1,6 @@
 #!ipxe
 
-menu Utilities - Image Sig Checks: [${img_sigs_enabled}]
+menu Utilities
 item --gap Utilities:
 {% for key, value in utilitiesefi.items() | sort(attribute='1.name') %}
 {% if value.enabled %}

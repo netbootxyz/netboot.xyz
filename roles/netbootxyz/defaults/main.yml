@@ -10,7 +10,6 @@ time_server: "0.pool.ntp.org"
 # signature checking
 sigs_menu: false
 sigs_enabled: false
-img_sigs_enabled: false
 
 # helper app locations
 memdisk_location: "http://${boot_domain}/memdisk"

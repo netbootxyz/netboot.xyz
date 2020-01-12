@@ -1,7 +1,6 @@
 ---
 sigs_menu: true
 sigs_enabled: true
-img_sigs_enabled: false
 generate_disks_arm: true
 generate_version_file: true
 bootloader_multiple: true
