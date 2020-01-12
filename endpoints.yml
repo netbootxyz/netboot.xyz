@@ -725,3 +725,63 @@ endpoints:
     - DBAN.BZI
     os: dban
     version: 2.3.0
+  sparky-stable-mingui:
+    path: /debian-squash/releases/download/5.9-12006f2d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: stable
+    flavor: xfce-min
+    kernel: sparky-stable-mingui
+  sparky-stable-gui:
+    path: /debian-squash/releases/download/5.9-3d9b8c14/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: stable
+    flavor: xfce
+    kernel: sparky-stable-gui
+  sparky-stable-lxqt:
+    path: /debian-squash/releases/download/5.9-d6fdf079/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: stable
+    flavor: lxqt
+    kernel: sparky-stable-lxqt
+  sparky-rolling-mingui:
+    path: /debian-squash/releases/download/2019.12-d2988588/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: rolling
+    flavor: xfce-min
+    kernel: sparky-rolling-mingui
+  sparky-rolling-gui:
+    path: /debian-squash/releases/download/2019.12-d29aa310/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: rolling
+    flavor: xfce
+    kernel: sparky-rolling-gui
+  sparky-rolling-lxqt:
+    path: /debian-squash/releases/download/2019.12-ddb8d501/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: sparky
+    version: rolling
+    flavor: lxqt
+    kernel: sparky-rolling-lxqt

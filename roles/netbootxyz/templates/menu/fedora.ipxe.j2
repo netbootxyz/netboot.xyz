@@ -37,13 +37,18 @@ goto boottype
 
 :boottype
 menu ${os} ${arch} boot type
-item normal ${ova} install
+item normal ${ova} graphical install
+item text ${ova} text install
 item rescue ${ova} rescue
 item kickstart ${ova} specify kickstart url
 isset ${bt} || choose bt || goto fedora
 echo ${cls}
 iseq ${bt} rescue && goto rescue ||
 iseq ${bt} kickstart && goto kickstart ||
+goto boot
+
+:text
+set params inst.text ||
 goto boot
 
 :rescue

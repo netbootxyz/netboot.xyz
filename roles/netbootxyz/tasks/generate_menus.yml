@@ -24,17 +24,9 @@
       path: "{{ netbootxyz_root }}"
       state: directory
 
-  - name: Get current menu version
-    shell: cat version.txt
-    register: menu_version
-    when:
-      - generate_version_file | bool
-    tags:
-      - skip_ansible_lint
-
   - name: Set menu version
     set_fact:
-      upstream_version: "{{ menu_version.stdout }}"
+      upstream_version: "{{ boot_version }}"
     when:
       - generate_version_file | bool
 
