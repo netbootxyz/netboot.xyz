@@ -29,7 +29,7 @@ live_endpoint: "https://github.com/netbootxyz"
 
 # generates menus
 generate_menus: true
-generate_version_file: false
+generate_version_file: true
 
 # generates signatures for source files
 generate_checksums: true
@@ -213,6 +213,14 @@ releases:
     versions:
       - name: "2.23 Core 138"
         code_name: "2.23-core138"
+  k3os:
+    name: "k3OS"
+    mirror: "https://github.com/rancher/k3os/releases/download/"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "v0.8.0"
+        code_name: "v0.8.0"
   kali:
     name: "Kali Linux"
     mirror: "http://http.kali.org"
@@ -307,6 +315,10 @@ releases:
     versions:
       - name: "Latest (20 MB)"
         code_name: "latest"
+  rhel:
+    name: "Red Hat Enterprise Linux"
+    enabled: true
+    menu: "linux"
   scientific:
     name: "Scientific Linux"
     mirror: "http://ftp1.scientificlinux.org"
@@ -411,19 +423,9 @@ utilitiespcbios:
 
 # efi utility values
 utilitiesefi:
-  breakin:
-    name: "Breakin"
-    enabled: false
-    type: "direct"
-    kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
-    initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
-    type: "ipxemenu"
-  dban:
-    name: "DBAN"
-    enabled: false
     type: "ipxemenu"
 
 bootloaders:

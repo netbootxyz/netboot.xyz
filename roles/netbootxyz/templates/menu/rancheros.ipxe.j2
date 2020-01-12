@@ -19,10 +19,8 @@ set folder ${rancheros_base_dir}
 goto boot
 
 :boot
-echo Login in with username: rancher, password: rancher
-echo To install: ros install -d /dev/sda1
 imgfree
-kernel ${url}/${folder}/vmlinuz rancher.state.autoformat=[/dev/sda] rancher.password=rancher initrd=initrd
+kernel ${url}/${folder}/vmlinuz rancher.autologin=tty1 initrd=initrd
 initrd ${url}/${folder}/initrd
 boot
 
