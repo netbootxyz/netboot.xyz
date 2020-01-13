@@ -16,9 +16,6 @@ set live_endpoint {{ live_endpoint }}
 # signature check enabled?
 set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
 
-# image signatures check enabled?
-set img_sigs_enabled {{ img_sigs_enabled | default(false) | bool | lower }}
-
 # set location of signatures for sources
 set sigs {{ sigs_location }}
 

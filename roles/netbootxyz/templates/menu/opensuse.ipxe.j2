@@ -57,7 +57,7 @@ set netsetup netsetup=hostip,gateway,nameserver hostip=${ip}/${prefix} gateway=$
 set netsetup ${netsetup} BOOTIF=${netX/mac}
 
 set distro opensuse
-menu openSUSE - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
+menu openSUSE - ${arch}
 {% for item in releases.opensuse.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
@@ -72,16 +72,6 @@ imgargs linux ${netsetup} install=${opensuse_mirror}/${dir} ${params} ${console}
 echo
 echo MD5sums:
 md5sum linux initrd
-iseq ${img_sigs_enabled} true && iseq ${version} tumbleweed && goto skip_sigs ||
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify linux ${sigs}${distro}/${dir}/boot/x86_64/loader/linux.sig || goto error
-imgverify initrd ${sigs}${distro}/${dir}/boot/x86_64/loader/initrd.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
 boot
 
 :opensuse_exit
