@@ -584,7 +584,7 @@ endpoints:
     flavor: nvidia
     kernel: pop-19.10-nvidia-squash
   linux-lite-4-squash:
-    path: /ubuntu-squash/releases/download/4.6-816de7f4/
+    path: /ubuntu-squash/releases/download/4.8-feb35fae/
     files:
     - filesystem.squashfs
     - initrd
