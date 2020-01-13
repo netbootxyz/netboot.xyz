@@ -785,13 +785,3 @@ endpoints:
     version: rolling
     flavor: lxqt
     kernel: sparky-rolling-lxqt
-  pureos-gnome:
-    path: /ubuntu-squash/releases/download/2020-01-06-269c1164/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: pureos
-    version: current
-    flavor: gnome
-    kernel: pureos-gnome
