@@ -786,7 +786,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-rolling-lxqt
   pureos-gnome:
-    path: /ubuntu-squash/releases/download/2020-01-06-ae0906bb/
+    path: /ubuntu-squash/releases/download/2020-01-06-269c1164/
     files:
     - filesystem.squashfs
     - initrd
