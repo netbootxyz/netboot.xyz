@@ -793,3 +793,11 @@ endpoints:
     - squashfs.img
     os: oracle
     version: '8'
+  oracle-7:
+    path: /asset-mirror/releases/download/u7-9f014587/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: oracle
+    version: '7'
