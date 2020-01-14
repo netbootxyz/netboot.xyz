@@ -298,8 +298,12 @@ releases:
         code_name: "tumbleweed"
   oracle:
     name: "Oracle Linux"
+    mirror: "https://yum.oracle.com"
     enabled: true
     menu: "linux"
+    paths:
+      7: "/repo/OracleLinux/OL7/latest/x86_64"
+      8: "/repo/OracleLinux/OL8/baseos/latest/x86_64" 
   parrotsec:
     name: "Parrot Security"
     mirror: "https://mirrordirector.archive.parrotsec.org"

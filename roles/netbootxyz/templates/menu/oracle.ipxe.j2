@@ -23,6 +23,7 @@ goto ${version}
 {% if value.os == "oracle" %}
 :{{ value.version }}
 set url ${live_endpoint}{{ value.path }}
+set repo {{ releases.oracle.mirror }}{{ releases.oracle.paths[value.version|int] }}
 goto boot
 
 {% endif %}
@@ -30,7 +31,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz ${ipparam} root=live:${url}squashfs.img ro rd.live.image rd.lvm=0 rd.luks=0 rd.md=0 rd.dm=0 initrd=initrd
+kernel ${url}vmlinuz ${ipparam} repo=${repo} root=live:${url}squashfs.img ro rd.live.image rd.lvm=0 rd.luks=0 rd.md=0 rd.dm=0 initrd=initrd
 initrd ${url}initrd
 boot
 
