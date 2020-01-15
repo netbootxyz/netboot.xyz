@@ -1,0 +1,55 @@
+#!ipxe
+
+# Microsoft Windows Preinstallation Environment
+# https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-intro
+
+set win_arch x64
+goto ${menu} ||
+
+:windowspe
+set os Microsoft Windows
+clear win_version
+menu ${os} 
+item --gap Installers
+item win_install ${space} Load ${os} Installer...
+item --gap Options:
+item arch_set ${space} Architecture [ ${win_arch} ]
+item url_set ${space} Base URL [ ${win_base_url} ]
+choose win_version || goto winpe_exit
+goto ${win_version}
+
+:arch_set
+iseq ${win_arch} x64 && set win_arch x86 || set win_arch x64
+goto windowspe
+
+:url_set
+echo Set the HTTP URL of an extracted Windows PE ISO without the trailing slash:
+echo e.g. http://www.mydomain.com/windowspe
+echo
+echo -n URL: ${} && read win_base_url
+echo
+echo netboot.xyz will attempt to load the following files:
+echo ${win_base_url}/${win_arch}/bootmgr
+echo ${win_base_url}/${win_arch}/bootmgr.efi
+echo ${win_base_url}/${win_arch}/Boot/BCD
+echo ${win_base_url}/${win_arch}/Boot/boot.sdi
+echo ${win_base_url}/${win_arch}/sources/boot.wim
+echo
+prompt Press any key to return to Windows Menu...
+goto windowspe
+
+:win_install
+isset ${win_base_url} && goto boot || echo URL not set... && goto url_set
+
+:boot
+imgfree
+kernel http://${boot_domain}/wimboot
+initrd -n bootmgr     ${win_base_url}/${win_arch}/bootmgr       bootmgr ||
+initrd -n bootmgr.efi ${win_base_url}/${win_arch}/bootmgr.efi   bootmgr.efi ||      
+initrd -n bcd         ${win_base_url}/${win_arch}/Boot/BCD      bcd
+initrd -n boot.sdi    ${win_base_url}/${win_arch}/Boot/boot.sdi boot.sdi   
+initrd -n boot.wim    ${win_base_url}/${win_arch}/sources/boot.wim boot.wim
+boot
+
+:winpe_exit
+exit 0
