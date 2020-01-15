@@ -116,6 +116,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |IPFire|https://www.ipfire.org| Yes | No |
 |Kali Linux|https://www.kali.org| Yes | Yes |
 |KDE Neon|https://neon.kde.org | No | Yes |
+|Kodachi|https://www.digi77.com/linux-kodachi/ | No | Yes |
 |Linux Lite| https://www.linuxliteos.com | No | Yes |
 |Q4OS|https://q4os.org | No | Yes |
 |Mageia|https://www.mageia.org| Yes | No |
