@@ -827,3 +827,12 @@ endpoints:
     os: bodhi
     version: '5'
     flavor: apppack
+  devuan-ascii:
+    path: /debian-squash/releases/download/2.1-c5d9332b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: devuan
+    version: '2'
+    flavor: ascii
