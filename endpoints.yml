@@ -809,3 +809,12 @@ endpoints:
     - vmlinuz
     os: kodachi
     version: '6'
+  bodhi-5-standard:
+    path: /ubuntu-squash/releases/download/5.0.0-5868b819/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: '5'
+    flavor: standard
