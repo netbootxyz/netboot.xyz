@@ -98,10 +98,11 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 
 | Name       | URL             | Installer Kernel | Live OS       |
 |------------|-----------------|------------------|---------------|
-|Alpine Linux| https://alpinelinux.org | Yes              | No            |
-|Arch Linux | https://www.archlinux.org| Yes              | No            |
+|Alpine Linux| https://alpinelinux.org | Yes | No |
+|Arch Linux| https://www.archlinux.org| Yes | No |
 |Backbox|https://www.backbox.org | No | Yes |
-|BlackArch Linux|https://blackarch.org| ISO - Memdisk | No                |
+|BlackArch Linux|https://blackarch.org| ISO - Memdisk | No |
+|Bodhi Linux|https://www.bodhilinux.com| No | Yes |
 |CentOS| https://centos.org | Yes | No |
 |Debian| https://debian.org | Yes | Yes|
 |Deepin| https://www.deepin.org | No | Yes |
