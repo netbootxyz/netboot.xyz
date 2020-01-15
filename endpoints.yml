@@ -818,3 +818,12 @@ endpoints:
     os: bodhi
     version: '5'
     flavor: standard
+  bodhi-5-apppack:
+    path: /ubuntu-squash/releases/download/5.0.0-5f56cdcc/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: '5'
+    flavor: apppack
