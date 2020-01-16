@@ -861,3 +861,12 @@ endpoints:
     os: parrot
     version: current
     flavor: kde
+  parrot-security-kde:
+    path: /debian-squash/releases/download/4.7-bd06009c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: kde-security
