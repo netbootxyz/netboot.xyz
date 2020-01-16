@@ -870,3 +870,12 @@ endpoints:
     os: parrot
     version: current
     flavor: kde-security
+  grml-full:
+    path: /debian-squash/releases/download/2018.12-89ed5442/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: grml
+    version: '2018'
+    flavor: full
