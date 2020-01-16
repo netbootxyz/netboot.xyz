@@ -843,3 +843,12 @@ endpoints:
     - initrd
     os: parrotnet
     version: current
+  parrot-home-xfce:
+    path: /debian-squash/releases/download/4.7-68fc557d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: xfce
