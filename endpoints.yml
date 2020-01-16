@@ -836,3 +836,10 @@ endpoints:
     os: devuan
     version: '2'
     flavor: ascii
+  parrot-net:
+    path: /asset-mirror/releases/download/4.7-db3290ce/
+    files:
+    - vmlinuz
+    - initrd
+    os: parrotnet
+    version: current
