@@ -129,7 +129,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |OpenBSD|https://openbsd.org| Yes | No |
 |OpenSUSE|https://opensuse.org| Yes | No |
 |Oracle Linux|https://www.oracle.com/linux/| Yes | Installer |
-|Parrot Security|https://www.parrotsec.org| ISO | No |
+|Parrot Security|https://www.parrotsec.org| Yes | Yes |
 |Peppermint|https://peppermintos.com | No | Yes |
 |Pop OS|https://system76.com/pop| No | Yes |
 |RancherOS|https://rancher.com/rancher-os| Yes | No |
