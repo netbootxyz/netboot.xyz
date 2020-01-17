@@ -8,7 +8,8 @@ goto ${menu}
 :blackarch
 set os {{ releases.blackarch.name }}
 menu ${os} Installers
-item --gap Official Releases
+item --gap The Default login is root/blackarch
+item --gap Run blackarch-install once logged in
 {% for item in releases.blackarch.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
@@ -16,9 +17,10 @@ choose blackarch_version || goto blackarch_exit
 goto blackarch_boot
 
 :blackarch_boot
-set blackarch_initrd http://distro.ibiblio.org/blackarch/iso/blackarch-linux-netinst-${blackarch_version}-x86_64.iso
-kernel ${memdisk} iso raw
-initrd ${blackarch_initrd}
+imgfree
+set url ${live_endpoint}{{ endpoints['blackarch-installer'].path }}
+kernel ${url}vmlinuz archisobasedir=blackarch ip=dhcp archiso_http_srv=${url} initrd=initrd
+initrd ${url}initrd
 boot
 goto blackarch_exit
 

@@ -96,10 +96,10 @@ releases:
   blackarch:
     name: "BlackArch"
     enabled: true
-    menu: "security"
+    menu: "linux"
     versions:
-      - name: "2020.01.01"
-        code_name: "2020.01.01"
+      - name: "current"
+        code_name: "current"
   centos:
     name: "CentOS"
     mirror: "http://mirror.centos.org"
