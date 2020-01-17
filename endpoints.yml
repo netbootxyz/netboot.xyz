@@ -544,7 +544,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200115-1304-4cec4542/
+    path: /ubuntu-squash/releases/download/20200116-1117-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -861,6 +861,15 @@ endpoints:
     os: parrot
     version: current
     flavor: kde
+  parrot-security-xfce:
+    path: /debian-squash/releases/download/4.7-8ffa950d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: xfce-security
   parrot-security-kde:
     path: /debian-squash/releases/download/4.7-bd06009c/
     files:
@@ -888,3 +897,19 @@ endpoints:
     os: grml
     version: '2018'
     flavor: small
+  gparted-stable:
+    path: /debian-squash/releases/download/1.0.0-5-b6f38ff4/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: gparted
+    version: stable
+  rescatux:
+    path: /debian-squash/releases/download/0.72-beta6-0775b306/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: rescatux
+    version: current
