@@ -929,3 +929,11 @@ endpoints:
     - vmlinuz
     os: caine
     version: '11'
+  nitrux-stable:
+    path: /ubuntu-squash/releases/download/15012020-fff54e16/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: nitrux
+    version: stable
