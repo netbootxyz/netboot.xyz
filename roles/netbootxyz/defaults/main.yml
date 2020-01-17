@@ -405,6 +405,10 @@ utilitiespcbios:
     name: "GParted"
     enabled: true
     type: "ipxemenu"
+  grml:
+    name: "Grml"
+    enabled: true
+    type: "ipxemenu"
   memtest:
     name: "Memtest"
     enabled: true
@@ -432,6 +436,10 @@ utilitiesefi:
     type: "ipxemenu"
   gparted:
     name: "GParted"
+    enabled: true
+    type: "ipxemenu"
+  grml:
+    name: "Grml"
     enabled: true
     type: "ipxemenu"
 
