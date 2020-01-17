@@ -149,6 +149,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Name       | URL                     | Installer Kernel | Live OS |
 |------------|-------------------------|------------------|---------|
 |ALT Linux Rescue|https://en.altlinux.org/Rescue| ISO - Memdisk | - |
+|Boot Repair CD|https://sourceforge.net/projects/boot-repair-cd/| NA | Yes |
 |Breakin|http://www.advancedclustering.com/products/software/breakin/| Yes | Yes |
 |Clonezilla|http://www.clonezilla.org/| - | Yes |
 |DBAN|http://www.dban.org/| Yes | Yes |
