@@ -879,3 +879,12 @@ endpoints:
     os: grml
     version: '2018'
     flavor: full
+  grml-small:
+    path: /debian-squash/releases/download/2018.12-0c7b8f46/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: grml
+    version: '2018'
+    flavor: small
