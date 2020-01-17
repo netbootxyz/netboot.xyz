@@ -16,9 +16,10 @@ choose parrotsec_version || goto parrotsec_exit
 goto parrotsec_boot
 
 :parrotsec_boot
-set parrotsec_initrd https://mirrordirector.archive.parrotsec.org/parrot/dists/${parrotsec_version}/main/installer-${arch_a}/current/images/netboot/mini.iso
-kernel ${memdisk} iso raw
-initrd ${parrotsec_initrd}
+imgfree
+set url ${live_endpoint}{{ endpoints['parrot-net'].path }}
+kernel ${url}vmlinuz vga=788 initrd=initrd
+initrd ${url}initrd
 boot
 goto parrotsec_exit
 
