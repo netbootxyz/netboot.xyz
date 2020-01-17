@@ -306,10 +306,8 @@ releases:
       8: "/repo/OracleLinux/OL8/baseos/latest/x86_64" 
   parrotsec:
     name: "Parrot Security"
-    mirror: "https://mirrordirector.archive.parrotsec.org"
-    base_dir: "parrot"
     enabled: true
-    menu: "security"
+    menu: "linux"
     versions:
       - name: "Stable Netinstall"
         code_name: "stable"
