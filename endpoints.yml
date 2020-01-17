@@ -913,3 +913,11 @@ endpoints:
     - vmlinuz
     os: rescatux
     version: current
+  systemrescue:
+    path: /asset-mirror/releases/download/6.0.5-5baf37bb/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: systemrescue
+    version: current
