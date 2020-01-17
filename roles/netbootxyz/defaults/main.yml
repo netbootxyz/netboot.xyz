@@ -415,6 +415,12 @@ utilitiespcbios:
     type: "memtest"
     version: "5.01.0"
     util_path: "https://boot.netboot.xyz/utils/memtest86-5.01.0"
+  rescatux:
+    name: "Rescatux"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{ endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0 initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.rescatux.path }}initrd"
   supergrub:
     name: "SuperGRUB"
     enabled: true
@@ -442,6 +448,12 @@ utilitiesefi:
     name: "Grml"
     enabled: true
     type: "ipxemenu"
+  rescatux:
+    name: "Rescatux"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{ endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0 initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.rescatux.path }}initrd"
 
 bootloaders:
   legacy:
