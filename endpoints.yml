@@ -896,3 +896,11 @@ endpoints:
     - vmlinuz
     os: gparted
     version: stable
+  rescatux:
+    path: /debian-squash/releases/download/0.72-beta6-0775b306/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: rescatux
+    version: current
