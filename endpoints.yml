@@ -914,7 +914,7 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/6.0.5-5baf37bb/
+    path: /asset-mirror/releases/download/6.0.5-3ee5dc80/
     files:
     - airoot.sfs
     - initrd
