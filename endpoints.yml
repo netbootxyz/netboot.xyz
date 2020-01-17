@@ -937,3 +937,11 @@ endpoints:
     - filesystem.squashfs
     os: nitrux
     version: stable
+  bootrepair:
+    path: /ubuntu-squash/releases/download/current-e035b00c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bootrepair
+    version: current
