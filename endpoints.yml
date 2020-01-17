@@ -921,3 +921,11 @@ endpoints:
     - vmlinuz
     os: systemrescue
     version: current
+  caine:
+    path: /ubuntu-squash/releases/download/11.0-0f2bac21/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: caine
+    version: '11'
