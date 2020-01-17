@@ -155,6 +155,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |GParted|http://gparted.org| ISO - Memdisk | - |
 |Grml|http://grml.org| ISO - Memdisk | - |
 |Memtest|http://www.memtest.org/| Yes | - |
+|Rescatux|https://www.supergrubdisk.org/rescatux/| NA | Yes |
 |Super Grub2 Disk|http://www.supergrubdisk.org| ISO - Memdisk | - |
 |Ultimate Boot CD|http://www.ultimatebootcd.com| ISO - Memdisk | - |
 
