@@ -945,3 +945,11 @@ endpoints:
     - vmlinuz
     os: bootrepair
     version: current
+  blackarch-installer:
+    path: /asset-mirror/releases/download/2020.01.01-5e770614/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: blackarch
+    version: current
