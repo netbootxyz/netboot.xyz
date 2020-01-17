@@ -153,7 +153,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Clonezilla|http://www.clonezilla.org/| - | Yes |
 |DBAN|http://www.dban.org/| Yes | Yes |
 |GParted|http://gparted.org| ISO - Memdisk | - |
-|Grml|http://grml.org| ISO - Memdisk | - |
+|Grml|http://grml.org| NA | Yes |
 |Memtest|http://www.memtest.org/| Yes | - |
 |Super Grub2 Disk|http://www.supergrubdisk.org| ISO - Memdisk | - |
 |Ultimate Boot CD|http://www.ultimatebootcd.com| ISO - Memdisk | - |
