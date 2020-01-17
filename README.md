@@ -152,7 +152,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Breakin|http://www.advancedclustering.com/products/software/breakin/| Yes | Yes |
 |Clonezilla|http://www.clonezilla.org/| - | Yes |
 |DBAN|http://www.dban.org/| Yes | Yes |
-|GParted|http://gparted.org| ISO - Memdisk | - |
+|GParted|http://gparted.org| NA | Yes |
 |Grml|http://grml.org| ISO - Memdisk | - |
 |Memtest|http://www.memtest.org/| Yes | - |
 |Rescatux|https://www.supergrubdisk.org/rescatux/| NA | Yes |

@@ -406,9 +406,7 @@ utilitiespcbios:
   gparted:
     name: "GParted"
     enabled: true
-    type: "memdisk"
-    version: "1.0.0-3"
-    util_path: "http://master.dl.sourceforge.net/project/gparted/gparted-live-stable/1.0.0-3/gparted-live-1.0.0-3-amd64.iso"
+    type: "ipxemenu"
   memtest:
     name: "Memtest"
     enabled: true
@@ -438,6 +436,10 @@ utilitiespcbios:
 utilitiesefi:
   clonezilla:
     name: "Clonezilla"
+    enabled: true
+    type: "ipxemenu"
+  gparted:
+    name: "GParted"
     enabled: true
     type: "ipxemenu"
   rescatux:
