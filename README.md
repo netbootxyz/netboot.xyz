@@ -157,6 +157,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Memtest|http://www.memtest.org/| Yes | - |
 |Rescatux|https://www.supergrubdisk.org/rescatux/| NA | Yes |
 |Super Grub2 Disk|http://www.supergrubdisk.org| ISO - Memdisk | - |
+|System Rescue CD|http://www.system-rescue-cd.org/| NA | Yes |
 |Ultimate Boot CD|http://www.ultimatebootcd.com| ISO - Memdisk | - |
 
 ### Feedback
