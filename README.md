@@ -125,6 +125,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Mint|https://linuxmint.com| No | Yes |
 |Microsoft Windows|https://www.microsoft.com| User supplied media | No |
 |MirOS|https://www.mirbsd.org| Yes | No |
+|Nitrux|https://nxos.org/| No | Yes |
 |NixOS|https://nixos.org| Yes | No |
 |OpenBSD|https://openbsd.org| Yes | No |
 |OpenSUSE|https://opensuse.org| Yes | No |
