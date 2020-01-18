@@ -427,6 +427,10 @@ utilitiespcbios:
     type: "memdisk"
     version: "2.04s1"
     util_path: "http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso"
+  systemrescue:
+    name: "System Rescue CD"
+    enabled: true
+    type: "ipxemenu"
   ubcd:
     name: "Ultimate Boot CD (UBCD)"
     enabled: true
@@ -454,6 +458,10 @@ utilitiesefi:
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{ endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0 initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.rescatux.path }}initrd"
+  systemrescue:
+    name: "System Rescue CD"
+    enabled: true
+    type: "ipxemenu"
 
 bootloaders:
   legacy:
