@@ -969,3 +969,11 @@ endpoints:
     - vmlinuz
     os: bluestar
     version: current
+  anarchy:
+    path: /asset-mirror/releases/download/1.0.10-868be963/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: anarchy
+    version: current
