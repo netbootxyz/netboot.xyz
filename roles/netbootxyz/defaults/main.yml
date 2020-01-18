@@ -116,7 +116,7 @@ releases:
   coreos:
     name: "Fedora CoreOS"
     mirror: "https://builds.coreos.fedoraproject.org"
-    base_dir: "prod/streams/testing/builds"
+    base_dir: "prod/streams/stable/builds"
     enabled: true
     menu: "linux"    
     versions:
