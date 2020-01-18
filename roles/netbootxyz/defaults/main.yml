@@ -387,6 +387,12 @@ utilitiespcbios:
     type: "memdisk"
     version: "160420a12074"
     util_path: "http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_160420a12074.iso"
+  bootrepair:
+    name: "Boot Repair CD"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.bootrepair.path }}initrd"
   breakin:
     name: "Breakin"
     enabled: true
@@ -446,6 +452,12 @@ utilitiespcbios:
 
 # efi utility values
 utilitiesefi:
+  bootrepair:
+    name: "Boot Repair CD"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.bootrepair.path }}initrd"
   caine:
     name: "CAINE"
     enabled: true
