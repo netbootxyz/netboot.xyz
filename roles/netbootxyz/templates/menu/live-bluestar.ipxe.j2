@@ -27,7 +27,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz archisobasedir=arch ip=dhcp archiso_http_srv=${url} initrd=initrd
+kernel ${url}vmlinuz archisobasedir=arch ip=dhcp archiso_http_srv=${url} cow_spacesize=30% cow_label=BSLX_PERSIST ipv6.disable=1 disablehooks=v86d,915resolution,gma3600 modprobe.blacklist=uvesafb console=tty1 initrd=initrd
 initrd ${url}initrd
 boot
 
