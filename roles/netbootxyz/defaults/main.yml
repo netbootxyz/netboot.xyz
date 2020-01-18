@@ -117,11 +117,11 @@ releases:
     name: "Fedora CoreOS"
     mirror: "https://builds.coreos.fedoraproject.org"
     base_dir: "prod/streams/testing/builds"
-    enabled: false
+    enabled: true
     menu: "linux"    
     versions:
       - name: "31"
-        code_name: "31.20191127.1"
+        code_name: "31.20200113.3.1"
   debian:
     name: "Debian"      
     mirror: "http://deb.debian.org"
