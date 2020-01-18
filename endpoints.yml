@@ -953,3 +953,11 @@ endpoints:
     - vmlinuz
     os: blackarch
     version: current
+  velt-current:
+    path: /asset-mirror/releases/download/0.3.0-9f6eb608/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: velt
+    version: current
