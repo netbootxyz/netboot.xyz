@@ -1,0 +1,37 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Devuan
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "devuan" %}
+item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
+{% endif %}
+{% endfor %}
+choose live_version || goto live_exit
+goto ${live_version}
+
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "devuan" %}
+:{{ value.version }}-{{ value.flavor }}
+set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live username=devuan fetch=${squash_url} initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0

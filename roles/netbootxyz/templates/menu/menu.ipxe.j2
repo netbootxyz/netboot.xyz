@@ -49,7 +49,6 @@ iseq ${menu_linux} 1 && item linux ${space} Linux Network Installs ||
 iseq ${menu_live} 1 && item live ${space} Live CDs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
 iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS || 
-iseq ${menu_security} 1 && item security ${space} Security Related ||
 iseq ${menu_windows} 1 && item windows ${space} Windows ||
 item --gap Tools:
 iseq ${menu_utils} 1 && item utils-${platform} ${space} Utilities ||
@@ -63,9 +62,6 @@ item about ${space} About netboot.xyz
 item --gap Signature Checks:
 {% if sigs_enabled | bool %}
 item sig_check ${space} {{ site_name }} [ enabled: ${sigs_enabled} ]
-{% endif %}
-{% if img_sigs_enabled | bool %}
-item img_sigs_check ${space} Images [ enabled: ${img_sigs_enabled} ]
 {% endif %}
 {% endif %}
 {% if custom_github_menus | bool %}
@@ -111,10 +107,6 @@ goto main_menu
 
 :sig_check
 iseq ${sigs_enabled} true && set sigs_enabled false || set sigs_enabled true
-goto main_menu
-
-:img_sigs_check
-iseq ${img_sigs_enabled} true && set img_sigs_enabled false || set img_sigs_enabled true
 goto main_menu
 
 :about

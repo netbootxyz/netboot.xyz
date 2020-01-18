@@ -9,7 +9,7 @@ goto ${menu}
 set os Devuan
 clear devuan_version
 clear older_release
-menu ${os} - ${arch_a} - Image Sig Checks: [${img_sigs_enabled}]
+menu ${os} - ${arch_a}
 item --gap Latest Releases
 {% for item in releases.devuan.versions.stable %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -69,16 +69,6 @@ initrd ${devuan_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
-iseq ${img_sigs_enabled} true && iseq ${older_release} true && goto skip_sigs ||
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify linux ${sigs}${dir}/linux.sig || goto error
-imgverify initrd.gz ${sigs}${dir}/initrd.gz.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
 boot
 
 :devuan_exit

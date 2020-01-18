@@ -11,7 +11,7 @@ goto ${menu} ||
 :centos
 clear osversion
 set os {{ releases.centos.name }}
-menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
+menu ${os} - ${arch}
 {% for item in releases.centos.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
@@ -65,16 +65,6 @@ initrd ${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
 md5sum vmlinuz initrd.img
-iseq ${osversion} 8-stream && echo Rolling release, skipping sig checks && goto skip_sigs ||
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify vmlinuz ${sigs}${dir}/images/pxeboot/vmlinuz.sig || goto error
-imgverify initrd.img ${sigs}${dir}/images/pxeboot/initrd.img.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
 boot
 goto linux_menu
 

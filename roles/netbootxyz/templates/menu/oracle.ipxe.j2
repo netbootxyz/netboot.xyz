@@ -1,0 +1,41 @@
+#!ipxe
+
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
+goto ${menu} ||
+
+:oracle_menu
+set os Oracle Linux
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "oracle" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose version || goto oracle_exit
+goto ${version}
+
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "oracle" %}
+:{{ value.version }}
+set url ${live_endpoint}{{ value.path }}
+set repo {{ releases.oracle.mirror }}{{ releases.oracle.paths[value.version|int] }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${url}vmlinuz ${ipparam} repo=${repo} root=live:${url}squashfs.img ro rd.live.image rd.lvm=0 rd.luks=0 rd.md=0 rd.dm=0 initrd=initrd
+initrd ${url}initrd
+boot
+
+:oracle_exit
+clear menu
+exit 0
+

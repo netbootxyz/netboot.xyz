@@ -1,6 +1,6 @@
 #!ipxe
 
-# Fedora CoreOS (Preview)
+# Fedora CoreOS
 # https://getfedora.org/coreos/
 # https://github.com/coreos/coreos-installer/blob/master/README.md#installing-from-pxe
 
@@ -8,7 +8,7 @@ goto ${menu}
 
 :coreos
 set os {{ releases.coreos.name }}
-isset ${install_device} || set install_device sda
+isset ${install_device} || set install_device /dev/sda
 isset ${ignition_url} || set ignition_url skip
 menu ${os}
 item --gap ${os}:
@@ -25,8 +25,8 @@ goto coreos_exit
 :core_boot
 set base_url ${coreos_mirror}/${coreos_base_dir}
 set build_version ${core_version}
-kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-kernel-x86_64 nomodeset rd.neednet=1 coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} ${console} coreos.inst.stream=testing initrd=fedora-coreos-${build_version}-installer-initramfs.x86_64.img
-initrd ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-installer-initramfs.x86_64.img
+kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-live-kernel-x86_64 ip=dhcp rd.neednet=1 coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} ${console} coreos.inst.stream=stable initrd=fedora-coreos-${build_version}-live-initramfs.x86_64.img
+initrd ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-live-initramfs.x86_64.img
 boot
 goto coreos_exit
 
