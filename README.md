@@ -102,6 +102,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Arch Linux| https://www.archlinux.org| Yes | No |
 |Backbox|https://www.backbox.org | No | Yes |
 |BlackArch Linux|https://blackarch.org| Yes | Yes |
+|Bluestar Linux|https://sourceforge.net/projects/bluestarlinux| No | Yes |
 |Bodhi Linux|https://www.bodhilinux.com| No | Yes |
 |CentOS| https://centos.org | Yes | No |
 |CoreOS| http://coreos.com/ | Yes | No |
