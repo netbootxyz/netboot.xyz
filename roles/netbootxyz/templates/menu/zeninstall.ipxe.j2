@@ -7,6 +7,7 @@ goto ${menu}
 
 :zen
 set os {{ releases.zeninstall.name }}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 menu ${os} Installers
 {% for item in releases.zeninstall.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -17,7 +18,7 @@ goto zen_boot
 :zen_boot
 imgfree
 set url ${live_endpoint}{{ endpoints.zeninstall.path }}
-kernel ${url}vmlinuz archisobasedir=arch ip=dhcp archiso_http_srv=${url} initrd=initrd
+kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} initrd=initrd
 initrd ${url}initrd
 boot
 goto zen_exit
