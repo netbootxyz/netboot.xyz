@@ -104,6 +104,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |BlackArch Linux|https://blackarch.org| Yes | Yes |
 |Bodhi Linux|https://www.bodhilinux.com| No | Yes |
 |CentOS| https://centos.org | Yes | No |
+|CoreOS| http://coreos.com/ | Yes | No |
 |Debian| https://debian.org | Yes | Yes|
 |Deepin| https://www.deepin.org | No | Yes |
 |Devuan| https://devuan.org | Yes | No |
@@ -142,6 +143,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Tails|https://tails.boum.org | No | Yes |
 |Tiny Core Linux|https://tinycorelinux.net| ISO - Memdisk | No |
 |Ubuntu|https://www.ubuntu.com| Yes | Yes |
+|Velt|https://velt.io/| No | Yes |
 |Voyager|https://voyagerlive.org | No | Yes |
 |Zoris OS|https://zorinos.com| No | Yes |
 
