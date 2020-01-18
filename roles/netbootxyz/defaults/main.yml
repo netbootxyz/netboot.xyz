@@ -96,10 +96,10 @@ releases:
   blackarch:
     name: "BlackArch"
     enabled: true
-    menu: "security"
+    menu: "linux"
     versions:
-      - name: "2020.01.01"
-        code_name: "2020.01.01"
+      - name: "current"
+        code_name: "current"
   centos:
     name: "CentOS"
     mirror: "http://mirror.centos.org"
@@ -399,6 +399,12 @@ utilitiespcbios:
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
+  caine:
+    name: "CAINE"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.caine.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
@@ -433,6 +439,10 @@ utilitiespcbios:
     type: "memdisk"
     version: "2.04s1"
     util_path: "http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso"
+  systemrescue:
+    name: "System Rescue CD"
+    enabled: true
+    type: "ipxemenu"
   ubcd:
     name: "Ultimate Boot CD (UBCD)"
     enabled: true
@@ -448,6 +458,12 @@ utilitiesefi:
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.bootrepair.path }}initrd"
+  caine:
+    name: "CAINE"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.caine.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
@@ -466,6 +482,10 @@ utilitiesefi:
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{ endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0 initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.rescatux.path }}initrd"
+  systemrescue:
+    name: "System Rescue CD"
+    enabled: true
+    type: "ipxemenu"
 
 bootloaders:
   legacy:

@@ -101,7 +101,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Alpine Linux| https://alpinelinux.org | Yes | No |
 |Arch Linux| https://www.archlinux.org| Yes | No |
 |Backbox|https://www.backbox.org | No | Yes |
-|BlackArch Linux|https://blackarch.org| ISO - Memdisk | No |
+|BlackArch Linux|https://blackarch.org| Yes | Yes |
 |Bodhi Linux|https://www.bodhilinux.com| No | Yes |
 |CentOS| https://centos.org | Yes | No |
 |Debian| https://debian.org | Yes | Yes|
@@ -125,6 +125,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Mint|https://linuxmint.com| No | Yes |
 |Microsoft Windows|https://www.microsoft.com| User supplied media | No |
 |MirOS|https://www.mirbsd.org| Yes | No |
+|Nitrux|https://nxos.org/| No | Yes |
 |NixOS|https://nixos.org| Yes | No |
 |OpenBSD|https://openbsd.org| Yes | No |
 |OpenSUSE|https://opensuse.org| Yes | No |
@@ -151,6 +152,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |ALT Linux Rescue|https://en.altlinux.org/Rescue| ISO - Memdisk | - |
 |Boot Repair CD|https://sourceforge.net/projects/boot-repair-cd/| NA | Yes |
 |Breakin|http://www.advancedclustering.com/products/software/breakin/| Yes | Yes |
+|CAINE|https://www.caine-live.net/| NA | Yes |
 |Clonezilla|http://www.clonezilla.org/| - | Yes |
 |DBAN|http://www.dban.org/| Yes | Yes |
 |GParted|http://gparted.org| NA | Yes |
@@ -158,6 +160,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Memtest|http://www.memtest.org/| Yes | - |
 |Rescatux|https://www.supergrubdisk.org/rescatux/| NA | Yes |
 |Super Grub2 Disk|http://www.supergrubdisk.org| ISO - Memdisk | - |
+|System Rescue CD|http://www.system-rescue-cd.org/| NA | Yes |
 |Ultimate Boot CD|http://www.ultimatebootcd.com| ISO - Memdisk | - |
 
 ### Feedback
