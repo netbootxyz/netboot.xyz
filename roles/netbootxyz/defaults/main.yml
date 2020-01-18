@@ -385,6 +385,13 @@ releases:
         code_name: "bionic"
       - name: "16.04 LTS Xenial Xerus"
         code_name: "xenial"
+  zeninstall:
+    name: "Zen Installer Arch"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "current"
+        code_name: "current"
 
 # utility values
 utilitiespcbios:
