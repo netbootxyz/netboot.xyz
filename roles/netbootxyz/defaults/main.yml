@@ -90,7 +90,7 @@ releases:
     menu: "linux"
     versions:
       - name: "current"
-      - code_name: "current"
+        code_name: "current"
   archlinux:
     name: "Arch Linux"
     mirror: "mirror.rackspace.com"
