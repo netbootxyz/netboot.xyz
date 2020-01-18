@@ -1,0 +1,27 @@
+#!ipxe
+
+# Zen Installer for Arch
+# https://sourceforge.net/projects/revenge-installer/
+
+goto ${menu}
+
+:zen
+set os {{ releases.zeninstall.name }}
+menu ${os} Installers
+{% for item in releases.zeninstall.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose zen_version || goto zen_exit
+goto zen_boot
+
+:zen_boot
+imgfree
+set url ${live_endpoint}{{ endpoints.zeninstall.path }}
+kernel ${url}vmlinuz archisobasedir=arch ip=dhcp archiso_http_srv=${url} initrd=initrd
+initrd ${url}initrd
+boot
+goto zen_exit
+
+:zen_exit
+clear menu
+exit 0
