@@ -84,6 +84,13 @@ releases:
         code_name: "v3.11"
       - name: "Edge (development)"
         code_name: "edge"
+  anarchy:
+    name: "Anarchy Linux"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "current"
+      - code_name: "current"
   archlinux:
     name: "Arch Linux"
     mirror: "mirror.rackspace.com"
