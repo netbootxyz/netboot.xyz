@@ -977,3 +977,11 @@ endpoints:
     - vmlinuz
     os: anarchy
     version: current
+  zeninstall:
+    path: /asset-mirror/releases/download/2019.10.31-b8afbdfb/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: zeninstall
+    version: current
