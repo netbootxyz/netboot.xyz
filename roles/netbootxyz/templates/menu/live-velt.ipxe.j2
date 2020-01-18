@@ -6,6 +6,7 @@ goto ${menu} ||
 set os Velt
 menu ${os} - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "velt" %}
@@ -27,7 +28,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz archisobasedir=arch ip=dhcp archiso_http_srv=${url} initrd=initrd
+kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} initrd=initrd
 initrd ${url}initrd
 boot
 
