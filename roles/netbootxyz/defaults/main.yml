@@ -393,6 +393,12 @@ utilitiespcbios:
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
+  caine:
+    name: "CAINE"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.caine.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
@@ -440,6 +446,12 @@ utilitiespcbios:
 
 # efi utility values
 utilitiesefi:
+  caine:
+    name: "CAINE"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.caine.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
