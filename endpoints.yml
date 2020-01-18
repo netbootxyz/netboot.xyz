@@ -961,3 +961,11 @@ endpoints:
     - vmlinuz
     os: velt
     version: current
+  bluestar:
+    path: /asset-mirror/releases/download/5.4.8-2020.01.07-3db62c8c/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: bluestar
+    version: current
