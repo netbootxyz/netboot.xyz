@@ -7,6 +7,7 @@ goto ${menu}
 
 :blackarch
 set os {{ releases.blackarch.name }}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 menu ${os} Installers
 item --gap The Default login is root/blackarch
 item --gap Run blackarch-install once logged in
@@ -19,7 +20,7 @@ goto blackarch_boot
 :blackarch_boot
 imgfree
 set url ${live_endpoint}{{ endpoints['blackarch-installer'].path }}
-kernel ${url}vmlinuz archisobasedir=blackarch ip=dhcp archiso_http_srv=${url} initrd=initrd
+kernel ${url}vmlinuz archisobasedir=blackarch ${ipparam} archiso_http_srv=${url} initrd=initrd
 initrd ${url}initrd
 boot
 goto blackarch_exit
