@@ -544,7 +544,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200102-1116-4cec4542/
+    path: /ubuntu-squash/releases/download/20200116-1117-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -584,7 +584,7 @@ endpoints:
     flavor: nvidia
     kernel: pop-19.10-nvidia-squash
   linux-lite-4-squash:
-    path: /ubuntu-squash/releases/download/4.6-816de7f4/
+    path: /ubuntu-squash/releases/download/4.8-feb35fae/
     files:
     - filesystem.squashfs
     - initrd
@@ -785,3 +785,203 @@ endpoints:
     version: rolling
     flavor: lxqt
     kernel: sparky-rolling-lxqt
+  oracle-8:
+    path: /asset-mirror/releases/download/u1-1fbcccf2/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: oracle
+    version: '8'
+  oracle-7:
+    path: /asset-mirror/releases/download/u7-9f014587/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: oracle
+    version: '7'
+  kodachi-6:
+    path: /ubuntu-squash/releases/download/6.2-2a23039c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: kodachi
+    version: '6'
+  bodhi-5-standard:
+    path: /ubuntu-squash/releases/download/5.0.0-5868b819/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: '5'
+    flavor: standard
+  bodhi-5-apppack:
+    path: /ubuntu-squash/releases/download/5.0.0-5f56cdcc/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: '5'
+    flavor: apppack
+  devuan-ascii:
+    path: /debian-squash/releases/download/2.1-c5d9332b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: devuan
+    version: '2'
+    flavor: ascii
+  parrot-net:
+    path: /asset-mirror/releases/download/4.7-db3290ce/
+    files:
+    - vmlinuz
+    - initrd
+    os: parrotnet
+    version: current
+  parrot-home-xfce:
+    path: /debian-squash/releases/download/4.7-68fc557d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: xfce
+  parrot-home-kde:
+    path: /debian-squash/releases/download/4.7-680ef953/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: kde
+  parrot-security-xfce:
+    path: /debian-squash/releases/download/4.7-8ffa950d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: xfce-security
+  parrot-security-kde:
+    path: /debian-squash/releases/download/4.7-bd06009c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: current
+    flavor: kde-security
+  grml-full:
+    path: /debian-squash/releases/download/2018.12-89ed5442/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: grml
+    version: '2018'
+    flavor: full
+  grml-small:
+    path: /debian-squash/releases/download/2018.12-0c7b8f46/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: grml
+    version: '2018'
+    flavor: small
+  gparted-stable:
+    path: /debian-squash/releases/download/1.0.0-5-b6f38ff4/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: gparted
+    version: stable
+  rescatux:
+    path: /debian-squash/releases/download/0.72-beta6-0775b306/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: rescatux
+    version: current
+  systemrescue:
+    path: /asset-mirror/releases/download/6.0.5-3ee5dc80/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: systemrescue
+    version: current
+  caine:
+    path: /ubuntu-squash/releases/download/11.0-0f2bac21/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: caine
+    version: '11'
+  nitrux-stable:
+    path: /ubuntu-squash/releases/download/15012020-53f87b85/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: nitrux
+    version: stable
+  bootrepair:
+    path: /ubuntu-squash/releases/download/current-e035b00c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bootrepair
+    version: current
+  blackarch-installer:
+    path: /asset-mirror/releases/download/2020.01.01-5e770614/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: blackarch
+    version: current
+  velt-current:
+    path: /asset-mirror/releases/download/0.3.0-9f6eb608/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: velt
+    version: current
+  bluestar:
+    path: /asset-mirror/releases/download/5.4.8-2020.01.07-3db62c8c/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: bluestar
+    version: current
+  anarchy:
+    path: /asset-mirror/releases/download/1.0.10-868be963/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: anarchy
+    version: current
+  zeninstall:
+    path: /asset-mirror/releases/download/2019.10.31-b8afbdfb/
+    files:
+    - airoot.sfs
+    - initrd
+    - vmlinuz
+    os: zeninstall
+    version: current

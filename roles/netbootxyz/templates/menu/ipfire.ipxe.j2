@@ -8,7 +8,7 @@ goto ${menu} ||
 :ipfire
 clear osversion
 set os {{ releases.ipfire.name }}
-menu ${os} - Image Sig Checks: [${img_sigs_enabled}]
+menu ${os}
 {% for item in releases.ipfire.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
@@ -24,15 +24,6 @@ initrd ${ipfire_mirror}/${dir}/instroot
 echo
 echo MD5sums:
 md5sum vmlinuz instroot
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify vmlinuz ${sigs}ipfire/${dir}/vmlinuz.sig || goto error
-imgverify instroot ${sigs}ipfire/${dir}/instroot.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
 boot
 
 :ipfire_exit

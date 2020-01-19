@@ -1,0 +1,28 @@
+#!ipxe
+
+# Anarchy Linux Operating System
+# https://www.anarchylinux.org/
+
+goto ${menu}
+
+:anarchy
+set os {{ releases.anarchy.name }}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+menu ${os} Installers
+{% for item in releases.anarchy.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose anarchy_version || goto anarchy_exit
+goto anarchy_boot
+
+:anarchy_boot
+imgfree
+set url ${live_endpoint}{{ endpoints.anarchy.path }}
+kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} initrd=initrd
+initrd ${url}initrd
+boot
+goto anarchy_exit
+
+:anarchy_exit
+clear menu
+exit 0

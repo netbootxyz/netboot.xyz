@@ -10,7 +10,7 @@ goto ${menu} ||
 
 :mageia
 set os {{ releases.mageia.name }}
-menu ${os} - ${arch} - Image Sig Checks: [${img_sigs_enabled}]
+menu ${os} - ${arch}
 {% for item in releases.mageia.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
@@ -28,15 +28,6 @@ imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console} initrd=a
 echo
 echo MD5sums:
 md5sum vmlinuz all.rdz
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify vmlinuz ${sigs}${dir}/${dir2}/vmlinuz.sig || goto error
-imgverify all.rdz ${sigs}${dir}/${dir2}/all.rdz.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
 boot || goto mageia
 
 :mageia_exit

@@ -16,9 +16,6 @@ set live_endpoint {{ live_endpoint }}
 # signature check enabled?
 set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
 
-# image signatures check enabled?
-set img_sigs_enabled {{ img_sigs_enabled | default(false) | bool | lower }}
-
 # set location of signatures for sources
 set sigs {{ sigs_location }}
 
@@ -52,7 +49,6 @@ set menu_linux 1
 set menu_bsd 1
 set menu_freedos 1
 set menu_live 1
-set menu_security 1
 set menu_windows 1
 set menu_utils 1
 iseq ${buildarch} i386 && goto x86_64 ||

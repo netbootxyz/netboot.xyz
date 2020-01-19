@@ -10,7 +10,6 @@ time_server: "0.pool.ntp.org"
 # signature checking
 sigs_menu: false
 sigs_enabled: false
-img_sigs_enabled: false
 
 # helper app locations
 memdisk_location: "http://${boot_domain}/memdisk"
@@ -85,6 +84,13 @@ releases:
         code_name: "v3.11"
       - name: "Edge (development)"
         code_name: "edge"
+  anarchy:
+    name: "Anarchy Linux"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "current"
+        code_name: "current"
   archlinux:
     name: "Arch Linux"
     mirror: "mirror.rackspace.com"
@@ -97,10 +103,10 @@ releases:
   blackarch:
     name: "BlackArch"
     enabled: true
-    menu: "security"
+    menu: "linux"
     versions:
-      - name: "2020.01.01"
-        code_name: "2020.01.01"
+      - name: "current"
+        code_name: "current"
   centos:
     name: "CentOS"
     mirror: "http://mirror.centos.org"
@@ -117,12 +123,12 @@ releases:
   coreos:
     name: "Fedora CoreOS"
     mirror: "https://builds.coreos.fedoraproject.org"
-    base_dir: "prod/streams/testing/builds"
-    enabled: false
+    base_dir: "prod/streams/stable/builds"
+    enabled: true
     menu: "linux"    
     versions:
       - name: "31"
-        code_name: "31.20191127.1"
+        code_name: "31.20200113.3.1"
   debian:
     name: "Debian"      
     mirror: "http://deb.debian.org"
@@ -297,12 +303,18 @@ releases:
         code_name: "42.3"
       - name: "openSUSE tumbleweed"
         code_name: "tumbleweed"
+  oracle:
+    name: "Oracle Linux"
+    mirror: "https://yum.oracle.com"
+    enabled: true
+    menu: "linux"
+    paths:
+      7: "/repo/OracleLinux/OL7/latest/x86_64"
+      8: "/repo/OracleLinux/OL8/baseos/latest/x86_64" 
   parrotsec:
     name: "Parrot Security"
-    mirror: "https://mirrordirector.archive.parrotsec.org"
-    base_dir: "parrot"
     enabled: true
-    menu: "security"
+    menu: "linux"
     versions:
       - name: "Stable Netinstall"
         code_name: "stable"
@@ -373,6 +385,13 @@ releases:
         code_name: "bionic"
       - name: "16.04 LTS Xenial Xerus"
         code_name: "xenial"
+  zeninstall:
+    name: "Zen Installer Arch"
+    enabled: true
+    menu: "linux"
+    versions:
+      - name: "current"
+        code_name: "current"
 
 # utility values
 utilitiespcbios:
@@ -382,12 +401,24 @@ utilitiespcbios:
     type: "memdisk"
     version: "160420a12074"
     util_path: "http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_160420a12074.iso"
+  bootrepair:
+    name: "Boot Repair CD"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.bootrepair.path }}initrd"
   breakin:
     name: "Breakin"
     enabled: true
     type: "direct"
     kernel: "${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin startup=breakin initrd=initrd"
     initrd: "${live_endpoint}{{ endpoints.breakin.path }}initrd"
+  caine:
+    name: "CAINE"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.caine.path }}initrd"
   clonezilla:
     name: "Clonezilla"
     enabled: true
@@ -399,21 +430,33 @@ utilitiespcbios:
   gparted:
     name: "GParted"
     enabled: true
-    type: "memdisk"
-    version: "1.0.0-3"
-    util_path: "http://master.dl.sourceforge.net/project/gparted/gparted-live-stable/1.0.0-3/gparted-live-1.0.0-3-amd64.iso"
+    type: "ipxemenu"
+  grml:
+    name: "Grml"
+    enabled: true
+    type: "ipxemenu"
   memtest:
     name: "Memtest"
     enabled: true
     type: "memtest"
     version: "5.01.0"
     util_path: "https://boot.netboot.xyz/utils/memtest86-5.01.0"
+  rescatux:
+    name: "Rescatux"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{ endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0 initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.rescatux.path }}initrd"
   supergrub:
     name: "SuperGRUB"
     enabled: true
     type: "memdisk"
     version: "2.04s1"
     util_path: "http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso"
+  systemrescue:
+    name: "System Rescue CD"
+    enabled: true
+    type: "ipxemenu"
   ubcd:
     name: "Ultimate Boot CD (UBCD)"
     enabled: true
@@ -423,8 +466,38 @@ utilitiespcbios:
 
 # efi utility values
 utilitiesefi:
+  bootrepair:
+    name: "Boot Repair CD"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.bootrepair.path }}initrd"
+  caine:
+    name: "CAINE"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.caine.path }}initrd"
   clonezilla:
     name: "Clonezilla"
+    enabled: true
+    type: "ipxemenu"
+  gparted:
+    name: "GParted"
+    enabled: true
+    type: "ipxemenu"
+  grml:
+    name: "Grml"
+    enabled: true
+    type: "ipxemenu"
+  rescatux:
+    name: "Rescatux"
+    enabled: true
+    type: "direct"
+    kernel: "${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{ endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0 initrd=initrd"
+    initrd: "${live_endpoint}{{ endpoints.rescatux.path }}initrd"
+  systemrescue:
+    name: "System Rescue CD"
     enabled: true
     type: "ipxemenu"
 

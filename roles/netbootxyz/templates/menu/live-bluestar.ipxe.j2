@@ -1,0 +1,37 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Bluestar
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "bluestar" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose live_version || goto live_exit
+goto ${live_version}
+
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "bluestar" %}
+:{{ value.version }}
+set url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} cow_spacesize=30% cow_label=BSLX_PERSIST ipv6.disable=1 disablehooks=v86d,915resolution,gma3600 modprobe.blacklist=uvesafb console=tty1 initrd=initrd
+initrd ${url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0

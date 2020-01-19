@@ -1,6 +1,6 @@
 #!ipxe
 
-menu Utilities - Image Sig Checks: [${img_sigs_enabled}]
+menu Utilities
 item --gap Utilities:
 {% for key, value in utilitiespcbios.items() | sort(attribute='1.name') %}
 {% if value.enabled %}
@@ -46,15 +46,6 @@ initrd --name ${util_file} ${util_path}
 echo
 echo MD5sums:
 md5sum memdisk ${util_file}
-iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
-:verify_sigs
-echo
-echo Checking signatures...
-imgverify memdisk ${sigs}memdisk.sig || goto error
-imgverify ${util_file} ${sigs}${menu}/${util_file}.sig || goto error
-echo Signatures verified!
-echo
-:skip_sigs
 boot
 goto utils_exit
 

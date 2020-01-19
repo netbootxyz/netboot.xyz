@@ -1,0 +1,39 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os System Rescue CD
+menu ${os} - Current Arch [ ${arch} ]
+item --gap Currently during boot you need to press ctrl+d/ctrl+c
+item --gap repeatedly when init hangs on starting a download
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "systemrescue" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose live_version || goto live_exit
+goto ${live_version}
+
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "systemrescue" %}
+:{{ value.version }}
+set url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} initrd=initrd
+initrd ${url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0

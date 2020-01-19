@@ -46,9 +46,11 @@ imgfree
 kernel {{ wimboot_location }}
 initrd -n bootmgr     ${win_base_url}/${win_arch}/bootmgr       bootmgr ||
 initrd -n bootmgr.efi ${win_base_url}/${win_arch}/bootmgr.efi   bootmgr.efi ||      
-initrd -n bcd         ${win_base_url}/${win_arch}/boot/bcd      bcd
-initrd -n boot.sdi    ${win_base_url}/${win_arch}/boot/boot.sdi boot.sdi   
-initrd -n boot.wim    ${win_base_url}/${win_arch}/boot/boot.wim boot.wim
+initrd -n bcd         ${win_base_url}/${win_arch}/boot/bcd      bcd ||
+initrd -n bcd         ${win_base_url}/${win_arch}/Boot/BCD      bcd ||
+initrd -n boot.sdi    ${win_base_url}/${win_arch}/boot/boot.sdi boot.sdi ||
+initrd -n boot.sdi    ${win_base_url}/${win_arch}/Boot/boot.sdi boot.sdi ||
+initrd -n boot.wim    ${win_base_url}/${win_arch}/sources/boot.wim boot.wim
 boot
 
 :windows_exit

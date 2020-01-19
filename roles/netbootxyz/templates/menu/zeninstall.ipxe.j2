@@ -1,0 +1,28 @@
+#!ipxe
+
+# Zen Installer for Arch
+# https://sourceforge.net/projects/revenge-installer/
+
+:zen
+set os {{ releases.zeninstall.name }}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+menu ${os} Installers
+item --gap Currently during boot you need to press ctrl+d/ctrl+c
+item --gap repeatedly when init hangs on starting a download
+{% for item in releases.zeninstall.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose zen_version || goto zen_exit
+goto zen_boot
+
+:zen_boot
+imgfree
+set url ${live_endpoint}{{ endpoints.zeninstall.path }}
+kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} initrd=initrd
+initrd ${url}initrd
+boot
+goto zen_exit
+
+:zen_exit
+clear menu
+exit 0

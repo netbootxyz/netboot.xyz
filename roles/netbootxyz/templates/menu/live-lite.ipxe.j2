@@ -15,9 +15,9 @@ goto ${live_version}
 :4
 set squash_url ${live_endpoint}{{ endpoints["linux-lite-4-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["linux-lite-4-squash"].path }}
-goto live-boot
+goto boot
 
-:4-boot
+:boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd
 initrd ${kernel_url}initrd
