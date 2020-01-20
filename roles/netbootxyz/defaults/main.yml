@@ -114,6 +114,8 @@ releases:
     enabled: true
     menu: "linux"
     versions:
+      - name: "8.1"
+        code_name: "8.1.1911"
       - name: "8.0"
         code_name: "8.0.1905"
       - name: "8.0 Stream"
