@@ -204,12 +204,8 @@ releases:
         code_name: "FD12LITE"
   gentoo:
     name: "Gentoo"
-    mirror: ""
-    enabled: false
+    enabled: true
     menu: "linux"
-    versions:
-      - name: "Minimal CD 20160204 (amd64)"
-        code_name: "20160204"
   ipfire:
     name: "IPFire"
     mirror: "https://downloads.ipfire.org"
