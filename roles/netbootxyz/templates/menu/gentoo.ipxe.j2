@@ -3,30 +3,34 @@
 # Gentoo Operating System
 # http://www.gentoo.org
 
-# Note: in order to boot Gentoo via iPXE, the method at http://blog.dastrup.com/?p=12 has been utilized to 
-# to allow for the Gentoo minimal disk to boot.  I've regenerated the latest boot disks and have put
-# them on https://sourceforge.net/projects/netboot-xyz/files/distros/gentoo/amd64/20160204/
-
-goto ${menu}
-
 :gentoo
 set os {{ releases.gentoo.name }}
-menu ${os} ${arch_a}
-{% for item in releases.gentoo.versions %}
-item {{ item.code_name }} ${space} ${os} {{ item.name }}
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "gentoo" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
 {% endfor %}
 choose gentoo_version || goto gentoo_exit
 goto ${gentoo_version}
 
-:20160204
-set gentoopath https://master.dl.sourceforge.net/project/netboot-xyz/distros/gentoo/amd64/20160204
-echo Please note the gentoo ISO has been regenerated to work with iPXE
-echo using the method here: http://blog.dastrup.com/?p=12
-kernel --name gentoo-kernel ${gentoopath}/kernel root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ ${console}
-initrd --name gentoo-initrd.img ${gentoopath}/initrd
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "gentoo" %}
+:{{ value.version }}
+set url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${url}vmlinuz ip=dhcp root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ fetch=${url}image.squashfs initrd=initrd
+initrd ${url}initrd
 boot
-goto gentoo
 
 :gentoo_exit
 clear menu
-chain linux.ipxe
+exit 0
