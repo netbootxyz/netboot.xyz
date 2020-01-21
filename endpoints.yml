@@ -993,3 +993,11 @@ endpoints:
     - vmlinuz
     os: gentoo
     version: autobuilds
+  lxle:
+    path: /ubuntu-squash/releases/download/18.04.3-9007db23/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: lxle
+    version: current
