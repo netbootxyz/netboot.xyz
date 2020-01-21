@@ -122,7 +122,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |KDE Neon|https://neon.kde.org | No | Yes |
 |Kodachi|https://www.digi77.com/linux-kodachi/ | No | Yes |
 |Linux Lite| https://www.linuxliteos.com | No | Yes |
-|Q4OS|https://q4os.org | No | Yes |
+|LXLE| https://lxle.net/ | No | Yes |
 |Mageia|https://www.mageia.org| Yes | No |
 |Manjaro|https://manjaro.org| No | Yes |
 |Mint|https://linuxmint.com| No | Yes |
@@ -136,6 +136,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |Parrot Security|https://www.parrotsec.org| Yes | Yes |
 |Peppermint|https://peppermintos.com | No | Yes |
 |Pop OS|https://system76.com/pop| No | Yes |
+|Q4OS|https://q4os.org | No | Yes |
 |RancherOS|https://rancher.com/rancher-os| Yes | No |
 |Red Hat Enterprise Linux|https://www.redhat.com| User supplied media | No |
 |Regolith|https://regolith-linux.org| No | Yes |
