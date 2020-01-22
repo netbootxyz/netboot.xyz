@@ -1017,3 +1017,11 @@ endpoints:
     - 008-firefox.srm
     os: kaspersky
     version: '18'
+  septor:
+    path: /debian-squash/releases/download/2020-e0a39ae7/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: septor
+    version: current
