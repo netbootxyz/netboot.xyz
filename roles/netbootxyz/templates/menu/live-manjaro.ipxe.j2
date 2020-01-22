@@ -1,45 +1,68 @@
 #!ipxe
 
-goto ${menu} ||
-
 :live_menu
-menu Manjaro Live - Current Arch [ ${arch} ]
-item --gap Currently during boot you need to press ctrl+d/ctrl+c
-item --gap repeatedly when init hangs on starting a download
+set os Manjaro
+menu ${os} Live - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
-item --gap Manjaro Live
+item --gap ${os} Live versions
+item stable ${space} ${os} 18.1.0
+item current ${space} ${os} Current
+choose menu || goto live_exit
+goto ${menu}
+
+:stable
+menu ${os} Live Stable - Current Arch [ ${arch} ]
+item --gap Currently during boot you need to press ctrl+d/ctrl+c
+item --gap repeatedly when init hangs on starting a download
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "manjaro" and 'squash' in key %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% if value.os == "manjaro" and value.version == "18.1.0" and "kernel" not in key %}
+item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
 {% endif %}
 {% endfor %}
-choose menu || goto live_exit
-echo ${cls}
-goto ${menu} ||
-iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+choose version || goto live_menu
+goto ${version}
+
+:current
+menu ${os} Live Current - Current Arch [ ${arch} ]
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "manjaro" and value.version == "current" %}
+item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
+{% endif %}
+{% endfor %}
+choose version || goto live_menu
+goto ${version}
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "manjaro" and 'squash' in key %}
+{% if value.os == "manjaro" and value.version == "current" %}
+:{{ value.version }}-{{ value.flavor }}
+set fetch_url ${live_endpoint}{{ value.path }}
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+{% endif %}
+{% endfor %}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "manjaro" and value.version == "18.1.0" and 'kernel' not in key %}
 {% set kernel_name = value.kernel %}
-:{{ key }}
-imgfree
+:{{ value.version }}-{{ value.flavor }}
 set fetch_url ${live_endpoint}{{ value.path }}
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
-kernel ${live_endpoint}{{ value.path }}vmlinuz misobasedir=manjaro ${ipparam} miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us systemdshow_status=1 apparmor=1 security=apparmor
-initrd ${live_endpoint}{{ value.path }}initrd
-boot
+set kernel_url ${live_endpoint}{{ value.path }}
 {% endif %}
 {% endfor %}
+goto boot
 {% endif %}
 {% endfor %}
 
-:change_menu
-chain ${menu}.ipxe || goto error
-goto live_menu
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz misobasedir=manjaro ${ipparam} miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us
+initrd ${kernel_url}initrd
+boot
 
 :live_exit
 clear menu
 exit 0
-
