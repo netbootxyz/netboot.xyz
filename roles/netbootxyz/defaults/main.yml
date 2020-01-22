@@ -529,6 +529,10 @@ utilitiespcbios:
     name: "Grml"
     enabled: true
     type: "ipxemenu"
+  kaspersky:
+    name: "Kaspersky Rescue Disk"
+    enabled: true
+    type: "ipxemenu"
   memtest:
     name: "Memtest"
     enabled: true
@@ -582,6 +586,10 @@ utilitiesefi:
     type: "ipxemenu"
   grml:
     name: "Grml"
+    enabled: true
+    type: "ipxemenu"
+  kaspersky:
+    name: "Kaspersky Rescue Disk"
     enabled: true
     type: "ipxemenu"
   rescatux:
