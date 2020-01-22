@@ -1025,3 +1025,16 @@ endpoints:
     - vmlinuz
     os: septor
     version: current
+  manjaro-xfce-current:
+    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-33a7845d/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - mhwdfs.sfs
+    - desktopfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: xfce
+    kernel: manjaro-xfce-current
