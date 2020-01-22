@@ -898,7 +898,7 @@ endpoints:
     version: '2018'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.0.0-5-b6f38ff4/
+    path: /debian-squash/releases/download/1.1.0-1-b6f38ff4/
     files:
     - filesystem.squashfs
     - initrd
