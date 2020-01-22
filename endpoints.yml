@@ -1038,3 +1038,16 @@ endpoints:
     version: current
     flavor: xfce
     kernel: manjaro-xfce-current
+  manjaro-gnome-current:
+    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-be8474e3/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - mhwdfs.sfs
+    - desktopfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: gnome
+    kernel: manjaro-gnome-current
