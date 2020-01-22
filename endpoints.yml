@@ -1001,3 +1001,19 @@ endpoints:
     - vmlinuz
     os: lxle
     version: current
+  kaspersky-rescue:
+    path: /asset-mirror/releases/download/18-a1f08df5/
+    files:
+    - initrd.xz
+    - initrd
+    - vmlinuz
+    - kernel.dat
+    - 000-core.srm
+    - 001-xorg.srm
+    - 002-xfce.srm
+    - 003-kl.srm
+    - 004-krt.srm
+    - 005-bases.srm
+    - 008-firefox.srm
+    os: kaspersky
+    version: '18'
