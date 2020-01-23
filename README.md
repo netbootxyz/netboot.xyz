@@ -163,6 +163,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |DBAN|http://www.dban.org/| Yes | Yes |
 |GParted|http://gparted.org| NA | Yes |
 |Grml|http://grml.org| NA | Yes |
+|Kaspersky Rescue Disk|https://support.kaspersky.com/viruses/krd18| NA | Yes |
 |Memtest|http://www.memtest.org/| Yes | - |
 |Rescatux|https://www.supergrubdisk.org/rescatux/| NA | Yes |
 |Super Grub2 Disk|http://www.supergrubdisk.org| ISO - Memdisk | - |
