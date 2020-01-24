@@ -159,9 +159,9 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Name       | URL                     | Type |
 |------------|-------------------------|------|
 | ALT Linux Rescue | https://en.altlinux.org/Rescue | ISO - Memdisk |
-| Boot Repair CD | https://sourceforge.net/projects/boot-repair-cd/ | Kernel/Initrd |
+| Boot Repair CD | https://sourceforge.net/projects/boot-repair-cd/ | LiveCD |
 | Breakin | http://www.advancedclustering.com/products/software/breakin/ | Kernel/Initrd |
-| CAINE | https://www.caine-live.net/ | Kernel/Initrd |
+| CAINE | https://www.caine-live.net/ | LiveCD |
 | Clonezilla | http://www.clonezilla.org/ | LiveCD |
 | DBAN | http://www.dban.org/ | Kernel |
 | GParted | http://gparted.org | LiveCD |
