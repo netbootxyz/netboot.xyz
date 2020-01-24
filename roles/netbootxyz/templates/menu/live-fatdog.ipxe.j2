@@ -27,8 +27,8 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz rootfstype=ramfs initrd=initrd
-initrd ${kernel_url}initrd
+kernel ${url}vmlinuz rootfstype=ramfs initrd=initrd
+initrd ${url}initrd
 boot
 
 :live_exit
