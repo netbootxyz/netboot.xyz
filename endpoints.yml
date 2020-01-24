@@ -1064,3 +1064,10 @@ endpoints:
     version: current
     flavor: kde
     kernel: manjaro-kde-current
+  fatdog:
+    path: /asset-mirror/releases/download/810-327cc0d6/
+    files:
+    - vmlinuz
+    - initrd
+    os: fatdog
+    version: current
