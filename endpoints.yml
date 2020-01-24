@@ -1071,3 +1071,11 @@ endpoints:
     - initrd
     os: fatdog
     version: current
+  raizo:
+    path: /debian-squash/releases/download/v11.20.01.22p-58ed94c1/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: raizo
+    version: current
