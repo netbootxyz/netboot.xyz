@@ -962,7 +962,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.4.8-2020.01.07-3db62c8c/
+    path: /asset-mirror/releases/download/5.4.13-2020.01.19-3db62c8c/
     files:
     - airoot.sfs
     - initrd
