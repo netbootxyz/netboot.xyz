@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# if tag exists append random string to it
+CODE=$(curl -s -o /dev/null -I -w "%{http_code}" https://api.github.com/repos/netbootxyz/netboot.xyz/releases/tags/"${RELEASE_TAG}")
+echo ${CODE}
+if [ "${CODE}" == "404" ]; then
+  git tag ${RELEASE_TAG}
+elif [ "${CODE}" == "200" ]; then
+  RAND=$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 3 | head -n 1)
+  git tag ${RELEASE_TAG}${RAND}
+fi
