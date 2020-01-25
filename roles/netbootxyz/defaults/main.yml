@@ -473,8 +473,6 @@ releases:
     versions:
       - name: "19.10 Eoan Ermine"
         code_name: "eoan"
-      - name: "19.04 Disco Dingo"
-        code_name: "disco"
       - name: "18.04 LTS Bionic Beaver"
         code_name: "bionic"
       - name: "16.04 LTS Xenial Xerus"
