@@ -112,7 +112,7 @@ jobs:
       script: skip
       before_deploy:
         - export RELEASE_TAG=$(cat version.txt)-RC
-        - git tag ${RELEASE_TAG}
+        - ./script/tag
       deploy:
         - provider: releases
           api_key: $GITHUB_TOKEN
