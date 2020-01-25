@@ -544,7 +544,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200116-1117-4cec4542/
+    path: /ubuntu-squash/releases/download/20200123-1116-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
