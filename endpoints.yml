@@ -544,7 +544,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200116-1117-4cec4542/
+    path: /ubuntu-squash/releases/download/20200123-1116-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -898,7 +898,7 @@ endpoints:
     version: '2018'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.0.0-5-b6f38ff4/
+    path: /debian-squash/releases/download/1.1.0-1-b6f38ff4/
     files:
     - filesystem.squashfs
     - initrd
@@ -930,7 +930,7 @@ endpoints:
     os: caine
     version: '11'
   nitrux-stable:
-    path: /ubuntu-squash/releases/download/15012020-53f87b85/
+    path: /ubuntu-squash/releases/download/19012020-53f87b85/
     files:
     - initrd
     - vmlinuz
@@ -962,7 +962,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.4.8-2020.01.07-3db62c8c/
+    path: /asset-mirror/releases/download/5.4.13-2020.01.19-3db62c8c/
     files:
     - airoot.sfs
     - initrd
@@ -984,4 +984,98 @@ endpoints:
     - initrd
     - vmlinuz
     os: zeninstall
+    version: current
+  gentoo:
+    path: /asset-mirror/releases/download/20200122T214502Z-3b6f19b1/
+    files:
+    - image.squashfs
+    - initrd
+    - vmlinuz
+    os: gentoo
+    version: autobuilds
+  lxle:
+    path: /ubuntu-squash/releases/download/18.04.3-9007db23/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: lxle
+    version: current
+  kaspersky-rescue:
+    path: /asset-mirror/releases/download/18-a1f08df5/
+    files:
+    - initrd.xz
+    - initrd
+    - vmlinuz
+    - kernel.dat
+    - 000-core.srm
+    - 001-xorg.srm
+    - 002-xfce.srm
+    - 003-kl.srm
+    - 004-krt.srm
+    - 005-bases.srm
+    - 008-firefox.srm
+    os: kaspersky
+    version: '18'
+  septor:
+    path: /debian-squash/releases/download/2020-e0a39ae7/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: septor
+    version: current
+  manjaro-xfce-current:
+    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-33a7845d/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - mhwdfs.sfs
+    - desktopfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: xfce
+    kernel: manjaro-xfce-current
+  manjaro-gnome-current:
+    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-be8474e3/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - mhwdfs.sfs
+    - desktopfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: gnome
+    kernel: manjaro-gnome-current
+  manjaro-kde-current:
+    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-185cee90/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - mhwdfs.sfs
+    - desktopfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: kde
+    kernel: manjaro-kde-current
+  fatdog:
+    path: /asset-mirror/releases/download/810-327cc0d6/
+    files:
+    - vmlinuz
+    - initrd
+    os: fatdog
+    version: current
+  raizo:
+    path: /debian-squash/releases/download/v11.20.01.22p-58ed94c1/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: raizo
     version: current
