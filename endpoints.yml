@@ -1087,3 +1087,11 @@ endpoints:
     os: 4mlinux
     version: current
     flavor: full
+  4mlinux-thesss:
+    path: /asset-mirror/releases/download/31.2-17b08d75/
+    files:
+    - initrd
+    - vmlinuz
+    os: 4mlinux
+    version: current
+    flavor: TheSSS
