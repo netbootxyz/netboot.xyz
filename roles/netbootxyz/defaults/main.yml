@@ -487,6 +487,10 @@ releases:
 
 # utility values
 utilitiespcbios:
+  4mlinux:
+    name: "4MLinux"
+    enabled: true
+    type: "ipxemenu"
   avg:
     name: "AVG Rescue CD"
     enabled: true
@@ -562,6 +566,10 @@ utilitiespcbios:
 
 # efi utility values
 utilitiesefi:
+  4mlinux:
+    name: "4MLinux"
+    enabled: true
+    type: "ipxemenu"
   bootrepair:
     name: "Boot Repair CD"
     enabled: true
