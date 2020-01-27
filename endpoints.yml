@@ -1080,9 +1080,10 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/31.1-9100f629/
+    path: /asset-mirror/releases/download/31.1-7e63c849/
     files:
     - initrd
     - vmlinuz
     os: 4mlinux
     version: current
+    flavor: full
