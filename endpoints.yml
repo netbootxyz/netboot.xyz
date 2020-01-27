@@ -1095,3 +1095,11 @@ endpoints:
     os: 4mlinux
     version: current
     flavor: TheSSS
+  4mlinux-bakandimg:
+    path: /asset-mirror/releases/download/31.0-0bc08fcf/
+    files:
+    - initrd
+    - vmlinuz
+    os: 4mlinux
+    version: current
+    flavor: BakAndImg
