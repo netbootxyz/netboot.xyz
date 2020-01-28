@@ -327,13 +327,15 @@ endpoints:
     version: '5'
     kernel: elementaryos-5-default-squash
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2019.4-00ef2578/
+    path: /debian-squash/releases/download/2020.1-63491ab9/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: kali
     version: rolling
     flavor: xfce
-    kernel: kali-rolling-live-kernel
+    kernel: kali-xfce-squash
   kali-light-squash:
     path: /debian-squash/releases/download/2019.4-544b485d/
     files:
