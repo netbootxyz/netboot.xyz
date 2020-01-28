@@ -232,7 +232,7 @@ releases:
     enabled: true
     menu: "linux"
     versions:
-      - name: "Rolling Edition (2019.4)"
+      - name: "Rolling Edition (2020.1)"
         code_name: "rolling"
   livegrml:
     name: "Grml Live Linux"
