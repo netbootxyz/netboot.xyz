@@ -32,22 +32,27 @@ echo ${cls}
 goto ${flavor} ||
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "kali" and 'squash' in key %}
+{% if value.os == "kali" and 'squash' in key and value.flavor != "xfce" %}
 {% set kernel_name = value.kernel %}
 :{{ key }}
 set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
+set params components username=root hostname=kali
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
 set kernel_url ${live_endpoint}{{ value.path }}
 {% endif %}
 {% endfor %}
 goto boot
+{% elif value.os == "kali" %}
+set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ value.path }}
+set params components
 {% endif %}
 {% endfor %}
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live components username=root hostname=kali fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz boot=live ${params} fetch=${squash_url} initrd=initrd
 initrd ${kernel_url}initrd
 boot
 
