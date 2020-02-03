@@ -105,8 +105,8 @@ releases:
     mirror: mirror.rackspace.com
     name: Arch Linux
     versions:
-    - code_name: 2020.01.01
-      name: 2020.01.01
+    - code_name: 2020.02.01
+      name: 2020.02.01
   blackarch:
     enabled: true
     menu: linux
