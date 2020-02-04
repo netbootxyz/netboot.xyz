@@ -24,7 +24,7 @@ exit
   </style>
   <body>
   <div style="font-family: monospace, fixed; font-weight: bold;">
-  {% if index_title is defined %}
+  {% if index_title.stdout is defined %}
   {{ index_title.stdout }}
   {% else %}
   <h1>{{ site_name }}</h1>
