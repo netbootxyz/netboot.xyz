@@ -327,13 +327,15 @@ endpoints:
     version: '5'
     kernel: elementaryos-5-default-squash
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2019.4-00ef2578/
+    path: /debian-squash/releases/download/2020.1-63491ab9/
     files:
     - filesystem.squashfs
+    - initrd
+    - vmlinuz
     os: kali
     version: rolling
     flavor: xfce
-    kernel: kali-rolling-live-kernel
+    kernel: kali-xfce-squash
   kali-light-squash:
     path: /debian-squash/releases/download/2019.4-544b485d/
     files:
@@ -544,7 +546,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200123-1116-4cec4542/
+    path: /ubuntu-squash/releases/download/20200204-1012-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -914,7 +916,7 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/6.0.5-3ee5dc80/
+    path: /asset-mirror/releases/download/6.0.7-3ee5dc80/
     files:
     - airoot.sfs
     - initrd
@@ -930,7 +932,7 @@ endpoints:
     os: caine
     version: '11'
   nitrux-stable:
-    path: /ubuntu-squash/releases/download/19012020-53f87b85/
+    path: /ubuntu-squash/releases/download/2020.01.31-53f87b85/
     files:
     - initrd
     - vmlinuz
@@ -986,7 +988,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20200122T214502Z-3b6f19b1/
+    path: /asset-mirror/releases/download/20200129T214502Z-3b6f19b1/
     files:
     - image.squashfs
     - initrd
@@ -1079,3 +1081,35 @@ endpoints:
     - vmlinuz
     os: raizo
     version: current
+  4mlinux:
+    path: /asset-mirror/releases/download/31.1-7e63c849/
+    files:
+    - initrd
+    - vmlinuz
+    os: 4mlinux
+    version: current
+    flavor: full
+  4mlinux-thesss:
+    path: /asset-mirror/releases/download/31.2-17b08d75/
+    files:
+    - initrd
+    - vmlinuz
+    os: 4mlinux
+    version: current
+    flavor: TheSSS
+  4mlinux-bakandimg:
+    path: /asset-mirror/releases/download/31.0-0bc08fcf/
+    files:
+    - initrd
+    - vmlinuz
+    os: 4mlinux
+    version: current
+    flavor: BakAndImg
+  4mlinux-antivirus:
+    path: /asset-mirror/releases/download/32.0-0.102.0-96422a5f/
+    files:
+    - initrd
+    - vmlinuz
+    os: 4mlinux
+    version: current
+    flavor: AntivirusLiveCD

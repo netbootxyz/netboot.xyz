@@ -145,6 +145,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Scientific Linux | https://scientificlinux.org | Yes | No |
 | Septor | https://septor.sourceforge.io | No | Yes |
 | Slackware | https://www.slackware.com | Yes | No |
+| SmartOS | https://www.joyent.com/smartos | Yes | No |
 | SparkyLinux | https://sparkylinux.org/ | No | Yes |
 | Tails | https://tails.boum.org | No | Yes |
 | Tiny Core Linux | https://tinycorelinux.net | Yes | Yes |
@@ -158,7 +159,9 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 
 | Name       | URL                     | Type |
 |------------|-------------------------|------|
+| 4MLinux | https://4mlinux.com/ | Kernel/Initrd |
 | ALT Linux Rescue | https://en.altlinux.org/Rescue | ISO - Memdisk |
+| BakAndImgCD | https://bakandimgcd.4mlinux.com/ | Kernel/Initrd |
 | Boot Repair CD | https://sourceforge.net/projects/boot-repair-cd/ | LiveCD |
 | Breakin | http://www.advancedclustering.com/products/software/breakin/ | Kernel/Initrd |
 | CAINE | https://www.caine-live.net/ | LiveCD |
@@ -171,6 +174,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
 | Super Grub2 Disk | http://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue CD | http://www.system-rescue-cd.org/ | LiveCD |
+| The Smallest Server Suite | https://thesss.4mlinux.com/ | Kernel/Initrd |
 | Ultimate Boot CD | http://www.ultimatebootcd.com | ISO - Memdisk |
 
 ### Feedback
