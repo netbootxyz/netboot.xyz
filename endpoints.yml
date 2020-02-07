@@ -318,7 +318,7 @@ endpoints:
     flavor: XFCE
     kernel: manjaro-18.1.0-gui-kernel
   elementaryos-5-default-squash:
-    path: /ubuntu-squash/releases/download/5-5d6d224c/
+    path: /ubuntu-squash/releases/download/5-30ea0239/
     files:
     - filesystem.squashfs
     - initrd
