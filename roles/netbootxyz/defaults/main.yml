@@ -379,6 +379,8 @@ releases:
       name: 20200103T004546Z
     - code_name: 20191219T093118Z
       name: 20191219T093118Z
+    - code_name: illumos-12271-20200207T035648Z
+      name: illumos-12271-20200207T035648Z
     - code_name: IPD-11-20200206T210731Z
       name: IPD-11-20200206T210731Z
   tinycore:
