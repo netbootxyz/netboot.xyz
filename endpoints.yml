@@ -93,7 +93,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-18.04-live-kernel
   ubuntu-18.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/18.04.3-8c2102eb/
+    path: /ubuntu-squash/releases/download/18.04.4-8c2102eb/
     files:
     - filesystem.squashfs
     os: ubuntu
