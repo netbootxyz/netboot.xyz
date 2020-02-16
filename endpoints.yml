@@ -916,11 +916,12 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/6.0.7-3ee5dc80/
+    path: /asset-mirror/releases/download/6.0.7-8bb943c9/
     files:
     - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: systemrescue
     version: current
   caine:
