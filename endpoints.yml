@@ -976,11 +976,12 @@ endpoints:
     os: bluestar
     version: current
   anarchy:
-    path: /asset-mirror/releases/download/1.0.10-868be963/
+    path: /asset-mirror/releases/download/1.0.10-bfbb819d/
     files:
     - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: anarchy
     version: current
   zeninstall:
