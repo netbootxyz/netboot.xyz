@@ -758,7 +758,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-stable-lxqt
   sparky-rolling-mingui:
-    path: /debian-squash/releases/download/2020.02-d2988588/
+    path: /debian-squash/releases/download/2020.02.1-d2988588/
     files:
     - filesystem.squashfs
     - initrd
@@ -768,7 +768,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-rolling-mingui
   sparky-rolling-gui:
-    path: /debian-squash/releases/download/2020.02-d29aa310/
+    path: /debian-squash/releases/download/2020.02.1-d29aa310/
     files:
     - filesystem.squashfs
     - initrd
@@ -778,7 +778,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-rolling-gui
   sparky-rolling-lxqt:
-    path: /debian-squash/releases/download/2020.02-ddb8d501/
+    path: /debian-squash/releases/download/2020.02.1-ddb8d501/
     files:
     - filesystem.squashfs
     - initrd
@@ -916,11 +916,11 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/6.0.7-3ee5dc80/
+    path: /asset-mirror/releases/download/6.0.7-8bb943c9/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: systemrescue
     version: current
   caine:
@@ -948,43 +948,43 @@ endpoints:
     os: bootrepair
     version: current
   blackarch-installer:
-    path: /asset-mirror/releases/download/2020.01.01-5e770614/
+    path: /asset-mirror/releases/download/2020.01.01-82b93b61/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: blackarch
     version: current
   velt-current:
-    path: /asset-mirror/releases/download/0.3.0-9f6eb608/
+    path: /asset-mirror/releases/download/0.3.0-5ac90465/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.4.13-2020.01.19-3db62c8c/
+    path: /asset-mirror/releases/download/5.4.13-2020.01.19-32a0740f/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: bluestar
     version: current
   anarchy:
-    path: /asset-mirror/releases/download/1.0.10-868be963/
+    path: /asset-mirror/releases/download/1.0.10-bfbb819d/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: anarchy
     version: current
   zeninstall:
-    path: /asset-mirror/releases/download/2019.10.31-b8afbdfb/
+    path: /asset-mirror/releases/download/2019.10.31-f6cb8fba/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: zeninstall
     version: current
   gentoo:
@@ -1082,7 +1082,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/31.1-7e63c849/
+    path: /asset-mirror/releases/download/31.2-7e63c849/
     files:
     - initrd
     - vmlinuz
