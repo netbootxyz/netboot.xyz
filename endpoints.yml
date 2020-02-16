@@ -983,11 +983,12 @@ endpoints:
     os: anarchy
     version: current
   zeninstall:
-    path: /asset-mirror/releases/download/2019.10.31-b8afbdfb/
+    path: /asset-mirror/releases/download/2019.10.31-f6cb8fba/
     files:
     - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: zeninstall
     version: current
   gentoo:
