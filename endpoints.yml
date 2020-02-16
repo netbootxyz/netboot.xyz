@@ -949,11 +949,12 @@ endpoints:
     os: bootrepair
     version: current
   blackarch-installer:
-    path: /asset-mirror/releases/download/2020.01.01-5e770614/
+    path: /asset-mirror/releases/download/2020.01.01-82b93b61/
     files:
     - airoot.sfs
     - initrd
     - vmlinuz
+    - airootfs.sfs
     os: blackarch
     version: current
   velt-current:
