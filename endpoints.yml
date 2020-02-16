@@ -918,7 +918,6 @@ endpoints:
   systemrescue:
     path: /asset-mirror/releases/download/6.0.7-8bb943c9/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
     - airootfs.sfs
@@ -951,7 +950,6 @@ endpoints:
   blackarch-installer:
     path: /asset-mirror/releases/download/2020.01.01-82b93b61/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
     - airootfs.sfs
@@ -960,7 +958,6 @@ endpoints:
   velt-current:
     path: /asset-mirror/releases/download/0.3.0-5ac90465/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
     - airootfs.sfs
@@ -969,7 +966,6 @@ endpoints:
   bluestar:
     path: /asset-mirror/releases/download/5.4.13-2020.01.19-32a0740f/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
     - airootfs.sfs
@@ -978,7 +974,6 @@ endpoints:
   anarchy:
     path: /asset-mirror/releases/download/1.0.10-bfbb819d/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
     - airootfs.sfs
@@ -987,7 +982,6 @@ endpoints:
   zeninstall:
     path: /asset-mirror/releases/download/2019.10.31-f6cb8fba/
     files:
-    - airoot.sfs
     - initrd
     - vmlinuz
     - airootfs.sfs
