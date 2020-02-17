@@ -371,6 +371,8 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20200212T230824Z
+      name: 20200212T230824Z
     - code_name: 20200130T131547Z
       name: 20200130T131547Z
     - code_name: 20200117T180335Z
@@ -379,6 +381,10 @@ releases:
       name: 20200103T004546Z
     - code_name: 20191219T093118Z
       name: 20191219T093118Z
+    - code_name: illumos-12271-20200207T035648Z
+      name: illumos-12271-20200207T035648Z
+    - code_name: IPD-11-20200206T210731Z
+      name: IPD-11-20200206T210731Z
   tinycore:
     enabled: true
     menu: linux
@@ -387,13 +393,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /10.x/x86/release/distribution_files/core.gz
-      kernel: /10.x/x86/release/distribution_files/vmlinuz
+      initrd: /11.x/x86/release/distribution_files/core.gz
+      kernel: /11.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /10.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /10.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /11.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /11.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
