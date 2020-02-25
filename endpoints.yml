@@ -1113,3 +1113,14 @@ endpoints:
     os: 4mlinux
     version: current
     flavor: AntivirusLiveCD
+  manjaro-default-current:
+    path: /manjaro-squash/releases/download/19.0-200223-linux54-7faa4bea/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: architect
+    kernel: manjaro-default-current
