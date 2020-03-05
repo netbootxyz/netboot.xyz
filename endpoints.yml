@@ -470,7 +470,7 @@ endpoints:
     flavor: GNOME
     kernel: zorin-15-gnome-squash
   zorin-15-xfce-squash:
-    path: /ubuntu-squash/releases/download/15-8af7469b/
+    path: /ubuntu-squash/releases/download/15-b3e8ce1a/
     files:
     - filesystem.squashfs
     os: zorin
