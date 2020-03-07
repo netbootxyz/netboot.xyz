@@ -460,7 +460,7 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-19-cinnamon-squash
   zorin-15-gnome-squash:
-    path: /ubuntu-squash/releases/download/15-0d68e4b7/
+    path: /ubuntu-squash/releases/download/15-7798ab7b/
     files:
     - filesystem.squashfs
     - initrd
@@ -470,7 +470,7 @@ endpoints:
     flavor: GNOME
     kernel: zorin-15-gnome-squash
   zorin-15-xfce-squash:
-    path: /ubuntu-squash/releases/download/15-8af7469b/
+    path: /ubuntu-squash/releases/download/15-b3e8ce1a/
     files:
     - filesystem.squashfs
     os: zorin
@@ -546,7 +546,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200213-1120-4cec4542/
+    path: /ubuntu-squash/releases/download/20200305-1117-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -964,7 +964,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.4.13-2020.01.19-32a0740f/
+    path: /asset-mirror/releases/download/5.5.4-2020.02.16-32a0740f/
     files:
     - initrd
     - vmlinuz
@@ -988,7 +988,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20200212T214502Z-3b6f19b1/
+    path: /asset-mirror/releases/download/20200304T214503Z-7dbc8d1f/
     files:
     - image.squashfs
     - initrd
@@ -1028,7 +1028,7 @@ endpoints:
     os: septor
     version: current
   manjaro-xfce-current:
-    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-33a7845d/
+    path: /manjaro-squash/releases/download/19.0.2-200303-linux54-75e25008/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1041,7 +1041,7 @@ endpoints:
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
-    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-be8474e3/
+    path: /manjaro-squash/releases/download/19.0.2-200303-linux54-ef6093f6/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1054,7 +1054,7 @@ endpoints:
     flavor: gnome
     kernel: manjaro-gnome-current
   manjaro-kde-current:
-    path: /manjaro-squash/releases/download/18.1.5-191229-linux54-185cee90/
+    path: /manjaro-squash/releases/download/19.0.2-200303-linux54-87c42d91/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1098,7 +1098,7 @@ endpoints:
     version: current
     flavor: TheSSS
   4mlinux-bakandimg:
-    path: /asset-mirror/releases/download/31.0-0bc08fcf/
+    path: /asset-mirror/releases/download/32.0-0bc08fcf/
     files:
     - initrd
     - vmlinuz
@@ -1113,3 +1113,14 @@ endpoints:
     os: 4mlinux
     version: current
     flavor: AntivirusLiveCD
+  manjaro-default-current:
+    path: /manjaro-squash/releases/download/19.0-200223-linux54-c68e6854/
+    files:
+    - livefs.sfs
+    - rootfs.sfs
+    - initrd
+    - vmlinuz
+    os: manjaro
+    version: current
+    flavor: architect
+    kernel: manjaro-default-current
