@@ -695,7 +695,7 @@ endpoints:
     flavor: testing
     kernel: clonezilla-debian-testing
   clonezilla-ubuntu-stable:
-    path: /ubuntu-squash/releases/download/20191024-e0c9e5fa/
+    path: /ubuntu-squash/releases/download/20200302-eoan-355f8d57/
     files:
     - filesystem.squashfs
     - initrd
