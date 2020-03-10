@@ -705,7 +705,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20191226-6edb0075/
+    path: /ubuntu-squash/releases/download/20200302-focal-fb737dc0/
     files:
     - filesystem.squashfs
     - initrd
