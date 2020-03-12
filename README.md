@@ -147,7 +147,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Slackware | https://www.slackware.com | Yes | No |
 | SmartOS | https://www.joyent.com/smartos | Yes | No |
 | SparkyLinux | https://sparkylinux.org/ | No | Yes |
-| Tails | https://tails.boum.org | No | Yes |
 | Tiny Core Linux | https://tinycorelinux.net | Yes | Yes |
 | Ubuntu | https://www.ubuntu.com | Yes | Yes |
 | Velt | https://velt.io/ | No | Yes |
