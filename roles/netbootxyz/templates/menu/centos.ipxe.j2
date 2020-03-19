@@ -48,7 +48,7 @@ goto bootos_images
 
 :kickstart
 echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
-set params ks=${ksurl} ||
+set params inst.ks=${ksurl} ||
 clear bt
 goto boottype
 
