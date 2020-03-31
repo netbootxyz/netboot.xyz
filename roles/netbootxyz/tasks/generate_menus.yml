@@ -9,15 +9,27 @@
       releases: "{{ _releases }}"
     when: release_overrides is defined
 
-  - name: Combine overrides with utilities defaults
+    # PC BIOS utilities
+  - name: Combine overrides with utilitiespcbios defaults
     set_fact:
-      _utilities: "{{ utilities|combine(utilities_overrides, recursive=True) }}"
-    when: utilities_overrides is defined
+      _utilitiespcbios: "{{ utilitiespcbios|combine(utilitiespcbios_overrides, recursive=True) }}"
+    when: utilitiespcbios_overrides is defined
 
-  - name: Set utility with user overrides
+  - name: Set utilitypcbios with user overrides
     set_fact:
-      utilities: "{{ _utilities }}"
-    when: utilities_overrides is defined
+      utilitiespcbios: "{{ _utilitiespcbios }}"
+    when: utilitiespcbios_overrides is defined
+
+    # EFI utilities
+  - name: Combine overrides with utilitiesefi defaults
+    set_fact:
+      _utilitiesefi: "{{ utilitiesefi|combine(utilitiesefi_overrides, recursive=True) }}"
+    when: utilitiesefi_overrides is defined
+
+  - name: Set utilityefi with user overrides
+    set_fact:
+      utilitiesefi: "{{ _utilitiesefi }}"
+    when: utilitiesefi_overrides is defined
 
   - name: Generate directories
     file:
