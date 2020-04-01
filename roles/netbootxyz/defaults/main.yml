@@ -222,8 +222,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core141
-      name: 2.25 Core141
+    - code_name: 2.25-core142
+      name: 2.25 Core142
   k3os:
     enabled: true
     menu: linux
@@ -371,6 +371,10 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20200326T183047Z
+      name: 20200326T183047Z
+    - code_name: 20200311T225627Z
+      name: 20200311T225627Z
     - code_name: 20200228T001732Z
       name: 20200228T001732Z
     - code_name: 20200227T012955Z
@@ -379,10 +383,6 @@ releases:
       name: 20200212T230824Z
     - code_name: 20200130T131547Z
       name: 20200130T131547Z
-    - code_name: 20200117T180335Z
-      name: 20200117T180335Z
-    - code_name: 20200103T004546Z
-      name: 20200103T004546Z
   tinycore:
     enabled: true
     menu: linux

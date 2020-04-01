@@ -25,8 +25,13 @@ generate_checksums: true
 #  fedora:
 #    mirror: "mirrors.kernel.org"
 
-# set utilities_overrides from standard netboot.xyz defaults
-#utilities_overrides:
+# set utilitiesefi_overrides from standard netboot.xyz defaults for EFI utilities
+#utilitiesefi_overrides:
+#  supergrub:
+#    enabled: false
+
+# set utilities_overrides from standard netboot.xyz defaults for PC BIOS utilities
+#utilitiespcbios_overrides:
 #  supergrub:
 #    enabled: false
 
