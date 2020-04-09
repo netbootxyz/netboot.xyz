@@ -371,6 +371,8 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20200408T231825Z
+      name: 20200408T231825Z
     - code_name: 20200326T183047Z
       name: 20200326T183047Z
     - code_name: 20200311T225627Z
@@ -381,8 +383,6 @@ releases:
       name: 20200227T012955Z
     - code_name: 20200212T230824Z
       name: 20200212T230824Z
-    - code_name: 20200130T131547Z
-      name: 20200130T131547Z
   tinycore:
     enabled: true
     menu: linux
