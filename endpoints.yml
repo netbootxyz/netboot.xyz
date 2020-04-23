@@ -1144,3 +1144,13 @@ endpoints:
     version: '20.04'
     flavor: GNOME
     kernel: ubuntu-20.04-default-squash
+  ubuntu-20.04-KDE-squash:
+    path: /ubuntu-squash/releases/download/20.04-305d1f45/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.04'
+    flavor: KDE
+    kernel: ubuntu-20.04-KDE-squash
