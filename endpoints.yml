@@ -1174,3 +1174,13 @@ endpoints:
     version: '20.04'
     flavor: LXDE
     kernel: ubuntu-20.04-LXDE-squash
+  ubuntu-20.04-Budgie-squash:
+    path: /ubuntu-squash/releases/download/20.04-a9f8b4ee/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.04'
+    flavor: Budgie
+    kernel: ubuntu-20.04-Budgie-squash
