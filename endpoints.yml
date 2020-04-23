@@ -1134,3 +1134,13 @@ endpoints:
     version: lmde
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon
+  ubuntu-20.04-default-squash:
+    path: /ubuntu-squash/releases/download/20.04-7cd65333/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.04'
+    flavor: GNOME
+    kernel: ubuntu-20.04-default-squash
