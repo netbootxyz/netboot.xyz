@@ -267,10 +267,10 @@ releases:
     menu: linux
     name: NixOS
     versions:
+    - code_name: '20.03'
+      name: Nixos 20.03
     - code_name: '19.09'
       name: Nixos 19.09
-    - code_name: '19.03'
-      name: Nixos 19.03
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
