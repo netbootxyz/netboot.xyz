@@ -6,7 +6,7 @@ menu ${os} Live - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Live versions
-item current ${space} ${os} Current Stable (19.x)
+item current ${space} ${os} Current Stable (20.x)
 item stable ${space} ${os} Old Stable (18.1.0)
 choose menu || goto live_exit
 goto ${menu}
