@@ -1204,3 +1204,12 @@ endpoints:
     version: '20.04'
     flavor: kylin
     kernel: ubuntu-20.04-kylin-squash
+  fedora-32-gnome:
+    path: /fedora-assets/releases/download/1.6-2b9faabd/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 32
+    flavor: GNOME
