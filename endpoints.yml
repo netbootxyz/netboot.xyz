@@ -1213,3 +1213,12 @@ endpoints:
     os: fedora
     version: 32
     flavor: GNOME
+  fedora-32-Xfce:
+    path: /fedora-assets/releases/download/1.6-dea6ce51/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 32
+    flavor: Xfce
