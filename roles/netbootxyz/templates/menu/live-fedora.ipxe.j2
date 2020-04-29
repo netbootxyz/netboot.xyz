@@ -10,11 +10,20 @@ set os Fedora Live
 menu ${os} - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap ${os} Versions
+item 32 ${space} ${os} 32
 item 31 ${space} ${os} 31
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
+
+:32
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "fedora" and value.version == 32 %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% endif %}
+{% endfor %}
+goto flavor_select
 
 :31
 {% for key, value in endpoints.items() | sort %}
