@@ -1276,3 +1276,13 @@ endpoints:
     os: fedora
     version: 32
     flavor: SoaS
+  voyager-focal-squash:
+    path: /ubuntu-squash/releases/download/focal-577c49cb/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Voyager
+    version: focal
+    flavor: focal
+    kernel: voyager-focal-squash
