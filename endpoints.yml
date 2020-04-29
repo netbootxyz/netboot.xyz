@@ -1249,3 +1249,12 @@ endpoints:
     os: fedora
     version: 32
     flavor: LXDE
+  fedora-32-LXQt:
+    path: /fedora-assets/releases/download/1.6-8df18867/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 32
+    flavor: LXQt
