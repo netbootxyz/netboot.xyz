@@ -1240,3 +1240,12 @@ endpoints:
     os: fedora
     version: 32
     flavor: KDE
+  fedora-32-LXDE:
+    path: /fedora-assets/releases/download/1.6-70acf5f1/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 32
+    flavor: LXDE
