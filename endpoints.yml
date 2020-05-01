@@ -839,7 +839,7 @@ endpoints:
     version: '2'
     flavor: ascii
   parrot-net:
-    path: /asset-mirror/releases/download/4.8-9f304e7d/
+    path: /asset-mirror/releases/download/4.9-9f304e7d/
     files:
     - vmlinuz
     - initrd
