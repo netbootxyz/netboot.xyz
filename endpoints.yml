@@ -1286,3 +1286,13 @@ endpoints:
     version: focal
     flavor: focal
     kernel: voyager-focal-squash
+  pop-20.04-default-squash:
+    path: /ubuntu-squash/releases/download/5-42ebbb8e/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '20.04'
+    flavor: intel-amd
+    kernel: pop-20.04-default-squash
