@@ -1,4 +1,6 @@
-FROM ubuntu:bionic as builder
+FROM ubuntu:focal as builder
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
  echo "**** install deps ****" && \
@@ -11,7 +13,6 @@ RUN \
 	genisoimage \
 	git \
 	liblzma-dev \
-	python-minimal \
 	python-yaml \
 	syslinux
 
@@ -24,7 +25,7 @@ RUN \
  ansible-playbook -i inventory site.yml --extra-vars "@script/netbootxyz-overrides.yml"
 
 # runtime stage
-FROM alpine:3.10
+FROM alpine:3.11
 
 COPY --from=builder /var/www/html/ /mnt/
 COPY docker-build-root/ /
