@@ -1306,3 +1306,11 @@ endpoints:
     version: '20.04'
     flavor: nvidia
     kernel: pop-20.04-nvidia-squash
+  nixos-20.03:
+    path: /asset-mirror/releases/download/118200771-0c757752/
+    files:
+    - bzImage
+    - initrd
+    - netboot.ipxe
+    os: nixos
+    version: '20.03'
