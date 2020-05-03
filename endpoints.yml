@@ -1307,7 +1307,7 @@ endpoints:
     flavor: nvidia
     kernel: pop-20.04-nvidia-squash
   nixos-20.03:
-    path: /asset-mirror/releases/download/118200771-0c757752/
+    path: /asset-mirror/releases/download/118200771-98d6136e/
     files:
     - bzImage
     - initrd
