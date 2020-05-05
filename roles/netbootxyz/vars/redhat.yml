@@ -9,3 +9,4 @@ netbootxyz_packages:
   - minizip-devel
   - syslinux
   - xz-devel
+  - make
