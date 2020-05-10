@@ -855,7 +855,7 @@ endpoints:
     version: current
     flavor: xfce
   parrot-home-kde:
-    path: /debian-squash/releases/download/4.9-680ef953/
+    path: /debian-squash/releases/download/4.9.1-680ef953/
     files:
     - filesystem.squashfs
     - initrd
