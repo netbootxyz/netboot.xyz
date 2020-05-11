@@ -873,7 +873,7 @@ endpoints:
     version: current
     flavor: xfce-security
   parrot-security-kde:
-    path: /debian-squash/releases/download/4.9-bd06009c/
+    path: /debian-squash/releases/download/4.9.1-bd06009c/
     files:
     - filesystem.squashfs
     - initrd
