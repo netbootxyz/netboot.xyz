@@ -18,7 +18,7 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
 set dir ${centos_base_dir}/${osversion}/BaseOS/${arch}/os
-iseq ${osversion} 7.7.1908 && set dir ${centos_base_dir}/${osversion}/os/${arch} ||
+iseq ${osversion} 7 && set dir ${centos_base_dir}/${osversion}/os/${arch} ||
 set repo ${centos_mirror}/${dir}
 goto boottype
 
