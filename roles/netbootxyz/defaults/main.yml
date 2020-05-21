@@ -127,8 +127,8 @@ releases:
       name: '8.0'
     - code_name: 8-stream
       name: 8.0 Stream
-    - code_name: 7.8.2003
-      name: '7.8'
+    - code_name: 7
+      name: 7.x Latest
   coreos:
     base_dir: prod/streams/stable/builds
     enabled: true
@@ -366,6 +366,8 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20200506T235114Z
+      name: 20200506T235114Z
     - code_name: 20200424T174452Z
       name: 20200424T174452Z
     - code_name: 20200422T203030Z
@@ -376,8 +378,6 @@ releases:
       name: 20200326T183047Z
     - code_name: 20200311T225627Z
       name: 20200311T225627Z
-    - code_name: 20200228T001732Z
-      name: 20200228T001732Z
   tinycore:
     enabled: true
     menu: linux
