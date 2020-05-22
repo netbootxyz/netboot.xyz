@@ -1114,7 +1114,7 @@ endpoints:
     version: current
     flavor: AntivirusLiveCD
   manjaro-default-current:
-    path: /manjaro-squash/releases/download/20.0-200426-linux56-6ab0da2d/
+    path: /manjaro-squash/releases/download/20.0.1-200521-linux56-6ab0da2d/
     files:
     - livefs.sfs
     - rootfs.sfs
