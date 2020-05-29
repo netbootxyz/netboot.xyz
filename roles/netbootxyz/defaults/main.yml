@@ -88,7 +88,7 @@ releases:
     name: Alpine Linux
     versions:
     - code_name: v3.12
-      name: 3.12
+      name: '3.12'
     - code_name: edge
       name: Edge (development)
   anarchy:
