@@ -1332,3 +1332,11 @@ endpoints:
     version: '7'
     flavor: default
     kernel: backbox-7-default-squash
+  kodachi-7:
+    path: /ubuntu-squash/releases/download/7.0-30803197/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: kodachi
+    version: '7'
