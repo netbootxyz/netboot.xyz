@@ -43,9 +43,8 @@ item rescue ${ova} rescue
 item kickstart ${ova} specify kickstart url
 isset ${bt} || choose bt || goto fedora
 echo ${cls}
-iseq ${bt} rescue && goto rescue ||
-iseq ${bt} kickstart && goto kickstart ||
-goto boot
+iseq ${bt} normal && goto boot ||
+goto ${bt}
 
 :text
 set params inst.text ||
