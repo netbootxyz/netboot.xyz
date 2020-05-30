@@ -932,7 +932,7 @@ endpoints:
     os: caine
     version: '11'
   nitrux-stable:
-    path: /ubuntu-squash/releases/download/2020.04.25-53f87b85/
+    path: /ubuntu-squash/releases/download/2020.05.29-53f87b85/
     files:
     - initrd
     - vmlinuz
