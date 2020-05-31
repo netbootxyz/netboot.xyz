@@ -1340,3 +1340,12 @@ endpoints:
     - vmlinuz
     os: kodachi
     version: '7'
+  linux-lite-5-squash:
+    path: /ubuntu-squash/releases/download/5.0-488247cf/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: lite
+    version: '5'
+    kernel: linux-lite-5-squash
