@@ -158,19 +158,21 @@ releases:
         name: sid (unstable)
   devuan:
     base_dir: devuan
-    enabled: false
+    enabled: true
     menu: linux
-    mirror: http://auto.mirror.devuan.org
+    mirror: http://deb.devuan.org/devuan/
     name: Devuan
     versions:
       stable:
-      - code_name: ascii
-        name: ascii (stable)
-      - code_name: jessie
-        name: 1.0 (jessie)
-      testing:
       - code_name: beowulf
-        name: beowulf (testing)
+        name: 3.0.0 Beowulf (stable)
+      - code_name: ascii
+        name: 2.1 ASCII (oldstable)
+      - code_name: jessie
+        name: 1.0 Jessie (oldoldstable)
+      testing:
+      - code_name: chimaera
+        name: Chimaera (testing)
   fedora:
     base_dir: fedora
     enabled: true
