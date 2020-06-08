@@ -160,7 +160,7 @@ releases:
     base_dir: devuan
     enabled: true
     menu: linux
-    mirror: http://deb.devuan.org/devuan/
+    mirror: http://deb.devuan.org
     name: Devuan
     versions:
       stable:
