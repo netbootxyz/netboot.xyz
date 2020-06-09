@@ -8,6 +8,7 @@ menu ${os} - Current Arch [ ${arch} ]
 item --gap Use the username linuxlite with a blank password
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap ${os} Versions
+item 5 ${space} ${os} 5
 item 4 ${space} ${os} 4
 choose live_version || goto live_exit
 goto ${live_version}
@@ -15,11 +16,21 @@ goto ${live_version}
 :4
 set squash_url ${live_endpoint}{{ endpoints["linux-lite-4-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["linux-lite-4-squash"].path }}
-goto boot
+goto boot-4
 
-:boot
+:5
+set squash_url ${live_endpoint}{{ endpoints["linux-lite-5-squash"].path }}filesystem.squashfs
+set kernel_url ${live_endpoint}{{ endpoints["linux-lite-5-squash"].path }}
+goto boot-5
+
+:boot-4
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd
+initrd ${kernel_url}initrd
+boot
+
+:boot-5
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd
 initrd ${kernel_url}initrd
 boot
 
