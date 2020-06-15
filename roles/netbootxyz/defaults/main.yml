@@ -121,6 +121,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
+    - code_name: 8.2.2004
+      name: '8.2'
     - code_name: 8.1.1911
       name: '8.1'
     - code_name: 8.0.1905
