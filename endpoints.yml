@@ -1315,7 +1315,7 @@ endpoints:
     os: nixos
     version: '20.03'
   nixos-19.09:
-    path: /asset-mirror/releases/download/121480110-fbcf280f/
+    path: /asset-mirror/releases/download/122145654-fbcf280f/
     files:
     - bzImage
     - initrd
