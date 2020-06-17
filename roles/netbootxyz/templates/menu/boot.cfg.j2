@@ -22,6 +22,9 @@ set sigs {{ sigs_location }}
 # set location of latest iPXE
 iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
 
+# set default boot timeout
+set boot_timeout {{ boot_timeout }}
+
 ######################################
 # Media Locations for Licensed Distros
 ######################################
