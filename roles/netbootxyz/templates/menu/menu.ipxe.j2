@@ -73,7 +73,7 @@ isset ${github_user} && item custom-github ${space} ${github_user}'s Custom Menu
 item --gap Custom User Menus: ||
 item custom-user ${space} Custom User Menus
 {% endif %}
-isset ${menu} && set timeout 0 || set timeout {{ boot_timeout }}
+isset ${menu} && set timeout 0 || set timeout ${boot_timeout}
 choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
 goto ${menu} ||
