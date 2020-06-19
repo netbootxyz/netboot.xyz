@@ -1,0 +1,60 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os {{ releases.k3os.name }}
+set k3os_mirror {{ releases.k3os.mirror }}
+menu ${os} by Rancher - ${arch_a}
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+isset ${k3os_version} || set k3os_version latest
+menu ${os} live
+item --gap k3OS live version:
+item boot ${space} ${os} ${k3os_version} - live
+item --gap Parameters:
+item k3os_version ${space} ${os} version: ${k3os_version}
+item k3os_mirror ${space} Set mirror URL: ${k3os_mirror}
+choose --default ${menu} menu || goto live_exit
+echo ${cls}
+goto ${menu} ||
+goto live_exit
+
+:k3os_version 
+menu ${os} version
+item latest ${space} latest 
+item custom ${space} Set custom version
+choose --default ${version} version || goto live_exit
+echo ${cls}
+goto k3os_version_${version} ||
+goto live_exit
+
+:k3os_version_latest
+set k3os_version latest
+set k3os_base_url ${k3os_mirror}/latest/download
+goto live_menu
+
+:k3os_version_custom
+clear k3os_version
+echo -n Please set k3OS version manually (in format vX.Y.Z):  && read k3os_version
+set k3os_base_url ${k3os_mirror}/download/${k3os_version}
+clear menu
+goto live_menu
+
+:k3os_mirror
+echo -n Set mirror URL:  && read k3os_mirror
+clear menu
+goto k3os_version || 
+goto live_exit
+
+:boot
+isset ${k3os_base_url} || set k3os_base_url ${k3os_mirror}/latest/download
+set install_params k3os.mode=live
+set boot_params printk.devkmsg=on console=ttyS0 console=tty1
+imgfree
+kernel ${k3os_base_url}/k3os-vmlinuz-${arch_a} ${install_params} ${boot_params} initrd=k3os-initrd-${arch_a}
+initrd ${k3os_base_url}/k3os-initrd-${arch_a}
+boot
+
+:live_exit
+clear menu
+exit 0

@@ -231,11 +231,8 @@ releases:
   k3os:
     enabled: true
     menu: linux
-    mirror: https://github.com/rancher/k3os/releases/download/
+    mirror: https://github.com/rancher/k3os/releases
     name: k3OS
-    versions:
-    - code_name: v0.8.0
-      name: v0.8.0
   kali:
     base_dir: kali
     enabled: true
