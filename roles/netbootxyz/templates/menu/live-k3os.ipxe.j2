@@ -3,7 +3,8 @@
 goto ${menu} ||
 
 :live_menu
-set os k3OS Live
+set os {{ releases.k3os.name }}
+set k3os_mirror {{ releases.k3os.mirror }}
 menu ${os} by Rancher - ${arch_a}
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 isset ${k3os_version} || set k3os_version latest

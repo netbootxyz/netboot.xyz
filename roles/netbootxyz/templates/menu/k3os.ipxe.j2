@@ -7,7 +7,8 @@
 goto ${menu} ||
 
 :k3os
-set os k3OS
+set os {{ releases.k3os.name }}
+set k3os_mirror {{ releases.k3os.mirror }}
 isset ${k3os_version} || set k3os_version latest
 isset ${k3os_install_device} || set k3os_install_device /dev/sda
 menu ${os} by Rancher - ${arch_a}
