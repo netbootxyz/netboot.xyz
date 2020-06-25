@@ -11,6 +11,7 @@ generate_signatures: true
 sigs_dir: "{{ netbootxyz_root }}/sigs"
 sigs_location: "http://${boot_domain}/sigs/"
 cert_dir: "/ansible/certs"
+ipxe_branch: 8830f2f3514751e702199600fa6d0c42522a709a
 ipxe_trust_args: "TRUST={{ ipxe_ca_location }}"
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_ca_filename: ca-ipxe-org.crt
