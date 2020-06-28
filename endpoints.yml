@@ -1369,3 +1369,13 @@ endpoints:
     version: '20'
     flavor: xfce
     kernel: mint-20-xfce-squash
+  mint-20-mate-squash:
+    path: /ubuntu-squash/releases/download/20-369e8349/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '20'
+    flavor: mate
+    kernel: mint-20-mate-squash
