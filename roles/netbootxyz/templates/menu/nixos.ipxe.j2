@@ -11,6 +11,7 @@ item 19.09 ${space} ${os} 19.09
 choose version || goto nixos_exit
 iseq ${version} 20.03 && set link ${live_endpoint}{{ endpoints["nixos-20.03"].path }}netboot.ipxe ||
 iseq ${version} 19.09 && set link ${live_endpoint}{{ endpoints["nixos-19.09"].path }}netboot.ipxe ||
+imgfree
 chain ${link}
 goto nixos_exit
 

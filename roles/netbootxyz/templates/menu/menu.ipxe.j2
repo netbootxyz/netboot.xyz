@@ -53,7 +53,9 @@ iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS ||
 iseq ${menu_windows} 1 && item windows ${space} Windows ||
 item --gap Tools:
 iseq ${menu_utils} 1 && item utils-${platform} ${space} Utilities ||
+iseq ${menu_utils_arm} 1 && item utils-arm ${space} Utilities ||
 iseq ${arch} x86_64 && set bits 64 || set bits 32
+iseq ${arch} arm64 && set bits 64 ||
 item changebits ${space} Architecture: ${arch} (${bits}bit)
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
@@ -73,7 +75,7 @@ isset ${github_user} && item custom-github ${space} ${github_user}'s Custom Menu
 item --gap Custom User Menus: ||
 item custom-user ${space} Custom User Menus
 {% endif %}
-isset ${menu} && set timeout 0 || set timeout {{ boot_timeout }}
+isset ${menu} && set timeout 0 || set timeout ${boot_timeout}
 choose --timeout ${timeout} --default ${menu} menu || goto local
 echo ${cls}
 goto ${menu} ||

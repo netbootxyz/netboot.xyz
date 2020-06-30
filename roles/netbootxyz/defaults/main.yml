@@ -121,6 +121,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
+    - code_name: 8.2.2004
+      name: '8.2'
     - code_name: 8.1.1911
       name: '8.1'
     - code_name: 8.0.1905
@@ -224,16 +226,13 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core145
-      name: 2.25 Core145
+    - code_name: 2.25-core146
+      name: 2.25 Core146
   k3os:
     enabled: true
     menu: linux
-    mirror: https://github.com/rancher/k3os/releases/download/
+    mirror: https://github.com/rancher/k3os/releases
     name: k3OS
-    versions:
-    - code_name: v0.8.0
-      name: v0.8.0
   kali:
     base_dir: kali
     enabled: true
@@ -297,6 +296,8 @@ releases:
     mirror: http://download.opensuse.org
     name: OpenSUSE
     versions:
+    - code_name: '15.2'
+      name: openSUSE Leap 15.2
     - code_name: '15.1'
       name: openSUSE Leap 15.1
     - code_name: '15.0'
@@ -368,6 +369,8 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20200617T233107Z
+      name: 20200617T233107Z
     - code_name: 20200603T203505Z
       name: 20200603T203505Z
     - code_name: 20200520T174734Z
@@ -378,8 +381,6 @@ releases:
       name: 20200424T174452Z
     - code_name: 20200422T203030Z
       name: 20200422T203030Z
-    - code_name: 20200408T231825Z
-      name: 20200408T231825Z
   tinycore:
     enabled: true
     menu: linux
@@ -515,6 +516,11 @@ sigs_location: http://${boot_domain}/sigs/
 sigs_menu: false
 site_name: netboot.xyz
 time_server: 0.pool.ntp.org
+utilitiesarm:
+  placeholder:
+    enabled: false
+    name: placeholder
+    type: direct
 utilitiesefi:
   4mlinux:
     enabled: true
