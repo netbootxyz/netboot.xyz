@@ -22,6 +22,9 @@ set sigs {{ sigs_location }}
 # set location of latest iPXE
 iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
 
+# set default boot timeout
+set boot_timeout {{ boot_timeout }}
+
 ######################################
 # Media Locations for Licensed Distros
 ######################################
@@ -65,6 +68,7 @@ set menu_live 0
 set menu_security 0
 set menu_windows 0
 set menu_utils 0
+set menu_utils_arm 1
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :efi

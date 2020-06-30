@@ -546,7 +546,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20200604-1116-4cec4542/
+    path: /ubuntu-squash/releases/download/20200625-1119-4cec4542/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -685,7 +685,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.6.7-17-f0e77646/
+    path: /debian-squash/releases/download/2.6.7-22-f0e77646/
     files:
     - filesystem.squashfs
     - initrd
@@ -705,7 +705,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20200602-groovy-fb737dc0/
+    path: /ubuntu-squash/releases/download/20200619-groovy-fb737dc0/
     files:
     - filesystem.squashfs
     - initrd
@@ -916,7 +916,7 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/6.1.4-055507d5/
+    path: /asset-mirror/releases/download/6.1.5-055507d5/
     files:
     - initrd
     - vmlinuz
@@ -964,7 +964,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.6.13-2020.05.15-ba0900a9/
+    path: /asset-mirror/releases/download/5.7.6-2020.06.27-ba0900a9/
     files:
     - initrd
     - vmlinuz
@@ -988,7 +988,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20200603T214508Z-3db955b8/
+    path: /asset-mirror/releases/download/20200624T214505Z-3db955b8/
     files:
     - image.squashfs
     - initrd
@@ -1082,7 +1082,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/32.2-c882f7fe/
+    path: /asset-mirror/releases/download/33.0-47753d15/
     files:
     - initrd
     - vmlinuz
@@ -1090,7 +1090,7 @@ endpoints:
     version: current
     flavor: full
   4mlinux-thesss:
-    path: /asset-mirror/releases/download/33.0-17b08d75/
+    path: /asset-mirror/releases/download/33.1-17b08d75/
     files:
     - initrd
     - vmlinuz
@@ -1307,7 +1307,7 @@ endpoints:
     flavor: nvidia
     kernel: pop-20.04-nvidia-squash
   nixos-20.03:
-    path: /asset-mirror/releases/download/121144166-bd20f138/
+    path: /asset-mirror/releases/download/123005790-bd20f138/
     files:
     - bzImage
     - initrd
@@ -1315,7 +1315,7 @@ endpoints:
     os: nixos
     version: '20.03'
   nixos-19.09:
-    path: /asset-mirror/releases/download/121131872-fbcf280f/
+    path: /asset-mirror/releases/download/122708153-fbcf280f/
     files:
     - bzImage
     - initrd
@@ -1349,3 +1349,33 @@ endpoints:
     os: lite
     version: '5'
     kernel: linux-lite-5-squash
+  mint-20-cinnamon-squash:
+    path: /ubuntu-squash/releases/download/20-0c4cbd78/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '20'
+    flavor: Cinnamon
+    kernel: mint-20-cinnamon-squash
+  mint-20-xfce-squash:
+    path: /ubuntu-squash/releases/download/20-0ebebe37/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '20'
+    flavor: xfce
+    kernel: mint-20-xfce-squash
+  mint-20-mate-squash:
+    path: /ubuntu-squash/releases/download/20-369e8349/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '20'
+    flavor: mate
+    kernel: mint-20-mate-squash
