@@ -22,3 +22,11 @@ a menu.  You can copy the custom directory from the repo:
 ```
 cp etc/netbootxyz/custom /etc/netbootxyz/custom
 ```
+
+If you are building via Docker, you can create a `custom` folder in
+the root source directory and then set the variable like so:
+
+```
+custom_generate_menus: true
+custom_templates_dir: "/ansible/custom"
+```
