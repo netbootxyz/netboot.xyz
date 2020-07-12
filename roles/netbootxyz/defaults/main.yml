@@ -381,6 +381,26 @@ releases:
       name: 20200506T235114Z
     - code_name: 20200424T174452Z
       name: 20200424T174452Z
+  talos:
+    enabled: true
+    menu: linux
+    name: Talos
+    mirror: https://github.com/talos-systems/talos/releases
+    platforms:
+    - name: Bare Metal
+      key: metal
+    - name: AWS
+      key: aws
+    - name: Azure
+      key: azure
+    - name: Digital Ocean
+      key: digital-ocean
+    - name: GCP
+      key: gcp
+    - name: Packet
+      key: packet
+    - name: VMware
+      key: vmware
   tinycore:
     enabled: true
     menu: linux
