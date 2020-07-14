@@ -19,6 +19,8 @@ item install_dev ${space} Set install device: ${install_device}
 item ignition_config ${space} Set ignition config url: ${ignition_url}
 choose --default ${core_version} core_version || goto coreos_exit
 echo ${cls}
+iseq ${core_version} ignition_config && goto ignition_config ||
+iseq ${core_version} install_dev && goto install_dev ||
 goto core_boot ||
 goto coreos_exit
 
