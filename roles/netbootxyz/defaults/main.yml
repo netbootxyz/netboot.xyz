@@ -73,7 +73,6 @@ ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_source_dir: /usr/src/ipxe
-ipxe_trust_args: TRUST={{ ipxe_ca_location }}
 live_endpoint: https://github.com/netbootxyz
 memdisk_location: http://${boot_domain}/memdisk
 netbootxyz_conf_dir: /etc/netbootxyz
