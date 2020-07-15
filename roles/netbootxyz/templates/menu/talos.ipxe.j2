@@ -70,6 +70,7 @@ goto talos
 isset ${talos_base_url} || set talos_base_url ${talos_mirror}/latest/download
 isset ${talos_config_url} && set talos_config talos.config=${talos_config_url} ||
 set boot_params initrd=initramfs.xz page_poison=1 printk.devkmsg=on slab_nomerge slub_debug=P pti=on talos.platform=${talos_platform} ${console_arg} ${talos_config}
+imgfree
 kernel ${talos_base_url}/vmlinuz ${boot_params}
 initrd ${talos_base_url}/initramfs.xz
 echo
