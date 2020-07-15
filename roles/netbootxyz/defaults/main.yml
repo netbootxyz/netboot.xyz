@@ -387,23 +387,23 @@ releases:
   talos:
     enabled: true
     menu: linux
-    name: Talos
     mirror: https://github.com/talos-systems/talos/releases
+    name: Talos
     platforms:
-    - name: Bare Metal
-      key: metal
-    - name: AWS
-      key: aws
-    - name: Azure
-      key: azure
-    - name: Digital Ocean
-      key: digital-ocean
-    - name: GCP
-      key: gcp
-    - name: Packet
-      key: packet
-    - name: VMware
-      key: vmware
+    - key: metal
+      name: Bare Metal
+    - key: aws
+      name: AWS
+    - key: azure
+      name: Azure
+    - key: digital-ocean
+      name: Digital Ocean
+    - key: gcp
+      name: GCP
+    - key: packet
+      name: Packet
+    - key: vmware
+      name: VMware
   tinycore:
     enabled: true
     menu: linux
