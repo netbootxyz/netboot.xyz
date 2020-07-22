@@ -1,0 +1,86 @@
+#!ipxe
+
+# Talos
+# https://github.com/talos-systems/talos/releases
+# https://www.talos.dev/docs/v0.5/en/guides/metal/matchbox
+
+goto ${menu} ||
+
+:talos
+set os {{ releases.talos.name }}
+set console_arg console=tty0 console=ttyS0
+iseq ${ipxe_cloud_config} packet && set console_arg console=ttyS1,115200n8 ||
+isset ${talos_version} || set talos_version latest
+isset ${talos_mirror} || set talos_mirror {{ releases.talos.mirror }}
+isset ${talos_platform} || set talos_platform metal
+menu ${os} by Talos Systems
+menu ${os} install
+item --gap Talos:
+item talos_boot ${space} Begin install ${os} ${talos_version}
+item --gap Parameters:
+item talos_version ${space} ${os} version: ${talos_version}
+item talos_config_url ${space} Set userdata.yaml URL: ${talos_config_url}
+item talos_mirror ${space} Set mirror URL: ${talos_mirror}
+item talos_platform ${space} Set platform: ${talos_platform}
+choose --default ${menu} menu || goto talos_exit
+echo ${cls}
+goto ${menu} ||
+goto talos_exit
+
+:talos_version
+menu ${os} version
+item latest ${space} latest
+item custom ${space} Set custom version
+choose --default ${version} version || goto talos_exit
+echo ${cls}
+goto talos_version_${version} ||
+goto talos_exit
+
+:talos_version_latest
+set talos_version latest
+set talos_base_url ${talos_mirror}/latest/download
+goto talos
+
+:talos_version_custom
+clear talos_version
+echo -n Please set Talos version manually (in format vX.Y.Z):  && read talos_version
+set talos_base_url ${talos_mirror}/download/${talos_version}
+clear menu
+goto talos
+
+:talos_mirror
+echo -n Set mirror URL:  && read talos_mirror
+clear menu
+goto talos
+
+:talos_config_url
+echo -n Set userdata.yaml URL:  && read talos_config_url
+clear menu
+goto talos
+
+:talos_platform
+menu ${os} platforms
+{% for item in releases.talos.platforms %}
+item {{ item.key }} ${space} {{ item.name }}
+{% endfor %}
+choose --default ${talos_platform} talos_platform
+goto talos
+
+:talos_boot
+isset ${talos_base_url} || set talos_base_url ${talos_mirror}/latest/download
+isset ${talos_config_url} && set talos_config talos.config=${talos_config_url} ||
+set boot_params initrd=initramfs.xz page_poison=1 printk.devkmsg=on slab_nomerge slub_debug=P pti=on talos.platform=${talos_platform} ${console_arg} ${talos_config}
+imgfree
+kernel ${talos_base_url}/vmlinuz ${boot_params}
+initrd ${talos_base_url}/initramfs.xz
+echo
+echo Booting with the following kernel args:
+echo ${boot_params}
+echo
+echo MD5sums:
+md5sum vmlinuz initramfs.xz
+boot
+
+:talos_exit
+clear menu
+exit 0
