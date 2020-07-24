@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question on Discussions area
+    url: https://github.com/netbootxyz/netboot.xyz/discussions
+    about: Recommended place for questions, operating system discussion, and ideas.
+  - name: Ask a question on the netboot.xyz Discord Server
+    url: https://discord.gg/An6PA2a
+    about: Join the netboot.xyz Discord to hang with the community.
