@@ -245,16 +245,6 @@ releases:
     versions:
     - code_name: rolling
       name: Rolling Edition (2020.1)
-  livegrml:
-    enabled: true
-    menu: live
-    mirror: http://download.grml.org
-    name: Grml Live Linux
-    versions:
-    - code_name: grml-full
-      name: 2018.12 Full
-    - code_name: grml-small
-      name: 2018.12 Small
   mageia:
     base_dir: mageia
     enabled: true
