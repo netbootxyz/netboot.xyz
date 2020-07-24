@@ -882,13 +882,13 @@ endpoints:
     version: current
     flavor: kde-security
   grml-full:
-    path: /debian-squash/releases/download/2020.06-6a630353/
+    path: /debian-squash/releases/download/2020.06-61963f92/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2020'
+    version: '2020.06'
     flavor: full
   grml-small:
     path: /debian-squash/releases/download/2020.06-79dbbc85/
