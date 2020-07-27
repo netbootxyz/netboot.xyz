@@ -27,7 +27,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz netboot=${url} loadsrm=000-core.srm,001-xorg.srm,002-xfce.srm,003-kl.srm,004-krt.srm,005-bases.srm,008-firefox.srm net.ifnames=0 dodhcp dostartx initrd=initrd.xz initrd=initrd
+kernel ${url}vmlinuz netboot=${url} loadsrm=000-core.srm,001-xorg.srm,002-xfce.srm,003-kl.srm,004-krt.srm,005-bases.srm,008-firefox.srm net.ifnames=0 dodhcp dostartx initrd=initrd.xz initrd=initrd ${cmdline}
 initrd ${url}initrd.xz
 initrd ${url}initrd
 boot

@@ -60,19 +60,19 @@ goto {{ value.version }}-boot
 
 :18.04-boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
 :19.10-boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
 :20.04-boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

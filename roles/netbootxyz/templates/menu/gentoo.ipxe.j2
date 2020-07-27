@@ -29,7 +29,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz ip=dhcp root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ fetch=${url}image.squashfs initrd=initrd
+kernel ${url}vmlinuz ip=dhcp root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 real_root=/ fetch=${url}image.squashfs initrd=initrd ${cmdline}
 initrd ${url}initrd
 boot
 

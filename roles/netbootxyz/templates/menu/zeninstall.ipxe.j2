@@ -18,7 +18,7 @@ goto zen_boot
 :zen_boot
 imgfree
 set url ${live_endpoint}{{ endpoints.zeninstall.path }}
-kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} initrd=initrd
+kernel ${url}vmlinuz archisobasedir=arch ${ipparam} archiso_http_srv=${url} initrd=initrd ${cmdline}
 initrd ${url}initrd
 boot
 goto zen_exit

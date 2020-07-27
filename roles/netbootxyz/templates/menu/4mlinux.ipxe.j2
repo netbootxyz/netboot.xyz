@@ -27,7 +27,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz root=/dev/ram0 vga=normal initrd=initrd
+kernel ${url}vmlinuz root=/dev/ram0 vga=normal initrd=initrd ${cmdline}
 initrd ${url}initrd
 boot
 

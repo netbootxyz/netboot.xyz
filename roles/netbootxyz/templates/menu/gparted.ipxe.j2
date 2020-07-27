@@ -28,7 +28,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} union=overlay username=user vga=788 initrd=initrd
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} union=overlay username=user vga=788 initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
