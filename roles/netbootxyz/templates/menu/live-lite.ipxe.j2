@@ -25,12 +25,12 @@ goto boot-5
 
 :boot-4
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
 :boot-5
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} username=linuxlite userfullname=linuxlite initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

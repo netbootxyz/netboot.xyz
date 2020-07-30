@@ -51,7 +51,7 @@ goto q4os-boot
 
 :q4os-boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

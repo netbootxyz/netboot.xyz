@@ -28,7 +28,7 @@ goto deb_boot
 
 :deb_boot
 imgfree
-kernel ${kali_mirror}/${dir}/linux vga=788 ${console} -- quiet initrd=initrd.gz
+kernel ${kali_mirror}/${dir}/linux vga=788 -- quiet initrd=initrd.gz ${cmdline}
 initrd ${kali_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:

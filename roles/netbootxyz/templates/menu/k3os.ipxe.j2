@@ -67,7 +67,7 @@ isset ${k3os_base_url} || set k3os_base_url ${k3os_mirror}/latest/download
 set install_params k3os.install.silent=true k3os.mode=install k3os.install.config_url=${k3os_config_url} k3os.install.device=${k3os_install_device}
 set boot_params printk.devkmsg=on k3os.install.iso_url=${k3os_base_url}/k3os-${arch_a}.iso console=ttyS0 console=tty1
 imgfree
-kernel ${k3os_base_url}/k3os-vmlinuz-${arch_a} ${install_params} ${boot_params} initrd=k3os-initrd-${arch_a}
+kernel ${k3os_base_url}/k3os-vmlinuz-${arch_a} ${install_params} ${boot_params} initrd=k3os-initrd-${arch_a} ${cmdline}
 initrd ${k3os_base_url}/k3os-initrd-${arch_a}
 echo
 echo MD5sums:

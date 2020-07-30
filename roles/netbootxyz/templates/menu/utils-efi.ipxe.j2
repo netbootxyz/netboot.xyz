@@ -1,5 +1,6 @@
 #!ipxe
 
+:utils_menu
 menu Utilities
 item --gap Utilities:
 {% for key, value in utilitiesefi.items() | sort(attribute='1.name') %}
@@ -8,6 +9,7 @@ item {{ key }} ${space} {{ value.name }}
 {% endif %}
 {% endfor %}
 item --gap netboot.xyz tools:
+item cmdline ${space} Kernel cmdline params: [${cmdline}]
 item nbxyz-custom ${space} Set Github username [user: ${github_user}]
 item nbxyz ${space} netboot.xyz endpoints
 choose --default ${menu} menu || goto utils_exit
@@ -27,6 +29,15 @@ goto utils_exit
 {% endif %}
 {% endfor %}
 
+:cmdline
+echo If you want to change the default kernel command line parameters
+echo you can override the defaults here.
+echo
+echo Currently set to: ${cmdline}
+echo
+echo -n Enter cmdline parameters: ${} && read cmdline
+goto utils_menu
+
 :nbxyz-custom
 echo EXPERIMENTAL
 echo 
@@ -35,7 +46,7 @@ echo You can then customize your fork as needed and set up your own custom optio
 echo Once your username is set, a custom option will appear on the main menu.
 echo
 echo -n Please enter your Github username: ${} && read github_user
-goto utils_exit
+goto utils_menu
 
 :utils_exit
 clear menu

@@ -60,7 +60,7 @@ goto boottype
 
 :bootos_images
 imgfree
-kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${console} ${ipparam} initrd=initrd.img
+kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${ipparam} initrd=initrd.img ${cmdline} 
 initrd ${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:

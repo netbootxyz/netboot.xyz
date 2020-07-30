@@ -64,7 +64,7 @@ goto devuan_boot
 :devuan_boot
 imgfree
 echo Boot parameters: ${install_params} -- quiet ${params}
-kernel ${devuan_mirror}/${dir}/linux ${install_params} ${mirrorcfg} ${console} -- quiet ${params} initrd=initrd.gz
+kernel ${devuan_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet ${params} initrd=initrd.gz ${cmdline}
 initrd ${devuan_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:

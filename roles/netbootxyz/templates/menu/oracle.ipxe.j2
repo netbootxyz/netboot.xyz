@@ -31,7 +31,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz ${ipparam} repo=${repo} root=live:${url}squashfs.img ro rd.live.image rd.lvm=0 rd.luks=0 rd.md=0 rd.dm=0 initrd=initrd
+kernel ${url}vmlinuz ${ipparam} repo=${repo} root=live:${url}squashfs.img ro rd.live.image rd.lvm=0 rd.luks=0 rd.md=0 rd.dm=0 initrd=initrd ${cmdline}
 initrd ${url}initrd
 boot
 

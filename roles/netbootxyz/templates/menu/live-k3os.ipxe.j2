@@ -51,7 +51,7 @@ isset ${k3os_base_url} || set k3os_base_url ${k3os_mirror}/latest/download
 set install_params k3os.mode=live
 set boot_params printk.devkmsg=on console=ttyS0 console=tty1
 imgfree
-kernel ${k3os_base_url}/k3os-vmlinuz-${arch_a} ${install_params} ${boot_params} initrd=k3os-initrd-${arch_a}
+kernel ${k3os_base_url}/k3os-vmlinuz-${arch_a} ${install_params} ${boot_params} initrd=k3os-initrd-${arch_a} ${cmdline}
 initrd ${k3os_base_url}/k3os-initrd-${arch_a}
 boot
 
