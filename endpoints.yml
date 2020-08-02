@@ -149,7 +149,7 @@ endpoints:
     flavor: xfce
     kernel: debian-10-live-kernel
   debian-10-gnome-squash:
-    path: /debian-squash/releases/download/10.4.0-ccb8b400/
+    path: /debian-squash/releases/download/10.5.0-ccb8b400/
     files:
     - filesystem.squashfs
     os: debian
