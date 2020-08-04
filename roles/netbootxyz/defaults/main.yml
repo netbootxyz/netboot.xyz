@@ -267,6 +267,9 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: '6.7'
+      image_ver: '67'
+      name: '6.7'
     - code_name: '6.6'
       image_ver: '66'
       name: '6.6'
@@ -280,8 +283,8 @@ releases:
       image_ver: '63'
       name: '6.3'
     - code_name: snapshots
-      image_ver: '66'
-      name: 6.6 Latest Snapshot
+      image_ver: '67'
+      name: 6.7 Latest Snapshot
   opensuse:
     base_dir: distribution/leap
     enabled: true
