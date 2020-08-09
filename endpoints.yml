@@ -964,7 +964,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.7.8-2020.07.15-ba0900a9/
+    path: /asset-mirror/releases/download/5.7.12-2020.08.06-ba0900a9/
     files:
     - initrd
     - vmlinuz
