@@ -24,7 +24,7 @@ set automatic method:http,network:${network},server:${mageia_mirror},directory:/
 imgfree
 kernel ${mageia_mirror}/${dir}/${dir2}/vmlinuz
 initrd ${mageia_mirror}/${dir}/${dir2}/all.rdz
-imgargs vmlinuz automatic=${automatic} vga=788 splash=silent ${console} initrd=all.rdz
+imgargs vmlinuz automatic=${automatic} vga=788 splash=silent initrd=all.rdz ${cmdline}
 echo
 echo MD5sums:
 md5sum vmlinuz all.rdz

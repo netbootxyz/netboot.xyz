@@ -42,7 +42,7 @@ goto {{ value.version }}-boot
 
 :15-boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

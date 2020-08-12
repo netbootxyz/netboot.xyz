@@ -31,7 +31,7 @@ iseq ${core_version} {{ item.code_name }} && set coreos_channel {{ item.name }} 
 set base_url ${coreos_mirror}/${coreos_base_dir}/${coreos_channel}/builds
 set build_version ${core_version}
 imgfree
-kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-live-kernel-x86_64 ip=dhcp rd.neednet=1 coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} ${console} initrd=fedora-coreos-${build_version}-live-initramfs.x86_64.img
+kernel ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-live-kernel-x86_64 ip=dhcp rd.neednet=1 coreos.inst.install_dev=${install_device} coreos.inst.ignition_url=${ignition_url} initrd=fedora-coreos-${build_version}-live-initramfs.x86_64.img ${cmdline}
 initrd ${base_url}/${build_version}/x86_64/fedora-coreos-${build_version}-live-initramfs.x86_64.img
 boot
 goto coreos_exit

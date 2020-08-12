@@ -18,7 +18,7 @@ goto ${live_version}
 set squash_url ${live_endpoint}{{ endpoints["voyager-focal-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["voyager-focal-squash"].path }}
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
@@ -26,7 +26,7 @@ boot
 set squash_url ${live_endpoint}{{ endpoints["voyager-bionic-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["voyager-bionic-squash"].path }}
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
@@ -34,7 +34,7 @@ boot
 set squash_url ${live_endpoint}{{ endpoints["voyager-buster-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["voyager-buster-squash"].path }}
 imgfree
-kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 
@@ -42,7 +42,7 @@ boot
 set squash_url ${live_endpoint}{{ endpoints["voyager-eoan-squash"].path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ endpoints["voyager-eoan-squash"].path }}
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

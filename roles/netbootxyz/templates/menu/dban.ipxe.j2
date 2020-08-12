@@ -30,7 +30,7 @@ goto dban_boot
 
 :dban_boot
 imgfree
-kernel ${kernel_url} nuke="dwipe --autonuke --method ${nuke_method}" silent vga=785
+kernel ${kernel_url} nuke="dwipe --autonuke --method ${nuke_method}" silent vga=785 ${cmdline}
 boot
 
 :dban_exit

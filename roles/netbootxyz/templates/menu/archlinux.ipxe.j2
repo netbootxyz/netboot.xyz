@@ -32,7 +32,7 @@ goto boot
 :boot
 imgfree
 set dir ${archlinux_base_dir}/iso/${arch_version}/arch/boot
-set params initrd=archiso.img archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${console}
+set params initrd=archiso.img archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${cmdline}
 kernel http://${archlinux_mirror}/${dir}/x86_64/vmlinuz ${params} initrd=archiso.img
 initrd http://${archlinux_mirror}/${dir}/x86_64/archiso.img
 echo

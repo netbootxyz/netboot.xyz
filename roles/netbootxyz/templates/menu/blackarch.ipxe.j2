@@ -20,7 +20,7 @@ goto blackarch_boot
 :blackarch_boot
 imgfree
 set url ${live_endpoint}{{ endpoints['blackarch-installer'].path }}
-kernel ${url}vmlinuz archisobasedir=blackarch ${ipparam} archiso_http_srv=${url} initrd=initrd
+kernel ${url}vmlinuz archisobasedir=blackarch ${ipparam} archiso_http_srv=${url} initrd=initrd ${cmdline}
 initrd ${url}initrd
 boot
 goto blackarch_exit

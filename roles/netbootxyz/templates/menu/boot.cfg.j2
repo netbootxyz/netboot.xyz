@@ -88,7 +88,7 @@ iseq ${ipxe_cloud_config} packet && goto packet ||
 goto clouds_end
 
 :gce
-set console console=ttyS0,115200n8
+set cmdline console=ttyS0,115200n8
 goto clouds_end
 
 :packet
@@ -98,7 +98,7 @@ iseq ${buildarch} arm64 && goto packet_arm64 ||
 goto clouds_end
 
 :packet_x86_64
-set console console=ttyS1,115200n8
+set cmdline console=ttyS1,115200n8
 iseq ${platform} efi && set ipxe_disk netboot.xyz-packet.efi || set ipxe_disk netboot.xyz-packet.kpxe
 set menu_freedos 0
 set menu_windows 0
@@ -106,7 +106,7 @@ set menu_utils 0
 goto clouds_end
 
 :packet_arm64
-set console console=ttyAMA0,115200
+set cmdline console=ttyAMA0,115200
 set ipxe_disk netboot.xyz-packet-arm64.efi
 set menu_bsd 0
 set menu_freedos 0

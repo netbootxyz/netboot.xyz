@@ -26,7 +26,7 @@ goto feren-boot
 imgfree
 set squash_url ${live_endpoint}${path}filesystem.squashfs
 set kernel_url ${live_endpoint}${path}
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

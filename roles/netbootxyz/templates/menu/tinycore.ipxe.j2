@@ -46,7 +46,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url} loglevel=3 initrd=${initrd_name}
+kernel ${kernel_url} loglevel=3 initrd=${initrd_name} ${cmdline}
 initrd ${initrd_url}
 boot
 

@@ -8,8 +8,6 @@ goto ${menu} ||
 
 :talos
 set os {{ releases.talos.name }}
-set console_arg console=tty0 console=ttyS0
-iseq ${ipxe_cloud_config} packet && set console_arg console=ttyS1,115200n8 ||
 isset ${talos_version} || set talos_version latest
 isset ${talos_mirror} || set talos_mirror {{ releases.talos.mirror }}
 isset ${talos_platform} || set talos_platform metal
@@ -69,7 +67,7 @@ goto talos
 :talos_boot
 isset ${talos_base_url} || set talos_base_url ${talos_mirror}/latest/download
 isset ${talos_config_url} && set talos_config talos.config=${talos_config_url} ||
-set boot_params initrd=initramfs.xz page_poison=1 printk.devkmsg=on slab_nomerge slub_debug=P pti=on talos.platform=${talos_platform} ${console_arg} ${talos_config}
+set boot_params initrd=initramfs.xz page_poison=1 printk.devkmsg=on slab_nomerge slub_debug=P pti=on talos.platform=${talos_platform} ${talos_config} ${cmdline}
 imgfree
 kernel ${talos_base_url}/vmlinuz ${boot_params}
 initrd ${talos_base_url}/initramfs.xz
