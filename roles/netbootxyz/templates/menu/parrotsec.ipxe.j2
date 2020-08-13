@@ -18,7 +18,7 @@ goto parrotsec_boot
 :parrotsec_boot
 imgfree
 set url ${live_endpoint}{{ endpoints['parrot-net'].path }}
-kernel ${url}vmlinuz vga=788 initrd=initrd
+kernel ${url}vmlinuz vga=788 initrd=initrd ${cmdline}
 initrd ${url}initrd
 boot
 goto parrotsec_exit

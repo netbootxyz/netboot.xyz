@@ -59,7 +59,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz misobasedir=manjaro ${ipparam} miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us initrd=initrd
+kernel ${kernel_url}vmlinuz misobasedir=manjaro ${ipparam} miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free tz=UTC lang=en_US keytable=us initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

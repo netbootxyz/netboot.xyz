@@ -52,7 +52,7 @@ set params components
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live ${params} fetch=${squash_url} initrd=initrd
+kernel ${kernel_url}vmlinuz boot=live ${params} fetch=${squash_url} initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

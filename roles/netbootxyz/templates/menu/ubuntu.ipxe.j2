@@ -61,7 +61,7 @@ goto deb_boot
 :deb_boot
 set dir ${dir}${menu}-installer/${arch_a}
 imgfree
-kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} ${console} -- quiet ${params} initrd=initrd.gz
+kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet ${params} initrd=initrd.gz ${cmdline}
 initrd ${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:

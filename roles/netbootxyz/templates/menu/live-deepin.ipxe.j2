@@ -18,7 +18,7 @@ goto 15-boot
 
 :15-boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} union=overlay initrd=initrd
+kernel ${kernel_url}vmlinuz boot=live fetch=${squash_url} union=overlay initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
 

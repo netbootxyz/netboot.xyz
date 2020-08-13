@@ -39,7 +39,7 @@ goto smartos_boot
 :smartos_boot
 iseq ${kmdb_e} true && set kflags:hex 2d:6b ||
 iseq ${kmdb_b} true && set kflags:hex 2d:6b:64 ||
-kernel ${smartos_mirror}${smartos_build}${smartos_base_dir}kernel/amd64/unix ${kflags:string} -B console=text,text-mode="115200,8,n,1,-",smartos=true,noimport=${noimport}${root_shadow:string}
+kernel ${smartos_mirror}${smartos_build}${smartos_base_dir}kernel/amd64/unix ${kflags:string} -B console=text,text-mode="115200,8,n,1,-",smartos=true,noimport=${noimport}${root_shadow:string} ${cmdline}
 module ${smartos_mirror}${smartos_build}${smartos_base_dir}amd64/boot_archive type=rootfs name=ramdisk || goto fail
 module ${smartos_mirror}${smartos_build}${smartos_base_dir}amd64/boot_archive.hash type=hash name=ramdisk || goto fail
 boot
