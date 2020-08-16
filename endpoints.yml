@@ -14,7 +14,7 @@ endpoints:
     os: ubuntu
     version: '18.04'
   ubuntu-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/18.04.4-ec9c7fcb/
+    path: /ubuntu-squash/releases/download/18.04.5-0dd1e29b/
     files:
     - filesystem.squashfs
     os: ubuntu
