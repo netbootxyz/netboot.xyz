@@ -85,7 +85,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-18.04-live-kernel
   ubuntu-18.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/18.04.4-c629718a/
+    path: /ubuntu-squash/releases/download/18.04.5-6f781369/
     files:
     - filesystem.squashfs
     os: ubuntu
