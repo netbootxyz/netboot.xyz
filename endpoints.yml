@@ -846,7 +846,7 @@ endpoints:
     os: parrotnet
     version: current
   parrot-home-xfce:
-    path: /debian-squash/releases/download/4.9.1-68fc557d/
+    path: /debian-squash/releases/download/4.10-ca321808/
     files:
     - filesystem.squashfs
     - initrd
