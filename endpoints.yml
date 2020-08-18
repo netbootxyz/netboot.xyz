@@ -778,7 +778,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-rolling-gui
   sparky-rolling-lxqt:
-    path: /debian-squash/releases/download/5.12-27d3b4fa/
+    path: /debian-squash/releases/download/2020.08-27d3b4fa/
     files:
     - filesystem.squashfs
     - initrd
