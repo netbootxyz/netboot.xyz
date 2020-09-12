@@ -104,8 +104,8 @@ releases:
     mirror: mirror.rackspace.com
     name: Arch Linux
     versions:
-    - code_name: 2020.08.01
-      name: 2020.08.01
+    - code_name: 2020.09.01
+      name: 2020.09.01
   blackarch:
     enabled: true
     menu: linux
@@ -229,8 +229,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core147
-      name: 2.25 Core147
+    - code_name: 2.25-core148
+      name: 2.25 Core148
   k3os:
     enabled: true
     menu: linux
@@ -365,6 +365,8 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20200910T013122Z
+      name: 20200910T013122Z
     - code_name: 20200826T232925Z
       name: 20200826T232925Z
     - code_name: 20200813T030805Z
@@ -375,8 +377,6 @@ releases:
       name: 20200716T142843Z
     - code_name: 20200715T195011Z
       name: 20200715T195011Z
-    - code_name: 20200701T231659Z
-      name: 20200701T231659Z
   talos:
     enabled: true
     menu: linux
