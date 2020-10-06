@@ -972,7 +972,7 @@ endpoints:
     os: bluestar
     version: current
   anarchy:
-    path: /asset-mirror/releases/download/1.1.0-bfbb819d/
+    path: /asset-mirror/releases/download/1.2.1-55d9fe94/
     files:
     - initrd
     - vmlinuz
