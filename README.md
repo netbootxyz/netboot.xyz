@@ -99,7 +99,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Name       | URL             | Installer Kernel | Live OS       |
 |------------|-----------------|------------------|---------------|
 | Alpine Linux | https://alpinelinux.org | Yes | No |
-| Anarchy Linux | https://www.anarchylinux.org | Yes | No |
+| Anarchy Linux | https://anarchyinstaller.org | Yes | No |
 | Arch Linux | https://www.archlinux.org | Yes | No |
 | Backbox | https://www.backbox.org | No | Yes |
 | BlackArch Linux | https://blackarch.org | Yes | Yes |
