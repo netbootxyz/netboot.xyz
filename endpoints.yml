@@ -1419,3 +1419,13 @@ endpoints:
     version: '20.10'
     flavor: Budgie
     kernel: ubuntu-20.10-Budgie-squash
+  ubuntu-20.10-KDE-squash:
+    path: /ubuntu-squash/releases/download/20.10-2585030a/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.10'
+    flavor: KDE
+    kernel: ubuntu-20.10-KDE-squash
