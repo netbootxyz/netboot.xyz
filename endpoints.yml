@@ -1399,3 +1399,13 @@ endpoints:
     version: '20.10'
     flavor: MATE
     kernel: ubuntu-20.10-MATE-squash
+  ubuntu-20.10-kylin-squash:
+    path: /ubuntu-squash/releases/download/20.10-0bcc08ad/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.10'
+    flavor: kylin
+    kernel: ubuntu-20.10-kylin-squash
