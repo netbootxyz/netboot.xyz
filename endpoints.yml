@@ -1389,3 +1389,13 @@ endpoints:
     version: '20.10'
     flavor: GNOME
     kernel: ubuntu-20.10-default-squash
+  ubuntu-20.10-MATE-squash:
+    path: /ubuntu-squash/releases/download/20.10-4977f0b8/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.10'
+    flavor: MATE
+    kernel: ubuntu-20.10-MATE-squash
