@@ -1429,3 +1429,13 @@ endpoints:
     version: '20.10'
     flavor: KDE
     kernel: ubuntu-20.10-KDE-squash
+  ubuntu-20.10-XFCE-squash:
+    path: /ubuntu-squash/releases/download/20.10-c1561a3b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.10'
+    flavor: XFCE
+    kernel: ubuntu-20.10-XFCE-squash
