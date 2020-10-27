@@ -1439,3 +1439,12 @@ endpoints:
     version: '20.10'
     flavor: XFCE
     kernel: ubuntu-20.10-XFCE-squash
+  fedora-33-gnome:
+    path: /fedora-assets/releases/download/1.2-139639f4/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 33
+    flavor: GNOME
