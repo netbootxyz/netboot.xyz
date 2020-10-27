@@ -1457,3 +1457,12 @@ endpoints:
     os: fedora
     version: 33
     flavor: Cinnamon
+  fedora-33-Xfce:
+    path: /fedora-assets/releases/download/1.2-2419ae47/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 33
+    flavor: Xfce
