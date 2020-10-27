@@ -1475,3 +1475,12 @@ endpoints:
     os: fedora
     version: 33
     flavor: LXDE
+  fedora-33-KDE:
+    path: /fedora-assets/releases/download/1.2-16e45bab/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 33
+    flavor: KDE
