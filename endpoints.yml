@@ -1493,3 +1493,12 @@ endpoints:
     os: fedora
     version: 33
     flavor: LXQt
+  fedora-33-SoaS:
+    path: /fedora-assets/releases/download/1.2-cb9dc2fb/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 33
+    flavor: SoaS
