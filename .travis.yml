@@ -34,7 +34,7 @@ jobs:
           bucket: $BUCKET_DEV
           local_dir: s3out
           upload_dir: $TRAVIS_COMMIT
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: development
         - provider: s3
@@ -43,7 +43,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_DEV
           local_dir: s3outver
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: development
       after_deploy:
@@ -81,7 +81,7 @@ jobs:
           bucket: $BUCKET_STAGING
           local_dir: s3out-latest
           upload_dir: rc
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: RC
         - provider: s3
@@ -91,7 +91,7 @@ jobs:
           bucket: $BUCKET_STAGING
           local_dir: s3out
           upload_dir: $RELEASE_TAG
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: RC
         - provider: s3
@@ -100,7 +100,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_STAGING
           local_dir: s3outver
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: RC
 
@@ -121,7 +121,7 @@ jobs:
           file: githubout/*
           name: $RELEASE_TAG
           prerelease: true
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: RC
       after_deploy:
@@ -151,7 +151,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_PROD
           local_dir: s3out-latest
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: master
         - provider: s3
@@ -161,7 +161,7 @@ jobs:
           bucket: $BUCKET_PROD
           local_dir: s3out
           upload_dir: $RELEASE_TAG
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: master
 
@@ -181,7 +181,7 @@ jobs:
           file_glob: true
           file: githubout/*
           name: $RELEASE_TAG
-          cleanup: false
+          skip_cleanup: true
           on:
             branch: master
       after_deploy:
