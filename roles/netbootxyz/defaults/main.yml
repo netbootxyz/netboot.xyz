@@ -185,12 +185,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: '33'
+      name: '33'
     - code_name: '32'
       name: '32'
     - code_name: '31'
       name: '31'
-    - code_name: '30'
-      name: '30'
   flatcar:
     enabled: true
     menu: linux
@@ -229,8 +229,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core150
-      name: 2.25 Core150
+    - code_name: 2.25-core151
+      name: 2.25 Core151
   k3os:
     enabled: true
     menu: linux
@@ -267,6 +267,9 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: '6.8'
+      image_ver: '68'
+      name: '6.8'
     - code_name: '6.7'
       image_ver: '67'
       name: '6.7'
@@ -279,12 +282,9 @@ releases:
     - code_name: '6.4'
       image_ver: '64'
       name: '6.4'
-    - code_name: '6.3'
-      image_ver: '63'
-      name: '6.3'
     - code_name: snapshots
-      image_ver: '67'
-      name: 6.7 Latest Snapshot
+      image_ver: '68'
+      name: 6.8 Latest Snapshot
   opensuse:
     base_dir: distribution/leap
     enabled: true
@@ -365,6 +365,10 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20201022T155042Z
+      name: 20201022T155042Z
+    - code_name: 20201021T205759Z
+      name: 20201021T205759Z
     - code_name: 20201007T223416Z
       name: 20201007T223416Z
     - code_name: 20200925T164355Z
@@ -373,10 +377,6 @@ releases:
       name: 20200910T013122Z
     - code_name: 20200826T232925Z
       name: 20200826T232925Z
-    - code_name: 20200813T030805Z
-      name: 20200813T030805Z
-    - code_name: 20200729T205408Z
-      name: 20200729T205408Z
   talos:
     enabled: true
     menu: linux
@@ -513,8 +513,6 @@ releases:
     versions:
     - code_name: focal
       name: 20.04 LTS Focal Fossa
-    - code_name: eoan
-      name: 19.10 Eoan Ermine
     - code_name: bionic
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
