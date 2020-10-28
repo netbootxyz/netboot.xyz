@@ -32,12 +32,12 @@ goto boot
 :boot
 imgfree
 set dir ${archlinux_base_dir}/iso/${arch_version}/arch/boot
-set params initrd=archiso.img archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${cmdline}
-kernel http://${archlinux_mirror}/${dir}/x86_64/vmlinuz-linux ${params} initrd=archiso.img
-initrd http://${archlinux_mirror}/${dir}/x86_64/archiso.img
+set params initrd=initramfs-linux.img archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch verify=y ${ipparam} net.ifnames=0 ${cmdline}
+kernel http://${archlinux_mirror}/${dir}/x86_64/vmlinuz-linux ${params} initrd=initramfs-linux.img
+initrd http://${archlinux_mirror}/${dir}/x86_64/initramfs-linux.img
 echo
 echo MD5sums:
-md5sum vmlinuz archiso.img
+md5sum vmlinuz initramfs-linux.img
 boot
 goto archlinux_exit
 

@@ -1,6 +1,6 @@
-sudo: true
-dist: bionic
-language: bash
+os: linux
+dist: focal
+language: shell
 services:
   - docker
 env:
@@ -33,8 +33,8 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_DEV
           local_dir: s3out
-          upload-dir: $TRAVIS_COMMIT
-          skip_cleanup: true
+          upload_dir: $TRAVIS_COMMIT
+          cleanup: false
           on:
             branch: development
         - provider: s3
@@ -43,7 +43,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_DEV
           local_dir: s3outver
-          skip_cleanup: true
+          cleanup: false
           on:
             branch: development
       after_deploy:
@@ -80,8 +80,8 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_STAGING
           local_dir: s3out-latest
-          upload-dir: rc
-          skip_cleanup: true
+          upload_dir: rc
+          cleanup: false
           on:
             branch: RC
         - provider: s3
@@ -90,8 +90,8 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_STAGING
           local_dir: s3out
-          upload-dir: $RELEASE_TAG
-          skip_cleanup: true
+          upload_dir: $RELEASE_TAG
+          cleanup: false
           on:
             branch: RC
         - provider: s3
@@ -100,7 +100,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_STAGING
           local_dir: s3outver
-          skip_cleanup: true
+          cleanup: false
           on:
             branch: RC
 
@@ -116,12 +116,12 @@ jobs:
         - ./script/tag
       deploy:
         - provider: releases
-          api_key: $GITHUB_TOKEN
+          token: $GITHUB_TOKEN
           file_glob: true
           file: githubout/*
           name: $RELEASE_TAG
           prerelease: true
-          skip_cleanup: true
+          cleanup: false
           on:
             branch: RC
       after_deploy:
@@ -151,7 +151,7 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_PROD
           local_dir: s3out-latest
-          skip_cleanup: true
+          cleanup: false
           on:
             branch: master
         - provider: s3
@@ -160,8 +160,8 @@ jobs:
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: $BUCKET_PROD
           local_dir: s3out
-          upload-dir: $RELEASE_TAG
-          skip_cleanup: true
+          upload_dir: $RELEASE_TAG
+          cleanup: false
           on:
             branch: master
 
@@ -177,11 +177,11 @@ jobs:
         - git tag ${RELEASE_TAG}
       deploy:
         - provider: releases
-          api_key: $GITHUB_TOKEN
+          token: $GITHUB_TOKEN
           file_glob: true
           file: githubout/*
           name: $RELEASE_TAG
-          skip_cleanup: true
+          cleanup: false
           on:
             branch: master
       after_deploy:

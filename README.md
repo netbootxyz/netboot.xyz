@@ -173,7 +173,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Memtest | http://www.memtest.org/ | Kernel |
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
 | Super Grub2 Disk | http://www.supergrubdisk.org | ISO - Memdisk |
-| System Rescue CD | http://www.system-rescue-cd.org/ | LiveCD |
+| System Rescue | https://system-rescue.org/ | LiveCD |
 | The Smallest Server Suite | https://thesss.4mlinux.com/ | Kernel/Initrd |
 | Ultimate Boot CD | http://www.ultimatebootcd.com | ISO - Memdisk |
 
