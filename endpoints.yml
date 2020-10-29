@@ -891,13 +891,13 @@ endpoints:
     version: '2020.06'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2020.06-79dbbc85/
+    path: /debian-squash/releases/download/2020.06-9ba4968f/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2020'
+    version: '2020.06'
     flavor: small
   gparted-stable:
     path: /debian-squash/releases/download/1.1.0-6-b6f38ff4/
