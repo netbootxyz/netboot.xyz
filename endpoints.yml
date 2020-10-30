@@ -1512,7 +1512,7 @@ endpoints:
     version: 33
     flavor: MATE_Compiz
   ubuntu-20.10-netboot:
-    path: /ubuntu-squash/releases/download/20.10-5ca53c76/
+    path: /ubuntu-squash/releases/download/20.10-f1c3cbed/
     files:
     - filesystem.squashfs
     - initrd
@@ -1521,3 +1521,4 @@ endpoints:
     version: '20.10'
     flavor: netboot
     kernel: ubuntu-20.10-netboot
+    codename: groovy
