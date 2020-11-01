@@ -1512,7 +1512,7 @@ endpoints:
     version: 33
     flavor: MATE_Compiz
   ubuntu-20.10-netboot:
-    path: /ubuntu-squash/releases/download/20.10-22615b8c/
+    path: /ubuntu-squash/releases/download/20.10-76b27bbd/
     files:
     - filesystem.squashfs
     - initrd
