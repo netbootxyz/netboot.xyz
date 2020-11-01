@@ -20,6 +20,7 @@ item --gap Older Releases
 item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
+iseq ${ubuntu_version} focal && set install_type sub ||
 iseq ${ubuntu_version} groovy && set install_type sub ||
 iseq ${boot_type} sub && goto boot_type ||
 goto mirrorcfg
