@@ -1306,6 +1306,14 @@ endpoints:
     version: '20.04'
     flavor: nvidia
     kernel: pop-20.04-nvidia-squash
+  nixos-20.09:
+    path: /asset-mirror/releases/download/122708153-fbcf280f/
+    files:
+    - bzImage
+    - initrd
+    - netboot.ipxe
+    os: nixos
+    version: '20.09'
   nixos-20.03:
     path: /asset-mirror/releases/download/124244129-bd20f138/
     files:
@@ -1314,14 +1322,6 @@ endpoints:
     - netboot.ipxe
     os: nixos
     version: '20.03'
-  nixos-19.09:
-    path: /asset-mirror/releases/download/122708153-fbcf280f/
-    files:
-    - bzImage
-    - initrd
-    - netboot.ipxe
-    os: nixos
-    version: '19.09'
   backbox-7-default-squash:
     path: /ubuntu-squash/releases/download/7-8df8aaac/
     files:
