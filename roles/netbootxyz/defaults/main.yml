@@ -79,7 +79,7 @@ memdisk_location: http://${boot_domain}/memdisk
 netbootxyz_conf_dir: /etc/netbootxyz
 netbootxyz_root: /var/www/html
 pciids_url: https://raw.githubusercontent.com/netbootxyz/pciids/master/pciids.ipxe
-pipxe_branch: testing
+pipxe_branch: master
 pipxe_repo: https://github.com/netbootxyz/pipxe
 pipxe_source_dir: /usr/src/pipxe
 releases:
