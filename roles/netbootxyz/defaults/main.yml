@@ -6,6 +6,11 @@ bootloader_disks:
 bootloader_http_enabled: true
 bootloader_https_enabled: true
 bootloaders:
+  arm:
+  - desc: EFI w/ Simple Network Protocol, attempts to boot all net devices
+    ipxe_bin: snp.efi
+    output_bin: -arm64.efi
+    type: DHCP-snp
   legacy:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
