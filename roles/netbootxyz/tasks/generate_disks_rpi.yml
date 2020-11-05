@@ -62,5 +62,5 @@
         dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
         remote_src: True
       with_items:
-        - { src: "sdcard.img", dest: "{{ bootloader_filename }}-rpi4.sdcard.img" }
+        - { src: "sdcard.img", dest: "{{ bootloader_filename }}-rpi4-sdcard.img" }
         - { src: "ipxe/src/bin-arm64-efi/snp.efi", dest: "{{ bootloader_filename }}-rpi4-snp.efi" }

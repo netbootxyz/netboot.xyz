@@ -70,6 +70,25 @@ exit
     {% endfor %}
   </table>
 
+  <p>Raspberry Pi iPXE Bootloaders - Experimental</p>
+
+  <table style="width:100%">
+    <!-- table header -->
+    <tr>
+       <th> Type </th>
+       <th> Bootloader </th>
+       <th> Description </th>
+    </tr>
+    <!-- table rows -->
+    {% for item in bootloaders.rpi %}
+    <tr>
+       <td> {{ item.type }} </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> {{ item.desc }} </td>
+    </tr>
+    {% endfor %}
+  </table>
+
   <p>Checksums<p>
 
   <a href="ipxe/{{ site_name }}-sha256-checksums.txt">SHA256 checksums</a>
