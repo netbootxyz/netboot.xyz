@@ -31,6 +31,15 @@ bootloaders:
     ipxe_bin: undionly.kpxe
     output_bin: -undionly.kpxe
     type: DHCP-undionly
+  rpi:
+  - desc: Raspberry Pi 4 - USB/SD Card Image
+    ipxe_bin: rpi4-sdcard.img
+    output_bin: -rpi4-sdcard.img
+    type: USB/SD Card
+  - desc: Raspberry Pi 4 - EFI Image
+    ipxe_bin: snp.efi
+    output_bin: -rpi4-snp.efi
+    type: DHCP-snp
   uefi:
   - desc: EFI BIOS, works in Virtual Box EFI mode
     ipxe_bin: ipxe-efi.eiso
