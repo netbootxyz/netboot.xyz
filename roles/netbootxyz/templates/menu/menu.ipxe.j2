@@ -46,7 +46,9 @@ item --gap Default:
 item local ${space} Boot from local hdd
 item --gap Distributions:
 iseq ${menu_linux} 1 && item linux ${space} Linux Network Installs ||
+iseq ${menu_linux_arm} 1 && item linux-arm ${space} Linux Network Installs ||
 iseq ${menu_live} 1 && item live ${space} Live CDs ||
+iseq ${menu_live_arm} 1 && item live-arm ${space} Live CDs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
 iseq ${menu_unix} 1 && item unix ${space} Unix Network Installs ||
 iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS || 
