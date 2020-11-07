@@ -193,7 +193,7 @@ releases:
       - code_name: chimaera
         name: Chimaera (testing)
   fedora:
-    base_dir: pub/fedora
+    base_dir: pub/fedora/linux
     enabled: true
     menu: linux
     mirror: http://download.fedoraproject.org
