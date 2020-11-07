@@ -546,7 +546,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20201022-0946-6160efec/
+    path: /ubuntu-squash/releases/download/20201030-1409-6160efec/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -685,7 +685,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.0-5-f0e77646/
+    path: /debian-squash/releases/download/2.7.0-9-f0e77646/
     files:
     - filesystem.squashfs
     - initrd
@@ -705,7 +705,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20201022-groovy-fb737dc0/
+    path: /ubuntu-squash/releases/download/20201102-groovy-fb737dc0/
     files:
     - filesystem.squashfs
     - initrd
@@ -728,7 +728,7 @@ endpoints:
     os: dban
     version: 2.3.0
   sparky-stable-mingui:
-    path: /debian-squash/releases/download/5.12-12006f2d/
+    path: /debian-squash/releases/download/5.13-12006f2d/
     files:
     - filesystem.squashfs
     - initrd
@@ -738,7 +738,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-stable-mingui
   sparky-stable-gui:
-    path: /debian-squash/releases/download/5.12-3d9b8c14/
+    path: /debian-squash/releases/download/5.13-3d9b8c14/
     files:
     - filesystem.squashfs
     - initrd
@@ -748,7 +748,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-stable-gui
   sparky-stable-lxqt:
-    path: /debian-squash/releases/download/5.12-d6fdf079/
+    path: /debian-squash/releases/download/5.13-d6fdf079/
     files:
     - filesystem.squashfs
     - initrd
@@ -768,7 +768,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-rolling-mingui
   sparky-rolling-gui:
-    path: /debian-squash/releases/download/2020.09-ec74d61f/
+    path: /debian-squash/releases/download/5.13-ec74d61f/
     files:
     - filesystem.squashfs
     - initrd
@@ -778,7 +778,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-rolling-gui
   sparky-rolling-lxqt:
-    path: /debian-squash/releases/download/2020.09-27d3b4fa/
+    path: /debian-squash/releases/download/5.13-27d3b4fa/
     files:
     - filesystem.squashfs
     - initrd
@@ -891,16 +891,16 @@ endpoints:
     version: '2020.06'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2020.06-79dbbc85/
+    path: /debian-squash/releases/download/2020.06-9ba4968f/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2020'
+    version: '2020.06'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.1.0-1-b6f38ff4/
+    path: /debian-squash/releases/download/1.1.0-6-b6f38ff4/
     files:
     - filesystem.squashfs
     - initrd
@@ -964,7 +964,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.9.1-2020.10.23-ba0900a9/
+    path: /asset-mirror/releases/download/5.9.3-2020.11.02-ba0900a9/
     files:
     - initrd
     - vmlinuz
@@ -988,7 +988,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20201021T214503Z-3db955b8/
+    path: /asset-mirror/releases/download/20201104T214503Z-3db955b8/
     files:
     - image.squashfs
     - initrd
@@ -1082,7 +1082,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/33.2-64e39473/
+    path: /asset-mirror/releases/download/34.1-64e39473/
     files:
     - initrd
     - vmlinuz
@@ -1090,7 +1090,7 @@ endpoints:
     version: current
     flavor: full
   4mlinux-thesss:
-    path: /asset-mirror/releases/download/34.1-17b08d75/
+    path: /asset-mirror/releases/download/34.2-17b08d75/
     files:
     - initrd
     - vmlinuz
@@ -1314,14 +1314,6 @@ endpoints:
     - netboot.ipxe
     os: nixos
     version: '20.03'
-  nixos-19.09:
-    path: /asset-mirror/releases/download/122708153-fbcf280f/
-    files:
-    - bzImage
-    - initrd
-    - netboot.ipxe
-    os: nixos
-    version: '19.09'
   backbox-7-default-squash:
     path: /ubuntu-squash/releases/download/7-8df8aaac/
     files:
@@ -1511,3 +1503,25 @@ endpoints:
     os: fedora
     version: 33
     flavor: MATE_Compiz
+  ubuntu-20.10-netboot:
+    path: /ubuntu-squash/releases/download/20.10-76b27bbd/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.10'
+    flavor: netboot
+    kernel: ubuntu-20.10-netboot
+    codename: groovy
+  ubuntu-20.04-netboot:
+    path: /ubuntu-squash/releases/download/20.04.1-3732bbe9/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: 20.04.1
+    codename: focal
+    flavor: netboot
+    kernel: ubuntu-20.04-netboot

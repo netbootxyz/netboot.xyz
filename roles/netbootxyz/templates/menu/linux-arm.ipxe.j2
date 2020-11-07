@@ -1,0 +1,35 @@
+#!ipxe
+
+goto ${menu} ||
+
+:linux_menu
+menu Linux Installers - ARM ARCH **EXPERIMENTAL** Current Arch [ ${arch} ]
+item --gap Popular Linux Operating Systems:
+item centos ${space} CentOS
+item debian ${space} Debian
+item fedora ${space} Fedora
+item opensuse ${space} openSUSE
+item ubuntu ${space} Ubuntu
+item --gap All Others:
+#item alpinelinux ${space} Alpine Linux
+#item coreos ${space} Fedora CoreOS (Preview)
+#item flatcar ${space} Flatcar
+#item nixos ${space} NixOS
+item rhel ${space} Red Hat Enterprise Linux
+#item tinycore ${space} Tiny Core Linux
+choose menu || goto linux_exit
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto linux_menu
+
+:linux_exit
+clear menu
+exit 0

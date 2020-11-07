@@ -8,7 +8,6 @@ item {{ key }} ${space} {{ value.name }}
 {% endif %}
 {% endfor %}
 item --gap netboot.xyz tools:
-item nbxyz-custom ${space} Set Github username [user: ${github_user}]
 item nbxyz ${space} netboot.xyz endpoints
 choose --default ${menu} menu || goto utils_exit
 echo ${cls}
@@ -26,16 +25,6 @@ boot
 goto utils_exit
 {% endif %}
 {% endfor %}
-
-:nbxyz-custom
-echo EXPERIMENTAL
-echo 
-echo Make sure you have a fork of https://github.com/netbootxyz/netboot.xyz-custom.
-echo You can then customize your fork as needed and set up your own custom options.
-echo Once your username is set, a custom option will appear on the main menu.
-echo
-echo -n Please enter your Github username: ${} && read github_user
-goto utils_exit
 
 :utils_exit
 clear menu

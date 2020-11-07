@@ -8,6 +8,9 @@ goto ${menu}
 :ubuntu
 set os Ubuntu
 clear ubuntu_version
+clear install_type
+clear older_release
+set install_type deb
 menu ${os} - ${arch_a}
 item --gap Latest Releases
 {% for item in releases.ubuntu.versions %}
@@ -17,6 +20,9 @@ item --gap Older Releases
 item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
+iseq ${ubuntu_version} focal && set install_type sub ||
+iseq ${ubuntu_version} groovy && set install_type sub ||
+iseq ${boot_type} sub && goto boot_type ||
 goto mirrorcfg
 
 :older_release
@@ -26,39 +32,39 @@ echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
 echo -n Please set enter code name of release: ${} && read ubuntu_version
 set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
-goto deb_boot_type
+goto boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
-iseq ${ubuntu_version} groovy && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}/main/installer-${arch_a}/current/legacy-images/netboot/ ||
 
-:deb_boot_type
+:boot_type
 menu ${os} [${ubuntu_version}] Installer
 item --gap Install types
 item install ${space} Install
 item rescue ${space} Rescue Mode
-item expert ${space} Expert Install
-item preseed ${space} Specify preseed url...
+item automated ${space} Specify preseed/autoinstall url...
 choose --default ${type} type || goto ubuntu
 echo ${cls}
 goto deb_${type}
 
 :deb_rescue
-set install_params rescue/enable=true
-goto deb_boot
+iseq ${install_type} deb && set install_params rescue/enable=true ||
+iseq ${install_type} sub && set install_params systemd.unit=rescue.target ||
+goto deb_install
 
-:deb_expert
-set install_params priority=low
-goto deb_boot
-
-:deb_preseed
-echo -n Specify preseed URL for ${os} ${ubuntu_version}: && read preseedurl
-set install_params auto=true priority=critical preseed/url=${preseedurl}
-goto deb_boot
+:deb_automated
+echo -n Specify preseed/autoinstall URL for ${os} ${ubuntu_version}: && read autoinstall
+iseq ${install_type} deb && set install_params auto=true priority=critical preseed/url=${autoinstall} ||
+iseq ${install_type} sub && set install_params autoinstall ds=nocloud-net;s=${autoinstall} ||
+goto deb_install
 
 :deb_install
+iseq ${install_type} deb && goto deb_boot ||
+iseq ${install_type} sub && goto ${ubuntu_version} ||
+
 :deb_boot
+echo Loading Ubuntu PXE netboot installer
 set dir ${dir}${menu}-installer/${arch_a}
 imgfree
 kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet ${params} initrd=initrd.gz ${cmdline}
@@ -66,6 +72,31 @@ initrd ${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
+boot
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu" and 'netboot' in key %}
+{% set kernel_name = value.kernel %}
+:{{ value.codename }}
+{% for key, value in endpoints.items() | sort %}
+{% if key == kernel_name %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set codename {{ value.codename }}
+set version_number {{ value.version }}
+{% endif %}
+{% endfor %}
+goto sub_boot
+{% endif %}
+{% endfor %}
+
+:sub_boot
+imgfree
+echo Loading Ubuntu Subiquity Network Installer...
+kernel ${kernel_url}vmlinuz root=/dev/ram0 ramdisk_size=1500000 initrd=initrd ip=dhcp url=http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${arch_a}.iso
+initrd ${kernel_url}initrd
+echo
+echo MD5sums:
+md5sum vmlinuz initrd
 boot
 
 :ubuntu_exit

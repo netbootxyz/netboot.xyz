@@ -13,3 +13,7 @@
   - include: generate_disks_arm.yml
     when:
     - generate_disks_arm | default(false) | bool
+
+  - include: generate_disks_rpi.yml
+    when:
+    - generate_disks_rpi | default(false) | bool
