@@ -193,10 +193,10 @@ releases:
       - code_name: chimaera
         name: Chimaera (testing)
   fedora:
-    base_dir: fedora
+    base_dir: pub/fedora/linux
     enabled: true
     menu: linux
-    mirror: http://mirrors.kernel.org
+    mirror: http://download.fedoraproject.org
     name: Fedora
     versions:
     - code_name: '33'
