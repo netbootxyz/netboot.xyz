@@ -6,11 +6,18 @@
 set os {{ releases.nixos.name }}
 menu ${os}
 item --gap Official Releases
-item 20.03 ${space} ${os} 20.03
-item 19.09 ${space} ${os} 19.09
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "nixos" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
 choose version || goto nixos_exit
-iseq ${version} 20.03 && set link ${live_endpoint}{{ endpoints["nixos-20.03"].path }}netboot.ipxe ||
-iseq ${version} 19.09 && set link ${live_endpoint}{{ endpoints["nixos-19.09"].path }}netboot.ipxe ||
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "nixos" %}
+iseq ${version} {{ value.version }} set link ${live_endpoint}{{ value.path }}netboot.ipxe ||
+{% endif %}
+{% endfor %}
 imgfree
 chain ${link}
 goto nixos_exit

@@ -1,0 +1,66 @@
+---
+    - name: Install required packages
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ pipxe_packages }}"
+
+    - name: Check out latest pipxe sources
+      git:
+        repo: "{{ pipxe_repo }}"
+        dest: "{{ pipxe_source_dir }}"
+        version: "{{ pipxe_branch }}"
+        force: true
+        recursive: yes
+      register: pipxe_git_checkout
+
+    - name: Copy iPXE Bootloader template to iPXE source directory
+      template:
+        src: "disks/{{ bootloader_filename }}.j2"
+        dest: "{{ pipxe_source_dir }}/ipxe/src/{{ bootloader_filename }}"
+
+    - name: Copy netboot.xyz local EFI iPXE configs
+      copy:
+        src: "ipxe/local/{{ item }}"
+        dest: "{{ pipxe_source_dir }}/ipxe/src/config/local/{{ item }}"
+      with_items:
+        - colour.h
+        - console.h
+        - crypto.h
+
+    - name: Copy netboot.xyz general.h.efi iPXE config
+      copy:
+        src: "ipxe/local/general.h.efi"
+        dest: "{{ pipxe_source_dir }}/ipxe/src/config/local/general.h"
+
+    - name: Set trust file to ipxe ca
+      set_fact:
+        trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
+      when: not generate_signatures
+
+    - name: Combine trust files if set
+      set_fact:
+        trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }},{{ cert_dir }}/{{ cert_file_filename }}"
+      when: generate_signatures | bool
+
+    - name: Copy Makefile template into pipxe
+      template:
+        src: pipxe/Makefile-rpi4.j2
+        dest: "{{ pipxe_source_dir }}/Makefile"
+
+    - name: Compile iPXE bootloader for RPI build
+      shell: |
+        make
+      args:
+        chdir: "{{ pipxe_source_dir }}"
+      tags:
+      - skip_ansible_lint
+
+    - name: Copy iPXE RPI builds to http directory
+      copy:
+        src: "{{ pipxe_source_dir }}/{{ item.src }}"
+        dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
+        remote_src: True
+      with_items:
+        - { src: "sdcard.img", dest: "{{ bootloader_filename }}-rpi4-sdcard.img" }
+        - { src: "ipxe/src/bin-arm64-efi/snp.efi", dest: "{{ bootloader_filename }}-rpi4-snp.efi" }

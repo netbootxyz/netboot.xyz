@@ -1,0 +1,25 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+menu Live Boot Distributions - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+item --gap Live Boot Distributions
+item live-fedora ${space} Fedora
+choose menu || goto live_exit
+echo ${cls}
+goto ${menu} ||
+iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
+
+:verify_sigs
+imgverify ${menu}.ipxe ${sigs}${menu}.ipxe.sig || goto error
+goto change_menu
+
+:change_menu
+chain ${menu}.ipxe || goto error
+goto live_menu
+
+:live_exit
+clear menu
+exit 0
