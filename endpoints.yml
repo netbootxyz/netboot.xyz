@@ -1525,3 +1525,13 @@ endpoints:
     codename: focal
     flavor: netboot
     kernel: ubuntu-20.04-netboot
+  hirens:
+    path: /asset-mirror/releases/download/v1.0.1-0570770e/
+    files:
+    - bootmgr
+    - bootmgr.efi
+    - BCD
+    - boot.sdi
+    - boot.wim
+    os: hirens
+    version: v1.0.1
