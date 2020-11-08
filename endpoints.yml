@@ -546,13 +546,13 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20201030-1409-6160efec/
+    path: /ubuntu-squash/releases/download/20201105-0946-73abf7d5/
     files:
     - vmlinuz
     - filesystem.squashfs
     - initrd.lz
     os: neon
-    version: '18.04'
+    version: '20.04'
     flavor: user
     kernel: kde-neon-user
   regolith-current:
