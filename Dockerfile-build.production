@@ -1,4 +1,4 @@
-FROM netbootxyz/docker-builder:latest as builder
+FROM ghcr.io/netbootxyz/docker-builder:latest as builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
