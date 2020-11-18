@@ -10,37 +10,24 @@ set os Fedora Live
 menu ${os} - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap ${os} Versions
-item 33 ${space} ${os} 33
-item 32 ${space} ${os} 32
-item 31 ${space} ${os} 31
+{% for item in releases.fedora.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
 
-:33
+{% for item in releases.fedora.versions %}
+{% set version_number = item.code_name %}
+:{{ version_number }}
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "fedora" and value.version == 33 %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% if value.os == "fedora" and value.version == version_number %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
 {% endif %}
 {% endfor %}
 goto flavor_select
-
-:32
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "fedora" and value.version == 32 %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
 {% endfor %}
-goto flavor_select
-
-:31
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "fedora" and value.version == 31 %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
-{% endfor %}
-goto flavor_select
 
 :flavor_select
 choose flavor || goto live_menu
