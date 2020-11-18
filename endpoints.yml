@@ -327,7 +327,7 @@ endpoints:
     version: '5'
     kernel: elementaryos-5-default-squash
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2020.3-63491ab9/
+    path: /debian-squash/releases/download/2020.4-63491ab9/
     files:
     - filesystem.squashfs
     - initrd
@@ -546,13 +546,13 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20201030-1409-6160efec/
+    path: /ubuntu-squash/releases/download/20201112-1154-47417b56/
     files:
     - vmlinuz
     - filesystem.squashfs
     - initrd.lz
     os: neon
-    version: '18.04'
+    version: '20.04'
     flavor: user
     kernel: kde-neon-user
   regolith-current:
@@ -675,7 +675,7 @@ endpoints:
     version: classic
     kernel: feren-classic-squash
   clonezilla-debian-stable:
-    path: /debian-squash/releases/download/2.6.7-28-3f1c0d13/
+    path: /debian-squash/releases/download/2.7.0-10-3f1c0d13/
     files:
     - filesystem.squashfs
     - initrd
@@ -685,7 +685,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.0-9-f0e77646/
+    path: /debian-squash/releases/download/2.7.0-10-f0e77646/
     files:
     - filesystem.squashfs
     - initrd
@@ -695,7 +695,7 @@ endpoints:
     flavor: testing
     kernel: clonezilla-debian-testing
   clonezilla-ubuntu-stable:
-    path: /ubuntu-squash/releases/download/20200703-focal-355f8d57/
+    path: /ubuntu-squash/releases/download/20201102-groovy-355f8d57/
     files:
     - filesystem.squashfs
     - initrd
@@ -705,7 +705,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20201102-groovy-fb737dc0/
+    path: /ubuntu-squash/releases/download/20201102-focal-bd9d9735/
     files:
     - filesystem.squashfs
     - initrd
@@ -758,7 +758,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-stable-lxqt
   sparky-rolling-mingui:
-    path: /debian-squash/releases/download/2020.09-d2988588/
+    path: /debian-squash/releases/download/2020.09-0659ccac/
     files:
     - filesystem.squashfs
     - initrd
@@ -788,7 +788,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-rolling-lxqt
   oracle-8:
-    path: /asset-mirror/releases/download/u1-1fbcccf2/
+    path: /asset-mirror/releases/download/u2-6e2fa23b/
     files:
     - vmlinuz
     - initrd
@@ -932,7 +932,7 @@ endpoints:
     os: caine
     version: '11'
   nitrux-stable:
-    path: /ubuntu-squash/releases/download/2020.07.31-53f87b85/
+    path: /ubuntu-squash/releases/download/2020.11.01-38b0d0a1/
     files:
     - initrd
     - vmlinuz
@@ -964,7 +964,7 @@ endpoints:
     os: velt
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.9.3-2020.11.02-ba0900a9/
+    path: /asset-mirror/releases/download/5.9.8-2020.11.11-ba0900a9/
     files:
     - initrd
     - vmlinuz
@@ -972,7 +972,7 @@ endpoints:
     os: bluestar
     version: current
   anarchy:
-    path: /asset-mirror/releases/download/1.3.0-55904415/
+    path: /asset-mirror/releases/download/1.3.1-55904415/
     files:
     - initrd
     - vmlinuz
@@ -988,7 +988,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20201104T214503Z-3db955b8/
+    path: /asset-mirror/releases/download/20201111T214503Z-3db955b8/
     files:
     - image.squashfs
     - initrd
@@ -1114,7 +1114,7 @@ endpoints:
     version: current
     flavor: AntivirusLiveCD
   manjaro-default-current:
-    path: /manjaro-squash/releases/download/20.0.1-200521-linux56-6ab0da2d/
+    path: /manjaro-squash/releases/download/20.0.3-200607-linux56-6ab0da2d/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1525,3 +1525,13 @@ endpoints:
     codename: focal
     flavor: netboot
     kernel: ubuntu-20.04-netboot
+  hirens:
+    path: /asset-mirror/releases/download/v1.0.1-0570770e/
+    files:
+    - bootmgr
+    - bootmgr.efi
+    - BCD
+    - boot.sdi
+    - boot.wim
+    os: hirens
+    version: v1.0.1

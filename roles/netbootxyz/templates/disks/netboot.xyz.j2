@@ -5,7 +5,8 @@ set boldoff ${esc:string}[22m
 set fg_gre ${esc:string}[32m
 set fg_cya ${esc:string}[36m
 set fg_whi ${esc:string}[37m
-set TFTP_ERR Local TFTP failed... attempting remote HTTPS 
+set VARS_ERR Local vars file not found... attempting TFTP boot...
+set TFTP_ERR Local TFTP failed... attempting remote HTTPS
 set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
 set site_name {{ site_name }}
@@ -74,6 +75,7 @@ echo Attempting chainload of ${boot_domain}...
 goto menu || goto failsafe
 
 :tftpmenu
+chain tftp://${next-server}/local-vars.ipxe || echo ${VARS_ERR}
 isset ${hostname} && chain --autofree tftp://${next-server}/HOSTNAME-${hostname}.ipxe || echo Custom boot by Hostname not found trying MAC...
 chain --autofree tftp://${next-server}/MAC-${mac:hexraw}.ipxe || echo Custom boot by MAC not found booting default...
 chain --autofree tftp://${next-server}/menu.ipxe || echo ${TFTP_ERR} && goto menu
