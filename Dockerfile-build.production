@@ -1,20 +1,7 @@
 FROM ghcr.io/netbootxyz/docker-builder:latest as builder
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN \
- echo "**** install deps ****" && \
- apt-get update && \
- apt-get install -y \
-      git \
-      python3-pip \
-      python3-setuptools \
-      syslinux
-
 # repo for build
 COPY . /ansible
-
-RUN pip3 install ansible==2.10.0
 
 RUN \
  echo "**** running ansible ****" && \
