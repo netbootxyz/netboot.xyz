@@ -15,7 +15,7 @@ choose version || goto nixos_exit
 
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "nixos" %}
-iseq ${version} {{ value.version }} set link ${live_endpoint}{{ value.path }}netboot.ipxe ||
+iseq ${version} {{ value.version }} && set link ${live_endpoint}{{ value.path }}netboot.ipxe ||
 {% endif %}
 {% endfor %}
 imgfree

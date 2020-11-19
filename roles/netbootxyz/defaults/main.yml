@@ -155,7 +155,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 32.20201018.3.0
+    - code_name: 32.20201104.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -199,12 +199,12 @@ releases:
     mirror: http://download.fedoraproject.org
     name: Fedora
     versions:
-    - code_name: '33'
-      name: '33'
-    - code_name: '32'
-      name: '32'
-    - code_name: '31'
-      name: '31'
+    - code_name: 33
+      name: 33
+    - code_name: 32
+      name: 32
+    - code_name: 31
+      name: 31
   flatcar:
     enabled: true
     menu: linux
@@ -243,8 +243,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core151
-      name: 2.25 Core151
+    - code_name: 2.25-core152
+      name: 2.25 Core152
   k3os:
     enabled: true
     menu: linux

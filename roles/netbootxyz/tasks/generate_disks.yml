@@ -17,3 +17,4 @@
   - include: generate_disks_rpi.yml
     when:
     - generate_disks_rpi | default(false) | bool
+    - bootloader_filename == "netboot.xyz"
