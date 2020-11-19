@@ -19,11 +19,6 @@ goto ${live_version}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | upper }}
 {% endif %}
 {% endfor %}
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "kali" and 'squash' in key and value.version == "rolling" and value.flavor != "xfce" %}
-item {{ key }} ${space} {{ value.os | title }} 2019.4 {{ value.flavor | upper }}
-{% endif %}
-{% endfor %}
 goto flavor_select
 
 :flavor_select
@@ -32,21 +27,12 @@ echo ${cls}
 goto ${flavor} ||
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "kali" and 'squash' in key and value.flavor != "xfce" %}
-{% set kernel_name = value.kernel %}
+{% if value.os == "kali" and 'squash' in key %}
 :{{ key }}
-set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
-set params components username=root hostname=kali
-{% for key, value in endpoints.items() | sort %}
-{% if key == kernel_name %}
-set kernel_url ${live_endpoint}{{ value.path }}
-{% endif %}
-{% endfor %}
-goto boot
-{% elif value.os == "kali" %}
 set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
 set params components
+goto boot
 {% endif %}
 {% endfor %}
 
