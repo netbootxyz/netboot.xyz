@@ -336,53 +336,6 @@ endpoints:
     version: rolling
     flavor: xfce
     kernel: kali-xfce-squash
-  kali-light-squash:
-    path: /debian-squash/releases/download/2019.4-544b485d/
-    files:
-    - filesystem.squashfs
-    os: kali
-    version: rolling
-    flavor: light
-    kernel: kali-rolling-live-kernel
-  kali-mate-squash:
-    path: /debian-squash/releases/download/2019.4-0e4d0210/
-    files:
-    - filesystem.squashfs
-    os: kali
-    version: rolling
-    flavor: MATE
-    kernel: kali-rolling-live-kernel
-  kali-rolling-live-kernel:
-    path: /debian-core-10/releases/download/2019.4-e865a2ba/
-    files:
-    - initrd
-    - vmlinuz
-    os: kali
-    version: rolling
-  kali-kde-squash:
-    path: /debian-squash/releases/download/2019.4-d761db15/
-    files:
-    - filesystem.squashfs
-    os: kali
-    version: rolling
-    flavor: KDE
-    kernel: kali-rolling-live-kernel
-  kali-gnome-squash:
-    path: /debian-squash/releases/download/2019.4-734e93c5/
-    files:
-    - filesystem.squashfs
-    os: kali
-    version: rolling
-    flavor: Gnome
-    kernel: kali-rolling-live-kernel
-  kali-lxde-squash:
-    path: /debian-squash/releases/download/2019.4-78e57944/
-    files:
-    - filesystem.squashfs
-    os: kali
-    version: rolling
-    flavor: LXDE
-    kernel: kali-rolling-live-kernel
   tails-4.0-live-kernel:
     path: /debian-core-10/releases/download/5.3.2-1-8095e6f1/
     files:
