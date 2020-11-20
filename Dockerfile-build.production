@@ -1,4 +1,4 @@
-FROM ghcr.io/netbootxyz/docker-builder:latest as builder
+FROM ghcr.io/netbootxyz/builder:latest as builder
 
 # repo for build
 COPY . /ansible
