@@ -61,7 +61,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz repo=${fedora_mirror}/${dir} ${params} ${ipparam} initrd=initrd.img ${cmdline}
+kernel ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${fedora_mirror}/${dir} ${params} ${ipparam} initrd=initrd.img ${cmdline}
 initrd ${fedora_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
