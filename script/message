@@ -16,7 +16,7 @@ fi
 if [ "${TYPE}" == "failure" ]; then
   curl -X POST -H "Content-Type: application/json" --data \
   '{
-    "avatar_url": "https://avatars.io/twitter/travisci",
+    "avatar_url": "https://unavatar.now.sh/twitter/travisci",
     "embeds": [
       {
         "color": 16711680,
@@ -29,7 +29,7 @@ if [ "${TYPE}" == "failure" ]; then
 else
   curl -X POST -H "Content-Type: application/json" --data \
   '{
-    "avatar_url": "https://avatars.io/twitter/travisci",
+    "avatar_url": "https://unavatar.now.sh/twitter/travisci",
     "embeds": [
       {
         "color": 1681177,
