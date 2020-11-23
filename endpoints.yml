@@ -1498,3 +1498,13 @@ endpoints:
     version: '20.10'
     flavor: intel-amd
     kernel: pop-20.10-default-squash
+  pop-20.10-nvidia-squash:
+    path: /ubuntu-squash/releases/download/2-e32c117b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '20.10'
+    flavor: nvidia
+    kernel: pop-20.10-nvidia-squash
