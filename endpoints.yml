@@ -1488,3 +1488,13 @@ endpoints:
     - boot.wim
     os: hirens
     version: v1.0.1
+  pop-20.10-default-squash:
+    path: /ubuntu-squash/releases/download/5-9bac6dd3/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '20.10'
+    flavor: intel-amd
+    kernel: pop-20.10-default-squash
