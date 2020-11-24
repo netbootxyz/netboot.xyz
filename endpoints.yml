@@ -658,7 +658,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20201118-groovy-bd9d9735/
+    path: /ubuntu-squash/releases/download/20201124-groovy-bd9d9735/
     files:
     - filesystem.squashfs
     - initrd
