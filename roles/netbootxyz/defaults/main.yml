@@ -119,7 +119,7 @@ releases:
     base_dir: archlinux
     enabled: true
     menu: linux
-    mirror: mirror.rackspace.com
+    mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
     - code_name: 2020.11.01
