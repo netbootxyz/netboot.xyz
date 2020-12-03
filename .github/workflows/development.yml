@@ -1,0 +1,55 @@
+name: Development Deploy
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  development-build:
+    name: Build Development
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Retrieve Certs
+      run: |
+        git clone https://${{ secrets.GIT_USER }}:${{ secrets.GIT_AUTH }}@${{ GIT_URL }} certs
+        cp certs/certs.tar.enc .
+        openssl aes-256-cbc -pass pass:${{ secrets.CERTS_KEY }} -d -a -in certs.tar.enc -out certs.tar
+        tar xf certs.tar -C certs
+
+    - name: Build Development Release
+      run: |
+        ./script/build_release dev
+
+    - name: Deploy development release to bucket/SHA
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DEV }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 's3out'
+        DEST_DIR: '$GITHUB_SHA'
+
+    - name: Deploy development release to bucket
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DEV }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 's3outver'
+
+    - name: Notify Discord on failure
+      if: failure()
+      run: |
+        ./script/message failure
+
+    - name: Notify Discord on completion
+      if: success()
+      run: |
+        ./script/message dev-push
