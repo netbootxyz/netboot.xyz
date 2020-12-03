@@ -4,39 +4,38 @@ set -e
 TYPE=$1
 
 if [ "${TYPE}" == "dev-push" ]; then
-  BOOT_URL="https://s3.amazonaws.com/${BUCKET_DEV}/${TRAVIS_COMMIT}/index.html"
+  BOOT_URL="https://s3.amazonaws.com/dev.boot.netboot.xyz/${GITHUB_SHA}/index.html"
 elif [ "${TYPE}" == "rc-push" ]; then
   BOOT_URL="https://staging.boot.netboot.xyz/$(cat version.txt)-RC/index.html"
 elif [ "${TYPE}" == "live-push" ]; then
   BOOT_URL="https://boot.netboot.xyz/$(cat version.txt)/index.html"
 fi
 
-
 # send status to discord
 if [ "${TYPE}" == "failure" ]; then
   curl -X POST -H "Content-Type: application/json" --data \
   '{
-    "avatar_url": "https://unavatar.now.sh/twitter/travisci",
+    "avatar_url": "https://unavatar.now.sh/twitter/github",
     "embeds": [
       {
         "color": 16711680,
-        "description": "__**Failed to Build**__ \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**Status:**  Failure\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
+        "description": "__**Failed to Build**__ \n**Build:**  'https://github.com/netbootxyz/netboot.xyz/actions/runs/${GITHUB_RUN_ID}'\n**Status:**  Failure\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${GITHUB_SHA}'\n"
       }
     ],
-    "username": "Travis CI"
+    "username": "Github"
   }' \
   ${DISCORD_HOOK_URL}
 else
   curl -X POST -H "Content-Type: application/json" --data \
   '{
-    "avatar_url": "https://unavatar.now.sh/twitter/travisci",
+    "avatar_url": "https://unavatar.now.sh/twitter/github",
     "embeds": [
       {
         "color": 1681177,
-        "description": "__**Boot Menu Published**__ \n**Files:** '${BOOT_URL}' \n**Build:**  '${TRAVIS_BUILD_WEB_URL}'\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${TRAVIS_COMMIT}'\n"
+        "description": "__**Boot Menu Published**__ \n**Files:** '${BOOT_URL}' \n**Build:**  'https://github.com/netbootxyz/netboot.xyz/actions/runs/${GITHUB_RUN_ID}'\n**Change:** https://github.com/netbootxyz/netboot.xyz/commit/'${GITHUB_SHA}'\n"
       }
     ],
-    "username": "Travis CI"
+    "username": "Github"
   }' \
   ${DISCORD_HOOK_URL}
 fi
