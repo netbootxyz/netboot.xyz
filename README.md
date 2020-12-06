@@ -1,6 +1,6 @@
 ## netboot.xyz
 
-[![Build Status](https://github.com/netbootxyz/netboot.xyz/workflows/release/badge.svg)](https://travis-ci.com/netbootxyz/netboot.xyz)
+[![Build Status](https://github.com/netbootxyz/netboot.xyz/workflows/release/badge.svg)](https://github.com/netbootxyz/netboot.xyz/actions?query=workflow%3Arelease)
 [![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
 [![Release](https://img.shields.io/github/v/release/netbootxyz/netboot.xyz?color=hunter%20green)](https://github.com/netbootxyz/netboot.xyz/releases/latest)
 
