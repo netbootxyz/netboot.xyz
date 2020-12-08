@@ -6,9 +6,6 @@ on:
       - development
 
 env:
-  AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_DEV }}
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   DISCORD_HOOK_URL: ${{ secrets.DISCORD_HOOK_URL }}
   GITHUB_SHA: ${{ github.sha }}
 
@@ -32,20 +29,20 @@ jobs:
       run: |
         ./script/build_release dev
 
-    - name: Deploy development release to bucket/SHA
-      uses: jakejarvis/s3-sync-action@master
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        args: --acl public-read --follow-symlinks
-      env:
-        SOURCE_DIR: 's3out'
-        DEST_DIR: '$GITHUB_SHA'
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_ACCESS_REGION }}
 
-    - name: Deploy development release to bucket
-      uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks
-      env:
-        SOURCE_DIR: 's3outver'
+    - name: Deploy development release to bucket/SHA
+      run: |
+        aws s3 sync --no-progress --acl public-read s3out s3://${{ secrets.AWS_S3_BUCKET_DEV }}/$GITHUB_SHA
+
+    - name: Deploy development version file to bucket
+      run: |
+        aws s3 sync --no-progress --acl public-read s3outver s3://${{ secrets.AWS_S3_BUCKET_DEV }}
 
     - name: Notify Discord on failure
       if: failure()
