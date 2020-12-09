@@ -1,0 +1,55 @@
+name: development
+
+on:
+  push:
+    branches:
+      - development
+
+env:
+  DISCORD_HOOK_URL: ${{ secrets.DISCORD_HOOK_URL }}
+  GITHUB_SHA: ${{ github.sha }}
+
+jobs:
+  development-build:
+    name: Build Development
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Retrieve Certs
+      run: |
+        ./script/retrieve_certs
+      env:
+        GIT_USER: ${{ secrets.GIT_USER }}
+        GIT_AUTH: ${{ secrets.GIT_AUTH }}
+        GIT_URL: ${{ secrets.GIT_URL }}
+        CERTS_KEY: ${{ secrets.CERTS_KEY }}
+
+    - name: Build Development Release
+      run: |
+        ./script/build_release dev
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_ACCESS_REGION }}
+
+    - name: Deploy development release to bucket/SHA
+      run: |
+        aws s3 sync --no-progress --acl public-read s3out s3://${{ secrets.AWS_S3_BUCKET_DEV }}/$GITHUB_SHA
+
+    - name: Deploy development version file to bucket
+      run: |
+        aws s3 sync --no-progress --acl public-read s3outver s3://${{ secrets.AWS_S3_BUCKET_DEV }}
+
+    - name: Notify Discord on failure
+      if: failure()
+      run: |
+        ./script/message failure
+
+    - name: Notify Discord on completion
+      if: success()
+      run: |
+        ./script/message dev-push
