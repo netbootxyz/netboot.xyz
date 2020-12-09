@@ -499,7 +499,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20201119-0945-47417b56/
+    path: /ubuntu-squash/releases/download/20201123-1425-47417b56/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -638,7 +638,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.0-10-f0e77646/
+    path: /debian-squash/releases/download/2.7.0-16-f0e77646/
     files:
     - filesystem.squashfs
     - initrd
@@ -658,7 +658,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20201118-groovy-bd9d9735/
+    path: /ubuntu-squash/releases/download/20201124-groovy-bd9d9735/
     files:
     - filesystem.squashfs
     - initrd
@@ -853,7 +853,7 @@ endpoints:
     version: '2020.06'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.1.0-6-b6f38ff4/
+    path: /debian-squash/releases/download/1.1.0-8-b6f38ff4/
     files:
     - filesystem.squashfs
     - initrd
@@ -981,7 +981,7 @@ endpoints:
     os: septor
     version: current
   manjaro-xfce-current:
-    path: /manjaro-squash/releases/download/20.1.2-201019-linux58-a3d810b4/
+    path: /manjaro-squash/releases/download/20.2-201203-linux59-c75d6cc5/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -994,7 +994,7 @@ endpoints:
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
-    path: /manjaro-squash/releases/download/20.1.2-201019-linux58-03e2c969/
+    path: /manjaro-squash/releases/download/20.2-201203-linux59-ba902d2b/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1007,7 +1007,7 @@ endpoints:
     flavor: gnome
     kernel: manjaro-gnome-current
   manjaro-kde-current:
-    path: /manjaro-squash/releases/download/20.1.2-201019-linux58-1f7c6510/
+    path: /manjaro-squash/releases/download/20.2-201207-linux59-df00a491/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1051,7 +1051,7 @@ endpoints:
     version: current
     flavor: TheSSS
   4mlinux-bakandimg:
-    path: /asset-mirror/releases/download/34.0-0bc08fcf/
+    path: /asset-mirror/releases/download/35.0-0bc08fcf/
     files:
     - initrd
     - vmlinuz
@@ -1067,7 +1067,7 @@ endpoints:
     version: current
     flavor: AntivirusLiveCD
   manjaro-default-current:
-    path: /manjaro-squash/releases/download/20.0.3-200607-linux56-6ab0da2d/
+    path: /manjaro-squash/releases/download/20.0.3-200607-linux56-7bb2e4b5/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -1488,3 +1488,33 @@ endpoints:
     - boot.wim
     os: hirens
     version: v1.0.1
+  pop-20.10-default-squash:
+    path: /ubuntu-squash/releases/download/5-9bac6dd3/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '20.10'
+    flavor: intel-amd
+    kernel: pop-20.10-default-squash
+  pop-20.10-nvidia-squash:
+    path: /ubuntu-squash/releases/download/2-e32c117b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '20.10'
+    flavor: nvidia
+    kernel: pop-20.10-nvidia-squash
+  vyos-rolling:
+    path: /debian-squash/releases/download/202011010646-a137112c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: vyos
+    version: rolling
+    flavor: rolling
+    kernel: vyos-rolling

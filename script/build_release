@@ -11,8 +11,8 @@ DOCKER_FILE="Dockerfile-build.production"
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
-  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${TRAVIS_COMMIT}"
-  BOOT_VERSION="${TRAVIS_COMMIT}"
+  BOOT_DOMAIN="s3.amazonaws.com/${DEV_URL}/${GITHUB_SHA}"
+  BOOT_VERSION="${GITHUB_SHA}"
 elif [[ "${TYPE}" == "pr" ]]; then
   BOOT_DOMAIN="test.com"
   BOOT_VERSION="test"
@@ -33,7 +33,7 @@ sed -i \
 
 # Build release
 docker build -t localbuild -f ${DOCKER_FILE} .
-docker run --rm -it -v $(pwd):/buildout localbuild
+docker run --rm -i -v $(pwd):/buildout localbuild
 
 # Generate folder outputs
 mkdir -p s3out
@@ -68,7 +68,7 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
       -e "/^boot_domain/c\boot_domain: ${STAGING_URL}/rc" \
       user_overrides.yml
     docker build -t localbuild -f ${DOCKER_FILE} .
-    docker run --rm -it -v $(pwd):/buildout localbuild
+    docker run --rm -i -v $(pwd):/buildout localbuild
   fi
   mkdir -p s3out-latest
   cp -r buildout/* s3out-latest/

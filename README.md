@@ -1,6 +1,6 @@
 ## netboot.xyz
 
-[![Build Status](https://travis-ci.com/netbootxyz/netboot.xyz.svg?branch=master)](https://travis-ci.com/netbootxyz/netboot.xyz)
+[![Build Status](https://github.com/netbootxyz/netboot.xyz/workflows/release/badge.svg)](https://github.com/netbootxyz/netboot.xyz/actions?query=workflow%3Arelease)
 [![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
 [![Release](https://img.shields.io/github/v/release/netbootxyz/netboot.xyz?color=hunter%20green)](https://github.com/netbootxyz/netboot.xyz/releases/latest)
 
@@ -152,6 +152,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Ubuntu | https://www.ubuntu.com | Yes | Yes |
 | Velt | https://velt.io/ | No | Yes |
 | Voyager | https://voyagerlive.org | No | Yes |
+| VyOS | https://vyos.io | Yes | No |
 | Zen Installer | https://sourceforge.net/projects/revenge-installer | Yes | No |
 | Zorin OS | https://zorinos.com | No | Yes |
 

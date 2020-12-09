@@ -1,0 +1,29 @@
+#!ipxe
+
+# VyOS
+# https://vyos.io
+
+goto ${menu}
+
+:vyos
+set os {{ releases.vyos.name }}
+menu ${os} Installers
+item --gap Official Releases
+{% for item in releases.vyos.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+choose vyos_version || goto vyos_exit
+goto vyos_boot
+
+:vyos_boot
+imgfree
+set url ${live_endpoint}{{ endpoints['vyos-rolling'].path }}
+kernel ${url}vmlinuz boot=live components hostname=vyos username=live nopersistence noautologin union=overlay console=ttyS0,115200 console=tty0 net.ifnames=0 biosdevname=0 fetch=${url}filesystem.squashfs initrd=initrd ${cmdline}
+initrd ${url}initrd
+
+boot
+goto vyos_exit
+
+:vyos_exit
+clear menu
+exit 0
