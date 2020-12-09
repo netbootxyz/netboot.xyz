@@ -26,8 +26,7 @@ jobs:
         CERTS_KEY: ${{ secrets.CERTS_KEY }}
 
     - name: Set Release Tag
-      id: release
-      run: echo "::set-output name=release_tag::$(cat version.txt)"
+      run: echo "release_tag=$(cat version.txt)" >> $GITHUB_ENV
 
     - name: Build release
       run: |
@@ -42,7 +41,7 @@ jobs:
 
     - name: Deploy master to release bucket
       run: |
-        aws s3 sync --no-progress --acl public-read s3out s3://${{ secrets.AWS_S3_BUCKET_PROD }}/${{ steps.release.outputs.release_tag }}
+        aws s3 sync --no-progress --acl public-read s3out s3://${{ secrets.AWS_S3_BUCKET_PROD }}/${{ env.release_tag }}
 
     - name: Deploy master to rolling bucket
       run: |
@@ -54,7 +53,7 @@ jobs:
 
     - name: Tag Release
       run: |
-        ./script/tag ${{ steps.release.outputs.release_tag }}
+        ./script/tag ${{ env.release_tag }}
 
     - name: Create Release and Upload Assets
       uses: svenstaro/upload-release-action@v2
@@ -63,9 +62,9 @@ jobs:
         file_glob: true
         overwrite: true
         prerelease: false
-        release_name: ${{ steps.release.outputs.release_tag }}
+        release_name: ${{ env.release_tag }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ steps.release.outputs.release_tag }}
+        tag: ${{ env.release_tag }}
 
     - name: Notify Discord on failure
       if: failure()

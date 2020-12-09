@@ -26,8 +26,7 @@ jobs:
         CERTS_KEY: ${{ secrets.CERTS_KEY }}
 
     - name: Set Release Tag
-      id: release
-      run: echo "::set-output name=release_tag::$(cat version.txt)-RC"
+      run: echo "release_tag=$(cat version.txt)-RC" >> $GITHUB_ENV
 
     - name: Build RC release
       run: |
@@ -42,7 +41,7 @@ jobs:
 
     - name: Deploy RC to release-candidate bucket
       run: |
-        aws s3 sync --no-progress --acl public-read s3out s3://${{ secrets.AWS_S3_BUCKET_STAGING }}/${{ steps.release.outputs.release_tag }}
+        aws s3 sync --no-progress --acl public-read s3out s3://${{ secrets.AWS_S3_BUCKET_STAGING }}/${{ env.release_tag }}
 
     - name: Deploy RC to rolling bucket
       run: |
@@ -58,7 +57,7 @@ jobs:
 
     - name: Tag RC Release
       run: |
-        ./script/tag ${{ steps.release.outputs.release_tag }}
+        ./script/tag ${{ env.release_tag }}
 
     - name: Create RC Release and Upload Assets
       uses: svenstaro/upload-release-action@v2
@@ -67,9 +66,9 @@ jobs:
         file_glob: true
         overwrite: true
         prerelease: true
-        release_name: ${{ steps.release.outputs.release_tag }}
+        release_name: ${{ env.release_tag }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ steps.release.outputs.release_tag }}
+        tag: ${{ env.release_tag }}
 
     - name: Notify Discord on failure
       if: failure()
