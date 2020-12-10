@@ -122,8 +122,8 @@ releases:
     mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
-    - code_name: 2020.11.01
-      name: 2020.11.01
+    - code_name: 2020.12.01
+      name: 2020.12.01
   blackarch:
     enabled: true
     menu: linux
