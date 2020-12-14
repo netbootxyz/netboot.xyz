@@ -1158,7 +1158,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-20.04-kylin-squash
   fedora-32-gnome:
-    path: /fedora-assets/releases/download/1.6-2b9faabd/
+    path: /fedora-assets/releases/download/1.6-2e0004ed/
     files:
     - vmlinuz
     - initrd
