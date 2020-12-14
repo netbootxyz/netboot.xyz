@@ -1385,7 +1385,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-20.10-XFCE-squash
   fedora-33-gnome:
-    path: /fedora-assets/releases/download/1.2-139639f4/
+    path: /fedora-assets/releases/download/1.2-6aea77f0/
     files:
     - vmlinuz
     - initrd
