@@ -981,7 +981,7 @@ endpoints:
     os: septor
     version: current
   manjaro-xfce-current:
-    path: /manjaro-squash/releases/download/20.2-201203-linux59-c75d6cc5/
+    path: /manjaro-squash/releases/download/20.2-201203-linux59-dcd58a02/
     files:
     - livefs.sfs
     - rootfs.sfs
