@@ -711,7 +711,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-stable-lxqt
   sparky-rolling-mingui:
-    path: /debian-squash/releases/download/2020.09-0659ccac/
+    path: /debian-squash/releases/download/2020.12-50a8bc64/
     files:
     - filesystem.squashfs
     - initrd
