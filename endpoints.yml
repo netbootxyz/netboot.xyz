@@ -1078,7 +1078,7 @@ endpoints:
     flavor: architect
     kernel: manjaro-default-current
   mint-lmde-cinnamon:
-    path: /debian-squash/releases/download/4-d037ef06/
+    path: /debian-squash/releases/download/4-6e351eb5/
     files:
     - filesystem.squashfs
     - initrd
