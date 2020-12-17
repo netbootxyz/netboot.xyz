@@ -853,7 +853,7 @@ endpoints:
     version: '2020.06'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.1.0-8-b6f38ff4/
+    path: /debian-squash/releases/download/1.1.0-8-c35fb41e/
     files:
     - filesystem.squashfs
     - initrd
