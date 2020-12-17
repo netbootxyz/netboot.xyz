@@ -844,7 +844,7 @@ endpoints:
     version: '2020.06'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2020.06-9ba4968f/
+    path: /debian-squash/releases/download/2020.06-93c64875/
     files:
     - filesystem.squashfs
     - initrd
