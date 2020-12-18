@@ -1518,3 +1518,11 @@ endpoints:
     version: rolling
     flavor: rolling
     kernel: vyos-rolling
+  q4os-3.12-plasma-squash:
+    path: /debian-squash/releases/download/3.12-6e0ca54b/
+    files:
+    - filesystem.squashfs
+    os: Q4OS
+    version: '3.12'
+    flavor: plasma
+    kernel: q4os-3.12-default-squash
