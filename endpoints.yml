@@ -1500,3 +1500,13 @@ endpoints:
     version: '3.12'
     flavor: trinity
     kernel: q4os-3.12-default-squash
+  q4os-3.13-default-squash:
+    path: /debian-squash/releases/download/3.13-18394906/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Q4OS
+    version: '3.13'
+    flavor: trinity
+    kernel: q4os-3.13-default-squash
