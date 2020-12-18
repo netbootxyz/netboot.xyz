@@ -799,7 +799,7 @@ endpoints:
     os: parrotnet
     version: current
   parrot-home-xfce:
-    path: /debian-squash/releases/download/4.10-9a18a5f6/
+    path: /debian-squash/releases/download/4.10-d5797857/
     files:
     - filesystem.squashfs
     - initrd
