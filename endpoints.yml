@@ -1510,3 +1510,11 @@ endpoints:
     version: '3.13'
     flavor: trinity
     kernel: q4os-3.13-default-squash
+  q4os-3.13-plasma-squash:
+    path: /debian-squash/releases/download/3.13-68332b76/
+    files:
+    - filesystem.squashfs
+    os: Q4OS
+    version: '3.13'
+    flavor: plasma
+    kernel: q4os-3.13-default-squash
