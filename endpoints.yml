@@ -835,7 +835,7 @@ endpoints:
     version: current
     flavor: kde-security
   grml-full:
-    path: /debian-squash/releases/download/2020.06-2fa4926a/
+    path: /debian-squash/releases/download/2020.06-2bebe0db/
     files:
     - filesystem.squashfs
     - initrd
