@@ -592,7 +592,7 @@ endpoints:
     os: freebsd
     version: '12'
   q4os-3.10-default-squash:
-    path: /debian-squash/releases/download/3.10-0e917808/
+    path: /debian-squash/releases/download/3.12-b9140fac/
     files:
     - filesystem.squashfs
     - initrd
