@@ -602,7 +602,7 @@ endpoints:
     flavor: trinity
     kernel: q4os-3.10-default-squash
   q4os-3.10-plasma-squash:
-    path: /debian-squash/releases/download/3.10-15a7415a/
+    path: /debian-squash/releases/download/3.12-ff2ad809/
     files:
     - filesystem.squashfs
     os: Q4OS
