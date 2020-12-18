@@ -189,7 +189,7 @@ endpoints:
     flavor: lxde
     kernel: debian-10-live-kernel
   debian-10-lxqt-squash:
-    path: /debian-squash/releases/download/10.6.0-5b805709/
+    path: /debian-squash/releases/download/10.7.0-92b8fed6/
     files:
     - filesystem.squashfs
     os: debian
