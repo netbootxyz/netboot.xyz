@@ -479,7 +479,7 @@ endpoints:
     flavor: bionic
     kernel: voyager-bionic-squash
   voyager-buster-squash:
-    path: /debian-squash/releases/download/buster-e9d36b68/
+    path: /debian-squash/releases/download/buster-8be6d9f8/
     files:
     - filesystem.squashfs
     - initrd
