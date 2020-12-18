@@ -450,24 +450,6 @@ endpoints:
     version: '6'
     flavor: default
     kernel: backbox-6-default-squash
-  q4os-3.9-default-squash:
-    path: /debian-squash/releases/download/3.9-7c9b0332/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Q4OS
-    version: '3.9'
-    flavor: trinity
-    kernel: q4os-3.9-default-squash
-  q4os-3.9-plasma-squash:
-    path: /debian-squash/releases/download/3.9-1a29e21a/
-    files:
-    - filesystem.squashfs
-    os: Q4OS
-    version: '3.9'
-    flavor: plasma
-    kernel: q4os-3.9-default-squash
   voyager-bionic-squash:
     path: /ubuntu-squash/releases/download/bionic-0e8c475e/
     files:
@@ -591,24 +573,6 @@ endpoints:
     - special-edition.img
     os: freebsd
     version: '12'
-  q4os-3.10-default-squash:
-    path: /debian-squash/releases/download/3.12-b9140fac/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Q4OS
-    version: '3.10'
-    flavor: trinity
-    kernel: q4os-3.10-default-squash
-  q4os-3.10-plasma-squash:
-    path: /debian-squash/releases/download/3.12-ff2ad809/
-    files:
-    - filesystem.squashfs
-    os: Q4OS
-    version: '3.10'
-    flavor: plasma
-    kernel: q4os-3.10-default-squash
   feren-squash:
     path: /ubuntu-squash/releases/download/12-2019-37ab2592/
     files:
