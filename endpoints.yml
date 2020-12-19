@@ -1299,7 +1299,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-20.10-default-squash
   ubuntu-20.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/20.10-4977f0b8/
+    path: /ubuntu-squash/releases/download/20.10-66e9ad36/
     files:
     - filesystem.squashfs
     - initrd
