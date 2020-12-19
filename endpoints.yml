@@ -1204,7 +1204,7 @@ endpoints:
     flavor: focal
     kernel: voyager-focal-squash
   pop-20.04-default-squash:
-    path: /ubuntu-squash/releases/download/5-42ebbb8e/
+    path: /ubuntu-squash/releases/download/5-66b7e861/
     files:
     - filesystem.squashfs
     - initrd
