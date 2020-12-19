@@ -1052,7 +1052,7 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon
   ubuntu-20.04-default-squash:
-    path: /ubuntu-squash/releases/download/20.04.1-1b72b644/
+    path: /ubuntu-squash/releases/download/20.04.1-9bc4558b/
     files:
     - filesystem.squashfs
     - initrd
