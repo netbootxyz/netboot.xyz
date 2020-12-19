@@ -451,7 +451,7 @@ endpoints:
     flavor: default
     kernel: backbox-6-default-squash
   voyager-bionic-squash:
-    path: /ubuntu-squash/releases/download/bionic-0e8c475e/
+    path: /ubuntu-squash/releases/download/bionic-4abf1559/
     files:
     - filesystem.squashfs
     - initrd
