@@ -1149,7 +1149,7 @@ endpoints:
     version: 32
     flavor: Cinnamon
   fedora-32-KDE:
-    path: /fedora-assets/releases/download/1.6-5e145ffd/
+    path: /fedora-assets/releases/download/1.6-0bcb4104/
     files:
     - vmlinuz
     - initrd
