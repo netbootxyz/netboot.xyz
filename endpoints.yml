@@ -1329,7 +1329,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-20.10-Budgie-squash
   ubuntu-20.10-KDE-squash:
-    path: /ubuntu-squash/releases/download/20.10-2585030a/
+    path: /ubuntu-squash/releases/download/20.10-9013ea30/
     files:
     - filesystem.squashfs
     - initrd
