@@ -1432,7 +1432,7 @@ endpoints:
     kernel: ubuntu-20.10-netboot
     codename: groovy
   ubuntu-20.04-netboot:
-    path: /ubuntu-squash/releases/download/20.04.1-3732bbe9/
+    path: /ubuntu-squash/releases/download/20.04.1-8de3099a/
     files:
     - filesystem.squashfs
     - initrd
