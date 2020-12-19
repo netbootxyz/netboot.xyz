@@ -1131,7 +1131,7 @@ endpoints:
     version: 32
     flavor: GNOME
   fedora-32-Xfce:
-    path: /fedora-assets/releases/download/1.6-eb9c52c2/
+    path: /fedora-assets/releases/download/1.6-96c452d9/
     files:
     - vmlinuz
     - initrd
