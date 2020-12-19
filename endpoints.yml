@@ -1518,3 +1518,13 @@ endpoints:
     version: '3.13'
     flavor: plasma
     kernel: q4os-3.13-default-squash
+  pureos-gnome:
+    path: /ubuntu-squash/releases/download/2020-08-06-ae6ad937/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pureos
+    version: current
+    flavor: gnome
+    kernel: pureos-gnome
