@@ -1376,7 +1376,7 @@ endpoints:
     version: 33
     flavor: Xfce
   fedora-33-LXDE:
-    path: /fedora-assets/releases/download/1.2-4b84d3d0/
+    path: /fedora-assets/releases/download/1.2-92ee4908/
     files:
     - vmlinuz
     - initrd
