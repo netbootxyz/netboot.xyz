@@ -1403,7 +1403,7 @@ endpoints:
     version: 33
     flavor: LXQt
   fedora-33-SoaS:
-    path: /fedora-assets/releases/download/1.2-9411a10c/
+    path: /fedora-assets/releases/download/1.2-9e53a1d6/
     files:
     - vmlinuz
     - initrd
