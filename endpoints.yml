@@ -471,7 +471,7 @@ endpoints:
     flavor: buster
     kernel: voyager-buster-squash
   voyager-eoan-squash:
-    path: /ubuntu-squash/releases/download/eoan-6d5edebf/
+    path: /ubuntu-squash/releases/download/eoan-da5582fc/
     files:
     - filesystem.squashfs
     - initrd
