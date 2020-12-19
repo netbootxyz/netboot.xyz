@@ -583,7 +583,7 @@ endpoints:
     version: standard
     kernel: feren-squash
   feren-classic-squash:
-    path: /ubuntu-squash/releases/download/12-2019-df757635/
+    path: /ubuntu-squash/releases/download/12-2019-d30d6c1b/
     files:
     - filesystem.squashfs
     - initrd
