@@ -1242,7 +1242,7 @@ endpoints:
     flavor: default
     kernel: backbox-7-default-squash
   kodachi-7:
-    path: /ubuntu-squash/releases/download/7.0-30803197/
+    path: /ubuntu-squash/releases/download/7.6-5b1ead62/
     files:
     - filesystem.squashfs
     - initrd
