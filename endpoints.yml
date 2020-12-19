@@ -841,7 +841,7 @@ endpoints:
     os: systemrescue
     version: current
   caine:
-    path: /ubuntu-squash/releases/download/11.0-0f2bac21/
+    path: /ubuntu-squash/releases/download/11.0-46b7a6aa/
     files:
     - filesystem.squashfs
     - initrd
