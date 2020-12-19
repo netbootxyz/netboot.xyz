@@ -53,7 +53,7 @@ endpoints:
     flavor: architect
     kernel: manjaro-18.1.0-architect-kernel
   ubuntu-18.04-xfce-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-9eeea0c7/
+    path: /ubuntu-squash/releases/download/18.04.5-435d6edf/
     files:
     - filesystem.squashfs
     os: ubuntu
