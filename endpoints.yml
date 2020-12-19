@@ -729,7 +729,7 @@ endpoints:
     os: kodachi
     version: '6'
   bodhi-5-standard:
-    path: /ubuntu-squash/releases/download/5.1.0-24093da1/
+    path: /ubuntu-squash/releases/download/5.1.0-5d55acb7/
     files:
     - filesystem.squashfs
     - initrd
