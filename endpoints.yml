@@ -738,7 +738,7 @@ endpoints:
     version: '5'
     flavor: standard
   bodhi-5-apppack:
-    path: /ubuntu-squash/releases/download/5.1.0-1faffd9b/
+    path: /ubuntu-squash/releases/download/5.1.0-0bcb3c87/
     files:
     - filesystem.squashfs
     - initrd
