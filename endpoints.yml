@@ -1319,7 +1319,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-20.10-kylin-squash
   ubuntu-20.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/20.10-f1c8fdd6/
+    path: /ubuntu-squash/releases/download/20.10-f5422297/
     files:
     - filesystem.squashfs
     - initrd
