@@ -1412,7 +1412,7 @@ endpoints:
     version: 33
     flavor: SoaS
   fedora-33-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.2-18e0b2bd/
+    path: /fedora-assets/releases/download/1.2-aafc50f3/
     files:
     - vmlinuz
     - initrd
