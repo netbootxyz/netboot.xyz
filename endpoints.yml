@@ -1289,7 +1289,7 @@ endpoints:
     flavor: mate
     kernel: mint-20-mate-squash
   ubuntu-20.10-default-squash:
-    path: /ubuntu-squash/releases/download/20.10-efa77bd4/
+    path: /ubuntu-squash/releases/download/20.10-a8c24058/
     files:
     - filesystem.squashfs
     - initrd
