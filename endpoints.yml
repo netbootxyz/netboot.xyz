@@ -1394,7 +1394,7 @@ endpoints:
     version: 33
     flavor: KDE
   fedora-33-LXQt:
-    path: /fedora-assets/releases/download/1.2-ba287c11/
+    path: /fedora-assets/releases/download/1.2-8e2a3e17/
     files:
     - vmlinuz
     - initrd
