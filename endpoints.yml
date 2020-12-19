@@ -1194,7 +1194,7 @@ endpoints:
     version: 32
     flavor: SoaS
   voyager-focal-squash:
-    path: /ubuntu-squash/releases/download/focal-577c49cb/
+    path: /ubuntu-squash/releases/download/focal-344dbbc8/
     files:
     - filesystem.squashfs
     - initrd
