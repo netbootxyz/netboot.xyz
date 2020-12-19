@@ -1463,7 +1463,7 @@ endpoints:
     flavor: intel-amd
     kernel: pop-20.10-default-squash
   pop-20.10-nvidia-squash:
-    path: /ubuntu-squash/releases/download/2-e32c117b/
+    path: /ubuntu-squash/releases/download/2-613b1e2c/
     files:
     - filesystem.squashfs
     - initrd
