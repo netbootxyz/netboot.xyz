@@ -913,7 +913,7 @@ endpoints:
     os: gentoo
     version: autobuilds
   lxle:
-    path: /ubuntu-squash/releases/download/18.04.3-9007db23/
+    path: /ubuntu-squash/releases/download/18.04.3-83291c4b/
     files:
     - filesystem.squashfs
     - initrd
