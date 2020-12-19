@@ -1358,7 +1358,7 @@ endpoints:
     version: 33
     flavor: GNOME
   fedora-33-Cinnamon:
-    path: /fedora-assets/releases/download/1.2-1d329ad6/
+    path: /fedora-assets/releases/download/1.2-d13f4988/
     files:
     - vmlinuz
     - initrd
