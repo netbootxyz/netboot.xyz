@@ -413,7 +413,7 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-19-cinnamon-squash
   zorin-15-gnome-squash:
-    path: /ubuntu-squash/releases/download/15-7798ab7b/
+    path: /ubuntu-squash/releases/download/15-a42f0f8d/
     files:
     - filesystem.squashfs
     - initrd
