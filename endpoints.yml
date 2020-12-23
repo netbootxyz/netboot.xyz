@@ -632,7 +632,7 @@ endpoints:
     flavor: testing
     kernel: clonezilla-ubuntu-testing
   breakin:
-    path: /asset-mirror/releases/download/4.26.1-4c4e2fd9/
+    path: /asset-mirror/releases/download/4.26.1-8ca03193/
     files:
     - vmlinuz
     - initrd
