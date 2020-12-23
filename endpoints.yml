@@ -639,7 +639,7 @@ endpoints:
     os: breakin
     version: 4.26.1
   dban:
-    path: /asset-mirror/releases/download/2.3.0-73f014c0/
+    path: /asset-mirror/releases/download/2.3.0-1ba61ba8/
     files:
     - DBAN.BZI
     os: dban
