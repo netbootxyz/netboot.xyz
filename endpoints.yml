@@ -705,7 +705,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-rolling-lxqt
   oracle-8:
-    path: /asset-mirror/releases/download/u2-6e2fa23b/
+    path: /asset-mirror/releases/download/3-746706d9/
     files:
     - vmlinuz
     - initrd
