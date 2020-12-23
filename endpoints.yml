@@ -553,7 +553,7 @@ endpoints:
     os: freebsd
     version: '9'
   mfsbsd-10:
-    path: /asset-mirror/releases/download/10.3-b257c1ce/
+    path: /asset-mirror/releases/download/10.3-efe0ae20/
     files:
     - default.img
     - special-edition.img
