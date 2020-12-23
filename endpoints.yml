@@ -889,7 +889,7 @@ endpoints:
     os: bluestar
     version: current
   anarchy:
-    path: /asset-mirror/releases/download/1.3.1-55904415/
+    path: /asset-mirror/releases/download/1.3.1-8ab49871/
     files:
     - initrd
     - vmlinuz
