@@ -560,7 +560,7 @@ endpoints:
     os: freebsd
     version: '10'
   mfsbsd-11:
-    path: /asset-mirror/releases/download/11.2-aecc58ac/
+    path: /asset-mirror/releases/download/11.2-5568879a/
     files:
     - default.img
     - special-edition.img
