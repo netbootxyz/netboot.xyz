@@ -539,7 +539,7 @@ endpoints:
     version: '15'
     kernel: deepin-15-squash
   mfsbsd-8:
-    path: /asset-mirror/releases/download/8.4-b6071b6e/
+    path: /asset-mirror/releases/download/8.4-85c0e522/
     files:
     - default.img
     - special-edition.img
