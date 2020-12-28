@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.29]
+## [2.0.30]
+
+## [2.0.29] - 2020-12-28
 ### Changed
 
 - Various version updates
