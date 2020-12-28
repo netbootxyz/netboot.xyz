@@ -104,8 +104,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.12
-      name: '3.12'
+    - code_name: v3.13
+      name: '3.13'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -122,8 +122,8 @@ releases:
     mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
-    - code_name: 2020.11.01
-      name: 2020.11.01
+    - code_name: 2020.12.01
+      name: 2020.12.01
   blackarch:
     enabled: true
     menu: linux
@@ -155,7 +155,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 32.20201104.3.0
+    - code_name: 33.20201201.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -243,8 +243,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core152
-      name: 2.25 Core152
+    - code_name: 2.25-core153
+      name: 2.25 Core153
   k3os:
     enabled: true
     menu: linux
@@ -379,18 +379,18 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20201217T173522Z
+      name: 20201217T173522Z
+    - code_name: 20201216T210521Z
+      name: 20201216T210521Z
+    - code_name: 20201203T165910Z
+      name: 20201203T165910Z
     - code_name: 20201118T153314Z
       name: 20201118T153314Z
     - code_name: 20201104T175552Z
       name: 20201104T175552Z
     - code_name: 20201022T155042Z
       name: 20201022T155042Z
-    - code_name: 20201021T205759Z
-      name: 20201021T205759Z
-    - code_name: 20201007T223416Z
-      name: 20201007T223416Z
-    - code_name: 20200925T164355Z
-      name: 20200925T164355Z
   talos:
     enabled: true
     menu: linux

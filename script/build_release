@@ -60,7 +60,7 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
       -e "/^boot_domain/c\boot_domain: ${PROD_URL}" \
       user_overrides.yml
     docker build -t localbuild -f ${DOCKER_FILE} .
-    docker run --rm -it -v $(pwd):/buildout localbuild
+    docker run --rm -i -v $(pwd):/buildout localbuild
   fi
   if [[ "${TYPE}" == "rc" ]]; then
     sed -i \

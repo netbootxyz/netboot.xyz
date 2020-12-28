@@ -59,6 +59,10 @@ jobs:
       run: |
         ./script/tag ${{ env.release_tag }}
 
+    - name: Extract release notes
+      id: extract-release-notes
+      uses: ffurrer2/extract-release-notes@v1
+
     - name: Create RC Release and Upload Assets
       uses: svenstaro/upload-release-action@v2
       with:
@@ -69,6 +73,7 @@ jobs:
         release_name: ${{ env.release_tag }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ env.release_tag }}
+        body: ${{ steps.extract-release-notes.outputs.release_notes }}
 
     - name: Notify Discord on failure
       if: failure()
