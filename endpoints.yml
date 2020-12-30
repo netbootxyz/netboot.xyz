@@ -1528,3 +1528,11 @@ endpoints:
     version: current
     flavor: gnome
     kernel: pureos-gnome
+  rescuezilla:
+    path: /asset-mirror/releases/download/2.1.1-7cb3481e/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: rescuezilla
+    version: current
