@@ -73,6 +73,10 @@ item sig_check ${space} {{ site_name }} [ enabled: ${sigs_enabled} ]
 isset ${github_user} && item --gap Custom Github Menu: ||
 isset ${github_user} && item custom-github ${space} ${github_user}'s Custom Menu ||
 {% endif %}
+{% if custom_url_menus | bool %}
+isset ${custom_url} && item --gap Custom URL Menu: ||
+isset ${custom_url} && item custom-url ${space} Custom URL Menu ||
+{% endif %}
 {% if custom_generate_menus | bool %}
 item --gap Custom User Menus: ||
 item custom-user ${space} Custom User Menus
@@ -120,6 +124,10 @@ goto main_menu
 
 :custom-github
 chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || goto error
+goto main_menu
+
+:custom-url
+chain ${custom_url}/custom.ipxe || goto error
 goto main_menu
 
 :custom-user
