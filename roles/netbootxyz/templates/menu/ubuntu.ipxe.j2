@@ -38,6 +38,8 @@ goto boot_type
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
+iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/legacy-images/netboot/
+goto boot_type
 
 :boot_type
 menu ${os} [${ubuntu_version}] Installer
