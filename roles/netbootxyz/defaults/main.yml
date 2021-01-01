@@ -528,7 +528,9 @@ releases:
     - code_name: groovy
       name: 20.10 Groovy Gorilla
     - code_name: focal
-      name: 20.04 LTS Focal Fossa
+      name: 20.04 LTS Focal Fossa (Subiquity)
+    - code_name: focal-legacy
+      name: 20.04 LTS Focal Fossa (Legacy)
     - code_name: bionic
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
