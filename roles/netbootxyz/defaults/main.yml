@@ -72,9 +72,9 @@ checksums_filename: '{{ site_name }}-sha256-checksums.txt'
 codesign_cert_filename: codesign.crt
 codesign_key_filename: codesign.key
 custom_generate_menus: false
-custom_url_menus: true
 custom_github_menus: true
 custom_templates_dir: '{{ netbootxyz_conf_dir }}/custom'
+custom_url_menus: true
 generate_checksums: true
 generate_disks: true
 generate_disks_arm: false
