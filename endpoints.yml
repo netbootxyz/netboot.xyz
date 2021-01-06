@@ -1536,3 +1536,12 @@ endpoints:
     - vmlinuz
     os: rescuezilla
     version: current
+  deepin-20-squash:
+    path: /debian-squash/releases/download/20.1_1010-9eca09b0/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Deepin
+    version: '20'
+    kernel: deepin-20-squash
