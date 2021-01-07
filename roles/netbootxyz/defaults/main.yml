@@ -380,10 +380,6 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20201228T183207Z
-      name: 20201228T183207Z
-    - code_name: 20201228T093920Z
-      name: 20201228T093920Z
     - code_name: 20201217T173522Z
       name: 20201217T173522Z
     - code_name: 20201216T210521Z
