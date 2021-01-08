@@ -1259,7 +1259,7 @@ endpoints:
     version: '5'
     kernel: linux-lite-5-squash
   mint-20-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/20-73dd901f/
+    path: /ubuntu-squash/releases/download/20.1-808ed155/
     files:
     - initrd
     - vmlinuz
