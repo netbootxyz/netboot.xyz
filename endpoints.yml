@@ -1279,7 +1279,7 @@ endpoints:
     flavor: xfce
     kernel: mint-20-xfce-squash
   mint-20-mate-squash:
-    path: /ubuntu-squash/releases/download/20-ac5af3de/
+    path: /ubuntu-squash/releases/download/20.1-d78ba60d/
     files:
     - initrd
     - vmlinuz
