@@ -14,11 +14,11 @@ bootloaders:
   hybrid:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
-    output_bin: .iso
+    output_bin: -hybrid.iso
     type: ISO
   - desc: Used for creation of USB Keys
     ipxe_bin: ipxe.usb
-    output_bin: .usb
+    output_bin: -hybrid.usb
     type: USB
   legacy:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
