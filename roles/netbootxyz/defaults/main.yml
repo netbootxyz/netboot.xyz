@@ -19,7 +19,7 @@ bootloaders:
   - desc: Used for creation of USB Keys
     ipxe_bin: ipxe.usb
     output_bin: .usb
-    type: USB 
+    type: USB
   legacy:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
@@ -390,14 +390,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210114T163038Z
+      name: 20210114T163038Z
     - code_name: 20210114T041228Z
       name: 20210114T041228Z
     - code_name: 20201217T173522Z
       name: 20201217T173522Z
     - code_name: 20201216T210521Z
       name: 20201216T210521Z
-    - code_name: 20201203T165910Z
-      name: 20201203T165910Z
   talos:
     enabled: true
     menu: linux
