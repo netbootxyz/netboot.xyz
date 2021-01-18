@@ -18,3 +18,10 @@
     when:
     - generate_disks_rpi | default(false) | bool
     - bootloader_filename == "netboot.xyz"
+
+  - include: generate_disks_hybrid.yml
+    when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
+    - generate_disks_efi | default(true) | bool
+    - bootloader_filename == "netboot.xyz"

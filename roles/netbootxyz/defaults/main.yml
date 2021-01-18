@@ -11,6 +11,15 @@ bootloaders:
     ipxe_bin: snp.efi
     output_bin: -arm64.efi
     type: DHCP-snp
+  hybrid:
+  - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
+    ipxe_bin: ipxe.iso
+    output_bin: -hybrid.iso
+    type: ISO
+  - desc: Used for creation of USB Keys
+    ipxe_bin: ipxe.usb
+    output_bin: -hybrid.usb
+    type: USB
   legacy:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
@@ -74,10 +83,12 @@ codesign_key_filename: codesign.key
 custom_generate_menus: false
 custom_github_menus: true
 custom_templates_dir: '{{ netbootxyz_conf_dir }}/custom'
+custom_url_menus: true
 generate_checksums: true
 generate_disks: true
 generate_disks_arm: false
 generate_disks_efi: true
+generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_rpi: false
 generate_menus: true
@@ -122,8 +133,8 @@ releases:
     mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
-    - code_name: 2020.12.01
-      name: 2020.12.01
+    - code_name: 2021.01.01
+      name: 2021.01.01
   blackarch:
     enabled: true
     menu: linux
@@ -155,7 +166,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 33.20201201.3.0
+    - code_name: 33.20201214.3.1
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -379,18 +390,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210114T163038Z
+      name: 20210114T163038Z
+    - code_name: 20210114T041228Z
+      name: 20210114T041228Z
     - code_name: 20201217T173522Z
       name: 20201217T173522Z
     - code_name: 20201216T210521Z
       name: 20201216T210521Z
-    - code_name: 20201203T165910Z
-      name: 20201203T165910Z
-    - code_name: 20201118T153314Z
-      name: 20201118T153314Z
-    - code_name: 20201104T175552Z
-      name: 20201104T175552Z
-    - code_name: 20201022T155042Z
-      name: 20201022T155042Z
   talos:
     enabled: true
     menu: linux
@@ -528,7 +535,9 @@ releases:
     - code_name: groovy
       name: 20.10 Groovy Gorilla
     - code_name: focal
-      name: 20.04 LTS Focal Fossa
+      name: 20.04 LTS Focal Fossa (Subiquity)
+    - code_name: focal-legacy
+      name: 20.04 LTS Focal Fossa (Legacy)
     - code_name: bionic
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial

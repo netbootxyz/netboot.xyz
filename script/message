@@ -15,7 +15,7 @@ fi
 if [ "${TYPE}" == "failure" ]; then
   curl -X POST -H "Content-Type: application/json" --data \
   '{
-    "avatar_url": "https://unavatar.now.sh/twitter/github",
+    "avatar_url": "https://api.microlink.io/?url=https://twitter.com/github&embed=image.url",
     "embeds": [
       {
         "color": 16711680,
@@ -28,7 +28,7 @@ if [ "${TYPE}" == "failure" ]; then
 else
   curl -X POST -H "Content-Type: application/json" --data \
   '{
-    "avatar_url": "https://unavatar.now.sh/twitter/github",
+    "avatar_url": "https://api.microlink.io/?url=https://twitter.com/github&embed=image.url",
     "embeds": [
       {
         "color": 1681177,

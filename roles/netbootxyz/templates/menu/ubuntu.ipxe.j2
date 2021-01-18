@@ -10,6 +10,7 @@ set os Ubuntu
 clear ubuntu_version
 clear install_type
 clear older_release
+clear install_url
 set install_type deb
 menu ${os} - ${arch_a}
 item --gap Latest Releases
@@ -22,7 +23,8 @@ choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
 iseq ${ubuntu_version} focal && set install_type sub ||
 iseq ${ubuntu_version} groovy && set install_type sub ||
-iseq ${boot_type} sub && goto boot_type ||
+iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
+iseq ${install_type} sub && goto boot_type ||
 goto mirrorcfg
 
 :older_release
@@ -37,6 +39,8 @@ goto boot_type
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
 set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
+iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/legacy-images/netboot/
+goto boot_type
 
 :boot_type
 menu ${os} [${ubuntu_version}] Installer
@@ -54,9 +58,11 @@ iseq ${install_type} sub && set install_params systemd.unit=rescue.target ||
 goto deb_install
 
 :deb_automated
-echo -n Specify preseed/autoinstall URL for ${os} ${ubuntu_version}: && read autoinstall
-iseq ${install_type} deb && set install_params auto=true priority=critical preseed/url=${autoinstall} ||
-iseq ${install_type} sub && set install_params autoinstall ds=nocloud-net;s=${autoinstall} ||
+iseq ${install_type} deb && set install_name preseed ||
+iseq ${install_type} sub && set install_name autoinstall ||
+echo -n Specify ${install_name} URL for ${os} ${ubuntu_version}: && read install_url
+iseq ${install_type} deb && set install_params auto=true priority=critical preseed/url=${install_url} ||
+iseq ${install_type} sub && set install_params autoinstall ds=nocloud-net;s=${install_url} ||
 goto deb_install
 
 :deb_install

@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.29]
+## [2.0.30]
+### Added
+- Can now download hybrid bootloaders that contain x86_64 Legacy and EFI builds in one image.
+  Enables the user to use one ISO or USB key for multiple scenarios.
+- Ability to use custom URLs for menus instead of just relying on Github netboot.xyz-custom repo.
+
+### Changed
+- Added the legacy installer back for Ubuntu 20.04 (Focal).  20.04 will be the last
+  version to support legacy Debian Installer with autoinstall being the new Ubuntu
+  standard going foward.
+- Various version updates
+
+## [2.0.29] - 2020-12-28
 ### Changed
 
 - Various version updates

@@ -10,7 +10,8 @@ item {{ key }} ${space} {{ value.name }}
 {% endfor %}
 item --gap netboot.xyz tools:
 item cmdline ${space} Kernel cmdline params: [${cmdline}]
-item nbxyz-custom ${space} Set Github username [user: ${github_user}]
+item nbxyz_custom_url ${space} Set custom menu [url: ${custom_url}]
+item nbxyz_custom_github ${space} Set Github username [user: ${github_user}]
 item testdistro ${space} Test Distribution ISO
 item nbxyz ${space} netboot.xyz endpoints
 choose --default ${menu} menu || goto utils_exit
@@ -65,7 +66,15 @@ kernel {{ utilitiespcbios.memtest.util_path }}
 boot
 goto utils_menu
 
-:nbxyz-custom
+:nbxyz_custom_url
+echo If you have a customized menu you would like to load into netboot.xyz
+echo set the base path url to your custom ipxe files here. 
+echo It will look for custom.ipxe in that path as the entry point.
+echo
+echo -n Please enter your custom http url here: ${} && read custom_url
+goto utils_menu
+
+:nbxyz_custom_github
 echo Make sure you have a fork of https://github.com/netbootxyz/netboot.xyz-custom.
 echo You can then customize your fork as needed and set up your own custom options.
 echo Once your username is set, a custom option will appear on the main menu.

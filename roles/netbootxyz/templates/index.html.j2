@@ -34,6 +34,26 @@ exit
   Powered by <a href=https://netboot.xyz>netboot.xyz</a>
   </p>
 
+{% if generate_disks_hybrid == true %}
+  <p>Hybrid iPXE Bootloaders - Legacy and EFI Combined</p>
+  <table style="width:100%">
+    <!-- table header -->
+    <tr>
+       <th> Type </th>
+       <th> Bootloader </th>
+       <th> Description </th>
+    </tr>
+    <!-- table rows -->
+    {% for item in bootloaders.hybrid %}
+    <tr>
+       <td> {{ item.type }} </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> {{ item.desc }} </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
 {% if generate_disks_legacy == true %}
   <p>Legacy (PCBIOS) iPXE Bootloaders</p>
   <table style="width:100%">
