@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.31]
+
 ## [2.0.30]
 ### Added
 - Can now download hybrid bootloaders that contain x86_64 Legacy and EFI builds in one image.
