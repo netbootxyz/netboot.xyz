@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.31]
+### Fixes
+- Fixes results too large bug introduced on Ubuntu menu
+
+### Changed
+- Change priority to low on Ubuntu Legacy installer
 
 ## [2.0.30]
 ### Added
