@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.32]
+### Changed
+- Disabled Unix Menu on EFI as SmartOS not working in that mode and was the only option on EFI
 
 ## [2.0.31]
 ### Fixes
