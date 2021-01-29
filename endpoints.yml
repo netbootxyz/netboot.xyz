@@ -999,7 +999,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/35.0-0826b444/
+    path: /asset-mirror/releases/download/35.1-0826b444/
     files:
     - initrd
     - vmlinuz
