@@ -1432,13 +1432,13 @@ endpoints:
     kernel: ubuntu-20.10-netboot
     codename: groovy
   ubuntu-20.04-netboot:
-    path: /ubuntu-squash/releases/download/20.04.2-8de3099a/
+    path: /ubuntu-squash/releases/download/20.04.2-23da52d5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.1
+    version: 20.04.2
     codename: focal
     flavor: netboot
     kernel: ubuntu-20.04-netboot
