@@ -1545,3 +1545,11 @@ endpoints:
     os: Deepin
     version: '20'
     kernel: deepin-20-squash
+  ovirt:
+    path: /asset-mirror/releases/download/4.4.4-2020122111-d81d96f5/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: ovirt
+    version: '4.4'
