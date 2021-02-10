@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Update to latest Ubuntu maintenance release
 ### Changed
 - Disabled Unix Menu on EFI as SmartOS not working in that mode and was the only option on EFI
+- Various version updates
 
 ## [2.0.31]
 ### Fixes
@@ -31,7 +32,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.29] - 2020-12-28
 ### Changed
-
 - Various version updates
 - Switched asset builders from Github to Travis
 - Introduced changelog
