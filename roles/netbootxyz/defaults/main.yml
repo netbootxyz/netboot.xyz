@@ -133,8 +133,8 @@ releases:
     mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
-    - code_name: 2021.01.01
-      name: 2021.01.01
+    - code_name: 2021.02.01
+      name: 2021.02.01
   blackarch:
     enabled: true
     menu: linux
@@ -149,12 +149,10 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
-    - code_name: 8.2.2004
-      name: '8.2'
-    - code_name: 8.1.1911
-      name: '8.1'
-    - code_name: 8.0.1905
-      name: '8.0'
+    - code_name: 8.3.2011
+      name: '8.3'
+    - code_name: 8
+      name: 8.x Latest
     - code_name: 8-stream
       name: 8.0 Stream
     - code_name: 7
@@ -166,7 +164,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 33.20210104.3.0
+    - code_name: 33.20210117.3.2
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -390,14 +388,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210128T022709Z
+      name: 20210128T022709Z
     - code_name: 20210114T163038Z
       name: 20210114T163038Z
     - code_name: 20210114T041228Z
       name: 20210114T041228Z
     - code_name: 20201217T173522Z
       name: 20201217T173522Z
-    - code_name: 20201216T210521Z
-      name: 20201216T210521Z
   talos:
     enabled: true
     menu: linux
