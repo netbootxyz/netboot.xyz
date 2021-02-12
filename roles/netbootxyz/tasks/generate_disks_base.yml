@@ -31,13 +31,17 @@
       - "{{ netbootxyz_root }}/ipxe"
       - "{{ cert_dir }}"
 
+  - name: Retreive latest wimboot
+    get_url:
+      url: "{{ wimboot_upstream_url }}"
+      dest: "{{ netbootxyz_root }}/wimboot"
+
   - name: Copy helper apps
     copy:
       src: "{{ item }}"
       dest: "{{ netbootxyz_root }}"
     with_items:
       - memdisk
-      - wimboot
 
   - name: Install required packages
     package:
