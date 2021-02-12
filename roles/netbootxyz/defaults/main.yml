@@ -699,3 +699,4 @@ utilitiespcbios:
     util_path: http://mirror.sysadminguide.net/ubcd/ubcd538.iso
     version: '538'
 wimboot_location: http://${boot_domain}/wimboot
+wimboot_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot
