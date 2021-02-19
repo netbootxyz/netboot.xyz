@@ -905,7 +905,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20210210T214503Z-f50aa8f8/
+    path: /asset-mirror/releases/download/20210217T214503Z-f50aa8f8/
     files:
     - image.squashfs
     - initrd
