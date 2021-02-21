@@ -1554,7 +1554,7 @@ endpoints:
     os: ovirt
     version: '4.4'
   nitrux-release:
-    path: /ubuntu-squash/releases/download/2021.01.28-df7d1136/
+    path: /ubuntu-squash/releases/download/2021.01.28-0c143c2d/
     files:
     - initrd
     - vmlinuz
