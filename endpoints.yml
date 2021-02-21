@@ -1553,3 +1553,11 @@ endpoints:
     - squashfs.img
     os: ovirt
     version: '4.4'
+  nitrux-release:
+    path: /ubuntu-squash/releases/download/2021.01.28-a3d3a774/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: nitrux
+    version: REPLACE_VERSION
