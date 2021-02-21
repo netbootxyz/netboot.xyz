@@ -333,13 +333,6 @@ releases:
     paths:
       7: /repo/OracleLinux/OL7/latest/x86_64
       8: /repo/OracleLinux/OL8/baseos/latest/x86_64
-  parrotsec:
-    enabled: true
-    menu: linux
-    name: Parrot Security
-    versions:
-    - code_name: stable
-      name: Stable Netinstall
   rancheros:
     base_dir: os/latest
     enabled: true
