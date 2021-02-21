@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.33]
+### Removed
+- Parrot NetInstall images are no longer maintained
 
 ## [2.0.32]
 ### Fixes

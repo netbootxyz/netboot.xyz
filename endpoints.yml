@@ -755,13 +755,6 @@ endpoints:
     os: devuan
     version: '2'
     flavor: ascii
-  parrot-net:
-    path: /asset-mirror/releases/download/4.9.1-9f304e7d/
-    files:
-    - vmlinuz
-    - initrd
-    os: parrotnet
-    version: current
   parrot-home-xfce:
     path: /debian-squash/releases/download/4.10-d5797857/
     files:
