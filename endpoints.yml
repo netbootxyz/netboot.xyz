@@ -848,14 +848,6 @@ endpoints:
     - vmlinuz
     os: caine
     version: '11'
-  nitrux-stable:
-    path: /ubuntu-squash/releases/download/2020.11.01-38b0d0a1/
-    files:
-    - initrd
-    - vmlinuz
-    - filesystem.squashfs
-    os: nitrux
-    version: stable
   bootrepair:
     path: /ubuntu-squash/releases/download/current-e035b00c/
     files:
