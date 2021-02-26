@@ -857,14 +857,6 @@ endpoints:
     - airootfs.sfs
     os: blackarch
     version: current
-  velt-current:
-    path: /asset-mirror/releases/download/0.3.0-5ac90465/
-    files:
-    - initrd
-    - vmlinuz
-    - airootfs.sfs
-    os: velt
-    version: current
   bluestar:
     path: /asset-mirror/releases/download/5.10.10-2021.01.24-9214ea5e/
     files:

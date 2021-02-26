@@ -150,7 +150,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Talos | https://www.talos.dev/ | Yes | No |
 | Tiny Core Linux | https://tinycorelinux.net | Yes | Yes |
 | Ubuntu | https://www.ubuntu.com | Yes | Yes |
-| Velt | https://velt.io/ | No | Yes |
 | Voyager | https://voyagerlive.org | No | Yes |
 | VyOS | https://vyos.io | Yes | No |
 | Zen Installer | https://sourceforge.net/projects/revenge-installer | Yes | No |
