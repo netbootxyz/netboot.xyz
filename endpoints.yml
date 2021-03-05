@@ -984,7 +984,7 @@ endpoints:
     version: current
     flavor: full
   4mlinux-thesss:
-    path: /asset-mirror/releases/download/35.2-77280515/
+    path: /asset-mirror/releases/download/36.0-77280515/
     files:
     - initrd
     - vmlinuz
