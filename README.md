@@ -134,7 +134,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | OpenBSD | https://openbsd.org | Yes | No |
 | OpenSUSE | https://opensuse.org | Yes | No |
 | Oracle Linux | https://www.oracle.com/linux/ | Yes | Installer |
-| Parrot Security | https://www.parrotsec.org | Yes | Yes |
+| Parrot Security | https://www.parrotsec.org | No | Yes |
 | Peppermint | https://peppermintos.com | No | Yes |
 | Pop OS |https://system76.com/pop| No | Yes |
 | Q4OS | https://q4os.org | No | Yes |
@@ -150,7 +150,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Talos | https://www.talos.dev/ | Yes | No |
 | Tiny Core Linux | https://tinycorelinux.net | Yes | Yes |
 | Ubuntu | https://www.ubuntu.com | Yes | Yes |
-| Velt | https://velt.io/ | No | Yes |
 | Voyager | https://voyagerlive.org | No | Yes |
 | VyOS | https://vyos.io | Yes | No |
 | Zen Installer | https://sourceforge.net/projects/revenge-installer | Yes | No |
