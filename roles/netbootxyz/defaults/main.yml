@@ -108,6 +108,15 @@ pipxe_branch: master
 pipxe_repo: https://github.com/netbootxyz/pipxe
 pipxe_source_dir: /usr/src/pipxe
 releases:
+  almalinux:
+    base_dir: almalinux
+    enabled: true
+    menu: linux
+    mirror: https://repo.almalinux.org
+    name: AlmaLinux
+    versions:
+    - code_name: 8
+      name: 8
   alpinelinux:
     base_dir: alpine
     enabled: true
