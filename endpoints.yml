@@ -22,7 +22,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-18.04-live-kernel
   debian-10-live-kernel:
-    path: /debian-core-10/releases/download/10.6.0-021986c6/
+    path: /debian-core-10/releases/download/10.8.0-b80f9c32/
     files:
     - initrd
     - vmlinuz
