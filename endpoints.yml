@@ -36,7 +36,7 @@ endpoints:
     os: debian
     version: 9
   debian-10-default-squash:
-    path: /debian-squash/releases/download/10.8.0-bfae1d0c/
+    path: /debian-squash/releases/download/10.8.0-3892cd41/
     files:
     - filesystem.squashfs
     - initrd
