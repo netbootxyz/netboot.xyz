@@ -22,7 +22,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-18.04-live-kernel
   debian-10-live-kernel:
-    path: /debian-core-10/releases/download/10.6.0-021986c6/
+    path: /debian-core-10/releases/download/10.8.0-b80f9c32/
     files:
     - initrd
     - vmlinuz
@@ -36,7 +36,7 @@ endpoints:
     os: debian
     version: 9
   debian-10-default-squash:
-    path: /debian-squash/releases/download/10.6.0-b0510fc3/
+    path: /debian-squash/releases/download/10.8.0-9728909e/
     files:
     - filesystem.squashfs
     os: debian
@@ -481,7 +481,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20210304-0945-92641c1f/
+    path: /ubuntu-squash/releases/download/20210311-0944-92641c1f/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -602,7 +602,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.2-6-002d59cc/
+    path: /debian-squash/releases/download/2.7.2-9-002d59cc/
     files:
     - filesystem.squashfs
     - initrd
@@ -622,7 +622,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210302-groovy-18e78f5f/
+    path: /ubuntu-squash/releases/download/20210309-groovy-18e78f5f/
     files:
     - filesystem.squashfs
     - initrd
@@ -675,7 +675,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-stable-lxqt
   sparky-rolling-mingui:
-    path: /debian-squash/releases/download/2020.12-6bf1f5f9/
+    path: /debian-squash/releases/download/2021.03-6bf1f5f9/
     files:
     - filesystem.squashfs
     - initrd
@@ -685,7 +685,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-rolling-mingui
   sparky-rolling-gui:
-    path: /debian-squash/releases/download/5.14-895a3198/
+    path: /debian-squash/releases/download/2021.03-895a3198/
     files:
     - filesystem.squashfs
     - initrd
@@ -695,7 +695,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-rolling-gui
   sparky-rolling-lxqt:
-    path: /debian-squash/releases/download/5.14-5d8b15b7/
+    path: /debian-squash/releases/download/2021.03-5d8b15b7/
     files:
     - filesystem.squashfs
     - initrd
@@ -826,7 +826,7 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/8.00-65b64f2a/
+    path: /asset-mirror/releases/download/8.01-65b64f2a/
     files:
     - initrd
     - vmlinuz
@@ -882,7 +882,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20210303T214503Z-f50aa8f8/
+    path: /asset-mirror/releases/download/20210310T214503Z-f50aa8f8/
     files:
     - image.squashfs
     - initrd
@@ -968,7 +968,7 @@ endpoints:
     os: fatdog
     version: current
   raizo:
-    path: /debian-squash/releases/download/v12.21.02.02p-0aa6f3c9/
+    path: /debian-squash/releases/download/v12.21.03.04p-0aa6f3c9/
     files:
     - filesystem.squashfs
     - initrd
