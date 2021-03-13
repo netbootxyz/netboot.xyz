@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.35]
+
 ## [2.0.34]
 ### Added
 - Support for AlmaLinux
