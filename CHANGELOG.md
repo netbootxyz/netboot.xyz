@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.34]
+### Added
+- Support for AlmaLinux
+### Fixes
+- Updated Debian Kernel for Live images, transitioned over to Actions from Travis
+
 ## [2.0.33]
 ### Removed
 - Parrot NetInstall images are no longer maintained
