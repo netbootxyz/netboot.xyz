@@ -36,15 +36,15 @@ endpoints:
     os: debian
     version: 9
   debian-10-default-squash:
-    path: /debian-squash/releases/download/10.8.0-3892cd41/
+    path: /debian-squash/releases/download/10.8.0-9728909e/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: debian
     version: '10'
-    flavor: XFCE
-    kernel: debian-10-default-squash
+    flavor: core
+    kernel: debian-10-live-kernel
   manjaro-18.1.0-default-squash:
     path: /manjaro-squash/releases/download/18.1.0-a9fc9ad4/
     files:
