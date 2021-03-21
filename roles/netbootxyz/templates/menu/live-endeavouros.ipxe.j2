@@ -1,0 +1,36 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os EndeavourOS
+menu ${os} - Current Arch [ ${arch} ]
+iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "endeavouros" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose live_version || goto live_exit
+goto ${live_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "endeavouros" %}
+:{{ value.version }}
+set url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${url}vmlinuz ${ipparam} archiso_http_srv=${url} initrd=initrd archisobasedir=arch cow_spacesize=10G earlymodules=loop modules-load=loop rd.modules-load=loop nvidia nouveau.modeset=0 nouveau.blacklist=yes modprobe.blacklist=nouveau i915.modeset=1 radeon.modeset=1 ${cmdline}
+initrd ${url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
