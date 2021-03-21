@@ -1538,3 +1538,11 @@ endpoints:
     - filesystem.squashfs
     os: nitrux
     version: release
+  endeavouros:
+    path: /asset-mirror/releases/download/2021.02.03-1b669ddc/
+    files:
+    - airootfs.sfs
+    - initrd
+    - vmlinuz
+    os: endeavouros
+    version: current
