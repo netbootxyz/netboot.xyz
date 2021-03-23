@@ -1546,3 +1546,11 @@ endpoints:
     - vmlinuz
     os: endeavouros
     version: current
+  kodachi-8:
+    path: /ubuntu-squash/releases/download/8.2-625e11fa/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: kodachi
+    version: '8'
