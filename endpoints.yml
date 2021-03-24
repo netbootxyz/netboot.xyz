@@ -948,7 +948,7 @@ endpoints:
     flavor: gnome
     kernel: manjaro-gnome-current
   manjaro-kde-current:
-    path: /manjaro-squash/releases/download/20.2.1-210103-linux59-30c94c48/
+    path: /manjaro-squash/releases/download/21.0-210318-linux510-f094c9b0/
     files:
     - livefs.sfs
     - rootfs.sfs
