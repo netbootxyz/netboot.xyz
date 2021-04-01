@@ -1227,7 +1227,7 @@ endpoints:
     os: kodachi
     version: '7'
   linux-lite-5-squash:
-    path: /ubuntu-squash/releases/download/5.0-9c9cc103/
+    path: /ubuntu-squash/releases/download/5.4-a096cd9b/
     files:
     - filesystem.squashfs
     - initrd
