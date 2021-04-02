@@ -898,7 +898,7 @@ endpoints:
     os: lxle
     version: current
   kaspersky-rescue:
-    path: /asset-mirror/releases/download/18-28973c12/
+    path: /asset-mirror/releases/download/18-de0bfbcd/
     files:
     - initrd.xz
     - initrd
