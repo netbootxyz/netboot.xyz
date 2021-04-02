@@ -115,8 +115,8 @@ releases:
     mirror: https://repo.almalinux.org
     name: AlmaLinux
     versions:
-    - code_name: 8
-      name: 8
+    - code_name: 8.3
+      name: 8.3
   alpinelinux:
     base_dir: alpine
     enabled: true
@@ -142,8 +142,8 @@ releases:
     mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
-    - code_name: 2021.03.01
-      name: 2021.03.01
+    - code_name: 2021.04.01
+      name: 2021.04.01
   blackarch:
     enabled: true
     menu: linux
@@ -173,7 +173,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 33.20210217.3.0
+    - code_name: 33.20210314.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -261,8 +261,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core154
-      name: 2.25 Core154
+    - code_name: 2.25-core155
+      name: 2.25 Core155
   k3os:
     enabled: true
     menu: linux
@@ -390,14 +390,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210325T002528Z
+      name: 20210325T002528Z
     - code_name: 20210311T001742Z
       name: 20210311T001742Z
     - code_name: 20210226T213821Z
       name: 20210226T213821Z
     - code_name: 20210225T124034Z
       name: 20210225T124034Z
-    - code_name: 20210224T232633Z
-      name: 20210224T232633Z
   talos:
     enabled: true
     menu: linux
