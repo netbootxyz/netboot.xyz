@@ -713,7 +713,7 @@ endpoints:
     os: oracle
     version: '8'
   oracle-7:
-    path: /asset-mirror/releases/download/u9-523de7f0/
+    path: /asset-mirror/releases/download/u9-9cd2ea57/
     files:
     - vmlinuz
     - initrd
