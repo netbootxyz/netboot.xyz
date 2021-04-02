@@ -546,7 +546,7 @@ endpoints:
     os: freebsd
     version: '8'
   mfsbsd-9:
-    path: /asset-mirror/releases/download/9.2-021d7760/
+    path: /asset-mirror/releases/download/9.2-dd689447/
     files:
     - default.img
     - special-edition.img
