@@ -24,6 +24,9 @@ echo
 dhcp || goto netconfig
 isset ${next-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
 isset ${next-server} && iseq ${filename} {{ site_name }}.efi && goto tftpmenu ||
+isset ${next-server} && iseq ${filename} {{ site_name }}-snp.efi && goto tftpmenu ||
+isset ${next-server} && iseq ${filename} {{ site_name }}-snponly.efi && goto tftpmenu ||
+isset ${next-server} && iseq ${filename} {{ site_name }}-arm64.efi && goto tftpmenu ||
 goto menu
 
 :failsafe
