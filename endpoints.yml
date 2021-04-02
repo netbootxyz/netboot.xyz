@@ -826,7 +826,7 @@ endpoints:
     os: rescatux
     version: current
   systemrescue:
-    path: /asset-mirror/releases/download/8.01-65b64f2a/
+    path: /asset-mirror/releases/download/8.01-29e43bb5/
     files:
     - initrd
     - vmlinuz
