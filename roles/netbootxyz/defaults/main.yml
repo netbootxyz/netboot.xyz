@@ -115,8 +115,8 @@ releases:
     mirror: https://repo.almalinux.org
     name: AlmaLinux
     versions:
-    - code_name: 8
-      name: 8
+    - code_name: 8.3
+      name: 8.3
   alpinelinux:
     base_dir: alpine
     enabled: true
