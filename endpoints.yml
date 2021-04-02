@@ -874,7 +874,7 @@ endpoints:
     os: anarchy
     version: current
   zeninstall:
-    path: /asset-mirror/releases/download/2020.05.27-910adca3/
+    path: /asset-mirror/releases/download/2020.05.27-fbc8b6cf/
     files:
     - initrd
     - vmlinuz
