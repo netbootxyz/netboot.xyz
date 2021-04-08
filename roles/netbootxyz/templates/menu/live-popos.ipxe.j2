@@ -7,36 +7,33 @@ set os Pop os Live
 menu ${os} - Current Arch [ ${arch} ]
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap ${os} Versions
+item grovy ${space} ${os} 20.10
 item focal ${space} ${os} 20.04
-item bionic ${space} ${os} 18.04
 item eoan ${space} ${os} 19.10
+item bionic ${space} ${os} 18.04
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
 
-:focal
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "pop" and 'squash' in key and value.version == "20.04" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
-{% endfor %}
+:grovy
+item pop-20.10-default-squash ${space} Pop 20.10 Intel-Amd
+item pop-20.10-nvidia-squash ${space} Pop 20.10 Nvidia
 goto flavor_select
 
-:bionic
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "pop" and 'squash' in key and value.version == "18.04" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
-{% endfor %}
+:focal
+item pop-20.04-default-squash ${space} Pop 20.04 Intel-Amd
+item pop-20.04-nvidia-squash ${space} Pop 20.04 Nvidia
 goto flavor_select
 
 :eoan
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "pop" and 'squash' in key and value.version == "19.10" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
-{% endfor %}
+item pop-19.10-default-squash ${space} Pop 19.10 Intel-Amd
+item pop-19.10-nvidia-squash ${space} Pop 19.10 Nvidia
+goto flavor_select
+
+:bionic
+item pop-18.04-default-squash ${space} Pop 18.04 Intel-Amd
+item pop-18.04-nvidia-squash ${space} Pop 18.04 Nvidia
 goto flavor_select
 
 :flavor_select
@@ -44,19 +41,38 @@ choose flavor || goto live_menu
 echo ${cls}
 goto ${flavor} ||
 
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "pop" and 'squash' in key %}
-{% set kernel_name = value.kernel %}
-:{{ key }}
-set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
-{% for key, value in endpoints.items() | sort %}
-{% if key == kernel_name %}
-set kernel_url ${live_endpoint}{{ value.path }}
-{% endif %}
-{% endfor %}
-goto {{ value.version }}-boot
-{% endif %}
-{% endfor %}
+:pop-18.04-default-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/58-600b3df6/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/58-600b3df6/
+goto 18.04-boot
+:pop-18.04-nvidia-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/58-316fd7f7/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/58-316fd7f7/
+goto 18.04-boot
+:pop-19.10-default-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/10-bdc3fe0a/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/10-bdc3fe0a/
+goto 19.10-boot
+:pop-19.10-nvidia-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/10-3882d464/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/10-3882d464/
+goto 19.10-boot
+:pop-20.04-default-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/5-66b7e861/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/5-66b7e861/
+goto 20.04-boot
+:pop-20.04-nvidia-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/5-6efd1d75/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/5-6efd1d75/
+goto 20.04-boot
+:pop-20.10-default-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/2-6a3d596e/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/2-6a3d596e/
+goto 20.10-boot
+:pop-20.10-nvidia-squash
+set squash_url ${live_endpoint}/ubuntu-squash/releases/download/2-613b1e2c/filesystem.squashfs
+set kernel_url ${live_endpoint}/ubuntu-squash/releases/download/2-613b1e2c/
+goto 20.10-boot
 
 :18.04-boot
 imgfree
@@ -76,7 +92,12 @@ kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} in
 initrd ${kernel_url}initrd
 boot
 
+:20.10-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd ${cmdline}
+initrd ${kernel_url}initrd
+boot
+
 :live_exit
 clear menu
 exit 0
-
