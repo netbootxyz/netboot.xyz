@@ -612,6 +612,10 @@ utilitiesefi:
       initrd=initrd
     name: Rescatux
     type: direct
+  shredos:
+    enabled: true
+    name: ShredOS
+    type: ipxemenu
   systemrescue:
     enabled: true
     name: System Rescue CD
@@ -684,6 +688,10 @@ utilitiespcbios:
       initrd=initrd
     name: Rescatux
     type: direct
+  shredos:
+    enabled: true
+    name: ShredOS
+    type: ipxemenu
   supergrub:
     enabled: true
     name: SuperGRUB
