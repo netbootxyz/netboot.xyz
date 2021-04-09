@@ -1554,3 +1554,9 @@ endpoints:
     - vmlinuz
     os: kodachi
     version: '8'
+  shredos:
+    path: /asset-mirror/releases/download/v2020.05.011_x86-64_0.30.001-528aa8ce/
+    files:
+    - shredos
+    os: shredos
+    version: current
