@@ -217,12 +217,12 @@ releases:
     mirror: http://download.fedoraproject.org
     name: Fedora
     versions:
+    - code_name: 34
+      name: 34
     - code_name: 33
       name: 33
     - code_name: 32
       name: 32
-    - code_name: 31
-      name: 31
   flatcar:
     enabled: true
     menu: linux
