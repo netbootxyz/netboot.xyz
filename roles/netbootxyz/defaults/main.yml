@@ -173,7 +173,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 33.20210314.3.0
+    - code_name: 33.20210328.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -217,12 +217,12 @@ releases:
     mirror: http://download.fedoraproject.org
     name: Fedora
     versions:
+    - code_name: 34
+      name: 34
     - code_name: 33
       name: 33
     - code_name: 32
       name: 32
-    - code_name: 31
-      name: 31
   flatcar:
     enabled: true
     menu: linux
@@ -390,14 +390,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210408T001154Z
+      name: 20210408T001154Z
     - code_name: 20210325T002528Z
       name: 20210325T002528Z
     - code_name: 20210311T001742Z
       name: 20210311T001742Z
     - code_name: 20210226T213821Z
       name: 20210226T213821Z
-    - code_name: 20210225T124034Z
-      name: 20210225T124034Z
   talos:
     enabled: true
     menu: linux
@@ -532,6 +532,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: hirsute
+      name: 21.04 Hirsute Hippo
     - code_name: groovy
       name: 20.10 Groovy Gorilla
     - code_name: focal
@@ -612,6 +614,10 @@ utilitiesefi:
       initrd=initrd
     name: Rescatux
     type: direct
+  shredos:
+    enabled: true
+    name: ShredOS
+    type: ipxemenu
   systemrescue:
     enabled: true
     name: System Rescue CD
@@ -684,6 +690,10 @@ utilitiespcbios:
       initrd=initrd
     name: Rescatux
     type: direct
+  shredos:
+    enabled: true
+    name: ShredOS
+    type: ipxemenu
   supergrub:
     enabled: true
     name: SuperGRUB
