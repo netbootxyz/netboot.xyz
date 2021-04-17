@@ -921,7 +921,7 @@ endpoints:
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
-    path: /manjaro-squash/releases/download/21.0-210318-linux510-d6bdc7be/
+    path: /manjaro-squash/releases/download/21.0.1-210410-linux510-b5705833/
     files:
     - livefs.sfs
     - rootfs.sfs
