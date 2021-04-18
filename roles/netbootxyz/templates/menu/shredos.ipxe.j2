@@ -1,0 +1,36 @@
+#!ipxe
+
+goto ${menu} ||
+
+:shredos
+menu ShredOS {{ endpoints.shredos.version }} 
+set kernel_url ${live_endpoint}{{ endpoints.shredos.path }}shredos
+item --gap THIS SOFTWARE DESTROYS DATA
+item --gap EVERY BOOT OPTION IS DESTRUCTIVE
+item --gap DO NOT PROCEED IF YOU DO NOT KNOW WHAT THIS IS
+item shredos_exit ${space} Go Back
+item shredos_options ${space} Proceed I know what I am doing
+choose menu || goto shredos_exit
+goto ${menu}
+
+:shredos_options
+clear menu
+menu ShredOS {{ endpoints.shredos.version }}
+item --gap Choose a wipe method:
+item dodshort ${space} Wipe all disks with the short DoD 5220.22-M method
+item dod522022m ${space} Wipe all disks with the DoD 5220.22-M method
+item dod3pass ${space} Wipe all disks with the DoD 5220.22-M method (3 pass)
+item ops2 ${space} Wipe all disks with the RCMP TSSIT OPS-II method
+item gutmann ${space} Wipe all disks with the Gutmann method
+item prng ${space} Wipe all disks with the PRNG Stream method
+choose nuke_method || goto shredos_exit
+goto shredos_boot
+
+:shredos_boot
+imgfree
+kernel ${kernel_url} console=tty3 loglevel=3 nwipe_options="--method=${nuke_method}" ${cmdline}
+boot
+
+:shredos_exit
+clear menu
+exit 0
