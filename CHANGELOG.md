@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.37]
+
 ## [2.0.36]
 ### Added
 - Support for ShredOS
