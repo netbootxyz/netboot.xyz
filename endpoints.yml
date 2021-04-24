@@ -1557,3 +1557,13 @@ endpoints:
     codename: hirsute
     flavor: netboot
     kernel: ubuntu-21.04-netboot
+  ubuntu-21.04-default-squash:
+    path: /ubuntu-squash/releases/download/21.04-38565a8b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.04'
+    flavor: GNOME
+    kernel: ubuntu-21.04-default-squash
