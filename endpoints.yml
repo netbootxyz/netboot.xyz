@@ -1577,3 +1577,13 @@ endpoints:
     version: '21.04'
     flavor: KDE
     kernel: ubuntu-21.04-KDE-squash
+  ubuntu-21.04-XFCE-squash:
+    path: /ubuntu-squash/releases/download/21.04-8edff5db/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.04'
+    flavor: XFCE
+    kernel: ubuntu-21.04-XFCE-squash
