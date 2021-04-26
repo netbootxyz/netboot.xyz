@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.38]
+
 ## [2.0.37]
 ### Added
 - Ubuntu 21.04 Installer and Live Versions
