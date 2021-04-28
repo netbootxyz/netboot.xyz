@@ -1680,3 +1680,12 @@ endpoints:
     os: fedora
     version: 34
     flavor: i3
+  fedora-34-KDE:
+    path: /fedora-assets/releases/download/1.2-abf1ad7a/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 34
+    flavor: KDE
