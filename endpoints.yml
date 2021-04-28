@@ -1653,3 +1653,12 @@ endpoints:
     os: fedora
     version: 34
     flavor: Xfce
+  fedora-34-LXDE:
+    path: /fedora-assets/releases/download/1.2-80b86a90/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 34
+    flavor: LXDE
