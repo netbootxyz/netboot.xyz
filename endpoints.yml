@@ -1617,3 +1617,12 @@ endpoints:
     version: '21.04'
     flavor: LXDE
     kernel: ubuntu-21.04-LXDE-squash
+  fedora-34-gnome:
+    path: /fedora-assets/releases/download/1.2-57a6bc53/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 34
+    flavor: GNOME
