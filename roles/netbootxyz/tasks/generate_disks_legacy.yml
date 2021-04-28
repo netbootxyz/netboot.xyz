@@ -23,7 +23,7 @@
   - name: Compile iPXE bootloader for Legacy BIOS
     shell: |
       make clean
-      make EMBED={{ bootloader_filename }} TRUST={{ trust_files }} bin/ipxe.dsk bin/ipxe.iso bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.kpxe bin/undionly.kpxe
+      make EMBED={{ bootloader_filename }} TRUST={{ trust_files }} bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.kpxe bin/undionly.kpxe
     args:
       chdir: "{{ ipxe_source_dir }}/src"
     tags:
@@ -36,9 +36,7 @@
       remote_src: True
     with_items:
     - ".dsk"
-    - ".iso"
     - ".lkrn"
-    - ".usb"
     - ".kpxe"
     when: bootloader_filename != "netboot.xyz-packet"
 

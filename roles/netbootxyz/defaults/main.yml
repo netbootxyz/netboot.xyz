@@ -14,21 +14,13 @@ bootloaders:
   hybrid:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
-    output_bin: -hybrid.iso
-    type: ISO
-  - desc: Used for creation of USB Keys
-    ipxe_bin: ipxe.usb
-    output_bin: -hybrid.usb
-    type: USB
-  legacy:
-  - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
-    ipxe_bin: ipxe.iso
     output_bin: .iso
     type: ISO
   - desc: Used for creation of USB Keys
-    ipxe_bin: ipxe.usb
-    output_bin: .usb
-    type: USB
+    ipxe_bin: ipxe.img
+    output_bin: .img
+    type: IMG
+  legacy:
   - desc: Used for booting from GRUB/EXTLINUX
     ipxe_bin: ipxe.lkrn
     output_bin: .lkrn
@@ -55,14 +47,6 @@ bootloaders:
     output_bin: -rpi4-snp.efi
     type: DHCP-snp
   uefi:
-  - desc: EFI BIOS, works in Virtual Box EFI mode
-    ipxe_bin: ipxe-efi.eiso
-    output_bin: -efi.iso
-    type: ISO
-  - desc: Used for creation of USB Keys
-    ipxe_bin: ipxe-efi.usb
-    output_bin: -efi.usb
-    type: USB
   - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.efi
     output_bin: .efi
