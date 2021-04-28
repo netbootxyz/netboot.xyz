@@ -1671,3 +1671,12 @@ endpoints:
     os: fedora
     version: 34
     flavor: MATE_Compiz
+  fedora-34-i3:
+    path: /fedora-assets/releases/download/1.2-51a02ef1/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 34
+    flavor: i3
