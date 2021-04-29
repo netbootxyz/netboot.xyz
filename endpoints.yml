@@ -1689,3 +1689,12 @@ endpoints:
     os: fedora
     version: 34
     flavor: KDE
+  rescuezilla-focal:
+    path: /ubuntu-squash/releases/download/2.1.3-9b81e24f/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: rescuezilla
+    version: focal
+    kernel: rescuezilla-focal
