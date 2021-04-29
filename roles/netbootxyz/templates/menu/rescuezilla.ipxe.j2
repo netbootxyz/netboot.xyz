@@ -9,6 +9,7 @@ menu ${os} Live CD
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "rescuezilla" %}
 item {{ item.os }}_{{ item.version }} ${space} ${os} {{ item.version }}
+{% endif %}
 {% endfor %}
 choose rescuezilla_version || goto rescuezilla_exit
 goto ${rescuezilla_version}
@@ -21,6 +22,7 @@ imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${kernel_url}filesystem.squashfs initrd=initrd ${cmdline}
 initrd ${kernel_url}initrd
 boot
+{% endif %}
 {% endfor %}
 
 :rescuezilla_exit
