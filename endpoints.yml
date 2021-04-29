@@ -1492,13 +1492,13 @@ endpoints:
     flavor: gnome
     kernel: pureos-gnome
   rescuezilla:
-    path: /asset-mirror/releases/download/2.1.3-6e1095f8/
+    path: /asset-mirror/releases/download/2.1.3-0d2fe010/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: rescuezilla
-    version: current
+    version: groovy
   deepin-20-squash:
     path: /debian-squash/releases/download/20.2-e57a0c4b/
     files:
