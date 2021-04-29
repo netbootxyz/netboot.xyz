@@ -174,6 +174,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Kaspersky Rescue Disk | https://support.kaspersky.com/viruses/krd18 | LiveCD |
 | Memtest | http://www.memtest.org/ | Kernel |
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
+| Rescuezilla | https://rescuezilla.com/ | LiveCD |
 | ShredOS | https://github.com/PartialVolume/shredos.x86_64 | Kernel | 
 | Super Grub2 Disk | http://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue | https://system-rescue.org/ | LiveCD |

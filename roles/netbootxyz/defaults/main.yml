@@ -598,6 +598,10 @@ utilitiesefi:
       initrd=initrd
     name: Rescatux
     type: direct
+  rescuezilla:
+    enabled: true
+    name: Rescuezilla
+    type: ipxemenu
   shredos:
     enabled: true
     name: ShredOS
@@ -674,6 +678,10 @@ utilitiespcbios:
       initrd=initrd
     name: Rescatux
     type: direct
+  rescuezilla:
+    enabled: true
+    name: Rescuezilla
+    type: ipxemenu
   shredos:
     enabled: true
     name: ShredOS
