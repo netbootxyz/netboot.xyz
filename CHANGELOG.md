@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Fedora 34 and Live Versions
 - Rescuezilla
+- Redo Rescue
 
 ### Changed
 - Switched to using upstream genfsimg for building hybrid images
