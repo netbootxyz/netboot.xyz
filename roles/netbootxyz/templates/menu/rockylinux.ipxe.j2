@@ -1,0 +1,72 @@
+#!ipxe
+
+# Rocky Linux
+# https://rockylinux.org/
+
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
+set ipparam BOOTIF=${netX/mac} ${ipparam}
+
+goto ${menu} ||
+
+:rockylinux
+clear osversion
+set os {{ releases.rockylinux.name }}
+menu ${os} - ${arch}
+{% for item in releases.rockylinux.versions %}
+item {{ item.code_name }} ${space} ${os} {{ item.name }}
+{% endfor %}
+isset ${osversion} || choose osversion || goto linux_menu
+echo ${cls}
+set dir ${rockylinux_base_dir}/${osversion}/BaseOS/${arch}/os
+set repo ${rockylinux_mirror}/${dir}
+goto boottype
+
+:boottype
+set ova ${os} ${osversion}
+menu ${os} ${arch} boot type
+item graphical ${ova} graphical installer
+item text ${ova} text based installer
+item rescue ${ova} rescue
+item kickstart ${ova} set kickstart url [ ${ksurl} ]
+item kickstart_device ${ova} set ksdevice [ ${ksdevice} ]
+isset ${bt} || choose bt || goto rockylinux
+echo ${cls}
+iseq ${bt} text && goto text ||
+iseq ${bt} rescue && goto rescue ||
+iseq ${bt} kickstart && goto kickstart ||
+iseq ${bt} kickstart_device && goto kickstart_device ||
+goto bootos_images
+
+:text
+set params text ||
+goto bootos_images
+
+:rescue
+set params rescue ||
+goto bootos_images
+
+:kickstart
+echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
+set params inst.ks=${ksurl} ||
+clear bt
+goto boottype
+
+:kickstart_device
+echo -n Specify ksdevice param for ${os} ${osversion}: && read ksdevice
+set ksdevice ${ksdevice} ||
+clear bt
+goto boottype
+
+:bootos_images
+imgfree
+kernel ${rockylinux_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${params} ${ipparam} initrd=initrd.img ${cmdline}
+initrd ${rockylinux_mirror}/${dir}/images/pxeboot/initrd.img
+echo
+echo MD5sums:
+md5sum vmlinuz initrd.img
+boot
+goto linux_menu
+
+:linux_menu
+clear menu
+exit 0
