@@ -342,6 +342,15 @@ releases:
     enabled: true
     menu: linux
     name: Red Hat Enterprise Linux
+  rockylinux:
+    base_dir: pub/rocky
+    enabled: true
+    menu: linux
+    mirror: https://download.rockylinux.org
+    name: Rocky Linux
+    versions:
+    - code_name: 8.3
+      name: 8.3
   scientific:
     base_dir: linux/scientific
     enabled: true
