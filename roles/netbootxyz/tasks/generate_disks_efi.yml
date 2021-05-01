@@ -37,33 +37,6 @@
     tags:
     - skip_ansible_lint
 
-  - name: Generate iPXE EFI ISO Disk
-    shell: |
-      mkdir -p efi_tmp
-      dd if=/dev/zero of=efi_tmp/ipxe.img count=2880
-      mformat -i efi_tmp/ipxe.img -m 0xf8 -f 2880
-      mmd -i efi_tmp/ipxe.img ::efi ::efi/boot
-      mcopy -i efi_tmp/ipxe.img bin-x86_64-efi/ipxe.efi ::efi/boot/bootx64.efi
-      genisoimage -o ipxe-efi.eiso -eltorito-alt-boot -eltorito-boot ipxe.img -no-emul-boot efi_tmp
-    args:
-      chdir: "{{ ipxe_source_dir }}/src"
-      warn: false
-    tags:
-    - skip_ansible_lint
-
-  - name: Generate iPXE EFI USB image
-    shell: |
-      truncate -s 3MiB ipxe-efi.usb
-      mkfs.vfat ipxe-efi.usb
-      mmd -i ipxe-efi.usb "::/efi"
-      mmd -i ipxe-efi.usb "::/efi/boot"
-      mcopy -i ipxe-efi.usb bin-x86_64-efi/ipxe.efi "::/efi/boot/bootx64.efi"
-    args:
-      chdir: "{{ ipxe_source_dir }}/src"
-      warn: false
-    tags:
-    - skip_ansible_lint
-
   - name: Copy iPXE EFI builds to http directory
     copy:
       src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
@@ -73,8 +46,6 @@
       - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ bootloader_filename }}.efi" }
       - { src: "bin-x86_64-efi/snp.efi", dest: "{{ bootloader_filename }}-snp.efi" }
       - { src: "bin-x86_64-efi/snponly.efi", dest: "{{ bootloader_filename }}-snponly.efi" }
-      - { src: "ipxe-efi.eiso", dest: "{{ bootloader_filename }}-efi.iso" }
-      - { src: "ipxe-efi.usb", dest: "{{ bootloader_filename }}-efi.usb" }
     when: bootloader_filename != "netboot.xyz-packet"
 
   - name: Copy iPXE EFI builds to http directory for packet

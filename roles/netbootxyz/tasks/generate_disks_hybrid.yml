@@ -2,7 +2,8 @@
 
   - name: Generate hybrid ISO image
     shell: |
-      ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-hybrid.iso \
+      ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.iso \
+        -s {{ bootloader_filename }} \
         {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
         {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
     args:
@@ -12,7 +13,8 @@
 
   - name: Generate hybrid USB image
     shell: |
-      ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-hybrid.usb \
+      ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.img \
+        -s {{ bootloader_filename }} \
         {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
         {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
     args:
