@@ -343,7 +343,7 @@ releases:
     base_dir: pub/rocky
     enabled: true
     menu: linux
-    mirror: https://download.rockylinux.org
+    mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
     - code_name: 8.3
