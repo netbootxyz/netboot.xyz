@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.38]
+### Added
+- Fedora 34 and Live Versions
+- Redo Rescue
+- Rescuezilla
+- Rocky Linux
+
+### Changed
+- Switched to using upstream genfsimg for building hybrid images
+- Merged Legacy and EFI disks into single image for USB and ISOs
+- Can now use autoexec.ipxe on the root of a USB key to inject variables or modify the starting bootloader
+- Renamed USB disk from .usb to .img
+
 ## [2.0.37]
 ### Added
 - Ubuntu 21.04 Installer and Live Versions
@@ -21,6 +34,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.34]
 ### Added
 - Support for AlmaLinux
+
 ### Fixes
 - Updated Debian Kernel for Live images, transitioned over to Actions from Travis
 
@@ -32,6 +46,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.32]
 ### Fixes
 - Update to latest Ubuntu maintenance release
+
 ### Changed
 - Disabled Unix Menu on EFI as SmartOS not working in that mode and was the only option on EFI
 - Various version updates
