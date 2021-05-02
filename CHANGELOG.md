@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.39]
+
 ## [2.0.38]
 ### Added
 - Fedora 34 and Live Versions
