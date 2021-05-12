@@ -1706,3 +1706,12 @@ endpoints:
     - vmlinuz
     os: redorescue
     version: buster
+  bodhi-6-standard:
+    path: /ubuntu-squash/releases/download/6.0.0-3d0b9f4e/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: '6'
+    flavor: standard
