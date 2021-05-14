@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.39]
+### Fixes
+- Check for legacy undionly filename if running menu locally
 
 ## [2.0.38]
 ### Added
