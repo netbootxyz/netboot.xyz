@@ -23,6 +23,7 @@ prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe me
 echo
 dhcp || goto netconfig
 isset ${next-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
+isset ${next-server} && iseq ${filename} {{ site_name }}-undionly.kpxe && goto tftpmenu ||
 isset ${next-server} && iseq ${filename} {{ site_name }}.efi && goto tftpmenu ||
 isset ${next-server} && iseq ${filename} {{ site_name }}-snp.efi && goto tftpmenu ||
 isset ${next-server} && iseq ${filename} {{ site_name }}-snponly.efi && goto tftpmenu ||
