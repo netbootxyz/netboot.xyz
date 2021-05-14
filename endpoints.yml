@@ -588,7 +588,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.2-27-002d59cc/
+    path: /debian-squash/releases/download/2.7.2-30-002d59cc/
     files:
     - filesystem.squashfs
     - initrd
