@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - development
+  workflow_dispatch:
 
 env:
   DISCORD_HOOK_URL: ${{ secrets.DISCORD_HOOK_URL }}
