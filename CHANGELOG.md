@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.39]
+### Added
+- Enabled gzip and zlib support on iPXE binaries
+### Fixes
+- Check for legacy undionly filename if running menu locally
+
 ## [2.0.38]
 ### Added
 - Fedora 34 and Live Versions
