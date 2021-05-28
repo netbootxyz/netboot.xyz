@@ -1,0 +1,68 @@
+#!ipxe
+
+# VMware ESXi
+# https://www.vmware.com
+
+goto ${menu} ||
+
+:vmware
+set os VMware ESXi
+clear vmware_choice
+menu ${os}
+item --gap Installers
+item vmware_install ${space} ${os} Install
+item --gap Options:
+item url_set ${space} Base URL [ ${vmware_base_url} ]
+choose vmware_choice || goto vmware_exit
+goto ${vmware_choice}
+
+:url_set
+echo Set the HTTP URL of an extracted VMware ISO without the trailing slash:
+echo e.g. http://www.mydomain.com/vmware/esxi7
+echo
+echo -n URL: ${} && read vmware_base_url
+echo
+echo The following files will be loaded the following files:
+echo
+echo For Legacy: ${vmware_base_url}/mboot.c32 
+echo For EFI: ${vmware_base_url}/efi/boot/bootx64.efi
+echo 
+echo The ESXi modules will be loaded from the following file:
+echo ${vmware_base_url}/boot.cfg
+echo
+echo Ensure you have edited boot.cfg to reflect the prefix of:
+echo
+echo prefix=${vmware_base_url}
+echo kernelopt=runweasel ks=${vmware_base_url}/ks.cfg
+echo 
+echo If you aren't doing kickstart automation, you can leave off the ks option.
+echo
+echo If the filenames in the kernel= and modules= lines begin with a forward
+echo slash (/) character, delete those characters.
+echo
+prompt Press any key to return to VMware Menu...
+goto vmware
+
+:vmware_install
+isset ${vmware_base_url} && goto boot_check || echo URL not set... && goto url_set
+:boot_check
+iseq ${platform} efi && goto efi_boot || goto legacy_boot
+
+:efi_boot
+imgfree
+kernel ${vmware_base_url}/efi/boot/bootx64.efi -c ${vmware_base_url}/boot.cfg
+goto boot
+
+:legacy_boot
+imgfree
+kernel ${vmware_base_url}/mboot.c32 -c ${vmware_base_url}/boot.cfg
+goto boot
+
+:boot
+md5sum bootx64.efi
+boot
+goto vmware
+
+:vmware_exit
+exit 0
+

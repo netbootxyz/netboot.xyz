@@ -542,6 +542,10 @@ releases:
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
       name: 16.04 LTS Xenial Xerus
+  vmware:
+    enabled: true
+    menu: linux
+    name: VMware ESXi
   vyos:
     enabled: true
     menu: linux
