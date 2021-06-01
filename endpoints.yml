@@ -327,7 +327,7 @@ endpoints:
     version: '5'
     kernel: elementaryos-5-default-squash
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2021.1-4237c18c/
+    path: /debian-squash/releases/download/2021.2-4237c18c/
     files:
     - filesystem.squashfs
     - initrd
