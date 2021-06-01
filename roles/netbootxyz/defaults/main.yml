@@ -262,7 +262,7 @@ releases:
     name: Kali Linux
     versions:
     - code_name: rolling
-      name: Rolling Edition (2020.1)
+      name: Rolling Edition
   mageia:
     base_dir: mageia
     enabled: true
