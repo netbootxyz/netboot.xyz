@@ -1492,7 +1492,7 @@ endpoints:
     flavor: gnome
     kernel: pureos-gnome
   rescuezilla:
-    path: /asset-mirror/releases/download/2.1.3-0d2fe010/
+    path: /asset-mirror/releases/download/2.2-3cfd948a/
     files:
     - filesystem.squashfs
     - initrd
