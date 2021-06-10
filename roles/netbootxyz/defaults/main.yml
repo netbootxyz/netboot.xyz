@@ -353,8 +353,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
-    - code_name: 8.3
-      name: 8.3
+    - code_name: 8.4
+      name: 8.4
   scientific:
     base_dir: linux/scientific
     enabled: true
