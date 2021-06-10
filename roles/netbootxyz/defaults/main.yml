@@ -144,8 +144,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
-    - code_name: 8.3.2011
-      name: '8.3'
+    - code_name: 8.4.2105
+      name: '8.4'
     - code_name: 8
       name: 8.x Latest
     - code_name: 8-stream
