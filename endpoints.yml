@@ -742,7 +742,7 @@ endpoints:
     version: '2'
     flavor: ascii
   parrot-home-xfce:
-    path: /debian-squash/releases/download/4.11.1-d5797857/
+    path: /debian-squash/releases/download/4.11.2-d5797857/
     files:
     - filesystem.squashfs
     - initrd
