@@ -20,7 +20,7 @@ A sample menu is provided to demonstrate how to configure and set up
 a menu.  You can copy the custom directory from the repo:
 
 ```
-cp etc/netbootxyz/custom /etc/netbootxyz/custom
+cp -r etc/netbootxyz/custom /etc/netbootxyz/custom
 ```
 
 If you are building via Docker, you can create a `custom` folder in
