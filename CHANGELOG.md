@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.41]
+
 ## [2.0.40]
 ### Added
 - Adds support for VMware ESXi with user supplied media
