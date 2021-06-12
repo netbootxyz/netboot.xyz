@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.40]
+### Added
+- Adds support for VMware ESXi with user supplied media
+
 ## [2.0.39]
 ### Added
 - Enabled gzip and zlib support on iPXE binaries
