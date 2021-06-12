@@ -101,6 +101,8 @@ releases:
     versions:
     - code_name: 8.3
       name: 8.3
+    - code_name: 8.4
+      name: 8.4
   alpinelinux:
     base_dir: alpine
     enabled: true
@@ -142,8 +144,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
-    - code_name: 8.3.2011
-      name: '8.3'
+    - code_name: 8.4.2105
+      name: '8.4'
     - code_name: 8
       name: 8.x Latest
     - code_name: 8-stream
@@ -195,10 +197,10 @@ releases:
       - code_name: chimaera
         name: Chimaera (testing)
   fedora:
-    base_dir: pub/fedora/linux
+    base_dir: fedora
     enabled: true
     menu: linux
-    mirror: http://download.fedoraproject.org
+    mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
     - code_name: 34
@@ -260,7 +262,7 @@ releases:
     name: Kali Linux
     versions:
     - code_name: rolling
-      name: Rolling Edition (2020.1)
+      name: Rolling Edition
   mageia:
     base_dir: mageia
     enabled: true
@@ -311,6 +313,8 @@ releases:
     mirror: http://download.opensuse.org
     name: OpenSUSE
     versions:
+    - code_name: '15.3'
+      name: openSUSE Leap 15.3
     - code_name: '15.2'
       name: openSUSE Leap 15.2
     - code_name: '15.1'
@@ -349,8 +353,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
-    - code_name: 8.3
-      name: 8.3
+    - code_name: 8.4
+      name: 8.4
   scientific:
     base_dir: linux/scientific
     enabled: true
@@ -540,6 +544,10 @@ releases:
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
       name: 16.04 LTS Xenial Xerus
+  vmware:
+    enabled: true
+    menu: linux
+    name: VMware ESXi
   vyos:
     enabled: true
     menu: linux
