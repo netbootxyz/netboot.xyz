@@ -275,9 +275,17 @@ releases:
     - code_name: cauldron
       name: cauldron
   nixos:
+    base_dir: nixos
     enabled: true
     menu: linux
     name: NixOS
+    versions:
+    - code_name: nixos-20.09
+      name: nixos-20.09
+    - code_name: nixos-21.05
+      name: nixos-21.05
+    - code_name: nixos-unstable
+      name: nixos-unstable
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -613,8 +621,8 @@ utilitiesefi:
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
-    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt nocomponents 
-      setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
+    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
+      nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
       initrd=initrd
     name: RedoRescue
     type: direct
@@ -701,8 +709,8 @@ utilitiespcbios:
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
-    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt nocomponents 
-      setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
+    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
+      nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
       initrd=initrd
     name: RedoRescue
     type: direct
