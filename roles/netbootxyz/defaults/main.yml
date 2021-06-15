@@ -110,8 +110,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.13
-      name: '3.13'
+    - code_name: v3.14
+      name: '3.14'
     - code_name: edge
       name: Edge (development)
   anarchy:
