@@ -1731,3 +1731,11 @@ endpoints:
     - special-edition.img
     os: freebsd
     version: '13'
+  xcp-ng:
+    path: /asset-mirror/releases/download/8.2-6c6b5220/
+    files:
+    - xen.gz
+    - vmlinuz
+    - install.img
+    os: xcp-ng
+    version: '8.2'
