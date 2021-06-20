@@ -286,6 +286,16 @@ releases:
       name: nixos-21.05
     - code_name: nixos-unstable
       name: nixos-unstable
+  openEuler:
+    enabled: true
+    menu: linux
+    mirror: https://repo.openeuler.org
+    name: openEuler
+    versions:
+    - code_name: openEuler-20.03-LTS-SP1
+      name: openEuler-20.03-LTS-SP1
+    - code_name: openEuler-21.03
+      name: openEuler-21.03
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -314,16 +324,6 @@ releases:
     - code_name: snapshots
       image_ver: '69'
       name: 6.9 Latest Snapshot
-  openEuler:
-    enabled: true
-    menu: linux
-    mirror: https://repo.openeuler.org
-    name: openEuler
-    versions:
-    - code_name: openEuler-20.03-LTS-SP1
-      name: openEuler-20.03-LTS-SP1
-    - code_name: openEuler-21.03
-      name: openEuler-21.03
   opensuse:
     base_dir: distribution/leap
     enabled: true
