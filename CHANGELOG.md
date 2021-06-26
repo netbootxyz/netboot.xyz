@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 ## [2.0.41]
 ### Added
 - Adds support for openEuler
+### Fixes
+- NixOS working again, using images and iPXE configs that are generated upstream
 
 ## [2.0.40]
 ### Added
