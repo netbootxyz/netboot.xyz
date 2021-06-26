@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.41]
+### Added
+- Adds support for openEuler
 
 ## [2.0.40]
 ### Added
