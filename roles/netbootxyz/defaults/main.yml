@@ -287,7 +287,7 @@ releases:
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
-    base_dir:
+    base_dir: null
     enabled: true
     menu: linux
     mirror: https://repo.openeuler.org
