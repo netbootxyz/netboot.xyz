@@ -8,6 +8,7 @@
 #define NSLOOKUP_CMD          /* DNS resolving command */
 #define NTP_CMD               /* NTP commands */
 #define PCI_CMD               /* PCI commands */
+#define PING_CMD              /* Ping command */
 #define REBOOT_CMD            /* Reboot command */
 #define TIME_CMD              /* Time commands */
 #define VLAN_CMD              /* VLAN commands */
