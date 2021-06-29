@@ -78,10 +78,10 @@ generate_disks_rpi: false
 generate_menus: true
 generate_signatures: false
 generate_version_file: true
-ipxe_branch: master
+ipxe_branch: 71af610177605fa997dd4ebcacef34d134648951
 ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
-ipxe_repo: https://github.com/ipxe/ipxe
+ipxe_repo: https://github.com/netbootxyz/ipxe
 ipxe_source_dir: /usr/src/ipxe
 live_endpoint: https://github.com/netbootxyz
 memdisk_location: http://${boot_domain}/memdisk
