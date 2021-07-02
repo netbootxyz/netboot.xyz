@@ -1739,3 +1739,13 @@ endpoints:
     - install.img
     os: xcp-ng
     version: '8.2'
+  pop-21.04-default-squash:
+    path: /ubuntu-squash/releases/download/2-7ee5da15/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '21.04'
+    flavor: intel-amd
+    kernel: pop-21.04-default-squash
