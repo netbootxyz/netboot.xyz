@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.41]
 ### Added
 - Adds support for openEuler
+- Adds ping command to iPXE build
 ### Fixes
 - NixOS working again, using images and iPXE configs that are generated upstream
 
