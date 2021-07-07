@@ -49,7 +49,7 @@ goto bootos_images
 
 :bootos_images
 imgfree
-kernel ${scientific_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${ipparam} ${cmdline}
+kernel ${scientific_mirror}/${dir}/images/pxeboot/vmlinuz repo=${repo} ${params} ${ipparam} {{ kernel_params }}
 initrd ${scientific_mirror}/${dir}/images/pxeboot/initrd.img
 boot
 goto linux_menu

@@ -20,7 +20,6 @@ item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {
 choose live_version || goto live_exit
 goto ${live_version}
 
-
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "bodhi" %}
 :{{ value.version }}-{{ value.flavor }}
@@ -33,13 +32,13 @@ goto boot-{{ value.version }}
 
 :boot-5
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} initrd=initrd ${cmdline}
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
 boot
 
 :boot-6
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd ${cmdline}
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
 boot
 

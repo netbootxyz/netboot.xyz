@@ -74,7 +74,7 @@ iseq ${install_type} sub && goto ${ubuntu_version} ||
 echo Loading Ubuntu PXE netboot installer
 set dir ${dir}${menu}-installer/${arch_a}
 imgfree
-kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet initrd=initrd.gz ${cmdline}
+kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet {{ kernel_params }}
 initrd ${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
@@ -100,7 +100,7 @@ goto sub_boot
 imgfree
 isset ${dhcp-server} && set netboot_params ip=dhcp url=http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${arch_a}.iso || set netboot_params
 echo Loading Ubuntu Subiquity Network Installer...
-kernel ${kernel_url}vmlinuz root=/dev/ram0 ramdisk_size=1500000 ${netboot_params} ${install_params} initrd=initrd ${cmdline}
+kernel ${kernel_url}vmlinuz root=/dev/ram0 ramdisk_size=1500000 ${netboot_params} ${install_params} {{ kernel_params }}
 initrd ${kernel_url}initrd
 echo
 echo MD5sums:

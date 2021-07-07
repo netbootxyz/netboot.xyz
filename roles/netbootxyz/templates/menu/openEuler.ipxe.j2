@@ -59,7 +59,7 @@ goto boottype
 
 :bootos_images
 imgfree
-kernel ${openEuler_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${params} ${ipparam} initrd=initrd.img ${cmdline}
+kernel ${openEuler_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${params} ${ipparam} {{ kernel_params }}
 initrd ${openEuler_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
