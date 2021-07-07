@@ -97,7 +97,7 @@ releases:
     base_dir: almalinux
     enabled: true
     menu: linux
-    mirror: https://repo.almalinux.org
+    mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
     - code_name: 8.3
