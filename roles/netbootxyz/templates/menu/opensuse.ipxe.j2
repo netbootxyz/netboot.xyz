@@ -66,10 +66,8 @@ set dir ${opensuse_base_dir}/${version}/repo/oss
 iseq ${version} tumbleweed && set dir ${version}/repo/oss ||
 
 imgfree
-kernel ${opensuse_mirror}/${dir}/boot/x86_64/loader/linux
+kernel ${opensuse_mirror}/${dir}/boot/x86_64/loader/linux ${netsetup} install=${opensuse_mirror}/${dir} ${params} {{ kernel_params }}
 initrd ${opensuse_mirror}/${dir}/boot/x86_64/loader/initrd
-imgargs linux ${netsetup} install=${opensuse_mirror}/${dir} ${params} initrd=initrd ${cmdline}
-echo
 echo MD5sums:
 md5sum linux initrd
 boot

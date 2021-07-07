@@ -20,7 +20,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}/${folder}/vmlinuz rancher.autologin=tty1 initrd=initrd ${cmdline}
+kernel ${url}/${folder}/vmlinuz rancher.autologin=tty1 {{ kernel_params }}
 initrd ${url}/${folder}/initrd
 boot
 
