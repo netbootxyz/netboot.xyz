@@ -22,9 +22,8 @@ set dir ${mageia_base_dir}/distrib/${version}/x86_64 && set dir2 isolinux/x86_64
 iseq ${arch} i386 && set dir ${mageia_base_dir}/distrib/${version}/i586 && set dir2 isolinux/i386 ||
 set automatic method:http,network:${network},server:${mageia_mirror},directory:/${dir}
 imgfree
-kernel ${mageia_mirror}/${dir}/${dir2}/vmlinuz
+kernel ${mageia_mirror}/${dir}/${dir2}/vmlinuz automatic=${automatic} vga=788 splash=silent {{ kernel_params }}
 initrd ${mageia_mirror}/${dir}/${dir2}/all.rdz
-imgargs vmlinuz automatic=${automatic} vga=788 splash=silent initrd=all.rdz ${cmdline}
 echo
 echo MD5sums:
 md5sum vmlinuz all.rdz

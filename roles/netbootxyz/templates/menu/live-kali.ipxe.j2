@@ -38,7 +38,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz boot=live ${params} fetch=${squash_url} initrd=initrd ${cmdline}
+kernel ${kernel_url}vmlinuz boot=live ${params} fetch=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
 boot
 

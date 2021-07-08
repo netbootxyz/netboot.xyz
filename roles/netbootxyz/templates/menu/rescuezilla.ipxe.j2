@@ -19,7 +19,7 @@ goto ${rescuezilla_version}
 :{{ value.os }}_{{ value.version }}
 set kernel_url ${live_endpoint}{{ value.path }}
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${kernel_url}filesystem.squashfs initrd=initrd ${cmdline}
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${kernel_url}filesystem.squashfs {{ kernel_params }}
 initrd ${kernel_url}initrd
 boot
 {% endif %}
