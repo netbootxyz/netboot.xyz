@@ -291,7 +291,7 @@ releases:
     base_dir: null
     enabled: true
     menu: linux
-    mirror: https://repo.openeuler.org
+    mirror: http://repo.openeuler.org
     name: openEuler
     versions:
     - code_name: openEuler-20.03-LTS-SP1
