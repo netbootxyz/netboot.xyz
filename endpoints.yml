@@ -1232,13 +1232,13 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-20-cinnamon-squash
   mint-20-xfce-squash:
-    path: /ubuntu-squash/releases/download/20.1-86e174f9/
+    path: /ubuntu-squash/releases/download/20.2-cf9ce40c/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: mint
-    version: '20.1'
+    version: '20.2'
     flavor: xfce
     kernel: mint-20-xfce-squash
   mint-20-mate-squash:
