@@ -40,13 +40,12 @@ goto ${version}
 :{{ item.code_name }}
 set kernel_url ${tinycore_mirror}{{ item.kernel }}
 set initrd_url ${tinycore_mirror}{{ item.initrd }}
-set initrd_name {{ item.initrd | basename }}
 goto boot
 {% endfor %}
 
 :boot
 imgfree
-kernel ${kernel_url} loglevel=3 initrd=${initrd_name} ${cmdline}
+kernel ${kernel_url} loglevel=3 {{ kernel_params }}
 initrd ${initrd_url}
 boot
 

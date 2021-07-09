@@ -18,7 +18,7 @@ goto user-boot
 
 :user-boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} initrd=initrd.lz ${cmdline}
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd.lz
 boot
 

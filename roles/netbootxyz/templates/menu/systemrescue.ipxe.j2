@@ -27,7 +27,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} initrd=initrd ${cmdline}
+kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} {{ kernel_params }}
 initrd ${url}initrd
 boot
 

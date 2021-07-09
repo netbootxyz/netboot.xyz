@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.41]
+### Added
+- Adds support for openEuler
+- Adds ping command to iPXE build
+### Fixes
+- NixOS working again, using images and iPXE configs that are generated upstream
+### Changes
+- Use non https repo for almalinux
+- Switch to using initrd.magic (https://github.com/ipxe/ipxe/commit/e5f02551735922eb235388bff08249a6f31ded3d)
+- Moves initrd= and cmdline values to single kernel parameter in Ansible
+
 ## [2.0.40]
 ### Added
 - Adds support for VMware ESXi with user supplied media

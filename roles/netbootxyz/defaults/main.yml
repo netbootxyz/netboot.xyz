@@ -83,6 +83,7 @@ ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_source_dir: /usr/src/ipxe
+kernel_params: initrd=initrd.magic ${cmdline}
 live_endpoint: https://github.com/netbootxyz
 memdisk_location: http://${boot_domain}/memdisk
 netbootxyz_conf_dir: /etc/netbootxyz
@@ -96,7 +97,7 @@ releases:
     base_dir: almalinux
     enabled: true
     menu: linux
-    mirror: https://repo.almalinux.org
+    mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
     - code_name: 8.3
@@ -110,8 +111,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.13
-      name: '3.13'
+    - code_name: v3.14
+      name: '3.14'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -128,8 +129,8 @@ releases:
     mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
-    - code_name: 2021.04.01
-      name: 2021.04.01
+    - code_name: 2021.07.01
+      name: 2021.07.01
   blackarch:
     enabled: true
     menu: linux
@@ -159,7 +160,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 33.20210328.3.0
+    - code_name: 34.20210611.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -247,8 +248,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core155
-      name: 2.25 Core155
+    - code_name: 2.25-core157
+      name: 2.25 Core157
   k3os:
     enabled: true
     menu: linux
@@ -275,9 +276,28 @@ releases:
     - code_name: cauldron
       name: cauldron
   nixos:
+    base_dir: nixos
     enabled: true
     menu: linux
     name: NixOS
+    versions:
+    - code_name: nixos-20.09
+      name: nixos-20.09
+    - code_name: nixos-21.05
+      name: nixos-21.05
+    - code_name: nixos-unstable
+      name: nixos-unstable
+  openEuler:
+    base_dir: null
+    enabled: true
+    menu: linux
+    mirror: http://repo.openeuler.org
+    name: openEuler
+    versions:
+    - code_name: openEuler-20.03-LTS-SP1
+      name: openEuler-20.03-LTS-SP1
+    - code_name: openEuler-21.03
+      name: openEuler-21.03
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -390,14 +410,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20210422T002312Z
-      name: 20210422T002312Z
-    - code_name: 20210408T001154Z
-      name: 20210408T001154Z
-    - code_name: 20210325T002528Z
-      name: 20210325T002528Z
-    - code_name: 20210311T001742Z
-      name: 20210311T001742Z
+    - code_name: 20210701T204427Z
+      name: 20210701T204427Z
+    - code_name: 20210617T001230Z
+      name: 20210617T001230Z
+    - code_name: 20210520T001536Z
+      name: 20210520T001536Z
+    - code_name: 20210508T051936Z
+      name: 20210508T051936Z
   talos:
     enabled: true
     menu: linux
@@ -613,8 +633,8 @@ utilitiesefi:
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
-    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt nocomponents 
-      setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
+    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
+      nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
       initrd=initrd
     name: RedoRescue
     type: direct
@@ -701,8 +721,8 @@ utilitiespcbios:
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
-    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt nocomponents 
-      setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
+    kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
+      nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
       initrd=initrd
     name: RedoRescue
     type: direct

@@ -27,7 +27,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz ${ipparam} archiso_http_srv=${url} initrd=initrd archisobasedir=arch cow_spacesize=10G earlymodules=loop modules-load=loop rd.modules-load=loop nvidia nouveau.modeset=0 nouveau.blacklist=yes modprobe.blacklist=nouveau i915.modeset=1 radeon.modeset=1 ${cmdline}
+kernel ${url}vmlinuz ${ipparam} archiso_http_srv=${url} archisobasedir=arch cow_spacesize=10G earlymodules=loop modules-load=loop rd.modules-load=loop nvidia nouveau.modeset=0 nouveau.blacklist=yes modprobe.blacklist=nouveau i915.modeset=1 radeon.modeset=1 {{ kernel_params }}
 initrd ${url}initrd
 boot
 
