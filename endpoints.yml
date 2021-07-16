@@ -978,7 +978,7 @@ endpoints:
     version: current
     flavor: TheSSS
   4mlinux-bakandimg:
-    path: /asset-mirror/releases/download/36.0-262576bf/
+    path: /asset-mirror/releases/download/37.0-262576bf/
     files:
     - initrd
     - vmlinuz
