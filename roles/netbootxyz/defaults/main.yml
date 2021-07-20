@@ -248,8 +248,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core157
-      name: 2.25 Core157
+    - code_name: 2.25-core158
+      name: 2.25 Core158
   k3os:
     enabled: true
     menu: linux
