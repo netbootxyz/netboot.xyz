@@ -1699,7 +1699,7 @@ endpoints:
     version: focal
     kernel: rescuezilla-focal
   redorescue:
-    path: /asset-mirror/releases/download/3.0.2-cc0d71c0/
+    path: /asset-mirror/releases/download/3.0.2-369d1d23/
     files:
     - filesystem.squashfs
     - initrd
