@@ -1541,7 +1541,7 @@ endpoints:
     os: kodachi
     version: '8'
   shredos:
-    path: /asset-mirror/releases/download/v2020.05.012_x86-64_0.31-e9bce8ee/
+    path: /asset-mirror/releases/download/v2020.05.012_x86-64_0.31-fa7b79b5/
     files:
     - shredos
     os: shredos
