@@ -126,7 +126,7 @@ releases:
     base_dir: archlinux
     enabled: true
     menu: linux
-    mirror: mirrors.kernel.org
+    mirror: mirrors.evowise.com
     name: Arch Linux
     versions:
     - code_name: 2021.07.01
