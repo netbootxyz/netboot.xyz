@@ -36,7 +36,7 @@ endpoints:
     os: debian
     version: 9
   debian-10-default-squash:
-    path: /debian-squash/releases/download/10.8.0-9728909e/
+    path: /debian-squash/releases/download/10.10.0-9728909e/
     files:
     - filesystem.squashfs
     os: debian
