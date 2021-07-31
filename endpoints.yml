@@ -1004,16 +1004,6 @@ endpoints:
     version: current
     flavor: architect
     kernel: manjaro-default-current
-  mint-lmde-cinnamon:
-    path: /debian-squash/releases/download/4-21c17bcf/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: mint
-    version: lmde
-    flavor: Cinnamon
-    kernel: mint-lmde-cinnamon
   ubuntu-20.04-default-squash:
     path: /ubuntu-squash/releases/download/20.04.2.0-9bc4558b/
     files:
