@@ -1749,3 +1749,13 @@ endpoints:
     version: '21.04'
     flavor: intel-amd
     kernel: pop-21.04-default-squash
+  mint-lmde-cinnamon-squash:
+    path: /debian-squash/releases/download/4-073d5d42/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: mint
+    version: lmde
+    flavor: Cinnamon
+    kernel: mint-lmde-cinnamon-squash
