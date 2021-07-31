@@ -1719,3 +1719,13 @@ endpoints:
     version: lmde
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon-squash
+  mint-20-mate-squash:
+    path: /ubuntu-squash/releases/download/20.2-50f38e57/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '20'
+    flavor: mate
+    kernel: mint-20-mate-squash
