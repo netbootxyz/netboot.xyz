@@ -17,7 +17,7 @@ goto ${live_version}
 
 :20
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "mint" and 'squash' in key and value.version == "20" %}
+{% if value.os == "mint" and 'squash' in key and '20' in value.version %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}
@@ -25,7 +25,7 @@ goto flavor_select
 
 :19
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "mint" and 'squash' in key and value.version == "19" %}
+{% if value.os == "mint" and 'squash' in key and '19' in value.version %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}
