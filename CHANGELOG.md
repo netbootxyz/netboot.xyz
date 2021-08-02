@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.43]
+
 ## [2.0.42]
 ### Added
 - Debian 11 (Bullseye) ahead of release
