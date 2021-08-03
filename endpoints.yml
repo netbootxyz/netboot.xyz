@@ -1750,9 +1750,10 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-20-cinnamon-squash
   proxmox:
-    path: /asset-mirror/releases/download/7.0-1-f4457cfd/
+    path: /asset-mirror/releases/download/7.0-1-24e3084c/
     files:
     - initrd
     - vmlinuz
+    - proxmox.iso
     os: proxmox
     version: 7.0-1
