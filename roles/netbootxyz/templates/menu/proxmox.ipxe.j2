@@ -1,0 +1,43 @@
+#!ipxe
+
+# Proxmox VE
+# https://www.proxmox.com
+
+goto ${menu} ||
+
+:proxmox
+set os Proxmox VE
+menu ${os}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "proxmox" %}
+item normal ${space} ${os} {{ value.version }}
+item debug ${space} ${os} {{ value.version }} (Debug)
+{% endif %}
+{% endfor %}
+choose proxmox_version || goto proxmox_exit
+goto ${proxmox_version}
+
+:normal
+set params splash=silent
+goto boot
+
+:debug
+set params splash=verbose proxdebug
+goto boot
+
+:boot
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "proxmox" %}
+set kernel_url ${live_endpoint}{{ value.path }}
+{% endif %}
+{% endfor %}
+imgfree
+kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
+initrd ${kernel_url}initrd
+initrd ${kernel_url}proxmox.iso /proxmox.iso
+boot
+
+:proxmox_exit
+clear menu
+exit 0
