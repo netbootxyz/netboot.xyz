@@ -1,0 +1,3 @@
+# This script is called when the dhcp server and a proxy dhcp server booth set the next-server directive. It can be used to force usage of one of those servers. Default value is to use the proxy supplied tftp server but ask the user if the root server supplied tftp server should be used instead
+# This script will always be accessed on the server supplied by the root DHCP, as that would be the fallback and can now activly ask to be the primary server
+set force_use_root_dhcp_settings=true
