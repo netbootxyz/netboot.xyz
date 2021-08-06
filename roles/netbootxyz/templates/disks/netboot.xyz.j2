@@ -25,13 +25,11 @@ isset ${next-server} && isset ${proxydhcp/next-server} && goto choose-tftp || se
 
 :choose-tftp
 # Load "proxy settings" from root server
-chain tftp://${next-server}/proxy-dhcp-vars.ipxe || echo Could not load definitions to resolve proxy DHCP conflict
+chain tftp://${tftp-server}/local-vars.ipxe || echo ${VARS_ERR}
 # Check if the proxy-dhcp-vars script has made any usable command about how to progress with a next-server and a proxy-next-server being set
-isset ${force_use_root_dhcp_settings} && iseq ${force_use_root_dhcp_settings} true && set tftp-server ${next-server} && goto load-custom-ipxe || echo -n
-isset ${force_use_root_dhcp_settings} && iseq ${force_use_root_dhcp_settings} false && set tftp-server ${proxydhcp/next-server} && goto load-custom-ipxe || echo -n
-prompt --key 0x107e --timeout 4000 DHCP proxy detected. Press ${bold}F5${boldoff} to apply setting from it && set tftp-server ${proxydhcp/next-server} || set tftp-server ${next-server}
+isset ${use_proxydhcp_settings} || prompt --key p --timeout 4000 DHCP proxy detected. Press ${bold}p${boldoff} to boot from && set use_proxydhcp_settings true || set use_proxydhcp_settings false
+iseq ${use_proxydhcp_settings} true && set tftp-server ${proxydhcp/next-server} || set tftp-server ${next-server}
 goto load-custom-ipxe
-
 
 :load-custom-ipxe
 isset ${tftp-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
