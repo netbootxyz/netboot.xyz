@@ -868,7 +868,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20210725T170534Z-21ec62e4/
+    path: /asset-mirror/releases/download/20210801T170533Z-21ec62e4/
     files:
     - image.squashfs
     - initrd
@@ -1757,3 +1757,10 @@ endpoints:
     - proxmox.iso
     os: proxmox
     version: 7.0-1
+  talos:
+    path: /asset-mirror/releases/download/0.11.4-3f5e10e5/
+    files:
+    - vmlinuz
+    - initramfs.xz
+    os: talos
+    version: 0.11.4

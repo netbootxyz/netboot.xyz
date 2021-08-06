@@ -75,6 +75,7 @@ generate_disks_efi: true
 generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_rpi: false
+generate_local_vars: true
 generate_menus: true
 generate_signatures: false
 generate_version_file: true
