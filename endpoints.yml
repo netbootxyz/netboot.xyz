@@ -1758,7 +1758,7 @@ endpoints:
     os: proxmox
     version: 7.0-1
   talos:
-    path: /asset-mirror/releases/download/0.11.4-5d8663d9/
+    path: /asset-mirror/releases/download/0.11.4-0ab153bb/
     files:
     - vmlinuz
     - initramfs.xz
