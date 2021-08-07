@@ -8,7 +8,14 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Enables ability to add custom commands early in menu load with early_menu_*
 
+
 ## [2.0.42]
+### Added
+- Debian 11 (Bullseye) ahead of release
+### Fixes
+- Gentoo more reliable, switches to initrd.magic to avoid modifying initrd
+- Fixes to Mint menu to populate options correctly
+- Cosmetic fixes to index.html.j2 tables
 
 ## [2.0.41]
 ### Added

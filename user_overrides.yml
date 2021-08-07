@@ -4,6 +4,7 @@
 generate_menus: true
 generate_disks: true
 generate_checksums: true
+generate_local_vars: true
 
 # set desired site name
 #site_name: mysitename.com

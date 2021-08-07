@@ -79,6 +79,7 @@ generate_disks_efi: true
 generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_rpi: false
+generate_local_vars: true
 generate_menus: true
 generate_signatures: false
 generate_version_file: true
@@ -130,11 +131,11 @@ releases:
     base_dir: archlinux
     enabled: true
     menu: linux
-    mirror: mirrors.evowise.com
+    mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.07.01
-      name: 2021.07.01
+    - code_name: 2021.08.01
+      name: 2021.08.01
   blackarch:
     enabled: true
     menu: linux
@@ -175,13 +176,15 @@ releases:
     name: Debian
     versions:
       stable:
+      - code_name: bullseye
+        name: 11.0 (bullseye)
       - code_name: buster
         name: 10.0 (buster)
       - code_name: stretch
         name: 9.0 (stretch)
       testing:
-      - code_name: bullseye
-        name: bullseye (testing)
+      - code_name: bookworm
+        name: bookworm (testing)
       - code_name: sid
         name: sid (unstable)
   devuan:
@@ -357,6 +360,10 @@ releases:
     paths:
       7: /repo/OracleLinux/OL7/latest/x86_64
       8: /repo/OracleLinux/OL8/baseos/latest/x86_64
+  proxmox:
+    enabled: true
+    menu: linux
+    name: Proxmox VE
   rancheros:
     base_dir: os/latest
     enabled: true
@@ -414,14 +421,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210729T002724Z
+      name: 20210729T002724Z
     - code_name: 20210715T010227Z
       name: 20210715T010227Z
     - code_name: 20210701T204427Z
       name: 20210701T204427Z
     - code_name: 20210617T001230Z
       name: 20210617T001230Z
-    - code_name: 20210520T001536Z
-      name: 20210520T001536Z
   talos:
     enabled: true
     menu: linux
