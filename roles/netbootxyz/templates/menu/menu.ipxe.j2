@@ -3,10 +3,6 @@
 {{ early_menu_contents }}
 {%- endif %}
 
-{% if custom_menu_include is defined %}
-{{ custom_menu_include }}
-{% endif %}
-
 :start
 chain --autofree boot.cfg ||
 echo Attempting to retrieve latest upstream version number...
