@@ -38,3 +38,10 @@ generate_checksums: true
 # set licensed media locations in boot.cfg
 # win_base_url:
 # rhel_base_url: 
+
+early_menu_enabled: false
+early_menu_contents: |
+   ### early menu overrides
+   ### used to set early ipxe options such as custom console & logo
+   # console --x 1024 --y 768
+   # console --picture https://boot.netboot.xyz/logo.png

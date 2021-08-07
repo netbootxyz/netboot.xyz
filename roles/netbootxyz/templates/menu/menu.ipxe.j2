@@ -1,4 +1,7 @@
 #!ipxe
+{% if early_menu_enabled -%}
+{{ early_menu_contents }}
+{%- endif %}
 
 {% if custom_menu_include is defined %}
 {{ custom_menu_include }}
