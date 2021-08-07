@@ -20,11 +20,11 @@ item filename ${space} ${netX/filename}
 
 # Proxy DHCP info
 item --gap DHCP proxy present
-isset ${proxydhcp/next-server} && item proxy ${space} Yes || item proxy ${space} No
-item --gap DHCP proxy next-server
-item proxy-nextserver ${space} ${proxydhcp/next-server}
-item --gap Using DHCP proxy next-server
-iseq ${proxydhcp/next-server} ${tftp-server} && echo Yes || echo No (Using default next-server ${tftp-server})
+iseq ${platform} pcbios && item proxy ${space} Not supported on BIOS || isset ${proxydhcp/next-server} && item proxy ${space} Yes || item proxy ${space} No
+iseq ${platform} pcbios || item --gap DHCP proxy next-server
+iseq ${platform} pcbios || item proxy-nextserver ${space} ${proxydhcp/next-server}
+iseq ${platform} pcbios || item --gap Using DHCP proxy next-server
+iseq ${platform} pcbios || iseq ${proxydhcp/next-server} ${tftp-server} && echo Yes || echo No (Using default next-server ${tftp-server})
 
 choose empty ||
 exit
