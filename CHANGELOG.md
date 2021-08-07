@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.43]
+### Added
+- Enables ability to add custom commands early in menu load with early_menu_*
 
 ## [2.0.42]
 ### Added
