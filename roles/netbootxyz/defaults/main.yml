@@ -231,6 +231,8 @@ releases:
       name: Beta Channel
     - code_name: alpha
       name: Alpha Channel
+    - code_name: edge
+      name: Edge Channel
   freebsd:
     enabled: true
     menu: bsd
