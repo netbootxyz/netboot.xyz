@@ -68,7 +68,8 @@ custom_generate_menus: false
 custom_github_menus: true
 custom_templates_dir: '{{ netbootxyz_conf_dir }}/custom'
 custom_url_menus: true
-early_menu_contents: '### used to set early ipxe options such as custom console & logo'
+early_menu_contents: '### used to set early ipxe options such as custom console &
+  logo'
 early_menu_enabled: false
 generate_checksums: true
 generate_disks: true
