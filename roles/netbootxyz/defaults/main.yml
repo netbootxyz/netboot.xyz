@@ -68,6 +68,9 @@ custom_generate_menus: false
 custom_github_menus: true
 custom_templates_dir: '{{ netbootxyz_conf_dir }}/custom'
 custom_url_menus: true
+early_menu_contents: '### used to set early ipxe options such as custom console &
+  logo'
+early_menu_enabled: false
 generate_checksums: true
 generate_disks: true
 generate_disks_arm: false
@@ -161,7 +164,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210711.3.0
+    - code_name: 34.20210725.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -225,6 +228,8 @@ releases:
       name: Beta Channel
     - code_name: alpha
       name: Alpha Channel
+    - code_name: edge
+      name: Edge Channel
   freebsd:
     enabled: true
     menu: bsd
@@ -417,14 +422,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210812T031946Z
+      name: 20210812T031946Z
     - code_name: 20210729T002724Z
       name: 20210729T002724Z
     - code_name: 20210715T010227Z
       name: 20210715T010227Z
     - code_name: 20210701T204427Z
       name: 20210701T204427Z
-    - code_name: 20210617T001230Z
-      name: 20210617T001230Z
   talos:
     enabled: true
     menu: linux

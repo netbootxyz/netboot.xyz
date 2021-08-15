@@ -1,6 +1,6 @@
 #!ipxe
 
-# Container Linux by flatcar
+# Flatcar Container Linux
 # https://www.flatcar.com
 # For further info on:
 # iPXE and flatcar Container Linux: https://docs.flatcar-linux.org/os/booting-with-ipxe/
@@ -16,7 +16,7 @@ item --gap ${os}
 {% for item in releases.flatcar.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
-item ignition_config ${space} Set flatcar.config.url: ${flatcar.config.url}
+item ignition_config ${space} Set ignition.config.url: ${ignition.config.url}
 choose --default ${menu} menu || goto flatcar_exit
 echo ${cls}
 goto ${menu} ||
@@ -34,8 +34,8 @@ boot
 goto flatcar_exit
 
 :ignition_config
-echo -n Please set Ignition URL: && read flatcar.config.url
-set flatcar_params flatcar.config.url=${flatcar.config.url}
+echo -n Please set Ignition URL: && read ignition.config.url
+set flatcar_params ignition.config.url=${ignition.config.url}
 set flatcar_firstboot flatcar.first_boot=1
 clear menu
 goto flatcar

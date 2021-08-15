@@ -467,7 +467,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20210729-0944-92641c1f/
+    path: /ubuntu-squash/releases/download/20210812-1129-92641c1f/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -588,7 +588,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.3-12-002d59cc/
+    path: /debian-squash/releases/download/2.7.3-18-002d59cc/
     files:
     - filesystem.squashfs
     - initrd
@@ -608,7 +608,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210727-hirsute-18e78f5f/
+    path: /ubuntu-squash/releases/download/20210809-hirsute-18e78f5f/
     files:
     - filesystem.squashfs
     - initrd
@@ -844,7 +844,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.13.4-2021.07.22-a3024eea/
+    path: /asset-mirror/releases/download/5.13.8-2021.08.05-a3024eea/
     files:
     - initrd
     - vmlinuz
@@ -868,7 +868,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20210801T170533Z-21ec62e4/
+    path: /asset-mirror/releases/download/20210808T170546Z-21ec62e4/
     files:
     - image.squashfs
     - initrd
@@ -900,7 +900,7 @@ endpoints:
     os: kaspersky
     version: '18'
   septor:
-    path: /debian-squash/releases/download/2021.3-cf4a4991/
+    path: /debian-squash/releases/download/2021.4-cf4a4991/
     files:
     - filesystem.squashfs
     - initrd
