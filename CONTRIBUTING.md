@@ -1,7 +1,7 @@
 # Contributing to netboot.xyz
 
-Thanks for supporting netboot.xyz, and for considering contributing to the
-project!
+First of all, thank you for supporting the netboot.xyz community and for 
+considering contributing to the project!
 
 ## How to Contribute
 
@@ -13,7 +13,7 @@ might go end of life and drop off the mirrors.
 The end goal is to support as many operating systems as possible so that it's
 really easy to go explore new operating systems and tools from one location.
 
-## So what can I do to help?
+## What can I do to help?
 
 ### Help keep netboot.xyz updated
 
