@@ -25,7 +25,7 @@ isset ${next-server} && isset ${proxydhcp/next-server} && goto choose-tftp || se
 
 :choose-tftp
 # Load "proxy settings" from root server
-chain tftp://${tftp-server}/local-vars.ipxe || echo ${VARS_ERR}
+chain tftp://${next-server}/local-vars.ipxe || echo ${VARS_ERR}
 # Check if the proxy-dhcp-vars script has made any usable command about how to progress with a next-server and a proxy-next-server being set
 isset ${use_proxydhcp_settings} || prompt --key p --timeout 4000 DHCP proxy detected. Press ${bold}p${boldoff} to boot from && set use_proxydhcp_settings true || set use_proxydhcp_settings false
 iseq ${use_proxydhcp_settings} true && set tftp-server ${proxydhcp/next-server} || set tftp-server ${next-server}
