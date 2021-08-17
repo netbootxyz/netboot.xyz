@@ -68,7 +68,7 @@ See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get
 * [Downloads](https://netboot.xyz/downloads/)
 * [Self Hosting](https://netboot.xyz/docs/selfhosting/)
 * [Booting Methods](https://netboot.xyz/docs/booting/ipxe)
-* [FAQ](https://netboot.xyz/faq/)
+* [FAQ](https://netboot.xyz/docs/faq)
 * [Blog](https://netboot.xyz/blog)
 
 If you'd like to contribute to the documentation, the netboot.xyz documentation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
