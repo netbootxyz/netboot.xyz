@@ -66,10 +66,10 @@ This will load the appropriate netboot.xyz kernel with all of the proper options
 See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get started with are:
 
 * [Downloads](https://netboot.xyz/downloads/)
-* [Self Hosting](https://netboot.xyz/selfhosting/)
-* [Booting Methods](https://netboot.xyz/booting/)
+* [Self Hosting](https://netboot.xyz/docs/selfhosting/)
+* [Booting Methods](https://netboot.xyz/docs/booting/ipxe)
 * [FAQ](https://netboot.xyz/faq/)
-* [Blog](https://blog.netboot.xyz/)
+* [Blog](https://netboot.xyz/blog)
 
 If you'd like to contribute to the documentation, the netboot.xyz documentation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
 
@@ -77,7 +77,7 @@ If you'd like to contribute to the documentation, the netboot.xyz documentation 
 
 For those users who want to deploy their own netboot.xyz environment,  you can leverage the same scripts that are used to deploy the hosted environment. The source scripts are all Ansible templates and can be generated and customized to your preference.
 
-Please see the [self-hosting docs](https://netboot.xyz/selfhosting/) for more information but in short:
+Please see the [self-hosting docs](https://netboot.xyz/docs/selfhosting/) for more information but in short:
 
 #### Deploying using Ansible
 
