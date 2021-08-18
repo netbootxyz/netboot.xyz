@@ -50,7 +50,7 @@ item --gap Install types
 item install ${space} Install
 item rescue ${space} Rescue Mode
 item automated ${space} Specify preseed/autoinstall url...
-iseq ${install_type} deb && item priority ${space} Change install priority [ ${install_priority} ]
+iseq ${install_type} deb && item priority ${space} Change install priority [ ${install_priority} ] ||
 choose --default ${type} type || goto ubuntu
 echo ${cls}
 goto deb_${type}
