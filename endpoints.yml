@@ -1764,3 +1764,13 @@ endpoints:
     os: elementary-os
     version: '6'
     kernel: elementaryos-6-default-squash
+  zorin-16-core-squash:
+    path: /ubuntu-squash/releases/download/16-a33ab467/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: zorin
+    version: '16'
+    flavor: Core
+    kernel: zorin-16-core-squash
