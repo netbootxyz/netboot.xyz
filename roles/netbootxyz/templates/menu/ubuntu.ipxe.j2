@@ -12,6 +12,7 @@ clear install_type
 clear older_release
 clear install_url
 set install_type deb
+set install_priority critical
 menu ${os} - ${arch_a}
 item --gap Latest Releases
 {% for item in releases.ubuntu.versions %}
@@ -49,6 +50,7 @@ item --gap Install types
 item install ${space} Install
 item rescue ${space} Rescue Mode
 item automated ${space} Specify preseed/autoinstall url...
+iseq ${install_type} deb && item priority ${space} Change install priority [ ${install_priority} ]
 choose --default ${type} type || goto ubuntu
 echo ${cls}
 goto deb_${type}
@@ -58,11 +60,15 @@ iseq ${install_type} deb && set install_params rescue/enable=true ||
 iseq ${install_type} sub && set install_params systemd.unit=rescue.target ||
 goto deb_install
 
+:deb_priority
+iseq ${install_priority} critical && set install_priority low || set install_priority critical
+goto boot_type
+
 :deb_automated
 iseq ${install_type} deb && set install_name preseed ||
 iseq ${install_type} sub && set install_name autoinstall ||
 echo -n Specify ${install_name} URL for ${os} ${ubuntu_version}: && read install_url
-iseq ${install_type} deb && set install_params auto=true priority=critical preseed/url=${install_url} ||
+iseq ${install_type} deb && set install_params auto=true priority=${install_priority} preseed/url=${install_url} ||
 iseq ${install_type} sub && set install_params autoinstall ds=nocloud-net;s=${install_url} ||
 goto deb_install
 
