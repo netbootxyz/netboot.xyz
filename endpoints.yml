@@ -317,15 +317,6 @@ endpoints:
     version: 18.1.0
     flavor: XFCE
     kernel: manjaro-18.1.0-gui-kernel
-  elementaryos-5-default-squash:
-    path: /ubuntu-squash/releases/download/5-ddac8299/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: elementary-os
-    version: '5'
-    kernel: elementaryos-5-default-squash
   kali-xfce-squash:
     path: /debian-squash/releases/download/2021.2-4237c18c/
     files:
@@ -467,7 +458,7 @@ endpoints:
     flavor: eoan
     kernel: voyager-eoan-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20210729-0944-92641c1f/
+    path: /ubuntu-squash/releases/download/20210812-1129-92641c1f/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -588,7 +579,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.3-12-002d59cc/
+    path: /debian-squash/releases/download/2.7.3-18-002d59cc/
     files:
     - filesystem.squashfs
     - initrd
@@ -608,7 +599,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210727-hirsute-18e78f5f/
+    path: /ubuntu-squash/releases/download/20210809-hirsute-18e78f5f/
     files:
     - filesystem.squashfs
     - initrd
@@ -844,7 +835,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.13.4-2021.07.22-a3024eea/
+    path: /asset-mirror/releases/download/5.13.8-2021.08.05-a3024eea/
     files:
     - initrd
     - vmlinuz
@@ -868,7 +859,7 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20210725T170534Z-21ec62e4/
+    path: /asset-mirror/releases/download/20210808T170546Z-21ec62e4/
     files:
     - image.squashfs
     - initrd
@@ -900,7 +891,7 @@ endpoints:
     os: kaspersky
     version: '18'
   septor:
-    path: /debian-squash/releases/download/2021.3-cf4a4991/
+    path: /debian-squash/releases/download/2021.4-cf4a4991/
     files:
     - filesystem.squashfs
     - initrd
@@ -908,7 +899,7 @@ endpoints:
     os: septor
     version: current
   manjaro-xfce-current:
-    path: /manjaro-squash/releases/download/21.0.7-210614-linux510-90108dca/
+    path: /manjaro-squash/releases/download/21.0.7-210614-linux510-f75643fc/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -921,7 +912,7 @@ endpoints:
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
-    path: /manjaro-squash/releases/download/21.0.7-210614-linux510-d9e9fd9b/
+    path: /manjaro-squash/releases/download/21.0.7-210614-linux510-ad279d40/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -934,7 +925,7 @@ endpoints:
     flavor: gnome
     kernel: manjaro-gnome-current
   manjaro-kde-current:
-    path: /manjaro-squash/releases/download/21.0.7-210614-linux510-01cd228f/
+    path: /manjaro-squash/releases/download/21.0.7-210614-linux510-52a22eaa/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -962,7 +953,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/36.1-39ff9a19/
+    path: /asset-mirror/releases/download/37.0-39ff9a19/
     files:
     - initrd
     - vmlinuz
@@ -1749,3 +1740,37 @@ endpoints:
     version: '20'
     flavor: Cinnamon
     kernel: mint-20-cinnamon-squash
+  proxmox:
+    path: /asset-mirror/releases/download/7.0-1-24e3084c/
+    files:
+    - initrd
+    - vmlinuz
+    - proxmox.iso
+    os: proxmox
+    version: 7.0-1
+  talos:
+    path: /asset-mirror/releases/download/0.11.4-3f5e10e5/
+    files:
+    - vmlinuz
+    - initramfs.xz
+    os: talos
+    version: 0.11.4
+  elementaryos-6-default-squash:
+    path: /ubuntu-squash/releases/download/6-c6e63f57/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: elementary-os
+    version: '6'
+    kernel: elementaryos-6-default-squash
+  zorin-16-core-squash:
+    path: /ubuntu-squash/releases/download/16-a33ab467/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: zorin
+    version: '16'
+    flavor: Core
+    kernel: zorin-16-core-squash

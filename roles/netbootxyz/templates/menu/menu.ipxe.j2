@@ -1,4 +1,7 @@
 #!ipxe
+{% if early_menu_enabled -%}
+{{ early_menu_contents }}
+{%- endif %}
 
 :start
 chain --autofree boot.cfg ||

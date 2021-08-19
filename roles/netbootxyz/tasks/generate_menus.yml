@@ -58,6 +58,13 @@
     tags:
     - skip_ansible_lint
 
+  - name: Generate local-vars.ipxe if enabled
+    template:
+      src: "local-vars.ipxe.j2"
+      dest: "{{ netbootxyz_root }}/local-vars.ipxe"
+    when:
+      - generate_local_vars | bool
+
   - name: Retrieve pciids.ipxe
     get_url:
       url: "{{ pciids_url }}"

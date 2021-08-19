@@ -4,9 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.43]
+### Added
+- Adds Proxmox VE
+- Adds Zorin 16
+- Adds Elementary OS 6
+- Enables ability to add custom commands early in menu load with early_menu_*
+- Adds ability to change install priority on Ubuntu Legacy
+- Adds a toggle for enabling local-vars.ipxe
+
+### Fixes
+- Adjustments to index.html template, adds description
+- Readme tweaks for new site
+
 ## [2.0.42]
 ### Added
 - Debian 11 (Bullseye) ahead of release
+
 ### Fixes
 - Gentoo more reliable, switches to initrd.magic to avoid modifying initrd
 - Fixes to Mint menu to populate options correctly
@@ -16,8 +30,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Adds support for openEuler
 - Adds ping command to iPXE build
+
 ### Fixes
 - NixOS working again, using images and iPXE configs that are generated upstream
+
 ### Changes
 - Use non https repo for almalinux
 - Switch to using initrd.magic (https://github.com/ipxe/ipxe/commit/e5f02551735922eb235388bff08249a6f31ded3d)

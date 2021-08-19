@@ -66,10 +66,10 @@ This will load the appropriate netboot.xyz kernel with all of the proper options
 See [netboot.xyz](https://netboot.xyz) for all documentation.  Some links to get started with are:
 
 * [Downloads](https://netboot.xyz/downloads/)
-* [Self Hosting](https://netboot.xyz/selfhosting/)
-* [Booting Methods](https://netboot.xyz/booting/)
-* [FAQ](https://netboot.xyz/faq/)
-* [Blog](https://blog.netboot.xyz/)
+* [Self Hosting](https://netboot.xyz/docs/selfhosting/)
+* [Booting Methods](https://netboot.xyz/docs/booting/ipxe)
+* [FAQ](https://netboot.xyz/docs/faq)
+* [Blog](https://netboot.xyz/blog)
 
 If you'd like to contribute to the documentation, the netboot.xyz documentation is located at [netboot.xyz-docs](https://github.com/netbootxyz/netboot.xyz-docs).
 
@@ -77,7 +77,7 @@ If you'd like to contribute to the documentation, the netboot.xyz documentation 
 
 For those users who want to deploy their own netboot.xyz environment,  you can leverage the same scripts that are used to deploy the hosted environment. The source scripts are all Ansible templates and can be generated and customized to your preference.
 
-Please see the [self-hosting docs](https://netboot.xyz/selfhosting/) for more information but in short:
+Please see the [self-hosting docs](https://netboot.xyz/docs/selfhosting/) for more information but in short:
 
 #### Deploying using Ansible
 
@@ -132,7 +132,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Fatdog64 | https://distro.ibiblio.org/fatdog/web/ | No | Yes |
 | Fedora | https://fedoraproject.org | Yes | Yes |
 | Feren OS | https://ferenos.weebly.com/ | Yes | No |
-| Flatcar Linux | https://www.flatcar-linux.org | Yes | No |
+| Flatcar Linux | https://kinvolk.io/flatcar-container-linux/ | Yes | No |
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
 | FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
 | Gentoo | https://gentoo.org | Yes | Yes |
@@ -156,6 +156,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Parrot Security | https://www.parrotsec.org | No | Yes |
 | Peppermint | https://peppermintos.com | No | Yes |
 | Pop OS |https://system76.com/pop| No | Yes |
+| Proxmox VE | https://www.proxmox.com/ | Yes | No |
 | Q4OS | https://q4os.org | No | Yes |
 | Raizo | https://sourceforge.net/projects/live-raizo/ | No | Yes |
 | RancherOS | https://rancher.com/rancher-os | Yes | No |
