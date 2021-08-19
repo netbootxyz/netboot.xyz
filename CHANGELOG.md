@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.44]
+
 ## [2.0.43]
 ### Added
 - Adds Proxmox VE
