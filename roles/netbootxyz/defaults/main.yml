@@ -68,6 +68,8 @@ custom_generate_menus: false
 custom_github_menus: true
 custom_templates_dir: '{{ netbootxyz_conf_dir }}/custom'
 custom_url_menus: true
+early_menu_contents: '### put early ipxe settings here'
+early_menu_enabled: false
 generate_checksums: true
 generate_disks: true
 generate_disks_arm: false
@@ -75,6 +77,7 @@ generate_disks_efi: true
 generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_rpi: false
+generate_local_vars: true
 generate_menus: true
 generate_signatures: false
 generate_version_file: true
@@ -129,8 +132,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.07.01
-      name: 2021.07.01
+    - code_name: 2021.08.01
+      name: 2021.08.01
   blackarch:
     enabled: true
     menu: linux
@@ -160,7 +163,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210711.3.0
+    - code_name: 34.20210725.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -224,6 +227,8 @@ releases:
       name: Beta Channel
     - code_name: alpha
       name: Alpha Channel
+    - code_name: edge
+      name: Edge Channel
   freebsd:
     enabled: true
     menu: bsd
@@ -250,8 +255,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core158
-      name: 2.25 Core158
+    - code_name: 2.27-core159
+      name: 2.27 Core159
   k3os:
     enabled: true
     menu: linux
@@ -355,6 +360,10 @@ releases:
     paths:
       7: /repo/OracleLinux/OL7/latest/x86_64
       8: /repo/OracleLinux/OL8/baseos/latest/x86_64
+  proxmox:
+    enabled: true
+    menu: linux
+    name: Proxmox VE
   rancheros:
     base_dir: os/latest
     enabled: true
@@ -412,14 +421,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210812T031946Z
+      name: 20210812T031946Z
     - code_name: 20210729T002724Z
       name: 20210729T002724Z
     - code_name: 20210715T010227Z
       name: 20210715T010227Z
     - code_name: 20210701T204427Z
       name: 20210701T204427Z
-    - code_name: 20210617T001230Z
-      name: 20210617T001230Z
   talos:
     enabled: true
     menu: linux

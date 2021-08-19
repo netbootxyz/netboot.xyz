@@ -15,13 +15,14 @@ exit
 <html lang="en">
   <head>
     <title>{{ site_name }} BootLoaders - Powered by netboot.xyz</title>
+    <meta name='description' content='Download links for available {{ site_name }} bootloaders.'>
+    <style>
+      table, th, td {
+      padding: 5px;
+      border: 1px solid black; 
+      }
+    </style>
   </head>
-  <style>
-    table, th, td {
-    padding: 5px;
-    border: 1px solid black; 
-    }
-  </style>
   <body>
   <div style="font-family: monospace, fixed; font-weight: bold;">
   {% if index_title.stdout is defined %}
