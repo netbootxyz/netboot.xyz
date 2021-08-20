@@ -1805,3 +1805,11 @@ endpoints:
     version: '11'
     flavor: core
     kernel: debian-11-live-kernel
+  debian-11-kde-squash:
+    path: /debian-squash/releases/download/11.0.0-45415ce6/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '11'
+    flavor: kde
+    kernel: debian-11-live-kernel
