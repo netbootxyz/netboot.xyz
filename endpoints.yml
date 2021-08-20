@@ -827,7 +827,7 @@ endpoints:
     os: bootrepair
     version: current
   blackarch-installer:
-    path: /asset-mirror/releases/download/2020.12.01-e70fcdb5/
+    path: /asset-mirror/releases/download/2021.09.01-e70fcdb5/
     files:
     - initrd
     - vmlinuz
