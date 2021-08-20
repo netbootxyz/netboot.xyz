@@ -1821,3 +1821,11 @@ endpoints:
     version: '11'
     flavor: xfce
     kernel: debian-11-live-kernel
+  debian-11-mate-squash:
+    path: /debian-squash/releases/download/11.0.0-ea193391/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '11'
+    flavor: mate
+    kernel: debian-11-live-kernel
