@@ -1813,3 +1813,11 @@ endpoints:
     version: '11'
     flavor: kde
     kernel: debian-11-live-kernel
+  debian-11-xfce-squash:
+    path: /debian-squash/releases/download/11.0.0-3514490c/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '11'
+    flavor: xfce
+    kernel: debian-11-live-kernel
