@@ -1774,3 +1774,11 @@ endpoints:
     version: '16'
     flavor: Core
     kernel: zorin-16-core-squash
+  debian-11-cinnamon-squash:
+    path: /debian-squash/releases/download/11.0.0-7dd2cb74/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '11'
+    flavor: cinnamon
+    kernel: debian-11-live-kernel
