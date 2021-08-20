@@ -1837,3 +1837,11 @@ endpoints:
     version: '11'
     flavor: lxde
     kernel: debian-11-live-kernel
+  debian-11-lxqt-squash:
+    path: /debian-squash/releases/download/11.0.0-45d611dd/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '11'
+    flavor: lxqt
+    kernel: debian-11-live-kernel
