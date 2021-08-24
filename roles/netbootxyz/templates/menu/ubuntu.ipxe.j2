@@ -80,7 +80,7 @@ iseq ${install_type} sub && goto ${ubuntu_version} ||
 echo Loading Ubuntu PXE netboot installer
 set dir ${dir}${menu}-installer/${arch_a}
 imgfree
-kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet {{ kernel_params }}
+kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} {{ kernel_params }}
 initrd ${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
