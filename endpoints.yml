@@ -292,36 +292,6 @@ endpoints:
     version: '6'
     flavor: default
     kernel: backbox-6-default-squash
-  voyager-bionic-squash:
-    path: /ubuntu-squash/releases/download/bionic-4abf1559/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Voyager
-    version: bionic
-    flavor: bionic
-    kernel: voyager-bionic-squash
-  voyager-buster-squash:
-    path: /debian-squash/releases/download/buster-8be6d9f8/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Voyager
-    version: buster
-    flavor: buster
-    kernel: voyager-buster-squash
-  voyager-eoan-squash:
-    path: /ubuntu-squash/releases/download/eoan-da5582fc/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Voyager
-    version: eoan
-    flavor: eoan
-    kernel: voyager-eoan-squash
   kde-neon-user:
     path: /ubuntu-squash/releases/download/20210812-1129-92641c1f/
     files:
