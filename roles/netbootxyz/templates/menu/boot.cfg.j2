@@ -105,7 +105,7 @@ set cmdline console=ttyS1,115200n8
 iseq ${platform} efi && set ipxe_disk netboot.xyz-packet.efi || set ipxe_disk netboot.xyz-packet.kpxe
 set menu_freedos 0
 set menu_windows 0
-set menu_utils 0
+iseq ${platform} efi && set menu_utils 1 || set menu_utils 0
 goto clouds_end
 
 :packet_arm64

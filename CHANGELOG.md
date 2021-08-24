@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.44]
+### Added
+- Enables utility menu for Packet EFI
+- Added Debian 11 Live Builds
+- Adds Param command to iPXE builds
+- Adds next-server and version info when booted locally
+
+### Fixes
+- Fixes console issues for Ubuntu and Debian on Packet
+
+### Changes
+- Updates to Voyager menu to let it be more dynamic
+
 ## [2.0.43]
 ### Added
 - Adds Proxmox VE
