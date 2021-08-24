@@ -44,7 +44,7 @@ clear menu
 set space:hex 20:20
 set space ${space:string}
 iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
-menu ${site_name}
+isset ${next-server} && menu ${site_name} v${version} - next-server: ${next-server} || menu ${site_name}
 item --gap Default:
 item local ${space} Boot from local hdd
 item --gap Distributions:
