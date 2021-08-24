@@ -1,11 +1,4 @@
 endpoints:
-  ubuntu-19.10-live-kernel:
-    path: /ubuntu-core-19.10/releases/download/19.10-055f9330/
-    files:
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '19.10'
   ubuntu-18.04-live-kernel:
     path: /ubuntu-core-18.04/releases/download/18.04.5-a39e0666/
     files:
@@ -100,46 +93,6 @@ endpoints:
     version: '18.04'
     flavor: kylin
     kernel: ubuntu-18.04-live-kernel
-  ubuntu-19.10-xfce-squash:
-    path: /ubuntu-squash/releases/download/862cad91-9437400f/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: xfce
-    kernel: ubuntu-19.10-live-kernel
-  ubuntu-19.10-KDE-squash:
-    path: /ubuntu-squash/releases/download/9854741e-b243fefb/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: KDE
-    kernel: ubuntu-19.10-live-kernel
-  ubuntu-19.10-LXDE-squash:
-    path: /ubuntu-squash/releases/download/8b8b0336-f53591b5/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: LXDE
-    kernel: ubuntu-19.10-live-kernel
-  ubuntu-19.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/b8a2a185-48069fc4/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: MATE
-    kernel: ubuntu-19.10-live-kernel
-  ubuntu-19.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/945f7f4b-85bee8cf/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: Budgie
-    kernel: ubuntu-19.10-live-kernel
   debian-10-xfce-squash:
     path: /debian-squash/releases/download/10.10.0-e94fae4e/
     files:
@@ -164,14 +117,6 @@ endpoints:
     version: '10'
     flavor: cinnamon
     kernel: debian-10-live-kernel
-  ubuntu-19.10-kylin-squash:
-    path: /ubuntu-squash/releases/download/e7831484-762c8439/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: kylin
-    kernel: ubuntu-19.10-live-kernel
   debian-10-kde-squash:
     path: /debian-squash/releases/download/10.10.0-fc058090/
     files:
@@ -204,14 +149,6 @@ endpoints:
     version: '10'
     flavor: mate
     kernel: debian-10-live-kernel
-  ubuntu-19.10-default-squash:
-    path: /ubuntu-squash/releases/download/ee829212-78d4b89c/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '19.10'
-    flavor: GNOME
-    kernel: ubuntu-19.10-live-kernel
   manjaro-18.1.0-gnome-squash:
     path: /manjaro-squash/releases/download/18.1.0-f94efa23/
     files:
@@ -1058,66 +995,6 @@ endpoints:
     os: lite
     version: '5'
     kernel: linux-lite-5-squash
-  ubuntu-20.10-default-squash:
-    path: /ubuntu-squash/releases/download/20.10-a8c24058/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: GNOME
-    kernel: ubuntu-20.10-default-squash
-  ubuntu-20.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/20.10-66e9ad36/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: MATE
-    kernel: ubuntu-20.10-MATE-squash
-  ubuntu-20.10-kylin-squash:
-    path: /ubuntu-squash/releases/download/20.10-8c301af5/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: kylin
-    kernel: ubuntu-20.10-kylin-squash
-  ubuntu-20.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/20.10-f5422297/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: Budgie
-    kernel: ubuntu-20.10-Budgie-squash
-  ubuntu-20.10-KDE-squash:
-    path: /ubuntu-squash/releases/download/20.10-9013ea30/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: KDE
-    kernel: ubuntu-20.10-KDE-squash
-  ubuntu-20.10-XFCE-squash:
-    path: /ubuntu-squash/releases/download/20.10-3de28e80/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: XFCE
-    kernel: ubuntu-20.10-XFCE-squash
   fedora-33-gnome:
     path: /fedora-assets/releases/download/1.2-2e758900/
     files:
@@ -1190,17 +1067,6 @@ endpoints:
     os: fedora
     version: 33
     flavor: MATE_Compiz
-  ubuntu-20.10-netboot:
-    path: /ubuntu-squash/releases/download/20.10-424a54b4/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.10'
-    flavor: netboot
-    kernel: ubuntu-20.10-netboot
-    codename: groovy
   ubuntu-20.04-netboot:
     path: /ubuntu-squash/releases/download/20.04.2-23da52d5/
     files:
