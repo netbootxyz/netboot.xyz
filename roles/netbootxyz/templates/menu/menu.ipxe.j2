@@ -54,7 +54,7 @@ iseq ${menu_live} 1 && item live ${space} Live CDs ||
 iseq ${menu_live_arm} 1 && item live-arm ${space} Live CDs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
 iseq ${menu_unix} 1 && item unix ${space} Unix Network Installs ||
-iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS || 
+iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS ||
 iseq ${menu_windows} 1 && item windows ${space} Windows ||
 item --gap Tools:
 iseq ${menu_utils} 1 && item utils-${platform} ${space} Utilities ||
@@ -114,7 +114,8 @@ shell
 goto main_menu
 
 :changebits
-iseq ${arch} x86_64 && set arch i386 || set arch x86_64
+iseq ${arch} x86_64 && set arch i386 ||
+iseq ${arch} i386 && set arch x86_64 ||
 goto main_menu
 
 :sig_check
@@ -122,7 +123,7 @@ iseq ${sigs_enabled} true && set sigs_enabled false || set sigs_enabled true
 goto main_menu
 
 :about
-chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe 
+chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe
 goto main_menu
 
 :custom-github
