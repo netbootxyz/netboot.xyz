@@ -12,31 +12,33 @@ goto ${menu} ||
 clear osversion
 clear sku_type
 clear ova
+set rh_arch ${arch}
+iseq ${arch} arm64 && set rh_arch aarch64
 set os {{ releases.fedora.name }}
-menu ${os} - ${arch}
+menu ${os} - ${rh_arch}
 item --gap Latest Releases
 {% for item in releases.fedora.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
-iseq ${arch} x86_64 && item rawhide ${space} ${os} rawhide ||
+iseq ${rh_arch} x86_64 && item rawhide ${space} ${os} rawhide ||
 isset ${osversion} || choose osversion || goto linux_menu
 set ova ${os} ${osversion}
 goto product_sku
 
 :product_sku
-menu ${os} ${arch} sku type
+menu ${os} ${rh_arch} sku type
 item Everything ${ova} Everything
 item Server ${ova} Server
-iseq ${arch} x86_64 && item Silverblue ${ova} Silverblue ||
+iseq ${rh_arch} x86_64 && item Silverblue ${ova} Silverblue ||
 isset ${sku_type} || choose sku_type || goto fedora
-set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${arch}/os
-iseq ${osversion} rawhide && set dir ${fedora_base_dir}/development/${osversion}/${sku_type}/${arch}/os ||
+set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${rh_arch}/os
+iseq ${osversion} rawhide && set dir ${fedora_base_dir}/development/${osversion}/${sku_type}/${rh_arch}/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}
 goto boottype
 
 :boottype
-menu ${os} ${arch} boot type
+menu ${os} ${rh_arch} boot type
 item normal ${ova} graphical install
 item text ${ova} text install
 item rescue ${ova} rescue
