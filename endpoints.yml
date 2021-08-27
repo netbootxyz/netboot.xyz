@@ -1079,7 +1079,7 @@ endpoints:
     flavor: nvidia
     kernel: pop-20.10-nvidia-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/202101010217-5f0e3623/
+    path: /debian-squash/releases/download/202108250814-fdd40a1c/
     files:
     - filesystem.squashfs
     - initrd
