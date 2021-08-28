@@ -565,8 +565,6 @@ releases:
     versions:
     - code_name: hirsute
       name: 21.04 Hirsute Hippo
-    - code_name: groovy
-      name: 20.10 Groovy Gorilla
     - code_name: focal
       name: 20.04 LTS Focal Fossa (Subiquity)
     - code_name: focal-legacy
