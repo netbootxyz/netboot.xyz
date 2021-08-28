@@ -1058,26 +1058,6 @@ endpoints:
     - boot.wim
     os: hirens
     version: v1.0.1
-  pop-20.10-default-squash:
-    path: /ubuntu-squash/releases/download/2-6a3d596e/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: pop
-    version: '20.10'
-    flavor: intel-amd
-    kernel: pop-20.10-default-squash
-  pop-20.10-nvidia-squash:
-    path: /ubuntu-squash/releases/download/2-613b1e2c/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: pop
-    version: '20.10'
-    flavor: nvidia
-    kernel: pop-20.10-nvidia-squash
   vyos-rolling:
     path: /debian-squash/releases/download/202108250814-fdd40a1c/
     files:
