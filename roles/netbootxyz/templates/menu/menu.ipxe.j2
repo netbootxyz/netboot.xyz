@@ -113,8 +113,8 @@ shell
 goto main_menu
 
 :change_arch
-iseq ${arch} x86_64 && set arch i386 ||
-iseq ${arch} i386 && set arch x86_64 ||
+iseq ${arch} x86_64 && set arch i386 && goto main_menu ||
+iseq ${arch} i386 && set arch x86_64 && goto main_menu ||
 goto main_menu
 
 :sig_check
