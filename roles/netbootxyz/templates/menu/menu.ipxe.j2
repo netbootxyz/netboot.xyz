@@ -49,19 +49,18 @@ item --gap Default:
 item local ${space} Boot from local hdd
 item --gap Distributions:
 iseq ${menu_linux} 1 && item linux ${space} Linux Network Installs ||
+iseq ${menu_linux_i386} 1 && item linux-i386 ${space} Linux Network Installs ||
 iseq ${menu_linux_arm} 1 && item linux-arm ${space} Linux Network Installs ||
 iseq ${menu_live} 1 && item live ${space} Live CDs ||
 iseq ${menu_live_arm} 1 && item live-arm ${space} Live CDs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
 iseq ${menu_unix} 1 && item unix ${space} Unix Network Installs ||
-iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS || 
+iseq ${menu_freedos} 1 && item freedos ${space} FreeDOS ||
 iseq ${menu_windows} 1 && item windows ${space} Windows ||
 item --gap Tools:
 iseq ${menu_utils} 1 && item utils-${platform} ${space} Utilities ||
 iseq ${menu_utils_arm} 1 && item utils-arm ${space} Utilities ||
-iseq ${arch} x86_64 && set bits 64 || set bits 32
-iseq ${arch} arm64 && set bits 64 ||
-item changebits ${space} Architecture: ${arch} (${bits}bit)
+item change_arch ${space} Architecture: ${arch}
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
 item lspci ${space} PCI Device List
@@ -113,8 +112,9 @@ set menu main_menu
 shell
 goto main_menu
 
-:changebits
-iseq ${arch} x86_64 && set arch i386 || set arch x86_64
+:change_arch
+iseq ${arch} x86_64 && set arch i386 ||
+iseq ${arch} i386 && set arch x86_64 ||
 goto main_menu
 
 :sig_check
@@ -122,7 +122,7 @@ iseq ${sigs_enabled} true && set sigs_enabled false || set sigs_enabled true
 goto main_menu
 
 :about
-chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe 
+chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe
 goto main_menu
 
 :custom-github

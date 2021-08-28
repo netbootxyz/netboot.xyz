@@ -6,25 +6,22 @@
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
 
-set rhel_arch x86_64
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch x86_64 ||
+iseq ${os_arch} arm64 && set os_arch aarch64 ||
 goto ${menu} ||
 
 :rhel
-set os Red Hat Enterprise Linux
+set os Red Hat Enterprise Linux - ${os_arch}
 clear rhel_version
 menu ${os}
 item --gap Installers
 item rhel_install ${space} ${os} Graphical Install
 item rhel_install_text ${space} ${os} Text Install
 item --gap Options:
-item arch_set ${space} Architecture [ ${rhel_arch} ]
 item url_set ${space} Base URL [ ${rhel_base_url} ]
 choose rhel_version || goto rhel_exit
 goto ${rhel_version}
-
-:arch_set
-iseq ${rhel_arch} x86_64 && set rhel_arch i386 || set rhel_arch x86_64
-goto rhel
 
 :url_set
 echo Set the HTTP URL of an extracted RHEL ISO without the trailing slash:
@@ -33,8 +30,8 @@ echo
 echo -n URL: ${} && read rhel_base_url
 echo
 echo netboot.xyz will attempt to load the following files:
-echo ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz
-echo ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
+echo ${rhel_base_url}/os/${os_arch}/images/pxeboot/vmlinuz
+echo ${rhel_base_url}/os/${os_arch}/images/pxeboot/initrd.img
 echo
 prompt Press any key to return to RHEL Menu...
 goto rhel
@@ -49,8 +46,8 @@ goto boot
 
 :boot
 imgfree
-kernel ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/vmlinuz inst.repo=${rhel_base_url}/os/${rhel_arch} ${ipparam} ${params} {{ kernel_params }}
-initrd ${rhel_base_url}/os/${rhel_arch}/images/pxeboot/initrd.img
+kernel ${rhel_base_url}/os/${os_arch}/images/pxeboot/vmlinuz inst.repo=${rhel_base_url}/os/${os_arch} ${ipparam} ${params} {{ kernel_params }}
+initrd ${rhel_base_url}/os/${os_arch}/images/pxeboot/initrd.img
 md5sum vmlinuz initrd.img
 boot
 goto rhel

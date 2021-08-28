@@ -62,6 +62,17 @@ goto architectures_end
 :x86_64
 iseq ${platform} efi && goto efi ||
 goto architectures_end
+:i386
+set menu_linux 0
+set menu_linux_i386 1
+set menu_bsd 1
+set menu_unix 0
+set menu_freedos 1
+set menu_live 0
+set menu_windows 0
+set menu_utils 1
+iseq ${platform} efi && goto efi ||
+goto architectures_end
 :arm64
 set menu_linux 0
 set menu_linux_arm 1
