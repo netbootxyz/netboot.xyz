@@ -891,7 +891,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-20.04-MATE-squash
   ubuntu-20.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/20.04.2.0-b366cf71/
+    path: /ubuntu-squash/releases/download/20.04.3-b366cf71/
     files:
     - filesystem.squashfs
     - initrd
