@@ -4,8 +4,7 @@ goto ${menu} ||
 
 :live_menu
 set os Q4OS Live
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 item --gap ${os} Versions
 item 3.12 ${space} ${os} 3.12
 choose live_version || goto live_exit

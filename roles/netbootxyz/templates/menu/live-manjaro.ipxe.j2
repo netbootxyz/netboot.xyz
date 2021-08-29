@@ -2,8 +2,7 @@
 
 :live_menu
 set os Manjaro
-menu ${os} Live - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os} Live
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Live versions
 item current ${space} ${os} Current Stable (20.x)
@@ -12,7 +11,7 @@ choose menu || goto live_exit
 goto ${menu}
 
 :stable
-menu ${os} Live Stable - Current Arch [ ${arch} ]
+menu ${os} Live Stable
 item --gap Currently during boot you need to press ctrl+d/ctrl+c
 item --gap repeatedly when init hangs on starting a download
 {% for key, value in endpoints.items() | sort %}
@@ -24,7 +23,7 @@ choose version || goto live_menu
 goto ${version}
 
 :current
-menu ${os} Live Current - Current Arch [ ${arch} ]
+menu ${os} Live Current
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "manjaro" and value.version == "current" %}

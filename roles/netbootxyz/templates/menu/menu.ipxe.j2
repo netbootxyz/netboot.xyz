@@ -37,13 +37,12 @@ iseq ${buildarch} arm64 && set arch arm64 ||
 :skip_arch_detect
 isset ${menu} && goto ${menu} ||
 
-isset ${ip} || dhcp || echo DHCP failed
+isset ${ip} || dhcp
 
 :main_menu
 clear menu
 set space:hex 20:20
 set space ${space:string}
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 isset ${next-server} && menu ${site_name} v${version} - next-server: ${next-server} || menu ${site_name}
 item --gap Default:
 item local ${space} Boot from local hdd
@@ -113,8 +112,8 @@ shell
 goto main_menu
 
 :change_arch
-iseq ${arch} x86_64 && set arch i386 && goto main_menu ||
-iseq ${arch} i386 && set arch x86_64 && goto main_menu ||
+iseq ${arch} x86_64 && set arch i386 && set menu_linux_i386 1 && set menu_linux 0 && goto main_menu ||
+iseq ${arch} i386 && set arch x86_64 && set menu_linux_i386 0 && set menu_linux 1 && goto main_menu ||
 goto main_menu
 
 :sig_check
