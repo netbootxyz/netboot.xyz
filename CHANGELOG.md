@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.45]
+## [2.0.45] - 2021-08-29
+#### Added
+- Created a seperate menu for supported 32-bit Operating Systems
+- Enables utility menu for Packet non EFI
+- Updated arm menu
+
+#### Fixes
+- Refactor of architecture checks, better support for i386 and arch distros
+- Arm64 and i386 options work now
+- Added kernel_params for console overrides to utility images
+
+#### Changed
+- Dropped some older EOL distros
 
 ## [2.0.44] - 2021-08-24
 #### Added
