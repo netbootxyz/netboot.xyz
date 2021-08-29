@@ -7,9 +7,10 @@ goto ${menu}
 
 :devuan
 set os Devuan
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
 clear devuan_version
 clear older_release
-menu ${os} - ${arch_a}
+menu ${os} - ${os_arch}
 item --gap Latest Releases
 {% for item in releases.devuan.versions.stable %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -23,7 +24,7 @@ goto mirrorcfg
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${devuan_version}
-set dir ${devuan_base_dir}/dists/${devuan_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${devuan_base_dir}/dists/${devuan_version}/main/installer-${os_arch}/current/images/netboot/
 goto devuan_boot_type
 
 :devuan_boot_type
@@ -53,11 +54,11 @@ set install_params auto=true priority=critical preseed/url=${preseedurl}
 goto devuan_text
 
 :devuan_text
-set dir ${dir}debian-installer/${arch_a}
+set dir ${dir}debian-installer/${os_arch}
 goto devuan_boot
 
 :devuan_graphical
-set dir ${dir}gtk/debian-installer/${arch_a}
+set dir ${dir}gtk/debian-installer/${os_arch}
 set install_params vga=788
 goto devuan_boot
 

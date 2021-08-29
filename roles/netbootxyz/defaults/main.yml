@@ -163,7 +163,7 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210725.3.0
+    - code_name: 34.20210808.3.0
       name: stable
   debian:
     archive_mirror: http://archive.debian.org
@@ -421,14 +421,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210826T002459Z
+      name: 20210826T002459Z
     - code_name: 20210812T031946Z
       name: 20210812T031946Z
     - code_name: 20210729T002724Z
       name: 20210729T002724Z
     - code_name: 20210715T010227Z
       name: 20210715T010227Z
-    - code_name: 20210701T204427Z
-      name: 20210701T204427Z
   talos:
     enabled: true
     menu: linux
@@ -565,8 +565,6 @@ releases:
     versions:
     - code_name: hirsute
       name: 21.04 Hirsute Hippo
-    - code_name: groovy
-      name: 20.10 Groovy Gorilla
     - code_name: focal
       name: 20.04 LTS Focal Fossa (Subiquity)
     - code_name: focal-legacy
@@ -614,7 +612,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.bootrepair.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: Boot Repair CD
     type: direct
   caine:
@@ -622,7 +620,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.caine.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: CAINE
     type: direct
   clonezilla:
@@ -646,7 +644,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
       nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: RedoRescue
     type: direct
   rescatux:
@@ -654,7 +652,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.rescatux.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{
       endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0
-      initrd=initrd
+      {{ kernel_params }}
     name: Rescatux
     type: direct
   rescuezilla:
@@ -685,14 +683,14 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.bootrepair.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: Boot Repair CD
     type: direct
   breakin:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.breakin.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin
-      startup=breakin initrd=initrd
+      startup=breakin {{ kernel_params }}
     name: Breakin
     type: direct
   caine:
@@ -700,7 +698,7 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.caine.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: CAINE
     type: direct
   clonezilla:
@@ -734,7 +732,7 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
       nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: RedoRescue
     type: direct
   rescatux:
@@ -742,7 +740,7 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.rescatux.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{
       endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0
-      initrd=initrd
+      {{ kernel_params }}
     name: Rescatux
     type: direct
   rescuezilla:
