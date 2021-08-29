@@ -4,8 +4,7 @@ goto ${menu} ||
 
 :live_menu
 set os Ubuntu Live
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 item --gap ${os} Versions
 item hirsute ${space} ${os} 21.04
 item focal ${space} ${os} 20.04
