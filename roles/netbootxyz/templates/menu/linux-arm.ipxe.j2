@@ -3,20 +3,15 @@
 goto ${menu} ||
 
 :linux_menu
-menu Linux Installers - ARM ARCH **EXPERIMENTAL** Current Arch [ ${arch} ]
+menu Linux Installers - Current Arch [ ${arch} ]
 item --gap Popular Linux Operating Systems:
+item alpinelinux ${space} AlmaLinux
+item alpinelinux ${space} Alpine Linux
 item centos ${space} CentOS
 item debian ${space} Debian
 item fedora ${space} Fedora
-item opensuse ${space} openSUSE
-item ubuntu ${space} Ubuntu
-item --gap All Others:
-#item alpinelinux ${space} Alpine Linux
-#item coreos ${space} Fedora CoreOS (Preview)
-#item flatcar ${space} Flatcar
-#item nixos ${space} NixOS
 item rhel ${space} Red Hat Enterprise Linux
-#item tinycore ${space} Tiny Core Linux
+item rockylinux ${space} Rocky Linux
 choose menu || goto linux_exit
 echo ${cls}
 goto ${menu} ||

@@ -7,9 +7,13 @@ goto ${menu}
 
 :debian
 set os Debian
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} i386 && set os_arch i386 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
 clear debian_version
 clear older_release
-menu ${os} - ${arch_a}
+menu ${os} - ${os_arch}
 item --gap Latest Releases
 {% for item in releases.debian.versions.stable %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -30,13 +34,13 @@ set debian_mirror {{ releases.debian.archive_mirror }}
 echo Setting mirror to ${debian_mirror}
 clear debian_version
 echo -n Please set enter code name of release: ${} && read debian_version
-set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${os_arch}/current/images/netboot/
 goto deb_boot_type
 
 :mirrorcfg
 set debian_mirror ${debian_mirror}
 set mirrorcfg mirror/suite=${debian_version}
-set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${arch_a}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${os_arch}/current/images/netboot/
 goto deb_boot_type
 
 :deb_boot_type
@@ -66,11 +70,11 @@ set install_params auto=true priority=critical preseed/url=${preseedurl}
 goto deb_text
 
 :deb_text
-set dir ${dir}${menu}-installer/${arch_a}
+set dir ${dir}${menu}-installer/${os_arch}
 goto deb_boot
 
 :deb_graphical
-set dir ${dir}gtk/${menu}-installer/${arch_a}
+set dir ${dir}gtk/${menu}-installer/${os_arch}
 set install_params vga=788
 goto deb_boot
 

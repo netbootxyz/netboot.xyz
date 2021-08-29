@@ -4,11 +4,9 @@ goto ${menu} ||
 
 :live_menu
 set os Ubuntu Live
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 item --gap ${os} Versions
 item hirsute ${space} ${os} 21.04
-item groovy ${space} ${os} 20.10
 item focal ${space} ${os} 20.04
 item bionic ${space} ${os} 18.04
 choose live_version || goto live_exit
@@ -19,14 +17,6 @@ goto ${live_version}
 :hirsute
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "ubuntu" and 'squash' in key and value.version == "21.04" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
-{% endif %}
-{% endfor %}
-goto flavor_select
-
-:groovy
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key and value.version == "20.10" %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
 {% endif %}
 {% endfor %}
@@ -74,7 +64,6 @@ initrd ${kernel_url}initrd
 boot
 
 :20.04-boot
-:20.10-boot
 :21.04-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}

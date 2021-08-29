@@ -2,11 +2,13 @@
 
 goto ${menu} ||
 
-:live_menu
-menu Live Boot Distributions - Current Arch [ ${arch} ]
-item --gap Live Boot Distributions
-item live-fedora ${space} Fedora
-choose menu || goto live_exit
+:linux_menu
+menu Linux Installers - Current Arch [ ${arch} ]
+item --gap Popular Linux Operating Systems:
+item alpinelinux ${space} Alpine Linux
+item debian ${space} Debian
+item opensuse ${space} OpenSUSE
+choose menu || goto linux_exit
 echo ${cls}
 goto ${menu} ||
 iseq ${sigs_enabled} true && goto verify_sigs || goto change_menu
@@ -17,8 +19,8 @@ goto change_menu
 
 :change_menu
 chain ${menu}.ipxe || goto error
-goto live_menu
+goto linux_menu
 
-:live_exit
+:linux_exit
 clear menu
 exit 0

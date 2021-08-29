@@ -7,13 +7,15 @@ goto ${menu}
 
 :ubuntu
 set os Ubuntu
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 clear ubuntu_version
 clear install_type
 clear older_release
 clear install_url
 set install_type deb
 set install_priority critical
-menu ${os} - ${arch_a}
+menu ${os} - ${os_arch}
 item --gap Latest Releases
 {% for item in releases.ubuntu.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -23,7 +25,6 @@ item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
 iseq ${ubuntu_version} focal && set install_type sub ||
-iseq ${ubuntu_version} groovy && set install_type sub ||
 iseq ${ubuntu_version} hirsute && set install_type sub ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
 iseq ${install_type} sub && goto boot_type ||
@@ -35,13 +36,13 @@ set ubuntu_mirror {{ releases.ubuntu.archive_mirror }}
 echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
 echo -n Please set enter code name of release: ${} && read ubuntu_version
-set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/
 goto boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
-set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
-iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/legacy-images/netboot/ ||
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/
+iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/legacy-images/netboot/ ||
 goto boot_type
 
 :boot_type
@@ -78,7 +79,7 @@ iseq ${install_type} sub && goto ${ubuntu_version} ||
 
 :deb_boot
 echo Loading Ubuntu PXE netboot installer
-set dir ${dir}${menu}-installer/${arch_a}
+set dir ${dir}${menu}-installer/${os_arch}
 imgfree
 kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} {{ kernel_params }}
 initrd ${ubuntu_mirror}/${dir}/initrd.gz
@@ -104,7 +105,7 @@ goto sub_boot
 
 :sub_boot
 imgfree
-isset ${dhcp-server} && set netboot_params ip=dhcp url=http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${arch_a}.iso || set netboot_params
+isset ${dhcp-server} && set netboot_params ip=dhcp url=http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${os_arch}.iso || set netboot_params
 echo Loading Ubuntu Subiquity Network Installer...
 kernel ${kernel_url}vmlinuz root=/dev/ram0 ramdisk_size=1500000 ${netboot_params} ${install_params} {{ kernel_params }}
 initrd ${kernel_url}initrd

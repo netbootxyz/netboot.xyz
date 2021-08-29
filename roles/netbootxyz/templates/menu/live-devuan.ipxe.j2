@@ -4,8 +4,7 @@ goto ${menu} ||
 
 :live_menu
 set os Devuan
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "devuan" %}
