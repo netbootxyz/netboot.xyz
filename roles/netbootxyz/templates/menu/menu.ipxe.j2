@@ -4,6 +4,10 @@
 {%- endif %}
 
 :start
+isset ${arch} && goto skip_arch_detect ||
+cpuid --ext 29 && set arch x86_64 || set arch i386
+iseq ${buildarch} arm64 && set arch arm64 ||
+:skip_arch_detect
 chain --autofree boot.cfg ||
 echo Attempting to retrieve latest upstream version number...
 chain --timeout 5000 https://boot.netboot.xyz/version.ipxe ||
@@ -31,12 +35,7 @@ chain --autofree http://${boot_domain}/ipxe/${ipxe_disk} ||
 :version_up2date
 {% endif %}
 
-isset ${arch} && goto skip_arch_detect ||
-cpuid --ext 29 && set arch x86_64 || set arch i386
-iseq ${buildarch} arm64 && set arch arm64 ||
-:skip_arch_detect
 isset ${menu} && goto ${menu} ||
-
 isset ${ip} || dhcp
 
 :main_menu
