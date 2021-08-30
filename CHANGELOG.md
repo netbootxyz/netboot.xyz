@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.46]
+## [2.0.46] - 2021-08-29
 #### Fixes
 - Fix incorrect arch introduced on Ubuntu
 
