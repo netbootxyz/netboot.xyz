@@ -60,6 +60,7 @@ iseq ${arch} x86_64 && goto x86_64 ||
 iseq ${arch} arm64 && goto arm64 ||
 goto architectures_end
 :x86_64
+set menu_linux_i386 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :i386
