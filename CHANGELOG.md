@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.47]
+## [2.0.47] - 2021-08-30
+#### Fixes
+- Corrects an issue with loading 32-bit linux menu on 64-bit platforms (https://github.com/netbootxyz/netboot.xyz/issues/978)
 
 ## [2.0.46] - 2021-08-29
 #### Fixes
