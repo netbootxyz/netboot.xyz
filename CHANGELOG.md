@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.46] - 2021-08-29
+#### Fixes
+- Fix incorrect arch introduced on Ubuntu
+
 ## [2.0.45] - 2021-08-29
 #### Added
 - Created a seperate menu for supported 32-bit Operating Systems
