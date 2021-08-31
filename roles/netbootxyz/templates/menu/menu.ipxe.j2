@@ -4,6 +4,10 @@
 {%- endif %}
 
 :start
+isset ${arch} && goto skip_arch_detect ||
+cpuid --ext 29 && set arch x86_64 || set arch i386
+iseq ${buildarch} arm64 && set arch arm64 ||
+:skip_arch_detect
 chain --autofree boot.cfg ||
 echo Attempting to retrieve latest upstream version number...
 chain --timeout 5000 https://boot.netboot.xyz/version.ipxe ||
@@ -31,12 +35,7 @@ chain --autofree http://${boot_domain}/ipxe/${ipxe_disk} ||
 :version_up2date
 {% endif %}
 
-isset ${arch} && goto skip_arch_detect ||
-cpuid --ext 29 && set arch x86_64 || set arch i386
-iseq ${buildarch} arm64 && set arch arm64 ||
-:skip_arch_detect
 isset ${menu} && goto ${menu} ||
-
 isset ${ip} || dhcp
 
 :main_menu
@@ -47,9 +46,9 @@ isset ${next-server} && menu ${site_name} v${version} - next-server: ${next-serv
 item --gap Default:
 item local ${space} Boot from local hdd
 item --gap Distributions:
-iseq ${menu_linux} 1 && item linux ${space} Linux Network Installs ||
-iseq ${menu_linux_i386} 1 && item linux-i386 ${space} Linux Network Installs ||
-iseq ${menu_linux_arm} 1 && item linux-arm ${space} Linux Network Installs ||
+iseq ${menu_linux} 1 && item linux ${space} Linux Network Installs (64-bit) ||
+iseq ${menu_linux_i386} 1 && item linux-i386 ${space} Linux Network Installs (32-bit) ||
+iseq ${menu_linux_arm} 1 && item linux-arm ${space} Linux Network Installs (arm64) ||
 iseq ${menu_live} 1 && item live ${space} Live CDs ||
 iseq ${menu_live_arm} 1 && item live-arm ${space} Live CDs ||
 iseq ${menu_bsd} 1 && item bsd ${space} BSD Installs ||
