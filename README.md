@@ -136,6 +136,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
 | FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
 | Gentoo | https://gentoo.org | Yes | Yes |
+| Harvester | https://harvesterhci.io | Yes | No |
 | IPFire | https://www.ipfire.org | Yes | No |
 | Kali Linux | https://www.kali.org | Yes | Yes |
 | KDE Neon | https://neon.kde.org | No | Yes |

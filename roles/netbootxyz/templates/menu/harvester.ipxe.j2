@@ -1,0 +1,67 @@
+#!ipxe
+
+# Harvester
+# https://harvesterhci.io/
+# https://docs.harvesterhci.io/v0.2/install/pxe-boot-install/
+
+goto ${menu} ||
+
+:harvester
+set os {{ releases.harvester.name }}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+set harvester_mirror {{ releases.harvester.mirror }}
+set harvester_version {{ releases.harvester.versions[0].name }}
+isset ${harvester_version} || set harvester_version {{ releases.harvester.versions[0].name }}
+menu ${os} - ${os_arch}
+item --gap Harvester:
+item harvester_boot ${space} Begin install ${os} ${harvester_version}
+item --gap Parameters:
+item harvester_version ${space} ${os} version: ${harvester_version}
+item harvester_config_url ${space} Set config-create or config-join.yaml URL: ${harvester_config_url}
+choose --default ${menu} menu || goto harvester_exit
+echo ${cls}
+goto ${menu} ||
+goto harvester_exit
+
+:harvester_version 
+menu ${os} version
+item latest ${space} latest 
+item custom ${space} Set custom version
+choose --default ${version} version || goto harvester_exit
+echo ${cls}
+goto harvester_version_${version} ||
+goto harvester_exit
+
+:harvester_version_latest
+set harvester_version {{ releases.harvester.versions[0].name }}
+set harvester_base_url ${harvester_mirror}/${harvester_version}
+goto harvester
+
+:harvester_version_custom
+clear harvester_version
+echo -n Please set harvester version manually (in format vX.Y.Z):  && read harvester_version
+set harvester_base_url ${harvester_mirror}/${harvester_version}
+clear menu
+goto harvester
+
+:harvester_config_url
+echo -n Set config.yaml URL:  && read harvester_config_url
+clear menu
+goto harvester
+
+:harvester_boot
+isset ${harvester_base_url} || set harvester_base_url ${harvester_mirror}/${harvester_version}
+set install_params k3os.mode=install harvester.install.automatic=true harvester.install.config_url=${harvester_config_url}
+set boot_params console=ttyS0 console=tty1
+imgfree
+kernel ${harvester_base_url}/harvester-vmlinuz-${os_arch} ${install_params} ${boot_params} {{ kernel_params }}
+initrd ${harvester_base_url}/harvester-initrd-${os_arch}
+echo
+echo MD5sums:
+md5sum harvester-vmlinuz-${os_arch} harvester-initrd-${os_arch}
+boot
+
+:harvester_exit
+clear menu
+exit 0
