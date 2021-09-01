@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.48]
+#### Added
+- Support for Harvester
 
 ## [2.0.47] - 2021-08-30
 #### Fixes
