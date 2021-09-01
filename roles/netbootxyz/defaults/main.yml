@@ -165,6 +165,10 @@ releases:
     versions:
     - code_name: 34.20210808.3.0
       name: stable
+    - code_name: 34.20210821.2.0
+      name: testing
+    - code_name: 34.20210821.1.1
+      name: next
   debian:
     archive_mirror: http://archive.debian.org
     base_dir: debian
