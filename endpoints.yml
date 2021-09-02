@@ -1140,13 +1140,13 @@ endpoints:
     os: ovirt
     version: '4.4'
   nitrux-release:
-    path: /ubuntu-squash/releases/download/2021.02.27-bb02b131/
+    path: /ubuntu-squash/releases/download/2021.09.01-e364d0a5/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: nitrux
-    version: release
+    version: 2021.09.01
   endeavouros:
     path: /asset-mirror/releases/download/2021.08.27-d09b132d/
     files:
