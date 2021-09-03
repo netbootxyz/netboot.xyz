@@ -194,6 +194,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Grml | http://grml.org | LiveCD |
 | Kaspersky Rescue Disk | https://support.kaspersky.com/viruses/krd18 | LiveCD |
 | Memtest | http://www.memtest.org/ | Kernel |
+| MemTest86 Free | https://www.memtest86.com | USB Img |
 | Redo Rescue | http://redorescue.com/ | LiveCD |
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
 | Rescuezilla | https://rescuezilla.com/ | LiveCD |

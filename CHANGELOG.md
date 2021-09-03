@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.48]
 #### Added
 - Support for Harvester
+- Support for MemTest86 Free
 
 ## [2.0.47] - 2021-08-30
 #### Fixes
