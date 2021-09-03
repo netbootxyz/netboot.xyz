@@ -30,6 +30,15 @@ goto utils_exit
 {% endif %}
 {% endfor %}
 
+{% for key, value in utilitiesefi.items() | sort %}
+{% if value.enabled | bool and value.type == "sanboot" %}
+:{{ key }}
+imgfree
+sanboot {{ value.img_url }}
+goto utils_exit
+{% endif %}
+{% endfor %}
+
 :cmdline
 echo If you want to change the default kernel command line parameters
 echo you can override the defaults here.

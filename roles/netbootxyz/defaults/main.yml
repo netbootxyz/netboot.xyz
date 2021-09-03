@@ -619,10 +619,11 @@ sigs_menu: false
 site_name: netboot.xyz
 time_server: 0.pool.ntp.org
 utilitiesarm:
-  placeholder:
-    enabled: false
-    name: placeholder
-    type: direct
+  memtest86-free:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.memtest86-free.path }}memtest86-usb.img
+    name: Memtest86 Free
+    type: sanboot
 utilitiesefi:
   4mlinux:
     enabled: true
@@ -660,6 +661,11 @@ utilitiesefi:
     enabled: true
     name: Kaspersky Rescue Disk
     type: ipxemenu
+  memtest86-free:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.memtest86-free.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86-free.version }}
+    type: sanboot
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
