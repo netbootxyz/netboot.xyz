@@ -1533,3 +1533,9 @@ endpoints:
     - memtest86-usb.img
     os: memtest86-free
     version: '9.2'
+  memtest86:
+    path: /asset-mirror/releases/download/9.2-4e73affb/
+    files:
+    - memtest86-usb.img
+    os: memtest86-free
+    version: '9.2'
