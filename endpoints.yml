@@ -1527,12 +1527,6 @@ endpoints:
     version: bullseye
     flavor: bullseye
     kernel: voyager-bullseye-squash
-  memtest86-free:
-    path: /asset-mirror/releases/download/9.2-8d9d286c/
-    files:
-    - memtest86-usb.img
-    os: memtest86-free
-    version: '9.2'
   memtest86:
     path: /asset-mirror/releases/download/9.2-4e73affb/
     files:

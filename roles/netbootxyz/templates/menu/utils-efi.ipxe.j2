@@ -34,7 +34,7 @@ goto utils_exit
 {% if value.enabled | bool and value.type == "sanboot" %}
 :{{ key }}
 imgfree
-sanboot {{ value.img_url }}
+sanboot {{ value.kernel }}
 goto utils_exit
 {% endif %}
 {% endfor %}

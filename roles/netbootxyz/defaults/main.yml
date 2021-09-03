@@ -621,8 +621,8 @@ time_server: 0.pool.ntp.org
 utilitiesarm:
   memtest86:
     enabled: true
-    kernel: ${live_endpoint}{{ endpoints.memtest86-free.path }}memtest86-usb.img
-    name: Memtest86 Free
+    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86.version }}
     type: sanboot
 utilitiesefi:
   4mlinux:
@@ -663,8 +663,8 @@ utilitiesefi:
     type: ipxemenu
   memtest86:
     enabled: true
-    kernel: ${live_endpoint}{{ endpoints.memtest86-free.path }}memtest86-usb.img
-    name: Memtest86 Free - {{ endpoints.memtest86-free.version }}
+    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86.version }}
     type: sanboot
   redorescue:
     enabled: true
