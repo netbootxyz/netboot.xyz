@@ -51,15 +51,15 @@ SHA256 checksums are generated during each build of iPXE and are located [here](
 
 [netboot.xyz](http://www.netboot.xyz) is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the operating system you want along with any specific types of versions or bootable flags.
 
-If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
+If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing for Legacy (PCBIOS) mode:
 
-    chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn
+    chain --autofree http://boot.netboot.xyz/ipxe/netboot.xyz.lkrn
 
-or when in EFI mode:
+or when in UEFI mode:
 
-    chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.efi
+    chain --autofree http://boot.netboot.xyz/ipxe/netboot.xyz.efi
 
-This will load the appropriate netboot.xyz kernel with all of the proper options enabled.
+You can also load using HTTPS, but by default builds of iPXE do not have HTTPS support compiled in. This will load the appropriate netboot.xyz kernel with all of the proper options enabled.
 
 ### Documentation
 
