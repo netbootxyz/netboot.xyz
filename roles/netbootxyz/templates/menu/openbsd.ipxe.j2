@@ -19,10 +19,10 @@ iseq ${ver} {{ item.code_name }} && set image_ver {{ item.image_ver }} ||
 goto boot_openbsd
 
 :boot_openbsd
-iseq ${platform} pcbios && goto pcibios_boot ||
+iseq ${platform} pcbios && goto pcbios_boot ||
 iseq ${platform} efi && goto efi_boot ||
 
-:pcibios_boot
+:pcbios_boot
 set src ${openbsd_mirror}/${openbsd_base_dir}/${ver}/${os_arch}/cd${image_ver}.iso
 imgfree
 initrd ${src}
