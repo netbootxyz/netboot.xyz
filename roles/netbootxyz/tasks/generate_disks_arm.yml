@@ -37,14 +37,31 @@
     - name: Compile iPXE bootloader for EFI arm64
       shell: |
         make clean
-        make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
-        EMBED={{ bootloader_filename }} \
+        make CROSS_COMPILE=aarch64-linux-gnu- \
+             ARCH=arm64 \
+             EMBED={{ bootloader_filename }} \
              TRUST={{ trust_files }} \
              bin-arm64-efi/snp.efi
       args:
         chdir: "{{ ipxe_source_dir }}/src"
       tags:
       - skip_ansible_lint
+      when: ipxe_debug_enabled | bool == false
+
+    - name: Compile iPXE bootloader for EFI arm64 with debug flags
+      shell: |
+        make clean
+        make CROSS_COMPILE=aarch64-linux-gnu- \
+             ARCH=arm64 \
+             DEBUG={{ ipxe_debug_options }} \
+             EMBED={{ bootloader_filename }} \
+             TRUST={{ trust_files }} \
+             bin-arm64-efi/snp.efi
+      args:
+        chdir: "{{ ipxe_source_dir }}/src"
+      tags:
+      - skip_ansible_lint
+      when: ipxe_debug_enabled | bool
 
     - name: Copy iPXE arm64 EFI builds to http directory
       copy:
