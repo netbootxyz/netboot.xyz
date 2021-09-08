@@ -141,8 +141,8 @@ releases:
     mirror: mirror.math.princeton.edu
     name: Arch Linux 32-bit
     versions:
-    - code_name: 2021.09.01
-      name: 2021.09.01
+    - code_name: null
+      name: null
   blackarch:
     enabled: true
     menu: linux
