@@ -1534,7 +1534,7 @@ endpoints:
     os: memtest86-free
     version: '9.2'
   garuda-dragonized:
-    path: /asset-mirror/releases/download/210809-381f09f5/
+    path: /asset-mirror/releases/download/210809-f3e73094/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1546,4 +1546,4 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: dragonized
-    version: current
+    version: 210809
