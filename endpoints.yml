@@ -1059,7 +1059,7 @@ endpoints:
     os: hirens
     version: v1.0.2
   vyos-rolling:
-    path: /debian-squash/releases/download/202109030217-fdd40a1c/
+    path: /debian-squash/releases/download/202109100217-fdd40a1c/
     files:
     - filesystem.squashfs
     - initrd
