@@ -1533,3 +1533,17 @@ endpoints:
     - memtest86-usb.img
     os: memtest86-free
     version: '9.2'
+  garuda-dragonized:
+    path: /asset-mirror/releases/download/210809-381f09f5/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: dragonized
+    version: current
