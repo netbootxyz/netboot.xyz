@@ -4,6 +4,7 @@
 # http://www.gentoo.org
 
 :gentoo
+clear gentoo_version
 set os {{ releases.gentoo.name }}
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
@@ -13,7 +14,7 @@ menu ${os} - Current Arch [ ${os_arch} ]
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "gentoo" %}
-iseq os_arch {{ value.arch }} && item {{ value.version }}-{{ value.arch }} ${space} ${os} {{ value.version }} - {{ value.arch }} ||
+iseq os_arch {{ value.arch }} && item {{ value.version }}_{{ value.arch }} ${space} ${os} {{ value.version }} - {{ value.arch }} ||
 {% endif %}
 {% endfor %}
 choose gentoo_version || goto gentoo_exit
@@ -21,13 +22,11 @@ goto ${gentoo_version}
 
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "gentoo" %}
-:{{ value.version }}-{{ value.arch }}
+:{{ value.version }}_{{ value.arch }}
 set url ${live_endpoint}{{ value.path }}
 goto boot
-
 {% endif %}
 {% endfor %}
-
 :boot
 imgfree
 kernel ${url}vmlinuz ip=dhcp root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 {{ kernel_params }}
