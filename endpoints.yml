@@ -694,13 +694,14 @@ endpoints:
     os: zeninstall
     version: current
   gentoo:
-    path: /asset-mirror/releases/download/20210905T170549Z-21ec62e4/
+    path: /asset-mirror/releases/download/20210905T170549Z-e05d721a/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: autobuilds
+    version: 20210905T170549Z
+    arch: amd64
   lxle:
     path: /ubuntu-squash/releases/download/18.04.3-83291c4b/
     files:
