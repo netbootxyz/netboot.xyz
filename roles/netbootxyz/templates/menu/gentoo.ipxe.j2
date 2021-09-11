@@ -14,7 +14,7 @@ menu ${os} - Current Arch [ ${os_arch} ]
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "gentoo" %}
-iseq os_arch {{ value.arch }} && item {{ value.version }}_{{ value.arch }} ${space} ${os} {{ value.version }} - {{ value.arch }} ||
+iseq ${os_arch} {{ value.arch }} && item {{ value.version }}_{{ value.arch }} ${space} ${os} {{ value.version }} - {{ value.arch }} ||
 {% endif %}
 {% endfor %}
 choose gentoo_version || goto gentoo_exit
