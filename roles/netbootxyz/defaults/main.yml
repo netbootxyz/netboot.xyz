@@ -7,10 +7,18 @@ bootloader_http_enabled: true
 bootloader_https_enabled: true
 bootloaders:
   arm:
+  - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi
+    output_bin: -arm64.efi
+    type: DHCP
   - desc: EFI w/ Simple Network Protocol, attempts to boot all net devices
     ipxe_bin: snp.efi
-    output_bin: -arm64.efi
+    output_bin: -arm64-snp.efi
     type: DHCP-snp
+  - desc: EFI w/ Simple Network Protocol, only boots from device chained from
+    ipxe_bin: snponly.efi
+    output_bin: -arm64-snponly.efi
+    type: DHCP-snponly
   hybrid:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
