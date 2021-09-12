@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 #### Added
 - Support for Harvester
 - Support for MemTest86 Free
+- Adds additional options for arm64 iPXE binary downloads
 
 ## [2.0.47] - 2021-08-30
 #### Fixes
