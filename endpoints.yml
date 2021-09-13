@@ -1567,11 +1567,12 @@ endpoints:
     version: 20210905T170549Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/4.22-13309e5a/
+    path: /asset-mirror/releases/download/4.22-28906ec3/
     files:
     - vmlinuz
     - initrd.img
     - tails-amd64-4.22.iso
+    - 9990-misc-helpers.sh
     os: tails
     version: '4.22'
     arch: amd64
