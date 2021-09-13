@@ -280,14 +280,14 @@ releases:
     - code_name: v0.2.0
       name: v0.2.0
   ipfire:
-    base_dir: releases/ipfire-2.x
+    base_dir: releases/ipfire-.x
     enabled: true
     menu: linux
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core159
-      name: 2.27 Core159
+    - code_name: null
+      name: null
   k3os:
     enabled: true
     menu: linux
