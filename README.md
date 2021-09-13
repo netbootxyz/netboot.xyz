@@ -36,7 +36,9 @@
 
 | Type | Bootloader | Description |
 |------|------------|-------------|
-|DHCP-snp| [netboot.xyz-arm64.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi)| EFI w/ Simple Network Protocol, attempts to boot all net devices|
+|DHCP| [netboot.xyz-arm64.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi)| DHCP boot image file, uses built-in iPXE NIC drivers|
+|DHCP-snp| [netboot.xyz-arm64-snp.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64-snp.efi)| EFI w/ Simple Network Protocol, attempts to boot all net devices|
+|DHCP-snponly| [netboot.xyz-arm64-snponly.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64-snponly.efi)| EFI w/ Simple Network Protocol, only boots from device chained from|
 
 #### Raspberry Pi iPXE Bootloaders
 
