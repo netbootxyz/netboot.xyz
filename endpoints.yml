@@ -1567,7 +1567,7 @@ endpoints:
     version: 20210905T170549Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/4.22-b3ab3ab8/
+    path: /asset-mirror/releases/download/4.22-13309e5a/
     files:
     - vmlinuz
     - initrd.img
