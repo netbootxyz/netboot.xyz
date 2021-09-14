@@ -183,13 +183,13 @@ endpoints:
     flavor: XFCE
     kernel: manjaro-18.1.0-gui-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2021.2-4237c18c/
+    path: /debian-squash/releases/download/2021.3-023bb8a5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: rolling
+    version: '2021.3'
     flavor: xfce
     kernel: kali-xfce-squash
   pop-19.10-default-squash:
