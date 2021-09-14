@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Support for Harvester
 - Support for MemTest86 Free
 - Support for Tails
+- Support for Kali 32-bit net installer
 - Adds additional options for arm64 iPXE binary downloads
 
 ## [2.0.47] - 2021-08-30
