@@ -1576,3 +1576,11 @@ endpoints:
     os: tails
     version: '4.22'
     arch: amd64
+  hrmpf:
+    path: /asset-mirror/releases/download/20210914-75990558/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: hrmpf
+    version: '20210914'
