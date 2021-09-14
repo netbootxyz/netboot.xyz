@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - Support for Tails
 - Support for Kali 32-bit net installer
 - Support for hrmpf
+- Support for Gentoo 32-bit and arm64 installers
 - Adds additional options for arm64 iPXE binary downloads
 
 ## [2.0.47] - 2021-08-30
