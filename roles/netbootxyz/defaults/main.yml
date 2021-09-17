@@ -7,10 +7,18 @@ bootloader_http_enabled: true
 bootloader_https_enabled: true
 bootloaders:
   arm:
+  - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi
+    output_bin: -arm64.efi
+    type: DHCP
   - desc: EFI w/ Simple Network Protocol, attempts to boot all net devices
     ipxe_bin: snp.efi
-    output_bin: -arm64.efi
+    output_bin: -arm64-snp.efi
     type: DHCP-snp
+  - desc: EFI w/ Simple Network Protocol, only boots from device chained from
+    ipxe_bin: snponly.efi
+    output_bin: -arm64-snponly.efi
+    type: DHCP-snponly
   hybrid:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
@@ -84,6 +92,8 @@ generate_version_file: true
 ipxe_branch: master
 ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
+ipxe_debug_enabled: false
+ipxe_debug_options: httpcore,tls
 ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_source_dir: /usr/src/ipxe
 kernel_params: initrd=initrd.magic ${cmdline}
@@ -132,8 +142,17 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.08.01
-      name: 2021.08.01
+    - code_name: 2021.09.01
+      name: 2021.09.01
+  archlinux-32:
+    base_dir: pub/archlinux32
+    enabled: true
+    menu: linux
+    mirror: mirror.math.princeton.edu
+    name: Arch Linux 32-bit
+    versions:
+    - code_name: 2021.09.01
+      name: 2021.09.01
   blackarch:
     enabled: true
     menu: linux
@@ -163,8 +182,12 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210808.3.0
+    - code_name: 34.20210821.3.0
       name: stable
+    - code_name: 34.20210904.2.0
+      name: testing
+    - code_name: 34.20210904.1.0
+      name: next
   debian:
     archive_mirror: http://archive.debian.org
     base_dir: debian
@@ -248,6 +271,14 @@ releases:
     enabled: true
     menu: linux
     name: Gentoo
+  harvester:
+    enabled: true
+    menu: linux
+    mirror: https://releases.rancher.com/harvester
+    name: Harvester
+    versions:
+    - code_name: v0.2.0
+      name: v0.2.0
   ipfire:
     base_dir: releases/ipfire-2.x
     enabled: true
@@ -421,14 +452,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210909T065923Z
+      name: 20210909T065923Z
+    - code_name: 20210909T002651Z
+      name: 20210909T002651Z
     - code_name: 20210826T002459Z
       name: 20210826T002459Z
     - code_name: 20210812T031946Z
       name: 20210812T031946Z
-    - code_name: 20210729T002724Z
-      name: 20210729T002724Z
-    - code_name: 20210715T010227Z
-      name: 20210715T010227Z
   talos:
     enabled: true
     menu: linux
@@ -598,10 +629,11 @@ sigs_menu: false
 site_name: netboot.xyz
 time_server: 0.pool.ntp.org
 utilitiesarm:
-  placeholder:
+  memtest86:
     enabled: false
-    name: placeholder
-    type: direct
+    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86.version }}
+    type: sanboot
 utilitiesefi:
   4mlinux:
     enabled: true
@@ -639,6 +671,11 @@ utilitiesefi:
     enabled: true
     name: Kaspersky Rescue Disk
     type: ipxemenu
+  memtest86:
+    enabled: false
+    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86.version }}
+    type: sanboot
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd

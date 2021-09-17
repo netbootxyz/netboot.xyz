@@ -19,11 +19,21 @@ iseq ${ver} {{ item.code_name }} && set image_ver {{ item.image_ver }} ||
 goto boot_openbsd
 
 :boot_openbsd
+iseq ${platform} pcbios && goto pcbios_boot ||
+iseq ${platform} efi && goto efi_boot ||
+
+:pcbios_boot
 set src ${openbsd_mirror}/${openbsd_base_dir}/${ver}/${os_arch}/cd${image_ver}.iso
 imgfree
 initrd ${src}
 chain ${memdisk} iso raw
-exit
+goto openbsd_menu
+
+:efi_boot
+set src ${openbsd_mirror}/${openbsd_base_dir}/${ver}/${os_arch}/install${image_ver}.img
+imgfree
+sanboot ${src}
+goto openbsd_menu
 
 :openbsd_exit
 clear menu

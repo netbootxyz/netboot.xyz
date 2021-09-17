@@ -183,13 +183,13 @@ endpoints:
     flavor: XFCE
     kernel: manjaro-18.1.0-gui-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2021.2-4237c18c/
+    path: /debian-squash/releases/download/2021.3-023bb8a5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: rolling
+    version: '2021.3'
     flavor: xfce
     kernel: kali-xfce-squash
   pop-19.10-default-squash:
@@ -414,7 +414,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable
   clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.7.3-19-002d59cc/
+    path: /debian-squash/releases/download/2.8.0-6-002d59cc/
     files:
     - filesystem.squashfs
     - initrd
@@ -434,7 +434,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210817-hirsute-18e78f5f/
+    path: /ubuntu-squash/releases/download/20210907-hirsute-18e78f5f/
     files:
     - filesystem.squashfs
     - initrd
@@ -670,7 +670,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.13.10-2021.08.13-a3024eea/
+    path: /asset-mirror/releases/download/5.14.2-2021.09.12-a3024eea/
     files:
     - initrd
     - vmlinuz
@@ -693,14 +693,6 @@ endpoints:
     - airootfs.sfs
     os: zeninstall
     version: current
-  gentoo:
-    path: /asset-mirror/releases/download/20210822T170550Z-21ec62e4/
-    files:
-    - image.squashfs
-    - initrd
-    - vmlinuz
-    os: gentoo
-    version: autobuilds
   lxle:
     path: /ubuntu-squash/releases/download/18.04.3-83291c4b/
     files:
@@ -747,7 +739,7 @@ endpoints:
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
-    path: /manjaro-squash/releases/download/21.1.0-210817-linux513-cd9dc50d/
+    path: /manjaro-squash/releases/download/21.1.2-210904-linux513-8034501d/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -780,7 +772,7 @@ endpoints:
     os: fatdog
     version: current
   raizo:
-    path: /debian-squash/releases/download/v12.21.07.17i-0aa6f3c9/
+    path: /debian-squash/releases/download/v12.21.09.05i-0aa6f3c9/
     files:
     - filesystem.squashfs
     - initrd
@@ -957,13 +949,13 @@ endpoints:
     os: kodachi
     version: '7'
   linux-lite-5-squash:
-    path: /ubuntu-squash/releases/download/5.4-a096cd9b/
+    path: /ubuntu-squash/releases/download/5.6-75cb937c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: lite
-    version: '5'
+    version: 5.6
     kernel: linux-lite-5-squash
   fedora-33-gnome:
     path: /fedora-assets/releases/download/1.2-2e758900/
@@ -1049,7 +1041,7 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-20.04-netboot
   hirens:
-    path: /asset-mirror/releases/download/v1.0.1-937d3db8/
+    path: /asset-mirror/releases/download/v1.0.2-da645fe7/
     files:
     - bootmgr
     - bootmgr.efi
@@ -1057,9 +1049,9 @@ endpoints:
     - boot.sdi
     - boot.wim
     os: hirens
-    version: v1.0.1
+    version: v1.0.2
   vyos-rolling:
-    path: /debian-squash/releases/download/202108250814-fdd40a1c/
+    path: /debian-squash/releases/download/202109160217-fdd40a1c/
     files:
     - filesystem.squashfs
     - initrd
@@ -1140,15 +1132,15 @@ endpoints:
     os: ovirt
     version: '4.4'
   nitrux-release:
-    path: /ubuntu-squash/releases/download/2021.02.27-bb02b131/
+    path: /ubuntu-squash/releases/download/2021.09.01-e364d0a5/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: nitrux
-    version: release
+    version: 2021.09.01
   endeavouros:
-    path: /asset-mirror/releases/download/2021.04.17-fd4170a4/
+    path: /asset-mirror/releases/download/2021.08.27-d09b132d/
     files:
     - airootfs.sfs
     - initrd
@@ -1421,12 +1413,12 @@ endpoints:
     os: proxmox
     version: 7.0-1
   talos:
-    path: /asset-mirror/releases/download/0.11.4-3f5e10e5/
+    path: /asset-mirror/releases/download/0.12.1-3f5e10e5/
     files:
     - vmlinuz
     - initramfs.xz
     os: talos
-    version: 0.11.4
+    version: 0.12.1
   elementaryos-6-default-squash:
     path: /ubuntu-squash/releases/download/6-c6e63f57/
     files:
@@ -1527,3 +1519,54 @@ endpoints:
     version: bullseye
     flavor: bullseye
     kernel: voyager-bullseye-squash
+  memtest86:
+    path: /asset-mirror/releases/download/9.2-4e73affb/
+    files:
+    - memtest86-usb.img
+    os: memtest86-free
+    version: '9.2'
+  gentoo-x86:
+    path: /asset-mirror/releases/download/20210913T170555Z-6734abfd/
+    files:
+    - image.squashfs
+    - initrd
+    - vmlinuz
+    os: gentoo
+    version: 20210913T170555Z
+    arch: x86
+  gentoo-arm64:
+    path: /asset-mirror/releases/download/20210912T235133Z-079d67cf/
+    files:
+    - image.squashfs
+    - initrd
+    - vmlinuz
+    os: gentoo
+    version: 20210912T235133Z
+    arch: arm64
+  gentoo-amd64:
+    path: /asset-mirror/releases/download/20210912T170541Z-383e823f/
+    files:
+    - image.squashfs
+    - initrd
+    - vmlinuz
+    os: gentoo
+    version: 20210912T170541Z
+    arch: amd64
+  tails:
+    path: /asset-mirror/releases/download/4.22-28906ec3/
+    files:
+    - vmlinuz
+    - initrd.img
+    - tails-amd64-4.22.iso
+    - 9990-misc-helpers.sh
+    os: tails
+    version: '4.22'
+    arch: amd64
+  hrmpf:
+    path: /asset-mirror/releases/download/20210914-75990558/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: hrmpf
+    version: '20210914'

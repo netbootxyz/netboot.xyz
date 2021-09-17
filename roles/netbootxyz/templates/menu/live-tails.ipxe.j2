@@ -1,0 +1,42 @@
+#!ipxe
+
+# Tails Operating System
+# https://tails.boum.org/
+
+goto ${menu} ||
+
+:live-tails
+clear tails_version
+set os Tails
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+menu ${os}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "tails" %}
+item tails_{{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose tails_version || goto tails_exit
+goto ${tails_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "tails" %}
+:tails_{{ value.version }}
+set kernel_url ${live_endpoint}{{ value.path }}
+set iso_version {{ value.version }}
+goto boot
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live fromiso=/tails.iso config nopersistence noprompt timezone=Etc/UTC splash noautologin module=Tails slab_nomerge slub_debug=FZP mce=0 vsyscall=none page_poison=1 init_on_free=1 mds=full,nosmt {{ kernel_params }}
+initrd ${kernel_url}initrd.img
+initrd ${kernel_url}9990-misc-helpers.sh /usr/lib/live/boot/9990-misc-helpers.sh
+initrd ${kernel_url}tails-${os_arch}-${iso_version}.iso /tails.iso
+boot
+
+:tails_exit
+clear menu
+exit 0
