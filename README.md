@@ -36,7 +36,9 @@
 
 | Type | Bootloader | Description |
 |------|------------|-------------|
-|DHCP-snp| [netboot.xyz-arm64.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi)| EFI w/ Simple Network Protocol, attempts to boot all net devices|
+|DHCP| [netboot.xyz-arm64.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi)| DHCP boot image file, uses built-in iPXE NIC drivers|
+|DHCP-snp| [netboot.xyz-arm64-snp.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64-snp.efi)| EFI w/ Simple Network Protocol, attempts to boot all net devices|
+|DHCP-snponly| [netboot.xyz-arm64-snponly.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-arm64-snponly.efi)| EFI w/ Simple Network Protocol, only boots from device chained from|
 
 #### Raspberry Pi iPXE Bootloaders
 
@@ -51,15 +53,15 @@ SHA256 checksums are generated during each build of iPXE and are located [here](
 
 [netboot.xyz](http://www.netboot.xyz) is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it.  [iPXE](http://ipxe.org/) is used to provide a user friendly menu from within the BIOS that lets you easily choose the operating system you want along with any specific types of versions or bootable flags.
 
-If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing:
+If you already have iPXE up and running on the network, you can hit netboot.xyz at anytime by typing for Legacy (PCBIOS) mode:
 
-    chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn
+    chain --autofree http://boot.netboot.xyz/ipxe/netboot.xyz.lkrn
 
-or when in EFI mode:
+or when in UEFI mode:
 
-    chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.efi
+    chain --autofree http://boot.netboot.xyz/ipxe/netboot.xyz.efi
 
-This will load the appropriate netboot.xyz kernel with all of the proper options enabled.
+You can also load using HTTPS, but by default builds of iPXE do not have HTTPS support compiled in. This will load the appropriate netboot.xyz kernel with all of the proper options enabled.
 
 ### Documentation
 
@@ -136,6 +138,8 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
 | FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
 | Gentoo | https://gentoo.org | Yes | Yes |
+| Harvester | https://harvesterhci.io | Yes | No |
+| hrmpf | https://github.com/leahneukirchen/hrmpf/ | No | Yes |
 | IPFire | https://www.ipfire.org | Yes | No |
 | Kali Linux | https://www.kali.org | Yes | Yes |
 | KDE Neon | https://neon.kde.org | No | Yes |
@@ -168,6 +172,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Slackware | https://www.slackware.com | Yes | No |
 | SmartOS | https://www.joyent.com/smartos | Yes | No |
 | SparkyLinux | https://sparkylinux.org/ | No | Yes |
+| Tails | https://tails.boum.org/ | No | Yes |
 | Talos | https://www.talos.dev/ | Yes | No |
 | Tiny Core Linux | https://tinycorelinux.net | Yes | Yes |
 | Ubuntu | https://www.ubuntu.com | Yes | Yes |
@@ -193,6 +198,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Grml | http://grml.org | LiveCD |
 | Kaspersky Rescue Disk | https://support.kaspersky.com/viruses/krd18 | LiveCD |
 | Memtest | http://www.memtest.org/ | Kernel |
+| MemTest86 Free | https://www.memtest86.com | USB Img |
 | Redo Rescue | http://redorescue.com/ | LiveCD |
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
 | Rescuezilla | https://rescuezilla.com/ | LiveCD |

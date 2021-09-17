@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.48]
+#### Added
+- Support for Harvester
+- Support for Tails
+- Support for Kali 32-bit net installer
+- Support for hrmpf
+- Support for Gentoo 32-bit and arm64 installers
+- Added EFI support for OpenBSD using sanboot
+- Adds additional options for arm64 iPXE binary downloads
+
 ## [2.0.47] - 2021-08-30
 #### Fixes
 - Corrects an issue with loading 32-bit linux menu on 64-bit platforms (https://github.com/netbootxyz/netboot.xyz/issues/978)
