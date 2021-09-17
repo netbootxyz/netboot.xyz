@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.49]
+
 ## [2.0.48]
 #### Added
 - Support for Harvester
