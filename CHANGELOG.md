@@ -7,7 +7,6 @@ All notable changes to this project will be documented in this file.
 ## [2.0.48]
 #### Added
 - Support for Harvester
-- Support for MemTest86 Free
 - Support for Tails
 - Support for Kali 32-bit net installer
 - Support for hrmpf
