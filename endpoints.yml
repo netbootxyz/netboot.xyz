@@ -434,7 +434,7 @@ endpoints:
     flavor: stable
     kernel: clonezilla-ubuntu-stable
   clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210907-hirsute-18e78f5f/
+    path: /ubuntu-squash/releases/download/20210915-hirsute-18e78f5f/
     files:
     - filesystem.squashfs
     - initrd
