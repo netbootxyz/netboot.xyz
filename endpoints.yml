@@ -1413,12 +1413,12 @@ endpoints:
     os: proxmox
     version: 7.0-1
   talos:
-    path: /asset-mirror/releases/download/0.12.1-3f5e10e5/
+    path: /asset-mirror/releases/download/0.12.2-3f5e10e5/
     files:
     - vmlinuz
     - initramfs.xz
     os: talos
-    version: 0.12.1
+    version: 0.12.2
   elementaryos-6-default-squash:
     path: /ubuntu-squash/releases/download/6-c6e63f57/
     files:
