@@ -1029,17 +1029,6 @@ endpoints:
     os: fedora
     version: 33
     flavor: MATE_Compiz
-  ubuntu-20.04-netboot:
-    path: /ubuntu-squash/releases/download/20.04.3-c12768fb/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: 20.04.3
-    codename: focal
-    flavor: netboot
-    kernel: ubuntu-20.04-netboot
   hirens:
     path: /asset-mirror/releases/download/v1.0.2-da645fe7/
     files:
@@ -1161,17 +1150,6 @@ endpoints:
     - shredos
     os: shredos
     version: current
-  ubuntu-21.04-netboot:
-    path: /ubuntu-squash/releases/download/21.04-a6acbbfe/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '21.04'
-    codename: hirsute
-    flavor: netboot
-    kernel: ubuntu-21.04-netboot
   ubuntu-21.04-default-squash:
     path: /ubuntu-squash/releases/download/21.04-38565a8b/
     files:
