@@ -29,6 +29,7 @@ iseq ${ubuntu_version} focal && set install_type sub ||
 iseq ${ubuntu_version} hirsute && set install_type sub ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
 iseq ${install_type} sub && goto boot_type ||
+iseq ${os_arch} arm64 && echo "arm64 not supported on legacy network installs, please use 20.04 Subiquity and up" && sleep 5 && goto ubuntu ||
 goto mirrorcfg
 
 :older_release
@@ -42,11 +43,8 @@ goto boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
-iseq ${os_arch} arm64 && set ubuntu_mirror {{ releases.ubuntu.ports_mirror }} ||
-iseq ${os_arch} amd64 && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/ ||
-iseq ${os_arch} amd64 && iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/legacy-images/netboot/ ||
-iseq ${os_arch} arm64 && set dir {{ releases.ubuntu.ports_dir }}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/ ||
-iseq ${os_arch} arm64 && iseq ${ubuntu_version} focal && set dir {{ releases.ubuntu.ports_dir }}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/legacy-images/netboot/ ||
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/
+iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/legacy-images/netboot/ ||
 goto boot_type
 
 :boot_type

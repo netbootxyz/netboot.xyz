@@ -593,8 +593,6 @@ releases:
     menu: linux
     mirror: http://archive.ubuntu.com
     name: Ubuntu
-    ports_dir: ubuntu-ports
-    ports_mirror: http://ports.ubuntu.com
     versions:
     - code_name: hirsute
       name: 21.04 Hirsute Hippo

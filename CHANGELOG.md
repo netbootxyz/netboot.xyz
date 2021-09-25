@@ -5,8 +5,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.49]
+#### Added
+- Support for Ubuntu 20.04 Subiquity and up on arm64
 
-## [2.0.48]
+## [2.0.48] 2021-09-17
 #### Added
 - Support for Harvester
 - Support for Tails
