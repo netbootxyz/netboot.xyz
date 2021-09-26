@@ -1597,3 +1597,12 @@ endpoints:
     os: systemrescue
     version: 8.04
     arch: i686
+  systemrescue-amd64:
+    path: /asset-mirror/releases/download/8.04-c7a7904e/
+    files:
+    - airootfs.sfs
+    - initrd
+    - vmlinuz
+    os: systemrescue
+    version: 8.04
+    arch: amd64
