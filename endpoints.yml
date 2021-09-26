@@ -1596,3 +1596,12 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-21.04-arm64
     arch: arm64
+  systemrescue-i686:
+    path: /asset-mirror/releases/download/8.04-d84af11a/
+    files:
+    - airootfs.sfs
+    - initrd
+    - vmlinuz
+    os: systemrescue
+    version: 8.04
+    arch: i686
