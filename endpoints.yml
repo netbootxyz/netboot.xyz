@@ -637,14 +637,6 @@ endpoints:
     - vmlinuz
     os: rescatux
     version: current
-  systemrescue:
-    path: /asset-mirror/releases/download/8.04-29e43bb5/
-    files:
-    - initrd
-    - vmlinuz
-    - airootfs.sfs
-    os: systemrescue
-    version: current
   caine:
     path: /ubuntu-squash/releases/download/11.0-46b7a6aa/
     files:
