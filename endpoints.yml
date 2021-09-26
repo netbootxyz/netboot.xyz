@@ -1613,3 +1613,10 @@ endpoints:
     os: shredos
     version: v2020.02.008_i686-0.30.001
     arch: i686
+  shredos-x86_64:
+    path: /asset-mirror/releases/download/v2020.05.012_x86-64_0.31-72b45dbf/
+    files:
+    - shredos
+    os: shredos
+    version: v2020.05.012_x86-64_0.31
+    arch: x86_64
