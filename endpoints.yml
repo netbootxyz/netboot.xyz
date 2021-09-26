@@ -1606,3 +1606,9 @@ endpoints:
     os: systemrescue
     version: 8.04
     arch: amd64
+  shredos-i686:
+    path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-e4203dfb/
+    files:
+    - shredos
+    os: shredos
+    version: v2020.02.008_i686-0.30.001
