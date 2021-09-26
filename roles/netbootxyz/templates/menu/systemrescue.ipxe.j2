@@ -4,12 +4,15 @@ goto ${menu} ||
 
 :live_menu
 set os System Rescue
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} i386 && set os_arch i686 ||
 menu ${os}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "systemrescue" %}
-item {{ value.version }} ${space} ${os} {{ value.version }}
+iseq ${os_arch} {{ value.arch }} && item {{ value.version }}_${os_arch} ${space} ${os} {{ value.version }} ||
 {% endif %}
 {% endfor %}
 choose live_version || goto live_exit
@@ -17,7 +20,7 @@ goto ${live_version}
 
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "systemrescue" %}
-:{{ value.version }}
+:{{ value.version }}_{{ value.arch }}
 set url ${live_endpoint}{{ value.path }}
 goto boot
 

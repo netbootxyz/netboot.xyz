@@ -704,7 +704,7 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
-utilitiespcbios:
+utilitiespcbios64:
   4mlinux:
     enabled: true
     name: 4MLinux
@@ -804,5 +804,16 @@ utilitiespcbios:
     type: memdisk
     util_path: http://mirror.sysadminguide.net/ubcd/ubcd538.iso
     version: '538'
+utilitiespcbios32:
+  memtest:
+    enabled: true
+    name: Memtest
+    type: memtest
+    util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
+    version: 5.01.0
+  systemrescue:
+    enabled: true
+    name: System Rescue CD
+    type: ipxemenu
 wimboot_location: http://${boot_domain}/wimboot
 wimboot_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot
