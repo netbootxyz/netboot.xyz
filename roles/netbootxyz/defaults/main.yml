@@ -153,6 +153,15 @@ releases:
     versions:
     - code_name: 2021.09.01
       name: 2021.09.01
+  archlinux_64:
+    base_dir: archlinux
+    enabled: true
+    menu: linux
+    mirror: mirrors.kernel.org
+    name: Arch Linux 64-bit
+    versions:
+    - code_name: 2021.09.01
+      name: 2021.09.01
   blackarch:
     enabled: true
     menu: linux
