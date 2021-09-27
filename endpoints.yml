@@ -1583,7 +1583,7 @@ endpoints:
     kernel: ubuntu-netboot-21.04-arm64
     arch: arm64
   systemrescue-i686:
-    path: /asset-mirror/releases/download/8.04-d84af11a/
+    path: /asset-mirror/releases/download/8.04-c6f1c9ac/
     files:
     - airootfs.sfs
     - initrd
