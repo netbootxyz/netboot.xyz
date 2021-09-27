@@ -153,6 +153,15 @@ releases:
     versions:
     - code_name: 2021.09.01
       name: 2021.09.01
+  archlinux_32:
+    base_dir: pub/archlinux32
+    enabled: true
+    menu: linux
+    mirror: mirror.math.princeton.edu
+    name: Arch Linux 32-bit
+    versions:
+    - code_name: 2021.09.01
+      name: 2021.09.01
   archlinux_64:
     base_dir: archlinux
     enabled: true
