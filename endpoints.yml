@@ -1614,3 +1614,12 @@ endpoints:
     os: shredos
     version: v2020.05.012_x86-64_0.31
     arch: x86_64
+  archlinux-32:
+    path: /asset-mirror/releases/download/2021.09.01-5fcd7e41/
+    files:
+    - airootfs.sfs
+    - initramfs-linux.img
+    - vmlinuz-linux
+    os: archlinux
+    version: 2021.09.01
+    arch: i686
