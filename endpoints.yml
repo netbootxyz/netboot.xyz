@@ -1592,7 +1592,7 @@ endpoints:
     version: 8.04
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/8.04-c7a7904e/
+    path: /asset-mirror/releases/download/8.04-df45fd6f/
     files:
     - airootfs.sfs
     - initrd
