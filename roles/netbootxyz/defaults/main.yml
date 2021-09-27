@@ -149,7 +149,7 @@ releases:
     enabled: true
     menu: linux
     mirror: mirrors.kernel.org
-    name: Arch Linux 64-bit
+    name: Arch Linux
     versions:
     - code_name: 2021.09.01
       name: 2021.09.01
