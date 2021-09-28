@@ -22,7 +22,7 @@ set ipparam BOOTIF=${netX/mac} ip=${ip}::${gateway}:${netmask}
 goto ${menu} ||
 
 :archlinux
-set os {{ releases.archlinux.name }} - ${os_arch}
+set os {{ releases.archlinux.name }}
 clear arch_version
 menu ${os} - ${arch}
 item --gap Latest Releases
