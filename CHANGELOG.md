@@ -7,6 +7,18 @@ All notable changes to this project will be documented in this file.
 ## [2.0.49]
 #### Added
 - Support for Ubuntu 20.04 Subiquity and up on arm64
+- Added Archlinux 32-bit
+- Added Fedora 35 Beta
+- Added Ubuntu 21.10 Impish Indri Beta
+- Added shredos for 32-bit
+
+#### Fixes
+- Corrected architecture naming on k3os
+
+#### Changed
+- Split pcbios utilities menu into 32-bit and 64-bit options
+- utilitiespcbios is now utilitiespcbios64 and utilitiespcbios32 for overrides
+- Renamed ubuntu netboot assets to align better with existing branches
 
 ## [2.0.48] 2021-09-17
 #### Added
