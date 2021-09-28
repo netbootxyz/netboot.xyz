@@ -8,9 +8,10 @@ All notable changes to this project will be documented in this file.
 #### Added
 - Support for Ubuntu 20.04 Subiquity and up on arm64
 - Added Archlinux 32-bit
+- Added shredos for 32-bit
+- Added systemrescue for 32-bit
 - Added Fedora 35 Beta
 - Added Ubuntu 21.10 Impish Indri Beta
-- Added shredos for 32-bit
 
 #### Fixes
 - Corrected architecture naming on k3os
