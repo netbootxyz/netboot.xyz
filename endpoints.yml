@@ -1623,3 +1623,13 @@ endpoints:
     os: archlinux
     version: 2021.09.01
     arch: i686
+  q4os-4.6-default-squash:
+    path: /debian-squash/releases/download/4.6-2ab8e106/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Q4OS
+    version: 4.6
+    flavor: trinity
+    kernel: q4os-4.6-default-squash
