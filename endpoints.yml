@@ -1633,3 +1633,11 @@ endpoints:
     version: 4.6
     flavor: trinity
     kernel: q4os-4.6-default-squash
+  q4os-4.6-plasma-squash:
+    path: /debian-squash/releases/download/4.6-f4c09765/
+    files:
+    - filesystem.squashfs
+    os: Q4OS
+    version: 4.6
+    flavor: plasma
+    kernel: q4os-4.6-default-squash
