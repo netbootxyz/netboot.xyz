@@ -1634,11 +1634,11 @@ endpoints:
     flavor: trinity
     kernel: q4os-4.6-default-squash
   q4os-4.6-plasma-squash:
-    path: /debian-squash/releases/download/4.6-f4c09765/
+    path: /debian-squash/releases/download/4.6-f1c7b2cc/
     files:
     - filesystem.squashfs
     os: Q4OS
-    version: 4.6
+    version: '4.6'
     flavor: plasma
     kernel: q4os-4.6-default-squash
   ubuntu-netboot-21.10-amd64:
