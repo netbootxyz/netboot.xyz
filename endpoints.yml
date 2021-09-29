@@ -1559,7 +1559,7 @@ endpoints:
     kernel: ubuntu-netboot-20.04-amd64
     arch: amd64
   ubuntu-netboot-21.04-amd64:
-    path: /ubuntu-squash/releases/download/21.04-15b70173/
+    path: /ubuntu-squash/releases/download/21.04-bc3638f3/
     files:
     - filesystem.squashfs
     - initrd
@@ -1568,7 +1568,7 @@ endpoints:
     version: 21.04
     codename: hirsute
     flavor: netboot
-    kernel: ubuntu-21.04-netboot
+    kernel: ubuntu-netboot-21.04-amd64
     arch: amd64
   ubuntu-netboot-21.04-arm64:
     path: /ubuntu-squash/releases/download/21.04-15aa2439/
