@@ -586,7 +586,7 @@ releases:
     name: Ubuntu
     versions:
     - code_name: impish
-      name: 21.10 Impish Indri    
+      name: 21.10 Impish Indri
     - code_name: hirsute
       name: 21.04 Hirsute Hippo
     - code_name: focal
