@@ -1642,7 +1642,7 @@ endpoints:
     flavor: plasma
     kernel: q4os-4.6-default-squash
   ubuntu-netboot-21.10-amd64:
-    path: /ubuntu-squash/releases/download/21.10-0d2a7fb9/
+    path: /ubuntu-squash/releases/download/21.10-565ba3ef/
     files:
     - filesystem.squashfs
     - initrd
@@ -1651,5 +1651,5 @@ endpoints:
     version: '21.10'
     codename: impish
     flavor: netboot
-    kernel: ubuntu-21.10-netboot-amd64
+    kernel: ubuntu-netboot-21.10-amd64
     arch: amd64
