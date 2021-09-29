@@ -32,7 +32,7 @@ generate_local_vars: true
 #    enabled: false
 
 # set utilities_overrides from standard netboot.xyz defaults for PC BIOS utilities
-#utilitiespcbios_overrides:
+#utilitiespcbios64_overrides:
 #  supergrub:
 #    enabled: false
 

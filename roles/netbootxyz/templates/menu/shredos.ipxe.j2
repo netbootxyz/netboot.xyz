@@ -3,8 +3,10 @@
 goto ${menu} ||
 
 :shredos
-menu ShredOS {{ endpoints.shredos.version }} 
-set kernel_url ${live_endpoint}{{ endpoints.shredos.path }}shredos
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch x86_64 ||
+iseq ${os_arch} i386 && set os_arch i686 ||
+menu ShredOS
 item --gap THIS SOFTWARE DESTROYS DATA
 item --gap EVERY BOOT OPTION IS DESTRUCTIVE
 item --gap DO NOT PROCEED IF YOU DO NOT KNOW WHAT THIS IS
@@ -15,7 +17,14 @@ goto ${menu}
 
 :shredos_options
 clear menu
-menu ShredOS {{ endpoints.shredos.version }}
+clear shredos_version
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "shredos" %}
+iseq ${os_arch} {{ value.arch }} && set kernel_url ${live_endpoint}{{ value.path }}shredos ||
+set shredos_version {{ value.version }}
+{% endif %}
+{% endfor %}
+menu ShredOS ${shredos_version}
 item --gap Choose a wipe method:
 item dodshort ${space} Wipe all disks with the short DoD 5220.22-M method
 item dod522022m ${space} Wipe all disks with the DoD 5220.22-M method

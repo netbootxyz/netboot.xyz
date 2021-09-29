@@ -1,0 +1,97 @@
+#!ipxe
+
+:utils_menu
+menu Utilities
+item --gap Utilities:
+{% for key, value in utilitiespcbios32.items() | sort(attribute='1.name') %}
+{% if value.enabled %}
+item {{ key }} ${space} {{ value.name }}
+{% endif %}
+{% endfor %}
+item --gap netboot.xyz tools:
+item cmdline ${space} Kernel cmdline params: [${cmdline}]
+item nbxyz_custom_url ${space} Set custom menu [url: ${custom_url}]
+item nbxyz_custom_github ${space} Set Github username [user: ${github_user}]
+item testdistro ${space} Test Distribution ISO
+item nbxyz ${space} netboot.xyz endpoints
+choose --default ${menu} menu || goto utils_exit
+echo ${cls}
+goto ${menu} ||
+chain ${menu}.ipxe || goto utils_exit
+goto utils_exit
+
+{% for key, value in utilitiespcbios32.items() | sort %}
+{% if value.enabled | bool and value.type == "memdisk" %}
+:{{ key }}
+set util_path {{ value.util_path }}
+set util_file {{ value.util_path | basename }}
+set util_version {{ value.version }}
+goto boot_{{ value.type }}
+{% endif %}
+{% endfor %}
+
+{% for key, value in utilitiespcbios32.items() | sort %}
+{% if value.enabled | bool and value.type == "direct" %}
+:{{ key }}
+imgfree
+kernel {{ value.kernel }}
+initrd {{ value.initrd }}
+boot
+goto utils_exit
+{% endif %}
+{% endfor %}
+
+:boot_memdisk
+imgfree
+kernel ${memdisk} iso raw
+initrd --name ${util_file} ${util_path}
+echo
+echo MD5sums:
+md5sum memdisk ${util_file}
+boot
+goto utils_exit
+
+:cmdline
+echo If you want to change the default kernel command line parameters
+echo you can override the defaults here.
+echo
+echo Currently set to: ${cmdline}
+echo
+echo -n Enter cmdline parameters: ${} && read cmdline
+goto utils_menu
+
+:memtest
+imgfree
+kernel {{ utilitiespcbios32.memtest.util_path }}
+boot
+goto utils_menu
+
+:nbxyz_custom_url
+echo If you have a customized menu you would like to load into netboot.xyz
+echo set the base path url to your custom ipxe files here. 
+echo It will look for custom.ipxe in that path as the entry point.
+echo
+echo -n Please enter your custom http url here: ${} && read custom_url
+goto utils_menu
+
+:nbxyz_custom_github
+echo Make sure you have a fork of https://github.com/netbootxyz/netboot.xyz-custom.
+echo You can then customize your fork as needed and set up your own custom options.
+echo Once your username is set, a custom option will appear on the main menu.
+echo
+echo -n Please enter your Github username: ${} && read github_user
+goto utils_menu
+
+:testdistro
+echo This option will allow you to test booting an ISO using memdisk. Please
+echo specify the URL of the ISO you want to test and it will automatically
+echo attempt to load the ISO using memdisk.
+echo -n URL: ${} && read distro_iso
+kernel ${memdisk} iso raw
+initrd ${distro_iso}
+boot
+goto utils_menu
+
+:utils_exit
+clear menu
+exit 0

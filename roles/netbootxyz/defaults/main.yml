@@ -144,15 +144,6 @@ releases:
     versions:
     - code_name: 2021.09.01
       name: 2021.09.01
-  archlinux-32:
-    base_dir: pub/archlinux32
-    enabled: true
-    menu: linux
-    mirror: mirror.math.princeton.edu
-    name: Arch Linux 32-bit
-    versions:
-    - code_name: 2021.09.01
-      name: 2021.09.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +173,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210821.3.0
+    - code_name: 34.20210904.3.0
       name: stable
-    - code_name: 34.20210904.2.0
+    - code_name: 34.20210919.2.0
       name: testing
-    - code_name: 34.20210904.1.0
+    - code_name: 35.20210924.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -232,12 +223,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 35_Beta
+      name: 35_Beta
     - code_name: 34
       name: 34
     - code_name: 33
       name: 33
-    - code_name: 32
-      name: 32
   flatcar:
     enabled: true
     menu: linux
@@ -452,14 +443,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20210923T003059Z
+      name: 20210923T003059Z
     - code_name: 20210909T065923Z
       name: 20210909T065923Z
     - code_name: 20210909T002651Z
       name: 20210909T002651Z
     - code_name: 20210826T002459Z
       name: 20210826T002459Z
-    - code_name: 20210812T031946Z
-      name: 20210812T031946Z
   talos:
     enabled: true
     menu: linux
@@ -594,6 +585,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: impish
+      name: 21.10 Impish Indri
     - code_name: hirsute
       name: 21.04 Hirsute Hippo
     - code_name: focal
@@ -704,7 +697,22 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
-utilitiespcbios:
+utilitiespcbios32:
+  memtest:
+    enabled: true
+    name: Memtest
+    type: memtest
+    util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
+    version: 5.01.0
+  shredos:
+    enabled: true
+    name: ShredOS
+    type: ipxemenu
+  systemrescue:
+    enabled: true
+    name: System Rescue CD
+    type: ipxemenu
+utilitiespcbios64:
   4mlinux:
     enabled: true
     name: 4MLinux
