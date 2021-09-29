@@ -9,6 +9,7 @@ goto ${menu}
 set os Ubuntu
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
 clear ubuntu_version
 clear install_type
 clear older_release
@@ -26,8 +27,10 @@ choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
 iseq ${ubuntu_version} focal && set install_type sub ||
 iseq ${ubuntu_version} hirsute && set install_type sub ||
+iseq ${ubuntu_version} impish && set install_type sub ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
 iseq ${install_type} sub && goto boot_type ||
+iseq ${os_arch} arm64 && echo "arm64 not supported on legacy network installs, please use 20.04 Subiquity and up" && sleep 5 && goto ubuntu ||
 goto mirrorcfg
 
 :older_release
@@ -75,11 +78,11 @@ goto deb_install
 
 :deb_install
 iseq ${install_type} deb && goto deb_boot ||
-iseq ${install_type} sub && goto ${ubuntu_version} ||
+iseq ${install_type} sub && goto ${ubuntu_version}_${os_arch} ||
 
 :deb_boot
 echo Loading Ubuntu PXE netboot installer
-set dir ${dir}${menu}-installer/${os_arch}
+set dir ${dir}ubuntu-installer/${os_arch}
 imgfree
 kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} {{ kernel_params }}
 initrd ${ubuntu_mirror}/${dir}/initrd.gz
@@ -91,7 +94,7 @@ boot
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "ubuntu" and 'netboot' in key %}
 {% set kernel_name = value.kernel %}
-:{{ value.codename }}
+:{{ value.codename }}_{{ value.arch }}
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
 set kernel_url ${live_endpoint}{{ value.path }}
@@ -105,7 +108,11 @@ goto sub_boot
 
 :sub_boot
 imgfree
-isset ${dhcp-server} && set netboot_params ip=dhcp url=http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${os_arch}.iso || set netboot_params
+iseq ${os_arch} amd64 && set ubuntu_iso_url http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${os_arch}.iso ||
+iseq ${os_arch} arm64 && set ubuntu_iso_url http://cdimage.ubuntu.com/releases/${version_number}/release/ubuntu-${version_number}-live-server-${os_arch}.iso ||
+iseq ${codename} impish && iseq ${os_arch} amd64 && set ubuntu_iso_url http://releases.ubuntu.com/impish/ubuntu-21.10-beta-live-server-amd64.iso ||
+iseq ${codename} impish && iseq ${os_arch} arm64 && set ubuntu_iso_url https://cdimage.ubuntu.com/releases/21.10/beta/ubuntu-21.10-beta-live-server-arm64.iso ||
+isset ${dhcp-server} && set netboot_params ip=dhcp url=${ubuntu_iso_url} || set netboot_params
 echo Loading Ubuntu Subiquity Network Installer...
 kernel ${kernel_url}vmlinuz root=/dev/ram0 ramdisk_size=1500000 ${netboot_params} ${install_params} {{ kernel_params }}
 initrd ${kernel_url}initrd

@@ -3,7 +3,7 @@
 :utils_menu
 menu Utilities
 item --gap Utilities:
-{% for key, value in utilitiespcbios.items() | sort(attribute='1.name') %}
+{% for key, value in utilitiespcbios64.items() | sort(attribute='1.name') %}
 {% if value.enabled %}
 item {{ key }} ${space} {{ value.name }}
 {% endif %}
@@ -20,7 +20,7 @@ goto ${menu} ||
 chain ${menu}.ipxe || goto utils_exit
 goto utils_exit
 
-{% for key, value in utilitiespcbios.items() | sort %}
+{% for key, value in utilitiespcbios64.items() | sort %}
 {% if value.enabled | bool and value.type == "memdisk" %}
 :{{ key }}
 set util_path {{ value.util_path }}
@@ -30,7 +30,7 @@ goto boot_{{ value.type }}
 {% endif %}
 {% endfor %}
 
-{% for key, value in utilitiespcbios.items() | sort %}
+{% for key, value in utilitiespcbios64.items() | sort %}
 {% if value.enabled | bool and value.type == "direct" %}
 :{{ key }}
 imgfree
@@ -62,7 +62,7 @@ goto utils_menu
 
 :memtest
 imgfree
-kernel {{ utilitiespcbios.memtest.util_path }}
+kernel {{ utilitiespcbios64.memtest.util_path }}
 boot
 goto utils_menu
 
