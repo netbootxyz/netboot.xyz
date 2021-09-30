@@ -23,38 +23,45 @@ elif [[ "${TYPE}" == "rc" ]]; then
 elif [[ "${TYPE}" == "release" ]]; then
   BOOT_VERSION=$(cat version.txt)
   BOOT_DOMAIN="${PROD_URL}/${BOOT_VERSION}"
+elif [[ "${TYPE}" == "rolling" ]]; then
+  HARD_RELEASE="2.x"
+  PROD_URL="boot.netboot.xyz"
 fi
-sed -i \
-  "/^#boot_version/c\boot_version: \"${BOOT_VERSION}\"" \
-  user_overrides.yml
-sed -i \
-  "/^#boot_domain/c\boot_domain: ${BOOT_DOMAIN}" \
-  user_overrides.yml
 
-# Build release
-docker build -t localbuild -f ${DOCKER_FILE} .
-docker run --rm -i -v $(pwd):/buildout localbuild
+# build release files 
+if ! [[ "${TYPE}" == "rolling" ]]; then
+  sed -i \
+    "/^#boot_version/c\boot_version: \"${BOOT_VERSION}\"" \
+    user_overrides.yml
+  sed -i \
+    "/^#boot_domain/c\boot_domain: ${BOOT_DOMAIN}" \
+    user_overrides.yml
 
-# Generate folder outputs
-mkdir -p s3out
-mkdir -p s3outver
-cp -r buildout/* s3out/
-cp buildout/version.ipxe s3outver/
-mkdir -p githubout
-mv buildout/ipxe/* githubout/
-cd buildout
-rm -Rf ipxe
-tar -czf menus.tar.gz *
-mv menus.tar.gz ../githubout
-cd ..
-if [[ "${TYPE}" == "dev" ]]; then
-  cp githubout/menus.tar.gz s3out/
+  # Build release
+  docker build -t localbuild -f ${DOCKER_FILE} .
+  docker run --rm -i -v $(pwd):/buildout localbuild
+
+  # Generate folder outputs
+  mkdir -p s3out
+  mkdir -p s3outver
+  cp -r buildout/* s3out/
+  cp buildout/version.ipxe s3outver/
+  mkdir -p githubout
+  mv buildout/ipxe/* githubout/
+  cd buildout
+  rm -Rf ipxe
+  tar -czf menus.tar.gz *
+  mv menus.tar.gz ../githubout
+  cd ..
+  if [[ "${TYPE}" == "dev" ]]; then
+    cp githubout/menus.tar.gz s3out/
+  fi
 fi
 
 # Latest style endpoints for RC and Live
-if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rc" ]]; then
+if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rolling" ]] || [[ "${TYPE}" == "rc" ]]; then
   rm -Rf buildout/
-  if [[ "${TYPE}" == "release" ]]; then
+  if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rolling" ]]; then
     sed -i \
       -e "/^boot_version/c\boot_version: \"${HARD_RELEASE}\"" \
       -e "/^boot_domain/c\boot_domain: ${PROD_URL}" \
