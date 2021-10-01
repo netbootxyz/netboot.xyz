@@ -67,4 +67,4 @@ jobs:
     - name: Notify Discord on completion
       if: success()
       run: |
-        ./script/message live-push
+        ./script/message rolling-push

@@ -9,6 +9,8 @@ elif [ "${TYPE}" == "rc-push" ]; then
   BOOT_URL="https://staging.boot.netboot.xyz/$(cat version.txt)-RC/index.html"
 elif [ "${TYPE}" == "live-push" ]; then
   BOOT_URL="https://boot.netboot.xyz/$(cat version.txt)/index.html"
+elif [ "${TYPE}" == "rolling-push" ]; then
+  BOOT_URL="https://boot.netboot.xyz/index.html"
 fi
 
 # send status to discord
