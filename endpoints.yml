@@ -1021,16 +1021,6 @@ endpoints:
     os: fedora
     version: 33
     flavor: MATE_Compiz
-  hirens:
-    path: /asset-mirror/releases/download/v1.0.2-da645fe7/
-    files:
-    - bootmgr
-    - bootmgr.efi
-    - BCD
-    - boot.sdi
-    - boot.wim
-    os: hirens
-    version: v1.0.2
   vyos-rolling:
     path: /debian-squash/releases/download/202109240217-fdd40a1c/
     files:
