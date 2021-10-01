@@ -69,7 +69,6 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rolling" ]] || [[ "${TYPE}" 
     docker build -t localbuild -f ${DOCKER_FILE} .
     docker run --rm -i -v $(pwd):/buildout localbuild
   fi
-  echo "debug, end rolling.."
   if [[ "${TYPE}" == "rc" ]]; then
     sed -i \
       -e "/^boot_version/c\boot_version: \"${HARD_RC}\"" \
@@ -78,10 +77,6 @@ if [[ "${TYPE}" == "release" ]] || [[ "${TYPE}" == "rolling" ]] || [[ "${TYPE}" 
     docker build -t localbuild -f ${DOCKER_FILE} .
     docker run --rm -i -v $(pwd):/buildout localbuild
   fi
-  echo "creating s3out-latest"
   mkdir -p s3out-latest
-  echo "copy files"
   cp -r buildout/* s3out-latest/
-  ls -la
-  pwd
 fi
