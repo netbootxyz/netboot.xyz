@@ -37,7 +37,9 @@ jobs:
       run: |
         wget https://raw.githubusercontent.com/netbootxyz/netboot.xyz/development/endpoints.yml -O endpoints.yml
         wget https://raw.githubusercontent.com/netbootxyz/netboot.xyz/development/roles/netbootxyz/defaults/main.yml -O roles/netbootxyz/defaults/main.yml
-
+        wget https://raw.githubusercontent.com/netbootxyz/netboot.xyz/development/script/build_release -O script/build_release
+        chmod +x script/build_release
+        
     - name: Build release
       run: |
         ./script/build_release rolling
