@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.50]
+#### Changed
+- Proper rolling for boot.netboot.xyz implemented, endpoints.yml and defaults
+  are now pushed to boot.netboot.xyz upon update in development branch to
+  ensure version updates can be consumed as identified. Allows for new versions
+  to be available before a release.
 
 ## [2.0.49] - 2021-09-29
 #### Added
