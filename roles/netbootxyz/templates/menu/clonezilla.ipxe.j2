@@ -10,7 +10,7 @@ set os Clonezilla
 menu ${os}
 item --gap ${os} Versions
 item debian ${space} ${os} Debian Based
-item ubuntu ${space} ${os} Ubuntu Based
+iseq ${os_arch} amd64 && item ubuntu ${space} ${os} Ubuntu Based ||
 choose live_version || goto live_exit
 menu ${os} ${live_version} - ${os_arch}
 item --gap ${os} Flavors
