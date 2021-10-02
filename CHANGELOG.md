@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.50]
+#### Added
+- Added Clonezilla 32-bit
+
 #### Changed
 - Proper rolling for boot.netboot.xyz implemented, endpoints.yml and defaults
   are now pushed to boot.netboot.xyz upon update in development branch to
