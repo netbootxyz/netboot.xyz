@@ -1649,3 +1649,14 @@ endpoints:
     version: 2.8.0-9
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
+  clonezilla-debian-testing-i686:
+    path: /debian-squash/releases/download/2.8.0-9-73ac4050/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 2.8.0-9
+    flavor: testing
+    kernel: clonezilla-debian-testing-i686
+    arch: i686
