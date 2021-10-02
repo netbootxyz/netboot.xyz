@@ -1658,3 +1658,14 @@ endpoints:
     flavor: stable
     kernel: clonezilla-debian-stable-i686
     arch: i686
+  clonezilla-debian-stable-amd64:
+    path: /debian-squash/releases/download/2.7.3-19-a90fc92f/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 2.7.3-19
+    flavor: stable
+    kernel: clonezilla-debian-stable-amd64
+    arch: amd64
