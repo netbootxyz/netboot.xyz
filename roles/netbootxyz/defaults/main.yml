@@ -698,6 +698,10 @@ utilitiesefi:
     name: System Rescue CD
     type: ipxemenu
 utilitiespcbios32:
+  clonezilla:
+    enabled: true
+    name: Clonezilla
+    type: ipxemenu
   memtest:
     enabled: true
     name: Memtest
