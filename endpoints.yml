@@ -403,46 +403,6 @@ endpoints:
     os: feren
     version: classic
     kernel: feren-classic-squash
-  clonezilla-debian-stable:
-    path: /debian-squash/releases/download/2.7.3-19-fcb50247/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: debian
-    flavor: stable
-    kernel: clonezilla-debian-stable
-  clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.8.0-8-002d59cc/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: debian
-    flavor: testing
-    kernel: clonezilla-debian-testing
-  clonezilla-ubuntu-stable:
-    path: /ubuntu-squash/releases/download/20210817-hirsute-2a768141/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: ubuntu
-    flavor: stable
-    kernel: clonezilla-ubuntu-stable
-  clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210930-hirsute-18e78f5f/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: ubuntu
-    flavor: testing
-    kernel: clonezilla-ubuntu-testing
   breakin:
     path: /asset-mirror/releases/download/4.26.1-8ca03193/
     files:
