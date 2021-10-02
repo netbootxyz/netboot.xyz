@@ -1630,7 +1630,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20210817-hirsute-27f15a86/
+    path: /ubuntu-squash/releases/download/20210817-hirsute-86411ada/
     files:
     - filesystem.squashfs
     - initrd
@@ -1639,6 +1639,7 @@ endpoints:
     version: 20210817-hirsute
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
+    arch: amd64
   clonezilla-debian-testing-amd64:
     path: /debian-squash/releases/download/2.8.0-9-5fb1a15b/
     files:
