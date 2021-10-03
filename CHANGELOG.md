@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.51]
+#### Added
+- Fedora CoreOS - aarch64 support
 
 ## [2.0.50] - 2021-10-03
 #### Added
