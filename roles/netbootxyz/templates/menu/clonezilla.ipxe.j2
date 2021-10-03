@@ -3,20 +3,23 @@
 goto ${menu} ||
 
 :live_menu
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} i386 && set os_arch i686 ||
 set os Clonezilla
 menu ${os}
 item --gap ${os} Versions
 item debian ${space} ${os} Debian Based
-item ubuntu ${space} ${os} Ubuntu Based
+iseq ${os_arch} amd64 && item ubuntu ${space} ${os} Ubuntu Based ||
 choose live_version || goto live_exit
-menu ${os} ${live_version}
+menu ${os} ${live_version} - ${os_arch}
 item --gap ${os} Flavors
 goto ${live_version}
 
 :debian
 {% for key, value in endpoints.items() %}
-{% if value.os == "clonezilla" and value.version == "debian" %}
-item {{ value.path }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | title }}
+{% if value.os == "clonezilla" and "debian" in key %}
+iseq ${os_arch} {{ value.arch }} && item {{ value.path }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | title }} ||
 {% endif %}
 {% endfor %}
 choose path || goto live_menu
@@ -24,8 +27,8 @@ goto clonezilla-boot
 
 :ubuntu
 {% for key, value in endpoints.items() %}
-{% if value.os == "clonezilla" and value.version == "ubuntu" %}
-item {{ value.path }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | title }}
+{% if value.os == "clonezilla" and "ubuntu" in key %}
+iseq ${os_arch} {{ value.arch }} && item {{ value.path }} ${space} {{ value.os | title }} {{ value.version | title }} {{ value.flavor | title }} ||
 {% endif %}
 {% endfor %}
 choose path || goto live_menu

@@ -4,7 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.49]
+## [2.0.50]
+#### Added
+- Added Clonezilla 32-bit
+
+#### Changed
+- Proper rolling for boot.netboot.xyz implemented, endpoints.yml and defaults
+  are now pushed to boot.netboot.xyz upon update in development branch to
+  ensure version updates can be consumed as identified. Allows for new versions
+  to be available before a release.
+
+## [2.0.49] - 2021-09-29
 #### Added
 - Support for Ubuntu 20.04 Subiquity and up on arm64
 - Added Archlinux 32-bit
@@ -21,7 +31,7 @@ All notable changes to this project will be documented in this file.
 - utilitiespcbios is now utilitiespcbios64 and utilitiespcbios32 for overrides
 - Renamed ubuntu netboot assets to align better with existing branches
 
-## [2.0.48] 2021-09-17
+## [2.0.48] - 2021-09-17
 #### Added
 - Support for Harvester
 - Support for Tails
