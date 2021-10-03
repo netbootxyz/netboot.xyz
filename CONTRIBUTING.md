@@ -34,13 +34,22 @@ distribution.
 
 Ask for the distribution to provide a way to load installer kernels from
 their mirror directly or provide key files from their release ISO somewhere that
-is accessible over HTTP.  This usually might be a `vmlinuz`, an `initrd`, and
+is accessible over HTTP. This usually might be a `vmlinuz`, an `initrd`, and
 potentially a `rootfs` and could be extracted and hosted on the mirror when the
-release is generated.  Providing these allows not only netboot.xyz to load the
+release is generated. Providing these allows not only netboot.xyz to load the
 installer from a supported and trusted location but also users to do the same
-from their own PXE servers.  In this day and age as physical media is less
+from their own PXE servers. In this day and age as physical media is less
 necessary, having the option to pull files as needed is much more efficient
 especially when you may have limited bandwidth.
+
+### Improve the documentation and knowledgebase
+
+We are trying to make netboot.xyz a place to come to learn about infrastructure
+automation so creating good docs on not only the project but how other distributions
+automation works is important. A lot of the logic on booting is currently in code but
+getting those into site documentation as well helps them to be better searchable by
+search engines. If you are a technical writer, feel free to contribute docs that
+would enable others to learn and grow.
 
 ### Submit ideas
 
@@ -52,10 +61,11 @@ idea, feel free to open up a Github [issue] or open up a [Pull Request].
 * [Discord](https://discord.gg/An6PA2a) Chat Server for netboot.xyz discussions, questions, and development
 * Follow us on [Twitter](https://twitter.com/netbootxyz) at [@netbootxyz](https://twitter.com/netbootxyz)
   for the latest updates
+* Start a [discussion](https://github.com/netbootxyz/netboot.xyz/discussions) or share something cool you have done with the project.
 
 ### Donate
 
-We have set up an [Open Collective](https://opencollective.com/netbootxyz) to open the project up to those who wish to donate to help out the project. This may cover hosting and domain fees, hardware for validation testing, or anything else that comes up in maintaining a project like this. Every little bit will help! If you enjoy the work we do, please support us!
+We have set up an [Open Collective](https://opencollective.com/netbootxyz) and [Github Sponsors](https://github.com/sponsors/netbootxyz) to open the project up to those who wish to donate to help out the project. This may cover hosting and domain fees, hardware for validation testing, or anything else that comes up in maintaining a project like this. Every little bit will help! If you enjoy the work we do, please support us!
 
 ## Enjoy and have fun!
 

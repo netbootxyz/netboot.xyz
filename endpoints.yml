@@ -293,7 +293,7 @@ endpoints:
     flavor: default
     kernel: backbox-6-default-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20210923-0947-92641c1f/
+    path: /ubuntu-squash/releases/download/20210930-0945-92641c1f/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -403,46 +403,6 @@ endpoints:
     os: feren
     version: classic
     kernel: feren-classic-squash
-  clonezilla-debian-stable:
-    path: /debian-squash/releases/download/2.7.3-19-fcb50247/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: debian
-    flavor: stable
-    kernel: clonezilla-debian-stable
-  clonezilla-debian-testing:
-    path: /debian-squash/releases/download/2.8.0-6-002d59cc/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: debian
-    flavor: testing
-    kernel: clonezilla-debian-testing
-  clonezilla-ubuntu-stable:
-    path: /ubuntu-squash/releases/download/20210817-hirsute-2a768141/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: ubuntu
-    flavor: stable
-    kernel: clonezilla-ubuntu-stable
-  clonezilla-ubuntu-testing:
-    path: /ubuntu-squash/releases/download/20210923-hirsute-18e78f5f/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: ubuntu
-    flavor: testing
-    kernel: clonezilla-ubuntu-testing
   breakin:
     path: /asset-mirror/releases/download/4.26.1-8ca03193/
     files:
@@ -662,7 +622,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.14.2-2021.09.12-a3024eea/
+    path: /asset-mirror/releases/download/5.14.7-2021.09.26-a3024eea/
     files:
     - initrd
     - vmlinuz
@@ -772,7 +732,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/37.0-39ff9a19/
+    path: /asset-mirror/releases/download/37.1-39ff9a19/
     files:
     - initrd
     - vmlinuz
@@ -780,7 +740,7 @@ endpoints:
     version: current
     flavor: full
   4mlinux-thesss:
-    path: /asset-mirror/releases/download/37.0-3ec6e844/
+    path: /asset-mirror/releases/download/37.1-3ec6e844/
     files:
     - initrd
     - vmlinuz
@@ -1021,18 +981,8 @@ endpoints:
     os: fedora
     version: 33
     flavor: MATE_Compiz
-  hirens:
-    path: /asset-mirror/releases/download/v1.0.2-da645fe7/
-    files:
-    - bootmgr
-    - bootmgr.efi
-    - BCD
-    - boot.sdi
-    - boot.wim
-    os: hirens
-    version: v1.0.2
   vyos-rolling:
-    path: /debian-squash/releases/download/202109240217-fdd40a1c/
+    path: /debian-squash/releases/download/202110010217-fdd40a1c/
     files:
     - filesystem.squashfs
     - initrd
@@ -1113,13 +1063,13 @@ endpoints:
     os: ovirt
     version: '4.4'
   nitrux-release:
-    path: /ubuntu-squash/releases/download/2021.09.01-e364d0a5/
+    path: /ubuntu-squash/releases/download/2021.09.30-e364d0a5/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: nitrux
-    version: 2021.09.01
+    version: 2021.09.30
   endeavouros:
     path: /asset-mirror/releases/download/2021.08.27-d09b132d/
     files:
@@ -1310,14 +1260,6 @@ endpoints:
     - special-edition.img
     os: freebsd
     version: '13'
-  xcp-ng:
-    path: /asset-mirror/releases/download/8.2-6c6b5220/
-    files:
-    - xen.gz
-    - vmlinuz
-    - install.img
-    os: xcp-ng
-    version: '8.2'
   pop-21.04-default-squash:
     path: /ubuntu-squash/releases/download/2-7ee5da15/
     files:
@@ -1377,12 +1319,12 @@ endpoints:
     os: proxmox
     version: 7.0-1
   talos:
-    path: /asset-mirror/releases/download/0.12.2-3f5e10e5/
+    path: /asset-mirror/releases/download/0.12.3-3f5e10e5/
     files:
     - vmlinuz
     - initramfs.xz
     os: talos
-    version: 0.12.2
+    version: 0.12.3
   elementaryos-6-default-squash:
     path: /ubuntu-squash/releases/download/6-c6e63f57/
     files:
@@ -1490,31 +1432,31 @@ endpoints:
     os: memtest86-free
     version: '9.2'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20210923T070656Z-6734abfd/
+    path: /asset-mirror/releases/download/20210927T170528Z-6734abfd/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20210923T070656Z
+    version: 20210927T170528Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20210919T222130Z-079d67cf/
+    path: /asset-mirror/releases/download/20210926T230639Z-079d67cf/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20210919T222130Z
+    version: 20210926T230639Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20210919T170549Z-383e823f/
+    path: /asset-mirror/releases/download/20210926T170536Z-383e823f/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20210919T170549Z
+    version: 20210926T170536Z
     arch: amd64
   tails:
     path: /asset-mirror/releases/download/4.22-28906ec3/
@@ -1615,13 +1557,13 @@ endpoints:
     version: v2020.05.012_x86-64_0.31
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2021.09.01-6dbad0f9/
+    path: /asset-mirror/releases/download/2021.10.01-6dbad0f9/
     files:
     - airootfs.sfs
     - initramfs-linux.img
     - vmlinuz-linux
     os: archlinux
-    version: 2021.09.01
+    version: 2021.10.01
     arch: i686
   q4os-4.6-default-squash:
     path: /debian-squash/releases/download/4.6-2de282e7/
@@ -1652,4 +1594,82 @@ endpoints:
     codename: impish
     flavor: netboot
     kernel: ubuntu-netboot-21.10-amd64
+    arch: amd64
+  ubuntu-netboot-21.10-arm64:
+    path: /ubuntu-squash/releases/download/21.10-6a3b01ba/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.10'
+    codename: impish
+    flavor: netboot
+    kernel: ubuntu-netboot-21.10-arm64
+    arch: arm64
+  clonezilla-debian-stable-i686:
+    path: /debian-squash/releases/download/2.7.3-19-21f7bd02/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 2.7.3-19
+    flavor: stable
+    kernel: clonezilla-debian-stable-i686
+    arch: i686
+  clonezilla-debian-stable-amd64:
+    path: /debian-squash/releases/download/2.7.3-19-a90fc92f/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 2.7.3-19
+    flavor: stable
+    kernel: clonezilla-debian-stable-amd64
+    arch: amd64
+  clonezilla-ubuntu-stable-amd64:
+    path: /ubuntu-squash/releases/download/20210817-hirsute-86411ada/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 20210817-hirsute
+    flavor: stable
+    kernel: clonezilla-ubuntu-stable-amd64
+    arch: amd64
+  clonezilla-debian-testing-amd64:
+    path: /debian-squash/releases/download/2.8.0-9-5fb1a15b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 2.8.0-9
+    flavor: testing
+    kernel: clonezilla-debian-testing-amd64
+    arch: amd64
+  clonezilla-debian-testing-i686:
+    path: /debian-squash/releases/download/2.8.0-9-6357dd7e/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 2.8.0-9
+    flavor: testing
+    kernel: clonezilla-debian-testing-i686
+    arch: i686
+  clonezilla-ubuntu-testing-amd64:
+    path: /ubuntu-squash/releases/download/20210930-hirsute-5774fbed/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: clonezilla
+    version: 20210930-hirsute
+    flavor: testing
+    kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
