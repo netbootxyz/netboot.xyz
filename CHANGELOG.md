@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.50]
+## [2.0.51]
+
+## [2.0.50] - 2021-10-03
 #### Added
 - Added Clonezilla 32-bit
 
