@@ -1652,7 +1652,7 @@ endpoints:
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/2.8.0-9-6357dd7e/
+    path: /debian-squash/releases/download/2.8.0-9-ee3863df/
     files:
     - filesystem.squashfs
     - initrd
