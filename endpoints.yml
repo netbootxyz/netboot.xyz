@@ -1616,3 +1616,17 @@ endpoints:
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
+  garuda-dragonized:
+    path: /asset-mirror/releases/download/210928-3a372920/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: dragonized
+    version: 210928
