@@ -1728,3 +1728,17 @@ endpoints:
     os: garuda
     flavor: bspwm
     version: 210928
+  garuda-i3wm:
+    path: /asset-mirror/releases/download/210928-95710e33/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: i3wm
+    version: 210928
