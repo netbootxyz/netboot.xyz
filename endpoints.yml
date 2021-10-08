@@ -1658,3 +1658,17 @@ endpoints:
     os: garuda
     flavor: dr460nized-blackarch
     version: 210928
+  garuda-xfce:
+    path: /asset-mirror/releases/download/210928-fdf20131/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: xfce
+    version: 210928
