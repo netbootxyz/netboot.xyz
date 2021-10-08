@@ -1770,3 +1770,17 @@ endpoints:
     os: garuda
     flavor: mate
     version: 210928
+  garuda-kde-barebones:
+    path: /asset-mirror/releases/download/210928-198784ed/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: kde-barebones
+    version: 210928
