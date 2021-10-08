@@ -137,6 +137,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Flatcar Linux | https://kinvolk.io/flatcar-container-linux/ | Yes | No |
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
 | FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
+| Garuda Linux | https://garudalinux.org/ | No | Yes |
 | Gentoo | https://gentoo.org | Yes | Yes |
 | Harvester | https://harvesterhci.io | Yes | No |
 | hrmpf | https://github.com/leahneukirchen/hrmpf/ | No | Yes |

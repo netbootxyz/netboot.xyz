@@ -1,0 +1,38 @@
+#!ipxe
+
+# Garuda Linux
+# https://garudalinux.org/
+
+goto ${menu} ||
+
+:live-garuda
+set os Garuda
+menu ${os} Live
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+item --gap ${os} Live versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "garuda" %}
+item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.flavor | title }} ({{ value.version }})
+{% endif %}
+{% endfor %}
+choose menu || goto live_exit
+goto ${menu}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "garuda" %}
+:{{ value.version }}-{{ value.flavor }}
+set fetch_url ${live_endpoint}{{ value.path }}
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz misobasedir=garuda ${ipparam} miso_http_srv=${fetch_url} nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 driver=free {{ kernel_params }}
+initrd ${kernel_url}initramfs.img
+boot
+
+:live_exit
+clear menu
+exit 0
