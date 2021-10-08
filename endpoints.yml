@@ -1756,3 +1756,17 @@ endpoints:
     os: garuda
     flavor: sway
     version: 210928
+  garuda-mate:
+    path: /asset-mirror/releases/download/210928-ba2d234f/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: mate
+    version: 210928
