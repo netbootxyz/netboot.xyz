@@ -1714,3 +1714,17 @@ endpoints:
     os: garuda
     flavor: wayfire
     version: 210928
+  garuda-qtile:
+    path: /asset-mirror/releases/download/210928-a795924c/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: qtile
+    version: 210928
