@@ -646,7 +646,7 @@ endpoints:
     flavor: gnome
     kernel: manjaro-gnome-current
   manjaro-kde-current:
-    path: /manjaro-squash/releases/download/21.1.4-210927-linux513-550fca79/
+    path: /manjaro-squash/releases/download/21.1.5-211008-linux513-aa503796/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -655,7 +655,7 @@ endpoints:
     - initrd
     - vmlinuz
     os: manjaro
-    version: current
+    version: 21.1.5-211008-linux513
     flavor: kde
     kernel: manjaro-kde-current
   fatdog:
