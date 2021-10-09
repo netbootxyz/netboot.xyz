@@ -7,6 +7,10 @@ All notable changes to this project will be documented in this file.
 ## [2.0.51]
 #### Added
 - Fedora CoreOS - aarch64 support
+- Added Garuda Linux Live builds
+
+#### Fixed
+- Fixed Manjaro builds so they are once again working
 
 ## [2.0.50] - 2021-10-03
 #### Added
