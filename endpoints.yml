@@ -620,7 +620,7 @@ endpoints:
     os: septor
     version: current
   manjaro-xfce-current:
-    path: /manjaro-squash/releases/download/21.1.5-211008-linux513-93ba6209/
+    path: /manjaro-squash/releases/download/21.1.5-211008-linux513-5726b1dc/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -629,7 +629,7 @@ endpoints:
     - initrd
     - vmlinuz
     os: manjaro
-    version: current
+    version: 21.1.5-211008-linux513
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
