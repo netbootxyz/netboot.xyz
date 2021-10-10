@@ -1170,13 +1170,13 @@ endpoints:
     version: focal
     kernel: rescuezilla-focal
   redorescue:
-    path: /asset-mirror/releases/download/3.0.2-369d1d23/
+    path: /asset-mirror/releases/download/4.0.0-35222964/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: redorescue
-    version: buster
+    version: 4.0.0
   bodhi-6-standard:
     path: /ubuntu-squash/releases/download/6.0.0-3d0b9f4e/
     files:
