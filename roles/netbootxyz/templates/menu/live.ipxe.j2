@@ -4,7 +4,6 @@ goto ${menu} ||
 
 :live_menu
 menu Live Boot Distributions - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
 item --gap Live Boot Distributions
 item live-backbox ${space} BackBox
 item live-bluestar ${space} Bluestar Linux
@@ -17,6 +16,8 @@ item live-endeavouros ${space} EndeavourOS
 item live-fatdog ${space} Fatdog64
 item live-fedora ${space} Fedora
 item live-feren ${space} Feren OS
+item live-garuda ${space} Garuda Linux
+item live-hrmpf ${space} hrmpf
 item live-k3os ${space} K3OS
 item live-kali ${space} Kali
 item live-kodachi ${space} Kodachi
@@ -34,6 +35,7 @@ item live-raizo ${space} Live Raizo
 item live-regolith ${space} Regolith
 item live-septor ${space} Septor
 item live-sparky ${space} SparkyLinux
+item live-tails ${space} Tails
 item tinycore ${space} Tiny Core Linux
 item live-ubuntu ${space} Ubuntu
 item live-voyager ${space} Voyager

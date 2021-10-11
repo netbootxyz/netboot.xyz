@@ -4,8 +4,7 @@ goto ${menu} ||
 
 :live_menu
 set os EndeavourOS
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}

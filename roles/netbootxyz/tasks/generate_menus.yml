@@ -9,18 +9,28 @@
       releases: "{{ _releases }}"
     when: release_overrides is defined
 
-    # PC BIOS utilities
-  - name: Combine overrides with utilitiespcbios defaults
+  # PC BIOS utilities
+  - name: Combine overrides with utilitiespcbios64 defaults
     set_fact:
-      _utilitiespcbios: "{{ utilitiespcbios|combine(utilitiespcbios_overrides, recursive=True) }}"
-    when: utilitiespcbios_overrides is defined
+      _utilitiespcbios64: "{{ utilitiespcbios64|combine(utilitiespcbios64_overrides, recursive=True) }}"
+    when: utilitiespcbios64_overrides is defined
 
-  - name: Set utilitypcbios with user overrides
+  - name: Set utilitypcbios64 with user overrides
     set_fact:
-      utilitiespcbios: "{{ _utilitiespcbios }}"
-    when: utilitiespcbios_overrides is defined
+      utilitiespcbios64: "{{ _utilitiespcbios64 }}"
+    when: utilitiespcbios64_overrides is defined
 
-    # EFI utilities
+  - name: Combine overrides with utilitiespcbios32 defaults
+    set_fact:
+      _utilitiespcbios32: "{{ utilitiespcbios32|combine(utilitiespcbios32_overrides, recursive=True) }}"
+    when: utilitiespcbios32_overrides is defined
+
+  - name: Set utilitypcbios32 with user overrides
+    set_fact:
+      utilitiespcbios32: "{{ _utilitiespcbios32 }}"
+    when: utilitiespcbios32_overrides is defined
+
+  # EFI utilities
   - name: Combine overrides with utilitiesefi defaults
     set_fact:
       _utilitiesefi: "{{ utilitiesefi|combine(utilitiesefi_overrides, recursive=True) }}"

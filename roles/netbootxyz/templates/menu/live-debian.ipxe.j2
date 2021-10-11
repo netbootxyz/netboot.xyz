@@ -4,18 +4,18 @@ goto ${menu} ||
 
 :live_menu
 set os Debian Live
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 item --gap ${os} Versions
+item bullseye ${space} ${os} 11 (bullseye)
 item buster ${space} ${os} 10 (buster)
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
 
-:stretch
+:bullseye
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "debian" and 'squash' in key and value.version == "9" %}
+{% if value.os == "debian" and 'squash' in key and value.version == "11" %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}

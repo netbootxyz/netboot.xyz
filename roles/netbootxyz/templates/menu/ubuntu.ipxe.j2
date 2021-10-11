@@ -7,12 +7,16 @@ goto ${menu}
 
 :ubuntu
 set os Ubuntu
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
 clear ubuntu_version
 clear install_type
 clear older_release
 clear install_url
 set install_type deb
-menu ${os} - ${arch_a}
+set install_priority critical
+menu ${os} - ${os_arch}
 item --gap Latest Releases
 {% for item in releases.ubuntu.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -22,10 +26,11 @@ item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
 iseq ${ubuntu_version} focal && set install_type sub ||
-iseq ${ubuntu_version} groovy && set install_type sub ||
 iseq ${ubuntu_version} hirsute && set install_type sub ||
+iseq ${ubuntu_version} impish && set install_type sub ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
 iseq ${install_type} sub && goto boot_type ||
+iseq ${os_arch} arm64 && echo "arm64 not supported on legacy network installs, please use 20.04 Subiquity and up" && sleep 5 && goto ubuntu ||
 goto mirrorcfg
 
 :older_release
@@ -34,13 +39,13 @@ set ubuntu_mirror {{ releases.ubuntu.archive_mirror }}
 echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
 echo -n Please set enter code name of release: ${} && read ubuntu_version
-set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/
 goto boot_type
 
 :mirrorcfg
 set mirrorcfg mirror/suite=${ubuntu_version}
-set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/images/netboot/
-iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${arch_a}/current/legacy-images/netboot/ ||
+set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/images/netboot/
+iseq ${ubuntu_version} focal && set dir ${ubuntu_base_dir}/dists/${ubuntu_version}-updates/main/installer-${os_arch}/current/legacy-images/netboot/ ||
 goto boot_type
 
 :boot_type
@@ -49,6 +54,7 @@ item --gap Install types
 item install ${space} Install
 item rescue ${space} Rescue Mode
 item automated ${space} Specify preseed/autoinstall url...
+iseq ${install_type} deb && item priority ${space} Change install priority [ ${install_priority} ] ||
 choose --default ${type} type || goto ubuntu
 echo ${cls}
 goto deb_${type}
@@ -58,23 +64,27 @@ iseq ${install_type} deb && set install_params rescue/enable=true ||
 iseq ${install_type} sub && set install_params systemd.unit=rescue.target ||
 goto deb_install
 
+:deb_priority
+iseq ${install_priority} critical && set install_priority low || set install_priority critical
+goto boot_type
+
 :deb_automated
 iseq ${install_type} deb && set install_name preseed ||
 iseq ${install_type} sub && set install_name autoinstall ||
 echo -n Specify ${install_name} URL for ${os} ${ubuntu_version}: && read install_url
-iseq ${install_type} deb && set install_params auto=true priority=critical preseed/url=${install_url} ||
+iseq ${install_type} deb && set install_params auto=true priority=${install_priority} preseed/url=${install_url} ||
 iseq ${install_type} sub && set install_params autoinstall ds=nocloud-net;s=${install_url} ||
 goto deb_install
 
 :deb_install
 iseq ${install_type} deb && goto deb_boot ||
-iseq ${install_type} sub && goto ${ubuntu_version} ||
+iseq ${install_type} sub && goto ${ubuntu_version}_${os_arch} ||
 
 :deb_boot
 echo Loading Ubuntu PXE netboot installer
-set dir ${dir}${menu}-installer/${arch_a}
+set dir ${dir}ubuntu-installer/${os_arch}
 imgfree
-kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} -- quiet {{ kernel_params }}
+kernel ${ubuntu_mirror}/${dir}/linux ${install_params} ${mirrorcfg} {{ kernel_params }}
 initrd ${ubuntu_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
@@ -84,7 +94,7 @@ boot
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "ubuntu" and 'netboot' in key %}
 {% set kernel_name = value.kernel %}
-:{{ value.codename }}
+:{{ value.codename }}_{{ value.arch }}
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
 set kernel_url ${live_endpoint}{{ value.path }}
@@ -98,7 +108,11 @@ goto sub_boot
 
 :sub_boot
 imgfree
-isset ${dhcp-server} && set netboot_params ip=dhcp url=http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${arch_a}.iso || set netboot_params
+iseq ${os_arch} amd64 && set ubuntu_iso_url http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${os_arch}.iso ||
+iseq ${os_arch} arm64 && set ubuntu_iso_url http://cdimage.ubuntu.com/releases/${version_number}/release/ubuntu-${version_number}-live-server-${os_arch}.iso ||
+iseq ${codename} impish && iseq ${os_arch} amd64 && set ubuntu_iso_url http://releases.ubuntu.com/impish/ubuntu-21.10-beta-live-server-amd64.iso ||
+iseq ${codename} impish && iseq ${os_arch} arm64 && set ubuntu_iso_url https://cdimage.ubuntu.com/releases/21.10/beta/ubuntu-21.10-beta-live-server-arm64.iso ||
+isset ${dhcp-server} && set netboot_params ip=dhcp url=${ubuntu_iso_url} || set netboot_params
 echo Loading Ubuntu Subiquity Network Installer...
 kernel ${kernel_url}vmlinuz root=/dev/ram0 ramdisk_size=1500000 ${netboot_params} ${install_params} {{ kernel_params }}
 initrd ${kernel_url}initrd

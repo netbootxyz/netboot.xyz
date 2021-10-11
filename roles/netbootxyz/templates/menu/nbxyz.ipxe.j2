@@ -14,6 +14,7 @@ item nbxyz-prod ${space} Production Release (boot.netboot.xyz)
 item nbxyz-staging ${space} Staging (staging.boot.netboot.xyz)
 item nbxyz-dev ${space} Development (dev.boot.netboot.xyz)
 choose nbxyz_version || goto nbxyz_exit
+imgfree
 goto ${nbxyz_version}
 
 :nbxyz-rolling

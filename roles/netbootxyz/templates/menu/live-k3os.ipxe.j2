@@ -4,9 +4,10 @@ goto ${menu} ||
 
 :live_menu
 set os {{ releases.k3os.name }}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
 set k3os_mirror {{ releases.k3os.mirror }}
-menu ${os} by Rancher - ${arch_a}
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os} by Rancher
 isset ${k3os_version} || set k3os_version latest
 menu ${os} live
 item --gap k3OS live version:
@@ -51,8 +52,8 @@ isset ${k3os_base_url} || set k3os_base_url ${k3os_mirror}/latest/download
 set install_params k3os.mode=live
 set boot_params printk.devkmsg=on console=ttyS0 console=tty1
 imgfree
-kernel ${k3os_base_url}/k3os-vmlinuz-${arch_a} ${install_params} ${boot_params} {{ kernel_params }}
-initrd ${k3os_base_url}/k3os-initrd-${arch_a}
+kernel ${k3os_base_url}/k3os-vmlinuz-${os_arch} ${install_params} ${boot_params} {{ kernel_params }}
+initrd ${k3os_base_url}/k3os-initrd-${os_arch}
 boot
 
 :live_exit

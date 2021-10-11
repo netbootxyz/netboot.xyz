@@ -26,6 +26,15 @@ goto utils_exit
 {% endif %}
 {% endfor %}
 
+{% for key, value in utilitiesefi.items() | sort %}
+{% if value.enabled | bool and value.type == "sanboot" %}
+:{{ key }}
+imgfree
+sanboot {{ value.kernel }}
+goto utils_exit
+{% endif %}
+{% endfor %}
+
 :utils_exit
 clear menu
 exit 0

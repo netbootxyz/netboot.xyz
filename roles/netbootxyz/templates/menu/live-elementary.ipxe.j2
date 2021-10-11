@@ -4,10 +4,9 @@ goto ${menu} ||
 
 :live_menu
 set os elementary OS
-menu ${os} - Current Arch [ ${arch} ]
-iseq ${arch} x86_64 && set arch_a amd64 || set arch_a ${arch}
+menu ${os}
 item --gap ${os} Versions
-item elementaryos-5-default-squash ${space} ${os} 5
+item elementaryos-6-default-squash ${space} ${os} 6
 choose live_version || goto live_exit
 goto ${live_version}
 
@@ -27,7 +26,7 @@ goto boot
 
 :boot
 imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper maybe-ubiquity netboot=http fetch=${squash_url} {{ kernel_params }}
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper maybe-ubiquity netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
 boot
 

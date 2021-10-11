@@ -1,0 +1,39 @@
+#!ipxe
+
+# hrmpf
+# https://github.com/leahneukirchen/hrmpf/
+
+goto ${menu} ||
+
+:live-hrmpf
+clear hrmpf_version
+set os hrmpf
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+menu ${os}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "hrmpf" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose hrmpf_version || goto hrmpf_exit
+goto ${hrmpf_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "hrmpf" %}
+:{{ value.version }}
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz root=live:${kernel_url}squashfs.img ro init=/sbin/init rd.luks=0 rd.md=0 rd.dm=0 gpt add_efi_memmap vconsole.unicode=1 vconsole.keymap=us locale.LANG=en_US.UTF-8 loglevel=6 printk.time=1 consoleblank=0 net.ifnames=0 {{ kernel_params }}
+initrd ${kernel_url}initrd
+boot
+
+:hrmpf_exit
+clear menu
+exit 0

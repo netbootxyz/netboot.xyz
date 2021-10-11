@@ -4,12 +4,13 @@ goto ${menu} ||
 
 :linux_menu
 menu Linux Installers - Current Arch [ ${arch} ]
-item --gap Linux Distros:
-{% for key, value in releases.items() | sort(attribute='1.name') %}
-{% if value.enabled is defined and value.menu == "linux" and value.enabled | bool %}
-item {{ key }} ${space} {{ value.name }}
-{% endif %}
-{% endfor %}
+item --gap Popular Linux Operating Systems:
+item archlinux ${space} Arch Linux
+item alpinelinux ${space} Alpine Linux
+item debian ${space} Debian
+item gentoo ${space} Gentoo
+item kali ${space} Kali Linux
+item opensuse ${space} OpenSUSE
 choose menu || goto linux_exit
 echo ${cls}
 goto ${menu} ||

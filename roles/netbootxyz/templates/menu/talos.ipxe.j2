@@ -8,6 +8,9 @@ goto ${menu} ||
 
 :talos
 set os {{ releases.talos.name }}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
 isset ${talos_version} || set talos_version latest
 isset ${talos_mirror} || set talos_mirror {{ releases.talos.mirror }}
 isset ${talos_platform} || set talos_platform metal
@@ -69,14 +72,14 @@ isset ${talos_base_url} || set talos_base_url ${talos_mirror}/latest/download
 isset ${talos_config_url} && set talos_config talos.config=${talos_config_url} ||
 set boot_params page_poison=1 printk.devkmsg=on slab_nomerge slub_debug=P pti=on talos.platform=${talos_platform} ${talos_config} {{ kernel_params }}
 imgfree
-kernel ${talos_base_url}/vmlinuz ${boot_params}
-initrd ${talos_base_url}/initramfs.xz
+kernel ${talos_base_url}/vmlinuz-${os_arch} ${boot_params}
+initrd ${talos_base_url}/initramfs-${os_arch}.xz
 echo
 echo Booting with the following kernel args:
 echo ${boot_params}
 echo
 echo MD5sums:
-md5sum vmlinuz initramfs.xz
+md5sum vmlinuz-${os_arch} initramfs-${os_arch}.xz
 boot
 
 :talos_exit

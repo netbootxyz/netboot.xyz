@@ -7,10 +7,18 @@ bootloader_http_enabled: true
 bootloader_https_enabled: true
 bootloaders:
   arm:
+  - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi
+    output_bin: -arm64.efi
+    type: DHCP
   - desc: EFI w/ Simple Network Protocol, attempts to boot all net devices
     ipxe_bin: snp.efi
-    output_bin: -arm64.efi
+    output_bin: -arm64-snp.efi
     type: DHCP-snp
+  - desc: EFI w/ Simple Network Protocol, only boots from device chained from
+    ipxe_bin: snponly.efi
+    output_bin: -arm64-snponly.efi
+    type: DHCP-snponly
   hybrid:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
@@ -68,8 +76,7 @@ custom_generate_menus: false
 custom_github_menus: true
 custom_templates_dir: '{{ netbootxyz_conf_dir }}/custom'
 custom_url_menus: true
-early_menu_contents: '### used to set early ipxe options such as custom console &
-  logo'
+early_menu_contents: '### put early ipxe settings here'
 early_menu_enabled: false
 generate_checksums: true
 generate_disks: true
@@ -85,6 +92,8 @@ generate_version_file: true
 ipxe_branch: master
 ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
+ipxe_debug_enabled: false
+ipxe_debug_options: httpcore,tls
 ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_source_dir: /usr/src/ipxe
 kernel_params: initrd=initrd.magic ${cmdline}
@@ -133,8 +142,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.08.01
-      name: 2021.08.01
+    - code_name: 2021.10.01
+      name: 2021.10.01
   blackarch:
     enabled: true
     menu: linux
@@ -164,8 +173,12 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210725.3.0
+    - code_name: 34.20210919.3.0
       name: stable
+    - code_name: 34.20211004.2.0
+      name: testing
+    - code_name: 35.20211003.1.0
+      name: next
   debian:
     archive_mirror: http://archive.debian.org
     base_dir: debian
@@ -210,12 +223,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 35_Beta
+      name: 35_Beta
     - code_name: 34
       name: 34
     - code_name: 33
       name: 33
-    - code_name: 32
-      name: 32
   flatcar:
     enabled: true
     menu: linux
@@ -249,6 +262,14 @@ releases:
     enabled: true
     menu: linux
     name: Gentoo
+  harvester:
+    enabled: true
+    menu: linux
+    mirror: https://releases.rancher.com/harvester
+    name: Harvester
+    versions:
+    - code_name: v0.2.0
+      name: v0.2.0
   ipfire:
     base_dir: releases/ipfire-2.x
     enabled: true
@@ -256,8 +277,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.25-core158
-      name: 2.25 Core158
+    - code_name: 2.27-core160
+      name: 2.27 Core160
   k3os:
     enabled: true
     menu: linux
@@ -422,14 +443,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20210812T031946Z
-      name: 20210812T031946Z
-    - code_name: 20210729T002724Z
-      name: 20210729T002724Z
-    - code_name: 20210715T010227Z
-      name: 20210715T010227Z
-    - code_name: 20210701T204427Z
-      name: 20210701T204427Z
+    - code_name: 20211007T001741Z
+      name: 20211007T001741Z
+    - code_name: 20210923T003059Z
+      name: 20210923T003059Z
+    - code_name: 20210909T065923Z
+      name: 20210909T065923Z
+    - code_name: 20210909T002651Z
+      name: 20210909T002651Z
   talos:
     enabled: true
     menu: linux
@@ -564,10 +585,10 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: impish
+      name: 21.10 Impish Indri
     - code_name: hirsute
       name: 21.04 Hirsute Hippo
-    - code_name: groovy
-      name: 20.10 Groovy Gorilla
     - code_name: focal
       name: 20.04 LTS Focal Fossa (Subiquity)
     - code_name: focal-legacy
@@ -601,10 +622,11 @@ sigs_menu: false
 site_name: netboot.xyz
 time_server: 0.pool.ntp.org
 utilitiesarm:
-  placeholder:
+  memtest86:
     enabled: false
-    name: placeholder
-    type: direct
+    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86.version }}
+    type: sanboot
 utilitiesefi:
   4mlinux:
     enabled: true
@@ -615,7 +637,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.bootrepair.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: Boot Repair CD
     type: direct
   caine:
@@ -623,7 +645,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.caine.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: CAINE
     type: direct
   clonezilla:
@@ -642,12 +664,17 @@ utilitiesefi:
     enabled: true
     name: Kaspersky Rescue Disk
     type: ipxemenu
+  memtest86:
+    enabled: false
+    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
+    name: Memtest86 Free - {{ endpoints.memtest86.version }}
+    type: sanboot
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
       nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: RedoRescue
     type: direct
   rescatux:
@@ -655,7 +682,7 @@ utilitiesefi:
     initrd: ${live_endpoint}{{ endpoints.rescatux.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{
       endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0
-      initrd=initrd
+      {{ kernel_params }}
     name: Rescatux
     type: direct
   rescuezilla:
@@ -670,7 +697,26 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
-utilitiespcbios:
+utilitiespcbios32:
+  clonezilla:
+    enabled: true
+    name: Clonezilla
+    type: ipxemenu
+  memtest:
+    enabled: true
+    name: Memtest
+    type: memtest
+    util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
+    version: 5.01.0
+  shredos:
+    enabled: true
+    name: ShredOS
+    type: ipxemenu
+  systemrescue:
+    enabled: true
+    name: System Rescue CD
+    type: ipxemenu
+utilitiespcbios64:
   4mlinux:
     enabled: true
     name: 4MLinux
@@ -686,14 +732,14 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.bootrepair.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.bootrepair.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.bootrepair.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: Boot Repair CD
     type: direct
   breakin:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.breakin.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.breakin.path }}vmlinuz sshpasswd=breakin
-      startup=breakin initrd=initrd
+      startup=breakin {{ kernel_params }}
     name: Breakin
     type: direct
   caine:
@@ -701,7 +747,7 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.caine.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper
       netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: CAINE
     type: direct
   clonezilla:
@@ -735,7 +781,7 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.redorescue.path }}vmlinuz boot=live noprompt
       nocomponents setkmap=us fetch=${live_endpoint}{{ endpoints.redorescue.path }}filesystem.squashfs
-      initrd=initrd
+      {{ kernel_params }}
     name: RedoRescue
     type: direct
   rescatux:
@@ -743,7 +789,7 @@ utilitiespcbios:
     initrd: ${live_endpoint}{{ endpoints.rescatux.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.rescatux.path }}vmlinuz boot=live fetch=${live_endpoint}{{
       endpoints.rescatux.path }}filesystem.squashfs selinux=1 security=selinux enforcing=0
-      initrd=initrd
+      {{ kernel_params }}
     name: Rescatux
     type: direct
   rescuezilla:
