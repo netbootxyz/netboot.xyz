@@ -8,8 +8,12 @@
       - colour.h
       - console.h
       - crypto.h
-      - general.h
 
+  - name: Copy netboot.xyz general.h.efi iPXE config
+    copy:
+      src: "ipxe/local/general.h.efi"
+      dest: "{{ ipxe_source_dir }}/src/config/local/general.h"
+      
   - name: Set trust file to ipxe ca
     set_fact:
       trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
