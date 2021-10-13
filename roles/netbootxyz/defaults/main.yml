@@ -82,6 +82,7 @@ generate_checksums: true
 generate_disks: true
 generate_disks_arm: false
 generate_disks_efi: true
+generate_disks_linux: false
 generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_rpi: false

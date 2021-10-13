@@ -28,8 +28,7 @@
            bin/ipxe.dsk \
            bin/ipxe.lkrn \
            bin/ipxe.kpxe \
-           bin/undionly.kpxe \
-           bin-x86_64-linux/slirp.linux
+           bin/undionly.kpxe
     args:
       chdir: "{{ ipxe_source_dir }}/src"
     tags:

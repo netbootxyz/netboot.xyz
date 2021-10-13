@@ -6,6 +6,10 @@
     when:
     - generate_disks_legacy | default(true) | bool
 
+  - include: generate_disks_linux.yml
+    when:
+    - generate_disks_linux | default(false) | bool
+
   - include: generate_disks_efi.yml
     when:
     - generate_disks_efi | default(true) | bool
