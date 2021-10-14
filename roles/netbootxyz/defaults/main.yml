@@ -270,7 +270,7 @@ releases:
   harvester:
     enabled: true
     menu: linux
-    mirror: https://releases.rancher.com/harvester
+    mirror: http://releases.rancher.com/harvester
     name: Harvester
     versions:
     - code_name: v0.3.0
