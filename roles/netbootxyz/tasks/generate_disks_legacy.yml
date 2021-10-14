@@ -26,7 +26,6 @@
       make EMBED={{ bootloader_filename }} \
            TRUST={{ trust_files }} \
            bin/ipxe.dsk \
-           bin/ipxe.pdsk \
            bin/ipxe.lkrn \
            bin/ipxe.kpxe \
            bin/undionly.kpxe
@@ -43,7 +42,6 @@
            DEBUG={{ ipxe_debug_options }} \
            TRUST={{ trust_files }} \
            bin/ipxe.dsk \
-           bin/ipxe.pdsk \
            bin/ipxe.lkrn \
            bin/ipxe.kpxe \
            bin/undionly.kpxe
@@ -59,7 +57,6 @@
       dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
       remote_src: True
     with_items:
-    - ".pdsk"
     - ".dsk"
     - ".lkrn"
     - ".kpxe"
