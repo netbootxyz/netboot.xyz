@@ -37,6 +37,10 @@ bootloaders:
     ipxe_bin: ipxe.dsk
     output_bin: .dsk
     type: Floppy
+  - desc: Padded Virtual floppy disk for DRAC/iLO, VMware, Virtual Box, etc
+    ipxe_bin: ipxe.pdsk
+    output_bin: .pdsk
+    type: Floppy
   - desc: DHCP boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.kpxe
     output_bin: .kpxe
