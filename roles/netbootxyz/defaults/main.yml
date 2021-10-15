@@ -228,8 +228,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
-    - code_name: 35_Beta
-      name: 35_Beta
+    - code_name: 35
+      name: 35
     - code_name: 34
       name: 34
     - code_name: 33
