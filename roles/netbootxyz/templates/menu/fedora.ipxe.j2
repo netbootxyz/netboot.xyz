@@ -34,7 +34,6 @@ item Server ${ova} Server
 iseq ${os_arch} x86_64 && item Silverblue ${ova} Silverblue ||
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${os_arch}/os
-iseq ${osversion} 35_Beta && set dir ${fedora_base_dir}/releases/test/${osversion}/${sku_type}/${os_arch}/os ||
 iseq ${osversion} rawhide && set dir ${fedora_base_dir}/development/${osversion}/${sku_type}/${os_arch}/os ||
 set ova ${ova} ${sku_type}
 echo ${cls}

@@ -1,0 +1,57 @@
+---
+
+  - name: Copy netboot.xyz local legacy iPXE configs
+    copy:
+      src: "ipxe/local/{{ item }}"
+      dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
+    with_items:
+      - colour.h
+      - console.h
+      - crypto.h
+
+  - name: Copy netboot.xyz general.h.efi iPXE config
+    copy:
+      src: "ipxe/local/general.h.efi"
+      dest: "{{ ipxe_source_dir }}/src/config/local/general.h"
+      
+  - name: Set trust file to ipxe ca
+    set_fact:
+      trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
+    when: not generate_signatures
+
+  - name: Combine trust args if set
+    set_fact:
+      trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }},{{ cert_dir }}/{{ cert_file_filename }}"
+    when: generate_signatures | bool
+
+  - name: Compile iPXE Linux bootloader for Legacy BIOS
+    shell: |
+      make clean
+      make EMBED={{ bootloader_filename }} \
+           TRUST={{ trust_files }} \
+           bin-x86_64-linux/slirp.linux
+    args:
+      chdir: "{{ ipxe_source_dir }}/src"
+    tags:
+    - skip_ansible_lint
+    when: ipxe_debug_enabled | bool == false
+
+  - name: Compile iPXE Linux bootloader for Legacy BIOS with debug flags
+    shell: |
+      make clean
+      make EMBED={{ bootloader_filename }} \
+           DEBUG={{ ipxe_debug_options }} \
+           TRUST={{ trust_files }} \
+           bin-x86_64-linux/slirp.linux
+    args:
+      chdir: "{{ ipxe_source_dir }}/src"
+    tags:
+    - skip_ansible_lint
+    when: ipxe_debug_enabled | bool
+
+  - name: Copy iPXE linux binary for Legacy BIOS to http directory
+    copy:
+      src: "{{ ipxe_source_dir }}/src/bin-x86_64-linux/slirp.linux"
+      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-linux.bin"
+      remote_src: True
+    when: bootloader_filename != "netboot.xyz-packet"

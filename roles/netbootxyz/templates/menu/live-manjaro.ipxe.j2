@@ -5,22 +5,9 @@ set os Manjaro
 menu ${os} Live
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Live versions
-item current ${space} ${os} Current Stable (20.x)
-item stable ${space} ${os} Old Stable (18.1.0)
+item current ${space} ${os} Current Stable (21.x)
 choose menu || goto live_exit
 goto ${menu}
-
-:stable
-menu ${os} Live Stable
-item --gap Currently during boot you need to press ctrl+d/ctrl+c
-item --gap repeatedly when init hangs on starting a download
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "manjaro" and value.version == "18.1.0" and "kernel" not in key %}
-item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
-{% endif %}
-{% endfor %}
-choose version || goto live_menu
-goto ${version}
 
 :current
 menu ${os} Live Current
@@ -38,20 +25,6 @@ goto ${version}
 :{{ value.version }}-{{ value.flavor }}
 set fetch_url ${live_endpoint}{{ value.path }}
 set kernel_url ${live_endpoint}{{ value.path }}
-goto boot
-{% endif %}
-{% endfor %}
-
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "manjaro" and value.version == "18.1.0" and 'kernel' not in key %}
-{% set kernel_name = value.kernel %}
-:{{ value.version }}-{{ value.flavor }}
-set fetch_url ${live_endpoint}{{ value.path }}
-{% for key, value in endpoints.items() | sort %}
-{% if key == kernel_name %}
-set kernel_url ${live_endpoint}{{ value.path }}
-{% endif %}
-{% endfor %}
 goto boot
 {% endif %}
 {% endfor %}

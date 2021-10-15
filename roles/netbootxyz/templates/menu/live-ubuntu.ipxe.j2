@@ -6,6 +6,7 @@ goto ${menu} ||
 set os Ubuntu Live
 menu ${os}
 item --gap ${os} Versions
+item impish ${space} ${os} 21.10
 item hirsute ${space} ${os} 21.04
 item focal ${space} ${os} 20.04
 item bionic ${space} ${os} 18.04
@@ -13,6 +14,14 @@ choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
+
+:impish
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu" and 'squash' in key and value.version == "21.10" %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
+{% endif %}
+{% endfor %}
+goto flavor_select
 
 :hirsute
 {% for key, value in endpoints.items() | sort %}
@@ -65,6 +74,7 @@ boot
 
 :20.04-boot
 :21.04-boot
+:21.10-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd

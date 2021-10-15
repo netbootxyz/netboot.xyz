@@ -4,7 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.50]
+## [2.0.51]
+#### Added
+- Fedora CoreOS - aarch64 support
+- Garuda Linux Live builds
+- Ubuntu 21.10 live builds and installers
+- Added Padded Floppy builds for tooling sensitive to size of disk
+- Added logic for building iPXE linux binaries
+
+#### Fixed
+- Manjaro builds working again
+
+## [2.0.50] - 2021-10-03
 #### Added
 - Added Clonezilla 32-bit
 
