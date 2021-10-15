@@ -1804,3 +1804,13 @@ endpoints:
     version: '21.10'
     flavor: XFCE
     kernel: ubuntu-21.10-XFCE-squash
+  ubuntu-21.10-default-squash:
+    path: /ubuntu-squash/releases/download/21.10-441000c3/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.10'
+    flavor: GNOME
+    kernel: ubuntu-21.10-default-squash
