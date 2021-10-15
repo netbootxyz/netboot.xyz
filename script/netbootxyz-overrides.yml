@@ -3,6 +3,7 @@ sigs_menu: true
 sigs_enabled: true
 generate_disks_arm: true
 generate_disks_hybrid: true
+generate_disks_linux: true
 generate_disks_rpi: true
 generate_version_file: true
 generate_local_vars: false

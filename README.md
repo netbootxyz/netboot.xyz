@@ -1,4 +1,4 @@
-## netboot.xyz
+## netboot.xyz [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Your%20favorite%20operating%20systems%20in%20one%20place!&url=https://netboot.xyz&hashtags=netbootxyz,ipxe,pxe,linux,tech,code)
 
 [![Build Status](https://github.com/netbootxyz/netboot.xyz/workflows/release/badge.svg)](https://github.com/netbootxyz/netboot.xyz/actions?query=workflow%3Arelease)
 [![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
@@ -21,6 +21,7 @@
 |------|------------|-------------|
 |Kernel| [netboot.xyz.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn)|Used for booting from GRUB/EXTLINUX|
 |Floppy| [netboot.xyz.dsk](https://boot.netboot.xyz/ipxe/netboot.xyz.dsk)| Virtual floppy disk for DRAC/iLO, VMware, Virtual Box, etc|
+|Padded Floppy| [netboot.xyz.pdsk](https://boot.netboot.xyz/ipxe/netboot.xyz.pdsk)| Padded Virtual floppy disk for DRAC/iLO, VMware, Virtual Box, etc|
 |DHCP| [netboot.xyz.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe)| DHCP boot image file, uses built-in iPXE NIC drivers|
 |DHCP-undionly| [netboot.xyz-undionly.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-undionly.kpxe)| DHCP boot image file, use if you have NIC issues|
 
@@ -137,10 +138,12 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Flatcar Linux | https://kinvolk.io/flatcar-container-linux/ | Yes | No |
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
 | FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
+| Garuda Linux | https://garudalinux.org/ | No | Yes |
 | Gentoo | https://gentoo.org | Yes | Yes |
 | Harvester | https://harvesterhci.io | Yes | No |
 | hrmpf | https://github.com/leahneukirchen/hrmpf/ | No | Yes |
 | IPFire | https://www.ipfire.org | Yes | No |
+| K3OS | https://k3os.io/ | Yes | Yes |
 | Kali Linux | https://www.kali.org | Yes | Yes |
 | KDE Neon | https://neon.kde.org | No | Yes |
 | Kodachi | https://www.digi77.com/linux-kodachi/ | No | Yes |
