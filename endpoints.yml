@@ -1784,3 +1784,13 @@ endpoints:
     os: garuda
     flavor: kde-barebones
     version: 210928
+  ubuntu-21.10-KDE-squash:
+    path: /ubuntu-squash/releases/download/21.10-0e47f5b7/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.10'
+    flavor: KDE
+    kernel: ubuntu-21.10-KDE-squash
