@@ -1824,3 +1824,13 @@ endpoints:
     version: '21.10'
     flavor: LXDE
     kernel: ubuntu-21.10-LXDE-squash
+  ubuntu-21.10-MATE-squash:
+    path: /ubuntu-squash/releases/download/21.10-69d492a7/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.10'
+    flavor: MATE
+    kernel: ubuntu-21.10-MATE-squash
