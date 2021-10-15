@@ -7,10 +7,13 @@ All notable changes to this project will be documented in this file.
 ## [2.0.51]
 #### Added
 - Fedora CoreOS - aarch64 support
-- Added Garuda Linux Live builds
+- Garuda Linux Live builds
+- Ubuntu 21.10 live builds and installers
+- Added Padded Floppy builds for tooling sensitive to size of disk
+- Added logic for building iPXE linux binaries
 
 #### Fixed
-- Fixed Manjaro builds so they are once again working
+- Manjaro builds working again
 
 ## [2.0.50] - 2021-10-03
 #### Added
