@@ -1539,7 +1539,7 @@ endpoints:
     kernel: ubuntu-netboot-21.10-amd64
     arch: amd64
   ubuntu-netboot-21.10-arm64:
-    path: /ubuntu-squash/releases/download/21.10-6a3b01ba/
+    path: /ubuntu-squash/releases/download/21.10-c6332e3c/
     files:
     - filesystem.squashfs
     - initrd
