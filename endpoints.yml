@@ -1814,3 +1814,13 @@ endpoints:
     version: '21.10'
     flavor: GNOME
     kernel: ubuntu-21.10-default-squash
+  ubuntu-21.10-LXDE-squash:
+    path: /ubuntu-squash/releases/download/21.10-17e8d677/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '21.10'
+    flavor: LXDE
+    kernel: ubuntu-21.10-LXDE-squash
