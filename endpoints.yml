@@ -1844,3 +1844,13 @@ endpoints:
     version: '21.10'
     flavor: Budgie
     kernel: ubuntu-21.10-Budgie-squash
+  pop-21.04-nvidia-squash:
+    path: /ubuntu-squash/releases/download/21.04-601c9b89/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '21.04'
+    flavor: nvidia
+    kernel: pop-21.04-nvidia-squash
