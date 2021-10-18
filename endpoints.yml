@@ -1203,7 +1203,7 @@ endpoints:
     os: freebsd
     version: '13'
   pop-21.04-default-squash:
-    path: /ubuntu-squash/releases/download/2-7ee5da15/
+    path: /ubuntu-squash/releases/download/21.04-62feddb8/
     files:
     - filesystem.squashfs
     - initrd
