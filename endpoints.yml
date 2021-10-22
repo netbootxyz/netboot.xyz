@@ -924,7 +924,7 @@ endpoints:
     version: 33
     flavor: MATE_Compiz
   vyos-rolling:
-    path: /debian-squash/releases/download/202110130217-fdd40a1c/
+    path: /debian-squash/releases/download/202110180513-fdd40a1c/
     files:
     - filesystem.squashfs
     - initrd
