@@ -17,5 +17,14 @@ item --gap Next-server:
 item nextserver ${space} ${next-server}
 item --gap Filename:
 item filename ${space} ${netX/filename}
+# Proxy DHCP info (Will only be displayed if proxydhcp is set)
+item --gap DHCP proxy present
+isset ${proxydhcp} && item proxy ${space} Yes || item proxy ${space} No
+isset ${proxydhcp} && item --gap DHCP proxy next-server ||
+isset ${proxydhcp} && item proxy-nextserver ${space} ${proxydhcp/next-server} ||
+isset ${proxydhcp} && item --gap Using DHCP proxy next-server ||
+isset ${proxydhcp} && iseq ${proxydhcp/next-server} ${tftp-server} && echo Yes || echo No (Using default next-server ${tftp-server})
+
+
 choose empty ||
 exit
