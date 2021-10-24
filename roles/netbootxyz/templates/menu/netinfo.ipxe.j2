@@ -15,21 +15,11 @@ item --gap DHCP server:
 item dhcpserver ${space} ${netX/dhcp-server}
 item --gap Next-server:
 item nextserver ${space} ${next-server}
+iseq ${proxydhcp/next-server} && item --gap DHCP proxy next-server: ||
+iseq ${proxydhcp/next-server} && item proxy-nextserver ${space} ${proxydhcp/next-server} ||
+iseq ${proxydhcp/next-server} && item --gap Booted from DHCP proxy next-server: ||
+iseq ${proxydhcp/next-server} && iseq ${proxydhcp/next-server} ${tftp-server} && echo Yes || echo No (Using default next-server ${tftp-server})
 item --gap Filename:
 item filename ${space} ${netX/filename}
-isset ${proxydhcp/next-server} && goto proxydhcp ||
-goto choose
-
-:proxydhcp
-# Proxy DHCP info (Will only be displayed if proxydhcp is set)
-item --gap DHCP proxy present
-item proxy ${space} Yes || item proxy ${space} No
-item --gap DHCP proxy next-server ||
-item proxy-nextserver ${space} ${proxydhcp/next-server} ||
-item --gap Using DHCP proxy next-server ||
-iseq ${proxydhcp/next-server} ${tftp-server} && echo Yes || echo No (Using default next-server ${tftp-server})
-goto choose
-
-:choose
 choose empty ||
 exit
