@@ -11,6 +11,7 @@ netbootxyz_packages:
   - git
   - isolinux
   - liblzma-dev
+  - libslirp-dev
   - syslinux
   - syslinux-common
   - toilet

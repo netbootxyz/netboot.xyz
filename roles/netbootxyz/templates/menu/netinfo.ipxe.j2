@@ -15,7 +15,11 @@ item --gap DHCP server:
 item dhcpserver ${space} ${netX/dhcp-server}
 item --gap Next-server:
 item nextserver ${space} ${next-server}
+isset ${proxydhcp/next-server} && item --gap DHCP proxy next-server: ||
+isset ${proxydhcp/next-server} && item proxy-nextserver ${space} ${proxydhcp/next-server} ||
+isset ${proxydhcp/next-server} && item --gap Booted from DHCP proxy next-server: ||
+isset ${proxydhcp/next-server} && iseq ${proxydhcp/next-server} ${tftp-server} && item bootproxy ${space} Yes ||
 item --gap Filename:
-item filename ${space} ${netX/filename}
+isset ${proxydhcp/next-server} && item filename ${space} ${proxydhcp/filename} || item filename ${space} ${netX/filename}
 choose empty ||
 exit

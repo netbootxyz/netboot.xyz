@@ -129,8 +129,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.14
-      name: '3.14'
+    - code_name: v3.15
+      name: '3.15'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -178,11 +178,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20210919.3.0
+    - code_name: 34.20211004.3.1
       name: stable
-    - code_name: 34.20211004.2.0
+    - code_name: 34.20211016.2.1
       name: testing
-    - code_name: 35.20211010.1.0
+    - code_name: 35.20211025.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -451,14 +451,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20211021T215943Z
+      name: 20211021T215943Z
     - code_name: 20211007T001741Z
       name: 20211007T001741Z
     - code_name: 20210923T003059Z
       name: 20210923T003059Z
     - code_name: 20210909T065923Z
       name: 20210909T065923Z
-    - code_name: 20210909T002651Z
-      name: 20210909T002651Z
   talos:
     enabled: true
     menu: linux

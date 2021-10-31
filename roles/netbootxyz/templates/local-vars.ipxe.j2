@@ -3,3 +3,8 @@
 
 ### set to enable enable github custom menu
 #set github_user my_github_username
+
+# If a DHCP proxy server is found and this variable is set to true, the tftp server provided by the DHCP proxy will be used instead of the tftp server provided by the root DHCP
+# Please note that this variable is always read from the local-vars.ipxe onb the tftp server the root DHCP provided
+# If the variable isn't present at runtime, the user will be queried to press a key to boot from the proxy DHCP prtovided ftfp server
+#set use_proxydhcp_settings true
