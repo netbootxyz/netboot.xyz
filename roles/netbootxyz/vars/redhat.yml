@@ -6,6 +6,7 @@ netbootxyz_packages:
   - genisoimage
   - git
   - httpd
+  - libslirp-devel
   - minizip-devel
   - syslinux
   - xz-devel

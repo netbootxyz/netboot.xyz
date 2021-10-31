@@ -20,14 +20,28 @@ iseq ${site_name} netboot.xyz || echo ${bold}${fg_whi}Powered by ${fg_gre}netboo
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp
-echo
 dhcp || goto netconfig
-isset ${next-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
-isset ${next-server} && iseq ${filename} {{ site_name }}-undionly.kpxe && goto tftpmenu ||
-isset ${next-server} && iseq ${filename} {{ site_name }}.efi && goto tftpmenu ||
-isset ${next-server} && iseq ${filename} {{ site_name }}-snp.efi && goto tftpmenu ||
-isset ${next-server} && iseq ${filename} {{ site_name }}-snponly.efi && goto tftpmenu ||
-isset ${next-server} && iseq ${filename} {{ site_name }}-arm64.efi && goto tftpmenu ||
+isset ${next-server} && isset ${proxydhcp/next-server} && goto choose-tftp || set tftp-server ${next-server} && goto load-custom-ipxe
+
+:choose-tftp
+# Load "proxy settings" from root server
+chain tftp://${next-server}/local-vars.ipxe || echo ${VARS_ERR}
+# Check if the proxy-dhcp-vars script has made any usable command about how to progress with a next-server and a proxy-next-server being set
+isset ${use_proxydhcp_settings} && iseq ${use_proxydhcp_settings} true && goto set-next-server ||
+prompt --key p --timeout 4000 DHCP proxy detected, press ${bold}p${boldoff} to boot from ${proxydhcp/next-server}... && set use_proxydhcp_settings true || set use_proxydhcp_settings false
+goto set-next-server
+
+:set-next-server
+iseq ${use_proxydhcp_settings} true && set tftp-server ${proxydhcp/next-server} || set tftp-server ${next-server}
+goto load-custom-ipxe
+
+:load-custom-ipxe
+isset ${tftp-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-undionly.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-snp.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-snponly.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-arm64.efi && goto tftpmenu ||
 goto menu
 
 :failsafe
@@ -79,10 +93,10 @@ echo Attempting chainload of ${boot_domain}...
 goto menu || goto failsafe
 
 :tftpmenu
-chain tftp://${next-server}/local-vars.ipxe || echo ${VARS_ERR}
-isset ${hostname} && chain --autofree tftp://${next-server}/HOSTNAME-${hostname}.ipxe || echo Custom boot by Hostname not found trying MAC...
-chain --autofree tftp://${next-server}/MAC-${mac:hexraw}.ipxe || echo Custom boot by MAC not found booting default...
-chain --autofree tftp://${next-server}/menu.ipxe || echo ${TFTP_ERR} && goto menu
+chain tftp://${tftp-server}/local-vars.ipxe || echo ${VARS_ERR}
+isset ${hostname} && chain --autofree tftp://${tftp-server}/HOSTNAME-${hostname}.ipxe || echo Custom boot by Hostname not found trying MAC...
+chain --autofree tftp://${tftp-server}/MAC-${mac:hexraw}.ipxe || echo Custom boot by MAC not found booting default...
+chain --autofree tftp://${tftp-server}/menu.ipxe || echo ${TFTP_ERR} && goto menu
 
 :menu
 {% if bootloader_https_enabled | bool %}

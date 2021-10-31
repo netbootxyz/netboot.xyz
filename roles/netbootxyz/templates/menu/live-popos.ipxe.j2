@@ -6,12 +6,21 @@ goto ${menu} ||
 set os Pop os Live
 menu ${os}
 item --gap ${os} Versions
+item hirsute ${space} ${os} 21.04
 item focal ${space} ${os} 20.04
 item bionic ${space} ${os} 18.04
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
+
+:hirsute
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "pop" and 'squash' in key and value.version == "21.04" %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% endif %}
+{% endfor %}
+goto flavor_select
 
 :focal
 {% for key, value in endpoints.items() | sort %}
@@ -55,6 +64,7 @@ initrd ${kernel_url}initrd
 boot
 
 :20.04-boot
+:21.04-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
