@@ -1872,3 +1872,12 @@ endpoints:
     os: fedora
     version: 35
     flavor: Cinnamon
+  fedora-35-KDE:
+    path: /fedora-assets/releases/download/1.2-3c3223cf/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 35
+    flavor: KDE
