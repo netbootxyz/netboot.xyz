@@ -1881,3 +1881,12 @@ endpoints:
     os: fedora
     version: 35
     flavor: KDE
+  fedora-35-LXDE:
+    path: /fedora-assets/releases/download/1.2-585c9c4f/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 35
+    flavor: LXDE
