@@ -1908,3 +1908,12 @@ endpoints:
     os: fedora
     version: 35
     flavor: MATE_Compiz
+  fedora-35-SoaS:
+    path: /fedora-assets/releases/download/1.2-06f1f9fc/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 35
+    flavor: SoaS
