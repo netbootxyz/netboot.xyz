@@ -1854,3 +1854,12 @@ endpoints:
     version: '21.04'
     flavor: nvidia
     kernel: pop-21.04-nvidia-squash
+  fedora-35-gnome:
+    path: /fedora-assets/releases/download/1.2-648d0746/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 35
+    flavor: GNOME
