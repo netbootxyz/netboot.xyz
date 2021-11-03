@@ -1917,3 +1917,12 @@ endpoints:
     os: fedora
     version: 35
     flavor: SoaS
+  fedora-35-Xfce:
+    path: /fedora-assets/releases/download/1.2-34182e18/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 35
+    flavor: Xfce
