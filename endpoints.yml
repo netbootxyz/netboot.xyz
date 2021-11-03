@@ -1899,3 +1899,12 @@ endpoints:
     os: fedora
     version: 35
     flavor: LXQt
+  fedora-35-MATE_Compiz:
+    path: /fedora-assets/releases/download/1.2-5aae3a5c/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 35
+    flavor: MATE_Compiz
