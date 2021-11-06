@@ -1486,7 +1486,7 @@ endpoints:
     version: 8.05
     arch: amd64
   shredos-i686:
-    path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-024603ac/
+    path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-9bec7a52/
     files:
     - shredos
     os: shredos
