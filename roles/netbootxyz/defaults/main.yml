@@ -122,6 +122,8 @@ releases:
       name: 8.3
     - code_name: 8.4
       name: 8.4
+    - code_name: 8.5
+      name: 8.5
   alpinelinux:
     base_dir: alpine
     enabled: true
