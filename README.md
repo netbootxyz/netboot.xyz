@@ -205,7 +205,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Redo Rescue | http://redorescue.com/ | LiveCD |
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
 | Rescuezilla | https://rescuezilla.com/ | LiveCD |
-| ShredOS | https://github.com/PartialVolume/shredos.x86_64 | Kernel | 
+| ShredOS | https://github.com/PartialVolume/shredos.x86_64 | USB Img | 
 | Super Grub2 Disk | http://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue | https://system-rescue.org/ | LiveCD |
 | The Smallest Server Suite | https://thesss.4mlinux.com/ | Kernel/Initrd |
