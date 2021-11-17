@@ -1253,13 +1253,13 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-20-cinnamon-squash
   proxmox:
-    path: /asset-mirror/releases/download/7.0-1-24e3084c/
+    path: /asset-mirror/releases/download/7.0-2-aed65b4b/
     files:
     - initrd
     - vmlinuz
     - proxmox.iso
     os: proxmox
-    version: 7.0-1
+    version: 7.0-2
   talos:
     path: /asset-mirror/releases/download/0.13.2-3f5e10e5/
     files:
