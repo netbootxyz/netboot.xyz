@@ -416,6 +416,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 8.5
+      name: 8.5
     - code_name: 8.4
       name: 8.4
   scientific:
