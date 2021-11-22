@@ -122,6 +122,8 @@ releases:
       name: 8.3
     - code_name: 8.4
       name: 8.4
+    - code_name: 8.5
+      name: 8.5
   alpinelinux:
     base_dir: alpine
     enabled: true
@@ -129,8 +131,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.15
-      name: '3.15'
+    - code_name: v3.14
+      name: '3.14'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -147,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.10.01
-      name: 2021.10.01
+    - code_name: 2021.11.01
+      name: 2021.11.01
   blackarch:
     enabled: true
     menu: linux
@@ -163,8 +165,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
-    - code_name: 8.4.2105
-      name: '8.4'
+    - code_name: 8.5.2111
+      name: '8.5'
     - code_name: 8
       name: 8.x Latest
     - code_name: 8-stream
@@ -178,11 +180,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20211004.3.1
+    - code_name: 34.20211031.3.0
       name: stable
-    - code_name: 34.20211016.2.1
+    - code_name: 35.20211029.2.0
       name: testing
-    - code_name: 35.20211025.1.0
+    - code_name: 35.20211107.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -414,6 +416,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 8.5
+      name: 8.5
     - code_name: 8.4
       name: 8.4
   scientific:
@@ -451,14 +455,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20211118T011125Z
+      name: 20211118T011125Z
+    - code_name: 20211104T023339Z
+      name: 20211104T023339Z
     - code_name: 20211021T215943Z
       name: 20211021T215943Z
     - code_name: 20211007T001741Z
       name: 20211007T001741Z
-    - code_name: 20210923T003059Z
-      name: 20210923T003059Z
-    - code_name: 20210909T065923Z
-      name: 20210909T065923Z
   talos:
     enabled: true
     menu: linux
