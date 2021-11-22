@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.54]
+
 ## [2.0.53]
 #### Added
 - Fedora 35
