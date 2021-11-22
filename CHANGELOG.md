@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.53]
+#### Added
+- Fedora 35
+- Various version updates
 
 ## [2.0.52] - 2021-10-31
 #### Added
