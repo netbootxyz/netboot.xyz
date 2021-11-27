@@ -334,6 +334,8 @@ releases:
       name: openEuler-20.03-LTS-SP1
     - code_name: openEuler-21.03
       name: openEuler-21.03
+    - code_name: openEuler-21.09
+      name: openEuler-21.09
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
