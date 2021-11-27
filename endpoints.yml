@@ -1573,13 +1573,13 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20210817-hirsute-86411ada/
+    path: /ubuntu-squash/releases/download/20211116-impish-86411ada/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20210817-hirsute
+    version: 20211116-impish
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
