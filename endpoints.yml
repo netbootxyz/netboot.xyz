@@ -1673,7 +1673,7 @@ endpoints:
     flavor: xfce
     version: 211129
   garuda-gnome:
-    path: /asset-mirror/releases/download/211028-f04b5cbd/
+    path: /asset-mirror/releases/download/211129-f04b5cbd/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1685,7 +1685,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: gnome
-    version: 211028
+    version: 211129
   garuda-lxqt-kwin:
     path: /asset-mirror/releases/download/211028-291ae047/
     files:
