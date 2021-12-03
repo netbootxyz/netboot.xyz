@@ -1771,7 +1771,7 @@ endpoints:
     flavor: mate
     version: 211028
   garuda-kde-barebones:
-    path: /asset-mirror/releases/download/211028-198784ed/
+    path: /asset-mirror/releases/download/211129-198784ed/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1783,7 +1783,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: kde-barebones
-    version: 211028
+    version: 211129
   ubuntu-21.10-KDE-squash:
     path: /ubuntu-squash/releases/download/21.10-0e47f5b7/
     files:
