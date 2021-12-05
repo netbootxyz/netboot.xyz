@@ -1013,7 +1013,7 @@ endpoints:
     os: nitrux
     version: 2021.10.29
   endeavouros:
-    path: /asset-mirror/releases/download/2021.08.27-d09b132d/
+    path: /asset-mirror/releases/download/21_4-1f037972/
     files:
     - airootfs.sfs
     - initrd
