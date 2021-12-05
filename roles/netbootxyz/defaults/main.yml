@@ -165,6 +165,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
+    - code_name: 9-stream
+      name: 9.0 Stream
     - code_name: 8.5.2111
       name: '8.5'
     - code_name: 8
