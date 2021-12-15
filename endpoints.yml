@@ -1935,3 +1935,13 @@ endpoints:
     os: fedora
     version: 35
     flavor: i3
+  pop-21.10-default-squash:
+    path: /ubuntu-squash/releases/download/21.10-ef99b0c9/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '21.10'
+    flavor: intel-amd
+    kernel: pop-21.10-default-squash
