@@ -1595,13 +1595,13 @@ endpoints:
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/2.8.1-5-ee3863df/
+    path: /debian-squash/releases/download/2.8.1-7-ee3863df/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 2.8.1-5
+    version: 2.8.1-7
     flavor: testing
     kernel: clonezilla-debian-testing-i686
     arch: i686
