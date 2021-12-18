@@ -633,7 +633,7 @@ endpoints:
     flavor: xfce
     kernel: manjaro-xfce-current
   manjaro-gnome-current:
-    path: /manjaro-squash/releases/download/21.1.6-211017-linux513-3e5e7dda/
+    path: /manjaro-squash/releases/download/21.2rc1-211211-linux515-3e5e7dda/
     files:
     - livefs.sfs
     - rootfs.sfs
@@ -642,7 +642,7 @@ endpoints:
     - initrd
     - vmlinuz
     os: manjaro
-    version: 21.1.6-211017-linux513
+    version: 21.2rc1-211211-linux515
     flavor: gnome
     kernel: manjaro-gnome-current
   manjaro-kde-current:
