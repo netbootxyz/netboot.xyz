@@ -1606,13 +1606,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20211206-impish-5774fbed/
+    path: /ubuntu-squash/releases/download/20211214-impish-5774fbed/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20211206-impish
+    version: 20211214-impish
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
