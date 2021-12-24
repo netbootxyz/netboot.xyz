@@ -1405,13 +1405,13 @@ endpoints:
     version: 8.04
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/8.06-6b538d55/
+    path: /asset-mirror/releases/download/8.07-6b538d55/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: systemrescue
-    version: 8.06
+    version: 8.07
     arch: amd64
   shredos-i686:
     path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-9bec7a52/
