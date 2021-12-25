@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.54]
+#### Added
+- CentOS 9 Stream hardset url
+- Various version updates
+
 ## [2.0.53]
 #### Added
 - Fedora 35
