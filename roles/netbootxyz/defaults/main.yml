@@ -131,8 +131,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.14
-      name: '3.14'
+    - code_name: v3.15
+      name: '3.15'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.11.01
-      name: 2021.11.01
+    - code_name: 2021.12.01
+      name: 2021.12.01
   blackarch:
     enabled: true
     menu: linux
@@ -165,6 +165,8 @@ releases:
     mirror: http://mirror.centos.org
     name: CentOS
     versions:
+    - code_name: 9-stream
+      name: 9.0 Stream
     - code_name: 8.5.2111
       name: '8.5'
     - code_name: 8
@@ -180,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 34.20211031.3.0
+    - code_name: 35.20211203.3.0
       name: stable
-    - code_name: 35.20211029.2.0
+    - code_name: 35.20211215.2.0
       name: testing
-    - code_name: 35.20211107.1.0
+    - code_name: 35.20211215.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -234,8 +236,6 @@ releases:
       name: 35
     - code_name: 34
       name: 34
-    - code_name: 33
-      name: 33
   flatcar:
     enabled: true
     menu: linux
@@ -284,8 +284,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core160
-      name: 2.27 Core160
+    - code_name: 2.27-core162
+      name: 2.27 Core162
   k3os:
     enabled: true
     menu: linux
@@ -334,6 +334,8 @@ releases:
       name: openEuler-20.03-LTS-SP1
     - code_name: openEuler-21.03
       name: openEuler-21.03
+    - code_name: openEuler-21.09
+      name: openEuler-21.09
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -455,14 +457,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20211216T012707Z
+      name: 20211216T012707Z
+    - code_name: 20211202T020723Z
+      name: 20211202T020723Z
     - code_name: 20211118T011125Z
       name: 20211118T011125Z
     - code_name: 20211104T023339Z
       name: 20211104T023339Z
-    - code_name: 20211021T215943Z
-      name: 20211021T215943Z
-    - code_name: 20211007T001741Z
-      name: 20211007T001741Z
   talos:
     enabled: true
     menu: linux
