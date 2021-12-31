@@ -1089,7 +1089,7 @@ endpoints:
     version: 34
     flavor: KDE
   rescuezilla-focal:
-    path: /asset-mirror/releases/download/2.2-b2e9a0d2/
+    path: /asset-mirror/releases/download/2.3-b2e9a0d2/
     files:
     - filesystem.squashfs
     - initrd
