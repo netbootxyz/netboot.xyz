@@ -1629,7 +1629,7 @@ endpoints:
     flavor: lxqt-kwin
     version: 211129
   garuda-wayfire:
-    path: /asset-mirror/releases/download/211129-99063bd3/
+    path: /asset-mirror/releases/download/220101-99063bd3/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1641,7 +1641,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: wayfire
-    version: 211129
+    version: 220101
   garuda-qtile:
     path: /asset-mirror/releases/download/220101-7445d99d/
     files:
