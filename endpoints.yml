@@ -933,13 +933,13 @@ endpoints:
     os: ovirt
     version: '4.4'
   nitrux-release:
-    path: /ubuntu-squash/releases/download/2021.12.05-e364d0a5/
+    path: /ubuntu-squash/releases/download/2021.12.27-e364d0a5/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: nitrux
-    version: 2021.12.05
+    version: 2021.12.27
   endeavouros:
     path: /asset-mirror/releases/download/21_4-1f037972/
     files:
