@@ -1479,13 +1479,13 @@ endpoints:
     kernel: ubuntu-netboot-21.10-arm64
     arch: arm64
   clonezilla-debian-stable-i686:
-    path: /debian-squash/releases/download/2.8.0-27-21f7bd02/
+    path: /debian-squash/releases/download/2.8.1-12-21f7bd02/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 2.8.0-27
+    version: 2.8.1-12
     flavor: stable
     kernel: clonezilla-debian-stable-i686
     arch: i686
