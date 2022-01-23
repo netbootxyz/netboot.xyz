@@ -916,7 +916,7 @@ endpoints:
     os: rescuezilla
     version: groovy
   deepin-20-squash:
-    path: /debian-squash/releases/download/20.2-e57a0c4b/
+    path: /debian-squash/releases/download/20.4-7aac93a9/
     files:
     - filesystem.squashfs
     - initrd
