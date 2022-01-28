@@ -449,14 +449,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20220127T011500Z
+      name: 20220127T011500Z
     - code_name: 20220118T183559Z
       name: 20220118T183559Z
     - code_name: 20220113T011608Z
       name: 20220113T011608Z
     - code_name: 20211216T012707Z
       name: 20211216T012707Z
-    - code_name: 20211202T020723Z
-      name: 20211202T020723Z
   talos:
     enabled: true
     menu: linux
