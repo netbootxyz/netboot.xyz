@@ -843,13 +843,13 @@ endpoints:
     os: kodachi
     version: '7'
   linux-lite-5-squash:
-    path: /ubuntu-squash/releases/download/5.6-75cb937c/
+    path: /ubuntu-squash/releases/download/5.8-75cb937c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: lite
-    version: 5.6
+    version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
     path: /debian-squash/releases/download/202202030910-fdd40a1c/
