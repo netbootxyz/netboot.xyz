@@ -1414,7 +1414,7 @@ endpoints:
     version: 9.01
     arch: amd64
   shredos-i686:
-    path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-9bec7a52/
+    path: /asset-mirror/releases/download/null-9bec7a52/
     files:
     - shredos
     os: shredos
