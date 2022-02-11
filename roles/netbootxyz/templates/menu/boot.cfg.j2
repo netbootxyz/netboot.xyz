@@ -99,30 +99,30 @@ goto clouds
 ###################################
 :clouds
 iseq ${ipxe_cloud_config} gce && goto gce ||
-iseq ${ipxe_cloud_config} packet && goto packet ||
+iseq ${ipxe_cloud_config} metal && goto metal ||
 goto clouds_end
 
 :gce
 set cmdline console=ttyS0,115200n8
 goto clouds_end
 
-:packet
-iseq ${arch} i386 && goto packet_x86_64 ||
-iseq ${arch} x86_64 && goto packet_x86_64 ||
-iseq ${arch} arm64 && goto packet_arm64 ||
+:metal
+iseq ${arch} i386 && goto metal_x86_64 ||
+iseq ${arch} x86_64 && goto metal_x86_64 ||
+iseq ${arch} arm64 && goto metal_arm64 ||
 goto clouds_end
 
-:packet_x86_64
+:metal_x86_64
 set cmdline console=ttyS1,115200n8
-iseq ${platform} efi && set ipxe_disk netboot.xyz-packet.efi || set ipxe_disk netboot.xyz-packet.kpxe
+iseq ${platform} efi && set ipxe_disk netboot.xyz-metal.efi || set ipxe_disk netboot.xyz-metal.kpxe
 set menu_linux_i386 0
 set menu_freedos 0
 set menu_windows 0
 goto clouds_end
 
-:packet_arm64
+:metal_arm64
 set cmdline console=ttyAMA0,115200
-set ipxe_disk netboot.xyz-packet-arm64.efi
+set ipxe_disk netboot.xyz-metal-arm64.efi
 set menu_bsd 0
 set menu_freedos 0
 set menu_live 0

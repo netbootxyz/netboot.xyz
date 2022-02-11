@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.56]
+#### Fixed
+- Change from Packet to Equinix Metal
+
 ## [2.0.55]
 #### Fixed
 - Hardset Flatcar Linux initrd to fix booting (https://github.com/netbootxyz/netboot.xyz/issues/1070)
