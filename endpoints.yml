@@ -1396,13 +1396,13 @@ endpoints:
     kernel: ubuntu-netboot-21.04-arm64
     arch: arm64
   systemrescue-i686:
-    path: /asset-mirror/releases/download/9.00-c6f1c9ac/
+    path: /asset-mirror/releases/download/9.01-c6f1c9ac/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: systemrescue
-    version: 9.0
+    version: 9.01
     arch: i686
   systemrescue-amd64:
     path: /asset-mirror/releases/download/9.01-6b538d55/
