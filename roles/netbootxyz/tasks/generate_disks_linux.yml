@@ -54,4 +54,4 @@
       src: "{{ ipxe_source_dir }}/src/bin-x86_64-linux/slirp.linux"
       dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-linux.bin"
       remote_src: True
-    when: bootloader_filename != "netboot.xyz-packet"
+    when: bootloader_filename != "netboot.xyz-metal"

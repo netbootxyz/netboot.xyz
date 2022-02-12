@@ -3,11 +3,11 @@
 # Arch Linux Operating System
 # http://www.archlinux.org
 
-isset ${dhcp-server} || goto static_ip
-set ipparam BOOTIF=${netX/mac} ip=dhcp
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} i386 && set os_arch i686 ||
+isset ${dhcp-server} || goto static_ip
+set ipparam BOOTIF=${netX/mac} ip=dhcp
 set real_archlinux_mirror ${archlinux_mirror}
 goto goto_menu
 

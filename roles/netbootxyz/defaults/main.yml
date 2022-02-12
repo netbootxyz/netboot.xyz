@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2021.12.01
-      name: 2021.12.01
+    - code_name: 2022.02.01
+      name: 2022.02.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 35.20211203.3.0
+    - code_name: 35.20220116.3.0
       name: stable
-    - code_name: 35.20211215.2.0
+    - code_name: 35.20220131.2.0
       name: testing
-    - code_name: 35.20211215.1.0
+    - code_name: 35.20220131.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -284,8 +284,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core162
-      name: 2.27 Core162
+    - code_name: 2.27-core163
+      name: 2.27 Core163
   k3os:
     enabled: true
     menu: linux
@@ -307,8 +307,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Mageia
     versions:
-    - code_name: '7.1'
-      name: '7.1'
+    - code_name: '8'
+      name: '8'
     - code_name: cauldron
       name: cauldron
   nixos:
@@ -321,6 +321,8 @@ releases:
       name: nixos-20.09
     - code_name: nixos-21.05
       name: nixos-21.05
+    - code_name: nixos-21.11
+      name: nixos-21.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -330,10 +332,8 @@ releases:
     mirror: http://repo.openeuler.org
     name: openEuler
     versions:
-    - code_name: openEuler-20.03-LTS-SP1
-      name: openEuler-20.03-LTS-SP1
-    - code_name: openEuler-21.03
-      name: openEuler-21.03
+    - code_name: openEuler-20.03-LTS-SP3
+      name: openEuler-20.03-LTS-SP3
     - code_name: openEuler-21.09
       name: openEuler-21.09
   openbsd:
@@ -376,14 +376,6 @@ releases:
     versions:
     - code_name: '15.3'
       name: openSUSE Leap 15.3
-    - code_name: '15.2'
-      name: openSUSE Leap 15.2
-    - code_name: '15.1'
-      name: openSUSE Leap 15.1
-    - code_name: '15.0'
-      name: openSUSE Leap 15.0
-    - code_name: '42.3'
-      name: openSUSE Leap 42.3
     - code_name: tumbleweed
       name: openSUSE tumbleweed
   oracle:
@@ -450,6 +442,8 @@ releases:
       name: '14.2'
     - code_name: '14.1'
       name: '14.1'
+    - code_name: '15.0'
+      name: '15.0'
   smartos:
     base_dir: /platform/i86pc/
     enabled: true
@@ -457,14 +451,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20211216T012707Z
-      name: 20211216T012707Z
-    - code_name: 20211202T020723Z
-      name: 20211202T020723Z
-    - code_name: 20211118T011125Z
-      name: 20211118T011125Z
-    - code_name: 20211104T023339Z
-      name: 20211104T023339Z
+    - code_name: 20220210T011229Z
+      name: 20220210T011229Z
+    - code_name: 20220127T011500Z
+      name: 20220127T011500Z
+    - code_name: 20220118T183559Z
+      name: 20220118T183559Z
+    - code_name: 20220113T011608Z
+      name: 20220113T011608Z
   talos:
     enabled: true
     menu: linux
@@ -481,8 +475,8 @@ releases:
       name: Digital Ocean
     - key: gcp
       name: GCP
-    - key: packet
-      name: Packet
+    - key: metal
+      name: Equinix Metal
     - key: vmware
       name: VMware
   tinycore:
@@ -493,13 +487,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /12.x/x86/release/distribution_files/core.gz
-      kernel: /12.x/x86/release/distribution_files/vmlinuz
+      initrd: /13.x/x86/release/distribution_files/core.gz
+      kernel: /13.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /12.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /12.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /13.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /13.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
