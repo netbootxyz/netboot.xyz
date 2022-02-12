@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.56]
+
 ## [2.0.55]
 #### Added
 - Slackware 15.0
