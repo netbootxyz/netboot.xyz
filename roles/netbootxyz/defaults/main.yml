@@ -146,7 +146,7 @@ releases:
     base_dir: archlinux
     enabled: true
     menu: linux
-    mirror: mirrors.edge.kernel.org
+    mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
     - code_name: 2022.02.01
