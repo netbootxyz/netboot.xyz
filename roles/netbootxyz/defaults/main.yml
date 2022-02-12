@@ -433,7 +433,7 @@ releases:
     base_dir: slackware
     enabled: true
     menu: linux
-    mirror: http://mirror.rackspace.com
+    mirror: http://mirrors.kernel.org
     name: Slackware
     versions:
     - code_name: current
