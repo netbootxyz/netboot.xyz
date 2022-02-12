@@ -10,10 +10,10 @@ set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
 set ipxe_version ${version}
 set version {{ boot_version }}
-set ipxe_cloud_config packet
+set ipxe_cloud_config metal
 
 :start
-echo ${bold}${fg_gre}netboot.xyz ${fg_whi}v${version} for ${fg_red}packet.com${fg_whi}${boldoff}
+echo ${bold}${fg_gre}netboot.xyz ${fg_whi}v${version} for ${fg_red}metal.equinix.com${fg_whi}${boldoff}
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp
