@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 #### Fixed
 - Hardset Flatcar Linux initrd to fix booting (https://github.com/netbootxyz/netboot.xyz/issues/1070)
 - Archlinux now sets archtecture correctly with static ips
+
 #### Changes
 - Changes Packet bootloaders to Equinix Metal
 - Switch archlinux default mirror to mirrors.edge.kernel.org to avoid redirect
