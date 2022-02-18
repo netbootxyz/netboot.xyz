@@ -666,7 +666,7 @@ endpoints:
     os: fatdog
     version: current
   raizo:
-    path: /debian-squash/releases/download/v13.22.01.08i-0aa6f3c9/
+    path: /debian-squash/releases/download/v13.22.02.13p-0aa6f3c9/
     files:
     - filesystem.squashfs
     - initrd
