@@ -63,7 +63,7 @@
     - ".dsk"
     - ".lkrn"
     - ".kpxe"
-    when: bootloader_filename != "netboot.xyz-metal"
+    when: bootloader_filename != "netboot.xyz-packet"
 
   - name: Copy iPXE files for Legacy BIOS to http directory
     copy:
@@ -72,11 +72,11 @@
       remote_src: True
     with_items:
     - ".kpxe"
-    when: bootloader_filename == "netboot.xyz-metal"
+    when: bootloader_filename == "netboot.xyz-packet"
 
   - name: Copy undionly.kpxe for Legacy BIOS to http directory
     copy:
       src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
       dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
       remote_src: True
-    when: bootloader_filename != "netboot.xyz-metal"
+    when: bootloader_filename != "netboot.xyz-packet"

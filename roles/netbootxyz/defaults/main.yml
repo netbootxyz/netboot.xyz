@@ -475,8 +475,8 @@ releases:
       name: Digital Ocean
     - key: gcp
       name: GCP
-    - key: metal
-      name: Equinix Metal
+    - key: packet
+      name: Packet
     - key: vmware
       name: VMware
   tinycore:

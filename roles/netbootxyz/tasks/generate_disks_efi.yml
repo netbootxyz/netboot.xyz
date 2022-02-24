@@ -62,13 +62,13 @@
       - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ bootloader_filename }}.efi" }
       - { src: "bin-x86_64-efi/snp.efi", dest: "{{ bootloader_filename }}-snp.efi" }
       - { src: "bin-x86_64-efi/snponly.efi", dest: "{{ bootloader_filename }}-snponly.efi" }
-    when: bootloader_filename != "netboot.xyz-metal"
+    when: bootloader_filename != "netboot.xyz-packet"
 
-  - name: Copy iPXE EFI builds to http directory for Equinix Metal
+  - name: Copy iPXE EFI builds to http directory for packet
     copy:
       src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
       dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
       remote_src: True
     with_items:
       - { src: "bin-x86_64-efi/ipxe.efi", dest: "{{ bootloader_filename }}.efi" }
-    when: bootloader_filename == "netboot.xyz-metal"
+    when: bootloader_filename == "netboot.xyz-packet"
