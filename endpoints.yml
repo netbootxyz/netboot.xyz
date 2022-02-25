@@ -717,7 +717,7 @@ endpoints:
     flavor: architect
     kernel: manjaro-default-current
   ubuntu-20.04-default-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-9bc4558b/
+    path: /ubuntu-squash/releases/download/20.04.4-9bc4558b/
     files:
     - filesystem.squashfs
     - initrd
