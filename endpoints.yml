@@ -1348,13 +1348,13 @@ endpoints:
     os: hrmpf
     version: '20210914'
   ubuntu-netboot-20.04-arm64:
-    path: /ubuntu-squash/releases/download/20.04.3-2c21f29a/
+    path: /ubuntu-squash/releases/download/20.04.4-2c21f29a/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.3
+    version: 20.04.4
     codename: focal
     flavor: netboot
     kernel: ubuntu-netboot-20.04-arm64
