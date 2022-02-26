@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.56]
-
+#### Fixed
+- Added a ipxe_cloud_config for packet and metal for older clients
+ 
 ## [2.0.55]
 #### Added
 - Slackware 15.0
