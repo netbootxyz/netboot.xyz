@@ -100,6 +100,7 @@ goto clouds
 :clouds
 iseq ${ipxe_cloud_config} gce && goto gce ||
 iseq ${ipxe_cloud_config} metal && goto metal ||
+iseq ${ipxe_cloud_config} packet && goto metal ||
 goto clouds_end
 
 :gce
