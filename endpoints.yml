@@ -141,13 +141,13 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2021.4a-023bb8a5/
+    path: /debian-squash/releases/download/2022.1-023bb8a5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: 2021.4a
+    version: '2022.1'
     flavor: xfce
     kernel: kali-xfce-squash
   pop-19.10-default-squash:
@@ -564,7 +564,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.16.2-2022.01.24-a3024eea/
+    path: /asset-mirror/releases/download/5.16.8-2022.02.10-a3024eea/
     files:
     - initrd
     - vmlinuz
@@ -666,7 +666,7 @@ endpoints:
     os: fatdog
     version: current
   raizo:
-    path: /debian-squash/releases/download/v13.22.01.08i-0aa6f3c9/
+    path: /debian-squash/releases/download/v13.22.02.13p-0aa6f3c9/
     files:
     - filesystem.squashfs
     - initrd
@@ -717,7 +717,7 @@ endpoints:
     flavor: architect
     kernel: manjaro-default-current
   ubuntu-20.04-default-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-9bc4558b/
+    path: /ubuntu-squash/releases/download/20.04.4-9bc4558b/
     files:
     - filesystem.squashfs
     - initrd
@@ -727,7 +727,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-20.04-default-squash
   ubuntu-20.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-08845a46/
+    path: /ubuntu-squash/releases/download/20.04.4-08845a46/
     files:
     - filesystem.squashfs
     - initrd
@@ -737,7 +737,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-20.04-KDE-squash
   ubuntu-20.04-XFCE-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-8f15ed5e/
+    path: /ubuntu-squash/releases/download/20.04.4-8f15ed5e/
     files:
     - filesystem.squashfs
     - initrd
@@ -747,7 +747,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-20.04-XFCE-squash
   ubuntu-20.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-3f82ff65/
+    path: /ubuntu-squash/releases/download/20.04.4-3f82ff65/
     files:
     - filesystem.squashfs
     - initrd
@@ -757,7 +757,7 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-20.04-LXDE-squash
   ubuntu-20.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-54eaec40/
+    path: /ubuntu-squash/releases/download/20.04.4-54eaec40/
     files:
     - filesystem.squashfs
     - initrd
@@ -767,7 +767,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-20.04-Budgie-squash
   ubuntu-20.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-6be8be20/
+    path: /ubuntu-squash/releases/download/20.04.4-6be8be20/
     files:
     - filesystem.squashfs
     - initrd
@@ -777,7 +777,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-20.04-MATE-squash
   ubuntu-20.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/20.04.3-b366cf71/
+    path: /ubuntu-squash/releases/download/20.04.4-b366cf71/
     files:
     - filesystem.squashfs
     - initrd
@@ -852,7 +852,7 @@ endpoints:
     version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/202202080317-fdd40a1c/
+    path: /debian-squash/releases/download/202202150317-fdd40a1c/
     files:
     - filesystem.squashfs
     - initrd
@@ -1302,13 +1302,13 @@ endpoints:
     os: memtest86-free
     version: '9.4'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20220207T170556Z-6734abfd/
+    path: /asset-mirror/releases/download/20220214T170538Z-6734abfd/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20220207T170556Z
+    version: 20220214T170538Z
     arch: x86
   gentoo-arm64:
     path: /asset-mirror/releases/download/20220123T230658Z-079d67cf/
@@ -1320,13 +1320,13 @@ endpoints:
     version: 20220123T230658Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20220123T170538Z-383e823f/
+    path: /asset-mirror/releases/download/20220217T125149Z-383e823f/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20220123T170538Z
+    version: 20220217T125149Z
     arch: amd64
   tails:
     path: /asset-mirror/releases/download/4.27-624dc85f/
@@ -1348,25 +1348,25 @@ endpoints:
     os: hrmpf
     version: '20210914'
   ubuntu-netboot-20.04-arm64:
-    path: /ubuntu-squash/releases/download/20.04.3-2c21f29a/
+    path: /ubuntu-squash/releases/download/20.04.4-2c21f29a/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.3
+    version: 20.04.4
     codename: focal
     flavor: netboot
     kernel: ubuntu-netboot-20.04-arm64
     arch: arm64
   ubuntu-netboot-20.04-amd64:
-    path: /ubuntu-squash/releases/download/20.04.3-873839e4/
+    path: /ubuntu-squash/releases/download/20.04.4-873839e4/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.3
+    version: 20.04.4
     codename: focal
     flavor: netboot
     kernel: ubuntu-netboot-20.04-amd64
@@ -1512,35 +1512,35 @@ endpoints:
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
   clonezilla-debian-testing-amd64:
-    path: /debian-squash/releases/download/3.0.0-2-5fb1a15b/
+    path: /debian-squash/releases/download/3.0.0-3-5fb1a15b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.0-2
+    version: 3.0.0-3
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/3.0.0-2-ee3863df/
+    path: /debian-squash/releases/download/3.0.0-3-ee3863df/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.0-2
+    version: 3.0.0-3
     flavor: testing
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20220204-impish-5774fbed/
+    path: /ubuntu-squash/releases/download/20220214-impish-5774fbed/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220204-impish
+    version: 20220214-impish
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64

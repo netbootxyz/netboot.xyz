@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 35.20220116.3.0
+    - code_name: 35.20220131.3.0
       name: stable
-    - code_name: 35.20220131.2.0
+    - code_name: 35.20220213.2.0
       name: testing
-    - code_name: 35.20220131.1.0
+    - code_name: 35.20220213.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -433,7 +433,7 @@ releases:
     base_dir: slackware
     enabled: true
     menu: linux
-    mirror: http://mirror.rackspace.com
+    mirror: http://mirrors.kernel.org
     name: Slackware
     versions:
     - code_name: current
@@ -451,14 +451,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20220224T192409Z
+      name: 20220224T192409Z
+    - code_name: 20220224T005328Z
+      name: 20220224T005328Z
     - code_name: 20220210T011229Z
       name: 20220210T011229Z
     - code_name: 20220127T011500Z
       name: 20220127T011500Z
-    - code_name: 20220118T183559Z
-      name: 20220118T183559Z
-    - code_name: 20220113T011608Z
-      name: 20220113T011608Z
   talos:
     enabled: true
     menu: linux
