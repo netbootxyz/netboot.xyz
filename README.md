@@ -164,6 +164,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Peppermint | https://peppermintos.com | No | Yes |
 | Pop OS |https://system76.com/pop| No | Yes |
 | Proxmox VE | https://www.proxmox.com/ | Yes | No |
+| Proxmox Backup Server | https://www.proxmox.com/ | Yes | No |
 | Q4OS | https://q4os.org | No | Yes |
 | Raizo | https://sourceforge.net/projects/live-raizo/ | No | Yes |
 | RancherOS | https://rancher.com/rancher-os | Yes | No |

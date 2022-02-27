@@ -390,6 +390,10 @@ releases:
     enabled: true
     menu: linux
     name: Proxmox VE
+  pbs:
+    enabled: true
+    menu: linux
+    name: Proxmox Backup Server
   rancheros:
     base_dir: os/latest
     enabled: true
