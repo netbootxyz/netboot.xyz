@@ -1196,7 +1196,7 @@ endpoints:
     os: talos
     version: 0.13.4
   elementaryos-6-default-squash:
-    path: /ubuntu-squash/releases/download/6-c6e63f57/
+    path: /ubuntu-squash/releases/download/6-fd43c6f8/
     files:
     - initrd
     - vmlinuz
