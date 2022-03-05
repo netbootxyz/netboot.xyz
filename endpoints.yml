@@ -1873,3 +1873,11 @@ endpoints:
     version: '21.10'
     flavor: intel-amd
     kernel: pop-21.10-default-squash
+  proxmox-backup-server:
+    path: /asset-mirror/releases/download/2.1-1-4284f5d8/
+    files:
+    - initrd
+    - proxmox-backup-server.iso
+    - vmlinuz
+    os: proxmox-backup-server
+    version: 2.1-1
