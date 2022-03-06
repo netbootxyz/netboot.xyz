@@ -1180,14 +1180,6 @@ endpoints:
     version: '20'
     flavor: Cinnamon
     kernel: mint-20-cinnamon-squash
-  proxmox:
-    path: /asset-mirror/releases/download/7.1-2-aed65b4b/
-    files:
-    - initrd
-    - vmlinuz
-    - proxmox.iso
-    os: proxmox
-    version: 7.1-2
   talos:
     path: /asset-mirror/releases/download/0.13.4-3f5e10e5/
     files:
