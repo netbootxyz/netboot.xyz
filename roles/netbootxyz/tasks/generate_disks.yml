@@ -1,29 +1,29 @@
 ---
 
-  - include: generate_disks_base.yml
+  - include_tasks: generate_disks_base.yml
 
-  - include: generate_disks_legacy.yml
+  - include_tasks: generate_disks_legacy.yml
     when:
     - generate_disks_legacy | default(true) | bool
 
-  - include: generate_disks_linux.yml
+  - include_tasks: generate_disks_linux.yml
     when:
     - generate_disks_linux | default(false) | bool
 
-  - include: generate_disks_efi.yml
+  - include_tasks: generate_disks_efi.yml
     when:
     - generate_disks_efi | default(true) | bool
 
-  - include: generate_disks_arm.yml
+  - include_tasks: generate_disks_arm.yml
     when:
     - generate_disks_arm | default(false) | bool
 
-  - include: generate_disks_rpi.yml
+  - include_tasks: generate_disks_rpi.yml
     when:
     - generate_disks_rpi | default(false) | bool
     - bootloader_filename == "netboot.xyz"
 
-  - include: generate_disks_hybrid.yml
+  - include_tasks: generate_disks_hybrid.yml
     when:
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool

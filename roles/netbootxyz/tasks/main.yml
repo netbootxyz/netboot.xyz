@@ -1,13 +1,13 @@
 ---
-  - include: generate_menus.yml
+  - include_tasks: generate_menus.yml
     when:
     - generate_menus | default(true) | bool
 
-  - include: generate_menus_custom.yml
+  - include_tasks: generate_menus_custom.yml
     when:
     - custom_generate_menus | default(false) | bool
 
-  - include: generate_disks.yml
+  - include_tasks: generate_disks.yml
     with_items:
     - "{{ bootloader_disks }}"
     loop_control:
@@ -15,10 +15,10 @@
     when:
     - generate_disks | default(true) | bool
 
-  - include: generate_checksums.yml
+  - include_tasks: generate_checksums.yml
     when:
     - generate_checksums | default(true) | bool
 
-  - include: generate_signatures.yml
+  - include_tasks: generate_signatures.yml
     when:
     - generate_signatures | default(false) | bool
