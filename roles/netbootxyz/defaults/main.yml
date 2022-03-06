@@ -389,7 +389,7 @@ releases:
   proxmox:
     enabled: true
     menu: linux
-    name: Proxmox VE
+    name: Proxmox
   rancheros:
     base_dir: os/latest
     enabled: true
