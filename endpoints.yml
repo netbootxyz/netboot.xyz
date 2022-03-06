@@ -1881,3 +1881,11 @@ endpoints:
     - vmlinuz
     os: proxmox-backup-server
     version: 2.1-1
+  proxmox-ve:
+    path: /asset-mirror/releases/download/7.1-2-a42c4ce8/
+    files:
+    - initrd
+    - proxmox.iso
+    - vmlinuz
+    os: proxmox-ve
+    version: 7.1-2
