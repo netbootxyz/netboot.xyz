@@ -1881,3 +1881,11 @@ endpoints:
     - vmlinuz
     os: proxmox-ve
     version: 7.1-2
+  proxmox-mailgateway:
+    path: /asset-mirror/releases/download/7.1-1-e466f982/
+    files:
+    - initrd
+    - proxmox-mailgateway.iso
+    - vmlinuz
+    os: proxmox-mailgateway
+    version: 7.1-1
