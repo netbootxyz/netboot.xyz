@@ -1321,7 +1321,7 @@ endpoints:
     version: 20220308T160629Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/4.27-624dc85f/
+    path: /asset-mirror/releases/download/4.28-81501ab2/
     files:
     - vmlinuz
     - initrd.img
@@ -1329,7 +1329,7 @@ endpoints:
     - 9990-misc-helpers.sh
     - tails-amd64-4.23.iso
     os: tails
-    version: '4.27'
+    version: '4.28'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20211227-bed8dd88/
