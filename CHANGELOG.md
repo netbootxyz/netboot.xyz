@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.57]
 #### Added
 - Proxmox Backup Server
+- Proxmox Mail Gateway
 #### Changes
 - Proxmox pulls ISO from upstream site now, consolidated Proxmox items to one menu
 
