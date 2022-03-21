@@ -4,18 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.57]
+## [2.0.58]
+
+## [2.0.57] - 2022-03-21
 #### Added
 - Proxmox Backup Server
 - Proxmox Mail Gateway
 #### Changes
 - Proxmox pulls ISO from upstream site now, consolidated Proxmox items to one menu
 
-## [2.0.56]
+## [2.0.56] - 2022-02-26
 #### Fixed
 - Added a ipxe_cloud_config for packet and metal for older clients
  
-## [2.0.55]
+## [2.0.55] - 2022-02-12
 #### Added
 - Slackware 15.0
 
@@ -27,12 +29,12 @@ All notable changes to this project will be documented in this file.
 - Changes Packet bootloaders to Equinix Metal
 - Switch archlinux default mirror to mirrors.edge.kernel.org to avoid redirect
 
-## [2.0.54]
+## [2.0.54] - 2021-12-25
 #### Added
 - CentOS 9 Stream hardset url
 - Various version updates
 
-## [2.0.53]
+## [2.0.53] - 2021-11-22
 #### Added
 - Fedora 35
 - Various version updates
