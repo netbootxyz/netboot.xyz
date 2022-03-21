@@ -1,42 +1,96 @@
 #!ipxe
 
-# Proxmox VE
+# Proxmox Open Source Products
 # https://www.proxmox.com
 
 goto ${menu} ||
 
 :proxmox
+clear proxmox_choice
 clear proxmox_version
-set os Proxmox VE
+set os Proxmox
 menu ${os}
-item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "proxmox" %}
-item normal ${space} ${os} {{ value.version }}
-item debug ${space} ${os} {{ value.version }} (Debug)
+{% if value.os == "proxmox-backup-server" %}
+item --gap ${os} Backup Server
+item pbs-normal ${space} ${os} Backup Server {{ value.version }}
+item pbs-debug ${space} ${os} Backup Server {{ value.version }} (Debug)
+{% endif %}
+{% if value.os == "proxmox-mailgateway" %}
+item --gap ${os} Mail Gateway
+item pmg-normal ${space} ${os} Mail Gateway {{ value.version }}
+item pmg-debug ${space} ${os} Mail Gateway {{ value.version }} (Debug)
+{% endif %}
+{% if value.os == "proxmox-ve" %}
+item --gap ${os} VE
+item pve-normal ${space} ${os} VE {{ value.version }}
+item pve-debug ${space} ${os} VE {{ value.version }} (Debug)
 {% endif %}
 {% endfor %}
-choose proxmox_version || goto proxmox_exit
-goto ${proxmox_version}
+choose proxmox_choice || goto proxmox_exit
+goto ${proxmox_choice}
 
-:normal
+:pve-normal
 set params splash=silent
-goto boot
+goto boot-pve
 
-:debug
+:pve-debug
 set params splash=verbose proxdebug
-goto boot
+goto boot-pve
 
-:boot
+:pmg-normal
+set params splash=silent
+goto boot-pmg
+
+:pmg-debug
+set params splash=verbose proxdebug
+goto boot-pmg
+
+:pbs-normal
+set params splash=silent
+goto boot-pbs
+
+:pbs-debug
+set params splash=verbose proxdebug
+goto boot-pbs
+
+:boot-pbs
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "proxmox" %}
+{% if value.os == "proxmox-backup-server" %}
 set kernel_url ${live_endpoint}{{ value.path }}
+set proxmox_version {{ value.version }}
 {% endif %}
 {% endfor %}
 imgfree
 kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
 initrd ${kernel_url}initrd
-initrd ${kernel_url}proxmox.iso /proxmox.iso
+initrd http://download.proxmox.com/iso/proxmox-backup-server_${proxmox_version}.iso /proxmox.iso
+boot
+
+:boot-pmg
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "proxmox-mailgateway" %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set proxmox_version {{ value.version }}
+{% endif %}
+{% endfor %}
+imgfree
+kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
+initrd ${kernel_url}initrd
+initrd http://download.proxmox.com/iso/proxmox-mailgateway_${proxmox_version}.iso /proxmox.iso
+boot
+
+:boot-pve
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "proxmox-ve" %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set proxmox_version {{ value.version }}
+{% endif %}
+{% endfor %}
+imgfree
+kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
+initrd ${kernel_url}initrd
+initrd http://download.proxmox.com/iso/proxmox-ve_${proxmox_version}.iso /proxmox.iso
 boot
 
 :proxmox_exit

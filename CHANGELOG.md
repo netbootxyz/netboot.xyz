@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.57]
+#### Added
+- Proxmox Backup Server
+- Proxmox Mail Gateway
+#### Changes
+- Proxmox pulls ISO from upstream site now, consolidated Proxmox items to one menu
+
 ## [2.0.56]
 #### Fixed
 - Added a ipxe_cloud_config for packet and metal for older clients
