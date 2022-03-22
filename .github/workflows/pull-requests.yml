@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install ansible==5.4.0 ansible-lint==5.4.0
+        pip install ansible ansible-lint
 
     - name: Syntax Check
       run: |
@@ -27,7 +27,7 @@ jobs:
 
     - name: Ansible lint
       run: |
-        ansible-lint -v roles/netbootxyz
+        ansible-lint -v roles/netbootxyz/tasks
 
   build-pr:
     name: Build Pull Request
