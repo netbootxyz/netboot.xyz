@@ -20,4 +20,4 @@ ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_ca_filename: ca-ipxe-org.crt
 codesign_cert_filename: codesign.crt
 codesign_key_filename: codesign.key
-cert_file_filename : ca-netboot-xyz.crt
+cert_file_filename: ca-netboot-xyz.crt

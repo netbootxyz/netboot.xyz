@@ -1,23 +1,23 @@
 ---
 
-  - name: Generate hybrid ISO image
-    shell: |
-      ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.iso \
-        -s {{ bootloader_filename }} \
-        {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
-        {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
-    args:
-      chdir: "{{ ipxe_source_dir }}/src"
-    tags:
+- name: Generate hybrid ISO image
+  shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.iso \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  tags:
     - skip_ansible_lint
 
-  - name: Generate hybrid USB image
-    shell: |
-      ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.img \
-        -s {{ bootloader_filename }} \
-        {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
-        {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
-    args:
-      chdir: "{{ ipxe_source_dir }}/src"
-    tags:
+- name: Generate hybrid USB image
+  shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.img \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  tags:
     - skip_ansible_lint

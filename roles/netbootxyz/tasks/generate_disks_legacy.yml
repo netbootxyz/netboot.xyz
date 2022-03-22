@@ -1,82 +1,82 @@
 ---
 
-  - name: Copy netboot.xyz local legacy iPXE configs
-    copy:
-      src: "ipxe/local/{{ item }}"
-      dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
-    with_items:
-      - colour.h
-      - console.h
-      - crypto.h
-      - general.h
+- name: Copy netboot.xyz local legacy iPXE configs
+  ansible.builtin.copy:
+    src: "ipxe/local/{{ item }}"
+    dest: "{{ ipxe_source_dir }}/src/config/local/{{ item }}"
+  with_items:
+    - colour.h
+    - console.h
+    - crypto.h
+    - general.h
 
-  - name: Set trust file to ipxe ca
-    set_fact:
-      trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
-    when: not generate_signatures
+- name: Set trust file to ipxe ca
+  ansible.builtin.set_fact:
+    trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
+  when: not generate_signatures
 
-  - name: Combine trust args if set
-    set_fact:
-      trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }},{{ cert_dir }}/{{ cert_file_filename }}"
-    when: generate_signatures | bool
+- name: Combine trust args if set
+  ansible.builtin.set_fact:
+    trust_files: "{{ cert_dir }}/{{ ipxe_ca_filename }},{{ cert_dir }}/{{ cert_file_filename }}"
+  when: generate_signatures | bool
 
-  - name: Compile iPXE bootloader for Legacy BIOS
-    shell: |
-      make clean
-      make EMBED={{ bootloader_filename }} \
-           TRUST={{ trust_files }} \
-           bin/ipxe.dsk \
-           bin/ipxe.pdsk \
-           bin/ipxe.lkrn \
-           bin/ipxe.kpxe \
-           bin/undionly.kpxe
-    args:
-      chdir: "{{ ipxe_source_dir }}/src"
-    tags:
+- name: Compile iPXE bootloader for Legacy BIOS
+  shell: |
+    make clean
+    make EMBED={{ bootloader_filename }} \
+         TRUST={{ trust_files }} \
+         bin/ipxe.dsk \
+         bin/ipxe.pdsk \
+         bin/ipxe.lkrn \
+         bin/ipxe.kpxe \
+         bin/undionly.kpxe
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  tags:
     - skip_ansible_lint
-    when: ipxe_debug_enabled | bool == false
+  when: ipxe_debug_enabled | bool == false
 
-  - name: Compile iPXE bootloader for Legacy BIOS with debug flags
-    shell: |
-      make clean
-      make EMBED={{ bootloader_filename }} \
-           DEBUG={{ ipxe_debug_options }} \
-           TRUST={{ trust_files }} \
-           bin/ipxe.dsk \
-           bin/ipxe.pdsk \
-           bin/ipxe.lkrn \
-           bin/ipxe.kpxe \
-           bin/undionly.kpxe
-    args:
-      chdir: "{{ ipxe_source_dir }}/src"
-    tags:
+- name: Compile iPXE bootloader for Legacy BIOS with debug flags
+  shell: |
+    make clean
+    make EMBED={{ bootloader_filename }} \
+         DEBUG={{ ipxe_debug_options }} \
+         TRUST={{ trust_files }} \
+         bin/ipxe.dsk \
+         bin/ipxe.pdsk \
+         bin/ipxe.lkrn \
+         bin/ipxe.kpxe \
+         bin/undionly.kpxe
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  tags:
     - skip_ansible_lint
-    when: ipxe_debug_enabled | bool
+  when: ipxe_debug_enabled | bool
 
-  - name: Copy iPXE files for Legacy BIOS to http directory
-    copy:
-      src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
-      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
-      remote_src: True
-    with_items:
+- name: Copy iPXE files for Legacy BIOS to http directory
+  ansible.builtin.copy:
+    src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
+    dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
+    remote_src: true
+  with_items:
     - ".pdsk"
     - ".dsk"
     - ".lkrn"
     - ".kpxe"
-    when: bootloader_filename != "netboot.xyz-metal"
+  when: bootloader_filename != "netboot.xyz-metal"
 
-  - name: Copy iPXE files for Legacy BIOS to http directory
-    copy:
-      src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
-      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
-      remote_src: True
-    with_items:
+- name: Copy iPXE files for Legacy BIOS to http directory
+  ansible.builtin.copy:
+    src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
+    dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
+    remote_src: true
+  with_items:
     - ".kpxe"
-    when: bootloader_filename == "netboot.xyz-metal"
+  when: bootloader_filename == "netboot.xyz-metal"
 
-  - name: Copy undionly.kpxe for Legacy BIOS to http directory
-    copy:
-      src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
-      dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
-      remote_src: True
-    when: bootloader_filename != "netboot.xyz-metal"
+- name: Copy undionly.kpxe for Legacy BIOS to http directory
+  ansible.builtin.copy:
+    src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
+    dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
+    remote_src: true
+  when: bootloader_filename != "netboot.xyz-metal"
