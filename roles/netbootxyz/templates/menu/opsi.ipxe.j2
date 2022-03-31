@@ -1,0 +1,42 @@
+#!ipxe
+
+goto ${menu} ||
+
+:opsi_menu
+menu OPSI {{ endpoints.opsi.version }} (Open PC Server Integration)
+set kernel_url ${live_endpoint}{{ endpoints.opsi.path }}vmlinuz-x64
+item --gap THIS SOFTWARE DESTROYS DATA
+item --gap EVERY BOOT OPTION IS DESTRUCTIVE
+item --gap DO NOT PROCEED IF YOU DO NOT KNOW WHAT THIS IS
+item opsi_exit ${space} Go Back
+item opsi_options ${space} Proceed I know what I am doing
+choose menu || goto opsi_exit
+goto ${menu}
+
+:opsi_options
+clear menu
+menu OPSI {{ endpoints.opsi.version }} (Open PC Server Integration)
+item --gap Choose a method:
+item boot=lang=en video=vesa:ywrap,mtrr vga=791 service --- ${space} Start opsi (english)
+item boot=lang=en video=vesa:ywrap,mtrr vga=791 service nodhcp --- ${space} Start opsi without DHCP (english)
+item boot=lang=de video=vesa:ywrap,mtrr vga=791 service --- ${space} Opsi starten (deutsch)
+item boot=lang=de video=vesa:ywrap,mtrr vga=791 service nodhcp --- ${space} Opsi ohne DHCP starten (deutsch)
+item boot=lang=fr video=vesa:ywrap,mtrr vga=791 service --- ${space} Start opsi (french)
+item boot=lang=fr video=vesa:ywrap,mtrr vga=791 service nodhcp --- ${space} Start opsi without DHCP (french)
+item boot=lang=it video=vesa:ywrap,mtrr vga=791 service --- ${space} Start opsi (italian)
+item boot=lang=it video=vesa:ywrap,mtrr vga=791 service nodhcp --- ${space} Start opsi without DHCP (italian)
+item boot=lang=da video=vesa:ywrap,mtrr vga=791 service --- ${space} Start opsi (danish)
+item boot=lang=da video=vesa:ywrap,mtrr vga=791 service nodhcp --- ${space} Start opsi without DHCP (danish)
+choose opsi_method || goto dban_exit
+goto opsi_boot
+
+
+:opsi_boot
+imgfree
+kernel ${kernel_url} ${opsi_method} ${cmdline}
+initrd ${live_endpoint}{{ endpoints.opsi.path }}miniroot-x64.zstd
+boot
+
+:opsi_exit
+clear menu
+exit 0

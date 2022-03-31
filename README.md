@@ -159,6 +159,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | OpenBSD | https://openbsd.org | Yes | No |
 | openEuler | https://openeuler.org | Yes | No |
 | OpenSUSE | https://opensuse.org | Yes | No |
+| OPSI	 | https://download.uib.de | Yes | No |
 | Oracle Linux | https://www.oracle.com/linux/ | Yes | Installer |
 | Parrot Security | https://www.parrotsec.org | No | Yes |
 | Peppermint | https://peppermintos.com | No | Yes |
