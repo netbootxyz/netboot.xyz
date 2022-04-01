@@ -1222,7 +1222,7 @@ endpoints:
     os: debian
     version: '11'
   debian-11-gnome-squash:
-    path: /debian-squash/releases/download/11.2.0-1904480d/
+    path: /debian-squash/releases/download/11.3.0-1904480d/
     files:
     - filesystem.squashfs
     os: debian
