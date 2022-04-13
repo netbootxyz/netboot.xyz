@@ -30,7 +30,6 @@ item boot=lang=da video=vesa:ywrap,mtrr vga=791 service nodhcp --- ${space} Star
 choose opsi_method || goto dban_exit
 goto opsi_boot
 
-
 :opsi_boot
 imgfree
 kernel ${kernel_url} ${opsi_method} ${cmdline}
