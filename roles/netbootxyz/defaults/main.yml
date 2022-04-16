@@ -225,6 +225,14 @@ releases:
       testing:
       - code_name: daedalus
         name: Daedalus (testing)
+  fai:
+    enabled: true
+    menu: linux
+    mirror: https://fai-project.org/netboot/
+    name: FAI
+    platforms:
+    - key: metal
+      name: Bare Metal
   fedora:
     base_dir: fedora
     enabled: true

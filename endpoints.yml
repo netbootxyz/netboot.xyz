@@ -434,6 +434,14 @@ endpoints:
     - squashfs.img
     os: oracle
     version: '7'
+  fai:
+    path: /asset-mirror/releases/download/2022-04-15-67ed5e2e/
+    files:
+    - vmlinuz
+    - initrd.img
+    - filesystem.squashfs
+    os: fai
+    version: 2022-04-15
   kodachi-6:
     path: /ubuntu-squash/releases/download/6.2-2a23039c/
     files:

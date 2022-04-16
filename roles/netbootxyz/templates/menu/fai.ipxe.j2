@@ -1,0 +1,90 @@
+#!ipxe
+
+# FAI
+# https://fai-project.org/netboot/fai.ipxe
+
+goto ${menu} ||
+
+:fai
+set os {{ releases.fai.name }}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
+isset ${fai_version} || set fai_version latest
+isset ${fai_mirror} || set fai_mirror {{ releases.fai.mirror }}
+isset ${fai_platform} || set fai_platform metal
+menu ${os} by fai-project.org
+menu ${os} install
+item --gap FAI:
+item fai_boot ${space} Begin install ${os} ${fai_version}
+item --gap Parameters:
+item fai_version ${space} ${os} version: ${fai_version}
+item fai_config_url ${space} Set userdata.yaml URL: ${fai_config_url}
+item fai_mirror ${space} Set mirror URL: ${fai_mirror}
+item fai_platform ${space} Set platform: ${fai_platform}
+choose --default ${menu} menu || goto fai_exit
+echo ${cls}
+goto ${menu} ||
+goto fai_exit
+
+:fai_version
+menu ${os} version
+item latest ${space} latest
+item custom ${space} Set custom version
+choose --default ${version} version || goto fai_exit
+echo ${cls}
+goto fai_version_${version} ||
+goto fai_exit
+
+:fai_version_latest
+set fai_version latest
+set fai_base_url ${fai_mirror}/${os_arch}/latest
+goto fai
+
+:fai_version_custom
+clear fai_version
+echo -n Please set FAI version manually (in format YYYY-MM-DD):  && read fai_version
+set fai_base_url ${fai_mirror}/${os_arch}/${fai_version}
+clear menu
+goto fai
+
+:fai_mirror
+echo -n Set mirror URL:  && read fai_mirror
+clear menu
+goto fai
+
+:fai_config_url
+echo -n Set userdata.yaml URL:  && read fai_config_url
+clear menu
+goto fai
+
+:fai_config_branch
+echo -n Set userdata.yaml URL:  && read fai_config_branch
+clear menu
+goto fai
+
+:fai_platform
+menu ${os} platforms
+{% for item in releases.fai.platforms %}
+item {{ item.key }} ${space} {{ item.name }}
+{% endfor %}
+choose --default ${fai_platform} fai_platform
+goto fai
+
+:fai_boot
+isset ${fai_base_url} || set fai_base_url ${fai_mirror}/latest/
+set boot_params boot=live components root=live:${fai_mirror}/${os_arch}/${fai_version}/filesystem.squashfs noswap live kernel.sysrq=1 sysrq_always_enabled log_buf_len=1M quickreboot consoleblank=0 keep_bootcon initrd=initrd.img rootwait=120 live-config noautologin nox11autologin nottyautologin rd.live.image rd.neednet rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rd.driver.pre=loop rd.noverifyssl rd.skipfsck rd.live.overlay.check rd.live.overlay.reset rd.live.ram biosdevname=0 net.ifnames=0 FAI_FLAGS=verbose,sshd,initial,createvt,reboot FAI_CONFIG_SRC=git+${fai_config}#${fai_config_branch} LOGUSER=fai SERVER=fai-project.org FAI_ACTION=install {{ kernel_params }}
+imgfree
+kernel ${fai_base_url}/vmlinuz ${boot_params}
+initrd ${fai_base_url}/initrd.img
+echo
+echo Booting with the following kernel args:
+echo ${boot_params}
+echo
+echo MD5sums:
+md5sum vmlinuz initrd.img
+boot
+
+:fai_exit
+clear menu
+exit 0
