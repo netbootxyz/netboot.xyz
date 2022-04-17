@@ -1889,3 +1889,12 @@ endpoints:
     - vmlinuz
     os: proxmox-mailgateway
     version: 7.1-1
+  tails-beta:
+    path: /asset-mirror/releases/download/5.0b1-e9965f4d/
+    files:
+    - vmlinuz
+    - initrd.img
+    - 9990-misc-helpers.sh
+    os: tails-beta
+    version: 5.0b1
+    arch: amd64
