@@ -1325,9 +1325,7 @@ endpoints:
     files:
     - vmlinuz
     - initrd.img
-    - tails-amd64-4.22.iso
     - 9990-misc-helpers.sh
-    - tails-amd64-4.23.iso
     os: tails
     version: '4.29'
     arch: amd64
