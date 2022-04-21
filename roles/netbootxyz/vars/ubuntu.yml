@@ -25,7 +25,7 @@ pipxe_packages:
   - make
   - mtools
   - perl
-  - python
+  - python3
   - subversion
   - uuid
   - uuid-dev
