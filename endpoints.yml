@@ -1445,7 +1445,7 @@ endpoints:
     flavor: plasma
     kernel: q4os-4.6-default-squash
   ubuntu-netboot-21.10-amd64:
-    path: /ubuntu-squash/releases/download/21.10-e7867dc0/
+    path: /ubuntu-squash/releases/download/21.10-8741eec2/
     files:
     - filesystem.squashfs
     - initrd
