@@ -1,24 +1,24 @@
 ---
-  - include_tasks: generate_menus.yml
-    when:
+- include_tasks: generate_menus.yml
+  when:
     - generate_menus | default(true) | bool
 
-  - include_tasks: generate_menus_custom.yml
-    when:
+- include_tasks: generate_menus_custom.yml
+  when:
     - custom_generate_menus | default(false) | bool
 
-  - include_tasks: generate_disks.yml
-    with_items:
+- include_tasks: generate_disks.yml
+  with_items:
     - "{{ bootloader_disks }}"
-    loop_control:
-      loop_var: bootloader_file
-    when:
+  loop_control:
+    loop_var: bootloader_file
+  when:
     - generate_disks | default(true) | bool
 
-  - include_tasks: generate_checksums.yml
-    when:
+- include_tasks: generate_checksums.yml
+  when:
     - generate_checksums | default(true) | bool
 
-  - include_tasks: generate_signatures.yml
-    when:
+- include_tasks: generate_signatures.yml
+  when:
     - generate_signatures | default(false) | bool

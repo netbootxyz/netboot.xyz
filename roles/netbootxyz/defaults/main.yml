@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 35.20220227.3.0
+    - code_name: 35.20220313.3.1
       name: stable
-    - code_name: 35.20220313.2.0
+    - code_name: 35.20220327.2.0
       name: testing
-    - code_name: 35.20220313.1.0
+    - code_name: 36.20220325.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -232,6 +232,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 36
+      name: 36
     - code_name: 35
       name: 35
     - code_name: 34
@@ -275,8 +277,8 @@ releases:
     mirror: https://releases.rancher.com/harvester
     name: Harvester
     versions:
-    - code_name: v0.3.0
-      name: v0.3.0
+    - code_name: v1.0.0
+      name: v1.0.0
   ipfire:
     base_dir: releases/ipfire-2.x
     enabled: true
@@ -284,8 +286,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core164
-      name: 2.27 Core164
+    - code_name: 2.27-core165
+      name: 2.27 Core165
   k3os:
     enabled: true
     menu: linux
@@ -334,8 +336,8 @@ releases:
     versions:
     - code_name: openEuler-20.03-LTS-SP3
       name: openEuler-20.03-LTS-SP3
-    - code_name: openEuler-21.09
-      name: openEuler-21.09
+    - code_name: openEuler-22.03-LTS
+      name: openEuler-22.03-LTS
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -451,14 +453,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20220324T002253Z
+      name: 20220324T002253Z
     - code_name: 20220310T212952Z
       name: 20220310T212952Z
     - code_name: 20220310T004022Z
       name: 20220310T004022Z
     - code_name: 20220224T192409Z
       name: 20220224T192409Z
-    - code_name: 20220224T005328Z
-      name: 20220224T005328Z
   talos:
     enabled: true
     menu: linux
@@ -593,10 +595,10 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: jammy
+      name: 22.04 LTS Jammy Jellyfish
     - code_name: impish
       name: 21.10 Impish Indri
-    - code_name: hirsute
-      name: 21.04 Hirsute Hippo
     - code_name: focal
       name: 20.04 LTS Focal Fossa (Subiquity)
     - code_name: focal-legacy

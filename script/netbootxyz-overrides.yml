@@ -4,7 +4,7 @@ sigs_enabled: true
 generate_disks_arm: true
 generate_disks_hybrid: true
 generate_disks_linux: true
-generate_disks_rpi: true
+generate_disks_rpi: false
 generate_version_file: true
 generate_local_vars: false
 bootloader_multiple: true
@@ -20,4 +20,4 @@ ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_ca_filename: ca-ipxe-org.crt
 codesign_cert_filename: codesign.crt
 codesign_key_filename: codesign.key
-cert_file_filename : ca-netboot-xyz.crt
+cert_file_filename: ca-netboot-xyz.crt
