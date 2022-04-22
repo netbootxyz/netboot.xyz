@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.58]
+## [2.0.58] - 2022-04-22
+#### Added
+- Ubuntu 22.04 LTS Jammy Jellyfish
+- Fedora 26 Prep for release
+
+#### Changes
+- Disabled RPI image as it was failing, will need to revisit in future
+- Lint fixes
 
 ## [2.0.57] - 2022-03-21
 #### Added
