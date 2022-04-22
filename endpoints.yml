@@ -1940,3 +1940,13 @@ endpoints:
     version: '22.04'
     flavor: XFCE
     kernel: ubuntu-22.04-XFCE-squash
+  ubuntu-22.04-MATE-squash:
+    path: /ubuntu-squash/releases/download/22.04-595a3acb/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.04'
+    flavor: MATE
+    kernel: ubuntu-22.04-MATE-squash
