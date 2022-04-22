@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.59] - 0000-00-00
+
 ## [2.0.58] - 2022-04-22
 #### Added
 - Ubuntu 22.04 LTS Jammy Jellyfish
