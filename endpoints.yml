@@ -1980,3 +1980,13 @@ endpoints:
     version: '22.04'
     flavor: KDE
     kernel: ubuntu-22.04-KDE-squash
+  ubuntu-22.04-kylin-squash:
+    path: /ubuntu-squash/releases/download/22.04-38ebacda/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.04'
+    flavor: kylin
+    kernel: ubuntu-22.04-kylin-squash
