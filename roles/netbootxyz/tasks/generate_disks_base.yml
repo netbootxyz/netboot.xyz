@@ -1,88 +1,88 @@
 ---
 
-  - name: Gathering facts
-    setup:
+- name: Gathering facts
+  ansible.builtin.setup:
 
-  - name: Gather variables for each operating system
-    include_vars: "{{ item }}"
-    with_first_found:
-      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
-      - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
-      - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
-      - "{{ ansible_distribution | lower }}.yml"
-      - "{{ ansible_os_family | lower }}.yml"
+- name: Gather variables for each operating system
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
+    - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+    - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
+    - "{{ ansible_distribution | lower }}.yml"
+    - "{{ ansible_os_family | lower }}.yml"
 
-  - name: Ensure EPEL is enabled
-    yum:
-      name: epel-release
-      state: present
-    when:
-      - ansible_distribution == "CentOS"
+- name: Ensure EPEL is enabled
+  ansible.builtin.yum:
+    name: epel-release
+    state: present
+  when:
+    - ansible_distribution == "CentOS"
 
-  - name: Set var to bootloader of loop
-    set_fact:
-      bootloader_filename: "{{ bootloader_file }}"
+- name: Set var to bootloader of loop
+  ansible.builtin.set_fact:
+    bootloader_filename: "{{ bootloader_file }}"
 
-  - name: Create iPXE file directories
-    file:
-      path: "{{ item }}"
-      state: directory
-    with_items:
-      - "{{ netbootxyz_root }}/ipxe"
-      - "{{ cert_dir }}"
+- name: Create iPXE file directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ netbootxyz_root }}/ipxe"
+    - "{{ cert_dir }}"
 
-  - name: Retreive latest wimboot
-    get_url:
-      url: "{{ wimboot_upstream_url }}"
-      dest: "{{ netbootxyz_root }}/wimboot"
+- name: Retreive latest wimboot
+  ansible.builtin.get_url:
+    url: "{{ wimboot_upstream_url }}"
+    dest: "{{ netbootxyz_root }}/wimboot"
 
-  - name: Copy helper apps
-    copy:
-      src: "{{ item }}"
-      dest: "{{ netbootxyz_root }}"
-    with_items:
-      - memdisk
+- name: Copy helper apps
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ netbootxyz_root }}"
+  with_items:
+    - memdisk
 
-  - name: Install required packages
-    package:
-      name: "{{ item }}"
-      state: present
-    with_items: "{{ netbootxyz_packages }}"
+- name: Install required packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ netbootxyz_packages }}"
 
-  - name: Check out latest iPXE sources
-    git:
-      repo: "{{ ipxe_repo }}"
-      dest: "{{ ipxe_source_dir }}"
-      version: "{{ ipxe_branch }}"
-      force: true
-    register: ipxe_git_checkout
+- name: Check out latest iPXE sources
+  ansible.builtin.git:
+    repo: "{{ ipxe_repo }}"
+    dest: "{{ ipxe_source_dir }}"
+    version: "{{ ipxe_branch }}"
+    force: true
+  register: ipxe_git_checkout
 
-  - name: Copy iPXE Bootloader template to iPXE source directory
-    template:
-      src: "disks/{{ bootloader_filename }}.j2"
-      dest: "{{ ipxe_source_dir }}/src/{{ bootloader_filename }}"
+- name: Copy iPXE Bootloader template to iPXE source directory
+  ansible.builtin.template:
+    src: "disks/{{ bootloader_filename }}.j2"
+    dest: "{{ ipxe_source_dir }}/src/{{ bootloader_filename }}"
 
-  - name: Touch iPXE config local files
-    file:
-      path: "{{ ipxe_source_dir }}/{{ item }}"
-      state: touch
-    with_items:
-      - src/config/local/umalloc.h
-      - src/config/local/nap.h
-      - src/config/local/timer.h
-      - src/config/local/branding.h
-      - src/config/local/serial.h
-      - src/config/local/reboot.h
-      - src/config/local/sanboot.h
-      - src/config/local/fault.h
-      - src/config/local/dhcp.h
-      - src/config/local/sideband.h
-      - src/config/local/entropy.h
-      - src/config/local/crypto.h
-      - src/config/local/usb.h
-      - src/config/local/settings.h
+- name: Touch iPXE config local files
+  ansible.builtin.file:
+    path: "{{ ipxe_source_dir }}/{{ item }}"
+    state: touch
+  with_items:
+    - src/config/local/umalloc.h
+    - src/config/local/nap.h
+    - src/config/local/timer.h
+    - src/config/local/branding.h
+    - src/config/local/serial.h
+    - src/config/local/reboot.h
+    - src/config/local/sanboot.h
+    - src/config/local/fault.h
+    - src/config/local/dhcp.h
+    - src/config/local/sideband.h
+    - src/config/local/entropy.h
+    - src/config/local/crypto.h
+    - src/config/local/usb.h
+    - src/config/local/settings.h
 
-  - name: Retrieve iPXE CA
-    get_url:
-      url: "{{ ipxe_ca_url }}"
-      dest: "{{ cert_dir }}/{{ ipxe_ca_filename }}"
+- name: Retrieve iPXE CA
+  ansible.builtin.get_url:
+    url: "{{ ipxe_ca_url }}"
+    dest: "{{ cert_dir }}/{{ ipxe_ca_filename }}"

@@ -2,7 +2,7 @@
 
 # Harvester
 # https://harvesterhci.io/
-# https://docs.harvesterhci.io/v0.3/install/pxe-boot-install/
+# https://docs.harvesterhci.io/v1.0/install/pxe-boot-install/
 
 goto ${menu} ||
 
@@ -53,7 +53,7 @@ goto harvester
 :harvester_boot
 isset ${harvester_base_url} || set harvester_base_url ${harvester_mirror}/${harvester_version}
 set install_params harvester.install.automatic=true harvester.install.config_url=${harvester_config_url}
-set boot_params ip=dhcp console=ttyS0 console=tty1 rd.cos.disable root=live:${harvester_base_url}/harvester-${harvester_version}-rootfs-${os_arch}.squashfs rd.noverifyssl
+set boot_params ip=dhcp net.ifnames=1 console=ttyS0 console=tty1 rd.cos.disable root=live:${harvester_base_url}/harvester-${harvester_version}-rootfs-${os_arch}.squashfs rd.noverifyssl
 imgfree
 kernel ${harvester_base_url}/harvester-${harvester_version}-vmlinuz-${os_arch} ${install_params} ${boot_params} {{ kernel_params }}
 initrd ${harvester_base_url}/harvester-${harvester_version}-initrd-${os_arch}

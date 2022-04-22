@@ -1,81 +1,81 @@
 ---
-  - name: Combine overrides with release defaults
-    set_fact:
-      _releases: "{{ releases|combine(release_overrides, recursive=True) }}"
-    when: release_overrides is defined
+- name: Combine overrides with release defaults
+  ansible.builtin.set_fact:
+    _releases: "{{ releases|combine(release_overrides, recursive=True) }}"
+  when: release_overrides is defined
 
-  - name: Set releases with user overrides
-    set_fact:
-      releases: "{{ _releases }}"
-    when: release_overrides is defined
+- name: Set releases with user overrides
+  ansible.builtin.set_fact:
+    releases: "{{ _releases }}"
+  when: release_overrides is defined
 
-  # PC BIOS utilities
-  - name: Combine overrides with utilitiespcbios64 defaults
-    set_fact:
-      _utilitiespcbios64: "{{ utilitiespcbios64|combine(utilitiespcbios64_overrides, recursive=True) }}"
-    when: utilitiespcbios64_overrides is defined
+# PC BIOS utilities
+- name: Combine overrides with utilitiespcbios64 defaults
+  ansible.builtin.set_fact:
+    _utilitiespcbios64: "{{ utilitiespcbios64|combine(utilitiespcbios64_overrides, recursive=True) }}"
+  when: utilitiespcbios64_overrides is defined
 
-  - name: Set utilitypcbios64 with user overrides
-    set_fact:
-      utilitiespcbios64: "{{ _utilitiespcbios64 }}"
-    when: utilitiespcbios64_overrides is defined
+- name: Set utilitypcbios64 with user overrides
+  ansible.builtin.set_fact:
+    utilitiespcbios64: "{{ _utilitiespcbios64 }}"
+  when: utilitiespcbios64_overrides is defined
 
-  - name: Combine overrides with utilitiespcbios32 defaults
-    set_fact:
-      _utilitiespcbios32: "{{ utilitiespcbios32|combine(utilitiespcbios32_overrides, recursive=True) }}"
-    when: utilitiespcbios32_overrides is defined
+- name: Combine overrides with utilitiespcbios32 defaults
+  ansible.builtin.set_fact:
+    _utilitiespcbios32: "{{ utilitiespcbios32|combine(utilitiespcbios32_overrides, recursive=True) }}"
+  when: utilitiespcbios32_overrides is defined
 
-  - name: Set utilitypcbios32 with user overrides
-    set_fact:
-      utilitiespcbios32: "{{ _utilitiespcbios32 }}"
-    when: utilitiespcbios32_overrides is defined
+- name: Set utilitypcbios32 with user overrides
+  ansible.builtin.set_fact:
+    utilitiespcbios32: "{{ _utilitiespcbios32 }}"
+  when: utilitiespcbios32_overrides is defined
 
-  # EFI utilities
-  - name: Combine overrides with utilitiesefi defaults
-    set_fact:
-      _utilitiesefi: "{{ utilitiesefi|combine(utilitiesefi_overrides, recursive=True) }}"
-    when: utilitiesefi_overrides is defined
+# EFI utilities
+- name: Combine overrides with utilitiesefi defaults
+  ansible.builtin.set_fact:
+    _utilitiesefi: "{{ utilitiesefi|combine(utilitiesefi_overrides, recursive=True) }}"
+  when: utilitiesefi_overrides is defined
 
-  - name: Set utilityefi with user overrides
-    set_fact:
-      utilitiesefi: "{{ _utilitiesefi }}"
-    when: utilitiesefi_overrides is defined
+- name: Set utilityefi with user overrides
+  ansible.builtin.set_fact:
+    utilitiesefi: "{{ _utilitiesefi }}"
+  when: utilitiesefi_overrides is defined
 
-  - name: Generate directories
-    file:
-      path: "{{ netbootxyz_root }}"
-      state: directory
+- name: Generate directories
+  ansible.builtin.file:
+    path: "{{ netbootxyz_root }}"
+    state: directory
 
-  - name: Set menu version
-    set_fact:
-      upstream_version: "{{ boot_version }}"
-    when:
-      - generate_version_file | bool
+- name: Set menu version
+  ansible.builtin.set_fact:
+    upstream_version: "{{ boot_version }}"
+  when:
+    - generate_version_file | bool
 
-  - name: Generate version.ipxe for upstream
-    template:
-      src: "version.ipxe.j2"
-      dest: "{{ netbootxyz_root }}/version.ipxe"
-    when:
-      - generate_version_file | bool
+- name: Generate version.ipxe for upstream
+  ansible.builtin.template:
+    src: "version.ipxe.j2"
+    dest: "{{ netbootxyz_root }}/version.ipxe"
+  when:
+    - generate_version_file | bool
 
-  - name: Generate netboot.xyz source files templates
-    template:
-      src: "{{ item.src }}"
-      dest: "{{ netbootxyz_root }}/{{ item.path | regex_replace('.j2','') }}"
-    with_filetree: "templates/menu/"
-    when: item.state == "file"
-    tags:
+- name: Generate netboot.xyz source files templates
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ netbootxyz_root }}/{{ item.path | regex_replace('.j2','') }}"
+  with_filetree: "templates/menu/"
+  when: item.state == "file"
+  tags:
     - skip_ansible_lint
 
-  - name: Generate local-vars.ipxe if enabled
-    template:
-      src: "local-vars.ipxe.j2"
-      dest: "{{ netbootxyz_root }}/local-vars.ipxe"
-    when:
-      - generate_local_vars | bool
+- name: Generate local-vars.ipxe if enabled
+  ansible.builtin.template:
+    src: "local-vars.ipxe.j2"
+    dest: "{{ netbootxyz_root }}/local-vars.ipxe"
+  when:
+    - generate_local_vars | bool
 
-  - name: Retrieve pciids.ipxe
-    get_url:
-      url: "{{ pciids_url }}"
-      dest: "{{ netbootxyz_root }}/pciids.ipxe"
+- name: Retrieve pciids.ipxe
+  ansible.builtin.get_url:
+    url: "{{ pciids_url }}"
+    dest: "{{ netbootxyz_root }}/pciids.ipxe"

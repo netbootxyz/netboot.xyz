@@ -31,10 +31,10 @@ fi
 # build release files 
 if ! [[ "${TYPE}" == "rolling" ]]; then
   sed -i \
-    "/^#boot_version/c\boot_version: \"${BOOT_VERSION}\"" \
+    "/^# boot_version/c\boot_version: \"${BOOT_VERSION}\"" \
     user_overrides.yml
   sed -i \
-    "/^#boot_domain/c\boot_domain: ${BOOT_DOMAIN}" \
+    "/^# boot_domain/c\boot_domain: ${BOOT_DOMAIN}" \
     user_overrides.yml
 
   # Build release
