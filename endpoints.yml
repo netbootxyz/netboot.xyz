@@ -1920,3 +1920,13 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-22.04-arm64
     arch: arm64
+  ubuntu-22.04-default-squash:
+    path: /ubuntu-squash/releases/download/22.04-e887448b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.04'
+    flavor: GNOME
+    kernel: ubuntu-22.04-default-squash
