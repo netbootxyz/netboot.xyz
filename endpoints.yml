@@ -1990,3 +1990,13 @@ endpoints:
     version: '22.04'
     flavor: kylin
     kernel: ubuntu-22.04-kylin-squash
+  voyager-jammy-squash:
+    path: /ubuntu-squash/releases/download/jammy-c473988c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Voyager
+    version: jammy
+    flavor: jammy
+    kernel: voyager-jammy-squash
