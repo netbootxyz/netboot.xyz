@@ -464,7 +464,7 @@ releases:
   talos:
     enabled: true
     menu: linux
-    mirror: https://github.com/talos-systems/talos/releases
+    mirror: https://github.com/siderolabs/talos/releases
     name: Talos
     platforms:
     - key: metal
