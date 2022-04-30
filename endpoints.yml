@@ -2007,3 +2007,13 @@ endpoints:
     - initramfs-amd64.xz
     os: talos
     version: 1.0.4
+  pop-22.04-default-squash:
+    path: /ubuntu-squash/releases/download/5-4fdfc702/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: pop
+    version: '22.04'
+    flavor: intel-amd
+    kernel: pop-22.04-default-squash
