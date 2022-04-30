@@ -257,16 +257,16 @@ releases:
     menu: bsd
     name: FreeBSD
   freedos:
-    base_dir: download/download
+    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.3/official
     enabled: true
     menu: dos
-    mirror: http://www.freedos.org
+    mirror: http://www.ibiblio.org//FD13-LiteUSB.zip
     name: FreeDOS
     versions:
-    - code_name: FD12FULL
-      name: 1.2 Full Installer
-    - code_name: FD12LITE
-      name: 1.2 Lite Installer
+    - code_name: FD13-FullUSB
+      name: 1.3 Full Installer
+    - code_name: FD13-LiteUSB
+      name: 1.3 Lite Installer
   gentoo:
     enabled: true
     menu: linux
