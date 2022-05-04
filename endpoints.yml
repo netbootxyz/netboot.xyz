@@ -1872,13 +1872,13 @@ endpoints:
     os: proxmox-backup-server
     version: 2.1-1
   proxmox-ve:
-    path: /asset-mirror/releases/download/7.1-2-a42c4ce8/
+    path: /asset-mirror/releases/download/7.2-1-a42c4ce8/
     files:
     - initrd
     - proxmox.iso
     - vmlinuz
     os: proxmox-ve
-    version: 7.1-2
+    version: 7.2-1
   proxmox-mailgateway:
     path: /asset-mirror/releases/download/7.1-1-e466f982/
     files:
