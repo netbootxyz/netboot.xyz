@@ -2017,3 +2017,12 @@ endpoints:
     version: '22.04'
     flavor: intel-amd
     kernel: pop-22.04-default-squash
+  fedora-36-gnome:
+    path: /fedora-assets/releases/download/1.5-8ae3e69d/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 36
+    flavor: GNOME
