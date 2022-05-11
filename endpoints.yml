@@ -2062,3 +2062,12 @@ endpoints:
     os: fedora
     version: 36
     flavor: LXQt
+  fedora-36-SoaS:
+    path: /fedora-assets/releases/download/1.5-6fe8a018/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 36
+    flavor: SoaS
