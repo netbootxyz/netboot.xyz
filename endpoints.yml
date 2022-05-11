@@ -2035,3 +2035,12 @@ endpoints:
     os: fedora
     version: 36
     flavor: KDE
+  fedora-36-LXDE:
+    path: /fedora-assets/releases/download/1.5-bdfaccd4/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 36
+    flavor: LXDE
