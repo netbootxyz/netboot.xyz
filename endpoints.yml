@@ -2098,3 +2098,13 @@ endpoints:
     os: fedora
     version: 36
     flavor: Xfce
+  harvester:
+    path: /asset-mirror/releases/download/v1.0.1-e4b9482d/
+    files:
+    - harvester-v1.0.1-vmlinuz-amd64
+    - harvester-v1.0.1-initrd-amd64
+    - harvester-v1.0.1-rootfs-amd64.squashfs
+    - harvester-v1.0.1-amd64.sha512
+    - version.yaml
+    os: harvester
+    version: v1.0.1
