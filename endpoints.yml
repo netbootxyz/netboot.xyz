@@ -2108,3 +2108,11 @@ endpoints:
     - version.yaml
     os: harvester
     version: v1.0.1
+  vmware-photon-x86_64:
+    path: /asset-mirror/releases/download/4.0-292ebeb6/
+    files:
+    - initrd.img
+    - vmlinuz
+    os: vmware-photon
+    version: '4.0'
+    arch: x86_64
