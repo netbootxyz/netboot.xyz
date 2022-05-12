@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.59] - 0000-00-00
+#### Added
+- VMware Photon 4.0
 
 ## [2.0.58] - 2022-04-22
 #### Added

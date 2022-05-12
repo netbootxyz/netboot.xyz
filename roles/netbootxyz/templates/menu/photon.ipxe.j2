@@ -5,21 +5,21 @@
 
 goto ${menu} ||
 
-:vmware_photon
-set os {{ releases.vmwarephoton.name }}
+:photon
+set os {{ releases.photon.name }}
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} arm64 && set os_arch aarch64 ||
-clear vmware_choice
+clear photon_choice
 menu ${os}
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "vmware-photon" == "x86_64" %}
+{% if value.os == "vmware-photon" and value.arch == "x86_64" %}
 item --gap ${os} Installers
-item photon-install ${space} ${os} {{ value.version }} Installer
+item photon_install ${space} ${os} {{ value.version }} Installer
 {% endif %}
 {% endfor %}
-choose vmware_choice || goto vmware_exit
-goto ${vmware_choice}
+choose photon_choice || goto photon_exit
+goto ${photon_choice}
 
 :photon_install
 iseq ${os_arch} x86_64 && goto x86_64 ||
@@ -43,11 +43,11 @@ goto photon_boot
 
 :photon_boot
 imgfree
-kernel ${kernel_url}vmlinuz root=/dev/ram0 loglevel=3 repo=https://packages.vmware.com/photon/${photon_version}/photon_release_${photon_version}_${os_arch} initrd=initrd.img
+kernel ${kernel_url}vmlinuz root=/dev/ram0 loglevel=3 repo=https://packages.vmware.com/photon/${photon_version}/photon_release_${photon_version}_${os_arch} {{ kernel_params }}
 initrd ${kernel_url}initrd.img
 boot
-goto vmware
+goto photon
 
-:vmware_exit
+:photon_exit
 exit 0
 

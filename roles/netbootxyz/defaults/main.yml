@@ -388,6 +388,10 @@ releases:
     paths:
       7: /repo/OracleLinux/OL7/latest/x86_64
       8: /repo/OracleLinux/OL8/baseos/latest/x86_64
+  photon:
+    enabled: true
+    menu: linux
+    name: VMware Photon
   proxmox:
     enabled: true
     menu: linux
@@ -609,14 +613,10 @@ releases:
       name: 16.04 LTS Xenial Xerus
     - code_name: trusty
       name: 14.04 LTS Trusty Tahr
-  vmwareesxi:
+  vmware:
     enabled: true
     menu: linux
     name: VMware ESXi
-  vmwarephoton:
-    enabled: true
-    menu: linux
-    name: VMware Photon
   vyos:
     enabled: true
     menu: linux
