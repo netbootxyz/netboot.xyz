@@ -609,10 +609,14 @@ releases:
       name: 16.04 LTS Xenial Xerus
     - code_name: trusty
       name: 14.04 LTS Trusty Tahr
-  vmware:
+  vmwareesxi:
     enabled: true
     menu: linux
     name: VMware ESXi
+  vmwarephoton:
+    enabled: true
+    menu: linux
+    name: VMware Photon
   vyos:
     enabled: true
     menu: linux
