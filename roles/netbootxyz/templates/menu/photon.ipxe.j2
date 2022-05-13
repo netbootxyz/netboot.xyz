@@ -1,0 +1,53 @@
+#!ipxe
+
+# VMware Photon
+# https://vmware.github.io/photon/
+
+goto ${menu} ||
+
+:photon
+set os {{ releases.photon.name }}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch x86_64 ||
+iseq ${os_arch} arm64 && set os_arch aarch64 ||
+clear photon_choice
+menu ${os}
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "vmware-photon" and value.arch == "x86_64" %}
+item --gap ${os} Installers
+item photon_install ${space} ${os} {{ value.version }} Installer
+{% endif %}
+{% endfor %}
+choose photon_choice || goto photon_exit
+goto ${photon_choice}
+
+:photon_install
+iseq ${os_arch} x86_64 && goto x86_64 ||
+iseq ${os_arch} aarch64 && goto aarch64 ||
+:x86_64
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "vmware-photon" and value.arch == "x86_64" %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set photon_version {{ value.version }}
+{% endif %}
+{% endfor %}
+goto photon_boot
+:aarch64
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "vmware-photon" and value.arch == "aarch64" %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set photon_version {{ value.version }}
+{% endif %}
+{% endfor %}
+goto photon_boot
+
+:photon_boot
+imgfree
+kernel ${kernel_url}vmlinuz root=/dev/ram0 loglevel=3 repo=https://packages.vmware.com/photon/${photon_version}/photon_release_${photon_version}_${os_arch} {{ kernel_params }}
+initrd ${kernel_url}initrd.img
+boot
+goto photon
+
+:photon_exit
+exit 0
+

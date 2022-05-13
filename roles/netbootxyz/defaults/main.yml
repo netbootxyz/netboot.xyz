@@ -388,6 +388,10 @@ releases:
     paths:
       7: /repo/OracleLinux/OL7/latest/x86_64
       8: /repo/OracleLinux/OL8/baseos/latest/x86_64
+  photon:
+    enabled: true
+    menu: linux
+    name: VMware Photon
   proxmox:
     enabled: true
     menu: linux
