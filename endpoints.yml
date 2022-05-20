@@ -1502,13 +1502,13 @@ endpoints:
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
   clonezilla-debian-testing-amd64:
-    path: /debian-squash/releases/download/3.0.0-22-5fb1a15b/
+    path: /debian-squash/releases/download/3.0.0-25-5fb1a15b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.0-22
+    version: 3.0.0-25
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
