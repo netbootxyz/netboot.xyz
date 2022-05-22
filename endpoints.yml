@@ -2099,15 +2099,19 @@ endpoints:
     version: 36
     flavor: Xfce
   harvester:
-    path: /asset-mirror/releases/download/v1.0.1-e4b9482d/
+    path: /asset-mirror/releases/download/v1.0.2-e4b9482d/
     files:
     - harvester-v1.0.1-vmlinuz-amd64
     - harvester-v1.0.1-initrd-amd64
     - harvester-v1.0.1-rootfs-amd64.squashfs
     - harvester-v1.0.1-amd64.sha512
     - version.yaml
+    - harvester-v1.0.2-vmlinuz-amd64
+    - harvester-v1.0.2-initrd-amd64
+    - harvester-v1.0.2-rootfs-amd64.squashfs
+    - harvester-v1.0.2-amd64.sha512
     os: harvester
-    version: v1.0.1
+    version: v1.0.2
   vmware-photon-x86_64:
     path: /asset-mirror/releases/download/4.0-292ebeb6/
     files:
