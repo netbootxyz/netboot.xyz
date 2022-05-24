@@ -131,8 +131,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.16
-      name: '3.16'
+    - code_name: v3.15
+      name: '3.15'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.03.01
-      name: 2022.03.01
+    - code_name: 2022.05.01
+      name: 2022.05.01
   blackarch:
     enabled: true
     menu: linux
