@@ -73,7 +73,7 @@ goto fai
 
 :fai_boot
 isset ${fai_base_url} || set fai_base_url ${fai_mirror}/latest/
-set boot_params root=live:${fai_mirror}/${os_arch}/${fai_version}/filesystem.squashfs noswap kernel.sysrq=1 sysrq_always_enabled log_buf_len=1M quickreboot consoleblank=0 keep_bootcon initrd=initrd.img rootwait=120 rd.live.image rd.neednet rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rd.driver.pre=loop rd.noverifyssl rd.skipfsck rd.live.overlay.check rd.live.overlay.reset rd.live.ram biosdevname=0 net.ifnames=0 FAI_FLAGS=verbose,sshd,initial,createvt,menu,reboot FAI_CONFIG_SRC=git+${fai_config}#${fai_config_branch} LOGUSER=fai SERVER=fai-project.org FAI_ACTION=install {{ kernel_params }}
+set boot_params root=live:${fai_mirror}/${os_arch}/${fai_version}/filesystem.squashfs noswap kernel.sysrq=1 sysrq_always_enabled log_buf_len=1M quickreboot consoleblank=0 keep_bootcon initrd=initrd.img rootwait=120 rd.live.image rd.neednet rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rd.driver.pre=loop rd.noverifyssl rd.skipfsck rd.live.overlay.check rd.live.overlay.reset rd.live.ram biosdevname=0 net.ifnames=0 FAI_FLAGS=verbose,sshd,initial,createvt,menu,reboot FAI_CONFIG_SRC=git+${fai_config}#${fai_config_branch} FAI_ACTION=install {{ kernel_params }}
 imgfree
 kernel ${fai_base_url}/vmlinuz ${boot_params}
 initrd ${fai_base_url}/initrd.img
