@@ -1491,13 +1491,13 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20220103-impish-86411ada/
+    path: /ubuntu-squash/releases/download/20220522-jammy-86411ada/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220103-impish
+    version: 20220522-jammy
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
