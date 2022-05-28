@@ -276,11 +276,7 @@ releases:
   harvester:
     enabled: true
     menu: linux
-    mirror: https://releases.rancher.com/harvester
     name: Harvester
-    versions:
-    - code_name: v1.0.0
-      name: v1.0.0
   ipfire:
     base_dir: releases/ipfire-2.x
     enabled: true
