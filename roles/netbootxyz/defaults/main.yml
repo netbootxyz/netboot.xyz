@@ -118,6 +118,8 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 9.0
+      name: 9.0
     - code_name: 8.3
       name: 8.3
     - code_name: 8.4
@@ -131,8 +133,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.15
-      name: '3.15'
+    - code_name: v3.16
+      name: '3.16'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -149,8 +151,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.03.01
-      name: 2022.03.01
+    - code_name: 2022.05.01
+      name: 2022.05.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +184,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 35.20220313.3.1
+    - code_name: 36.20220505.3.2
       name: stable
-    - code_name: 35.20220327.2.0
+    - code_name: 36.20220522.2.1
       name: testing
-    - code_name: 36.20220325.1.0
+    - code_name: 36.20220522.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -257,16 +259,16 @@ releases:
     menu: bsd
     name: FreeBSD
   freedos:
-    base_dir: download/download
+    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.3/official
     enabled: true
     menu: dos
-    mirror: http://www.freedos.org
+    mirror: http://www.ibiblio.org
     name: FreeDOS
     versions:
-    - code_name: FD12FULL
-      name: 1.2 Full Installer
-    - code_name: FD12LITE
-      name: 1.2 Lite Installer
+    - code_name: FD13-FullUSB
+      name: 1.3 Full Installer
+    - code_name: FD13-LiteUSB
+      name: 1.3 Lite Installer
   gentoo:
     enabled: true
     menu: linux
@@ -274,11 +276,7 @@ releases:
   harvester:
     enabled: true
     menu: linux
-    mirror: https://releases.rancher.com/harvester
     name: Harvester
-    versions:
-    - code_name: v1.0.0
-      name: v1.0.0
   ipfire:
     base_dir: releases/ipfire-2.x
     enabled: true
@@ -286,8 +284,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core165
-      name: 2.27 Core165
+    - code_name: 2.27-core167
+      name: 2.27 Core167
   k3os:
     enabled: true
     menu: linux
@@ -388,6 +386,10 @@ releases:
     paths:
       7: /repo/OracleLinux/OL7/latest/x86_64
       8: /repo/OracleLinux/OL8/baseos/latest/x86_64
+  photon:
+    enabled: true
+    menu: linux
+    name: VMware Photon
   proxmox:
     enabled: true
     menu: linux
@@ -412,6 +414,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 8.6
+      name: 8.6
     - code_name: 8.5
       name: 8.5
     - code_name: 8.4
@@ -453,18 +457,18 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20220324T002253Z
-      name: 20220324T002253Z
-    - code_name: 20220310T212952Z
-      name: 20220310T212952Z
-    - code_name: 20220310T004022Z
-      name: 20220310T004022Z
-    - code_name: 20220224T192409Z
-      name: 20220224T192409Z
+    - code_name: 20220519T001745Z
+      name: 20220519T001745Z
+    - code_name: 20220505T001410Z
+      name: 20220505T001410Z
+    - code_name: 20220421T000508Z
+      name: 20220421T000508Z
+    - code_name: 20220407T001427Z
+      name: 20220407T001427Z
   talos:
     enabled: true
     menu: linux
-    mirror: https://github.com/talos-systems/talos/releases
+    mirror: https://github.com/siderolabs/talos/releases
     name: Talos
     platforms:
     - key: metal
@@ -607,6 +611,8 @@ releases:
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
       name: 16.04 LTS Xenial Xerus
+    - code_name: trusty
+      name: 14.04 LTS Trusty Tahr
   vmware:
     enabled: true
     menu: linux
