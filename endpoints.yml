@@ -924,14 +924,6 @@ endpoints:
     os: Deepin
     version: '20'
     kernel: deepin-20-squash
-  ovirt:
-    path: /asset-mirror/releases/download/4.4.4-2020122111-e7edc3a3/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: ovirt
-    version: '4.4'
   nitrux-release:
     path: /ubuntu-squash/releases/download/2022.02.28-e364d0a5/
     files:
