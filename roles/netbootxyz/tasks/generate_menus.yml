@@ -1,7 +1,7 @@
 ---
 - name: Combine overrides with release defaults
   ansible.builtin.set_fact:
-    _releases: "{{ releases|combine(release_overrides, recursive=True) }}"
+    _releases: "{{ releases | combine(release_overrides, recursive=True) }}"
   when: release_overrides is defined
 
 - name: Set releases with user overrides
@@ -12,7 +12,7 @@
 # PC BIOS utilities
 - name: Combine overrides with utilitiespcbios64 defaults
   ansible.builtin.set_fact:
-    _utilitiespcbios64: "{{ utilitiespcbios64|combine(utilitiespcbios64_overrides, recursive=True) }}"
+    _utilitiespcbios64: "{{ utilitiespcbios64 | combine(utilitiespcbios64_overrides, recursive=True) }}"
   when: utilitiespcbios64_overrides is defined
 
 - name: Set utilitypcbios64 with user overrides
@@ -22,7 +22,7 @@
 
 - name: Combine overrides with utilitiespcbios32 defaults
   ansible.builtin.set_fact:
-    _utilitiespcbios32: "{{ utilitiespcbios32|combine(utilitiespcbios32_overrides, recursive=True) }}"
+    _utilitiespcbios32: "{{ utilitiespcbios32 | combine(utilitiespcbios32_overrides, recursive=True) }}"
   when: utilitiespcbios32_overrides is defined
 
 - name: Set utilitypcbios32 with user overrides
@@ -33,7 +33,7 @@
 # EFI utilities
 - name: Combine overrides with utilitiesefi defaults
   ansible.builtin.set_fact:
-    _utilitiesefi: "{{ utilitiesefi|combine(utilitiesefi_overrides, recursive=True) }}"
+    _utilitiesefi: "{{ utilitiesefi | combine(utilitiesefi_overrides, recursive=True) }}"
   when: utilitiesefi_overrides is defined
 
 - name: Set utilityefi with user overrides
@@ -63,7 +63,7 @@
   template:
     src: "{{ item.src }}"
     dest: "{{ netbootxyz_root }}/{{ item.path | regex_replace('.j2','') }}"
-  with_filetree: "templates/menu/"
+  with_community.general.filetree: "templates/menu/"
   when: item.state == "file"
   tags:
     - skip_ansible_lint
