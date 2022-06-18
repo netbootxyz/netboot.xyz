@@ -1516,13 +1516,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20220606-jammy-5774fbed/
+    path: /ubuntu-squash/releases/download/20220612-jammy-5774fbed/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220606-jammy
+    version: 20220612-jammy
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
