@@ -31,7 +31,7 @@ goto product_sku
 menu ${os} ${os_arch} sku type
 item Everything ${ova} Everything
 item Server ${ova} Server
-item Kionite ${ova} Kinoite
+item Kinoite ${ova} Kinoite
 item Silverblue ${ova} Silverblue 
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${os_arch}/os
