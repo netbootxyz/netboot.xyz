@@ -1254,7 +1254,7 @@ endpoints:
     flavor: mate
     kernel: debian-11-live-kernel
   debian-11-lxde-squash:
-    path: /debian-squash/releases/download/11.3.0-bd62df14/
+    path: /debian-squash/releases/download/11.4.0-bd62df14/
     files:
     - filesystem.squashfs
     os: debian
