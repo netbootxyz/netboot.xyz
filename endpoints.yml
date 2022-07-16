@@ -1516,13 +1516,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20220620-kinetic-5f251ca8/
+    path: /ubuntu-squash/releases/download/20220711-kinetic-5f251ca8/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220620-kinetic
+    version: 20220711-kinetic
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
