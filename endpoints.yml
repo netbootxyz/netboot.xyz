@@ -434,6 +434,13 @@ endpoints:
     - squashfs.img
     os: oracle
     version: '7'
+  OPSI:
+    path: /asset-mirror/releases/download/20220330-7a5741de/
+    files:
+    - vmlinuz-x64
+    - miniroot-x64.zstd
+    os: opsi
+    version: current
   kodachi-6:
     path: /ubuntu-squash/releases/download/6.2-2a23039c/
     files:
