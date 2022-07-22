@@ -524,7 +524,7 @@ endpoints:
     version: '2021.07'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.4.0-1-1edbd7bd/
+    path: /debian-squash/releases/download/1.4.0-5-1edbd7bd/
     files:
     - filesystem.squashfs
     - initrd
