@@ -603,8 +603,6 @@ releases:
     versions:
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
-    - code_name: impish
-      name: 21.10 Impish Indri
     - code_name: focal
       name: 20.04 LTS Focal Fossa (Subiquity)
     - code_name: focal-legacy
