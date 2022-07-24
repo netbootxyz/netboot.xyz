@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.60] - 0000-00-00
+## [2.0.60] - 2022-07-24
+#### Changes
+- Collapsed Dockerfiles into one
+- Various version updates
+- Cleaned up some EOL versions
 
 ## [2.0.59] - 2022-05-28
 #### Added
