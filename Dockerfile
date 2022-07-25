@@ -9,7 +9,7 @@ FROM builder AS netbootxyz-default
 ENV EXTRA_VARS=""
 
 FROM builder AS netbootxyz-production
-ENV EXTRA_VARS="--extra-vars '@script/netbootxyz-overrides.yml'"
+ENV EXTRA_VARS="--extra-vars @script/netbootxyz-overrides.yml"
 
 FROM netbootxyz-${NBXYZ_OVERRIDES} as final
 RUN \
