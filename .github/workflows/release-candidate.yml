@@ -54,7 +54,7 @@ jobs:
 
     - name: Invalidate Cloudfront
       run: |
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_STAGING }} --paths "/rc/*" "/rc/ipxe/*"
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_STAGING }} --paths "/rc/*" "/rc/ipxe/*" "/rc/sigs/*"
 
     - name: Tag RC Release
       run: |

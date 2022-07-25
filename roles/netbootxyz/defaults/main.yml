@@ -120,12 +120,8 @@ releases:
     versions:
     - code_name: 9.0
       name: 9.0
-    - code_name: 8.3
-      name: 8.3
-    - code_name: 8.4
-      name: 8.4
-    - code_name: 8.5
-      name: 8.5
+    - code_name: 8.6
+      name: 8.6
   alpinelinux:
     base_dir: alpine
     enabled: true
@@ -151,8 +147,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.05.01
-      name: 2022.05.01
+    - code_name: 2022.07.01
+      name: 2022.07.01
   blackarch:
     enabled: true
     menu: linux
@@ -184,11 +180,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 36.20220505.3.2
+    - code_name: 36.20220703.3.1
       name: stable
-    - code_name: 36.20220522.2.1
+    - code_name: 36.20220716.2.0
       name: testing
-    - code_name: 36.20220522.1.0
+    - code_name: 36.20220716.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -284,8 +280,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core167
-      name: 2.27 Core167
+    - code_name: 2.27-core169
+      name: 2.27 Core169
   k3os:
     enabled: true
     menu: linux
@@ -323,6 +319,8 @@ releases:
       name: nixos-21.05
     - code_name: nixos-21.11
       name: nixos-21.11
+    - code_name: nixos-22.05
+      name: nixos-22.05
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -374,6 +372,8 @@ releases:
     mirror: http://download.opensuse.org
     name: OpenSUSE
     versions:
+    - code_name: '15.4'
+      name: openSUSE Leap 15.4
     - code_name: '15.3'
       name: openSUSE Leap 15.3
     - code_name: tumbleweed
@@ -414,6 +414,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 9.0
+      name: 9.0
     - code_name: 8.6
       name: 8.6
     - code_name: 8.5
@@ -457,14 +459,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20220519T001745Z
-      name: 20220519T001745Z
-    - code_name: 20220505T001410Z
-      name: 20220505T001410Z
-    - code_name: 20220421T000508Z
-      name: 20220421T000508Z
-    - code_name: 20220407T001427Z
-      name: 20220407T001427Z
+    - code_name: 20220714T060459Z
+      name: 20220714T060459Z
+    - code_name: 20220714T001107Z
+      name: 20220714T001107Z
+    - code_name: 20220630T003722Z
+      name: 20220630T003722Z
+    - code_name: 20220616T001909Z
+      name: 20220616T001909Z
   talos:
     enabled: true
     menu: linux
@@ -601,8 +603,6 @@ releases:
     versions:
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
-    - code_name: impish
-      name: 21.10 Impish Indri
     - code_name: focal
       name: 20.04 LTS Focal Fossa (Subiquity)
     - code_name: focal-legacy

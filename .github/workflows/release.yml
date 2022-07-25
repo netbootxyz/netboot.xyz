@@ -49,7 +49,7 @@ jobs:
 
     - name: Invalidate Cloudfront
       run: |
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_PROD }} --paths "/*" "/ipxe/*"
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_PROD }} --paths "/*" "/ipxe/*" "/sigs/*"
 
     - name: Tag Release
       run: |

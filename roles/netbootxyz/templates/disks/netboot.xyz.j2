@@ -20,6 +20,7 @@ iseq ${site_name} netboot.xyz || echo ${bold}${fg_whi}Powered by ${fg_gre}netboo
 prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe menu... && goto failsafe || goto dhcp
 
 :dhcp
+echo
 dhcp || goto netconfig
 isset ${next-server} && isset ${proxydhcp/next-server} && goto choose-tftp || set tftp-server ${next-server} && goto load-custom-ipxe
 
