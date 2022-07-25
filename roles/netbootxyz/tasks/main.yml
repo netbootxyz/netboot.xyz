@@ -1,7 +1,7 @@
 ---
 
 - name: Print Bootloader Disks to Build
-  debug:
+  ansible.builtin.debug:
     var: bootloader_disks
 
 - include_tasks: generate_menus.yml
