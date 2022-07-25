@@ -7,7 +7,7 @@ HARD_RC="2.x-RC"
 DEV_URL="dev.boot.netboot.xyz"
 STAGING_URL="staging.boot.netboot.xyz"
 PROD_URL="boot.netboot.xyz"
-NBXYZ_OVERRIDES=production
+NBXYZ_OVERRIDES="production"
 
 # Set boot domain
 if [[ "${TYPE}" == "dev" ]]; then
@@ -16,7 +16,7 @@ if [[ "${TYPE}" == "dev" ]]; then
 elif [[ "${TYPE}" == "pr" ]]; then
   BOOT_DOMAIN="test.com"
   BOOT_VERSION="test"
-  NBXYZ_OVERRIDES=default
+  NBXYZ_OVERRIDES="default"
 elif [[ "${TYPE}" == "rc" ]]; then
   BOOT_VERSION=$(cat version.txt)-RC
   BOOT_DOMAIN="${STAGING_URL}/${BOOT_VERSION}"
