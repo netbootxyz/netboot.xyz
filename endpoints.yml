@@ -1927,3 +1927,13 @@ endpoints:
     os: lite
     version: 6.0
     kernel: linux-lite-6-squash
+  mint-21-cinnamon-squash:
+    path: /ubuntu-squash/releases/download/21-b25d359a/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '21'
+    flavor: Cinnamon
+    kernel: mint-21-cinnamon-squash
