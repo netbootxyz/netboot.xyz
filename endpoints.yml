@@ -1957,3 +1957,11 @@ endpoints:
     version: '21'
     flavor: xfce
     kernel: mint-21-xfce-squash
+  oracle-9:
+    path: /asset-mirror/releases/download/R9-U0-57ab0e63/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: oracle
+    version: R9-U0
