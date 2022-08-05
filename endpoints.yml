@@ -419,13 +419,14 @@ endpoints:
     flavor: lxqt
     kernel: sparky-rolling-lxqt
   oracle-8:
-    path: /asset-mirror/releases/download/5-a778a084/
+    path: /asset-mirror/releases/download/5-32d9360b/
     files:
     - vmlinuz
     - initrd
     - squashfs.img
     os: oracle
     version: '8'
+    arch: x86_64
   oracle-7:
     path: /asset-mirror/releases/download/u9-9cd2ea57/
     files:
