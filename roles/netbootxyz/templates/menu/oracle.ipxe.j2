@@ -8,6 +8,9 @@ goto ${menu} ||
 :oracle_menu
 set os Oracle Linux
 menu ${os}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch x86_64 ||
+iseq ${os_arch} arm64 && set os_arch aarch64 ||
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "oracle" %}
@@ -15,14 +18,13 @@ item {{ value.version }} ${space} ${os} {{ value.version }}
 {% endif %}
 {% endfor %}
 choose version || goto oracle_exit
-goto ${version}
-
+goto ${version}_${os_arch}
 
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "oracle" %}
-:{{ value.version }}
+:{{ value.version }}_{{ value.arch }}
 set url ${live_endpoint}{{ value.path }}
-set repo {{ releases.oracle.mirror }}{{ releases.oracle.paths[value.version|int] }}
+set repo {{ releases.oracle.mirror }}{{ releases.oracle.paths[value.version|int] }}/${os_arch}
 goto boot
 
 {% endif %}
