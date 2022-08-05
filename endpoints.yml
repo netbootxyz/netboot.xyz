@@ -434,6 +434,7 @@ endpoints:
     - squashfs.img
     os: oracle
     version: '7'
+    arch: x86_64
   kodachi-6:
     path: /ubuntu-squash/releases/download/6.2-2a23039c/
     files:
