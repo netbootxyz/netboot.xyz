@@ -1966,11 +1966,11 @@ endpoints:
     os: oracle
     version: R9-U0
   oracle-9-x86_64:
-    path: /asset-mirror/releases/download/R9-U0-7e68ce78/
+    path: /asset-mirror/releases/download/U0-5960d290/
     files:
     - vmlinuz
     - initrd
     - squashfs.img
     os: oracle
-    version: R9-U0
+    version: '9'
     arch: x86_64
