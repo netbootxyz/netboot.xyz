@@ -935,13 +935,13 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Apollo_22_1-190ee67a/
+    path: /asset-mirror/releases/download/Artemis_neo_22_7-190ee67a/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: endeavouros
-    version: Apollo_22_1
+    version: Artemis_neo_22_7
   kodachi-8:
     path: /ubuntu-squash/releases/download/8.2-625e11fa/
     files:
