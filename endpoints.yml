@@ -1693,13 +1693,13 @@ endpoints:
     version: 5.0b1
     arch: amd64
   ubuntu-netboot-22.04-amd64:
-    path: /ubuntu-squash/releases/download/22.04-73e57464/
+    path: /ubuntu-squash/releases/download/22.04.1-73e57464/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: '22.04'
+    version: 22.04.1
     codename: jammy
     flavor: netboot
     kernel: ubuntu-netboot-22.04-amd64
