@@ -1968,3 +1968,12 @@ endpoints:
     os: oracle
     version: '9'
     arch: x86_64
+  rescuezilla-jammy:
+    path: /asset-mirror/releases/download/2.4-3c3b3e74/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: rescuezilla
+    version: jammy
+    kernel: rescuezilla-jammy
