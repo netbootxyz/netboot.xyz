@@ -1911,7 +1911,7 @@ endpoints:
     version: '4.0'
     arch: aarch64
   harvester:
-    path: /asset-mirror/releases/download/v1.0.2-8b597a0d/
+    path: /asset-mirror/releases/download/v1.0.3-8b597a0d/
     files:
     - harvester-vmlinuz-amd64
     - harvester-initrd-amd64
@@ -1919,7 +1919,7 @@ endpoints:
     - harvester-amd64.sha512
     - version.yaml
     os: harvester
-    version: v1.0.2
+    version: v1.0.3
   linux-lite-6-squash:
     path: /ubuntu-squash/releases/download/6.0-8f200db6/
     files:
