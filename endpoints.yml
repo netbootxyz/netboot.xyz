@@ -1245,13 +1245,13 @@ endpoints:
     version: 20220814T170533Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/5.3.1-81501ab2/
+    path: /asset-mirror/releases/download/5.4-81501ab2/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     os: tails
-    version: 5.3.1
+    version: '5.4'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20211227-bed8dd88/
