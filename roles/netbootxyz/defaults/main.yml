@@ -147,8 +147,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.08.05
-      name: 2022.08.05
+    - code_name: 2022.07.01
+      name: 2022.07.01
   blackarch:
     enabled: true
     menu: linux
@@ -180,11 +180,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 36.20220703.3.1
+    - code_name: 36.20220806.3.0
       name: stable
-    - code_name: 36.20220716.2.0
+    - code_name: 36.20220820.2.0
       name: testing
-    - code_name: 36.20220716.1.0
+    - code_name: 36.20220820.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
