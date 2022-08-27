@@ -707,17 +707,6 @@ endpoints:
     os: 4mlinux
     version: current
     flavor: AntivirusLiveCD
-  manjaro-default-current:
-    path: /manjaro-squash/releases/download/20.0.3-200607-linux56-62be2419/
-    files:
-    - livefs.sfs
-    - rootfs.sfs
-    - initrd
-    - vmlinuz
-    os: manjaro
-    version: current
-    flavor: architect
-    kernel: manjaro-default-current
   ubuntu-20.04-default-squash:
     path: /ubuntu-squash/releases/download/20.04.4-9bc4558b/
     files:
