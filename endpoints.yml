@@ -1717,13 +1717,13 @@ endpoints:
     kernel: ubuntu-netboot-22.04-arm64
     arch: arm64
   ubuntu-22.04-default-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-e887448b/
+    path: /ubuntu-squash/releases/download/22.04.1-9b5dd18c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 22.04.1
+    version: '22.04'
     flavor: GNOME
     kernel: ubuntu-22.04-default-squash
   ubuntu-22.04-XFCE-squash:
