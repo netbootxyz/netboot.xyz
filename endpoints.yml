@@ -1747,13 +1747,13 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-22.04-MATE-squash
   ubuntu-22.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-fa8aca48/
+    path: /ubuntu-squash/releases/download/22.04.1-54637b4a/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 22.04.1
+    version: '22.04'
     flavor: LXDE
     kernel: ubuntu-22.04-LXDE-squash
   ubuntu-22.04-Budgie-squash:
