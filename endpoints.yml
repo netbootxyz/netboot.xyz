@@ -1757,13 +1757,13 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-22.04-LXDE-squash
   ubuntu-22.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-082531f0/
+    path: /ubuntu-squash/releases/download/22.04.1-e094057d/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 22.04.1
+    version: '22.04'
     flavor: Budgie
     kernel: ubuntu-22.04-Budgie-squash
   ubuntu-22.04-KDE-squash:
