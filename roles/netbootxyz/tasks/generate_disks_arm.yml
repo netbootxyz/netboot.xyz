@@ -27,15 +27,13 @@
 # iPXE workaround
 # http://lists.ipxe.org/pipermail/ipxe-devel/2018-August/006254.html
 # apply patch to fix arm64 builds on amd64 builds
-- name: iPXE Workaround for arm
-  shell: sed -i '/WORKAROUND_CFLAGS/d' arch/arm64/Makefile
+- name: Workaround in iPXE for arm
+  ansible.builtin.shell: sed -i '/WORKAROUND_CFLAGS/d' arch/arm64/Makefile
   args:
     chdir: "{{ ipxe_source_dir }}/src"
-  tags:
-    - skip_ansible_lint
 
 - name: Compile iPXE bootloaders for EFI arm64
-  shell: |
+  ansible.builtin.shell: |
     make clean
     make CROSS_COMPILE=aarch64-linux-gnu- \
          ARCH=arm64 \
@@ -46,12 +44,10 @@
          bin-arm64-efi/snponly.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
-  tags:
-    - skip_ansible_lint
   when: ipxe_debug_enabled | bool == false
 
 - name: Compile iPXE bootloader for EFI arm64 with debug flags
-  shell: |
+  ansible.builtin.shell: |
     make clean
     make CROSS_COMPILE=aarch64-linux-gnu- \
          ARCH=arm64 \
@@ -61,8 +57,6 @@
          bin-arm64-efi/snp.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
-  tags:
-    - skip_ansible_lint
   when: ipxe_debug_enabled | bool
 
 - name: Copy iPXE arm64 EFI builds to http directory

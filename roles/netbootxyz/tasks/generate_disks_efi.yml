@@ -25,7 +25,7 @@
   when: generate_signatures | bool
 
 - name: Compile iPXE bootloader for EFI
-  shell: |
+  ansible.builtin.shell: |
     make clean
     make EMBED={{ bootloader_filename }} \
          TRUST={{ trust_files }} \
@@ -34,12 +34,10 @@
          bin-x86_64-efi/snponly.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
-  tags:
-    - skip_ansible_lint
   when: ipxe_debug_enabled | bool == false
 
 - name: Compile iPXE bootloader for EFI with debug flags
-  shell: |
+  ansible.builtin.shell: |
     make clean
     make EMBED={{ bootloader_filename }} \
          DEBUG={{ ipxe_debug_options }} \
@@ -49,8 +47,6 @@
          bin-x86_64-efi/snponly.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
-  tags:
-    - skip_ansible_lint
   when: ipxe_debug_enabled | bool
 
 - name: Copy iPXE EFI builds to http directory

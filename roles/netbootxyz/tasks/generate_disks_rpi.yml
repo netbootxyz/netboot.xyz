@@ -49,12 +49,10 @@
     dest: "{{ pipxe_source_dir }}/Makefile"
 
 - name: Compile iPXE bootloader for RPI build
-  shell: |
+  ansible.builtin.shell: |
     make
   args:
     chdir: "{{ pipxe_source_dir }}"
-  tags:
-    - skip_ansible_lint
 
 - name: Copy iPXE RPI builds to http directory
   ansible.builtin.copy:
