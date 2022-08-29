@@ -1,8 +1,11 @@
 ## netboot.xyz [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Your%20favorite%20operating%20systems%20in%20one%20place!&url=https://netboot.xyz&hashtags=netbootxyz,ipxe,pxe,linux,tech,code)
 
+Your favorite operating systems in one place!
+
 [![Build Status](https://github.com/netbootxyz/netboot.xyz/workflows/release/badge.svg)](https://github.com/netbootxyz/netboot.xyz/actions?query=workflow%3Arelease)
 [![Discord](https://img.shields.io/discord/425186187368595466)](https://discord.gg/An6PA2a)
 [![Release](https://img.shields.io/github/v/release/netbootxyz/netboot.xyz?color=hunter%20green)](https://github.com/netbootxyz/netboot.xyz/releases/latest)
+![GitHub all releases](https://img.shields.io/github/downloads/netbootxyz/netboot.xyz/total)
 
 ![netboot.xyz menu](https://netboot.xyz/images/netboot.xyz.gif)
 
@@ -211,6 +214,10 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | System Rescue | https://system-rescue.org/ | LiveCD |
 | The Smallest Server Suite | https://thesss.4mlinux.com/ | Kernel/Initrd |
 | Ultimate Boot CD | http://www.ultimatebootcd.com | ISO - Memdisk |
+
+### Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/netbootxyz/netboot.xyz.svg)](https://starchart.cc/netbootxyz/netboot.xyz)
 
 ### Feedback
 

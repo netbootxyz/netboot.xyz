@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.61] - 2022-08-28
+#### Added
+- Various version updates
+- Viewpoint attribute on boot.netboot.xyz index
+- Oracle Linux aarch64
+
+#### Changes
+- Various Ansible Lint fixes
+
+#### Fixed
+- Ubuntu 22.04 version issues related to minor increments
+
 ## [2.0.60] - 2022-07-24
 #### Added
 - Added Fedora Kionite

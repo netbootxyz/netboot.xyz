@@ -1,3 +1,8 @@
 # .ansible-lint
 skip_list:
-  - '208'  
+  - '208'
+  - command-instead-of-module  # Using command rather than module.
+  - command-instead-of-shell  # Use shell only when shell functionality is required.
+  - no-changed-when  # Commands should not change things if nothing needs doing.
+  - risky-shell-pipe  # Shells that use pipes should set the pipefail option.
+  - literal-compare  # Don't compare to literal True/False.
