@@ -1011,15 +1011,6 @@ endpoints:
     os: fedora
     version: 34
     flavor: KDE
-  rescuezilla-focal:
-    path: /asset-mirror/releases/download/2.3.1-b2e9a0d2/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: rescuezilla
-    version: focal
-    kernel: rescuezilla-focal
   redorescue:
     path: /asset-mirror/releases/download/4.0.0-35222964/
     files:
@@ -1957,12 +1948,3 @@ endpoints:
     os: oracle
     version: '9'
     arch: x86_64
-  rescuezilla-jammy:
-    path: /asset-mirror/releases/download/2.4-3c3b3e74/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: rescuezilla
-    version: jammy
-    kernel: rescuezilla-jammy
