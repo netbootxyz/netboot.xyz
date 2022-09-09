@@ -899,13 +899,13 @@ endpoints:
     flavor: gnome
     kernel: pureos-gnome
   rescuezilla:
-    path: /asset-mirror/releases/download/2.4-f753721b/
+    path: /asset-mirror/releases/download/2.4.1-f753721b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: rescuezilla
-    version: '2.4'
+    version: 2.4.1
   deepin-20-squash:
     path: /debian-squash/releases/download/20.4-7aac93a9/
     files:
