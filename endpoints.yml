@@ -235,7 +235,7 @@ endpoints:
     flavor: default
     kernel: backbox-6-default-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20220818-0947-92641c1f/
+    path: /ubuntu-squash/releases/download/20220908-0946-92641c1f/
     files:
     - vmlinuz
     - filesystem.squashfs
@@ -419,7 +419,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-rolling-lxqt
   oracle-8:
-    path: /asset-mirror/releases/download/5-32d9360b/
+    path: /asset-mirror/releases/download/6-32d9360b/
     files:
     - vmlinuz
     - initrd
@@ -566,7 +566,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.19.2-2-2022.08.21-a3024eea/
+    path: /asset-mirror/releases/download/5.19.7-2022.09.06-a3024eea/
     files:
     - initrd
     - vmlinuz
@@ -708,7 +708,7 @@ endpoints:
     version: current
     flavor: AntivirusLiveCD
   ubuntu-20.04-default-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-9bc4558b/
+    path: /ubuntu-squash/releases/download/20.04.5-9bc4558b/
     files:
     - filesystem.squashfs
     - initrd
@@ -718,7 +718,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-20.04-default-squash
   ubuntu-20.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-08845a46/
+    path: /ubuntu-squash/releases/download/20.04.5-08845a46/
     files:
     - filesystem.squashfs
     - initrd
@@ -728,7 +728,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-20.04-KDE-squash
   ubuntu-20.04-XFCE-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-8f15ed5e/
+    path: /ubuntu-squash/releases/download/20.04.5-8f15ed5e/
     files:
     - filesystem.squashfs
     - initrd
@@ -738,7 +738,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-20.04-XFCE-squash
   ubuntu-20.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-3f82ff65/
+    path: /ubuntu-squash/releases/download/20.04.5-3f82ff65/
     files:
     - filesystem.squashfs
     - initrd
@@ -748,7 +748,7 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-20.04-LXDE-squash
   ubuntu-20.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-54eaec40/
+    path: /ubuntu-squash/releases/download/20.04.5-54eaec40/
     files:
     - filesystem.squashfs
     - initrd
@@ -758,7 +758,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-20.04-Budgie-squash
   ubuntu-20.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-6be8be20/
+    path: /ubuntu-squash/releases/download/20.04.5-6be8be20/
     files:
     - filesystem.squashfs
     - initrd
@@ -768,7 +768,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-20.04-MATE-squash
   ubuntu-20.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/20.04.4-b366cf71/
+    path: /ubuntu-squash/releases/download/20.04.5-b366cf71/
     files:
     - filesystem.squashfs
     - initrd
@@ -843,7 +843,7 @@ endpoints:
     version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/202208240217-8fd60881/
+    path: /debian-squash/releases/download/202209070217-8fd60881/
     files:
     - filesystem.squashfs
     - initrd
@@ -899,13 +899,13 @@ endpoints:
     flavor: gnome
     kernel: pureos-gnome
   rescuezilla:
-    path: /asset-mirror/releases/download/2.3.1-ca5c2955/
+    path: /asset-mirror/releases/download/2.4.1-f753721b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: rescuezilla
-    version: 2.3.1
+    version: 2.4.1
   deepin-20-squash:
     path: /debian-squash/releases/download/20.4-7aac93a9/
     files:
@@ -924,13 +924,13 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Artemis_neo_22_7-190ee67a/
+    path: /asset-mirror/releases/download/Artemis_neo_22_8-190ee67a/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: endeavouros
-    version: Artemis_neo_22_7
+    version: Artemis_neo_22_8
   kodachi-8:
     path: /ubuntu-squash/releases/download/8.2-625e11fa/
     files:
@@ -1011,15 +1011,6 @@ endpoints:
     os: fedora
     version: 34
     flavor: KDE
-  rescuezilla-focal:
-    path: /asset-mirror/releases/download/2.3.1-b2e9a0d2/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: rescuezilla
-    version: focal
-    kernel: rescuezilla-focal
   redorescue:
     path: /asset-mirror/releases/download/4.0.0-35222964/
     files:
@@ -1207,31 +1198,31 @@ endpoints:
     os: memtest86-free
     version: '9.4'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20220822T170541Z-6734abfd/
+    path: /asset-mirror/releases/download/20220905T170542Z-6734abfd/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20220822T170541Z
+    version: 20220905T170542Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20220821T231852Z-079d67cf/
+    path: /asset-mirror/releases/download/20220904T230151Z-079d67cf/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20220821T231852Z
+    version: 20220904T230151Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20220821T170533Z-383e823f/
+    path: /asset-mirror/releases/download/20220904T170535Z-383e823f/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20220821T170533Z
+    version: 20220904T170535Z
     arch: amd64
   tails:
     path: /asset-mirror/releases/download/5.4-81501ab2/
@@ -1251,25 +1242,25 @@ endpoints:
     os: hrmpf
     version: '20211227'
   ubuntu-netboot-20.04-arm64:
-    path: /ubuntu-squash/releases/download/20.04.4-2c21f29a/
+    path: /ubuntu-squash/releases/download/20.04.5-2c21f29a/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.4
+    version: 20.04.5
     codename: focal
     flavor: netboot
     kernel: ubuntu-netboot-20.04-arm64
     arch: arm64
   ubuntu-netboot-20.04-amd64:
-    path: /ubuntu-squash/releases/download/20.04.4-873839e4/
+    path: /ubuntu-squash/releases/download/20.04.5-873839e4/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.4
+    version: 20.04.5
     codename: focal
     flavor: netboot
     kernel: ubuntu-netboot-20.04-amd64
@@ -1307,13 +1298,13 @@ endpoints:
     version: v2021.08.2_21_x86-64_0.32.023
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2022.08.02-6dbad0f9/
+    path: /asset-mirror/releases/download/2022.09.01-6dbad0f9/
     files:
     - airootfs.sfs
     - initramfs-linux.img
     - vmlinuz-linux
     os: archlinux
-    version: 2022.08.02
+    version: 2022.09.01
     arch: i686
   q4os-4.6-default-squash:
     path: /debian-squash/releases/download/4.6-2de282e7/
@@ -1957,12 +1948,3 @@ endpoints:
     os: oracle
     version: '9'
     arch: x86_64
-  rescuezilla-jammy:
-    path: /asset-mirror/releases/download/2.4-3c3b3e74/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: rescuezilla
-    version: jammy
-    kernel: rescuezilla-jammy

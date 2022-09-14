@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.62] - 2022-09-13
+#### Changes
+- Uses inst.text instead of text on redhat based distros
+
+#### Fixed
+- Menu was incorrect on AlmaLinux on aarch64
+
 ## [2.0.61] - 2022-08-28
 #### Added
 - Various version updates
