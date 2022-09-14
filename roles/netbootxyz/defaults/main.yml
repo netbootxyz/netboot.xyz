@@ -147,8 +147,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.08.05
-      name: 2022.08.05
+    - code_name: 2022.09.03
+      name: 2022.09.03
   blackarch:
     enabled: true
     menu: linux
@@ -180,11 +180,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 36.20220806.3.0
+    - code_name: 36.20220820.3.0
       name: stable
-    - code_name: 36.20220820.2.0
+    - code_name: 36.20220906.2.0
       name: testing
-    - code_name: 36.20220820.1.0
+    - code_name: 37.20220910.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -460,14 +460,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20220908T004516Z
+      name: 20220908T004516Z
     - code_name: 20220825T001415Z
       name: 20220825T001415Z
     - code_name: 20220811T015517Z
       name: 20220811T015517Z
     - code_name: 20220728T031731Z
       name: 20220728T031731Z
-    - code_name: 20220714T060459Z
-      name: 20220714T060459Z
   talos:
     enabled: true
     menu: linux
