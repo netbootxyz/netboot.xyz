@@ -184,7 +184,7 @@ releases:
       name: stable
     - code_name: 36.20220906.2.0
       name: testing
-    - code_name: 36.20220906.1.0
+    - code_name: 37.20220910.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
