@@ -907,7 +907,7 @@ endpoints:
     os: rescuezilla
     version: 2.4.1
   deepin-20-squash:
-    path: /debian-squash/releases/download/20.4-7aac93a9/
+    path: /debian-squash/releases/download/20.7-19fd9c41/
     files:
     - filesystem.squashfs
     - initrd
