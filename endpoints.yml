@@ -1948,3 +1948,12 @@ endpoints:
     os: oracle
     version: '9'
     arch: x86_64
+  oracle-9-aarch64:
+    path: /asset-mirror/releases/download/U0-cda03642/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: oracle
+    version: '9'
+    arch: aarch64
