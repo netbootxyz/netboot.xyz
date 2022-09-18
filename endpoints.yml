@@ -1957,3 +1957,12 @@ endpoints:
     os: oracle
     version: '9'
     arch: aarch64
+  parrot-home:
+    path: /debian-squash/releases/download/5.0.1-1d24f58c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: 5.0.1
+    flavor: home
