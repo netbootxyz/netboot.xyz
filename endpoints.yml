@@ -1939,3 +1939,11 @@ endpoints:
     os: parrot
     version: 5.0.1
     flavor: security
+  parrot-architect:
+    path: /debian-squash/releases/download/5.0.1-584c619a/
+    files:
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: 5.0.1
+    flavor: architect
