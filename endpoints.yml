@@ -1930,3 +1930,12 @@ endpoints:
     os: parrot
     version: 5.0.1
     flavor: home
+  parrot-security:
+    path: /debian-squash/releases/download/5.0.1-c40b247d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: parrot
+    version: 5.0.1
+    flavor: security
