@@ -471,42 +471,6 @@ endpoints:
     os: devuan
     version: '2'
     flavor: ascii
-  parrot-home-xfce:
-    path: /debian-squash/releases/download/4.11.3-d5797857/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: parrot
-    version: current
-    flavor: xfce
-  parrot-home-kde:
-    path: /debian-squash/releases/download/4.11.3-7919e8b1/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: parrot
-    version: current
-    flavor: kde
-  parrot-security-xfce:
-    path: /debian-squash/releases/download/4.11.3-b7440194/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: parrot
-    version: current
-    flavor: xfce-security
-  parrot-security-kde:
-    path: /debian-squash/releases/download/4.11.3-b72794e5/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: parrot
-    version: current
-    flavor: kde-security
   grml-full:
     path: /debian-squash/releases/download/2021.07-5f810440/
     files:
