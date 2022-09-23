@@ -1922,13 +1922,13 @@ endpoints:
     version: '9'
     arch: aarch64
   parrot-home:
-    path: /debian-squash/releases/download/5.0.1-1d24f58c/
+    path: /debian-squash/releases/download/5.1-1d24f58c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: parrot
-    version: 5.0.1
+    version: '5.1'
     flavor: home
   parrot-security:
     path: /debian-squash/releases/download/5.0.1-c40b247d/
