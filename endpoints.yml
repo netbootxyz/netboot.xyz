@@ -141,7 +141,7 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2022.3-0e465d0f/
+    path: /debian-squash/releases/download/2022.3-d818bd6f/
     files:
     - filesystem.squashfs
     - initrd
