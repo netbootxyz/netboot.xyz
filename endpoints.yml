@@ -1411,7 +1411,7 @@ endpoints:
     flavor: xfce
     version: 220428
   garuda-gnome:
-    path: /asset-mirror/releases/download/220909-9eada5fd/
+    path: /asset-mirror/releases/download/220909-c4130243/
     files:
     - amd_ucode.img
     - desktopfs.sfs
