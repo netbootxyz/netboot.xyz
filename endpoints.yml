@@ -1198,7 +1198,7 @@ endpoints:
     version: '5.4'
     arch: amd64
   hrmpf:
-    path: /asset-mirror/releases/download/20211227-bed8dd88/
+    path: /asset-mirror/releases/download/20211227-e37031e1/
     files:
     - vmlinuz
     - initrd
