@@ -481,7 +481,7 @@ endpoints:
     version: '2021.07'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2021.07-bacc221b/
+    path: /debian-squash/releases/download/2021.07-cce6fb2f/
     files:
     - filesystem.squashfs
     - initrd
