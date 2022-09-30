@@ -888,7 +888,7 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Artemis_nova_22_9-190ee67a/
+    path: /asset-mirror/releases/download/Artemis_nova_22_9-cd1ec3bb/
     files:
     - airootfs.sfs
     - initrd
