@@ -1156,11 +1156,11 @@ endpoints:
     flavor: bullseye
     kernel: voyager-bullseye-squash
   memtest86:
-    path: /asset-mirror/releases/download/9.4-d974f6fd/
+    path: /asset-mirror/releases/download/10-d974f6fd/
     files:
     - memtest86-usb.img
     os: memtest86-free
-    version: '9.4'
+    version: '10'
   gentoo-x86:
     path: /asset-mirror/releases/download/20220926T170547Z-c57f05ba/
     files:
