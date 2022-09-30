@@ -1904,7 +1904,7 @@ endpoints:
     flavor: xfce
     kernel: mint-21-xfce-squash
   oracle-9-x86_64:
-    path: /asset-mirror/releases/download/U0-5960d290/
+    path: /asset-mirror/releases/download/U0-37017e9a/
     files:
     - vmlinuz
     - initrd
