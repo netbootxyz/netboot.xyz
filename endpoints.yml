@@ -1218,7 +1218,7 @@ endpoints:
     kernel: ubuntu-netboot-20.04-arm64
     arch: arm64
   ubuntu-netboot-20.04-amd64:
-    path: /ubuntu-squash/releases/download/20.04.5-873839e4/
+    path: /ubuntu-squash/releases/download/20.04.5-fa85e413/
     files:
     - filesystem.squashfs
     - initrd
