@@ -337,7 +337,7 @@ endpoints:
     version: '2021.10'
     kernel: feren-squash
   feren-classic-squash:
-    path: /ubuntu-squash/releases/download/12-2019-d30d6c1b/
+    path: /ubuntu-squash/releases/download/12-2019-b43afc5c/
     files:
     - filesystem.squashfs
     - initrd
