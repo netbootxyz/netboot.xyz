@@ -976,7 +976,7 @@ endpoints:
     version: 34
     flavor: KDE
   redorescue:
-    path: /asset-mirror/releases/download/4.0.0-35222964/
+    path: /asset-mirror/releases/download/4.0.0-af06be74/
     files:
     - filesystem.squashfs
     - initrd
