@@ -215,7 +215,7 @@ endpoints:
     flavor: XFCE
     kernel: zorin-15-gnome-squash
   peppermint-10-default-squash:
-    path: /ubuntu-squash/releases/download/20191210-3516ef6e/
+    path: /ubuntu-squash/releases/download/20191210-55414b61/
     files:
     - filesystem.squashfs
     - initrd
