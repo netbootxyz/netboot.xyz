@@ -712,7 +712,7 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-20.04-LXDE-squash
   ubuntu-20.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/20.04.5-54eaec40/
+    path: /ubuntu-squash/releases/download/20.04.5-50fe2190/
     files:
     - filesystem.squashfs
     - initrd
