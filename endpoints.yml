@@ -1065,7 +1065,7 @@ endpoints:
     version: '6'
     kernel: elementaryos-6-default-squash
   zorin-16-core-squash:
-    path: /ubuntu-squash/releases/download/16.1-f74d9d71/
+    path: /ubuntu-squash/releases/download/16.1-e18490ce/
     files:
     - filesystem.squashfs
     - initrd
