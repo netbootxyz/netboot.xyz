@@ -1776,7 +1776,7 @@ endpoints:
     version: 36
     flavor: KDE
   fedora-36-LXDE:
-    path: /fedora-assets/releases/download/1.5-bdfaccd4/
+    path: /fedora-assets/releases/download/1.5-c3408411/
     files:
     - vmlinuz
     - initrd
