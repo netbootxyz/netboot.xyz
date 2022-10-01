@@ -1701,7 +1701,7 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-22.04-LXDE-squash
   ubuntu-22.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-e094057d/
+    path: /ubuntu-squash/releases/download/22.04.1-ded0dc47/
     files:
     - filesystem.squashfs
     - initrd
