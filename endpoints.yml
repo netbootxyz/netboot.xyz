@@ -1595,7 +1595,7 @@ endpoints:
     version: 35
     flavor: Xfce
   fedora-35-i3:
-    path: /fedora-assets/releases/download/1.2-4b8f4f92/
+    path: /fedora-assets/releases/download/1.2-c68b03e5/
     files:
     - vmlinuz
     - initrd
