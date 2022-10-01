@@ -853,7 +853,7 @@ endpoints:
     flavor: plasma
     kernel: q4os-3.13-default-squash
   pureos-gnome:
-    path: /ubuntu-squash/releases/download/2020-08-06-ae6ad937/
+    path: /ubuntu-squash/releases/download/2020-08-06-83257efc/
     files:
     - filesystem.squashfs
     - initrd
