@@ -1559,7 +1559,7 @@ endpoints:
     version: 35
     flavor: LXDE
   fedora-35-LXQt:
-    path: /fedora-assets/releases/download/1.2-95e840d5/
+    path: /fedora-assets/releases/download/1.2-27ff5e58/
     files:
     - vmlinuz
     - initrd
