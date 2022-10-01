@@ -1830,7 +1830,7 @@ endpoints:
     version: 36
     flavor: i3
   fedora-36-Xfce:
-    path: /fedora-assets/releases/download/1.5-6385644d/
+    path: /fedora-assets/releases/download/1.5-92dac348/
     files:
     - vmlinuz
     - initrd
