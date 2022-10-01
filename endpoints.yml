@@ -1577,7 +1577,7 @@ endpoints:
     version: 35
     flavor: MATE_Compiz
   fedora-35-SoaS:
-    path: /fedora-assets/releases/download/1.2-06f1f9fc/
+    path: /fedora-assets/releases/download/1.2-024a325f/
     files:
     - vmlinuz
     - initrd
