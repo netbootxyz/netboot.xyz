@@ -1311,7 +1311,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20220620-jammy-86411ada/
+    path: /ubuntu-squash/releases/download/20220620-jammy-a31ba037/
     files:
     - filesystem.squashfs
     - initrd
