@@ -506,7 +506,7 @@ endpoints:
     os: rescatux
     version: current
   caine:
-    path: /ubuntu-squash/releases/download/11.0-46b7a6aa/
+    path: /ubuntu-squash/releases/download/11.0-afaf94db/
     files:
     - filesystem.squashfs
     - initrd
