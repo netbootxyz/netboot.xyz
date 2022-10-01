@@ -984,7 +984,7 @@ endpoints:
     os: redorescue
     version: 4.0.0
   bodhi-6-standard:
-    path: /ubuntu-squash/releases/download/6.0.0-3d0b9f4e/
+    path: /ubuntu-squash/releases/download/6.0.0-5efdb7c4/
     files:
     - filesystem.squashfs
     - initrd
