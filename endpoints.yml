@@ -1947,3 +1947,17 @@ endpoints:
     - install.img
     os: xcp-ng
     version: '8.2'
+  garuda-cinnamon:
+    path: /asset-mirror/releases/download/220909-2ffeed7f/
+    files:
+    - amd_ucode.img
+    - desktopfs.sfs
+    - intel_ucode.img
+    - livefs.sfs
+    - initramfs.img
+    - mhwdfs.sfs
+    - rootfs.sfs
+    - vmlinuz
+    os: garuda
+    flavor: cinnamon
+    version: 220909
