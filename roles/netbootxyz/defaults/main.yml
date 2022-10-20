@@ -343,6 +343,12 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: '7.2'
+      image_ver: '72'
+      name: '7.2'
+    - code_name: '7.1'
+      image_ver: '71'
+      name: '7.1'
     - code_name: '7.0'
       image_ver: '70'
       name: '7.0'
