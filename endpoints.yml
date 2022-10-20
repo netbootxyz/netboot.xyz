@@ -1973,3 +1973,15 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-22.10-arm64
     arch: arm64
+  ubuntu-netboot-22.10-amd64:
+    path: /ubuntu-squash/releases/download/22.10-b890ab15/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    codename: kinetic
+    flavor: netboot
+    kernel: ubuntu-netboot-22.10-amd64
+    arch: amd64
