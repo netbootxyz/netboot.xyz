@@ -1985,3 +1985,13 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-22.10-amd64
     arch: amd64
+  ubuntu-22.10-XFCE-squash:
+    path: /ubuntu-squash/releases/download/22.10-05fe401f/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    flavor: XFCE
+    kernel: ubuntu-22.10-XFCE-squash
