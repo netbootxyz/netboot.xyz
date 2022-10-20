@@ -1961,3 +1961,15 @@ endpoints:
     os: garuda
     flavor: cinnamon
     version: 220909
+  ubuntu-netboot-22.10-arm64:
+    path: /ubuntu-squash/releases/download/22.10-9760ad1a/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    codename: kinetic
+    flavor: netboot
+    kernel: ubuntu-netboot-22.10-arm64
+    arch: arm64
