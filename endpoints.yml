@@ -2035,3 +2035,13 @@ endpoints:
     version: '22.10'
     flavor: LXDE
     kernel: ubuntu-22.10-LXDE-squash
+  ubuntu-22.10-KDE-squash:
+    path: /ubuntu-squash/releases/download/22.10-f01ab01c/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    flavor: KDE
+    kernel: ubuntu-22.10-KDE-squash
