@@ -1996,7 +1996,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-22.10-XFCE-squash
   ubuntu-22.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/22.10-a0496402/
+    path: /ubuntu-squash/releases/download/22.10-ec04188b/
     files:
     - filesystem.squashfs
     - initrd
@@ -2004,4 +2004,4 @@ endpoints:
     os: ubuntu
     version: '22.10'
     flavor: MATE
-    kernel: ubuntu-22.04-MATE-squash
+    kernel: ubuntu-22.10-MATE-squash
