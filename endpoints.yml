@@ -2015,3 +2015,13 @@ endpoints:
     version: '22.10'
     flavor: GNOME
     kernel: ubuntu-22.10-default-squash
+  ubuntu-22.10-Budgie-squash:
+    path: /ubuntu-squash/releases/download/22.10-36255b62/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    flavor: Budgie
+    kernel: ubuntu-22.10-Budgie-squash
