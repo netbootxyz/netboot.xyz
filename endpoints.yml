@@ -2005,3 +2005,13 @@ endpoints:
     version: '22.10'
     flavor: MATE
     kernel: ubuntu-22.10-MATE-squash
+  ubuntu-22.10-default-squash:
+    path: /ubuntu-squash/releases/download/22.10-8c6e88d2/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    flavor: GNOME
+    kernel: ubuntu-22.10-default-squash
