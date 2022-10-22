@@ -1986,7 +1986,7 @@ endpoints:
     kernel: ubuntu-netboot-22.10-amd64
     arch: amd64
   ubuntu-22.10-XFCE-squash:
-    path: /ubuntu-squash/releases/download/22.10-05fe401f/
+    path: /ubuntu-squash/releases/download/22.10-f93887e5/
     files:
     - filesystem.squashfs
     - initrd
