@@ -230,12 +230,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 37
+      name: 37
     - code_name: 36
       name: 36
     - code_name: 35
       name: 35
-    - code_name: 34
-      name: 34
   flatcar:
     enabled: true
     menu: linux
