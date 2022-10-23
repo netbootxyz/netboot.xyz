@@ -98,7 +98,7 @@ The build output will be located in /var/www/html by default.
 #### Deploying with Docker
 
 ```
-docker build -t localbuild -f Dockerfile-build .
+docker build -t localbuild -f Dockerfile .
 docker run --rm -it -v $(pwd):/buildout localbuild
 ```
 

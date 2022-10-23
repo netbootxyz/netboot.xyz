@@ -61,7 +61,7 @@ goto boot
 
 :kickstart
 echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
-set params ks=${ksurl} ||
+set params inst.ks=${ksurl} ||
 goto boot
 
 :boot
