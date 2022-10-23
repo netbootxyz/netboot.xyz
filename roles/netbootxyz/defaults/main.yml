@@ -147,8 +147,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.09.03
-      name: 2022.09.03
+    - code_name: 2022.10.01
+      name: 2022.10.01
   blackarch:
     enabled: true
     menu: linux
@@ -180,11 +180,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 36.20220820.3.0
+    - code_name: 36.20221001.3.0
       name: stable
-    - code_name: 36.20220906.2.0
+    - code_name: 36.20221014.2.0
       name: testing
-    - code_name: 37.20220910.1.0
+    - code_name: 37.20221015.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -230,12 +230,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 37
+      name: 37
     - code_name: 36
       name: 36
     - code_name: 35
       name: 35
-    - code_name: 34
-      name: 34
   flatcar:
     enabled: true
     menu: linux
@@ -280,8 +280,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core169
-      name: 2.27 Core169
+    - code_name: 2.27-core171
+      name: 2.27 Core171
   k3os:
     enabled: true
     menu: linux
@@ -334,6 +334,8 @@ releases:
       name: openEuler-20.03-LTS-SP3
     - code_name: openEuler-22.03-LTS
       name: openEuler-22.03-LTS
+    - code_name: openEuler-22.09
+      name: openEuler-22.09
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -341,6 +343,12 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: '7.2'
+      image_ver: '72'
+      name: '7.2'
+    - code_name: '7.1'
+      image_ver: '71'
+      name: '7.1'
     - code_name: '7.0'
       image_ver: '70'
       name: '7.0'
@@ -460,14 +468,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20220908T004516Z
-      name: 20220908T004516Z
-    - code_name: 20220825T001415Z
-      name: 20220825T001415Z
-    - code_name: 20220811T015517Z
-      name: 20220811T015517Z
-    - code_name: 20220728T031731Z
-      name: 20220728T031731Z
+    - code_name: 20221020T001410Z
+      name: 20221020T001410Z
+    - code_name: 20221006T160428Z
+      name: 20221006T160428Z
+    - code_name: 20221006T003323Z
+      name: 20221006T003323Z
+    - code_name: 20220922T001804Z
+      name: 20220922T001804Z
   talos:
     enabled: true
     menu: linux
@@ -602,6 +610,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: kinetic
+      name: 22.10 Kinetic Kudu
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal
