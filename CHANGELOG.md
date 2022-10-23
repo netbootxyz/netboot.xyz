@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.63] - 2022-00-00
+## [2.0.63] - 2022-10-23
 #### Added
 - Fedora 37 (to be released)
 - Ubuntu 20.10 (Kinetic Kudu)
