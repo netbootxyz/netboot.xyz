@@ -2046,7 +2046,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-22.10-KDE-squash
   ubuntu-22.04-studio-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-60dfa68f/
+    path: /ubuntu-squash/releases/download/22.04.1-f22bcaf8/
     files:
     - filesystem.squashfs
     - initrd
