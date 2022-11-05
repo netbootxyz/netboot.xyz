@@ -1586,7 +1586,7 @@ endpoints:
     version: 35
     flavor: SoaS
   fedora-35-Xfce:
-    path: /fedora-assets/releases/download/1.2-34182e18/
+    path: /fedora-assets/releases/download/1.2-1849b6fb/
     files:
     - vmlinuz
     - initrd
