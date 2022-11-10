@@ -120,8 +120,8 @@ releases:
     versions:
     - code_name: 9.0
       name: 9.0
-    - code_name: 8.6
-      name: 8.6
+    - code_name: 8.7
+      name: 8.7
   alpinelinux:
     base_dir: alpine
     enabled: true
