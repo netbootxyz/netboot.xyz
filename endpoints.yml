@@ -1865,13 +1865,13 @@ endpoints:
     os: harvester
     version: v1.1.0
   linux-lite-6-squash:
-    path: /ubuntu-squash/releases/download/6.0-9ee13689/
+    path: /ubuntu-squash/releases/download/6.2-9ee13689/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: lite
-    version: 6.0
+    version: 6.2
     kernel: linux-lite-6-squash
   mint-21-cinnamon-squash:
     path: /ubuntu-squash/releases/download/21-c43dffe7/
