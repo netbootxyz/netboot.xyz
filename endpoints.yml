@@ -1311,13 +1311,13 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20220620-jammy-a31ba037/
+    path: /ubuntu-squash/releases/download/20221103-kinetic-0707074a/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220620-jammy
+    version: 20221103-kinetic
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
