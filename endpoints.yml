@@ -2055,3 +2055,12 @@ endpoints:
     version: '22.04'
     flavor: Studio
     kernel: ubuntu-22.04-studio-squash
+  fedora-37-gnome:
+    path: /fedora-assets/releases/download/1.7-e0625008/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: GNOME
