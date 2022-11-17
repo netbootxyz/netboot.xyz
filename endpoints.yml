@@ -2064,3 +2064,12 @@ endpoints:
     os: fedora
     version: 37
     flavor: GNOME
+  fedora-37-Cinnamon:
+    path: /fedora-assets/releases/download/1.7-3e7fe31e/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: Cinnamon
