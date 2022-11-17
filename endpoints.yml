@@ -2118,3 +2118,12 @@ endpoints:
     os: fedora
     version: 37
     flavor: SoaS
+  fedora-37-MATE_Compiz:
+    path: /fedora-assets/releases/download/1.7-b9e22bcb/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: MATE_Compiz
