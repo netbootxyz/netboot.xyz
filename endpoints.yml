@@ -2100,3 +2100,12 @@ endpoints:
     os: fedora
     version: 37
     flavor: LXQt
+  fedora-37-i3:
+    path: /fedora-assets/releases/download/1.7-5885c3c2/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: i3
