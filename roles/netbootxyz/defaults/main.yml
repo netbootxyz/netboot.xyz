@@ -118,6 +118,8 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 9.1
+      name: 9.1
     - code_name: 9.0
       name: 9.0
     - code_name: 8.7
