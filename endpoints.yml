@@ -2128,7 +2128,7 @@ endpoints:
     version: 37
     flavor: MATE_Compiz
   fedora-37-Xfce:
-    path: /fedora-assets/releases/download/1.7-4205aba3/
+    path: /fedora-assets/releases/download/1.7-fe38c8f0/
     files:
     - vmlinuz
     - initrd
