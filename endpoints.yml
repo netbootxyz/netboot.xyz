@@ -1931,7 +1931,7 @@ endpoints:
     version: 5.1.1
     flavor: home
   parrot-security:
-    path: /debian-squash/releases/download/5.1.1-c920c7fa/
+    path: /debian-squash/releases/download/5.1.1-47327415/
     files:
     - filesystem.squashfs
     - initrd
