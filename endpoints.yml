@@ -2110,7 +2110,7 @@ endpoints:
     version: 37
     flavor: i3
   fedora-37-SoaS:
-    path: /fedora-assets/releases/download/1.7-978404a7/
+    path: /fedora-assets/releases/download/1.7-fcf14866/
     files:
     - vmlinuz
     - initrd
