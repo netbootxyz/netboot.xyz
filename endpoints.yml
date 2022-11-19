@@ -2074,7 +2074,7 @@ endpoints:
     version: 37
     flavor: Cinnamon
   fedora-37-KDE:
-    path: /fedora-assets/releases/download/1.7-eec7e772/
+    path: /fedora-assets/releases/download/1.7-42e5c27c/
     files:
     - vmlinuz
     - initrd
