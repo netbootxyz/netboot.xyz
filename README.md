@@ -169,7 +169,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Proxmox Open Source Products | https://www.proxmox.com/ | Yes | No |
 | Q4OS | https://q4os.org | No | Yes |
 | Raizo | https://sourceforge.net/projects/live-raizo/ | No | Yes |
-| RancherOS | https://rancher.com/rancher-os | Yes | No |
 | Red Hat Enterprise Linux | https://www.redhat.com | User supplied media | No |
 | Regolith | https://regolith-linux.org | No | Yes |
 | Rocky Linux | https://rockylinux.org/ | Yes | No |

@@ -405,15 +405,6 @@ releases:
     enabled: true
     menu: linux
     name: Proxmox
-  rancheros:
-    base_dir: os/latest
-    enabled: true
-    menu: linux
-    mirror: http://releases.rancher.com
-    name: RancherOS
-    versions:
-    - code_name: latest
-      name: Latest (20 MB)
   rhel:
     enabled: true
     menu: linux
