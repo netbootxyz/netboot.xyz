@@ -242,7 +242,7 @@ releases:
     enabled: true
     menu: linux
     mirror: ''
-    name: Container Linux by Flatcar
+    name: Flatcar Container Linux
     versions:
     - code_name: stable
       name: Stable Channel

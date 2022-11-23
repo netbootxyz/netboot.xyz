@@ -138,7 +138,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Fatdog64 | https://distro.ibiblio.org/fatdog/web/ | No | Yes |
 | Fedora | https://fedoraproject.org | Yes | Yes |
 | Feren OS | https://ferenos.weebly.com/ | Yes | No |
-| Flatcar Linux | https://kinvolk.io/flatcar-container-linux/ | Yes | No |
+| Flatcar Container Linux | https://flatcar-linux.org/ | Yes | No |
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
 | FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
 | Garuda Linux | https://garudalinux.org/ | No | Yes |
