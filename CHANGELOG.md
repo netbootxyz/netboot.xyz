@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [2.0.64] - 2022-00-00
+#### Removed
+- Removed RancherOS
 
 ## [2.0.63] - 2022-10-23
 #### Added
