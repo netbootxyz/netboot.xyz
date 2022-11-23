@@ -328,7 +328,7 @@ endpoints:
     os: freebsd
     version: '12'
   feren-squash:
-    path: /ubuntu-squash/releases/download/2021.10-12c4b51e/
+    path: /ubuntu-squash/releases/download/2021.10-4239ee2c/
     files:
     - filesystem.squashfs
     - initrd
@@ -359,7 +359,7 @@ endpoints:
     os: dban
     version: 2.3.0
   sparky-stable-mingui:
-    path: /debian-squash/releases/download/6.4-7daab301/
+    path: /debian-squash/releases/download/6.5-7daab301/
     files:
     - filesystem.squashfs
     - initrd
@@ -369,7 +369,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-stable-mingui
   sparky-stable-gui:
-    path: /debian-squash/releases/download/6.4-a57e2dce/
+    path: /debian-squash/releases/download/6.5-a57e2dce/
     files:
     - filesystem.squashfs
     - initrd
@@ -379,7 +379,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-stable-gui
   sparky-stable-lxqt:
-    path: /debian-squash/releases/download/6.4-a3710d0a/
+    path: /debian-squash/releases/download/6.5-a3710d0a/
     files:
     - filesystem.squashfs
     - initrd
@@ -389,7 +389,7 @@ endpoints:
     flavor: lxqt
     kernel: sparky-stable-lxqt
   sparky-rolling-mingui:
-    path: /debian-squash/releases/download/2022.10-81c7c994/
+    path: /debian-squash/releases/download/2022.10-1-3fe7c25a/
     files:
     - filesystem.squashfs
     - initrd
@@ -399,7 +399,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-rolling-mingui
   sparky-rolling-gui:
-    path: /debian-squash/releases/download/2022.10-d511b35c/
+    path: /debian-squash/releases/download/2022.10-1-b71f80ea/
     files:
     - filesystem.squashfs
     - initrd
@@ -409,7 +409,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-rolling-gui
   sparky-rolling-lxqt:
-    path: /debian-squash/releases/download/2022.10.1-9e695e4c/
+    path: /debian-squash/releases/download/2022.10-2-175022e7/
     files:
     - filesystem.squashfs
     - initrd
@@ -490,7 +490,7 @@ endpoints:
     version: '2021.07'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.4.0-5-1fb81caf/
+    path: /debian-squash/releases/download/1.4.0-6-54b27c90/
     files:
     - filesystem.squashfs
     - initrd
@@ -522,7 +522,7 @@ endpoints:
     os: bootrepair
     version: current
   blackarch-installer:
-    path: /asset-mirror/releases/download/2021.09.01-e70fcdb5/
+    path: /asset-mirror/releases/download/2021.09.01-e5bd6225/
     files:
     - initrd
     - vmlinuz
@@ -530,7 +530,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.19.11-2022.09.27-bb8afcb6/
+    path: /asset-mirror/releases/download/5.18.5-2022.06.18-2be14830/
     files:
     - initrd
     - vmlinuz
@@ -578,7 +578,7 @@ endpoints:
     os: kaspersky
     version: '18'
   septor:
-    path: /debian-squash/releases/download/2022-cf4a4991/
+    path: /debian-squash/releases/download/2022-ef4dd541/
     files:
     - filesystem.squashfs
     - initrd
@@ -640,7 +640,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/40.0-fd5f6a2a/
+    path: /asset-mirror/releases/download/40.1-fd5f6a2a/
     files:
     - initrd
     - vmlinuz
@@ -664,7 +664,7 @@ endpoints:
     version: current
     flavor: BakAndImg
   4mlinux-antivirus:
-    path: /asset-mirror/releases/download/40.0-0.105.0-540b70e6/
+    path: /asset-mirror/releases/download/41.0-0.105.1-540b70e6/
     files:
     - initrd
     - vmlinuz
@@ -807,7 +807,7 @@ endpoints:
     version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/202209290218-4b574e4e/
+    path: /debian-squash/releases/download/202211180318-63d59694/
     files:
     - filesystem.squashfs
     - initrd
@@ -903,78 +903,6 @@ endpoints:
     - vmlinuz
     os: kodachi
     version: '8'
-  fedora-34-gnome:
-    path: /fedora-assets/releases/download/1.2-57a6bc53/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: GNOME
-  fedora-34-SoaS:
-    path: /fedora-assets/releases/download/1.2-09eef943/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: SoaS
-  fedora-34-LXQt:
-    path: /fedora-assets/releases/download/1.2-3a8ea8dd/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: LXQt
-  fedora-34-Xfce:
-    path: /fedora-assets/releases/download/1.2-c6f3c188/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: Xfce
-  fedora-34-LXDE:
-    path: /fedora-assets/releases/download/1.2-80b86a90/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: LXDE
-  fedora-34-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.2-0ec8ea9b/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: MATE_Compiz
-  fedora-34-i3:
-    path: /fedora-assets/releases/download/1.2-51a02ef1/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: i3
-  fedora-34-KDE:
-    path: /fedora-assets/releases/download/1.2-abf1ad7a/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 34
-    flavor: KDE
   redorescue:
     path: /asset-mirror/releases/download/4.0.0-af06be74/
     files:
@@ -993,7 +921,7 @@ endpoints:
     version: '6'
     flavor: standard
   bodhi-6-apppack:
-    path: /ubuntu-squash/releases/download/6.0.0-3473cec1/
+    path: /ubuntu-squash/releases/download/6.0.0-f91c2ea2/
     files:
     - filesystem.squashfs
     - initrd
@@ -1065,13 +993,13 @@ endpoints:
     version: '6'
     kernel: elementaryos-6-default-squash
   zorin-16-core-squash:
-    path: /ubuntu-squash/releases/download/16.1-e18490ce/
+    path: /ubuntu-squash/releases/download/16.2-e18490ce/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: zorin
-    version: '16.1'
+    version: '16.2'
     flavor: Core
     kernel: zorin-16-core-squash
   debian-11-cinnamon-squash:
@@ -1162,40 +1090,40 @@ endpoints:
     os: memtest86-free
     version: '10'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20221017T170556Z-c57f05ba/
+    path: /asset-mirror/releases/download/20221107T170540Z-c57f05ba/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20221017T170556Z
+    version: 20221107T170540Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20221016T234901Z-aca15d47/
+    path: /asset-mirror/releases/download/20221106T214655Z-aca15d47/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20221016T234901Z
+    version: 20221106T214655Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20221016T170545Z-30785c7f/
+    path: /asset-mirror/releases/download/20221115T100203Z-30785c7f/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20221016T170545Z
+    version: 20221115T100203Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/5.5-562ab6e7/
+    path: /asset-mirror/releases/download/5.6-562ab6e7/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     os: tails
-    version: '5.5'
+    version: '5.6'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20211227-e37031e1/
@@ -1239,13 +1167,13 @@ endpoints:
     version: 9.03
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/9.04-496c3c77/
+    path: /asset-mirror/releases/download/9.05-1020d494/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: systemrescue
-    version: 9.04
+    version: 9.05
     arch: amd64
   shredos-i686:
     path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-39cc9ca5/
@@ -1262,13 +1190,13 @@ endpoints:
     version: v2021.08.2_21_x86-64_0.32.023
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2022.09.01-6dbad0f9/
+    path: /asset-mirror/releases/download/2022.11.02-7d0ddaab/
     files:
     - airootfs.sfs
     - initramfs-linux.img
     - vmlinuz-linux
     os: archlinux
-    version: 2022.09.01
+    version: 2022.11.02
     arch: i686
   q4os-4.6-default-squash:
     path: /debian-squash/releases/download/4.6-2de282e7/
@@ -1289,68 +1217,68 @@ endpoints:
     flavor: plasma
     kernel: q4os-4.6-default-squash
   clonezilla-debian-stable-i686:
-    path: /debian-squash/releases/download/3.0.1-8-dca802b1/
+    path: /debian-squash/releases/download/3.0.2-21-dca802b1/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.1-8
+    version: 3.0.2-21
     flavor: stable
     kernel: clonezilla-debian-stable-i686
     arch: i686
   clonezilla-debian-stable-amd64:
-    path: /debian-squash/releases/download/3.0.1-8-d34a2a14/
+    path: /debian-squash/releases/download/3.0.2-21-bda9d841/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.1-8
+    version: 3.0.2-21
     flavor: stable
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20220620-jammy-a31ba037/
+    path: /ubuntu-squash/releases/download/20221103-kinetic-0707074a/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220620-jammy
+    version: 20221103-kinetic
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
   clonezilla-debian-testing-amd64:
-    path: /debian-squash/releases/download/3.0.2-16-aa179713/
+    path: /debian-squash/releases/download/3.0.2-22-a6a89023/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.2-16
+    version: 3.0.2-22
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/3.0.2-16-a4301e56/
+    path: /debian-squash/releases/download/3.0.2-22-a4301e56/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.2-16
+    version: 3.0.2-22
     flavor: testing
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20220927-kinetic-a13fd185/
+    path: /ubuntu-squash/releases/download/20221110-lunar-f3a7c374/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20220927-kinetic
+    version: 20221110-lunar
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
@@ -1586,7 +1514,7 @@ endpoints:
     version: 35
     flavor: SoaS
   fedora-35-Xfce:
-    path: /fedora-assets/releases/download/1.2-34182e18/
+    path: /fedora-assets/releases/download/1.2-1849b6fb/
     files:
     - vmlinuz
     - initrd
@@ -1612,13 +1540,13 @@ endpoints:
     os: proxmox-backup-server
     version: 2.2-1
   proxmox-ve:
-    path: /asset-mirror/releases/download/7.2-1-a290fd70/
+    path: /asset-mirror/releases/download/7.3-1-a290fd70/
     files:
     - initrd
     - proxmox.iso
     - vmlinuz
     os: proxmox-ve
-    version: 7.2-1
+    version: 7.3-1
   proxmox-mailgateway:
     path: /asset-mirror/releases/download/7.1-1-fa2ce5d2/
     files:
@@ -1803,7 +1731,7 @@ endpoints:
     version: 36
     flavor: LXQt
   fedora-36-SoaS:
-    path: /fedora-assets/releases/download/1.5-6fe8a018/
+    path: /fedora-assets/releases/download/1.5-202cb414/
     files:
     - vmlinuz
     - initrd
@@ -1812,7 +1740,7 @@ endpoints:
     version: 36
     flavor: SoaS
   fedora-36-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.5-55d4d60d/
+    path: /fedora-assets/releases/download/1.5-285d5347/
     files:
     - vmlinuz
     - initrd
@@ -1855,7 +1783,7 @@ endpoints:
     version: '4.0'
     arch: aarch64
   harvester:
-    path: /asset-mirror/releases/download/v1.0.3-3e0d2b3b/
+    path: /asset-mirror/releases/download/v1.1.0-3e0d2b3b/
     files:
     - harvester-vmlinuz-amd64
     - harvester-initrd-amd64
@@ -1863,15 +1791,15 @@ endpoints:
     - harvester-amd64.sha512
     - version.yaml
     os: harvester
-    version: v1.0.3
+    version: v1.1.0
   linux-lite-6-squash:
-    path: /ubuntu-squash/releases/download/6.0-9ee13689/
+    path: /ubuntu-squash/releases/download/6.2-9ee13689/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: lite
-    version: 6.0
+    version: 6.2
     kernel: linux-lite-6-squash
   mint-21-cinnamon-squash:
     path: /ubuntu-squash/releases/download/21-c43dffe7/
@@ -1922,22 +1850,22 @@ endpoints:
     version: '9'
     arch: aarch64
   parrot-home:
-    path: /debian-squash/releases/download/5.1-43221a9f/
+    path: /debian-squash/releases/download/5.1.1-ef3c4bf5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: parrot
-    version: '5.1'
+    version: 5.1.1
     flavor: home
   parrot-security:
-    path: /debian-squash/releases/download/5.1-c920c7fa/
+    path: /debian-squash/releases/download/5.1.1-47327415/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: parrot
-    version: '5.1'
+    version: 5.1.1
     flavor: security
   xcp-ng:
     path: /asset-mirror/releases/download/8.2-107858c6/
@@ -2045,3 +1973,94 @@ endpoints:
     version: '22.10'
     flavor: KDE
     kernel: ubuntu-22.10-KDE-squash
+  ubuntu-22.04-studio-squash:
+    path: /ubuntu-squash/releases/download/22.04.1-f22bcaf8/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.04'
+    flavor: Studio
+    kernel: ubuntu-22.04-studio-squash
+  fedora-37-gnome:
+    path: /fedora-assets/releases/download/1.7-e0625008/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: GNOME
+  fedora-37-Cinnamon:
+    path: /fedora-assets/releases/download/1.7-917833d7/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: Cinnamon
+  fedora-37-KDE:
+    path: /fedora-assets/releases/download/1.7-42e5c27c/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: KDE
+  fedora-37-LXDE:
+    path: /fedora-assets/releases/download/1.7-52a1cdd6/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: LXDE
+  fedora-37-LXQt:
+    path: /fedora-assets/releases/download/1.7-b2f42838/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: LXQt
+  fedora-37-i3:
+    path: /fedora-assets/releases/download/1.7-5387eeb5/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: i3
+  fedora-37-SoaS:
+    path: /fedora-assets/releases/download/1.7-fcf14866/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: SoaS
+  fedora-37-MATE_Compiz:
+    path: /fedora-assets/releases/download/1.7-b9e22bcb/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: MATE_Compiz
+  fedora-37-Xfce:
+    path: /fedora-assets/releases/download/1.7-fe38c8f0/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 37
+    flavor: Xfce

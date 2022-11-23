@@ -118,10 +118,12 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 9.1
+      name: 9.1
     - code_name: 9.0
       name: 9.0
-    - code_name: 8.6
-      name: 8.6
+    - code_name: 8.7
+      name: 8.7
   alpinelinux:
     base_dir: alpine
     enabled: true
@@ -129,8 +131,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.16
-      name: '3.16'
+    - code_name: v3.17
+      name: '3.17'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -147,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.10.01
-      name: 2022.10.01
+    - code_name: 2022.11.01
+      name: 2022.11.01
   blackarch:
     enabled: true
     menu: linux
@@ -180,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 36.20221001.3.0
+    - code_name: 36.20221030.3.0
       name: stable
-    - code_name: 36.20221014.2.0
+    - code_name: 37.20221106.2.1
       name: testing
-    - code_name: 37.20221015.1.0
+    - code_name: 37.20221111.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -240,7 +242,7 @@ releases:
     enabled: true
     menu: linux
     mirror: ''
-    name: Container Linux by Flatcar
+    name: Flatcar Container Linux
     versions:
     - code_name: stable
       name: Stable Channel
@@ -403,15 +405,6 @@ releases:
     enabled: true
     menu: linux
     name: Proxmox
-  rancheros:
-    base_dir: os/latest
-    enabled: true
-    menu: linux
-    mirror: http://releases.rancher.com
-    name: RancherOS
-    versions:
-    - code_name: latest
-      name: Latest (20 MB)
   rhel:
     enabled: true
     menu: linux
@@ -425,6 +418,8 @@ releases:
     versions:
     - code_name: 9.0
       name: 9.0
+    - code_name: 8.7
+      name: 8.7
     - code_name: 8.6
       name: 8.6
     - code_name: 8.5
@@ -468,14 +463,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20221117T002317Z
+      name: 20221117T002317Z
+    - code_name: 20221103T001803Z
+      name: 20221103T001803Z
     - code_name: 20221020T001410Z
       name: 20221020T001410Z
     - code_name: 20221006T160428Z
       name: 20221006T160428Z
-    - code_name: 20221006T003323Z
-      name: 20221006T003323Z
-    - code_name: 20220922T001804Z
-      name: 20220922T001804Z
   talos:
     enabled: true
     menu: linux
