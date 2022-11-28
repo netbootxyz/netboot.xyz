@@ -416,6 +416,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 9.1
+      name: 9.1
     - code_name: 9.0
       name: 9.0
     - code_name: 8.7
