@@ -481,13 +481,13 @@ endpoints:
     version: '2022.11'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2021.07-cce6fb2f/
+    path: /debian-squash/releases/download/2022.11-ba78c13d/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2021.07'
+    version: '2022.11'
     flavor: small
   gparted-stable:
     path: /debian-squash/releases/download/1.4.0-6-54b27c90/
