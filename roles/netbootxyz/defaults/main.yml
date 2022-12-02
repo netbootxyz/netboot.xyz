@@ -323,6 +323,8 @@ releases:
       name: nixos-21.11
     - code_name: nixos-22.05
       name: nixos-22.05
+    - code_name: nixos-22.11
+      name: nixos-22.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
