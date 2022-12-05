@@ -640,7 +640,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/40.1-fd5f6a2a/
+    path: /asset-mirror/releases/download/41.0-fd5f6a2a/
     files:
     - initrd
     - vmlinuz
