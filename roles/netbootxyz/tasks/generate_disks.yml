@@ -1,29 +1,36 @@
 ---
 
-- include_tasks: generate_disks_base.yml
+- name: Set up iPXE build environment
+  ansible.builtin.include_tasks: generate_disks_base.yml
 
-- include_tasks: generate_disks_legacy.yml
+- name: Generate legacy iPXE bootloaders
+  ansible.builtin.include_tasks: generate_disks_legacy.yml
   when:
     - generate_disks_legacy | default(true) | bool
 
-- include_tasks: generate_disks_linux.yml
+- name: Generate linux iPXE bootloader
+  ansible.builtin.include_tasks: generate_disks_linux.yml
   when:
     - generate_disks_linux | default(false) | bool
 
-- include_tasks: generate_disks_efi.yml
+- name: Generate EFI iPXE bootloaders
+  ansible.builtin.include_tasks: generate_disks_efi.yml
   when:
     - generate_disks_efi | default(true) | bool
 
-- include_tasks: generate_disks_arm.yml
+- name: Generate ARM iPXE bootloaders
+  ansible.builtin.include_tasks: generate_disks_arm.yml
   when:
     - generate_disks_arm | default(false) | bool
 
-- include_tasks: generate_disks_rpi.yml
+- name: Generate RPI iPXE bootloaders
+  ansible.builtin.include_tasks: generate_disks_rpi.yml
   when:
     - generate_disks_rpi | default(false) | bool
     - bootloader_filename == "netboot.xyz"
 
-- include_tasks: generate_disks_hybrid.yml
+- name: Generate hybrid iPXE bootloaders
+  ansible.builtin.include_tasks: generate_disks_hybrid.yml
   when:
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool

@@ -472,22 +472,22 @@ endpoints:
     version: '2'
     flavor: ascii
   grml-full:
-    path: /debian-squash/releases/download/2021.07-3daa2f9a/
+    path: /debian-squash/releases/download/2022.11-fd3e71b6/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2021.07'
+    version: '2022.11'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2021.07-cce6fb2f/
+    path: /debian-squash/releases/download/2022.11-ba78c13d/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2021.07'
+    version: '2022.11'
     flavor: small
   gparted-stable:
     path: /debian-squash/releases/download/1.4.0-6-54b27c90/
@@ -530,7 +530,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/5.18.5-2022.06.18-2be14830/
+    path: /asset-mirror/releases/download/6.0.10-2022.11.27-2be14830/
     files:
     - initrd
     - vmlinuz
@@ -648,7 +648,7 @@ endpoints:
     version: current
     flavor: full
   4mlinux-thesss:
-    path: /asset-mirror/releases/download/40.1-7bd7c739/
+    path: /asset-mirror/releases/download/41.0-7bd7c739/
     files:
     - initrd
     - vmlinuz
@@ -656,7 +656,7 @@ endpoints:
     version: current
     flavor: TheSSS
   4mlinux-bakandimg:
-    path: /asset-mirror/releases/download/40.0-379a22f9/
+    path: /asset-mirror/releases/download/41.0-379a22f9/
     files:
     - initrd
     - vmlinuz
@@ -807,7 +807,7 @@ endpoints:
     version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/202211180318-63d59694/
+    path: /debian-squash/releases/download/202212020318-63d59694/
     files:
     - filesystem.squashfs
     - initrd
@@ -1099,31 +1099,31 @@ endpoints:
     version: 20221107T170540Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20221106T214655Z-aca15d47/
+    path: /asset-mirror/releases/download/20221123T141701Z-aca15d47/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20221106T214655Z
+    version: 20221123T141701Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20221115T100203Z-30785c7f/
+    path: /asset-mirror/releases/download/20221122T220204Z-30785c7f/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20221115T100203Z
+    version: 20221122T220204Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/5.6-562ab6e7/
+    path: /asset-mirror/releases/download/5.7-562ab6e7/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     os: tails
-    version: '5.6'
+    version: '5.7'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20211227-e37031e1/
@@ -1250,35 +1250,35 @@ endpoints:
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
   clonezilla-debian-testing-amd64:
-    path: /debian-squash/releases/download/3.0.2-22-a6a89023/
+    path: /debian-squash/releases/download/3.0.3-1-a6a89023/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.2-22
+    version: 3.0.3-1
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/3.0.2-22-a4301e56/
+    path: /debian-squash/releases/download/3.0.3-1-a4301e56/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.0.2-22
+    version: 3.0.3-1
     flavor: testing
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20221110-lunar-f3a7c374/
+    path: /ubuntu-squash/releases/download/20221129-lunar-f3a7c374/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20221110-lunar
+    version: 20221129-lunar
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
@@ -1532,13 +1532,13 @@ endpoints:
     version: 35
     flavor: i3
   proxmox-backup-server:
-    path: /asset-mirror/releases/download/2.2-1-6baf8671/
+    path: /asset-mirror/releases/download/2.3-1-6baf8671/
     files:
     - initrd
     - proxmox-backup-server.iso
     - vmlinuz
     os: proxmox-backup-server
-    version: 2.2-1
+    version: 2.3-1
   proxmox-ve:
     path: /asset-mirror/releases/download/7.3-1-a290fd70/
     files:
@@ -1548,13 +1548,13 @@ endpoints:
     os: proxmox-ve
     version: 7.3-1
   proxmox-mailgateway:
-    path: /asset-mirror/releases/download/7.1-1-fa2ce5d2/
+    path: /asset-mirror/releases/download/7.2-1-fa2ce5d2/
     files:
     - initrd
     - proxmox-mailgateway.iso
     - vmlinuz
     os: proxmox-mailgateway
-    version: 7.1-1
+    version: 7.2-1
   tails-beta:
     path: /asset-mirror/releases/download/5.0b1-ebdb1fb3/
     files:
@@ -1783,7 +1783,7 @@ endpoints:
     version: '4.0'
     arch: aarch64
   harvester:
-    path: /asset-mirror/releases/download/v1.1.0-3e0d2b3b/
+    path: /asset-mirror/releases/download/v1.1.1-3e0d2b3b/
     files:
     - harvester-vmlinuz-amd64
     - harvester-initrd-amd64
@@ -1791,7 +1791,7 @@ endpoints:
     - harvester-amd64.sha512
     - version.yaml
     os: harvester
-    version: v1.1.0
+    version: v1.1.1
   linux-lite-6-squash:
     path: /ubuntu-squash/releases/download/6.2-9ee13689/
     files:
@@ -1832,7 +1832,7 @@ endpoints:
     flavor: xfce
     kernel: mint-21-xfce-squash
   oracle-9-x86_64:
-    path: /asset-mirror/releases/download/U0-37017e9a/
+    path: /asset-mirror/releases/download/U1-37017e9a/
     files:
     - vmlinuz
     - initrd
@@ -1841,7 +1841,7 @@ endpoints:
     version: '9'
     arch: x86_64
   oracle-9-aarch64:
-    path: /asset-mirror/releases/download/U0-b5b23e14/
+    path: /asset-mirror/releases/download/U1-b5b23e14/
     files:
     - vmlinuz
     - initrd

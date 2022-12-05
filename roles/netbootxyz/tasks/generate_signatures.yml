@@ -17,6 +17,5 @@
     -out {{ sigs_dir }}/{{ item }}.sig
   args:
     chdir: "{{ cert_dir }}"
-    warn: false
   with_items:
     - "{{ source_files.stdout_lines }}"

@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.11.01
-      name: 2022.11.01
+    - code_name: 2022.12.01
+      name: 2022.12.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 36.20221030.3.0
+    - code_name: 37.20221106.3.0
       name: stable
-    - code_name: 37.20221106.2.1
+    - code_name: 37.20221127.2.0
       name: testing
-    - code_name: 37.20221111.1.0
+    - code_name: 37.20221127.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -323,6 +323,8 @@ releases:
       name: nixos-21.11
     - code_name: nixos-22.05
       name: nixos-22.05
+    - code_name: nixos-22.11
+      name: nixos-22.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -416,6 +418,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 9.1
+      name: 9.1
     - code_name: 9.0
       name: 9.0
     - code_name: 8.7
@@ -463,14 +467,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20221201T010802Z
+      name: 20221201T010802Z
     - code_name: 20221117T002317Z
       name: 20221117T002317Z
     - code_name: 20221103T001803Z
       name: 20221103T001803Z
     - code_name: 20221020T001410Z
       name: 20221020T001410Z
-    - code_name: 20221006T160428Z
-      name: 20221006T160428Z
   talos:
     enabled: true
     menu: linux
