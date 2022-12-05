@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.66] - 2022-00-00
+
 ## [2.0.65] - 2022-12-03
 #### Fixed
 - Removed deprecated arg from Ansible playbook to fix dev and rolling
