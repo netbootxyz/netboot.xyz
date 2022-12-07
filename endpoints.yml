@@ -141,13 +141,13 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2022.3-d818bd6f/
+    path: /debian-squash/releases/download/2022.4-d1c0d551/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: '2022.3'
+    version: '2022.4'
     flavor: xfce
     kernel: kali-xfce-squash
   pop-19.10-default-squash:
