@@ -1190,13 +1190,13 @@ endpoints:
     version: v2021.08.2_21_x86-64_0.32.023
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2022.11.02-7d0ddaab/
+    path: /asset-mirror/releases/download/2022.12.02-7d0ddaab/
     files:
     - airootfs.sfs
     - initramfs-linux.img
     - vmlinuz-linux
     os: archlinux
-    version: 2022.11.02
+    version: 2022.12.02
     arch: i686
   q4os-4.6-default-squash:
     path: /debian-squash/releases/download/4.6-2de282e7/
