@@ -6,7 +6,7 @@
 #define IMAGE_GZIP            /* GZIP image support */
 #define IMAGE_PNG             /* PNG image support */
 #define IMAGE_ZLIB            /* ZLIB image support */
-#define NET_PROTO_IPV6        /* IPv6 protocol */
+#undef  NET_PROTO_IPV6        /* IPv6 protocol */
 #define NSLOOKUP_CMD          /* DNS resolving command */
 #define NTP_CMD               /* NTP commands */
 #define PARAM_CMD             /* Form parameter commands */
