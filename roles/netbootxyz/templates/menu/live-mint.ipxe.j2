@@ -62,7 +62,7 @@ set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
 {% endif %}
 {% endfor %}
-goto {{ value.version }}-boot
+goto {{ value.version | int }}-boot
 {% endif %}
 {% endfor %}
 
