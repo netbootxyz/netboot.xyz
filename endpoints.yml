@@ -1822,13 +1822,13 @@ endpoints:
     flavor: mate
     kernel: mint-21-mate-squash
   mint-21-xfce-squash:
-    path: /ubuntu-squash/releases/download/21-435a7c58/
+    path: /ubuntu-squash/releases/download/21.1-a7cdf977/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: mint
-    version: '21'
+    version: '21.1'
     flavor: xfce
     kernel: mint-21-xfce-squash
   oracle-9-x86_64:
