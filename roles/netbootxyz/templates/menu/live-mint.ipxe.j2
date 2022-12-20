@@ -62,7 +62,7 @@ set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
 {% endif %}
 {% endfor %}
-{% if value.version = "lmde" %}
+{% if value.version == "lmde" %}
 goto lmde-boot
 {% else %}
 goto {{ value.version | int }}-boot
