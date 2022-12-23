@@ -1167,13 +1167,13 @@ endpoints:
     version: 9.03
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/9.05-1020d494/
+    path: /asset-mirror/releases/download/9.06-1020d494/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: systemrescue
-    version: 9.05
+    version: 9.06
     arch: amd64
   shredos-i686:
     path: /asset-mirror/releases/download/v2020.02.008_i686-0.30.001-39cc9ca5/
