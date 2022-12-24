@@ -1011,7 +1011,7 @@ endpoints:
     flavor: cinnamon
     kernel: debian-11-live-kernel
   debian-11-live-kernel:
-    path: /debian-core-11/releases/download/11.5.0-95ff084b/
+    path: /debian-core-11/releases/download/11.6.0-95ff084b/
     files:
     - initrd
     - vmlinuz
