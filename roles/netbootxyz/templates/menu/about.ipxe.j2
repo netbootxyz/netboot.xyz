@@ -18,25 +18,22 @@ set fg_whi ${esc:string}[37m
 :netabout
 menu ${fg_cya}${bold}About netboot.xyz (Version: ${version})
 item exit ${bold}Exit back to main menu...${boldoff}
-item --gap --  --------------------------------------------------------------------------
-item about ${fg_gre}${bold}Self Hosting and Live Booting - November 29, 2019
-item about ${fg_gre}${bold}Full Article: ${fg_whi}${bold}https://netboot.xyz/blog/
-item about
-item about ${fg_yel}${bold}* Self hosting options using Ansible and Docker (soon)
-item about ${fg_yel}${bold}* Live Boot options now available with more on the way
-item about ${fg_yel}${bold}${space}Allows you to PXE boot into a Live Desktop from Github
-item about ${fg_yel}${bold}* netboot.xyz repo moving to netbootxyz org on github
-item --gap --  --------------------------------------------------------------------------
+item --gap --  ${fg_whi}${bold}--Thanks------------------------------------------------------------------
+item about ${fg_gre}${bold}Thanks for your support and let us know how we can improve!
+item --gap --  ${fg_whi}${bold}--Twitter-----------------------------------------------------------------
 item about ${fg_cya}${bold}Follow us on Twitter: ${fg_whi}${bold}@netbootxyz
-item --gap --  --------------------------------------------------------------------------
-item about ${fg_gre}${bold}Join us on Discord: ${fg_whi}${bold}https://discord.gg/An6PA2a
-item --gap --  --------------------------------------------------------------------------
-item about ${fg_gre}${bold}Sponsorship: ${fg_whi}${bold}https://opencollective.com/netbootxyz
-item --gap --  --------------------------------------------------------------------------
+item --gap --  ${fg_whi}${bold}--Discord-----------------------------------------------------------------
+item about ${fg_mag}${bold}Join us on Discord: ${fg_whi}${bold}https://discord.gg/An6PA2a
+item --gap --  ${fg_whi}${bold}--Sponsorship-------------------------------------------------------------
+item about ${fg_gre}${bold}Open Collective: ${fg_whi}${bold}https://opencollective.com/netbootxyz
+item about ${fg_gre}${bold}Github Sponsors: ${fg_whi}${bold}https://github.com/sponsors/netbootxyz
+item --gap --  ${fg_whi}${bold}--Merch-------------------------------------------------------------------
+item about ${fg_gre}${bold}netboot.xyz store: ${fg_whi}${bold}https://store.netboot.xyz
+item --gap --  ${fg_whi}${bold}-----------------------------------------------------------------
 isset ${upstream_version} && goto display_version || goto skip_version
 :display_version
 iseq ${version} ${upstream_version} || item --gap --  ${fg_gre}${bold}Latest netboot.xyz version available: ${fg_whi}${bold}${upstream_version}
-item --gap --  --------------------------------------------------------------------------
+item --gap --  ${fg_whi}${bold}-----------------------------------------------------------------
 :skip_version
 choose selected || goto exit
 goto ${selected}
@@ -48,3 +45,4 @@ goto netabout
 :exit
 clear menu
 exit
+
