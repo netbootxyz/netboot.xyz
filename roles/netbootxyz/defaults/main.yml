@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 37.20221106.3.0
+    - code_name: 37.20221211.3.0
       name: stable
-    - code_name: 37.20221127.2.0
+    - code_name: 37.20221225.2.1
       name: testing
-    - code_name: 37.20221127.1.0
+    - code_name: 37.20221225.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -467,14 +467,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20221225T144337Z
+      name: 20221225T144337Z
+    - code_name: 20221215T000744Z
+      name: 20221215T000744Z
     - code_name: 20221201T010802Z
       name: 20221201T010802Z
     - code_name: 20221117T002317Z
       name: 20221117T002317Z
-    - code_name: 20221103T001803Z
-      name: 20221103T001803Z
-    - code_name: 20221020T001410Z
-      name: 20221020T001410Z
   talos:
     enabled: true
     menu: linux
