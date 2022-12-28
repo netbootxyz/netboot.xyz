@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.67] - 2023-00-00
+
 ## [2.0.66] - 2022-12-28
 #### Fixed
 - Adjusted Mint menu generation for minor releases to fix rolling
