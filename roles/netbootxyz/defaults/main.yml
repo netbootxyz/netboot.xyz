@@ -184,9 +184,9 @@ releases:
     versions:
     - code_name: 37.20221211.3.0
       name: stable
-    - code_name: 37.20221225.2.1
+    - code_name: 37.20221225.2.2
       name: testing
-    - code_name: 37.20221225.1.1
+    - code_name: 37.20221225.1.2
       name: next
   debian:
     archive_mirror: http://archive.debian.org
