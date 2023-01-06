@@ -1117,7 +1117,7 @@ endpoints:
     version: 20230101T164658Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/5.8-562ab6e7/
+    path: /asset-mirror/releases/download/5.8-6d380e6f/
     files:
     - vmlinuz
     - initrd.img
