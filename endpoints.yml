@@ -1183,11 +1183,11 @@ endpoints:
     version: v2020.02.008_i686-0.30.001
     arch: i686
   shredos-x86_64:
-    path: /asset-mirror/releases/download/v2021.08.2_21_x86-64_0.32.023-9ad13381/
+    path: /asset-mirror/releases/download/v2021.08.2_23_x86-64_0.34-9ad13381/
     files:
     - shredos
     os: shredos
-    version: v2021.08.2_21_x86-64_0.32.023
+    version: v2021.08.2_23_x86-64_0.34
     arch: x86_64
   archlinux-32:
     path: /asset-mirror/releases/download/2023.01.04-7d0ddaab/
