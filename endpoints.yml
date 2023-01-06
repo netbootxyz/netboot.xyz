@@ -2064,3 +2064,13 @@ endpoints:
     os: fedora
     version: 37
     flavor: Xfce
+  q4os-4.11-default-squash:
+    path: /debian-squash/releases/download/4.11-bf7c7f1a/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Q4OS
+    version: '4.11'
+    flavor: trinity
+    kernel: q4os-4.11-default-squash
