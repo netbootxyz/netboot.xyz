@@ -2074,3 +2074,11 @@ endpoints:
     version: '4.11'
     flavor: trinity
     kernel: q4os-4.11-default-squash
+  q4os-4.11-plasma-squash:
+    path: /debian-squash/releases/download/4.11-b16c55ec/
+    files:
+    - filesystem.squashfs
+    os: Q4OS
+    version: '4.11'
+    flavor: plasma
+    kernel: q4os-4.11-default-squash
