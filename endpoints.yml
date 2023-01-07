@@ -1272,13 +1272,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20221129-lunar-f3a7c374/
+    path: /ubuntu-squash/releases/download/20221230-lunar-f3a7c374/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20221129-lunar
+    version: 20221230-lunar
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
