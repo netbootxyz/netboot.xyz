@@ -1767,7 +1767,7 @@ endpoints:
     version: 36
     flavor: Xfce
   vmware-photon-x86_64:
-    path: /asset-mirror/releases/download/4.0-c6e31cb5/
+    path: /asset-mirror/releases/download/4.0-5a977251/
     files:
     - initrd.img
     - vmlinuz
