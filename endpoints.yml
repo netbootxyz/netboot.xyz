@@ -1783,7 +1783,7 @@ endpoints:
     version: '4.0'
     arch: aarch64
   harvester:
-    path: /asset-mirror/releases/download/v1.1.1-3e0d2b3b/
+    path: /asset-mirror/releases/download/v1.1.1-bd33b983/
     files:
     - harvester-vmlinuz-amd64
     - harvester-initrd-amd64
