@@ -346,7 +346,7 @@ endpoints:
     version: classic
     kernel: feren-classic-squash
   breakin:
-    path: /asset-mirror/releases/download/4.26.1-756d4836/
+    path: /asset-mirror/releases/download/4.26.1-41841227/
     files:
     - vmlinuz
     - initrd
