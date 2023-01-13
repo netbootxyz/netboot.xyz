@@ -353,7 +353,7 @@ endpoints:
     os: breakin
     version: 4.26.1
   dban:
-    path: /asset-mirror/releases/download/2.3.0-7a7e3c02/
+    path: /asset-mirror/releases/download/2.3.0-b41c0107/
     files:
     - DBAN.BZI
     os: dban
