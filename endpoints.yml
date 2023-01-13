@@ -2065,7 +2065,7 @@ endpoints:
     version: 37
     flavor: Xfce
   q4os-4.11-default-squash:
-    path: /debian-squash/releases/download/4.11-bf7c7f1a/
+    path: /debian-squash/releases/download/4.11-fa5a5615/
     files:
     - filesystem.squashfs
     - initrd
