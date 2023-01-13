@@ -1532,7 +1532,7 @@ endpoints:
     version: 35
     flavor: i3
   proxmox-backup-server:
-    path: /asset-mirror/releases/download/2.3-1-6baf8671/
+    path: /asset-mirror/releases/download/2.3-1-09769528/
     files:
     - initrd
     - proxmox-backup-server.iso
