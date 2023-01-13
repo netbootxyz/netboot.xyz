@@ -1367,7 +1367,7 @@ endpoints:
     flavor: lxqt-kwin
     version: 221019
   garuda-wayfire:
-    path: /asset-mirror/releases/download/221019-5eb08c3c/
+    path: /asset-mirror/releases/download/221019-148b8015/
     files:
     - amd_ucode.img
     - desktopfs.sfs
