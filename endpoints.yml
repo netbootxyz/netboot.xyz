@@ -1297,7 +1297,7 @@ endpoints:
     flavor: dr460nized-gaming
     version: 221019
   garuda-dr460nized:
-    path: /asset-mirror/releases/download/221019-f0947105/
+    path: /asset-mirror/releases/download/221019-28ac5f81/
     files:
     - amd_ucode.img
     - desktopfs.sfs
