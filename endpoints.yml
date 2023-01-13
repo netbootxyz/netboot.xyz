@@ -1353,7 +1353,7 @@ endpoints:
     flavor: gnome
     version: 221019
   garuda-lxqt-kwin:
-    path: /asset-mirror/releases/download/221019-1b9607d4/
+    path: /asset-mirror/releases/download/221019-c3fcbd36/
     files:
     - amd_ucode.img
     - desktopfs.sfs
