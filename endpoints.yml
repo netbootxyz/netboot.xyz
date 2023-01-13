@@ -1548,7 +1548,7 @@ endpoints:
     os: proxmox-ve
     version: 7.3-1
   proxmox-mailgateway:
-    path: /asset-mirror/releases/download/7.2-1-fa2ce5d2/
+    path: /asset-mirror/releases/download/7.2-1-5c9b0cd6/
     files:
     - initrd
     - proxmox-mailgateway.iso
