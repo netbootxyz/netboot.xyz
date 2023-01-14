@@ -1934,7 +1934,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-22.10-MATE-squash
   ubuntu-22.10-default-squash:
-    path: /ubuntu-squash/releases/download/22.10-8c6e88d2/
+    path: /ubuntu-squash/releases/download/22.10-dd84401a/
     files:
     - filesystem.squashfs
     - initrd
