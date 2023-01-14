@@ -2029,7 +2029,7 @@ endpoints:
     version: 37
     flavor: LXQt
   fedora-37-i3:
-    path: /fedora-assets/releases/download/1.7-5387eeb5/
+    path: /fedora-assets/releases/download/1.7-a1446a61/
     files:
     - vmlinuz
     - initrd
