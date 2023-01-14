@@ -1924,7 +1924,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-22.10-XFCE-squash
   ubuntu-22.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/22.10-ec04188b/
+    path: /ubuntu-squash/releases/download/22.10-636355d9/
     files:
     - filesystem.squashfs
     - initrd
