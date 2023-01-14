@@ -1695,7 +1695,7 @@ endpoints:
     version: 36
     flavor: GNOME
   fedora-36-KDE:
-    path: /fedora-assets/releases/download/1.5-e70b888c/
+    path: /fedora-assets/releases/download/1.5-da35ad5c/
     files:
     - vmlinuz
     - initrd
