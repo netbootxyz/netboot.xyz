@@ -1134,7 +1134,7 @@ endpoints:
     os: hrmpf
     version: '20230105'
   ubuntu-netboot-20.04-arm64:
-    path: /ubuntu-squash/releases/download/20.04.5-6aef5230/
+    path: /ubuntu-squash/releases/download/20.04.5-936e41b6/
     files:
     - filesystem.squashfs
     - initrd
