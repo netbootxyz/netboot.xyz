@@ -2047,7 +2047,7 @@ endpoints:
     version: 37
     flavor: SoaS
   fedora-37-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.7-b9e22bcb/
+    path: /fedora-assets/releases/download/1.7-840e0126/
     files:
     - vmlinuz
     - initrd
