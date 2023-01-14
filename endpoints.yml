@@ -1984,7 +1984,7 @@ endpoints:
     flavor: Studio
     kernel: ubuntu-22.04-studio-squash
   fedora-37-gnome:
-    path: /fedora-assets/releases/download/1.7-e0625008/
+    path: /fedora-assets/releases/download/1.7-b9ac9551/
     files:
     - vmlinuz
     - initrd
