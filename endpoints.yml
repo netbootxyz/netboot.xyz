@@ -1619,7 +1619,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-22.04-MATE-squash
   ubuntu-22.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-5f0ef647/
+    path: /ubuntu-squash/releases/download/22.04.1-92bafb79/
     files:
     - filesystem.squashfs
     - initrd
