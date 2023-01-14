@@ -1944,7 +1944,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-22.10-default-squash
   ubuntu-22.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/22.10-36255b62/
+    path: /ubuntu-squash/releases/download/22.10-95310d02/
     files:
     - filesystem.squashfs
     - initrd
