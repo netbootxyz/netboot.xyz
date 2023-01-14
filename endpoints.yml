@@ -993,7 +993,7 @@ endpoints:
     version: '6'
     kernel: elementaryos-6-default-squash
   zorin-16-core-squash:
-    path: /ubuntu-squash/releases/download/16.2-e18490ce/
+    path: /ubuntu-squash/releases/download/16.2-ca8ff325/
     files:
     - filesystem.squashfs
     - initrd
