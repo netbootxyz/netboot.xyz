@@ -1964,7 +1964,7 @@ endpoints:
     flavor: LXDE
     kernel: ubuntu-22.10-LXDE-squash
   ubuntu-22.10-KDE-squash:
-    path: /ubuntu-squash/releases/download/22.10-f01ab01c/
+    path: /ubuntu-squash/releases/download/22.10-4c45260c/
     files:
     - filesystem.squashfs
     - initrd
