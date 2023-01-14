@@ -1749,7 +1749,7 @@ endpoints:
     version: 36
     flavor: MATE_Compiz
   fedora-36-i3:
-    path: /fedora-assets/releases/download/1.5-4b03603f/
+    path: /fedora-assets/releases/download/1.5-8efce5c5/
     files:
     - vmlinuz
     - initrd
