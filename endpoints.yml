@@ -1565,7 +1565,7 @@ endpoints:
     version: 5.0b1
     arch: amd64
   ubuntu-netboot-22.04-amd64:
-    path: /ubuntu-squash/releases/download/22.04.1-e4c114c4/
+    path: /ubuntu-squash/releases/download/22.04.1-ddfea88f/
     files:
     - filesystem.squashfs
     - initrd
