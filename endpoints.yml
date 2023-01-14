@@ -1993,7 +1993,7 @@ endpoints:
     version: 37
     flavor: GNOME
   fedora-37-Cinnamon:
-    path: /fedora-assets/releases/download/1.7-917833d7/
+    path: /fedora-assets/releases/download/1.7-d19e412c/
     files:
     - vmlinuz
     - initrd
