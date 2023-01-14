@@ -1713,7 +1713,7 @@ endpoints:
     version: 36
     flavor: LXDE
   fedora-36-Cinnamon:
-    path: /fedora-assets/releases/download/1.5-72dcc467/
+    path: /fedora-assets/releases/download/1.5-a4aa876b/
     files:
     - vmlinuz
     - initrd
