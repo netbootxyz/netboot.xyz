@@ -1239,7 +1239,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20221103-kinetic-0707074a/
+    path: /ubuntu-squash/releases/download/20221103-kinetic-2cf58701/
     files:
     - filesystem.squashfs
     - initrd
