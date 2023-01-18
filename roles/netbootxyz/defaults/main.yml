@@ -340,6 +340,8 @@ releases:
       name: openEuler-22.03-LTS
     - code_name: openEuler-22.09
       name: openEuler-22.09
+    - code_name: openEuler-22.03-LTS-SP1
+      name: openEuler-22.03-LTS-SP1
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
