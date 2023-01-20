@@ -37,7 +37,7 @@ endpoints:
     flavor: core
     kernel: debian-10-live-kernel
   ubuntu-18.04-xfce-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-dbd78e5c/
+    path: /ubuntu-squash/releases/download/18.04.5-deb1481b/
     files:
     - filesystem.squashfs
     os: ubuntu
