@@ -742,7 +742,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-20.04-kylin-squash
   voyager-focal-squash:
-    path: /ubuntu-squash/releases/download/focal-f0bdca23/
+    path: /ubuntu-squash/releases/download/focal-594b12a7/
     files:
     - filesystem.squashfs
     - initrd
