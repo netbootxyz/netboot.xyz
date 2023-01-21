@@ -1954,7 +1954,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-22.10-Budgie-squash
   ubuntu-22.10-LXDE-squash:
-    path: /ubuntu-squash/releases/download/22.10-32206b79/
+    path: /ubuntu-squash/releases/download/22.10-8c624b89/
     files:
     - filesystem.squashfs
     - initrd
