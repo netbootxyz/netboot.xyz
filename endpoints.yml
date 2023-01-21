@@ -1793,7 +1793,7 @@ endpoints:
     os: harvester
     version: v1.1.1
   linux-lite-6-squash:
-    path: /ubuntu-squash/releases/download/6.2-9ee13689/
+    path: /ubuntu-squash/releases/download/6.2-2550834c/
     files:
     - filesystem.squashfs
     - initrd
