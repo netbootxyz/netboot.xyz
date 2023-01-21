@@ -1676,7 +1676,7 @@ endpoints:
     os: talos
     version: 1.0.4
   pop-22.04-default-squash:
-    path: /ubuntu-squash/releases/download/5-597b7160/
+    path: /ubuntu-squash/releases/download/21-c6eb5b6e/
     files:
     - filesystem.squashfs
     - initrd
