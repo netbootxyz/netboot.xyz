@@ -53,7 +53,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-18.04-live-kernel
   ubuntu-18.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-9d00872f/
+    path: /ubuntu-squash/releases/download/18.04.5-aefc88c2/
     files:
     - filesystem.squashfs
     os: ubuntu
