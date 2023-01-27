@@ -1117,13 +1117,13 @@ endpoints:
     version: 20230108T161708Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/5.8-29645174/
+    path: /asset-mirror/releases/download/5.9-29645174/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     os: tails
-    version: '5.8'
+    version: '5.9'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20230105-b073bf9a/
