@@ -780,7 +780,7 @@ endpoints:
     os: nixos
     version: '20.03'
   backbox-7-default-squash:
-    path: /ubuntu-squash/releases/download/7-a12f47c5/
+    path: /ubuntu-squash/releases/download/7-63eabf46/
     files:
     - initrd
     - vmlinuz
