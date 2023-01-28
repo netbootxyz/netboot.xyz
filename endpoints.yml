@@ -235,7 +235,7 @@ endpoints:
     flavor: default
     kernel: backbox-6-default-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20230126-0713-d81d98f8/
+    path: /ubuntu-squash/releases/download/20230126-0713-cd16c4be/
     files:
     - vmlinuz
     - filesystem.squashfs
