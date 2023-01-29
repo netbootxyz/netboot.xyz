@@ -241,7 +241,7 @@ endpoints:
     - filesystem.squashfs
     - initrd.lz
     os: neon
-    version: '20.04'
+    version: '22.04'
     flavor: user
     kernel: kde-neon-user
   regolith-current:
