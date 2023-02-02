@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.01.01
-      name: 2023.01.01
+    - code_name: 2023.02.01
+      name: 2023.02.01
   blackarch:
     enabled: true
     menu: linux
