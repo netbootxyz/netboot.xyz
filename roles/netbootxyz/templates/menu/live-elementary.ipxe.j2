@@ -8,7 +8,7 @@ menu ${os}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "elementary-os" %}
-item {{ value.version }} ${space} ${os} {{ value.version }}
+item {{ key }} ${space} ${os} {{ value.version }}
 {% endif %}
 {% endfor %}
 choose live_version || goto live_exit
