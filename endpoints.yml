@@ -463,7 +463,7 @@ endpoints:
     version: '5'
     flavor: apppack
   devuan-ascii:
-    path: /debian-squash/releases/download/2.1-4c6902d9/
+    path: /debian-squash/releases/download/2.1-37ead3f3/
     files:
     - filesystem.squashfs
     - initrd
