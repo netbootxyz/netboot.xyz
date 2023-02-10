@@ -1228,7 +1228,7 @@ endpoints:
     kernel: clonezilla-debian-stable-i686
     arch: i686
   clonezilla-debian-stable-amd64:
-    path: /debian-squash/releases/download/3.0.2-21-bda9d841/
+    path: /debian-squash/releases/download/3.0.2-21-a609986f/
     files:
     - filesystem.squashfs
     - initrd
