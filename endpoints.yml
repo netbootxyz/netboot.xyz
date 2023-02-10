@@ -1050,7 +1050,7 @@ endpoints:
     flavor: xfce
     kernel: debian-11-live-kernel
   debian-11-mate-squash:
-    path: /debian-squash/releases/download/11.6.0-fb1b80ef/
+    path: /debian-squash/releases/download/11.6.0-45b9e409/
     files:
     - filesystem.squashfs
     os: debian
