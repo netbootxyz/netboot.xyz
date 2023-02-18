@@ -6,10 +6,6 @@ on:
       - development
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
-
 env:
   DISCORD_HOOK_URL: ${{ secrets.DISCORD_HOOK_URL }}
   GITHUB_SHA: ${{ github.sha }}
@@ -18,6 +14,9 @@ jobs:
   development-build:
     name: Build Development
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
     - uses: actions/checkout@v3
 
