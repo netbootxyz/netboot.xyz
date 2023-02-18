@@ -6,6 +6,10 @@ on:
       - development
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   DISCORD_HOOK_URL: ${{ secrets.DISCORD_HOOK_URL }}
   GITHUB_SHA: ${{ github.sha }}
@@ -26,9 +30,9 @@ jobs:
         GIT_URL: ${{ secrets.GIT_URL }}
         CERTS_KEY: ${{ secrets.CERTS_KEY }}
 
-    - name: Build Development Release
-      run: |
-        ./script/build_release dev
+#    - name: Build Development Release
+#      run: |
+#        ./script/build_release dev
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1.7.0
