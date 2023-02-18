@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2022.12.01
-      name: 2022.12.01
+    - code_name: 2023.02.01
+      name: 2023.02.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 37.20221211.3.0
+    - code_name: 37.20230122.3.0
       name: stable
-    - code_name: 37.20221225.2.1
+    - code_name: 37.20230205.2.0
       name: testing
-    - code_name: 37.20221225.1.1
+    - code_name: 37.20230205.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -282,8 +282,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core171
-      name: 2.27 Core171
+    - code_name: 2.27-core172
+      name: 2.27 Core172
   k3os:
     enabled: true
     menu: linux
@@ -340,6 +340,8 @@ releases:
       name: openEuler-22.03-LTS
     - code_name: openEuler-22.09
       name: openEuler-22.09
+    - code_name: openEuler-22.03-LTS-SP1
+      name: openEuler-22.03-LTS-SP1
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -467,14 +469,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20221225T144337Z
-      name: 20221225T144337Z
-    - code_name: 20221215T000744Z
-      name: 20221215T000744Z
-    - code_name: 20221201T010802Z
-      name: 20221201T010802Z
-    - code_name: 20221117T002317Z
-      name: 20221117T002317Z
+    - code_name: 20230214T155114Z
+      name: 20230214T155114Z
+    - code_name: 20230209T001143Z
+      name: 20230209T001143Z
+    - code_name: 20230126T002433Z
+      name: 20230126T002433Z
+    - code_name: 20230112T010209Z
+      name: 20230112T010209Z
   talos:
     enabled: true
     menu: linux

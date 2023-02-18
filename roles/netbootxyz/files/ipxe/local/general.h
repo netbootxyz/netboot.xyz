@@ -7,6 +7,7 @@
 #define IMAGE_PNG             /* PNG image support */
 #define IMAGE_ZLIB            /* ZLIB image support */
 #define NET_PROTO_IPV6        /* IPv6 protocol */
+#define NET_PROTO_LLDP        /* Link Layer Discovery protocol */
 #define NSLOOKUP_CMD          /* DNS resolving command */
 #define NTP_CMD               /* NTP commands */
 #define PARAM_CMD             /* Form parameter commands */
