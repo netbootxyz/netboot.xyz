@@ -16,6 +16,9 @@ jobs:
   rolling:
     name: Build Release
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
     - uses: actions/checkout@v3
       with:
