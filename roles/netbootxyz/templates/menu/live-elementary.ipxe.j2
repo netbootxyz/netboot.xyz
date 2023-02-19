@@ -6,7 +6,11 @@ goto ${menu} ||
 set os elementary OS
 menu ${os}
 item --gap ${os} Versions
-item elementaryos-6-default-squash ${space} ${os} 6
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "elementary-os" %}
+item {{ key }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
 choose live_version || goto live_exit
 goto ${live_version}
 
