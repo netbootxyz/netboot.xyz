@@ -1649,7 +1649,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-22.04-KDE-squash
   ubuntu-22.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/22.04.1-565f6520/
+    path: /ubuntu-squash/releases/download/22.04.2-565f6520/
     files:
     - filesystem.squashfs
     - initrd
