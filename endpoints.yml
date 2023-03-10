@@ -1283,7 +1283,7 @@ endpoints:
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
   garuda-dr460nized-gaming:
-    path: /asset-mirror/releases/download/221019-111e3083/
+    path: /asset-mirror/releases/download/230305-111e3083/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1295,7 +1295,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: dr460nized-gaming
-    version: 221019
+    version: 230305
   garuda-dr460nized:
     path: /asset-mirror/releases/download/221019-28ac5f81/
     files:
