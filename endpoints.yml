@@ -1890,7 +1890,7 @@ endpoints:
     flavor: cinnamon
     version: 230305
   ubuntu-netboot-22.10-arm64:
-    path: /ubuntu-squash/releases/download/22.10-1d3aa38b/
+    path: /ubuntu-squash/releases/download/22.10-0c7dfe1c/
     files:
     - filesystem.squashfs
     - initrd
