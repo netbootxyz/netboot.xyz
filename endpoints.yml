@@ -1876,7 +1876,7 @@ endpoints:
     os: xcp-ng
     version: '8.2'
   garuda-cinnamon:
-    path: /asset-mirror/releases/download/230311-ad285577/
+    path: /asset-mirror/releases/download/230319-ad285577/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1888,7 +1888,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: cinnamon
-    version: 230311
+    version: 230319
   ubuntu-netboot-22.10-arm64:
     path: /ubuntu-squash/releases/download/22.10-0c7dfe1c/
     files:
