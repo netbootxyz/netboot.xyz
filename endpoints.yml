@@ -1146,13 +1146,13 @@ endpoints:
     kernel: ubuntu-netboot-20.04-arm64
     arch: arm64
   ubuntu-netboot-20.04-amd64:
-    path: /ubuntu-squash/releases/download/20.04.5-a1b16d57/
+    path: /ubuntu-squash/releases/download/20.04.6-a1b16d57/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 20.04.5
+    version: 20.04.6
     codename: focal
     flavor: netboot
     kernel: ubuntu-netboot-20.04-amd64
