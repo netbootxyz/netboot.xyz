@@ -1423,7 +1423,7 @@ endpoints:
     flavor: sway
     version: 230311
   garuda-mate:
-    path: /asset-mirror/releases/download/230311-b085265a/
+    path: /asset-mirror/releases/download/230319-b085265a/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1435,7 +1435,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: mate
-    version: 230311
+    version: 230319
   garuda-kde-barebones:
     path: /asset-mirror/releases/download/220329-198784ed/
     files:
