@@ -328,13 +328,13 @@ endpoints:
     os: freebsd
     version: '12'
   feren-squash:
-    path: /ubuntu-squash/releases/download/2021.10-84c9a678/
+    path: /ubuntu-squash/releases/download/2023.01-0219a303/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: feren
-    version: '2021.10'
+    version: '2023.01'
     kernel: feren-squash
   feren-classic-squash:
     path: /ubuntu-squash/releases/download/12-2019-b43afc5c/
