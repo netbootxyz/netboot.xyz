@@ -506,13 +506,13 @@ endpoints:
     os: rescatux
     version: current
   caine:
-    path: /ubuntu-squash/releases/download/11.0-afaf94db/
+    path: /ubuntu-squash/releases/download/13.0-07eff96e/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: caine
-    version: '11'
+    version: '13.0'
   bootrepair:
     path: /ubuntu-squash/releases/download/current-e035b00c/
     files:
