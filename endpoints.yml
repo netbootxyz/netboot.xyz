@@ -1532,13 +1532,13 @@ endpoints:
     version: 35
     flavor: i3
   proxmox-backup-server:
-    path: /asset-mirror/releases/download/2.3-1-09769528/
+    path: /asset-mirror/releases/download/2.4-1-09769528/
     files:
     - initrd
     - proxmox-backup-server.iso
     - vmlinuz
     os: proxmox-backup-server
-    version: 2.3-1
+    version: 2.4-1
   proxmox-ve:
     path: /asset-mirror/releases/download/7.4-1-9402a564/
     files:
