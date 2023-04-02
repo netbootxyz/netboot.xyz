@@ -2091,3 +2091,13 @@ endpoints:
     os: elementary-os
     version: '7'
     kernel: elementaryos-7-default-squash
+  ubuntu-22.10-LXQT-squash:
+    path: /ubuntu-squash/releases/download/22.10-dbcb3286/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '22.10'
+    flavor: LXQT
+    kernel: ubuntu-22.10-LXQT-squash
