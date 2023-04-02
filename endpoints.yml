@@ -2101,3 +2101,11 @@ endpoints:
     version: '22.10'
     flavor: LXQT
     kernel: ubuntu-22.10-LXQT-squash
+  ubuntu-18.04-LXQT-squash:
+    path: /ubuntu-squash/releases/download/18.04.5-fe2c4150/
+    files:
+    - filesystem.squashfs
+    os: ubuntu
+    version: '18.04'
+    flavor: LXQT
+    kernel: ubuntu-18.04-live-kernel
