@@ -52,14 +52,6 @@ endpoints:
     version: '18.04'
     flavor: KDE
     kernel: ubuntu-18.04-live-kernel
-  ubuntu-18.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-aefc88c2/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: LXDE
-    kernel: ubuntu-18.04-live-kernel
   ubuntu-18.04-Budgie-squash:
     path: /ubuntu-squash/releases/download/18.04.5-1b496cd5/
     files:
@@ -701,16 +693,6 @@ endpoints:
     version: '20.04'
     flavor: XFCE
     kernel: ubuntu-20.04-XFCE-squash
-  ubuntu-20.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/20.04.5-3bd9c2fc/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '20.04'
-    flavor: LXDE
-    kernel: ubuntu-20.04-LXDE-squash
   ubuntu-20.04-Budgie-squash:
     path: /ubuntu-squash/releases/download/20.04.6-8fb6511b/
     files:
@@ -1618,16 +1600,6 @@ endpoints:
     version: '22.04'
     flavor: MATE
     kernel: ubuntu-22.04-MATE-squash
-  ubuntu-22.04-LXDE-squash:
-    path: /ubuntu-squash/releases/download/22.04.2-92bafb79/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.04'
-    flavor: LXDE
-    kernel: ubuntu-22.04-LXDE-squash
   ubuntu-22.04-Budgie-squash:
     path: /ubuntu-squash/releases/download/22.04.2-ac20ec7d/
     files:
@@ -1953,16 +1925,6 @@ endpoints:
     version: '22.10'
     flavor: Budgie
     kernel: ubuntu-22.10-Budgie-squash
-  ubuntu-22.10-LXDE-squash:
-    path: /ubuntu-squash/releases/download/22.10-8c624b89/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: LXDE
-    kernel: ubuntu-22.10-LXDE-squash
   ubuntu-22.10-KDE-squash:
     path: /ubuntu-squash/releases/download/22.10-4c45260c/
     files:
