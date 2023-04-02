@@ -2071,3 +2071,13 @@ endpoints:
     version: '18.04'
     flavor: LXQT
     kernel: ubuntu-18.04-live-kernel
+  ubuntu-20.04-LXQT-squash:
+    path: /ubuntu-squash/releases/download/20.04.5-cb7829f1/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '20.04'
+    flavor: LXQT
+    kernel: ubuntu-20.04-LXQT-squash
