@@ -149,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.02.01
-      name: 2023.02.01
+    - code_name: 2023.04.01
+      name: 2023.04.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 37.20230122.3.0
+    - code_name: 37.20230303.3.0
       name: stable
-    - code_name: 37.20230205.2.0
+    - code_name: 37.20230322.2.0
       name: testing
-    - code_name: 37.20230205.1.0
+    - code_name: 38.20230322.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -282,8 +282,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core172
-      name: 2.27 Core172
+    - code_name: 2.27-core173
+      name: 2.27 Core173
   k3os:
     enabled: true
     menu: linux
@@ -469,14 +469,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20230323T000605Z
+      name: 20230323T000605Z
+    - code_name: 20230309T001400Z
+      name: 20230309T001400Z
+    - code_name: 20230223T001442Z
+      name: 20230223T001442Z
     - code_name: 20230214T155114Z
       name: 20230214T155114Z
-    - code_name: 20230209T001143Z
-      name: 20230209T001143Z
-    - code_name: 20230126T002433Z
-      name: 20230126T002433Z
-    - code_name: 20230112T010209Z
-      name: 20230112T010209Z
   talos:
     enabled: true
     menu: linux
@@ -842,7 +842,7 @@ utilitiespcbios64:
     enabled: true
     name: Ultimate Boot CD (UBCD)
     type: memdisk
-    util_path: http://mirror.sysadminguide.net/ubcd/ubcd538.iso
-    version: '538'
+    util_path: http://mirror.sysadminguide.net/ubcd/ubcd539.iso
+    version: '539'
 wimboot_location: http://${boot_domain}/wimboot
 wimboot_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot
