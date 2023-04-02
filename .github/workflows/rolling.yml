@@ -49,7 +49,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1-node16
       with:
-        role-to-assume: ${{ secrets.AWS_ROLE_PROD }}
+        role-to-assume: ${{ secrets.AWS_ROLE_ROLLING }}
         aws-region: ${{ secrets.AWS_ACCESS_REGION }}
 
     - name: Deploy master to rolling bucket
