@@ -238,8 +238,6 @@ releases:
       name: 37
     - code_name: 36
       name: 36
-    - code_name: 35
-      name: 35
   flatcar:
     enabled: true
     menu: linux
