@@ -2063,3 +2063,12 @@ endpoints:
     os: fedora
     version: 38
     flavor: SoaS
+  fedora-38-i3:
+    path: /fedora-assets/releases/download/1.6-adb085cf/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 38
+    flavor: i3
