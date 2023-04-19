@@ -2036,3 +2036,12 @@ endpoints:
     os: fedora
     version: 38
     flavor: KDE
+  fedora-38-LXQt:
+    path: /fedora-assets/releases/download/1.6-e9e6fc72/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 38
+    flavor: LXQt
