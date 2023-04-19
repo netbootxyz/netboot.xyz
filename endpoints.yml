@@ -2000,3 +2000,12 @@ endpoints:
     version: '20.04'
     flavor: LXQT
     kernel: ubuntu-20.04-LXQT-squash
+  fedora-38-gnome:
+    path: /fedora-assets/releases/download/1.6-d83211dc/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 38
+    flavor: GNOME
