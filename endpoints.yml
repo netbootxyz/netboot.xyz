@@ -2054,3 +2054,12 @@ endpoints:
     os: fedora
     version: 38
     flavor: MATE_Compiz
+  fedora-38-SoaS:
+    path: /fedora-assets/releases/download/1.6-170bcbaa/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 38
+    flavor: SoaS
