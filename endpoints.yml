@@ -2072,3 +2072,15 @@ endpoints:
     os: fedora
     version: 38
     flavor: i3
+  ubuntu-netboot-23.04-arm64:
+    path: /ubuntu-squash/releases/download/23.04-b494ec82/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.04'
+    codename: kinetic
+    flavor: netboot
+    kernel: ubuntu-netboot-23.04-arm64
+    arch: arm64
