@@ -2084,3 +2084,14 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-23.04-arm64
     arch: arm64
+  ubuntu-netboot-23.04-amd64:
+    path: /ubuntu-squash/releases/download/23.04-89ddd9b0/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.04'
+    codename: lunar
+    flavor: netboot
+    kernel: ubuntu-netboot-23.04-amd64
+    arch: amd64
