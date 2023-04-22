@@ -2019,7 +2019,7 @@ endpoints:
     version: 38
     flavor: Cinnamon
   fedora-38-LXDE:
-    path: /fedora-assets/releases/download/1.6-13929daa/
+    path: /fedora-assets/releases/download/1.6-4cdd790b/
     files:
     - vmlinuz
     - initrd
