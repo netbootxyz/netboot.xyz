@@ -2046,7 +2046,7 @@ endpoints:
     version: 38
     flavor: LXQt
   fedora-38-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.6-01c92b8d/
+    path: /fedora-assets/releases/download/1.6-f9cd1ef3/
     files:
     - vmlinuz
     - initrd
