@@ -2144,3 +2144,13 @@ endpoints:
     version: '23.04'
     flavor: MATE
     kernel: ubuntu-23.04-MATE-squash
+  ubuntu-23.04-kylin-squash:
+    path: /ubuntu-squash/releases/download/23.04-8cd98dfb/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.04'
+    flavor: kylin
+    kernel: ubuntu-23.04-kylin-squash
