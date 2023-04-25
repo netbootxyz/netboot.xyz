@@ -2124,3 +2124,13 @@ endpoints:
     version: '23.04'
     flavor: LXQT
     kernel: ubuntu-23.04-LXQT-squash
+  ubuntu-23.04-Budgie-squash:
+    path: /ubuntu-squash/releases/download/23.04-8ae82ca5/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.04'
+    flavor: Budgie
+    kernel: ubuntu-23.04-Budgie-squash
