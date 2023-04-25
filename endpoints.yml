@@ -2114,3 +2114,13 @@ endpoints:
     version: '23.04'
     flavor: KDE
     kernel: ubuntu-23.04-KDE-squash
+  ubuntu-23.04-LXQT-squash:
+    path: /ubuntu-squash/releases/download/23.04-f6fc9c0e/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.04'
+    flavor: LXQT
+    kernel: ubuntu-23.04-LXQT-squash
