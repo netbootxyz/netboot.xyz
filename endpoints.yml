@@ -2104,3 +2104,13 @@ endpoints:
     os: fedora
     version: 38
     flavor: Xfce
+  ubuntu-23.04-KDE-squash:
+    path: /ubuntu-squash/releases/download/23.04-8f2fa360/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.04'
+    flavor: KDE
+    kernel: ubuntu-23.04-KDE-squash
