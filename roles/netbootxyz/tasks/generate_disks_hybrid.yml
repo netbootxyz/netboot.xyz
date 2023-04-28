@@ -1,6 +1,6 @@
 ---
 
-- name: Generate hybrid ISO image
+- name: Generate hybrid ISO x86_64 image
   ansible.builtin.shell: |
     ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.iso \
       -s {{ bootloader_filename }} \
@@ -9,11 +9,31 @@
   args:
     chdir: "{{ ipxe_source_dir }}/src"
 
-- name: Generate hybrid USB image
+- name: Generate hybrid ISO multiarch image
+  ansible.builtin.shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-multiarch.iso \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+
+- name: Generate hybrid USB x86_64 image
   ansible.builtin.shell: |
     ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.img \
       -s {{ bootloader_filename }} \
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+
+- name: Generate hybrid USB multiarch image
+  ansible.builtin.shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-multiarch.img \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.efi \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
