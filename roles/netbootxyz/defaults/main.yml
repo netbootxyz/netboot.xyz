@@ -49,6 +49,15 @@ bootloaders:
     ipxe_bin: undionly.kpxe
     output_bin: -undionly.kpxe
     type: DHCP-undionly
+  multiarch:
+  - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
+    ipxe_bin: ipxe.iso
+    output_bin: -multiarch.iso
+    type: ISO
+  - desc: Used for creation of USB Keys
+    ipxe_bin: ipxe.img
+    output_bin: -multiarch.img
+    type: IMG
   rpi:
   - desc: Raspberry Pi 4 - USB/SD Card Image
     ipxe_bin: rpi4-sdcard.img
