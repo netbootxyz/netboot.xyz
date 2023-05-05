@@ -1391,7 +1391,7 @@ endpoints:
     flavor: i3wm
     version: 230319
   garuda-sway:
-    path: /asset-mirror/releases/download/230319-08a01ce1/
+    path: /asset-mirror/releases/download/230501-08a01ce1/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1403,7 +1403,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: sway
-    version: 230319
+    version: 230501
   garuda-mate:
     path: /asset-mirror/releases/download/230501-b085265a/
     files:
