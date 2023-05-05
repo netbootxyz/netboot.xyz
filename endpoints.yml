@@ -1008,7 +1008,7 @@ endpoints:
     flavor: gnome
     kernel: debian-11-live-kernel
   debian-11-default-squash:
-    path: /debian-squash/releases/download/11.6.0-bc2052f1/
+    path: /debian-squash/releases/download/11.7.0-bc2052f1/
     files:
     - filesystem.squashfs
     os: debian
