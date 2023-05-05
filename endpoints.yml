@@ -1000,7 +1000,7 @@ endpoints:
     os: debian
     version: '11'
   debian-11-gnome-squash:
-    path: /debian-squash/releases/download/11.6.0-7351138e/
+    path: /debian-squash/releases/download/11.7.0-7351138e/
     files:
     - filesystem.squashfs
     os: debian
