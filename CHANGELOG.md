@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.68] - 2023-00-00
+## [2.0.69] - 2023-05-07
+
+### Added
+
+- Ubuntu 23.04 (Lunar)
+- Fedora 38
+- Added multiarch combined ISO and IMG file for x86_64 and arm64
+
+## [2.0.68] - 2023-04-02
 
 ### Changed
 

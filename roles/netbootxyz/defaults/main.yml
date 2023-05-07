@@ -49,6 +49,15 @@ bootloaders:
     ipxe_bin: undionly.kpxe
     output_bin: -undionly.kpxe
     type: DHCP-undionly
+  multiarch:
+  - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
+    ipxe_bin: ipxe.iso
+    output_bin: -multiarch.iso
+    type: ISO
+  - desc: Used for creation of USB Keys
+    ipxe_bin: ipxe.img
+    output_bin: -multiarch.img
+    type: IMG
   rpi:
   - desc: Raspberry Pi 4 - USB/SD Card Image
     ipxe_bin: rpi4-sdcard.img
@@ -149,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.04.01
-      name: 2023.04.01
+    - code_name: 2023.05.03
+      name: 2023.05.03
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +191,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 37.20230303.3.0
+    - code_name: 38.20230414.3.0
       name: stable
-    - code_name: 37.20230322.2.0
+    - code_name: 38.20230430.2.1
       name: testing
-    - code_name: 38.20230322.1.0
+    - code_name: 38.20230430.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -232,12 +241,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 38
+      name: 38
     - code_name: 37
       name: 37
     - code_name: 36
       name: 36
-    - code_name: 35
-      name: 35
   flatcar:
     enabled: true
     menu: linux
@@ -282,8 +291,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core173
-      name: 2.27 Core173
+    - code_name: 2.27-core174
+      name: 2.27 Core174
   k3os:
     enabled: true
     menu: linux
@@ -469,14 +478,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20230504T000449Z
+      name: 20230504T000449Z
+    - code_name: 20230420T000908Z
+      name: 20230420T000908Z
+    - code_name: 20230406T001127Z
+      name: 20230406T001127Z
     - code_name: 20230323T000605Z
       name: 20230323T000605Z
-    - code_name: 20230309T001400Z
-      name: 20230309T001400Z
-    - code_name: 20230223T001442Z
-      name: 20230223T001442Z
-    - code_name: 20230214T155114Z
-      name: 20230214T155114Z
   talos:
     enabled: true
     menu: linux
@@ -505,13 +514,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /13.x/x86/release/distribution_files/core.gz
-      kernel: /13.x/x86/release/distribution_files/vmlinuz
+      initrd: /14.x/x86/release/distribution_files/core.gz
+      kernel: /14.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /13.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /13.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /14.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /14.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
@@ -611,6 +620,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: lunar
+      name: 23.04 Lunar Lobster
     - code_name: kinetic
       name: 22.10 Kinetic Kudu
     - code_name: jammy
@@ -635,7 +646,7 @@ releases:
     name: VyOS
     versions:
     - code_name: rolling
-      name: 1.3 rolling
+      name: 1.4 rolling
   zeninstall:
     enabled: true
     menu: linux
