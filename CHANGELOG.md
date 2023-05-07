@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 
 - Ubuntu 23.04 (Lunar)
 - Fedora 38
-- Multiarch combined ISO and IMG file for x86_64 and arch64
+- Added multiarch combined ISO and IMG file for x86_64 and arm64
 
 ## [2.0.68] - 2023-04-02
 
