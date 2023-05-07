@@ -37,7 +37,7 @@ exit
   </p>
 
 {% if generate_disks_hybrid == true %}
-  <p>Legacy and EFI Combined iPXE Bootloaders</p>
+  <p>x86_64 Legacy and EFI Combined iPXE Bootloaders</p>
   <table style="width:100%">
     <!-- table header -->
     <tr>
@@ -54,10 +54,27 @@ exit
     </tr>
     {% endfor %}
   </table>
+  <p>Multiarch (x86_64 and arm64) Legacy and EFI Combined iPXE Bootloaders</p>
+  <table style="width:100%">
+    <!-- table header -->
+    <tr>
+       <th style="width:10%;"> Type </th>
+       <th style="width:20%;"> Bootloader </th>
+       <th style="width:70%;"> Description </th>
+    </tr>
+    <!-- table rows -->
+    {% for item in bootloaders.multiarch %}
+    <tr>
+       <td> {{ item.type }} </td>
+       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> {{ item.desc }} </td>
+    </tr>
+    {% endfor %}
+  </table>
 {% endif %}
 
 {% if generate_disks_legacy == true %}
-  <p>Legacy (PCBIOS) iPXE Bootloaders</p>
+  <p>x86_64 Legacy (PCBIOS) iPXE Bootloaders</p>
   <table style="width:100%">
     <!-- table header -->
     <tr>
@@ -77,7 +94,7 @@ exit
 {% endif %}
 
 {% if generate_disks_efi == true %}
-  <p>UEFI iPXE Bootloaders</p>
+  <p>x86_64 UEFI iPXE Bootloaders</p>
 
   <table style="width:100%">
     <!-- table header -->
