@@ -127,6 +127,8 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 9.2
+      name: 9.2
     - code_name: 9.1
       name: 9.1
     - code_name: 9.0
@@ -429,6 +431,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 9.2
+      name: 9.2
     - code_name: 9.1
       name: 9.1
     - code_name: 9.0
