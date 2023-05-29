@@ -1,6 +1,7 @@
 #!ipxe
 
 menu Network info
+item exit ${space} Exit back to main menu...
 item --gap MAC:
 item mac ${space} ${netX/mac}
 item --gap IP/mask:
@@ -21,7 +22,5 @@ isset ${proxydhcp/next-server} && item --gap Booted from DHCP proxy next-server:
 isset ${proxydhcp/next-server} && iseq ${proxydhcp/next-server} ${tftp-server} && item bootproxy ${space} Yes ||
 item --gap Filename:
 isset ${proxydhcp/next-server} && item filename ${space} ${proxydhcp/filename} || item filename ${space} ${netX/filename}
-item --gap ${space}
-item exit ${space} Exit back to main menu...
 choose empty ||
 exit
