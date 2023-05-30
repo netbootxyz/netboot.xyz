@@ -23,7 +23,9 @@
 - name: Compile iPXE bootloader for Legacy BIOS
   ansible.builtin.shell: |
     make clean
-    make EMBED={{ bootloader_filename }} \
+    make CROSS_COMPILE=x86_64-linux-gnu- \
+         ARCH=x86_64 \
+         EMBED={{ bootloader_filename }} \
          TRUST={{ trust_files }} \
          bin/ipxe.dsk \
          bin/ipxe.pdsk \
@@ -37,7 +39,9 @@
 - name: Compile iPXE bootloader for Legacy BIOS with debug flags
   ansible.builtin.shell: |
     make clean
-    make EMBED={{ bootloader_filename }} \
+    make CROSS_COMPILE=x86_64-linux-gnu- \
+         ARCH=x86_64 \
+         EMBED={{ bootloader_filename }} \
          DEBUG={{ ipxe_debug_options }} \
          TRUST={{ trust_files }} \
          bin/ipxe.dsk \
