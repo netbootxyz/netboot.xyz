@@ -14,4 +14,5 @@ netbootxyz_packages:
   - isolinux
   - liblzma-dev
   - libslirp-dev
+  - mtools
   - toilet
