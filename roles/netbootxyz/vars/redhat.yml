@@ -8,5 +8,6 @@ netbootxyz_packages:
   - httpd
   - libslirp-devel
   - minizip-devel
+  - mtools
   - xz-devel
   - make
