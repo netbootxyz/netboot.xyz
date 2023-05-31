@@ -5,6 +5,7 @@ goto ${menu} ||
 :live_menu
 set os Bluestar
 menu ${os}
+item live_exit ${space} Exit back to main menu...
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}

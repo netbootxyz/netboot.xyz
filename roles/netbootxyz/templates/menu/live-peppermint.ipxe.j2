@@ -5,6 +5,7 @@ goto ${menu} ||
 :live_menu
 set os Peppermint
 menu ${os}
+item live_exit ${space} Exit back to main menu...
 item --gap ${os} Versions
 item 10 ${space} ${os} 10
 choose live_version || goto live_exit
