@@ -15,4 +15,6 @@ netbootxyz_packages:
   - liblzma-dev
   - libslirp-dev
   - mtools
+  - syslinux
+  - syslinux-common
   - toilet
