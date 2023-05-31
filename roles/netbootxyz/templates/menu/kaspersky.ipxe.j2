@@ -5,6 +5,7 @@ goto ${menu} ||
 :live_menu
 set os Kaspersky Rescue Disk
 menu ${os}
+item live_exit ${space} Exit back to main menu...
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "kaspersky" %}

@@ -2,6 +2,7 @@
 
 :utils_menu
 menu Utilities
+item utils_exit ${space} Exit back to main menu...
 item --gap Utilities:
 {% for key, value in utilitiespcbios32.items() | sort(attribute='1.name') %}
 {% if value.enabled %}

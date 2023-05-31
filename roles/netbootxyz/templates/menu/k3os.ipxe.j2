@@ -15,6 +15,7 @@ isset ${k3os_version} || set k3os_version latest
 isset ${k3os_install_device} || set k3os_install_device /dev/sda
 menu ${os} by Rancher
 menu ${os} install
+item k3os_exit ${space} Exit back to main menu...
 item --gap k3OS:
 item k3os_boot ${space} Begin install ${os} ${k3os_version}
 item --gap Parameters:

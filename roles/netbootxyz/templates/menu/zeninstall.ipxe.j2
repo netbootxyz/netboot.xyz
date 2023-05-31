@@ -7,6 +7,7 @@
 set os {{ releases.zeninstall.name }}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 menu ${os} Installers
+item zen_exit ${space} Exit back to main menu...
 item --gap Currently during boot you need to press ctrl+d/ctrl+c
 item --gap repeatedly when init hangs on starting a download
 {% for item in releases.zeninstall.versions %}

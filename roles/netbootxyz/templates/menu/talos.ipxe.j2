@@ -15,6 +15,7 @@ isset ${talos_version} || set talos_version latest
 isset ${talos_mirror} || set talos_mirror {{ releases.talos.mirror }}
 isset ${talos_platform} || set talos_platform metal
 menu ${os} by Talos Systems
+item talos_exit ${space} Exit back to main menu...
 menu ${os} install
 item --gap Talos:
 item talos_boot ${space} Begin install ${os} ${talos_version}

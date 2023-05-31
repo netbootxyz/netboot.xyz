@@ -12,6 +12,7 @@ iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} arm64 && set os_arch aarch64 ||
 clear photon_choice
 menu ${os}
+item photon_exit ${space} Exit back to main menu...
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "vmware-photon" and value.arch == "x86_64" %}
 item --gap ${os} Installers

@@ -8,6 +8,7 @@ goto ${menu} ||
 :oracle_menu
 set os Oracle Linux
 menu ${os}
+item oracle_exit ${space} Exit back to main menu...
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} arm64 && set os_arch aarch64 ||
