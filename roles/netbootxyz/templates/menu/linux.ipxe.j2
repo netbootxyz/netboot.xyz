@@ -5,7 +5,7 @@ goto ${menu} ||
 :linux_menu
 menu Linux Installers - Current Arch [ ${arch} ]
 item --gap Linux Distros:
-item linux_exit ${space} Exit back to main menu...
+item linux_exit ${space} ${return_line}
 {% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.enabled is defined and value.menu == "linux" and value.enabled | bool %}
 item {{ key }} ${space} {{ value.name }}

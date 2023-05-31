@@ -14,7 +14,7 @@ iseq ${os_arch} arm64 && set os_arch arm64 ||
 clear debian_version
 clear older_release
 menu ${os} - ${os_arch}
-item debian_exit ${space} Exit back to main menu...
+item debian_exit ${space} ${return_line}
 item --gap Latest Releases
 {% for item in releases.debian.versions.stable %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}

@@ -4,7 +4,7 @@ goto ${menu} ||
 
 :unix_menu
 menu Unix Installers
-item unix_exit ${space} Exit back to main menu...
+item unix_exit ${space} ${return_line}
 item --gap Unix Distros:
 {% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.enabled is defined and value.menu == "unix" and value.enabled | bool %}

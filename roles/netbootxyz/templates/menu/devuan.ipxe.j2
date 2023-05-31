@@ -12,7 +12,7 @@ iseq ${os_arch} x86_64 && set os_arch amd64 ||
 clear devuan_version
 clear older_release
 menu ${os} - ${os_arch}
-item devuan_exit ${space} Exit back to main menu...
+item devuan_exit ${space} ${return_line}
 item --gap Latest Releases
 {% for item in releases.devuan.versions.stable %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}

@@ -10,7 +10,7 @@ item stable ${space} ${os} Stable
 item rolling ${space} ${os} Rolling
 choose live_version || goto live_exit
 menu ${os} ${live_version}
-item live_exit ${space} Exit back to main menu...
+item live_exit ${space} ${return_line}
 item --gap ${os} Flavors
 goto ${live_version}
 

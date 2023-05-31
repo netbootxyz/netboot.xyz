@@ -10,7 +10,7 @@ clear proxmox_choice
 clear proxmox_version
 set os Proxmox
 menu ${os}
-item proxmox_exit ${space} Exit back to main menu...
+item proxmox_exit ${space} ${return_line}
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "proxmox-backup-server" %}
 item --gap ${os} Backup Server

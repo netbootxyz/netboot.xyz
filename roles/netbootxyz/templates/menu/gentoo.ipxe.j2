@@ -11,7 +11,7 @@ iseq ${os_arch} x86_64 && set os_arch amd64 ||
 iseq ${os_arch} i386 && set os_arch x86 ||
 iseq ${os_arch} arm64 && set os_arch arm64 ||
 menu ${os} - Current Arch [ ${os_arch} ]
-item gentoo_exit ${space} Exit back to main menu...
+item gentoo_exit ${space} ${return_line}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "gentoo" %}

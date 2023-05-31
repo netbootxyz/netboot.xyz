@@ -11,7 +11,7 @@ set os {{ releases.harvester.name }}
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
 menu ${os} - ${os_arch}
-item harvester_exit ${space} Exit back to main menu...
+item harvester_exit ${space} ${return_line}
 item --gap Harvester:
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "harvester" %}

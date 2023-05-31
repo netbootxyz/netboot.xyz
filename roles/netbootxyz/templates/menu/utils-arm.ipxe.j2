@@ -1,7 +1,7 @@
 #!ipxe
 
 menu Utilities
-item utils_exit ${space} Exit back to main menu...
+item utils_exit ${space} ${return_line}
 item --gap Utilities:
 {% for key, value in utilitiesarm.items() | sort(attribute='1.name') %}
 {% if value.enabled %}

@@ -11,7 +11,7 @@ set os Tails
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
 menu ${os}
-item tails_exit ${space} Exit back to main menu...
+item tails_exit ${space} ${return_line}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "tails" %}

@@ -3,7 +3,7 @@
 :utils_menu
 menu Utilities
 item --gap Utilities:
-item utils_exit ${space} Exit back to main menu...
+item utils_exit ${space} ${return_line}
 {% for key, value in utilitiesefi.items() | sort(attribute='1.name') %}
 {% if value.enabled %}
 item {{ key }} ${space} {{ value.name }}

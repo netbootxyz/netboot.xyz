@@ -6,7 +6,7 @@
 :freebsd_menu
 set os {{ releases.freebsd.name }}
 menu ${os}
-item freebsd_exit ${space} Exit back to main menu...
+item freebsd_exit ${space} ${return_line}
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "freebsd" %}
 item {{ value.path }} ${space} ${os} {{ value.version }}

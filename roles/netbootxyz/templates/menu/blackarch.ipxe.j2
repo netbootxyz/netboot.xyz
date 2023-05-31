@@ -9,7 +9,7 @@ goto ${menu}
 set os {{ releases.blackarch.name }}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 menu ${os} Installers
-item blackarch_exit ${space} Exit back to main menu...
+item blackarch_exit ${space} ${return_line}
 item --gap The Default login is root/blackarch
 item --gap Run blackarch-install once logged in
 {% for item in releases.blackarch.versions %}

@@ -15,7 +15,7 @@ iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} i386 && set os_arch x86 ||
 iseq ${os_arch} arm64 && set os_arch aarch64 ||
 menu ${os} - ${os_arch}
-item alpine_exit ${space} Exit back to main menu...
+item alpine_exit ${space} ${return_line}
 item --gap Releases
 {% for item in releases.alpinelinux.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}

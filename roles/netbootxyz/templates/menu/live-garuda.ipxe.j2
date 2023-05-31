@@ -8,7 +8,7 @@ goto ${menu} ||
 :live-garuda
 set os Garuda
 menu ${os} Live
-item live_exit ${space} Exit back to main menu...
+item live_exit ${space} ${return_line}
 set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
 item --gap ${os} Live versions
 {% for key, value in endpoints.items() | sort %}

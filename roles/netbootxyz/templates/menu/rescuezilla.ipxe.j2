@@ -6,7 +6,7 @@
 :rescuezilla
 set os {{ utilitiesefi.rescuezilla.name }}
 menu ${os} Live CD
-item rescuezilla_exit ${space} Exit back to main menu...
+item rescuezilla_exit ${space} ${return_line}
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "rescuezilla" %}
 item {{ value.os }}_{{ value.version }} ${space} ${os} {{ value.version }}

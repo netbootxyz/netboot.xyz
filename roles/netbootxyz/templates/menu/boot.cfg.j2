@@ -25,6 +25,9 @@ iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk n
 # set default boot timeout
 set boot_timeout {{ boot_timeout }}
 
+# setup variable for return line in menus
+set return_line Return back to Main Menu
+
 ######################################
 # Media Locations for Licensed Distros
 ######################################

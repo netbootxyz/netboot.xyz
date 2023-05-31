@@ -8,7 +8,7 @@ set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
 set k3os_mirror {{ releases.k3os.mirror }}
 menu ${os} by Rancher
-item live_exit ${space} Exit back to main menu...
+item live_exit ${space} ${return_line}
 isset ${k3os_version} || set k3os_version latest
 menu ${os} live
 item --gap k3OS live version:

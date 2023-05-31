@@ -5,7 +5,7 @@ goto ${menu} ||
 :live_menu
 set os KDE Neon
 menu ${os}
-item live_exit ${space} Exit back to main menu...
+item live_exit ${space} ${return_line}
 item --gap ${os} Versions
 item user ${space} ${os} User
 choose live_version || goto live_exit

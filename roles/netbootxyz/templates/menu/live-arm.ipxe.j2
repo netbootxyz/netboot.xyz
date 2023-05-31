@@ -4,7 +4,7 @@ goto ${menu} ||
 
 :live_menu
 menu Live Boot Distributions - Current Arch [ ${arch} ]
-item live_exit ${space} Exit back to main menu...
+item live_exit ${space} ${return_line}
 item --gap Live Boot Distributions
 item live-fedora ${space} Fedora
 choose menu || goto live_exit
