@@ -208,15 +208,15 @@ releases:
     name: Debian
     versions:
       stable:
+      - code_name: bookworm
+        name: 12.0 (bookworm)
       - code_name: bullseye
         name: 11.0 (bullseye)
       - code_name: buster
         name: 10.0 (buster)
-      - code_name: stretch
-        name: 9.0 (stretch)
       testing:
-      - code_name: bookworm
-        name: bookworm (testing)
+      - code_name: trixie
+        name: trixie (testing)
       - code_name: sid
         name: sid (unstable)
   devuan:
