@@ -2161,3 +2161,11 @@ endpoints:
     - vmlinuz
     os: debian
     version: '12'
+  debian-12-default-squash:
+    path: /debian-squash/releases/download/12.0.0-3eeabf1b/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: '12'
+    flavor: core
+    kernel: debian-12-live-kernel
