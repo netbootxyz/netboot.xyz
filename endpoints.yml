@@ -1016,7 +1016,7 @@ endpoints:
     flavor: core
     kernel: debian-11-live-kernel
   debian-11-kde-squash:
-    path: /debian-squash/releases/download/11.7.0-1ca621ea/
+    path: /debian-squash/releases/download/12.0.0-8ba8243d/
     files:
     - filesystem.squashfs
     os: debian
