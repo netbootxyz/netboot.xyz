@@ -2178,11 +2178,11 @@ endpoints:
     flavor: gnome
     kernel: debian-12-live-kernel
   debian-12-cinnamon-squash:
-    path: /debian-squash/releases/download/12.0.0-2eefe070/
+    path: /debian-squash/releases/download/12.0.0-bc29e5f8/
     files:
     - filesystem.squashfs
     os: debian
-    version: 12.0.0
+    version: '12'
     flavor: cinnamon
     kernel: debian-12-live-kernel
   debian-12-lxqt-squash:
