@@ -193,8 +193,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Name       | URL                     | Type |
 |------------|-------------------------|------|
 | 4MLinux | https://4mlinux.com/ | Kernel/Initrd |
-| ALT Linux Rescue | https://en.altlinux.org/Rescue | ISO - Memdisk |
-| BakAndImgCD | https://bakandimgcd.4mlinux.com/ | Kernel/Initrd |
 | Boot Repair CD | https://sourceforge.net/projects/boot-repair-cd/ | LiveCD |
 | Breakin | http://www.advancedclustering.com/products/software/breakin/ | Kernel/Initrd |
 | CAINE | https://www.caine-live.net/ | LiveCD |
@@ -211,7 +209,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | ShredOS | https://github.com/PartialVolume/shredos.x86_64 | Kernel | 
 | Super Grub2 Disk | http://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue | https://system-rescue.org/ | LiveCD |
-| The Smallest Server Suite | https://thesss.4mlinux.com/ | Kernel/Initrd |
 | Ultimate Boot CD | http://www.ultimatebootcd.com | ISO - Memdisk |
 
 ### Stargazers over time
