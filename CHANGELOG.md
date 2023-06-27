@@ -7,6 +7,11 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.70] - 2023-00-00
 
+### Added
+
+- Enabled CERT_CMD in iPXE
+- Added Debian 12
+
 ## [2.0.69] - 2023-05-07
 
 ### Added
