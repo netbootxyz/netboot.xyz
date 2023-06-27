@@ -1,3 +1,4 @@
+#define CERT_CMD              /* Certificate management commands */
 #define CONSOLE_CMD           /* Console command */
 #define DIGEST_CMD            /* Image crypto digest commands */
 #define DOWNLOAD_PROTO_HTTPS  /* Secure Hypertext Transfer Protocol */
