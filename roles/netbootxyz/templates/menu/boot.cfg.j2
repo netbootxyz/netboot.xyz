@@ -84,12 +84,14 @@ set menu_live_arm 1
 set menu_windows 0
 set menu_utils 0
 set menu_utils_arm 1
+set menu_pci 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :efi
 set menu_bsd 0
 set menu_freedos 0
 set menu_unix 0
+set menu_pci 0
 goto architectures_end
 :architectures_end
 goto clouds
@@ -119,6 +121,7 @@ iseq ${platform} efi && set ipxe_disk netboot.xyz-metal-snp.efi || set ipxe_disk
 set menu_linux_i386 0
 set menu_freedos 0
 set menu_windows 0
+iseq ${platform} efi && set menu_pci 0 ||
 goto clouds_end
 
 :metal_arm64
@@ -129,6 +132,7 @@ set menu_freedos 0
 set menu_live 0
 set menu_windows 0
 set menu_utils 0
+set menu_pci 0
 goto clouds_end
 
 :clouds_end
