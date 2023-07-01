@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file.
 
 - Enabled CERT_CMD in iPXE
 - Added Debian 12
+- Disable pci scan option when loaded on ARM/EFI as command isn't supported
+- Building snp and snponly builds for Equinix Metal
+
+### Changed
+
+- Changed default Equinix Metal builds to use snp to ensure more stable start
+
 
 ## [2.0.69] - 2023-05-07
 
