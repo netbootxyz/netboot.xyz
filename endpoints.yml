@@ -1973,7 +1973,7 @@ endpoints:
     version: '7'
     kernel: elementaryos-7-default-squash
   ubuntu-22.10-LXQT-squash:
-    path: /ubuntu-squash/releases/download/22.10-f1dc5249/
+    path: /ubuntu-squash/releases/download/22.10-dbcb3286/
     files:
     - filesystem.squashfs
     - initrd
