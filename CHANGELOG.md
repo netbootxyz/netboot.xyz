@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Changed default Equinix Metal builds to use snp to ensure more stable start
-
+- Changed CentOS 9 Stream mirror due to it no longer working with iPXE
 
 ## [2.0.69] - 2023-05-07
 
