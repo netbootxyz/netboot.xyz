@@ -63,7 +63,7 @@ goto boottype
 
 :bootos_images
 imgfree
-iseq ${osversion} 9-stream && set centos_mirror http://mirror.stream.centos.org || 
+iseq ${osversion} 9-stream && set centos_mirror http://mirror.rackspace.com/centos-stream ||
 iseq ${osversion} 9-stream && set dir ${osversion}/BaseOS/${os_arch}/os ||
 iseq ${osversion} 9-stream && set repo ${centos_mirror}/${dir} ||
 kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${params} ${ipparam} {{ kernel_params }}

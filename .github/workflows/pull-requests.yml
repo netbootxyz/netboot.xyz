@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install ansible ansible-lint
+        pip install ansible==7.6.0 ansible-lint==6.15.0
 
     - name: Syntax Check
       run: |
