@@ -63,7 +63,7 @@ iseq ${menu_utils_arm} 1 && item utils-arm ${space} Utilities (arm64) ||
 item change_arch ${space} Architecture: ${arch}
 item shell ${space} iPXE shell
 item netinfo ${space} Network card info
-item lspci ${space} PCI Device List
+iseq ${menu_pci} 1 && item lspci ${space} PCI Device List ||
 item about ${space} About netboot.xyz
 {% if sigs_menu | bool %}
 item --gap Signature Checks:

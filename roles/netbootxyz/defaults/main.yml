@@ -127,6 +127,8 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 9.2
+      name: 9.2
     - code_name: 9.1
       name: 9.1
     - code_name: 9.0
@@ -140,8 +142,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.17
-      name: '3.17'
+    - code_name: v3.18
+      name: '3.18'
     - code_name: edge
       name: Edge (development)
   anarchy:
@@ -158,8 +160,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.05.03
-      name: 2023.05.03
+    - code_name: 2023.07.01
+      name: 2023.07.01
   blackarch:
     enabled: true
     menu: linux
@@ -191,11 +193,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 38.20230414.3.0
+    - code_name: 38.20230609.3.0
       name: stable
-    - code_name: 38.20230430.2.1
+    - code_name: 38.20230625.2.0
       name: testing
-    - code_name: 38.20230430.1.0
+    - code_name: 38.20230625.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -206,15 +208,15 @@ releases:
     name: Debian
     versions:
       stable:
+      - code_name: bookworm
+        name: 12.0 (bookworm)
       - code_name: bullseye
         name: 11.0 (bullseye)
       - code_name: buster
         name: 10.0 (buster)
-      - code_name: stretch
-        name: 9.0 (stretch)
       testing:
-      - code_name: bookworm
-        name: bookworm (testing)
+      - code_name: trixie
+        name: trixie (testing)
       - code_name: sid
         name: sid (unstable)
   devuan:
@@ -291,8 +293,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core174
-      name: 2.27 Core174
+    - code_name: 2.27-core175
+      name: 2.27 Core175
   k3os:
     enabled: true
     menu: linux
@@ -334,6 +336,8 @@ releases:
       name: nixos-22.05
     - code_name: nixos-22.11
       name: nixos-22.11
+    - code_name: nixos-23.05
+      name: nixos-23.05
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -358,6 +362,9 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: '7.3'
+      image_ver: '73'
+      name: '7.3'
     - code_name: '7.2'
       image_ver: '72'
       name: '7.2'
@@ -395,6 +402,8 @@ releases:
     mirror: http://download.opensuse.org
     name: OpenSUSE
     versions:
+    - code_name: '15.5'
+      name: openSUSE Leap 15.5
     - code_name: '15.4'
       name: openSUSE Leap 15.4
     - code_name: '15.3'
@@ -429,6 +438,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 9.2
+      name: 9.2
     - code_name: 9.1
       name: 9.1
     - code_name: 9.0
@@ -478,14 +489,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20230504T000449Z
-      name: 20230504T000449Z
-    - code_name: 20230420T000908Z
-      name: 20230420T000908Z
-    - code_name: 20230406T001127Z
-      name: 20230406T001127Z
-    - code_name: 20230323T000605Z
-      name: 20230323T000605Z
+    - code_name: 20230629T053622Z
+      name: 20230629T053622Z
+    - code_name: 20230615T000418Z
+      name: 20230615T000418Z
+    - code_name: 20230601T000726Z
+      name: 20230601T000726Z
+    - code_name: 20230518T234918Z
+      name: 20230518T234918Z
   talos:
     enabled: true
     menu: linux
