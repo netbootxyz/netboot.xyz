@@ -27,7 +27,6 @@ choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
 iseq ${ubuntu_version} focal && set install_type sub ||
 iseq ${ubuntu_version} jammy && set install_type sub ||
-iseq ${ubuntu_version} kinetic && set install_type sub ||
 iseq ${ubuntu_version} lunar && set install_type sub ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
 iseq ${install_type} sub && goto boot_type ||
