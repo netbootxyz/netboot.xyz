@@ -7,12 +7,14 @@ set fg_cya ${esc:string}[36m
 set fg_whi ${esc:string}[37m
 set VARS_ERR Local vars file not found... attempting TFTP boot...
 set TFTP_ERR Local TFTP failed... attempting remote HTTPS
+set V6_ERR IPv6 appears to have failed... attempting IPv4...
 set HTTPS_ERR HTTPS appears to have failed... attempting HTTP
 set HTTP_ERR HTTP has failed, localbooting...
 set site_name {{ site_name }}
 set boot_domain {{ boot_domain }}
 set ipxe_version ${version}
 set version {{ boot_version }}
+set conn_type https
 
 :start
 echo ${bold}${fg_gre}${site_name} - ${fg_whi}v${version}${boldoff}
@@ -101,15 +103,29 @@ chain --autofree tftp://${tftp-server}/menu.ipxe || echo ${TFTP_ERR} && goto men
 
 :menu
 {% if bootloader_https_enabled | bool %}
+:menu_https
 set conn_type https
-chain --autofree https://${boot_domain}/menu.ipxe || echo ${HTTPS_ERR}
-sleep 5
+goto menu_start
 {% endif %}
+
 {% if bootloader_http_enabled | bool %}
+:menu_http
 set conn_type http
-chain --autofree http://${boot_domain}/menu.ipxe || echo ${HTTP_ERR}
+goto menu_start
 {% endif %}
-goto localboot
+
+:menu_start
+isset netX/dns6 && goto menu_v6 || goto menu_v4
+:menu_v6
+isset netX/dns6_bak && set netX/dns6 ${netX/dns6_bak} ||
+set netX/dns6_bak ${netX/dns6}
+echo Attempting ${conn_type} boot over IPv6...
+chain --autofree ${conn_type}://${boot_domain}/menu.ipxe || echo ${conn_type} IPv6 failed... attempting IPv4...
+clear netX/dns6
+:menu_v4
+echo Attempting ${conn_type} boot over IPv4...
+chain --autofree ${conn_type}://${boot_domain}/menu.ipxe || echo ${conn_type} IPv4 failed...
+iseq ${conn_type} https && goto menu_http || goto localboot
 
 :localboot
 exit
