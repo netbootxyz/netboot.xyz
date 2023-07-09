@@ -115,9 +115,9 @@ goto menu_start
 {% endif %}
 
 :menu_start
-isset netX/dns6 && goto menu_v6 || goto menu_v4
+isset ${netX/dns6} && goto menu_v6 || goto menu_v4
 :menu_v6
-isset netX/dns6_bak && set netX/dns6 ${netX/dns6_bak} ||
+isset ${netX/dns6_bak} && set netX/dns6 ${netX/dns6_bak} ||
 set netX/dns6_bak ${netX/dns6}
 echo Attempting ${conn_type} boot over IPv6...
 chain --autofree ${conn_type}://${boot_domain}/menu.ipxe || echo ${conn_type} IPv6 failed... attempting IPv4...
