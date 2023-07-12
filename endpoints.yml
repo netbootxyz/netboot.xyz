@@ -870,13 +870,13 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Artemis_nova_22_9-cd1ec3bb/
+    path: /asset-mirror/releases/download/Cassini_Nova-03-2023_R2-36475eee/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: endeavouros
-    version: Artemis_nova_22_9
+    version: Cassini_Nova-03-2023_R2
   kodachi-8:
     path: /ubuntu-squash/releases/download/8.2-625e11fa/
     files:
