@@ -133,8 +133,8 @@ releases:
       name: 9.1
     - code_name: 9.0
       name: 9.0
-    - code_name: 8.7
-      name: 8.7
+    - code_name: 8.8
+      name: 8.8
   alpinelinux:
     base_dir: alpine
     enabled: true
