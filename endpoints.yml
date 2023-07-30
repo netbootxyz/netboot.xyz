@@ -1576,87 +1576,6 @@ endpoints:
     version: '22.04'
     flavor: intel-amd
     kernel: pop-22.04-default-squash
-  fedora-36-gnome:
-    path: /fedora-assets/releases/download/1.5-c9f1fb5a/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: GNOME
-  fedora-36-KDE:
-    path: /fedora-assets/releases/download/1.5-da35ad5c/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: KDE
-  fedora-36-LXDE:
-    path: /fedora-assets/releases/download/1.5-0252df72/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: LXDE
-  fedora-36-Cinnamon:
-    path: /fedora-assets/releases/download/1.5-a4aa876b/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: Cinnamon
-  fedora-36-LXQt:
-    path: /fedora-assets/releases/download/1.5-e389781d/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: LXQt
-  fedora-36-SoaS:
-    path: /fedora-assets/releases/download/1.5-5e30ae81/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: SoaS
-  fedora-36-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.5-695457f0/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: MATE_Compiz
-  fedora-36-i3:
-    path: /fedora-assets/releases/download/1.5-8efce5c5/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: i3
-  fedora-36-Xfce:
-    path: /fedora-assets/releases/download/1.5-8a299814/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: fedora
-    version: 36
-    flavor: Xfce
   vmware-photon-x86_64:
     path: /asset-mirror/releases/download/4.0-5a977251/
     files:
@@ -1780,80 +1699,6 @@ endpoints:
     os: garuda
     flavor: cinnamon
     version: 230501
-  ubuntu-netboot-22.10-arm64:
-    path: /ubuntu-squash/releases/download/22.10-0c7dfe1c/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    codename: kinetic
-    flavor: netboot
-    kernel: ubuntu-netboot-22.10-arm64
-    arch: arm64
-  ubuntu-netboot-22.10-amd64:
-    path: /ubuntu-squash/releases/download/22.10-a9990c06/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    codename: kinetic
-    flavor: netboot
-    kernel: ubuntu-netboot-22.10-amd64
-    arch: amd64
-  ubuntu-22.10-XFCE-squash:
-    path: /ubuntu-squash/releases/download/22.10-ff902440/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: XFCE
-    kernel: ubuntu-22.10-XFCE-squash
-  ubuntu-22.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/22.10-636355d9/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: MATE
-    kernel: ubuntu-22.10-MATE-squash
-  ubuntu-22.10-default-squash:
-    path: /ubuntu-squash/releases/download/22.10-dd84401a/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: GNOME
-    kernel: ubuntu-22.10-default-squash
-  ubuntu-22.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/22.10-95310d02/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: Budgie
-    kernel: ubuntu-22.10-Budgie-squash
-  ubuntu-22.10-KDE-squash:
-    path: /ubuntu-squash/releases/download/22.10-4c45260c/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: KDE
-    kernel: ubuntu-22.10-KDE-squash
   ubuntu-22.04-studio-squash:
     path: /ubuntu-squash/releases/download/22.04.1-f22bcaf8/
     files:
@@ -1972,16 +1817,6 @@ endpoints:
     os: elementary-os
     version: '7'
     kernel: elementaryos-7-default-squash
-  ubuntu-22.10-LXQT-squash:
-    path: /ubuntu-squash/releases/download/22.10-f1dc5249/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '22.10'
-    flavor: LXQT
-    kernel: ubuntu-22.10-LXQT-squash
   ubuntu-18.04-LXQT-squash:
     path: /ubuntu-squash/releases/download/18.04.5-fe2c4150/
     files:
