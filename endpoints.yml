@@ -1254,13 +1254,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20230721-mantic-4ef16ee0/
+    path: /ubuntu-squash/releases/download/20230801-mantic-4ef16ee0/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20230721-mantic
+    version: 20230801-mantic
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
