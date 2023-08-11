@@ -396,7 +396,7 @@ releases:
     enabled: true
     menu: linux
     mirror: http://download.opensuse.org
-    name: OpenSUSE
+    name: openSUSE
     versions:
     - code_name: '15.5'
       name: openSUSE Leap 15.5
