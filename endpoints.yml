@@ -1530,7 +1530,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-22.04-Budgie-squash
   ubuntu-22.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/22.04.2-f094e35e/
+    path: /ubuntu-squash/releases/download/22.04.3-f094e35e/
     files:
     - filesystem.squashfs
     - initrd
