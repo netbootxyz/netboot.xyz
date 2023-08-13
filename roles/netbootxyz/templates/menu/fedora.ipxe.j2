@@ -33,6 +33,7 @@ item Everything ${ova} Everything
 item Server ${ova} Server
 item Kinoite ${ova} Kinoite
 item Silverblue ${ova} Silverblue 
+item Sericea ${ova} Sericea
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${os_arch}/os
 iseq ${osversion} rawhide && set dir ${fedora_base_dir}/development/${osversion}/${sku_type}/${os_arch}/os ||
