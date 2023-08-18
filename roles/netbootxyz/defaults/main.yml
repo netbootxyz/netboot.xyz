@@ -223,15 +223,15 @@ releases:
     name: Devuan
     versions:
       stable:
-      - code_name: chimaera
-        name: 4.0 Chimaera (stable)
-      - code_name: beowulf
-        name: 3.0 Beowulf (oldstable)
-      - code_name: ascii
-        name: 2.1 ASCII (oldoldstable)
-      testing:
       - code_name: daedalus
-        name: Daedalus (testing)
+        name: 5.0 Daedalus (stable)
+      - code_name: chimaera
+        name: 4.0 Chimaera (oldstable)
+      - code_name: beowulf
+        name: 3.1 Beowulf (oldoldstable)
+      testing:
+      - code_name: excalibur
+        name: Excalibur (testing)
   fedora:
     base_dir: fedora
     enabled: true
