@@ -619,8 +619,6 @@ releases:
     versions:
     - code_name: lunar
       name: 23.04 Lunar Lobster
-    - code_name: kinetic
-      name: 22.10 Kinetic Kudu
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal
