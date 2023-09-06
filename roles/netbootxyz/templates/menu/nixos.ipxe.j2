@@ -4,7 +4,10 @@
 # https://nixos.org/
 
 set os {{ releases.nixos.name }}
-menu ${os}
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch x86_64 ||
+iseq ${os_arch} arm64 && set os_arch aarch64 ||
+menu ${os} - ${os_arch}
 item --gap Official Releases
 {% for item in releases.nixos.versions %}
 item {{ item.code_name }} ${space} ${os} {{ item.name }}
@@ -12,7 +15,7 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 choose version || goto nixos_exit
 
 imgfree
-chain https://github.com/nix-community/nixos-images/releases/download/${version}/netboot-x86_64-linux.ipxe
+chain https://github.com/nix-community/nixos-images/releases/download/${version}/netboot-${os_arch}-linux.ipxe
 goto nixos_exit
 
 :nixos_exit
