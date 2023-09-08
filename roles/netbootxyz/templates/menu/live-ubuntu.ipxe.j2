@@ -6,6 +6,7 @@ goto ${menu} ||
 set os Ubuntu Live
 menu ${os}
 item --gap ${os} Versions
+item mantic ${space} ${os} 23.10
 item lunar ${space} ${os} 23.04
 item jammy ${space} ${os} 22.04
 item focal ${space} ${os} 20.04
@@ -14,6 +15,14 @@ choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
+
+:mantic
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu" and 'squash' in key and value.version == "23.10" %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
+{% endif %}
+{% endfor %}
+goto flavor_select
 
 :lunar
 {% for key, value in endpoints.items() | sort %}
@@ -75,6 +84,7 @@ boot
 :20.04-boot
 :22.04-boot
 :23.04-boot
+:23.10-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd

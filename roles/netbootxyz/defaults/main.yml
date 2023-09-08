@@ -617,6 +617,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: mantic
+      name: 23.10 Mantic Minotaur
     - code_name: lunar
       name: 23.04 Lunar Lobster
     - code_name: jammy
