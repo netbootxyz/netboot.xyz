@@ -33,6 +33,7 @@ item Everything ${ova} Everything
 item Server ${ova} Server
 item Kinoite ${ova} Kinoite
 item Silverblue ${ova} Silverblue 
+item Sericea ${ova} Sericea
 isset ${sku_type} || choose sku_type || goto fedora
 set dir ${fedora_base_dir}/releases/${osversion}/${sku_type}/${os_arch}/os
 iseq ${osversion} rawhide && set dir ${fedora_base_dir}/development/${osversion}/${sku_type}/${os_arch}/os ||
@@ -45,28 +46,33 @@ menu ${os} ${os_arch} boot type
 item normal ${ova} graphical install
 item text ${ova} text install
 item rescue ${ova} rescue
-item kickstart ${ova} specify kickstart url
+item kickstart ${ova} set kickstart url [ ${ks_url} ]
 isset ${bt} || choose bt || goto fedora
 echo ${cls}
 iseq ${bt} normal && goto boot ||
 goto ${bt}
 
+:graphical
+set install_mode inst.graphical ||
+goto bootos_images
+
 :text
-set params inst.text ||
-goto boot
+set install_mode inst.text ||
+goto bootos_images
 
 :rescue
 set params rescue ||
-goto boot
+goto bootos_images
 
 :kickstart
-echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
-set params inst.ks=${ksurl} ||
-goto boot
+echo -n Specify kickstart URL for ${os} ${osversion}: && read ks_url
+set params inst.ks=${ks_url} ||
+clear bt
+goto boottype
 
 :boot
 imgfree
-kernel ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${fedora_mirror}/${dir} ${params} ${ipparam} {{ kernel_params }}
+kernel ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${fedora_mirror}/${dir} ${install_mode} ${params} ${ipparam} {{ kernel_params }}
 initrd ${fedora_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:

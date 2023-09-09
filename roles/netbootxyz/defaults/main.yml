@@ -127,14 +127,10 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
-    - code_name: 9.2
-      name: 9.2
-    - code_name: 9.1
-      name: 9.1
-    - code_name: 9.0
-      name: 9.0
-    - code_name: 8.7
-      name: 8.7
+    - code_name: 9
+      name: 9 (Latest)
+    - code_name: 8
+      name: 8 (Latest)
   alpinelinux:
     base_dir: alpine
     enabled: true
@@ -160,8 +156,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.07.01
-      name: 2023.07.01
+    - code_name: 2023.09.01
+      name: 2023.09.01
   blackarch:
     enabled: true
     menu: linux
@@ -193,11 +189,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 38.20230609.3.0
+    - code_name: 38.20230819.3.0
       name: stable
-    - code_name: 38.20230625.2.0
+    - code_name: 38.20230902.2.0
       name: testing
-    - code_name: 38.20230625.1.0
+    - code_name: 38.20230902.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -227,15 +223,15 @@ releases:
     name: Devuan
     versions:
       stable:
-      - code_name: chimaera
-        name: 4.0 Chimaera (stable)
-      - code_name: beowulf
-        name: 3.0 Beowulf (oldstable)
-      - code_name: ascii
-        name: 2.1 ASCII (oldoldstable)
-      testing:
       - code_name: daedalus
-        name: Daedalus (testing)
+        name: 5.0 Daedalus (stable)
+      - code_name: chimaera
+        name: 4.0 Chimaera (oldstable)
+      - code_name: beowulf
+        name: 3.1 Beowulf (oldoldstable)
+      testing:
+      - code_name: excalibur
+        name: Excalibur (testing)
   fedora:
     base_dir: fedora
     enabled: true
@@ -293,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core175
-      name: 2.27 Core175
+    - code_name: 2.27-core178
+      name: 2.27 Core178
   k3os:
     enabled: true
     menu: linux
@@ -400,7 +396,7 @@ releases:
     enabled: true
     menu: linux
     mirror: http://download.opensuse.org
-    name: OpenSUSE
+    name: openSUSE
     versions:
     - code_name: '15.5'
       name: openSUSE Leap 15.5
@@ -438,20 +434,10 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
-    - code_name: 9.2
-      name: 9.2
-    - code_name: 9.1
-      name: 9.1
-    - code_name: 9.0
-      name: 9.0
-    - code_name: 8.7
-      name: 8.7
-    - code_name: 8.6
-      name: 8.6
-    - code_name: 8.5
-      name: 8.5
-    - code_name: 8.4
-      name: 8.4
+    - code_name: 9
+      name: 9 (Latest)
+    - code_name: 8
+      name: 8 (Latest)
   scientific:
     base_dir: linux/scientific
     enabled: true
@@ -489,14 +475,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20230629T053622Z
-      name: 20230629T053622Z
-    - code_name: 20230615T000418Z
-      name: 20230615T000418Z
-    - code_name: 20230601T000726Z
-      name: 20230601T000726Z
-    - code_name: 20230518T234918Z
-      name: 20230518T234918Z
+    - code_name: 20230907T000420Z
+      name: 20230907T000420Z
+    - code_name: 20230828T151332Z
+      name: 20230828T151332Z
+    - code_name: 20230824T000638Z
+      name: 20230824T000638Z
+    - code_name: 20230810T000714Z
+      name: 20230810T000714Z
   talos:
     enabled: true
     menu: linux
@@ -633,8 +619,6 @@ releases:
     versions:
     - code_name: lunar
       name: 23.04 Lunar Lobster
-    - code_name: kinetic
-      name: 22.10 Kinetic Kudu
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal
@@ -864,7 +848,7 @@ utilitiespcbios64:
     enabled: true
     name: Ultimate Boot CD (UBCD)
     type: memdisk
-    util_path: http://mirror.sysadminguide.net/ubcd/ubcd539.iso
+    util_path: https://mirror.sysadminguide.net/ubcd/ubcd539.iso
     version: '539'
 wimboot_location: http://${boot_domain}/wimboot
 wimboot_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot

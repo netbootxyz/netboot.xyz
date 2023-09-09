@@ -5,7 +5,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.70] - 2023-00-00
+## [2.0.71] - 2023-09-09
+
+### Added
+
+- Added NixOS option for ARM
+
+### Changed
+
+- Adjusted bootloader logic for detecting v6 and v6 scenarios
+
+### Fixed
+
+- Kickstart URLs were broken on RHEL based distros if text install
+  was being used.
+
+## [2.0.70] - 2023-07-03
 
 ### Added
 
