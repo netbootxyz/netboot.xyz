@@ -81,6 +81,7 @@
     - src/config/local/crypto.h
     - src/config/local/usb.h
     - src/config/local/settings.h
+    - src/config/local/isa.h
 
 - name: Retrieve iPXE CA
   ansible.builtin.get_url:
