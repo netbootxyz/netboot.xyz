@@ -227,13 +227,13 @@ endpoints:
     flavor: default
     kernel: backbox-6-default-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20230727-0716-702c76ea/
+    path: /ubuntu-squash/releases/download/20230907-0716-702c76ea/
     files:
     - vmlinuz
     - filesystem.squashfs
     - initrd.lz
     os: neon
-    version: 20230727-0716
+    version: 20230907-0716
     flavor: user
     kernel: kde-neon-user
   regolith-current:
