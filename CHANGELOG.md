@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.71] - 2023-00-00
 
+### Fixed
+
+- Kickstart URLs were broken on RHEL based distros if text install
+  was being used.
+
+
 ## [2.0.70] - 2023-07-03
 
 ### Added

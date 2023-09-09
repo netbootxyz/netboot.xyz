@@ -30,8 +30,7 @@ menu ${os} ${os_arch} boot type
 item graphical ${ova} graphical installer
 item text ${ova} text based installer
 item rescue ${ova} rescue
-item kickstart ${ova} set kickstart url [ ${ksurl} ]
-item kickstart_device ${ova} set ksdevice [ ${ksdevice} ]
+item kickstart ${ova} set kickstart url [ ${ks_url} ]
 isset ${bt} || choose bt || goto almalinux
 echo ${cls}
 iseq ${bt} text && goto text ||
@@ -40,8 +39,12 @@ iseq ${bt} kickstart && goto kickstart ||
 iseq ${bt} kickstart_device && goto kickstart_device ||
 goto bootos_images
 
+:graphical
+set install_mode inst.graphical ||
+goto bootos_images
+
 :text
-set params inst.text ||
+set install_mode inst.text ||
 goto bootos_images
 
 :rescue
@@ -49,20 +52,14 @@ set params rescue ||
 goto bootos_images
 
 :kickstart
-echo -n Specify kickstart URL for ${os} ${osversion}: && read ksurl
-set params inst.ks=${ksurl} ||
-clear bt
-goto boottype
-
-:kickstart_device
-echo -n Specify ksdevice param for ${os} ${osversion}: && read ksdevice
-set ksdevice ${ksdevice} ||
+echo -n Specify kickstart URL for ${os} ${osversion}: && read ks_url
+set params inst.ks=${ks_url} ||
 clear bt
 goto boottype
 
 :bootos_images
 imgfree
-kernel ${almalinux_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${params} ${ipparam} {{ kernel_params }}
+kernel ${almalinux_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${install_mode} ${params} ${ipparam} {{ kernel_params }}
 initrd ${almalinux_mirror}/${dir}/images/pxeboot/initrd.img
 echo
 echo MD5sums:
