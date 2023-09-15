@@ -1363,7 +1363,7 @@ endpoints:
     flavor: wayfire
     version: 230501
   garuda-qtile:
-    path: /asset-mirror/releases/download/230501-a9a2a274/
+    path: /asset-mirror/releases/download/230501-c669549d/
     files:
     - amd_ucode.img
     - desktopfs.sfs
