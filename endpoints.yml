@@ -1307,7 +1307,7 @@ endpoints:
     flavor: dr460nized-blackarch
     version: 220329
   garuda-xfce:
-    path: /asset-mirror/releases/download/230501-0c35cb40/
+    path: /asset-mirror/releases/download/230501-4a587bed/
     files:
     - amd_ucode.img
     - desktopfs.sfs
