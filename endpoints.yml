@@ -1577,7 +1577,7 @@ endpoints:
     flavor: intel-amd
     kernel: pop-22.04-default-squash
   vmware-photon-x86_64:
-    path: /asset-mirror/releases/download/4.0-5a977251/
+    path: /asset-mirror/releases/download/4.0-b9a135b9/
     files:
     - initrd.img
     - vmlinuz
