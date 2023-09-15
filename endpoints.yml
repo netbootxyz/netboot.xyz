@@ -1441,7 +1441,7 @@ endpoints:
     os: proxmox-backup-server
     version: 3.0-1
   proxmox-ve:
-    path: /asset-mirror/releases/download/8.0-2-9402a564/
+    path: /asset-mirror/releases/download/8.0-2-e021922f/
     files:
     - initrd
     - proxmox.iso
