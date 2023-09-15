@@ -1377,7 +1377,7 @@ endpoints:
     flavor: qtile
     version: 230501
   garuda-i3wm:
-    path: /asset-mirror/releases/download/230501-e6af34c0/
+    path: /asset-mirror/releases/download/230501-6f3b04b5/
     files:
     - amd_ucode.img
     - desktopfs.sfs
