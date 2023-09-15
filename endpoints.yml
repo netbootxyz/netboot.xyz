@@ -1172,7 +1172,7 @@ endpoints:
     version: 0.3420221231
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2023.03.02-a8a135c1/
+    path: /asset-mirror/releases/download/2023.03.02-27e99b3a/
     files:
     - airootfs.sfs
     - initramfs-linux.img
