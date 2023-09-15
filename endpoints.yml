@@ -912,7 +912,7 @@ endpoints:
     version: '6'
     flavor: apppack
   mfsbsd-13:
-    path: /asset-mirror/releases/download/13.1-990a8d83/
+    path: /asset-mirror/releases/download/13.2-0e10bdfd/
     files:
     - default.img
     - special-edition.img
