@@ -617,7 +617,7 @@ endpoints:
     flavor: kde
     kernel: manjaro-kde-current
   fatdog:
-    path: /asset-mirror/releases/download/814-bf8fccda/
+    path: /asset-mirror/releases/download/900-a6ec4ca2/
     files:
     - vmlinuz
     - initrd
