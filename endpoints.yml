@@ -313,7 +313,7 @@ endpoints:
     os: freebsd
     version: '11'
   mfsbsd-12:
-    path: /asset-mirror/releases/download/12.2-69ab9272/
+    path: /asset-mirror/releases/download/12.2-e4890b12/
     files:
     - default.img
     - special-edition.img
