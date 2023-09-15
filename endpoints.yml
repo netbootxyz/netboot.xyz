@@ -640,7 +640,7 @@ endpoints:
     version: current
     flavor: full
   4mlinux-thesss:
-    path: /asset-mirror/releases/download/43.0-9ad98d63/
+    path: /asset-mirror/releases/download/43.0-83b93056/
     files:
     - initrd
     - vmlinuz
