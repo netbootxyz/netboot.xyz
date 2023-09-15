@@ -420,7 +420,7 @@ endpoints:
     version: '8'
     arch: x86_64
   oracle-7:
-    path: /asset-mirror/releases/download/u9-3f867a35/
+    path: /asset-mirror/releases/download/u9-a30ff181/
     files:
     - vmlinuz
     - initrd
