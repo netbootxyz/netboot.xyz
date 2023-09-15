@@ -6,7 +6,12 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 
-## [2.0.72] - 2023-00-00
+## [2.0.72] - 2023-09-15
+
+### Fixed
+
+- Fixed an issue where Proxmox/QEMU users using Legacy mode would hang or
+  reboot when loading an OS. Would have affected 2.0.70 and 2.0.71 releases.
 
 ## [2.0.71] - 2023-09-09
 
