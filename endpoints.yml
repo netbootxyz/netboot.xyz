@@ -1254,7 +1254,7 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20230903-mantic-4ef16ee0/
+    path: /ubuntu-squash/releases/download/20230903-mantic-8b0ec566/
     files:
     - filesystem.squashfs
     - initrd
