@@ -903,7 +903,7 @@ endpoints:
     version: '6'
     flavor: standard
   bodhi-6-apppack:
-    path: /ubuntu-squash/releases/download/6.0.0-976a3e4e/
+    path: /ubuntu-squash/releases/download/6.0.0-e098bbe5/
     files:
     - filesystem.squashfs
     - initrd
