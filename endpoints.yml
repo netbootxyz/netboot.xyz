@@ -1818,7 +1818,7 @@ endpoints:
     version: '7'
     kernel: elementaryos-7-default-squash
   ubuntu-18.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-fe2c4150/
+    path: /ubuntu-squash/releases/download/18.04.5-35579364/
     files:
     - filesystem.squashfs
     os: ubuntu
