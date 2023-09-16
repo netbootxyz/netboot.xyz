@@ -1920,7 +1920,7 @@ endpoints:
     kernel: ubuntu-netboot-23.04-arm64
     arch: arm64
   ubuntu-netboot-23.04-amd64:
-    path: /ubuntu-squash/releases/download/23.04-e157c0e4/
+    path: /ubuntu-squash/releases/download/23.04-6806f3c6/
     files:
     - initrd
     - vmlinuz
