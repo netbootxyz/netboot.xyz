@@ -684,7 +684,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-20.04-KDE-squash
   ubuntu-20.04-XFCE-squash:
-    path: /ubuntu-squash/releases/download/20.04.6-0c3aee29/
+    path: /ubuntu-squash/releases/download/20.04.6-094dbc22/
     files:
     - filesystem.squashfs
     - initrd
