@@ -45,7 +45,7 @@ endpoints:
     flavor: xfce
     kernel: ubuntu-18.04-live-kernel
   ubuntu-18.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-8851e4fc/
+    path: /ubuntu-squash/releases/download/18.04.5-9a7bfc44/
     files:
     - filesystem.squashfs
     os: ubuntu
