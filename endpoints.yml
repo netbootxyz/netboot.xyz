@@ -1221,7 +1221,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20230426-lunar-2cf58701/
+    path: /ubuntu-squash/releases/download/20230426-lunar-3bd665a2/
     files:
     - filesystem.squashfs
     - initrd
