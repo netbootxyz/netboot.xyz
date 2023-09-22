@@ -570,7 +570,7 @@ endpoints:
     os: kaspersky
     version: '18'
   septor:
-    path: /debian-squash/releases/download/2022-c61ed600/
+    path: /debian-squash/releases/download/2022-e2cc780a/
     files:
     - filesystem.squashfs
     - initrd
