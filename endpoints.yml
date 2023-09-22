@@ -2053,7 +2053,7 @@ endpoints:
     flavor: xfce
     kernel: debian-12-live-kernel
   debian-12-kde-squash:
-    path: /debian-squash/releases/download/12.1.0-38c053c1/
+    path: /debian-squash/releases/download/12.1.0-f5f847d1/
     files:
     - filesystem.squashfs
     os: debian
