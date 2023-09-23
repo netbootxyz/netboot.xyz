@@ -1940,7 +1940,7 @@ endpoints:
     version: 38
     flavor: Xfce
   ubuntu-23.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/23.04-8f2fa360/
+    path: /ubuntu-squash/releases/download/23.04-a3cf865f/
     files:
     - filesystem.squashfs
     - initrd
