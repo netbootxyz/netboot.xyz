@@ -18,6 +18,8 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v4
+      with:
+        ref: master
 
     - name: Retrieve Certs
       run: |

@@ -19,6 +19,8 @@ jobs:
       contents: read
     steps:
     - uses: actions/checkout@v4
+      with:
+        ref: development
 
     - name: Retrieve Certs
       run: |
