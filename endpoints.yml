@@ -1265,7 +1265,7 @@ endpoints:
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
   garuda-dr460nized-gaming:
-    path: /asset-mirror/releases/download/230501-111e3083/
+    path: /asset-mirror/releases/download/230501-215d45eb/
     files:
     - amd_ucode.img
     - desktopfs.sfs
