@@ -1737,7 +1737,7 @@ endpoints:
     version: 37
     flavor: KDE
   fedora-37-LXDE:
-    path: /fedora-assets/releases/download/1.7-878edc25/
+    path: /fedora-assets/releases/download/1.7-21b170b8/
     files:
     - vmlinuz
     - initrd
