@@ -1931,7 +1931,7 @@ endpoints:
     kernel: ubuntu-netboot-23.04-amd64
     arch: amd64
   fedora-38-Xfce:
-    path: /fedora-assets/releases/download/1.6-58e7887b/
+    path: /fedora-assets/releases/download/1.6-6879563d/
     files:
     - vmlinuz
     - initrd
