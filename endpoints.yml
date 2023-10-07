@@ -1899,7 +1899,7 @@ endpoints:
     version: 38
     flavor: SoaS
   fedora-38-i3:
-    path: /fedora-assets/releases/download/1.6-6759c754/
+    path: /fedora-assets/releases/download/1.6-2af51286/
     files:
     - vmlinuz
     - initrd
