@@ -1890,7 +1890,7 @@ endpoints:
     version: 38
     flavor: MATE_Compiz
   fedora-38-SoaS:
-    path: /fedora-assets/releases/download/1.6-fbb3f4f9/
+    path: /fedora-assets/releases/download/1.6-97014950/
     files:
     - vmlinuz
     - initrd
