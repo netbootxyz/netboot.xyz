@@ -1755,7 +1755,7 @@ endpoints:
     version: 37
     flavor: LXQt
   fedora-37-i3:
-    path: /fedora-assets/releases/download/1.7-a1446a61/
+    path: /fedora-assets/releases/download/1.7-f031f3b7/
     files:
     - vmlinuz
     - initrd
