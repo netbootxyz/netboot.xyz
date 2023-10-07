@@ -1836,7 +1836,7 @@ endpoints:
     flavor: LXQT
     kernel: ubuntu-20.04-LXQT-squash
   fedora-38-gnome:
-    path: /fedora-assets/releases/download/1.6-a2c6a475/
+    path: /fedora-assets/releases/download/1.6-1490a6a4/
     files:
     - vmlinuz
     - initrd
