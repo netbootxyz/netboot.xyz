@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.73] - 2023-00-00
+## [2.0.73] - 2023-10-13
+
+### Added
+
+- Fedora 39 stubbed out for release later this month
+- Ubuntu 23.10
+
+### Fixed
+
+- Fixed an issue with Fedora would error with "Could not boot"
 
 ## [2.0.72] - 2023-09-15
 
