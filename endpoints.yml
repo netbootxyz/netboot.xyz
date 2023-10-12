@@ -2082,3 +2082,14 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-23.10-arm64
     arch: arm64
+  ubuntu-netboot-23.10-amd64:
+    path: /ubuntu-squash/releases/download/23.10-5b615fc9/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.10'
+    codename: mantic
+    flavor: netboot
+    kernel: ubuntu-netboot-23.10-amd64
+    arch: amd64
