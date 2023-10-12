@@ -2070,3 +2070,15 @@ endpoints:
     version: '23.04'
     flavor: GNOME
     kernel: ubuntu-23.04-default-squash
+  ubuntu-netboot-23.10-arm64:
+    path: /ubuntu-squash/releases/download/23.10-729b6a9e/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.10'
+    codename: mantic
+    flavor: netboot
+    kernel: ubuntu-netboot-23.10-arm64
+    arch: arm64
