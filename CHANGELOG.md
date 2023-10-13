@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 
 - Fixed an issue with Fedora would error with "Could not boot"
 
+### Removed
+
+- Remove AVG as it's no longer maintained
+
 ## [2.0.72] - 2023-09-15
 
 ### Fixed
