@@ -2037,7 +2037,7 @@ endpoints:
     flavor: mate
     kernel: debian-12-live-kernel
   debian-12-lxde-squash:
-    path: /debian-squash/releases/download/12.1.0-82228b2b/
+    path: /debian-squash/releases/download/12.2.0-82228b2b/
     files:
     - filesystem.squashfs
     os: debian
