@@ -759,12 +759,6 @@ utilitiespcbios64:
     enabled: true
     name: 4MLinux
     type: ipxemenu
-  avg:
-    enabled: true
-    name: AVG Rescue CD
-    type: memdisk
-    util_path: http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_160420a12074.iso
-    version: 160420a12074
   bootrepair:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.bootrepair.path }}initrd
