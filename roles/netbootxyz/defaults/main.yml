@@ -289,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core179
-      name: 2.27 Core179
+    - code_name: 2.27-core180
+      name: 2.27 Core180
   k3os:
     enabled: true
     menu: linux
