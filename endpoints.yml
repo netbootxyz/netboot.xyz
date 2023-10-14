@@ -2093,3 +2093,13 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-23.10-amd64
     arch: amd64
+  ubuntu-23.10-KDE-squash:
+    path: /ubuntu-squash/releases/download/23.10-1ddd332a/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.10'
+    flavor: KDE
+    kernel: ubuntu-23.10-KDE-squash
