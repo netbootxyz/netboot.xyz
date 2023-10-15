@@ -14,16 +14,19 @@ menu ${os}
 {% if value.os == "proxmox-backup-server" %}
 item --gap ${os} Backup Server
 item pbs-normal ${space} ${os} Backup Server {{ value.version }}
+item pbs-text ${space} ${os} Backup Server {{ value.version }} (Text)
 item pbs-debug ${space} ${os} Backup Server {{ value.version }} (Debug)
 {% endif %}
 {% if value.os == "proxmox-mailgateway" %}
 item --gap ${os} Mail Gateway
 item pmg-normal ${space} ${os} Mail Gateway {{ value.version }}
+item pmg-text ${space} ${os} Mail Gateway {{ value.version }} (Text)
 item pmg-debug ${space} ${os} Mail Gateway {{ value.version }} (Debug)
 {% endif %}
 {% if value.os == "proxmox-ve" %}
 item --gap ${os} VE
 item pve-normal ${space} ${os} VE {{ value.version }}
+item pve-text ${space} ${os} VE {{ value.version }} (Text)
 item pve-debug ${space} ${os} VE {{ value.version }} (Debug)
 {% endif %}
 {% endfor %}
@@ -34,6 +37,10 @@ goto ${proxmox_choice}
 set params splash=silent
 goto boot-pve
 
+:pve-text
+set params splash=silent proxtui
+goto boot-pve
+
 :pve-debug
 set params splash=verbose proxdebug
 goto boot-pve
@@ -42,12 +49,20 @@ goto boot-pve
 set params splash=silent
 goto boot-pmg
 
+:pmg-text
+set params splash=silent proxtui
+goto boot-pmg
+
 :pmg-debug
 set params splash=verbose proxdebug
 goto boot-pmg
 
 :pbs-normal
 set params splash=silent
+goto boot-pbs
+
+:pbs-text
+set params splash=silent proxtui
 goto boot-pbs
 
 :pbs-debug
