@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 
 - Fedora 39 stubbed out for release later this month
 - Ubuntu 23.10
+- Text UI support for Proxmox Distros
 
 ### Fixed
 
