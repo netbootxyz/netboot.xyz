@@ -2029,7 +2029,7 @@ endpoints:
     flavor: lxqt
     kernel: debian-12-live-kernel
   debian-12-mate-squash:
-    path: /debian-squash/releases/download/12.2.0-620fe670/
+    path: /debian-squash/releases/download/12.2.0-a011040b/
     files:
     - filesystem.squashfs
     os: debian
