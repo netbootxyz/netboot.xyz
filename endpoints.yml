@@ -1660,7 +1660,7 @@ endpoints:
     version: '9'
     arch: aarch64
   parrot-home:
-    path: /debian-squash/releases/download/5.3-017bf13f/
+    path: /debian-squash/releases/download/5.3-12d8fd0c/
     files:
     - filesystem.squashfs
     - initrd
