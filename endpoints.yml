@@ -1056,7 +1056,7 @@ endpoints:
     flavor: lxqt
     kernel: debian-11-live-kernel
   voyager-bullseye-squash:
-    path: /debian-squash/releases/download/bullseye-6cfb2761/
+    path: /debian-squash/releases/download/bullseye-11cb9bdc/
     files:
     - filesystem.squashfs
     - initrd
