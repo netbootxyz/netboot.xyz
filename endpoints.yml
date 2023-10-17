@@ -919,7 +919,7 @@ endpoints:
     os: freebsd
     version: '13'
   mint-lmde-cinnamon-squash:
-    path: /debian-squash/releases/download/5-919ea138/
+    path: /debian-squash/releases/download/6-b21fbb46/
     files:
     - filesystem.squashfs
     - initrd
