@@ -2133,3 +2133,13 @@ endpoints:
     version: '23.10'
     flavor: MATE
     kernel: ubuntu-23.10-MATE-squash
+  ubuntu-23.10-default-squash:
+    path: /ubuntu-squash/releases/download/23.10.1-9f1a35b0/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '23.10'
+    flavor: GNOME
+    kernel: ubuntu-23.10-default-squash
