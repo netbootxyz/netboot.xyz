@@ -825,7 +825,7 @@ utilitiespcbios64:
     enabled: true
     name: Ultimate Boot CD (UBCD)
     type: memdisk
-    util_path: https://mirror.sysadminguide.net/ubcd/ubcd539.iso
+    util_path: ${ubcd_endpoint}/ubcd/ubcd539.iso
     version: '539'
 wimboot_location: http://${boot_domain}/wimboot
 wimboot_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot
