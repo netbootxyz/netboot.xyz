@@ -815,7 +815,7 @@ utilitiespcbios64:
     enabled: true
     name: SuperGRUB
     type: memdisk
-    util_path: http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso
+    util_path: ${supbergrub2_endpoint}/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso
     version: 2.04s1
   systemrescue:
     enabled: true
