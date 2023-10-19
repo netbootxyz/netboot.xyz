@@ -25,6 +25,9 @@ iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk n
 # set default boot timeout
 set boot_timeout {{ boot_timeout }}
 
+# set location of memtest
+set memtest_endpoint https://${boot_domain}/utils/
+
 ######################################
 # Media Locations for Licensed Distros
 ######################################
