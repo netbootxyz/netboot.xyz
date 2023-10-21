@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.73] - 2023-10-13
+
+### Added
+
+- Fedora 39 stubbed out for release later this month
+- Ubuntu 23.10
+- Text UI support for Proxmox Distros
+
+### Fixed
+
+- Fixed an issue with Fedora would error with "Could not boot"
+
+### Removed
+
+- Remove AVG as it's no longer maintained
 
 ## [2.0.72] - 2023-09-15
 

@@ -156,8 +156,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.09.01
-      name: 2023.09.01
+    - code_name: 2023.10.14
+      name: 2023.10.14
   blackarch:
     enabled: true
     menu: linux
@@ -189,11 +189,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 38.20230819.3.0
+    - code_name: 38.20231002.3.1
       name: stable
-    - code_name: 38.20230902.2.1
+    - code_name: 38.20231014.2.0
       name: testing
-    - code_name: 38.20230902.1.1
+    - code_name: 39.20231016.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -239,12 +239,12 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 39
+      name: 39
     - code_name: 38
       name: 38
     - code_name: 37
       name: 37
-    - code_name: 36
-      name: 36
   flatcar:
     enabled: true
     menu: linux
@@ -289,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core178
-      name: 2.27 Core178
+    - code_name: 2.27-core180
+      name: 2.27 Core180
   k3os:
     enabled: true
     menu: linux
@@ -343,14 +343,16 @@ releases:
     mirror: http://repo.openeuler.org
     name: openEuler
     versions:
+    - code_name: openEuler-23.09
+      name: openEuler-23.09
     - code_name: openEuler-20.03-LTS-SP3
       name: openEuler-20.03-LTS-SP3
     - code_name: openEuler-22.03-LTS
       name: openEuler-22.03-LTS
-    - code_name: openEuler-22.09
-      name: openEuler-22.09
     - code_name: openEuler-22.03-LTS-SP1
       name: openEuler-22.03-LTS-SP1
+    - code_name: openEuler-22.03-LTS-SP2
+      name: openEuler-22.03-LTS-SP2
   openbsd:
     base_dir: pub/OpenBSD
     enabled: true
@@ -358,39 +360,18 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: '7.4'
+      image_ver: '74'
+      name: '7.4'
     - code_name: '7.3'
       image_ver: '73'
       name: '7.3'
     - code_name: '7.2'
       image_ver: '72'
       name: '7.2'
-    - code_name: '7.1'
-      image_ver: '71'
-      name: '7.1'
-    - code_name: '7.0'
-      image_ver: '70'
-      name: '7.0'
-    - code_name: '6.9'
-      image_ver: '69'
-      name: '6.9'
-    - code_name: '6.8'
-      image_ver: '68'
-      name: '6.8'
-    - code_name: '6.7'
-      image_ver: '67'
-      name: '6.7'
-    - code_name: '6.6'
-      image_ver: '66'
-      name: '6.6'
-    - code_name: '6.5'
-      image_ver: '65'
-      name: '6.5'
-    - code_name: '6.4'
-      image_ver: '64'
-      name: '6.4'
     - code_name: snapshots
-      image_ver: '69'
-      name: 6.9 Latest Snapshot
+      image_ver: '74'
+      name: 7.4 Latest Snapshot
   opensuse:
     base_dir: distribution/leap
     enabled: true
@@ -475,14 +456,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20231019T000454Z
+      name: 20231019T000454Z
+    - code_name: 20231005T000607Z
+      name: 20231005T000607Z
+    - code_name: 20230921T034751Z
+      name: 20230921T034751Z
     - code_name: 20230907T000420Z
       name: 20230907T000420Z
-    - code_name: 20230828T151332Z
-      name: 20230828T151332Z
-    - code_name: 20230824T000638Z
-      name: 20230824T000638Z
-    - code_name: 20230810T000714Z
-      name: 20230810T000714Z
   talos:
     enabled: true
     menu: linux
@@ -617,6 +598,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: mantic
+      name: 23.10 Mantic Minotaur
     - code_name: lunar
       name: 23.04 Lunar Lobster
     - code_name: jammy
@@ -755,12 +738,6 @@ utilitiespcbios64:
     enabled: true
     name: 4MLinux
     type: ipxemenu
-  avg:
-    enabled: true
-    name: AVG Rescue CD
-    type: memdisk
-    util_path: http://download.avg.com/filedir/inst/avg_arl_cdi_all_120_160420a12074.iso
-    version: 160420a12074
   bootrepair:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.bootrepair.path }}initrd
