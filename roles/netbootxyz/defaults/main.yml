@@ -138,8 +138,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.18
-      name: '3.18'
+    - code_name: v3.19
+      name: '3.19'
     - code_name: edge
       name: Edge (development)
   anarchy:
