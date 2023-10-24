@@ -1181,20 +1181,6 @@ endpoints:
     os: garuda
     flavor: dr460nized
     version: 230501
-  garuda-dr460nized-blackarch:
-    path: /asset-mirror/releases/download/220329-6ab56054/
-    files:
-    - amd_ucode.img
-    - desktopfs.sfs
-    - intel_ucode.img
-    - livefs.sfs
-    - initramfs.img
-    - mhwdfs.sfs
-    - rootfs.sfs
-    - vmlinuz
-    os: garuda
-    flavor: dr460nized-blackarch
-    version: 220329
   garuda-xfce:
     path: /asset-mirror/releases/download/230501-4a587bed/
     files:
