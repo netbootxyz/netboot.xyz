@@ -678,7 +678,7 @@ endpoints:
     version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/1.5-rolling-202310200118-6c714932/
+    path: /debian-squash/releases/download/1.5-rolling-202310240118-6c714932/
     files:
     - filesystem.squashfs
     - initrd
