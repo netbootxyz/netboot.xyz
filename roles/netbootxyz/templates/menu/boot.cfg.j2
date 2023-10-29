@@ -25,6 +25,9 @@ iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk n
 # set default boot timeout
 set boot_timeout {{ boot_timeout }}
 
+# supergrub2
+set supbergrub2_endpoint http://master.dl.sourceforge.net/project
+
 ######################################
 # Media Locations for Licensed Distros
 ######################################
