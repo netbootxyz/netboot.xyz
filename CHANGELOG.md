@@ -765,7 +765,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - FreeBSD working
-- Captures upstream iPXE version as ${ipxe_version}
+- Captures upstream iPXE version as ipxe_version
 - Fixes Packet and GCE Versioning
 
 ## [2.0.3] - 2020-01-02
