@@ -1182,7 +1182,7 @@ endpoints:
     flavor: dr460nized
     version: 230501
   garuda-xfce:
-    path: /asset-mirror/releases/download/230501-4a587bed/
+    path: /asset-mirror/releases/download/231029-4a587bed/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1194,7 +1194,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: xfce
-    version: 230501
+    version: 231029
   garuda-gnome:
     path: /asset-mirror/releases/download/230501-a62ea13d/
     files:
