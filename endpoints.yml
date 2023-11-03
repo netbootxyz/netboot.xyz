@@ -1561,7 +1561,7 @@ endpoints:
     os: xcp-ng
     version: '8.2'
   garuda-cinnamon:
-    path: /asset-mirror/releases/download/230501-3ef04424/
+    path: /asset-mirror/releases/download/231029-3ef04424/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1573,7 +1573,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: cinnamon
-    version: 230501
+    version: 231029
   fedora-37-gnome:
     path: /fedora-assets/releases/download/1.7-f09aef06/
     files:
