@@ -1238,7 +1238,7 @@ endpoints:
     flavor: wayfire
     version: 230501
   garuda-qtile:
-    path: /asset-mirror/releases/download/230501-c669549d/
+    path: /asset-mirror/releases/download/231029-c669549d/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1250,7 +1250,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: qtile
-    version: 230501
+    version: 231029
   garuda-i3wm:
     path: /asset-mirror/releases/download/230501-6f3b04b5/
     files:
