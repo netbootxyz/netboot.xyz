@@ -2090,3 +2090,12 @@ endpoints:
     os: fedora
     version: 39
     flavor: i3
+  fedora-39-SoaS:
+    path: /fedora-assets/releases/download/1.5-3e5be5fd/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 39
+    flavor: SoaS
