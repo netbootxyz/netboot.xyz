@@ -1110,13 +1110,13 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20230426-lunar-3bd665a2/
+    path: /ubuntu-squash/releases/download/20231102-mantic-3bd665a2/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20230426-lunar
+    version: 20231102-mantic
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
