@@ -142,13 +142,6 @@ releases:
       name: '3.18'
     - code_name: edge
       name: Edge (development)
-  anarchy:
-    enabled: true
-    menu: linux
-    name: Anarchy Linux
-    versions:
-    - code_name: current
-      name: current
   archlinux:
     base_dir: archlinux
     enabled: true
