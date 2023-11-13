@@ -43,7 +43,7 @@ goto boottype
 
 :boottype
 menu ${os} ${os_arch} boot type
-item normal ${ova} graphical install
+item graphical ${ova} graphical install
 item text ${ova} text install
 item rescue ${ova} rescue
 item kickstart ${ova} set kickstart url [ ${ks_url} ]
