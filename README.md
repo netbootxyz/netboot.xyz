@@ -122,7 +122,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |------------|-----------------|------------------|---------------|
 | AlmaLinux | https://almalinux.org/ | Yes | No |
 | Alpine Linux | https://alpinelinux.org | Yes | No |
-| Anarchy Linux | https://anarchyinstaller.org | Yes | No |
 | Arch Linux | https://www.archlinux.org | Yes | No |
 | Backbox | https://www.backbox.org | No | Yes |
 | BlackArch Linux | https://blackarch.org | Yes | Yes |
