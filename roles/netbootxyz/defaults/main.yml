@@ -654,7 +654,7 @@ utilitiesefi:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.caine.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper
-      netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
+      netboot=url url=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
       {{ kernel_params }}
     name: CAINE
     type: direct
