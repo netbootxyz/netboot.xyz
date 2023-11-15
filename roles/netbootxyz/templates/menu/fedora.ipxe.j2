@@ -12,6 +12,7 @@ goto ${menu} ||
 clear osversion
 clear sku_type
 clear ova
+clear bt
 set os {{ releases.fedora.name }}
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch x86_64 ||
@@ -43,7 +44,7 @@ goto boottype
 
 :boottype
 menu ${os} ${os_arch} boot type
-item normal ${ova} graphical install
+item graphical ${ova} graphical install
 item text ${ova} text install
 item rescue ${ova} rescue
 item kickstart ${ova} set kickstart url [ ${ks_url} ]
@@ -61,7 +62,7 @@ set install_mode inst.text ||
 goto bootos_images
 
 :rescue
-set params rescue ||
+set params inst.rescue ||
 goto bootos_images
 
 :kickstart

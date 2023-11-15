@@ -142,13 +142,6 @@ releases:
       name: '3.18'
     - code_name: edge
       name: Edge (development)
-  anarchy:
-    enabled: true
-    menu: linux
-    name: Anarchy Linux
-    versions:
-    - code_name: current
-      name: current
   archlinux:
     base_dir: archlinux
     enabled: true
@@ -156,8 +149,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.10.14
-      name: 2023.10.14
+    - code_name: 2023.11.01
+      name: 2023.11.01
   blackarch:
     enabled: true
     menu: linux
@@ -189,11 +182,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 38.20231002.3.1
+    - code_name: 38.20231027.3.2
       name: stable
-    - code_name: 38.20231014.2.0
+    - code_name: 39.20231101.2.0
       name: testing
-    - code_name: 39.20231016.1.0
+    - code_name: 39.20231106.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -426,14 +419,14 @@ releases:
     mirror: http://ftp1.scientificlinux.org
     name: Scientific Linux
     versions:
+    - code_name: '7.9'
+      name: '7.9'
+    - code_name: '7.8'
+      name: '7.8'
     - code_name: '7.7'
       name: '7.7'
     - code_name: '7.6'
       name: '7.6'
-    - code_name: '6.10'
-      name: '6.10'
-    - code_name: '6.9'
-      name: '6.9'
   slackware:
     base_dir: slackware
     enabled: true
@@ -456,14 +449,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
+    - code_name: 20231102T000310Z
+      name: 20231102T000310Z
     - code_name: 20231019T000454Z
       name: 20231019T000454Z
     - code_name: 20231005T000607Z
       name: 20231005T000607Z
     - code_name: 20230921T034751Z
       name: 20230921T034751Z
-    - code_name: 20230907T000420Z
-      name: 20230907T000420Z
   talos:
     enabled: true
     menu: linux
@@ -661,7 +654,7 @@ utilitiesefi:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.caine.path }}initrd
     kernel: ${live_endpoint}{{ endpoints.caine.path }}vmlinuz ip=dhcp boot=casper
-      netboot=http fetch=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
+      netboot=url url=${live_endpoint}{{ endpoints.caine.path }}filesystem.squashfs
       {{ kernel_params }}
     name: CAINE
     type: direct
