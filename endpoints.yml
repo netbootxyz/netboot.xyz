@@ -734,13 +734,13 @@ endpoints:
     os: rescuezilla
     version: 2.4.2
   deepin-20-squash:
-    path: /debian-squash/releases/download/20.7-2c297f6a/
+    path: /debian-squash/releases/download/20.9-3ac6162b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: Deepin
-    version: '20'
+    version: '20.9'
     kernel: deepin-20-squash
   nitrux-release:
     path: /ubuntu-squash/releases/download/2022.02.28-e364d0a5/
