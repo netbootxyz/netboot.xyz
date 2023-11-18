@@ -555,7 +555,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-20.04-default-squash
   ubuntu-20.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/20.04.5-80445908/
+    path: /ubuntu-squash/releases/download/20.04.6-c9425b16/
     files:
     - filesystem.squashfs
     - initrd
