@@ -751,13 +751,13 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Cassini_Nova-03-2023_R2-36475eee/
+    path: /asset-mirror/releases/download/Galileo-11-2023-fb85f3eb/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: endeavouros
-    version: Cassini_Nova-03-2023_R2
+    version: Galileo-11-2023
   kodachi-8:
     path: /ubuntu-squash/releases/download/8.2-625e11fa/
     files:
