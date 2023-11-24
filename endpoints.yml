@@ -2101,3 +2101,13 @@ endpoints:
     version: '22.04'
     flavor: LXQT
     kernel: ubuntu-22.04-LXQT-squash
+  backbox-default-squash:
+    path: /ubuntu-squash/releases/download/8.1-46e69542/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: BackBox
+    version: '8.1'
+    flavor: desktop
+    kernel: backbox-default-squash
