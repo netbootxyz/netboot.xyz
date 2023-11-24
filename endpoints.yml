@@ -971,13 +971,13 @@ endpoints:
     version: 20231022T231657Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20231015T161657Z-0766e8c3/
+    path: /asset-mirror/releases/download/20231022T164658Z-0766e8c3/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20231015T161657Z
+    version: 20231022T164658Z
     arch: amd64
   tails:
     path: /asset-mirror/releases/download/5.19.1-8afedfc6/
