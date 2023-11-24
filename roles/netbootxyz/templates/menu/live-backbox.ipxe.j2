@@ -7,7 +7,7 @@ set os BackBox
 menu ${os}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "Backbox" and 'squash' in key %}
+{% if value.os == "BackBox" and 'squash' in key %}
 item {{ value.version }} ${space} ${os} {{ value.version }}
 {% endif %}
 {% endfor %}
