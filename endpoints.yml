@@ -642,16 +642,6 @@ endpoints:
     - netboot.ipxe
     os: nixos
     version: '20.03'
-  backbox-7-default-squash:
-    path: /ubuntu-squash/releases/download/7-b47309d4/
-    files:
-    - initrd
-    - vmlinuz
-    - filesystem.squashfs
-    os: BackBox
-    version: '7'
-    flavor: default
-    kernel: backbox-7-default-squash
   kodachi-7:
     path: /ubuntu-squash/releases/download/7.6-5b1ead62/
     files:
