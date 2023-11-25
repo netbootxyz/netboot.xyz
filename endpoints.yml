@@ -2083,3 +2083,10 @@ endpoints:
     os: bodhi
     version: 7.0.0
     flavor: apppack
+  mfsbsd-14:
+    path: /asset-mirror/releases/download/14.0-9413c990/
+    files:
+    - default.img
+    - special-edition.img
+    os: freebsd
+    version: '14'
