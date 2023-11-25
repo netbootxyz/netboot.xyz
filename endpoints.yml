@@ -2101,3 +2101,12 @@ endpoints:
     version: '8.1'
     flavor: desktop
     kernel: backbox-default-squash
+  bodhi-standard:
+    path: /ubuntu-squash/releases/download/7.0.0-9d2f2972/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: 7.0.0
+    flavor: standard
