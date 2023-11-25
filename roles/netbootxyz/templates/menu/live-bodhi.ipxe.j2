@@ -7,7 +7,7 @@ set os Bodhi
 menu ${os}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "bodhi" }
+{% if value.os == "bodhi" %}
 item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
 {% endif %}
 {% endfor %}
