@@ -2074,3 +2074,12 @@ endpoints:
     os: bodhi
     version: 7.0.0
     flavor: standard
+  bodhi-apppack:
+    path: /ubuntu-squash/releases/download/7.0.0-ded40eaf/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: bodhi
+    version: 7.0.0
+    flavor: apppack
