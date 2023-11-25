@@ -325,24 +325,6 @@ endpoints:
     - vmlinuz
     os: kodachi
     version: '6'
-  bodhi-5-standard:
-    path: /ubuntu-squash/releases/download/5.1.0-5d55acb7/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: bodhi
-    version: '5'
-    flavor: standard
-  bodhi-5-apppack:
-    path: /ubuntu-squash/releases/download/5.1.0-0bcb3c87/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: bodhi
-    version: '5'
-    flavor: apppack
   devuan-ascii:
     path: /debian-squash/releases/download/2.1-0cd88d39/
     files:
@@ -764,24 +746,6 @@ endpoints:
     - vmlinuz
     os: redorescue
     version: 4.0.0
-  bodhi-6-standard:
-    path: /ubuntu-squash/releases/download/6.0.0-5efdb7c4/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: bodhi
-    version: '6'
-    flavor: standard
-  bodhi-6-apppack:
-    path: /ubuntu-squash/releases/download/6.0.0-e098bbe5/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: bodhi
-    version: '6'
-    flavor: apppack
   mfsbsd-13:
     path: /asset-mirror/releases/download/13.2-0e10bdfd/
     files:
