@@ -1078,13 +1078,13 @@ endpoints:
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/3.1.2-1-2e6bab21/
+    path: /debian-squash/releases/download/3.1.2-2-60bb00d5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.1.2-1
+    version: 3.1.2-2
     flavor: testing
     kernel: clonezilla-debian-testing-i686
     arch: i686
