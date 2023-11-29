@@ -27,6 +27,17 @@
     - generate_disks_legacy | default(true) | bool
     - generate_disks_arm | default(false) | bool
 
+- name: Generate hybrid ISO arm64 image
+  ansible.builtin.shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.iso \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_arm | default(false) | bool
+
 - name: Generate hybrid USB x86_64 image
   ansible.builtin.shell: |
     ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.img \
@@ -51,4 +62,15 @@
   when:
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool
+    - generate_disks_arm | default(false) | bool
+
+- name: Generate hybrid USB arm64 image
+  ansible.builtin.shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.img \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
     - generate_disks_arm | default(false) | bool
