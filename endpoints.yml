@@ -353,7 +353,7 @@ endpoints:
     version: '2022.11'
     flavor: small
   gparted-stable:
-    path: /debian-squash/releases/download/1.5.0-6-a07a9fe7/
+    path: /debian-squash/releases/download/1.5.0-6-9db74861/
     files:
     - filesystem.squashfs
     - initrd
