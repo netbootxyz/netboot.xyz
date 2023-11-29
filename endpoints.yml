@@ -344,7 +344,7 @@ endpoints:
     version: '2022.11'
     flavor: full
   grml-small:
-    path: /debian-squash/releases/download/2022.11-74ca2d5e/
+    path: /debian-squash/releases/download/2022.11-a710b694/
     files:
     - filesystem.squashfs
     - initrd
