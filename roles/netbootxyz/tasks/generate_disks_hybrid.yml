@@ -8,6 +8,10 @@
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
   args:
     chdir: "{{ ipxe_source_dir }}/src"
+  when: 
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
+
 
 - name: Generate hybrid ISO multiarch image
   ansible.builtin.shell: |
@@ -18,6 +22,10 @@
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
+    - generate_disks_arm | default(false) | bool
 
 - name: Generate hybrid USB x86_64 image
   ansible.builtin.shell: |
@@ -27,6 +35,9 @@
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
   args:
     chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
 
 - name: Generate hybrid USB multiarch image
   ansible.builtin.shell: |
@@ -37,3 +48,7 @@
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-arm64.efi
   args:
     chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
+    - generate_disks_arm | default(false) | bool
