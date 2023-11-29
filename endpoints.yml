@@ -326,7 +326,7 @@ endpoints:
     os: kodachi
     version: '6'
   devuan-ascii:
-    path: /debian-squash/releases/download/2.1-0cd88d39/
+    path: /debian-squash/releases/download/2.1-b74322f4/
     files:
     - filesystem.squashfs
     - initrd
