@@ -11,6 +11,7 @@
   when: 
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool
+    - generate_disks_efi | default(true) | bool
 
 
 - name: Generate hybrid ISO multiarch image
@@ -26,6 +27,7 @@
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool
     - generate_disks_arm | default(false) | bool
+    - generate_disks_efi | default(true) | bool
 
 - name: Generate hybrid ISO arm64 image
   ansible.builtin.shell: |
@@ -49,6 +51,7 @@
   when:
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool
+    - generate_disks_efi | default(true) | bool
 
 - name: Generate hybrid USB multiarch image
   ansible.builtin.shell: |
@@ -63,6 +66,7 @@
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool
     - generate_disks_arm | default(false) | bool
+    - generate_disks_efi | default(true) | bool
 
 - name: Generate hybrid USB arm64 image
   ansible.builtin.shell: |
