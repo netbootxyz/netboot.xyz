@@ -136,7 +136,7 @@ endpoints:
     flavor: xfce
     kernel: kali-xfce-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20231123-0713-7c3766d7/
+    path: /ubuntu-squash/releases/download/20231123-0713-c726bf69/
     files:
     - vmlinuz
     - filesystem.squashfs
