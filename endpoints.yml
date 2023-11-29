@@ -1067,7 +1067,7 @@ endpoints:
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
   clonezilla-debian-testing-amd64:
-    path: /debian-squash/releases/download/3.1.2-2-378889ac/
+    path: /debian-squash/releases/download/3.1.2-2-2507b142/
     files:
     - filesystem.squashfs
     - initrd
