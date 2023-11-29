@@ -1034,7 +1034,7 @@ endpoints:
     flavor: plasma
     kernel: q4os-4.6-default-squash
   clonezilla-debian-stable-i686:
-    path: /debian-squash/releases/download/3.1.1-27-e8ee5f8c/
+    path: /debian-squash/releases/download/3.1.1-27-4a0511b5/
     files:
     - filesystem.squashfs
     - initrd
