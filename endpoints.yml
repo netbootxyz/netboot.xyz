@@ -209,7 +209,7 @@ endpoints:
     os: freebsd
     version: '12'
   feren-squash:
-    path: /ubuntu-squash/releases/download/2023.01-11262bf4/
+    path: /ubuntu-squash/releases/download/2023.01-c3ead1df/
     files:
     - filesystem.squashfs
     - initrd
