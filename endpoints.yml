@@ -1719,7 +1719,7 @@ endpoints:
     version: 38
     flavor: i3
   ubuntu-netboot-23.04-arm64:
-    path: /ubuntu-squash/releases/download/23.04-88043c0b/
+    path: /ubuntu-squash/releases/download/23.04-b82850d5/
     files:
     - filesystem.squashfs
     - initrd
