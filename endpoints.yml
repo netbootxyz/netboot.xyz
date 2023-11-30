@@ -2056,7 +2056,7 @@ endpoints:
     flavor: LXQT
     kernel: ubuntu-22.04-LXQT-squash
   backbox-default-squash:
-    path: /ubuntu-squash/releases/download/8.1-24ec3fd4/
+    path: /ubuntu-squash/releases/download/8.1-b19f2671/
     files:
     - initrd
     - vmlinuz
