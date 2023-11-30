@@ -1771,7 +1771,7 @@ endpoints:
     flavor: LXQT
     kernel: ubuntu-23.04-LXQT-squash
   ubuntu-23.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/23.04-d3db983e/
+    path: /ubuntu-squash/releases/download/23.04-95464e35/
     files:
     - filesystem.squashfs
     - initrd
