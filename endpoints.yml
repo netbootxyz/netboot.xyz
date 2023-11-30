@@ -1620,7 +1620,7 @@ endpoints:
     flavor: plasma
     kernel: q4os-4.11-default-squash
   elementaryos-7-default-squash:
-    path: /ubuntu-squash/releases/download/7-b59ea51c/
+    path: /ubuntu-squash/releases/download/7-5252fe9d/
     files:
     - initrd
     - vmlinuz
