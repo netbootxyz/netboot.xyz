@@ -1056,7 +1056,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20231102-mantic-569293d8/
+    path: /ubuntu-squash/releases/download/20231102-mantic-23d01bb4/
     files:
     - filesystem.squashfs
     - initrd
