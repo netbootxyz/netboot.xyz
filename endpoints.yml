@@ -1371,7 +1371,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-22.04-kylin-squash
   voyager-jammy-squash:
-    path: /ubuntu-squash/releases/download/jammy-4cd7f2cf/
+    path: /ubuntu-squash/releases/download/jammy-2fa389ba/
     files:
     - filesystem.squashfs
     - initrd
