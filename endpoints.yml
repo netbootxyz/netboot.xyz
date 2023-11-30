@@ -1311,7 +1311,7 @@ endpoints:
     kernel: ubuntu-netboot-22.04-arm64
     arch: arm64
   ubuntu-22.04-default-squash:
-    path: /ubuntu-squash/releases/download/22.04.3-7854d2c9/
+    path: /ubuntu-squash/releases/download/22.04.3-61f7cf6e/
     files:
     - filesystem.squashfs
     - initrd
