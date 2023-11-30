@@ -2075,7 +2075,7 @@ endpoints:
     version: 7.0.0
     flavor: standard
   bodhi-apppack:
-    path: /ubuntu-squash/releases/download/7.0.0-ded40eaf/
+    path: /ubuntu-squash/releases/download/7.0.0-25a0ebd7/
     files:
     - filesystem.squashfs
     - initrd
