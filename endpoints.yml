@@ -1453,7 +1453,7 @@ endpoints:
     flavor: mate
     kernel: mint-21-mate-squash
   mint-21-xfce-squash:
-    path: /ubuntu-squash/releases/download/21.2-48afaac3/
+    path: /ubuntu-squash/releases/download/21.2-5ca9e396/
     files:
     - initrd
     - vmlinuz
