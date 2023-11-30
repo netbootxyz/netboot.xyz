@@ -1341,7 +1341,7 @@ endpoints:
     flavor: MATE
     kernel: ubuntu-22.04-MATE-squash
   ubuntu-22.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/22.04.3-69c106ea/
+    path: /ubuntu-squash/releases/download/22.04.3-f62a15fd/
     files:
     - filesystem.squashfs
     - initrd
