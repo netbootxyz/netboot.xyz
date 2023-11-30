@@ -1321,7 +1321,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-22.04-default-squash
   ubuntu-22.04-XFCE-squash:
-    path: /ubuntu-squash/releases/download/22.04.3-ee692bdc/
+    path: /ubuntu-squash/releases/download/22.04.3-aa807a3f/
     files:
     - filesystem.squashfs
     - initrd
