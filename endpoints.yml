@@ -1507,7 +1507,7 @@ endpoints:
     os: xcp-ng
     version: '8.2'
   garuda-cinnamon:
-    path: /asset-mirror/releases/download/231029-3ef04424/
+    path: /asset-mirror/releases/download/231029-a67ded1b/
     files:
     - amd_ucode.img
     - desktopfs.sfs
