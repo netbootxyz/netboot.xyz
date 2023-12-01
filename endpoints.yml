@@ -1472,7 +1472,7 @@ endpoints:
     version: '9'
     arch: x86_64
   oracle-9-aarch64:
-    path: /asset-mirror/releases/download/U3-d9adfa9a/
+    path: /asset-mirror/releases/download/U3-e5fe03e0/
     files:
     - vmlinuz
     - initrd
