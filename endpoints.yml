@@ -993,7 +993,7 @@ endpoints:
     version: 10.02
     arch: amd64
   shredos-i686:
-    path: /asset-mirror/releases/download/0.34_32-bit_20221231-570c24e6/
+    path: /asset-mirror/releases/download/0.34_32-bit_20221231-2bfaf199/
     files:
     - shredos
     os: shredos
