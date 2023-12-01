@@ -907,13 +907,13 @@ endpoints:
     os: memtest86-free
     version: '10.6'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20231016T170159Z-dd9167d8/
+    path: /asset-mirror/releases/download/20231023T141658Z-4fd9bcb4/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20231016T170159Z
+    version: 20231023T141658Z
     arch: x86
   gentoo-arm64:
     path: /asset-mirror/releases/download/20231029T231700Z-dd7f103b/
