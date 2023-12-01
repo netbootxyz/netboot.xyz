@@ -1270,7 +1270,7 @@ endpoints:
     os: proxmox-ve
     version: 8.1-1
   proxmox-mailgateway:
-    path: /asset-mirror/releases/download/7.3-1-07068e0a/
+    path: /asset-mirror/releases/download/7.3-1-17cf8bb7/
     files:
     - initrd
     - proxmox-mailgateway.iso
