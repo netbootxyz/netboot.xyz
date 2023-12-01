@@ -1212,7 +1212,7 @@ endpoints:
     flavor: i3wm
     version: 231029
   garuda-sway:
-    path: /asset-mirror/releases/download/231029-9fc58b9f/
+    path: /asset-mirror/releases/download/231029-438b2bbc/
     files:
     - amd_ucode.img
     - desktopfs.sfs
