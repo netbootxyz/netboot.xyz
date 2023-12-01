@@ -1226,7 +1226,7 @@ endpoints:
     flavor: sway
     version: 231029
   garuda-mate:
-    path: /asset-mirror/releases/download/230501-af75e41c/
+    path: /asset-mirror/releases/download/230501-ea731ec3/
     files:
     - amd_ucode.img
     - desktopfs.sfs
