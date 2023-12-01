@@ -1254,13 +1254,13 @@ endpoints:
     flavor: kde-barebones
     version: 220329
   proxmox-backup-server:
-    path: /asset-mirror/releases/download/3.0-1-df3207b8/
+    path: /asset-mirror/releases/download/3.1-1-b63df735/
     files:
     - initrd
     - proxmox-backup-server.iso
     - vmlinuz
     os: proxmox-backup-server
-    version: 3.0-1
+    version: 3.1-1
   proxmox-ve:
     path: /asset-mirror/releases/download/8.1-1-65d59d99/
     files:
