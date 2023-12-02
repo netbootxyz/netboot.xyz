@@ -1830,7 +1830,7 @@ endpoints:
     flavor: kde
     kernel: debian-12-live-kernel
   ubuntu-23.04-default-squash:
-    path: /ubuntu-squash/releases/download/23.04-c8bf2d7c/
+    path: /ubuntu-squash/releases/download/23.04-295fa1c0/
     files:
     - filesystem.squashfs
     - initrd
