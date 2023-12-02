@@ -1499,7 +1499,7 @@ endpoints:
     version: '5.3'
     flavor: security
   xcp-ng:
-    path: /asset-mirror/releases/download/8.2-743f0731/
+    path: /asset-mirror/releases/download/8.2-7ff523e1/
     files:
     - xen.gz
     - vmlinuz
