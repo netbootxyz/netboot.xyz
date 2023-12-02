@@ -393,7 +393,7 @@ endpoints:
     os: blackarch
     version: current
   bluestar:
-    path: /asset-mirror/releases/download/6.6.2-2023.11.24-1cb5e1c9/
+    path: /asset-mirror/releases/download/6.6.3-2023.11.30-a0ca79e8/
     files:
     - initrd
     - vmlinuz
