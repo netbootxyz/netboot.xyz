@@ -784,7 +784,7 @@ endpoints:
     flavor: xfce
     kernel: mint-20-xfce-squash
   mint-20-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/20.3-372f358e/
+    path: /ubuntu-squash/releases/download/20.3-39048f28/
     files:
     - initrd
     - vmlinuz
