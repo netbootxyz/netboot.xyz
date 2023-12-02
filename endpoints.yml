@@ -764,7 +764,7 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon-squash
   mint-20-mate-squash:
-    path: /ubuntu-squash/releases/download/20.3-c2923daf/
+    path: /ubuntu-squash/releases/download/20.3-96841e16/
     files:
     - initrd
     - vmlinuz
