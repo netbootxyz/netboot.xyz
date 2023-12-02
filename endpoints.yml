@@ -1781,7 +1781,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-23.04-Budgie-squash
   ubuntu-23.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/23.04-20dca9a3/
+    path: /ubuntu-squash/releases/download/23.04-93129305/
     files:
     - filesystem.squashfs
     - initrd
