@@ -747,7 +747,7 @@ endpoints:
     os: redorescue
     version: 4.0.0
   mfsbsd-13:
-    path: /asset-mirror/releases/download/13.2-b39066a0/
+    path: /asset-mirror/releases/download/13.2-18c5e428/
     files:
     - default.img
     - special-edition.img
