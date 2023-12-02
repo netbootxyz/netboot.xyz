@@ -495,7 +495,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/44.0-fee53776/
+    path: /asset-mirror/releases/download/44.0-809a81c6/
     files:
     - initrd
     - vmlinuz
