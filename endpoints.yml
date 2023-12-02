@@ -1955,7 +1955,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-23.10-Budgie-squash
   ubuntu-23.10-default-squash:
-    path: /ubuntu-squash/releases/download/23.10.1-b2febf1d/
+    path: /ubuntu-squash/releases/download/23.10.1-0c1c9162/
     files:
     - filesystem.squashfs
     - initrd
