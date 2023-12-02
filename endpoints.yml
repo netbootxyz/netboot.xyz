@@ -723,7 +723,7 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Galileo-11-2023-b00e9b1d/
+    path: /asset-mirror/releases/download/Galileo-11-2023-e0c48f1f/
     files:
     - airootfs.sfs
     - initrd
