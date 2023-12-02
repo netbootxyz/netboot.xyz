@@ -527,7 +527,7 @@ endpoints:
     version: current
     flavor: AntivirusLiveCD
   ubuntu-20.04-default-squash:
-    path: /ubuntu-squash/releases/download/20.04.6-8175a6a7/
+    path: /ubuntu-squash/releases/download/20.04.6-8618b61c/
     files:
     - filesystem.squashfs
     - initrd
