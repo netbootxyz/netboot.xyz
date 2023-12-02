@@ -401,7 +401,7 @@ endpoints:
     os: bluestar
     version: current
   zeninstall:
-    path: /asset-mirror/releases/download/2020.05.27-e0a240cb/
+    path: /asset-mirror/releases/download/2020.05.27-9067550d/
     files:
     - initrd
     - vmlinuz
