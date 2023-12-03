@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.75] - 2023-12-03
+
+### Fixed
+
+- Updated CentOS to be able to pull arm64 images
+- Updates to images that may have been missing curl in the
+  initrd for booting
+
+### Changed
+
+- Uses exit 1 on local boot now to allow for it to roll over
+  to next device in UEFI (Issue #1276)
+- Switches to using proxmox iso from asset releases so that it can
+  also be installed via local assets (Issue #1350)
+
 ## [2.0.74] - 2023-11-14
 
 ### Changed

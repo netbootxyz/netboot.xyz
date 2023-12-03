@@ -6,8 +6,11 @@ goto ${menu} ||
 set os BackBox
 menu ${os}
 item --gap ${os} Versions
-item 7 ${space} ${os} 7
-item 6 ${space} ${os} 6
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "BackBox" and 'squash' in key %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
 choose live_version || goto live_exit
 goto ${live_version}
 
@@ -21,17 +24,11 @@ set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
 {% endif %}
 {% endfor %}
-goto {{ value.version }}-boot
+goto boot-os
 {% endif %}
 {% endfor %}
 
-:6-boot
-imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
-initrd ${kernel_url}initrd
-boot
-
-:7-boot
+:boot-os
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
