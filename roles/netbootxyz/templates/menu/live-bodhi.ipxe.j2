@@ -7,12 +7,7 @@ set os Bodhi
 menu ${os}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "bodhi" and value.version == "6" %}
-item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
-{% endif %}
-{% endfor %}
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "bodhi" and value.version == "5" %}
+{% if value.os == "bodhi" %}
 item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
 {% endif %}
 {% endfor %}
@@ -24,18 +19,12 @@ goto ${live_version}
 :{{ value.version }}-{{ value.flavor }}
 set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
-goto boot-{{ value.version }}
+goto boot-os
 
 {% endif %}
 {% endfor %}
 
-:boot-5
-imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
-initrd ${kernel_url}initrd
-boot
-
-:boot-6
+:boot-os
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
