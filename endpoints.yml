@@ -1941,7 +1941,7 @@ endpoints:
     version: 39
     flavor: Cinnamon
   fedora-39-KDE:
-    path: /fedora-assets/releases/download/1.5-3a868889/
+    path: /fedora-assets/releases/download/1.5-7771763e/
     files:
     - vmlinuz
     - initrd
