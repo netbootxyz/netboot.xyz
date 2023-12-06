@@ -17,11 +17,11 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-        
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install ansible==7.6.0 ansible-lint==6.15.0
+        pip install ansible==9.0.1 ansible-lint==6.22.1
 
     - name: Syntax Check
       run: |

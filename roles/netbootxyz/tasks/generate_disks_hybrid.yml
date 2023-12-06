@@ -8,7 +8,7 @@
       {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.lkrn
   args:
     chdir: "{{ ipxe_source_dir }}/src"
-  when: 
+  when:
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_legacy | default(true) | bool
     - generate_disks_efi | default(true) | bool
