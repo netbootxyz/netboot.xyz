@@ -1977,7 +1977,7 @@ endpoints:
     version: 39
     flavor: MATE_Compiz
   fedora-39-Xfce:
-    path: /fedora-assets/releases/download/1.5-47252a76/
+    path: /fedora-assets/releases/download/1.5-3180dd29/
     files:
     - vmlinuz
     - initrd
