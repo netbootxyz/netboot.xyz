@@ -1959,7 +1959,7 @@ endpoints:
     version: 39
     flavor: LXDE
   fedora-39-LXQt:
-    path: /fedora-assets/releases/download/1.5-4749f2cf/
+    path: /fedora-assets/releases/download/1.5-ee1e19c5/
     files:
     - vmlinuz
     - initrd
