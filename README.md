@@ -185,7 +185,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Voyager | https://voyagerlive.org | No | Yes |
 | VyOS | https://vyos.io | Yes | No |
 | Zen Installer | https://sourceforge.net/projects/revenge-installer | Yes | No |
-| Zorin OS | https://zorinos.com | No | Yes |
+| Zorin OS | https://zorin.com | No | Yes |
 
 ### Utilities
 
@@ -199,7 +199,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | DBAN | http://www.dban.org/ | Kernel |
 | GParted | http://gparted.org | LiveCD |
 | Grml | http://grml.org | LiveCD |
-| Kaspersky Rescue Disk | https://support.kaspersky.com/viruses/krd18 | LiveCD |
+| Kaspersky Rescue Disk | https://support.kaspersky.com/krd18 | LiveCD |
 | Memtest | http://www.memtest.org/ | Kernel |
 | MemTest86 Free | https://www.memtest86.com | USB Img |
 | Redo Rescue | http://redorescue.com/ | LiveCD |
