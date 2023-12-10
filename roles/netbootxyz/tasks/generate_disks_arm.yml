@@ -35,7 +35,8 @@
 - name: Compile iPXE bootloaders for EFI arm64
   ansible.builtin.shell: |
     make clean
-    make CROSS_COMPILE=aarch64-linux-gnu- \
+    make -j{{ make_num_jobs }} \
+         CROSS_COMPILE=aarch64-linux-gnu- \
          ARCH=arm64 \
          EMBED={{ bootloader_filename }} \
          TRUST={{ trust_files }} \
@@ -49,7 +50,8 @@
 - name: Compile iPXE bootloader for EFI arm64 with debug flags
   ansible.builtin.shell: |
     make clean
-    make CROSS_COMPILE=aarch64-linux-gnu- \
+    make -j{{ make_num_jobs }} \
+         CROSS_COMPILE=aarch64-linux-gnu- \
          ARCH=arm64 \
          DEBUG={{ ipxe_debug_options }} \
          EMBED={{ bootloader_filename }} \

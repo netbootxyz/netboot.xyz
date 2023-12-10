@@ -27,7 +27,8 @@
 - name: Compile iPXE bootloader for EFI
   ansible.builtin.shell: |
     make clean
-    make EMBED={{ bootloader_filename }} \
+    make -j{{ make_num_jobs }} \
+         EMBED={{ bootloader_filename }} \
          TRUST={{ trust_files }} \
          bin-x86_64-efi/ipxe.efi \
          bin-x86_64-efi/snp.efi \
@@ -39,7 +40,8 @@
 - name: Compile iPXE bootloader for EFI with debug flags
   ansible.builtin.shell: |
     make clean
-    make EMBED={{ bootloader_filename }} \
+    make -j{{ make_num_jobs }} \
+         EMBED={{ bootloader_filename }} \
          DEBUG={{ ipxe_debug_options }} \
          TRUST={{ trust_files }} \
          bin-x86_64-efi/ipxe.efi \
