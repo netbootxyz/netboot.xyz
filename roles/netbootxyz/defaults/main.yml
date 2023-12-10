@@ -7,6 +7,14 @@ bootloader_http_enabled: true
 bootloader_https_enabled: true
 bootloaders:
   arm:
+  - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
+    ipxe_bin: ipxe.iso
+    output_bin: -arm64.iso
+    type: ISO
+  - desc: Used for creation of USB Keys
+    ipxe_bin: ipxe.img
+    output_bin: -arm64.img
+    type: IMG
   - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.efi
     output_bin: -arm64.efi
