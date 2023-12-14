@@ -137,9 +137,9 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Fatdog64 | https://distro.ibiblio.org/fatdog/web/ | No | Yes |
 | Fedora | https://fedoraproject.org | Yes | Yes |
 | Feren OS | https://ferenos.weebly.com/ | Yes | No |
-| Flatcar Container Linux | https://flatcar-linux.org/ | Yes | No |
+| Flatcar Container Linux | https://www.flatcar.org | Yes | No |
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
-| FreeDOS | http://www.freedos.org | ISO - Memdisk| No |
+| FreeDOS | https://www.freedos.org | ISO - Memdisk| No |
 | Garuda Linux | https://garudalinux.org/ | No | Yes |
 | Gentoo | https://gentoo.org | Yes | Yes |
 | Harvester | https://harvesterhci.io | Yes | No |
@@ -155,7 +155,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Manjaro | https://manjaro.org | No | Yes |
 | Mint | https://linuxmint.com | No | Yes |
 | Microsoft Windows | https://www.microsoft.com | User supplied media | No |
-| MirOS | https://www.mirbsd.org | Yes | No |
+| MirOS | http://www.mirbsd.org | Yes | No |
 | Nitrux | https://nxos.org/ | No | Yes |
 | NixOS | https://nixos.org | Yes | No |
 | OpenBSD | https://openbsd.org | Yes | No |
@@ -193,22 +193,22 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 |------------|-------------------------|------|
 | 4MLinux | https://4mlinux.com/ | Kernel/Initrd |
 | Boot Repair CD | https://sourceforge.net/projects/boot-repair-cd/ | LiveCD |
-| Breakin | http://www.advancedclustering.com/products/software/breakin/ | Kernel/Initrd |
+| Breakin | https://www.advancedclustering.com/products/software/breakin/ | Kernel/Initrd |
 | CAINE | https://www.caine-live.net/ | LiveCD |
-| Clonezilla | http://www.clonezilla.org/ | LiveCD |
-| DBAN | http://www.dban.org/ | Kernel |
-| GParted | http://gparted.org | LiveCD |
-| Grml | http://grml.org | LiveCD |
+| Clonezilla | https://www.clonezilla.org/ | LiveCD |
+| DBAN | https://www.dban.org/ | Kernel |
+| GParted | https://gparted.org | LiveCD |
+| Grml | https://grml.org | LiveCD |
 | Kaspersky Rescue Disk | https://support.kaspersky.com/krd18 | LiveCD |
-| Memtest | http://www.memtest.org/ | Kernel |
+| Memtest | https://www.memtest.org/ | Kernel |
 | MemTest86 Free | https://www.memtest86.com | USB Img |
 | Redo Rescue | http://redorescue.com/ | LiveCD |
 | Rescatux | https://www.supergrubdisk.org/rescatux/ | LiveCD |
 | Rescuezilla | https://rescuezilla.com/ | LiveCD |
 | ShredOS | https://github.com/PartialVolume/shredos.x86_64 | Kernel | 
-| Super Grub2 Disk | http://www.supergrubdisk.org | ISO - Memdisk |
+| Super Grub2 Disk | https://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue | https://system-rescue.org/ | LiveCD |
-| Ultimate Boot CD | http://www.ultimatebootcd.com | ISO - Memdisk |
+| Ultimate Boot CD | https://www.ultimatebootcd.com | ISO - Memdisk |
 
 ### Stargazers over time
 
