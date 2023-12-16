@@ -751,13 +751,6 @@ endpoints:
     version: '20.3'
     flavor: Cinnamon
     kernel: mint-20-cinnamon-squash
-  talos:
-    path: /asset-mirror/releases/download/0.13.4-3f5e10e5/
-    files:
-    - vmlinuz
-    - initramfs.xz
-    os: talos
-    version: 0.13.4
   elementaryos-6-default-squash:
     path: /ubuntu-squash/releases/download/6-3e90a5ea/
     files:
@@ -1338,13 +1331,6 @@ endpoints:
     version: jammy
     flavor: jammy
     kernel: voyager-jammy-squash
-  talos-amd64:
-    path: /asset-mirror/releases/download/1.0.4-9616af8f/
-    files:
-    - vmlinuz-amd64
-    - initramfs-amd64.xz
-    os: talos
-    version: 1.0.4
   pop-22.04-default-squash:
     path: /ubuntu-squash/releases/download/21-a9399656/
     files:
