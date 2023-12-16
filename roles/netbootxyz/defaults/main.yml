@@ -470,6 +470,11 @@ releases:
       name: 20231102T000310Z
   talos:
     enabled: true
+    # Talos kernel parameter reference https://www.talos.dev/latest/reference/kernel/
+    # custom_kernel_params: printk.devkmsg=on slab_nomerge pti=on talos.platform=${talos_platform}
+    #   ${talos_config} console=ttyS0 console=tty0 init_on_alloc=1 init_on_free=1 consoleblank=0
+    #   nvme_core.io_timeout=4294967295 ima_template=ima-ng ima_appraise=fix ima_hash=sha512
+    #   initrd=initrd.magic ${cmdline}
     menu: linux
     mirror: https://github.com/siderolabs/talos/releases
     name: Talos
@@ -480,14 +485,28 @@ releases:
       name: AWS
     - key: azure
       name: Azure
-    - key: digital-ocean
+    - key: digitalocean
       name: Digital Ocean
+    - key: equinixMetal
+      name: Equinix Metal
     - key: gcp
       name: GCP
-    - key: metal
-      name: Equinix Metal
+    - key: hcloud
+      name: Hetzner Cloud
+    - key: nocloud
+      name: Nocloud
+    - key: openstack
+      name: Openstack
+    - key: oracle
+      name: oracle
+    - key: scaleway
+      name: Scaleway
+    - key: upcloud
+      name: Upcloud
     - key: vmware
       name: VMware
+    - key: vultr
+      name: Vultr
   tinycore:
     enabled: true
     menu: linux
