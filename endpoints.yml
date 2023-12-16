@@ -1759,7 +1759,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-23.04-kylin-squash
   debian-12-live-kernel:
-    path: /debian-core-12/releases/download/12.2.0-e814dabe/
+    path: /debian-core-12/releases/download/12.4.0-e814dabe/
     files:
     - initrd
     - vmlinuz
