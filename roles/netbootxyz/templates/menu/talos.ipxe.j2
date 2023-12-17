@@ -1,4 +1,4 @@
-#!ipxe
+!ipxe
 
 # Talos
 # https://github.com/siderolabs/talos/releases
@@ -74,7 +74,7 @@ isset ${talos_base_url} || set talos_base_url ${talos_mirror}/latest/download
 isset ${talos_config_url} && set talos_config talos.config=${talos_config_url} ||
 {# Edit releases.talos.custom_kernel_params in main.yml for custom kernel params #}
 {% if releases.talos.custom_kernel_params is defined and releases.talos.custom_kernel_params %}
-set boot_params {{ releases.talos.kernel_params }}
+set boot_params {{ releases.talos.custom_kernel_params }}
 {% else %}
 set boot_params printk.devkmsg=on slab_nomerge pti=on console=ttyS0 console=tty0 init_on_alloc=1 init_on_free=1 consoleblank=0 nvme_core.io_timeout=4294967295 ima_template=ima-ng ima_appraise=fix ima_hash=sha512 talos.platform=${talos_platform} ${talos_config} initrd=initrd.magic ${cmdline}
 {% endif %}
