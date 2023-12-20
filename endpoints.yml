@@ -2034,3 +2034,13 @@ endpoints:
     - special-edition.img
     os: freebsd
     version: '14'
+  zorin-core-squash:
+    path: /ubuntu-squash/releases/download/17-92dc0c7d/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: zorin
+    version: '17'
+    flavor: Core
+    kernel: zorin-core-squash
