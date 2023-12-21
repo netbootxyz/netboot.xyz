@@ -6,20 +6,18 @@ goto ${menu} ||
 set os Zorin Live
 menu ${os}
 item --gap ${os} Versions
-item 16 ${space} ${os} 16
-item 15 ${space} ${os} 15
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "zorin" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "zorin" and 'squash' in key and value.version == "16" %}
-:{{ value.version }}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-goto flavor_select
-{% endif %}
-{% if value.os == "zorin" and 'squash' in key and value.version == "15" %}
+{% if value.os == "zorin" and 'squash' in key %}
 :{{ value.version }}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 goto flavor_select
@@ -41,17 +39,11 @@ set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
 {% endif %}
 {% endfor %}
-goto {{ value.version }}-boot
+goto boot
 {% endif %}
 {% endfor %}
 
-:15-boot
-imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
-initrd ${kernel_url}initrd
-boot
-
-:16-boot
+:boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
