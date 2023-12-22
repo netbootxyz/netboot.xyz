@@ -616,42 +616,6 @@ endpoints:
     version: rolling
     flavor: rolling
     kernel: vyos-rolling
-  q4os-3.12-plasma-squash:
-    path: /debian-squash/releases/download/3.12-6e0ca54b/
-    files:
-    - filesystem.squashfs
-    os: Q4OS
-    version: '3.12'
-    flavor: plasma
-    kernel: q4os-3.12-default-squash
-  q4os-3.12-default-squash:
-    path: /debian-squash/releases/download/3.12-cf19590d/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Q4OS
-    version: '3.12'
-    flavor: trinity
-    kernel: q4os-3.12-default-squash
-  q4os-3.13-default-squash:
-    path: /debian-squash/releases/download/3.13-18394906/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Q4OS
-    version: '3.13'
-    flavor: trinity
-    kernel: q4os-3.13-default-squash
-  q4os-3.13-plasma-squash:
-    path: /debian-squash/releases/download/3.13-68332b76/
-    files:
-    - filesystem.squashfs
-    os: Q4OS
-    version: '3.13'
-    flavor: plasma
-    kernel: q4os-3.13-default-squash
   pureos-gnome:
     path: /ubuntu-squash/releases/download/2020-08-06-83257efc/
     files:
@@ -956,24 +920,6 @@ endpoints:
     os: archlinux
     version: 2023.03.02
     arch: i686
-  q4os-4.6-default-squash:
-    path: /debian-squash/releases/download/4.6-2de282e7/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Q4OS
-    version: '4.6'
-    flavor: trinity
-    kernel: q4os-4.6-default-squash
-  q4os-4.6-plasma-squash:
-    path: /debian-squash/releases/download/4.6-f1c7b2cc/
-    files:
-    - filesystem.squashfs
-    os: Q4OS
-    version: '4.6'
-    flavor: plasma
-    kernel: q4os-4.6-default-squash
   clonezilla-debian-stable-i686:
     path: /debian-squash/releases/download/3.1.1-27-d9f6cb5e/
     files:
@@ -1535,24 +1481,6 @@ endpoints:
     os: fedora
     version: 37
     flavor: Xfce
-  q4os-4.11-default-squash:
-    path: /debian-squash/releases/download/4.11-41829bdb/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Q4OS
-    version: '4.11'
-    flavor: trinity
-    kernel: q4os-4.11-default-squash
-  q4os-4.11-plasma-squash:
-    path: /debian-squash/releases/download/4.11-62cc7148/
-    files:
-    - filesystem.squashfs
-    os: Q4OS
-    version: '4.11'
-    flavor: plasma
-    kernel: q4os-4.11-default-squash
   elementaryos-7-default-squash:
     path: /ubuntu-squash/releases/download/7-f567b122/
     files:
