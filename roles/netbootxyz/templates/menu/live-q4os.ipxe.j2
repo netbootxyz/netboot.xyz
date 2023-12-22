@@ -7,8 +7,10 @@ set os Q4OS Live
 menu ${os}
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "Q4OS" %}
+{% if value.os == "Q4OS" and 'squash' in key %}
 item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
