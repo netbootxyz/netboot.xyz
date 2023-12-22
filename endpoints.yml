@@ -2042,3 +2042,13 @@ endpoints:
     version: '5.4'
     flavor: plasma
     kernel: q4os-default-squash
+  q4os-default-squash:
+    path: /debian-squash/releases/download/5.4-9df33d1f/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: Q4OS
+    version: '5.4'
+    flavor: trinity
+    kernel: q4os-default-squash
