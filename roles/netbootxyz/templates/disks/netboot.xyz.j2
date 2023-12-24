@@ -39,7 +39,12 @@ iseq ${use_proxydhcp_settings} true && set tftp-server ${proxydhcp/next-server} 
 goto load-custom-ipxe
 
 :load-custom-ipxe
-isset ${tftp-server} && isset ${filename} && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-undionly.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-snp.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-snponly.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ site_name }}-arm64.efi && goto tftpmenu ||
 goto menu
 
 :failsafe
