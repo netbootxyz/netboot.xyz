@@ -48,6 +48,12 @@ echo
 echo -n Enter cmdline parameters: ${} && read cmdline
 goto utils_menu
 
+:memtest86plus
+imgfree
+kernel {{ utilitiesefi.memtest86plus.util_path }}
+boot
+goto utils_menu
+
 :nbxyz_custom_url
 echo If you have a customized menu you would like to load into netboot.xyz
 echo set the base path url to your custom ipxe files here. 
