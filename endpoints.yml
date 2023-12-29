@@ -1963,7 +1963,7 @@ endpoints:
     flavor: Core
     kernel: zorin-core-squash
   q4os-plasma-squash:
-    path: /debian-squash/releases/download/5.4-ba890025/
+    path: /debian-squash/releases/download/5.4-4600bbb9/
     files:
     - filesystem.squashfs
     os: Q4OS
