@@ -701,7 +701,7 @@ utilitiesefi:
     type: ipxemenu
   memtest86plus:
     enabled: true
-    name: Memtest86+ - {{ endpoints.memtest86plus.version }}
+    name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
     util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.efi
     version: '{{ endpoints.memtest86plus.version }}'
@@ -814,7 +814,7 @@ utilitiespcbios64:
     version: 5.01.0
   memtest86plus:
     enabled: true
-    name: Memtest86+ - {{ endpoints.memtest86plus.version }}
+    name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
     util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.bin
     version: '{{ endpoints.memtest86plus.version }}'

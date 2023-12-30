@@ -61,6 +61,11 @@ echo -n Enter cmdline parameters: ${} && read cmdline
 goto utils_menu
 
 :memtest86legacy
+imgfree
+kernel {{ utilitiespcbios64.memtest86legacy.util_path }}
+boot
+goto utils_menu
+
 :memtest86plus
 imgfree
 kernel {{ utilitiespcbios64.memtest86plus.util_path }}
