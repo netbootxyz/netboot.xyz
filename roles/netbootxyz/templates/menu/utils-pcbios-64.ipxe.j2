@@ -60,6 +60,7 @@ echo
 echo -n Enter cmdline parameters: ${} && read cmdline
 goto utils_menu
 
+:memtest86legacy
 :memtest86plus
 imgfree
 kernel {{ utilitiespcbios64.memtest86plus.util_path }}

@@ -738,12 +738,18 @@ utilitiespcbios32:
     enabled: true
     name: Clonezilla
     type: ipxemenu
+  memtest86legacy:
+    enabled: true
+    name: Memtest86+ 5.01.0
+    type: memtest
+    util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
+    version: 5.01.0
   memtest86plus:
     enabled: true
-    name: Memtest86+ - {{ endpoints.memtest86plus.version }}
-    type: memtest
     util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
-    version: '{{ endpoints.memtest86plus.version }}'
+    name: Memtest86+ {{ endpoints.memtest86plus.version }}
+    version: "{{ endpoints.memtest86plus.version }}"
+    type: memtest
   shredos:
     enabled: true
     name: ShredOS
@@ -800,6 +806,12 @@ utilitiespcbios64:
     enabled: true
     name: Kaspersky Rescue Disk
     type: ipxemenu
+  memtest86legacy:
+    enabled: true
+    name: Memtest86+ 5.01.0
+    type: memtest
+    util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
+    version: 5.01.0
   memtest86plus:
     enabled: true
     name: Memtest86+ - {{ endpoints.memtest86plus.version }}
