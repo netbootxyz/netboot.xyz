@@ -701,10 +701,10 @@ utilitiesefi:
     type: ipxemenu
   memtest86plus:
     enabled: true
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.efi
     name: Memtest86+ - {{ endpoints.memtest86plus.version }}
-    version: "{{ endpoints.memtest86plus.version }}"
     type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.efi
+    version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
@@ -740,10 +740,10 @@ utilitiespcbios32:
     type: ipxemenu
   memtest86plus:
     enabled: true
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
     name: Memtest86+ - {{ endpoints.memtest86plus.version }}
-    version: "{{ endpoints.memtest86plus.version }}"
     type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
+    version: '{{ endpoints.memtest86plus.version }}'
   shredos:
     enabled: true
     name: ShredOS
@@ -802,10 +802,10 @@ utilitiespcbios64:
     type: ipxemenu
   memtest86plus:
     enabled: true
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.bin
     name: Memtest86+ - {{ endpoints.memtest86plus.version }}
-    version: "{{ endpoints.memtest86plus.version }}"
     type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.bin
+    version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
