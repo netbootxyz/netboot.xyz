@@ -7,6 +7,14 @@ bootloader_http_enabled: true
 bootloader_https_enabled: true
 bootloaders:
   arm:
+  - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
+    ipxe_bin: ipxe.iso
+    output_bin: -arm64.iso
+    type: ISO
+  - desc: Used for creation of USB Keys
+    ipxe_bin: ipxe.img
+    output_bin: -arm64.img
+    type: IMG
   - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.efi
     output_bin: -arm64.efi
@@ -112,6 +120,7 @@ ipxe_repo: https://github.com/ipxe/ipxe
 ipxe_source_dir: /usr/src/ipxe
 kernel_params: initrd=initrd.magic ${cmdline}
 live_endpoint: https://github.com/netbootxyz
+make_num_jobs: 1
 memdisk_location: http://${boot_domain}/memdisk
 netbootxyz_conf_dir: /etc/netbootxyz
 netbootxyz_root: /var/www/html
@@ -138,8 +147,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.18
-      name: '3.18'
+    - code_name: v3.19
+      name: '3.19'
     - code_name: edge
       name: Edge (development)
   archlinux:
@@ -149,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.11.01
-      name: 2023.11.01
+    - code_name: 2023.12.01
+      name: 2023.12.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,11 +191,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 38.20231027.3.2
+    - code_name: 39.20231119.3.0
       name: stable
-    - code_name: 39.20231101.2.0
+    - code_name: 39.20231204.2.1
       name: testing
-    - code_name: 39.20231106.1.0
+    - code_name: 39.20231204.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -282,8 +291,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core180
-      name: 2.27 Core180
+    - code_name: 2.27-core181
+      name: 2.27 Core181
   k3os:
     enabled: true
     menu: linux
@@ -327,6 +336,8 @@ releases:
       name: nixos-22.11
     - code_name: nixos-23.05
       name: nixos-23.05
+    - code_name: nixos-23.11
+      name: nixos-23.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -449,14 +460,14 @@ releases:
     mirror: https://netboot.joyent.com/os/
     name: SmartOS
     versions:
-    - code_name: 20231102T000310Z
-      name: 20231102T000310Z
-    - code_name: 20231019T000454Z
-      name: 20231019T000454Z
-    - code_name: 20231005T000607Z
-      name: 20231005T000607Z
-    - code_name: 20230921T034751Z
-      name: 20230921T034751Z
+    - code_name: 20231228T001409Z
+      name: 20231228T001409Z
+    - code_name: 20231214T000645Z
+      name: 20231214T000645Z
+    - code_name: 20231130T043122Z
+      name: 20231130T043122Z
+    - code_name: 20231116T064739Z
+      name: 20231116T064739Z
   talos:
     enabled: true
     menu: linux
@@ -469,14 +480,28 @@ releases:
       name: AWS
     - key: azure
       name: Azure
-    - key: digital-ocean
+    - key: digitalocean
       name: Digital Ocean
+    - key: equinixMetal
+      name: Equinix Metal
     - key: gcp
       name: GCP
-    - key: metal
-      name: Equinix Metal
+    - key: hcloud
+      name: Hetzner Cloud
+    - key: nocloud
+      name: Nocloud
+    - key: openstack
+      name: Openstack
+    - key: oracle
+      name: oracle
+    - key: scaleway
+      name: Scaleway
+    - key: upcloud
+      name: Upcloud
     - key: vmware
       name: VMware
+    - key: vultr
+      name: Vultr
   tinycore:
     enabled: true
     menu: linux
@@ -674,11 +699,12 @@ utilitiesefi:
     enabled: true
     name: Kaspersky Rescue Disk
     type: ipxemenu
-  memtest86:
-    enabled: false
-    kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
-    name: Memtest86 Free - {{ endpoints.memtest86.version }}
-    type: sanboot
+  memtest86plus:
+    enabled: true
+    name: Memtest86+ {{ endpoints.memtest86plus.version }}
+    type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.efi
+    version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd
@@ -712,12 +738,18 @@ utilitiespcbios32:
     enabled: true
     name: Clonezilla
     type: ipxemenu
-  memtest:
+  memtest86legacy:
     enabled: true
-    name: Memtest
+    name: Memtest86+ 5.01.0
     type: memtest
     util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
     version: 5.01.0
+  memtest86plus:
+    enabled: true
+    name: Memtest86+ {{ endpoints.memtest86plus.version }}
+    type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
+    version: '{{ endpoints.memtest86plus.version }}'
   shredos:
     enabled: true
     name: ShredOS
@@ -774,12 +806,18 @@ utilitiespcbios64:
     enabled: true
     name: Kaspersky Rescue Disk
     type: ipxemenu
-  memtest:
+  memtest86legacy:
     enabled: true
-    name: Memtest
+    name: Memtest86+ 5.01.0
     type: memtest
     util_path: https://boot.netboot.xyz/utils/memtest86-5.01.0
     version: 5.01.0
+  memtest86plus:
+    enabled: true
+    name: Memtest86+ {{ endpoints.memtest86plus.version }}
+    type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.bin
+    version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
     initrd: ${live_endpoint}{{ endpoints.redorescue.path }}initrd

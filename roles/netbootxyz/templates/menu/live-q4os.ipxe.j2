@@ -6,15 +6,19 @@ goto ${menu} ||
 set os Q4OS Live
 menu ${os}
 item --gap ${os} Versions
-item 4.6 ${space} ${os} 4.6
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "Q4OS" and 'squash' in key %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
 
-:4.6
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "Q4OS" and 'squash' in key and value.version == "4.6" %}
+{% if value.os == "Q4OS" and 'squash' in key %}
+:{{ value.version }}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}

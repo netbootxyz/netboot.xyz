@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.76] - 2023-12-31
+
+### Added
+
+- Memtest86+ 6.20 for EFI and Legacy x86_64 modes, leaves 5.01 for Legacy purposes
+  as some issues were noticed loading 6.20 Legacy on KVM where it hangs on
+  loading but works fine using VMware.
+- ARM ISO and USB Images added
+- Tunable make_num_jobs for compiling in parallel
+
 ## [2.0.75] - 2023-12-03
 
 ### Fixed
