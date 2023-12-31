@@ -746,10 +746,10 @@ utilitiespcbios32:
     version: 5.01.0
   memtest86plus:
     enabled: true
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
-    version: "{{ endpoints.memtest86plus.version }}"
     type: memtest
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
+    version: '{{ endpoints.memtest86plus.version }}'
   shredos:
     enabled: true
     name: ShredOS
