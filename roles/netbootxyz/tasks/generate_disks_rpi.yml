@@ -50,7 +50,7 @@
 
 - name: Compile iPXE bootloader for RPI build
   ansible.builtin.shell: |
-    make
+    make -j{{ make_num_jobs }}
   args:
     chdir: "{{ pipxe_source_dir }}"
 

@@ -1,8 +1,8 @@
-#!ipxe
+!ipxe
 
 # Talos
 # https://github.com/siderolabs/talos/releases
-# https://www.talos.dev/v1.0/talos-guides/install/bare-metal-platforms/matchbox/
+# https://www.talos.dev/v1.6/talos-guides/install/bare-metal-platforms/pxe
 
 goto ${menu} ||
 
@@ -59,6 +59,7 @@ echo -n Set userdata.yaml URL:  && read talos_config_url
 clear menu
 goto talos
 
+# https://www.talos.dev/latest/reference/kernel/#talosplatform
 :talos_platform
 menu ${os} platforms
 {% for item in releases.talos.platforms %}
@@ -67,10 +68,16 @@ item {{ item.key }} ${space} {{ item.name }}
 choose --default ${talos_platform} talos_platform
 goto talos
 
+# https://www.talos.dev/latest/reference/kernel/
 :talos_boot
 isset ${talos_base_url} || set talos_base_url ${talos_mirror}/latest/download
 isset ${talos_config_url} && set talos_config talos.config=${talos_config_url} ||
-set boot_params page_poison=1 printk.devkmsg=on slab_nomerge slub_debug=P pti=on talos.platform=${talos_platform} ${talos_config} {{ kernel_params }}
+{# Edit releases.talos.custom_kernel_params in main.yml for custom kernel params #}
+{% if releases.talos.custom_kernel_params is defined and releases.talos.custom_kernel_params %}
+set boot_params {{ releases.talos.custom_kernel_params }}
+{% else %}
+set boot_params printk.devkmsg=on slab_nomerge pti=on console=ttyS0 console=tty0 init_on_alloc=1 init_on_free=1 consoleblank=0 nvme_core.io_timeout=4294967295 ima_template=ima-ng ima_appraise=fix ima_hash=sha512 talos.platform=${talos_platform} ${talos_config} initrd=initrd.magic ${cmdline}
+{% endif %}
 imgfree
 kernel ${talos_base_url}/vmlinuz-${os_arch} ${boot_params}
 initrd ${talos_base_url}/initramfs-${os_arch}.xz
