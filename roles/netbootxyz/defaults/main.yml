@@ -457,7 +457,7 @@ releases:
     base_dir: /platform/i86pc/
     enabled: true
     menu: unix
-    mirror: https://netboot.joyent.com/os/
+    mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
     - code_name: 20240111T002438Z
