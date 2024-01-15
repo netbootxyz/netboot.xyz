@@ -7,6 +7,13 @@ assignees: ''
 
 ---
 
+[]: This bug persists when memory is increased beyond 8GB.
+<!--
+Please validate that the issue is not a symptom of insufficient memory.
+Many installation media are based on live-cd images that require more than
+a few MB/GB of memory to run.
+-->
+
 **Describe the bug**
 <!-- A clear and concise description of what the bug is. -->
 
