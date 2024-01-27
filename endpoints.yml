@@ -839,11 +839,12 @@ endpoints:
     version: 20231126T163200Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/5.21-4cc03645/
+    path: /asset-mirror/releases/download/5.21-996eaca1/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
+    - tails-amd64-5.21.iso
     os: tails
     version: '5.21'
     arch: amd64
