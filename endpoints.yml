@@ -812,13 +812,13 @@ endpoints:
     os: memtest86-free
     version: '10.6'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20240115T161851Z-bb45ee28/
+    path: /asset-mirror/releases/download/20231106T160201Z-bb45ee28/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20240115T161851Z
+    version: 20231106T160201Z
     arch: x86
   gentoo-arm64:
     path: /asset-mirror/releases/download/20231105T230202Z-cf0aebeb/
