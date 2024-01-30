@@ -49,7 +49,7 @@ exit
     {% for item in bootloaders.hybrid %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
@@ -86,7 +86,7 @@ exit
     {% for item in bootloaders.legacy %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
@@ -107,7 +107,7 @@ exit
     {% for item in bootloaders.uefi %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
@@ -128,7 +128,7 @@ exit
     {% for item in bootloaders.arm %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
@@ -149,7 +149,7 @@ exit
     {% for item in bootloaders.rpi %}
     <tr>
        <td> {{ item.type }} </td>
-       <td> <a href="ipxe/{{ site_name }}{{ item.output_bin }}">{{ site_name }}{{ item.output_bin }}</a> </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
