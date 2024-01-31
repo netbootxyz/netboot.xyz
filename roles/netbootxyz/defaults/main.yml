@@ -642,7 +642,7 @@ releases:
     name: VyOS
     versions:
     - code_name: rolling
-      name: 1.4 rolling
+      name: 1.5 rolling
   zeninstall:
     enabled: true
     menu: linux
