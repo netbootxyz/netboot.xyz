@@ -922,13 +922,13 @@ endpoints:
     version: 2023.03.02
     arch: i686
   clonezilla-debian-stable-i686:
-    path: /debian-squash/releases/download/3.1.1-27-d9f6cb5e/
+    path: /debian-squash/releases/download/3.1.2-9-d9f6cb5e/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.1.1-27
+    version: 3.1.2-9
     flavor: stable
     kernel: clonezilla-debian-stable-i686
     arch: i686
