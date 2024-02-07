@@ -193,9 +193,9 @@ releases:
     versions:
     - code_name: 39.20240112.3.0
       name: stable
-    - code_name: 39.20240128.2.0
+    - code_name: 39.20240128.2.2
       name: testing
-    - code_name: 39.20240128.1.0
+    - code_name: 39.20240128.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
