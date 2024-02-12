@@ -891,7 +891,7 @@ endpoints:
     version: 9.03
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/11.00-182f0000/
+    path: /asset-mirror/releases/download/11.00-fe06daaa/
     files:
     - airootfs.sfs
     - initrd
