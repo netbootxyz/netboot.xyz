@@ -618,8 +618,6 @@ releases:
     versions:
     - code_name: mantic
       name: 23.10 Mantic Minotaur
-    - code_name: lunar
-      name: 23.04 Lunar Lobster
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal

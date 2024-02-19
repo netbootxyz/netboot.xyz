@@ -1582,29 +1582,6 @@ endpoints:
     os: fedora
     version: 38
     flavor: i3
-  ubuntu-netboot-23.04-arm64:
-    path: /ubuntu-squash/releases/download/23.04-38d31c0e/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    codename: kinetic
-    flavor: netboot
-    kernel: ubuntu-netboot-23.04-arm64
-    arch: arm64
-  ubuntu-netboot-23.04-amd64:
-    path: /ubuntu-squash/releases/download/23.04-0dbdfbd3/
-    files:
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    codename: lunar
-    flavor: netboot
-    kernel: ubuntu-netboot-23.04-amd64
-    arch: amd64
   fedora-38-Xfce:
     path: /fedora-assets/releases/download/1.6-65b602e2/
     files:
@@ -1614,56 +1591,6 @@ endpoints:
     os: fedora
     version: 38
     flavor: Xfce
-  ubuntu-23.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/23.04-f7cc1728/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    flavor: KDE
-    kernel: ubuntu-23.04-KDE-squash
-  ubuntu-23.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/23.04-7d40f9d4/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    flavor: LXQT
-    kernel: ubuntu-23.04-LXQT-squash
-  ubuntu-23.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/23.04-5249fe2e/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    flavor: Budgie
-    kernel: ubuntu-23.04-Budgie-squash
-  ubuntu-23.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/23.04-93129305/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    flavor: MATE
-    kernel: ubuntu-23.04-MATE-squash
-  ubuntu-23.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/23.04-4e7c827d/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    flavor: kylin
-    kernel: ubuntu-23.04-kylin-squash
   debian-12-live-kernel:
     path: /debian-core-12/releases/download/12.5.0-e814dabe/
     files:
@@ -1735,16 +1662,6 @@ endpoints:
     version: '12'
     flavor: kde
     kernel: debian-12-live-kernel
-  ubuntu-23.04-default-squash:
-    path: /ubuntu-squash/releases/download/23.04-295fa1c0/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.04'
-    flavor: GNOME
-    kernel: ubuntu-23.04-default-squash
   ubuntu-netboot-23.10-arm64:
     path: /ubuntu-squash/releases/download/23.10-729b6a9e/
     files:
