@@ -508,13 +508,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /14.x/x86/release/distribution_files/core.gz
-      kernel: /14.x/x86/release/distribution_files/vmlinuz
+      initrd: /15.x/x86/release/distribution_files/core.gz
+      kernel: /15.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /14.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /14.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /15.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /15.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
