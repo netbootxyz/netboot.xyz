@@ -1,7 +1,7 @@
 #!ipxe
 ######################################
 # SmartOS                            #
-# https://www.joyent.com/smartos     #
+# https://www.smartos.org/           #
 # Credit: https://github.com/bahamat #
 ######################################
 
@@ -28,7 +28,7 @@ item toggle_kmdb_b ${space} Boot Kernel Debugger First: ${kmdb_b}
 
 iseq ${noimport} true && item --gap ${space} ||
 iseq ${noimport} true && item --gap ${space} Zpool will not be imported. Rescue mode root password can be found at ||
-iseq ${noimport} true && item --gap ${space} http://us-east.manta.joyent.com/Joyent_Dev/public/SmartOS/smartos.html ||
+iseq ${noimport} true && item --gap ${space} https://us-central.manta.mnx.io/Joyent_Dev/public/SmartOS/smartos.html ||
 
 choose smartos_build || goto smartos_exit
 iseq ${smartos_build} toggle_pool && goto toggle_pool ||

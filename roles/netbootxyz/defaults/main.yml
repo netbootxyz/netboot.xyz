@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2023.12.01
-      name: 2023.12.01
+    - code_name: 2024.02.01
+      name: 2024.02.01
   blackarch:
     enabled: true
     menu: linux
@@ -191,11 +191,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 39.20231119.3.0
+    - code_name: 39.20240128.3.0
       name: stable
-    - code_name: 39.20231204.2.1
+    - code_name: 39.20240210.2.0
       name: testing
-    - code_name: 39.20231204.1.0
+    - code_name: 39.20240210.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -245,8 +245,6 @@ releases:
       name: 39
     - code_name: 38
       name: 38
-    - code_name: 37
-      name: 37
   flatcar:
     enabled: true
     menu: linux
@@ -291,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.27-core181
-      name: 2.27 Core181
+    - code_name: 2.29-core183
+      name: 2.29 Core183
   k3os:
     enabled: true
     menu: linux
@@ -457,17 +455,17 @@ releases:
     base_dir: /platform/i86pc/
     enabled: true
     menu: unix
-    mirror: https://netboot.joyent.com/os/
+    mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20231228T001409Z
-      name: 20231228T001409Z
-    - code_name: 20231214T000645Z
-      name: 20231214T000645Z
-    - code_name: 20231130T043122Z
-      name: 20231130T043122Z
-    - code_name: 20231116T064739Z
-      name: 20231116T064739Z
+    - code_name: 20240222T001232Z
+      name: 20240222T001232Z
+    - code_name: 20240208T000334Z
+      name: 20240208T000334Z
+    - code_name: 20240125T000404Z
+      name: 20240125T000404Z
+    - code_name: 20240111T002438Z
+      name: 20240111T002438Z
   talos:
     enabled: true
     menu: linux
@@ -510,13 +508,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /14.x/x86/release/distribution_files/core.gz
-      kernel: /14.x/x86/release/distribution_files/vmlinuz
+      initrd: /15.x/x86/release/distribution_files/core.gz
+      kernel: /15.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /14.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /14.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /15.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /15.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
@@ -618,8 +616,6 @@ releases:
     versions:
     - code_name: mantic
       name: 23.10 Mantic Minotaur
-    - code_name: lunar
-      name: 23.04 Lunar Lobster
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal
@@ -642,7 +638,7 @@ releases:
     name: VyOS
     versions:
     - code_name: rolling
-      name: 1.4 rolling
+      name: 1.5 rolling
   zeninstall:
     enabled: true
     menu: linux
