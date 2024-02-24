@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.78] - 2024-00-00
+
 ## [2.0.77] - 2024-02-24
 
 ### Fixed
