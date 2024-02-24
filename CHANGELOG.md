@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.77] - 2024-02-24
+
+### Fixed
+
+- Talos menu fixed
+
+### Changed
+
+- Use bootloader_filename instead of site_name for bootloader filenames
+
 ## [2.0.76] - 2023-12-31
 
 ### Added
