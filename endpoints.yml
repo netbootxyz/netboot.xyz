@@ -1747,7 +1747,7 @@ endpoints:
     version: 39
     flavor: SoaS
   ubuntu-22.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/22.04.3-5e3b8766/
+    path: /ubuntu-squash/releases/download/22.04.4-5e3b8766/
     files:
     - filesystem.squashfs
     - initrd
