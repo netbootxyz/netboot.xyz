@@ -205,7 +205,7 @@ endpoints:
     os: dban
     version: 2.3.0
   sparky-stable-mingui:
-    path: /debian-squash/releases/download/7.2-878f4bd5/
+    path: /debian-squash/releases/download/7.3-878f4bd5/
     files:
     - filesystem.squashfs
     - initrd
