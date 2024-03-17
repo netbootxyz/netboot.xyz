@@ -849,13 +849,13 @@ endpoints:
     version: '6.0'
     arch: amd64
   hrmpf:
-    path: /asset-mirror/releases/download/20230105-b11dcf35/
+    path: /asset-mirror/releases/download/20231124-0d939359/
     files:
     - vmlinuz
     - initrd
     - squashfs.img
     os: hrmpf
-    version: '20230105'
+    version: '20231124'
   ubuntu-netboot-20.04-arm64:
     path: /ubuntu-squash/releases/download/20.04.5-9bdb1571/
     files:
