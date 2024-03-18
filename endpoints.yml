@@ -913,7 +913,7 @@ endpoints:
     version: 2023.08.2_25.0_x86-64_0.35
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2023.03.02-ff8d2f29/
+    path: /asset-mirror/releases/download/2023.03.02-f7a7f796/
     files:
     - airootfs.sfs
     - initramfs-linux.img
