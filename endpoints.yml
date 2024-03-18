@@ -668,7 +668,7 @@ endpoints:
     os: kodachi
     version: '8'
   redorescue:
-    path: /asset-mirror/releases/download/4.0.0-a432ed79/
+    path: /asset-mirror/releases/download/4.0.0-838b6fef/
     files:
     - filesystem.squashfs
     - initrd
