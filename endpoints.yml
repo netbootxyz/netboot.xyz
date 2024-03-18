@@ -849,7 +849,7 @@ endpoints:
     version: '6.0'
     arch: amd64
   hrmpf:
-    path: /asset-mirror/releases/download/20231124-0d939359/
+    path: /asset-mirror/releases/download/20231124-1008bb6d/
     files:
     - vmlinuz
     - initrd
