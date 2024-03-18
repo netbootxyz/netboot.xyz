@@ -1783,7 +1783,7 @@ endpoints:
     version: 7.0.0
     flavor: apppack
   mfsbsd-14:
-    path: /asset-mirror/releases/download/14.0-7cfab9de/
+    path: /asset-mirror/releases/download/14.0-a5094acd/
     files:
     - default.img
     - special-edition.img
