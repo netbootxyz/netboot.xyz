@@ -1380,7 +1380,7 @@ endpoints:
     version: '6.0'
     flavor: security
   xcp-ng:
-    path: /asset-mirror/releases/download/8.2-7ff523e1/
+    path: /asset-mirror/releases/download/8.2-55521b28/
     files:
     - xen.gz
     - vmlinuz
