@@ -899,7 +899,7 @@ endpoints:
     version: 11.0
     arch: amd64
   shredos-i686:
-    path: /asset-mirror/releases/download/0.34_32-bit_20221231-55f696e0/
+    path: /asset-mirror/releases/download/0.34_32-bit_20221231-3adcc4d0/
     files:
     - shredos
     os: shredos
