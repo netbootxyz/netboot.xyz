@@ -1818,7 +1818,7 @@ endpoints:
     flavor: trinity
     kernel: q4os-default-squash
   memtest86plus:
-    path: /asset-mirror/releases/download/7.00-e94f62f9/
+    path: /asset-mirror/releases/download/7.00-014832f7/
     files:
     - memtest32.bin
     - memtest32.efi
