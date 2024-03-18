@@ -821,7 +821,7 @@ endpoints:
     version: 20231106T160201Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20231105T230202Z-cf0aebeb/
+    path: /asset-mirror/releases/download/20231105T230202Z-d5972d15/
     files:
     - image.squashfs
     - initrd
