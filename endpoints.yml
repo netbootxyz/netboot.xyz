@@ -1718,7 +1718,7 @@ endpoints:
     version: 39
     flavor: MATE_Compiz
   fedora-39-Xfce:
-    path: /fedora-assets/releases/download/1.5-3180dd29/
+    path: /fedora-assets/releases/download/1.5-c03946cc/
     files:
     - vmlinuz
     - initrd
