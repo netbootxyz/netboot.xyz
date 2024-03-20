@@ -1727,7 +1727,7 @@ endpoints:
     version: 39
     flavor: Xfce
   fedora-39-i3:
-    path: /fedora-assets/releases/download/1.5-3ca11c98/
+    path: /fedora-assets/releases/download/1.5-db983595/
     files:
     - vmlinuz
     - initrd
