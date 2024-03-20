@@ -1447,7 +1447,7 @@ endpoints:
     version: 38
     flavor: Cinnamon
   fedora-38-LXDE:
-    path: /fedora-assets/releases/download/1.6-e7b172f8/
+    path: /fedora-assets/releases/download/1.6-a20bfa52/
     files:
     - vmlinuz
     - initrd
