@@ -1709,7 +1709,7 @@ endpoints:
     version: 39
     flavor: LXQt
   fedora-39-MATE_Compiz:
-    path: /fedora-assets/releases/download/1.5-be74b536/
+    path: /fedora-assets/releases/download/1.5-6fcbc121/
     files:
     - vmlinuz
     - initrd
