@@ -1456,7 +1456,7 @@ endpoints:
     version: 38
     flavor: LXDE
   fedora-38-KDE:
-    path: /fedora-assets/releases/download/1.6-7849a809/
+    path: /fedora-assets/releases/download/1.6-cb69598e/
     files:
     - vmlinuz
     - initrd
