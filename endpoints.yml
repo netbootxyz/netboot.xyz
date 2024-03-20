@@ -1438,7 +1438,7 @@ endpoints:
     version: 38
     flavor: GNOME
   fedora-38-Cinnamon:
-    path: /fedora-assets/releases/download/1.6-568c3951/
+    path: /fedora-assets/releases/download/1.6-777dc12b/
     files:
     - vmlinuz
     - initrd
