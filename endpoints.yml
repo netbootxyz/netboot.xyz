@@ -1736,7 +1736,7 @@ endpoints:
     version: 39
     flavor: i3
   fedora-39-SoaS:
-    path: /fedora-assets/releases/download/1.5-2ef7c492/
+    path: /fedora-assets/releases/download/1.5-73bb8f8d/
     files:
     - vmlinuz
     - initrd
