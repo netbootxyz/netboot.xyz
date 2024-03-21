@@ -1419,7 +1419,7 @@ endpoints:
     flavor: LXQT
     kernel: ubuntu-18.04-live-kernel
   ubuntu-20.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/20.04.5-ee03c90c/
+    path: /ubuntu-squash/releases/download/20.04.5-95f04bf8/
     files:
     - filesystem.squashfs
     - initrd
