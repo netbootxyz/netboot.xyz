@@ -1239,7 +1239,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-22.04-Budgie-squash
   ubuntu-22.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/22.04.4-f0376911/
+    path: /ubuntu-squash/releases/download/22.04.4-36909c4f/
     files:
     - filesystem.squashfs
     - initrd
