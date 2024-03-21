@@ -1269,7 +1269,7 @@ endpoints:
     flavor: jammy
     kernel: voyager-jammy-squash
   pop-22.04-default-squash:
-    path: /ubuntu-squash/releases/download/21-a9399656/
+    path: /ubuntu-squash/releases/download/21-3c299ef8/
     files:
     - filesystem.squashfs
     - initrd
