@@ -1614,7 +1614,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-23.10-KDE-squash
   ubuntu-23.10-LXQT-squash:
-    path: /ubuntu-squash/releases/download/23.10-20e3d208/
+    path: /ubuntu-squash/releases/download/23.10-97f7b2e1/
     files:
     - filesystem.squashfs
     - initrd
