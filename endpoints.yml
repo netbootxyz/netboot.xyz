@@ -1634,7 +1634,7 @@ endpoints:
     flavor: kylin
     kernel: ubuntu-23.10-kylin-squash
   ubuntu-23.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/23.10-2dbdd372/
+    path: /ubuntu-squash/releases/download/23.10-ff256faa/
     files:
     - filesystem.squashfs
     - initrd
