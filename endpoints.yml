@@ -522,7 +522,7 @@ endpoints:
     flavor: XFCE
     kernel: ubuntu-20.04-XFCE-squash
   ubuntu-20.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/20.04.6-3befab1b/
+    path: /ubuntu-squash/releases/download/20.04.6-a64212f3/
     files:
     - filesystem.squashfs
     - initrd
