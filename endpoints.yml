@@ -1790,7 +1790,7 @@ endpoints:
     os: freebsd
     version: '14'
   zorin-core-squash:
-    path: /ubuntu-squash/releases/download/17.1-37f63f6b/
+    path: /ubuntu-squash/releases/download/17.1-a87e018b/
     files:
     - filesystem.squashfs
     - initrd
