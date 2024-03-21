@@ -1314,7 +1314,7 @@ endpoints:
     version: 6.4
     kernel: linux-lite-6-squash
   mint-21-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/21.3-b6bc2860/
+    path: /ubuntu-squash/releases/download/21.3-54642d82/
     files:
     - initrd
     - vmlinuz
