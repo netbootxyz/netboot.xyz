@@ -676,7 +676,7 @@ endpoints:
     os: redorescue
     version: 4.0.0
   mint-lmde-cinnamon-squash:
-    path: /debian-squash/releases/download/6-a3a19783/
+    path: /debian-squash/releases/download/6-dc29210f/
     files:
     - filesystem.squashfs
     - initrd
