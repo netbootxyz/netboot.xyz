@@ -300,7 +300,7 @@ endpoints:
     version: '2'
     flavor: ascii
   grml-full:
-    path: /debian-squash/releases/download/2022.11-5d91c94f/
+    path: /debian-squash/releases/download/2022.11-35e8171b/
     files:
     - filesystem.squashfs
     - initrd
