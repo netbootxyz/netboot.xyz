@@ -174,7 +174,7 @@ endpoints:
     version: '15'
     kernel: deepin-15-squash
   feren-squash:
-    path: /ubuntu-squash/releases/download/2023.01-1d46b944/
+    path: /ubuntu-squash/releases/download/2023.01-2aadd48c/
     files:
     - filesystem.squashfs
     - initrd
