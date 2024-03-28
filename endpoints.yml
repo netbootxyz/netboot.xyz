@@ -46,7 +46,7 @@ endpoints:
     flavor: KDE
     kernel: ubuntu-18.04-live-kernel
   ubuntu-18.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-be9dd330/
+    path: /ubuntu-squash/releases/download/18.04.5-b71b6d21/
     files:
     - filesystem.squashfs
     os: ubuntu
