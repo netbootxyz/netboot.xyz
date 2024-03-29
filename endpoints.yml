@@ -326,7 +326,7 @@ endpoints:
     os: gparted
     version: stable
   rescatux:
-    path: /debian-squash/releases/download/0.72-beta8-2db92971/
+    path: /debian-squash/releases/download/0.72-beta8-55ca0efd/
     files:
     - filesystem.squashfs
     - initrd
