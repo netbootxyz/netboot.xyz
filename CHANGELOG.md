@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.78] - 2024-00-00
+## [2.0.78] - 2024-03-30
+
+### Fixed
+
+- Resolves an issue with the generated index having incorrect naming on the links due
+  to a previous variable name change on the index template
+- Proxmox iso names are corrected for backup and mailgateway
 
 ## [2.0.77] - 2024-02-24
 
