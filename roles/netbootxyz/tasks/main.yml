@@ -2,7 +2,7 @@
 
 - name: Print Bootloader Disks to Build
   ansible.builtin.debug:
-    var: bootloader_disks
+    var: bootloader_flavors
 
 - name: Generate menus
   ansible.builtin.include_tasks: generate_menus.yml
@@ -17,7 +17,7 @@
 - name: Generate iPXE bootloaders
   ansible.builtin.include_tasks: generate_disks.yml
   with_items:
-    - "{{ bootloader_disks }}"
+    - "{{ bootloader_flavors }}"
   loop_control:
     loop_var: bootloader_file
   when:
