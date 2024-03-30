@@ -8,7 +8,7 @@ generate_disks_rpi: false
 generate_version_file: true
 generate_local_vars: false
 bootloader_multiple: true
-bootloader_flavors:
+bootloader_disks:
   - "netboot.xyz"
   - "netboot.xyz-metal"
 generate_signatures: true
