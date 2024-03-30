@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.03.01
-      name: 2024.03.01
+    - code_name: 2024.03.29
+      name: 2024.03.29
   blackarch:
     enabled: true
     menu: linux
