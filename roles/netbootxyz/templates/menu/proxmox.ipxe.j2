@@ -79,7 +79,7 @@ set proxmox_version {{ value.version }}
 imgfree
 kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
 initrd ${kernel_url}initrd
-initrd ${kernel_url}proxmox-backup-server.iso /proxmox.iso
+initrd ${kernel_url}proxmox.iso /proxmox.iso
 boot
 
 :boot-pmg
@@ -92,7 +92,7 @@ set proxmox_version {{ value.version }}
 imgfree
 kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
 initrd ${kernel_url}initrd
-initrd ${kernel_url}proxmox-mailgateway.iso /proxmox.iso
+initrd ${kernel_url}proxmox.iso /proxmox.iso
 boot
 
 :boot-pve
