@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.02.01
-      name: 2024.02.01
+    - code_name: 2024.03.29
+      name: 2024.03.29
   blackarch:
     enabled: true
     menu: linux
@@ -191,11 +191,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 39.20240128.3.0
+    - code_name: 39.20240309.3.0
       name: stable
-    - code_name: 39.20240210.2.0
+    - code_name: 39.20240322.2.0
       name: testing
-    - code_name: 39.20240210.1.0
+    - code_name: 40.20240322.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -289,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core183
-      name: 2.29 Core183
+    - code_name: 2.29-core184
+      name: 2.29 Core184
   k3os:
     enabled: true
     menu: linux
@@ -458,14 +458,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
+    - code_name: 20240321T001600Z
+      name: 20240321T001600Z
+    - code_name: 20240307T000552Z
+      name: 20240307T000552Z
     - code_name: 20240222T001232Z
       name: 20240222T001232Z
     - code_name: 20240208T000334Z
       name: 20240208T000334Z
-    - code_name: 20240125T000404Z
-      name: 20240125T000404Z
-    - code_name: 20240111T002438Z
-      name: 20240111T002438Z
   talos:
     enabled: true
     menu: linux
