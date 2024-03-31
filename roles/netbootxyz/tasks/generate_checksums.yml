@@ -25,6 +25,10 @@
   register: index_title
   when: ansible_os_family == "Debian"
 
+- name: Reset bootloader filename to first in list
+  ansible.builtin.set_fact:
+    bootloader_filename: "{{ bootloader_disks | first }}"
+
 - name: Generate netboot.xyz index template
   ansible.builtin.template:
     src: index.html.j2
