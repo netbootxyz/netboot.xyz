@@ -844,7 +844,6 @@ endpoints:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
-    - tails-amd64-6.0.iso
     - tails-amd64-6.1.iso
     os: tails
     version: '6.1'
@@ -1146,7 +1145,6 @@ endpoints:
     path: /asset-mirror/releases/download/3.1-1-f308cf4b/
     files:
     - initrd
-    - proxmox-backup-server.iso
     - vmlinuz
     - proxmox.iso
     os: proxmox-backup-server
@@ -1163,7 +1161,6 @@ endpoints:
     path: /asset-mirror/releases/download/8.1-1-8374c64d/
     files:
     - initrd
-    - proxmox-mailgateway.iso
     - vmlinuz
     - proxmox.iso
     os: proxmox-mailgateway
