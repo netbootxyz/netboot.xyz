@@ -191,11 +191,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 39.20240322.3.0
+    - code_name: 39.20240322.3.1
       name: stable
-    - code_name: 39.20240322.2.0
+    - code_name: 39.20240407.2.0
       name: testing
-    - code_name: 40.20240331.1.0
+    - code_name: 40.20240408.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
