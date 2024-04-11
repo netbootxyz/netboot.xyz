@@ -977,13 +977,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20240327-noble-c67d897c/
+    path: /ubuntu-squash/releases/download/20240408-noble-c67d897c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20240327-noble
+    version: 20240408-noble
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
