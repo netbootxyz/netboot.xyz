@@ -859,7 +859,6 @@ endpoints:
   ubuntu-netboot-20.04-arm64:
     path: /ubuntu-squash/releases/download/20.04.5-3c6c3436/
     files:
-    - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
@@ -871,7 +870,6 @@ endpoints:
   ubuntu-netboot-20.04-amd64:
     path: /ubuntu-squash/releases/download/20.04.6-fcca9804/
     files:
-    - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
@@ -1177,7 +1175,6 @@ endpoints:
   ubuntu-netboot-22.04-amd64:
     path: /ubuntu-squash/releases/download/22.04.4-69164c58/
     files:
-    - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
@@ -1189,7 +1186,6 @@ endpoints:
   ubuntu-netboot-22.04-arm64:
     path: /ubuntu-squash/releases/download/22.04.4-6c390eee/
     files:
-    - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
@@ -1583,7 +1579,6 @@ endpoints:
   ubuntu-netboot-23.10-arm64:
     path: /ubuntu-squash/releases/download/23.10-8b679ff7/
     files:
-    - filesystem.squashfs
     - initrd
     - vmlinuz
     os: ubuntu
