@@ -322,22 +322,8 @@ releases:
     menu: linux
     name: NixOS
     versions:
-    - code_name: nixos-20.09
-      name: nixos-20.09
-    - code_name: nixos-21.05
-      name: nixos-21.05
-    - code_name: nixos-21.11
-      name: nixos-21.11
-    - code_name: nixos-22.05
-      name: nixos-22.05
-    - code_name: nixos-22.11
-      name: nixos-22.11
-    - code_name: nixos-23.05
-      name: nixos-23.05
-    - code_name: nixos-23.11
-      name: nixos-23.11
-    - code_name: nixos-unstable
-      name: nixos-unstable
+    - code_name: null
+      name: null
   openEuler:
     base_dir: null
     enabled: true
