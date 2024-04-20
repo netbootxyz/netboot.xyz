@@ -1581,7 +1581,7 @@ endpoints:
     flavor: kde
     kernel: debian-12-live-kernel
   ubuntu-netboot-23.10-arm64:
-    path: /ubuntu-squash/releases/download/23.10-729b6a9e/
+    path: /ubuntu-squash/releases/download/23.10-8b679ff7/
     files:
     - filesystem.squashfs
     - initrd
