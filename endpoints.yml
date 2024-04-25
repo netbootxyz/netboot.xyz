@@ -136,13 +136,13 @@ endpoints:
     flavor: xfce
     kernel: kali-xfce-squash
   kde-neon-user:
-    path: /ubuntu-squash/releases/download/20240412-1535-9b372e2a/
+    path: /ubuntu-squash/releases/download/20240422-1624-9b372e2a/
     files:
     - vmlinuz
     - filesystem.squashfs
     - initrd.lz
     os: neon
-    version: 20240412-1535
+    version: 20240422-1624
     flavor: user
     kernel: kde-neon-user
   regolith-current:
