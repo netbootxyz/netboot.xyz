@@ -630,8 +630,6 @@ releases:
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
       name: 16.04 LTS Xenial Xerus
-    - code_name: trusty
-      name: 14.04 LTS Trusty Tahr
   vmware:
     enabled: true
     menu: linux
