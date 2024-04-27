@@ -1843,3 +1843,12 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-24.04-amd64
     arch: amd64
+  fedora-40-gnome:
+    path: /fedora-assets/releases/download/1.14-aefc8f89/
+    files:
+    - vmlinuz
+    - initrd
+    - squashfs.img
+    os: fedora
+    version: 40
+    flavor: GNOME
