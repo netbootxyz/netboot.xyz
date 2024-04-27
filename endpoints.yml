@@ -1852,3 +1852,13 @@ endpoints:
     os: fedora
     version: 40
     flavor: GNOME
+  ubuntu-24.04-default-squash:
+    path: /ubuntu-squash/releases/download/24.04-739333c2/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '24.04'
+    flavor: GNOME
+    kernel: ubuntu-24.04-default-squash
