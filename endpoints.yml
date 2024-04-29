@@ -1084,7 +1084,7 @@ endpoints:
     flavor: qtile
     version: 231029
   garuda-i3wm:
-    path: /asset-mirror/releases/download/231029-d48b8f05/
+    path: /asset-mirror/releases/download/240428-d48b8f05/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1096,7 +1096,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: i3wm
-    version: 231029
+    version: 240428
   garuda-sway:
     path: /asset-mirror/releases/download/231029-8d451890/
     files:
