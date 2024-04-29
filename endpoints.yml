@@ -1000,7 +1000,7 @@ endpoints:
     flavor: dr460nized-gaming
     version: 231029
   garuda-dr460nized:
-    path: /asset-mirror/releases/download/231029-f610be58/
+    path: /asset-mirror/releases/download/240428-f610be58/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1012,7 +1012,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: dr460nized
-    version: 231029
+    version: 240428
   garuda-xfce:
     path: /asset-mirror/releases/download/231029-c866e6bf/
     files:
