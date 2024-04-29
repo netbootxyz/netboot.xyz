@@ -1385,7 +1385,7 @@ endpoints:
     os: xcp-ng
     version: '8.2'
   garuda-cinnamon:
-    path: /asset-mirror/releases/download/231029-0b360492/
+    path: /asset-mirror/releases/download/240428-0b360492/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1397,7 +1397,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: cinnamon
-    version: 231029
+    version: 240428
   elementaryos-7-default-squash:
     path: /ubuntu-squash/releases/download/7-3e6e05f6/
     files:
