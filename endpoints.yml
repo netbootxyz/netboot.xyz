@@ -1854,7 +1854,7 @@ endpoints:
     version: 40
     flavor: GNOME
   ubuntu-24.04-default-squash:
-    path: /ubuntu-squash/releases/download/24.04-739333c2/
+    path: /ubuntu-squash/releases/download/24.04-03d79d20/
     files:
     - filesystem.squashfs
     - initrd
