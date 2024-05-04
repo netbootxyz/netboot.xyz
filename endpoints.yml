@@ -1536,66 +1536,6 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-23.10-amd64
     arch: amd64
-  ubuntu-23.10-KDE-squash:
-    path: /ubuntu-squash/releases/download/23.10-4dfdb77d/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    flavor: KDE
-    kernel: ubuntu-23.10-KDE-squash
-  ubuntu-23.10-LXQT-squash:
-    path: /ubuntu-squash/releases/download/23.10-97f7b2e1/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    flavor: LXQT
-    kernel: ubuntu-23.10-LXQT-squash
-  ubuntu-23.10-kylin-squash:
-    path: /ubuntu-squash/releases/download/23.10-106108c0/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    flavor: kylin
-    kernel: ubuntu-23.10-kylin-squash
-  ubuntu-23.10-MATE-squash:
-    path: /ubuntu-squash/releases/download/23.10-ff256faa/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    flavor: MATE
-    kernel: ubuntu-23.10-MATE-squash
-  ubuntu-23.10-Budgie-squash:
-    path: /ubuntu-squash/releases/download/23.10.1-566c96f6/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    flavor: Budgie
-    kernel: ubuntu-23.10-Budgie-squash
-  ubuntu-23.10-default-squash:
-    path: /ubuntu-squash/releases/download/23.10.1-0c1c9162/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    flavor: GNOME
-    kernel: ubuntu-23.10-default-squash
   fedora-39-gnome:
     path: /fedora-assets/releases/download/1.5-0ccbf396/
     files:
@@ -1790,13 +1730,3 @@ endpoints:
     os: fedora
     version: 40
     flavor: GNOME
-  ubuntu-24.04-default-squash:
-    path: /ubuntu-squash/releases/download/24.04-03d79d20/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '24.04'
-    flavor: GNOME
-    kernel: ubuntu-24.04-default-squash
