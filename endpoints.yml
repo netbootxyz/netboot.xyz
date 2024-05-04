@@ -1,19 +1,4 @@
 endpoints:
-  ubuntu-18.04-live-kernel:
-    path: /ubuntu-core-18.04/releases/download/18.04.5-a39e0666/
-    files:
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '18.04'
-  ubuntu-18.04-default-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-0dd1e29b/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: GNOME
-    kernel: ubuntu-18.04-live-kernel
   debian-10-live-kernel:
     path: /debian-core-10/releases/download/10.13.0-960f6051/
     files:
@@ -29,46 +14,6 @@ endpoints:
     version: '10'
     flavor: core
     kernel: debian-10-live-kernel
-  ubuntu-18.04-xfce-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-68015e19/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: xfce
-    kernel: ubuntu-18.04-live-kernel
-  ubuntu-18.04-KDE-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-e437f9b4/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: KDE
-    kernel: ubuntu-18.04-live-kernel
-  ubuntu-18.04-Budgie-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-b71b6d21/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: Budgie
-    kernel: ubuntu-18.04-live-kernel
-  ubuntu-18.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-37d2b206/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: MATE
-    kernel: ubuntu-18.04-live-kernel
-  ubuntu-18.04-kylin-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-767cda31/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: kylin
-    kernel: ubuntu-18.04-live-kernel
   debian-10-xfce-squash:
     path: /debian-squash/releases/download/10.10.0-e94fae4e/
     files:
@@ -1407,14 +1352,6 @@ endpoints:
     os: elementary-os
     version: '7'
     kernel: elementaryos-7-default-squash
-  ubuntu-18.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/18.04.5-224877b3/
-    files:
-    - filesystem.squashfs
-    os: ubuntu
-    version: '18.04'
-    flavor: LXQT
-    kernel: ubuntu-18.04-live-kernel
   ubuntu-20.04-LXQT-squash:
     path: /ubuntu-squash/releases/download/20.04.5-95f04bf8/
     files:

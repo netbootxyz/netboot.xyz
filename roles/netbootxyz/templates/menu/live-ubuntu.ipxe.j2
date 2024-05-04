@@ -10,7 +10,6 @@ item noble ${space} ${os} 24.04
 item mantic ${space} ${os} 23.10
 item jammy ${space} ${os} 22.04
 item focal ${space} ${os} 20.04
-item bionic ${space} ${os} 18.04
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
@@ -48,14 +47,6 @@ item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flav
 {% endfor %}
 goto flavor_select
 
-:bionic
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key and value.version == "18.04" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
-{% endif %}
-{% endfor %}
-goto flavor_select
-
 :flavor_select
 choose flavor || goto live_menu
 echo ${cls}
@@ -74,12 +65,6 @@ set kernel_url ${live_endpoint}{{ value.path }}
 goto {{ value.version }}-boot
 {% endif %}
 {% endfor %}
-
-:18.04-boot
-imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
-initrd ${kernel_url}initrd
-boot
 
 :20.04-boot
 :22.04-boot
