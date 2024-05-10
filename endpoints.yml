@@ -190,7 +190,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-rolling-mingui
   sparky-rolling-gui:
-    path: /debian-squash/releases/download/2024.02-66a56f08/
+    path: /debian-squash/releases/download/2024.05-66a56f08/
     files:
     - filesystem.squashfs
     - initrd
