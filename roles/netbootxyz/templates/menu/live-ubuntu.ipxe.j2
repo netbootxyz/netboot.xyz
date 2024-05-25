@@ -6,31 +6,12 @@ goto ${menu} ||
 set os Ubuntu Live
 menu ${os}
 item --gap ${os} Versions
-item mantic ${space} ${os} 23.10
-item lunar ${space} ${os} 23.04
 item jammy ${space} ${os} 22.04
 item focal ${space} ${os} 20.04
-item bionic ${space} ${os} 18.04
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
-
-:mantic
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key and value.version == "23.10" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
-{% endif %}
-{% endfor %}
-goto flavor_select
-
-:lunar
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key and value.version == "23.04" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
-{% endif %}
-{% endfor %}
-goto flavor_select
 
 :jammy
 {% for key, value in endpoints.items() | sort %}
@@ -43,14 +24,6 @@ goto flavor_select
 :focal
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "ubuntu" and 'squash' in key and value.version == "20.04" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
-{% endif %}
-{% endfor %}
-goto flavor_select
-
-:bionic
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'squash' in key and value.version == "18.04" %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title }}
 {% endif %}
 {% endfor %}
@@ -75,16 +48,8 @@ goto {{ value.version }}-boot
 {% endif %}
 {% endfor %}
 
-:18.04-boot
-imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
-initrd ${kernel_url}initrd
-boot
-
 :20.04-boot
 :22.04-boot
-:23.04-boot
-:23.10-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
@@ -93,4 +58,3 @@ boot
 :live_exit
 clear menu
 exit 0
-

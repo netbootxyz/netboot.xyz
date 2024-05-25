@@ -147,8 +147,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.19
-      name: '3.19'
+    - code_name: v3.20
+      name: '3.20'
     - code_name: edge
       name: Edge (development)
   archlinux:
@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.03.29
-      name: 2024.03.29
+    - code_name: 2024.05.01
+      name: 2024.05.01
   blackarch:
     enabled: true
     menu: linux
@@ -191,11 +191,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 39.20240309.3.0
+    - code_name: 40.20240504.3.0
       name: stable
-    - code_name: 39.20240322.2.0
+    - code_name: 40.20240519.2.0
       name: testing
-    - code_name: 40.20240322.1.0
+    - code_name: 40.20240519.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -241,6 +241,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 40
+      name: 40
     - code_name: 39
       name: 39
     - code_name: 38
@@ -289,8 +291,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core184
-      name: 2.29 Core184
+    - code_name: 2.29-core185
+      name: 2.29 Core185
   k3os:
     enabled: true
     menu: linux
@@ -458,14 +460,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20240321T001600Z
-      name: 20240321T001600Z
-    - code_name: 20240307T000552Z
-      name: 20240307T000552Z
-    - code_name: 20240222T001232Z
-      name: 20240222T001232Z
-    - code_name: 20240208T000334Z
-      name: 20240208T000334Z
+    - code_name: 20240516T000925Z
+      name: 20240516T000925Z
+    - code_name: 20240502T000615Z
+      name: 20240502T000615Z
+    - code_name: 20240418T000439Z
+      name: 20240418T000439Z
+    - code_name: 20240404T141941Z
+      name: 20240404T141941Z
   talos:
     enabled: true
     menu: linux
@@ -614,6 +616,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: noble
+      name: 24.04 LTS Noble Numbat
     - code_name: mantic
       name: 23.10 Mantic Minotaur
     - code_name: jammy
@@ -626,8 +630,6 @@ releases:
       name: 18.04 LTS Bionic Beaver
     - code_name: xenial
       name: 16.04 LTS Xenial Xerus
-    - code_name: trusty
-      name: 14.04 LTS Trusty Tahr
   vmware:
     enabled: true
     menu: linux

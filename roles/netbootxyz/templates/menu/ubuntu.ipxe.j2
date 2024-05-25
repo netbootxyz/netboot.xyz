@@ -14,7 +14,7 @@ clear ubuntu_version
 clear install_type
 clear older_release
 clear install_url
-set install_type deb
+set install_type sub
 set install_priority critical
 menu ${os} - ${os_arch}
 item --gap Latest Releases
@@ -25,10 +25,7 @@ item --gap Older Releases
 item older_release ${space} Set release codename...
 choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
-iseq ${ubuntu_version} focal && set install_type sub ||
-iseq ${ubuntu_version} jammy && set install_type sub ||
-iseq ${ubuntu_version} lunar && set install_type sub ||
-iseq ${ubuntu_version} mantic && set install_type sub ||
+iseq ${ubuntu_version} focal-legacy && set install_type deb ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
 iseq ${install_type} sub && goto boot_type ||
 iseq ${os_arch} arm64 && echo "arm64 not supported on legacy network installs, please use 20.04 Subiquity and up" && sleep 5 && goto ubuntu ||
