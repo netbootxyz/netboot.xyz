@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.79] - 2024-00-00
+## [2.0.79] - 2024-05-25
+
+### Added
+
+- Added Talos to arm64 menu
+- Ubuntu 24.04 LTS, Fedora 40, and many other version updates
+
+### Changed 
+
+- Dropped newer Ubuntu Live Image versions as they don't properly work anymore
 
 ## [2.0.78] - 2024-03-30
 
