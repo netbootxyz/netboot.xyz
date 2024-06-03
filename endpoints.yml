@@ -784,15 +784,16 @@ endpoints:
     version: 20240317T170433Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/6.2-cfd50f75/
+    path: /asset-mirror/releases/download/6.3-cfd50f75/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     - tails-amd64-6.1.iso
     - tails-amd64-6.2.iso
+    - tails-amd64-6.3.iso
     os: tails
-    version: '6.2'
+    version: '6.3'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20231124-1008bb6d/
