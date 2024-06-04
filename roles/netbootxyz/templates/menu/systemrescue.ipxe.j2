@@ -15,6 +15,7 @@ item --gap ${os} Versions
 iseq ${os_arch} {{ value.arch }} && item {{ value.version }}_${os_arch} ${space} ${os} {{ value.version }} ||
 {% endif %}
 {% endfor %}
+item rootpass_mac Enable rootpass=MAC_ADDRESS
 choose live_version || goto live_exit
 goto ${live_version}
 
@@ -27,9 +28,13 @@ goto boot
 {% endif %}
 {% endfor %}
 
+:rootpass_mac
+iseq ${rootpass_enabled} true && set rootpass_enabled false || set rootpass_enabled true && set params rootpass=${netX/mac} 
+goto live_menu
+
 :boot
 imgfree
-kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} {{ kernel_params }}
+kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} ${params} {{ kernel_params }}
 initrd ${url}initrd
 boot
 
