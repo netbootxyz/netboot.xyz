@@ -71,13 +71,13 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2024.1-54fc2a3c/
+    path: /debian-squash/releases/download/2024.2-54fc2a3c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: '2024.1'
+    version: '2024.2'
     flavor: xfce
     kernel: kali-xfce-squash
   kde-neon-user:
