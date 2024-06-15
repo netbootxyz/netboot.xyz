@@ -389,7 +389,6 @@ releases:
       name: openSUSE Leap 15.6
     - code_name: '15.5'
       name: openSUSE Leap 15.5
-    - code_name: '15.4'
     - code_name: tumbleweed
       name: openSUSE tumbleweed
   oracle:
