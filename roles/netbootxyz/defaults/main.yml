@@ -385,12 +385,11 @@ releases:
     mirror: http://download.opensuse.org
     name: openSUSE
     versions:
+    - code_name: '15.6'
+      name: openSUSE Leap 15.6
     - code_name: '15.5'
       name: openSUSE Leap 15.5
     - code_name: '15.4'
-      name: openSUSE Leap 15.4
-    - code_name: '15.3'
-      name: openSUSE Leap 15.3
     - code_name: tumbleweed
       name: openSUSE tumbleweed
   oracle:
