@@ -923,13 +923,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20240614-oracular-c67d897c/
+    path: /ubuntu-squash/releases/download/20240624-oracular-c67d897c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20240614-oracular
+    version: 20240624-oracular
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
