@@ -5,6 +5,7 @@ goto ${menu} ||
 :live_menu
 set os System Rescue
 set os_arch ${arch}
+isset ${rootpass_enabled} || set rootpass_enabled false
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
 iseq ${os_arch} i386 && set os_arch i686 ||
 menu ${os}
@@ -15,6 +16,7 @@ item --gap ${os} Versions
 iseq ${os_arch} {{ value.arch }} && item {{ value.version }}_${os_arch} ${space} ${os} {{ value.version }} ||
 {% endif %}
 {% endfor %}
+item rootpass_mac Enable rootpass=MAC_ADDRESS [ enabled: ${rootpass_enabled} ]
 choose live_version || goto live_exit
 goto ${live_version}
 
@@ -27,9 +29,14 @@ goto boot
 {% endif %}
 {% endfor %}
 
+:rootpass_mac
+clear params
+iseq ${rootpass_enabled} true && set rootpass_enabled false || set rootpass_enabled true && set params rootpass=${netX/mac}
+goto live_menu
+
 :boot
 imgfree
-kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} {{ kernel_params }}
+kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} ${params} {{ kernel_params }}
 initrd ${url}initrd
 boot
 
