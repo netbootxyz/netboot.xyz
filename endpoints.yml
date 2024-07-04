@@ -789,9 +789,6 @@ endpoints:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
-    - tails-amd64-6.1.iso
-    - tails-amd64-6.2.iso
-    - tails-amd64-6.3.iso
     - tails-amd64-6.4.iso
     os: tails
     version: '6.4'
