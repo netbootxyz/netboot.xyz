@@ -887,13 +887,13 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20240408-noble-48403403/
+    path: /ubuntu-squash/releases/download/20240630-noble-48403403/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20240408-noble
+    version: 20240630-noble
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
