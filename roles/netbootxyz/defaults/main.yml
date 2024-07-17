@@ -182,8 +182,6 @@ releases:
       name: 8.x Latest
     - code_name: 8-stream
       name: 8.0 Stream
-    - code_name: 7
-      name: 7.x Latest
   coreos:
     base_dir: prod/streams
     enabled: true
