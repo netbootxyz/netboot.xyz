@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.05.01
-      name: 2024.05.01
+    - code_name: 2024.06.01
+      name: 2024.06.01
   blackarch:
     enabled: true
     menu: linux
@@ -182,8 +182,6 @@ releases:
       name: 8.x Latest
     - code_name: 8-stream
       name: 8.0 Stream
-    - code_name: 7
-      name: 7.x Latest
   coreos:
     base_dir: prod/streams
     enabled: true
@@ -191,11 +189,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 40.20240504.3.0
+    - code_name: 40.20240602.3.0
       name: stable
-    - code_name: 40.20240519.2.0
+    - code_name: 40.20240616.2.0
       name: testing
-    - code_name: 40.20240519.1.0
+    - code_name: 40.20240616.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -291,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core185
-      name: 2.29 Core185
+    - code_name: 2.29-core186
+      name: 2.29 Core186
   k3os:
     enabled: true
     menu: linux
@@ -338,6 +336,8 @@ releases:
       name: nixos-23.05
     - code_name: nixos-23.11
       name: nixos-23.11
+    - code_name: nixos-24.05
+      name: nixos-24.05
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -383,12 +383,10 @@ releases:
     mirror: http://download.opensuse.org
     name: openSUSE
     versions:
+    - code_name: '15.6'
+      name: openSUSE Leap 15.6
     - code_name: '15.5'
       name: openSUSE Leap 15.5
-    - code_name: '15.4'
-      name: openSUSE Leap 15.4
-    - code_name: '15.3'
-      name: openSUSE Leap 15.3
     - code_name: tumbleweed
       name: openSUSE tumbleweed
   oracle:
@@ -423,21 +421,6 @@ releases:
       name: 9 (Latest)
     - code_name: 8
       name: 8 (Latest)
-  scientific:
-    base_dir: linux/scientific
-    enabled: true
-    menu: linux
-    mirror: http://ftp1.scientificlinux.org
-    name: Scientific Linux
-    versions:
-    - code_name: '7.9'
-      name: '7.9'
-    - code_name: '7.8'
-      name: '7.8'
-    - code_name: '7.7'
-      name: '7.7'
-    - code_name: '7.6'
-      name: '7.6'
   slackware:
     base_dir: slackware
     enabled: true
@@ -460,14 +443,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
+    - code_name: 20240613T000428Z
+      name: 20240613T000428Z
+    - code_name: 20240530T000454Z
+      name: 20240530T000454Z
     - code_name: 20240516T000925Z
       name: 20240516T000925Z
     - code_name: 20240502T000615Z
       name: 20240502T000615Z
-    - code_name: 20240418T000439Z
-      name: 20240418T000439Z
-    - code_name: 20240404T141941Z
-      name: 20240404T141941Z
   talos:
     enabled: true
     menu: linux

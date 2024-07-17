@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.80] - 2024-00-00
+
+### Added
+
+- Adds option for setting System Resuce password 
+
+### Removed
+
+- Scientific Linux (EOL)
+
 ## [2.0.79] - 2024-05-25
 
 ### Added

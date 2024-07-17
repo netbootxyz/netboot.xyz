@@ -171,7 +171,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Red Hat Enterprise Linux | https://www.redhat.com | User supplied media | No |
 | Regolith | https://regolith-linux.org | No | Yes |
 | Rocky Linux | https://rockylinux.org/ | Yes | No |
-| Scientific Linux | https://scientificlinux.org | Yes | No |
 | Septor | https://septor.sourceforge.io | No | Yes |
 | Slackware | https://www.slackware.com | Yes | No |
 | SmartOS | https://www.smartos.org/ | Yes | No |
