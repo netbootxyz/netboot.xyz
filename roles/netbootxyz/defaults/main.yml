@@ -421,21 +421,6 @@ releases:
       name: 9 (Latest)
     - code_name: 8
       name: 8 (Latest)
-  scientific:
-    base_dir: linux/scientific
-    enabled: true
-    menu: linux
-    mirror: http://ftp1.scientificlinux.org
-    name: Scientific Linux
-    versions:
-    - code_name: '7.9'
-      name: '7.9'
-    - code_name: '7.8'
-      name: '7.8'
-    - code_name: '7.7'
-      name: '7.7'
-    - code_name: '7.6'
-      name: '7.6'
   slackware:
     base_dir: slackware
     enabled: true
