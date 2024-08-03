@@ -209,6 +209,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Super Grub2 Disk | https://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue | https://system-rescue.org/ | LiveCD |
 | Ultimate Boot CD | https://www.ultimatebootcd.com | ISO - Memdisk |
+| ZFSBootMenu | https://docs.zfsbootmenu.org/ | Kernel |
 
 ### Stargazers over time
 
