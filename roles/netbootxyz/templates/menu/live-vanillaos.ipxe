@@ -25,7 +25,7 @@ goto boot
 :boot
 imgfree
 kernel ${kernel_url}vmlinuz boot=live fetch=${kernel_url}/filesystem.squashfs config username=vanilla user-fullname=Vanilla quiet splash bgrt_disable modprobe.blacklist=nouveau initrd=initrd.magic ${cmdline}
-initrd ${kernel_url}initrd.img
+initrd ${kernel_url}initrd
 boot
 
 :live_exit
