@@ -1740,3 +1740,11 @@ endpoints:
     version: '24.04'
     flavor: GNOME
     kernel: ubuntu-24.04-default-squash
+  vanilla-os:
+    path: /asset-mirror/releases/download/20240728-a387fc07/
+    files:
+    - initrd
+    - filesystem.squashfs
+    - vmlinuz
+    os: vanilla-os
+    version: 2-20240728
