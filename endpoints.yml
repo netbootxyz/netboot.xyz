@@ -1748,3 +1748,9 @@ endpoints:
     - vmlinuz
     os: vanilla-os
     version: 2-20240728
+  zfsbootmenu:
+    path: /asset-mirror/releases/download/2.3.0-824e9be9/
+    files:
+    - zfsbootmenu-recovery-x86_64.efi
+    os: zfsbootmenu
+    version: 2.3.0
