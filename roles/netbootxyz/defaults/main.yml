@@ -714,6 +714,11 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
+  zfsbootmenu:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.zfsbootmenu.path }}zfsbootmenu-recovery-x86_64.efi 
+    name: ZFSBootMenu
+    type: direct
 utilitiespcbios32:
   clonezilla:
     enabled: true
