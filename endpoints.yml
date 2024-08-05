@@ -1660,7 +1660,7 @@ endpoints:
     flavor: GNOME
     kernel: ubuntu-24.04-default-squash
   vanilla-os:
-    path: /asset-mirror/releases/download/20240728-a387fc07/
+    path: /asset-mirror/releases/download/20240728-32e3ebb7/
     files:
     - initrd
     - filesystem.squashfs
