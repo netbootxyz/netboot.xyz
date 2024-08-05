@@ -710,6 +710,11 @@ utilitiesefi:
     enabled: true
     name: ShredOS
     type: ipxemenu
+  supergrubdisk:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.supergrubdisk.path }}supergrub2-classic-x86_64.efi
+    name: Super Grub2 Disk
+    type: direct
   systemrescue:
     enabled: true
     name: System Rescue CD
@@ -830,7 +835,7 @@ utilitiespcbios64:
     type: ipxemenu
   supergrub:
     enabled: true
-    name: SuperGRUB
+    name: Super GRUB2 Disk
     type: memdisk
     util_path: http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso
     version: 2.04s1

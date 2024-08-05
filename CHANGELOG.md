@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 
 - Added ZFSBootMenu
 - Added VanillaOS
+- Added Super Grub2 Disk for EFI
 
 ## [2.0.80] - 2024-07-17
 
