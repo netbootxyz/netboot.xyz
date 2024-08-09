@@ -1666,3 +1666,13 @@ endpoints:
     os: mint
     version: '22'
     flavor: xfce
+  mint-22-xfce-squash:
+    path: /ubuntu-squash/releases/download/22-42f238bf/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '22'
+    flavor: xfce
+    kernel: mint-22-xfce-squash
