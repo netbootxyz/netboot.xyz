@@ -1657,3 +1657,12 @@ endpoints:
     - supergrub2-classic-x86_64.efi
     os: supergrubdisk
     version: 2.06s4
+  mint-xfce-squash:
+    path: /ubuntu-squash/releases/download/22-eddd71a2/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '22'
+    flavor: xfce
