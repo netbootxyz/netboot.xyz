@@ -13,6 +13,11 @@ All notable changes to this project will be documented in this file.
 - Added VanillaOS
 - Added Super Grub2 Disk for EFI
 
+### Fixed
+
+- Slowness with Ubuntu 24.04 net install getting stuck on Cloud Init
+- Removed hard coded console on VyOS to fix on Equinix Metal
+
 ## [2.0.80] - 2024-07-17
 
 ### Added
