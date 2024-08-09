@@ -1433,28 +1433,6 @@ endpoints:
     version: '12'
     flavor: kde
     kernel: debian-12-live-kernel
-  ubuntu-netboot-23.10-arm64:
-    path: /ubuntu-squash/releases/download/23.10-8b679ff7/
-    files:
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    codename: mantic
-    flavor: netboot
-    kernel: ubuntu-netboot-23.10-arm64
-    arch: arm64
-  ubuntu-netboot-23.10-amd64:
-    path: /ubuntu-squash/releases/download/23.10-5b615fc9/
-    files:
-    - initrd
-    - vmlinuz
-    os: ubuntu
-    version: '23.10'
-    codename: mantic
-    flavor: netboot
-    kernel: ubuntu-netboot-23.10-amd64
-    arch: amd64
   fedora-39-gnome:
     path: /fedora-assets/releases/download/1.5-0ccbf396/
     files:

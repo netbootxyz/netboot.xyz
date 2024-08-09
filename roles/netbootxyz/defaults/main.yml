@@ -601,8 +601,6 @@ releases:
     versions:
     - code_name: noble
       name: 24.04 LTS Noble Numbat
-    - code_name: mantic
-      name: 23.10 Mantic Minotaur
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal
