@@ -29,8 +29,8 @@ set boot_timeout {{ boot_timeout }}
 # Media Locations for Licensed Distros
 ######################################
 
-set rhel_base_url {{ rhel_base_url | default("") }}
-set win_base_url {{ win_base_url | default("") }}
+isset ${rhel_base_url} || set rhel_base_url {{ rhel_base_url | default("") }}
+isset ${win_base_url} || set win_base_url {{ win_base_url | default("") }}
 
 ##################
 # official mirrors
