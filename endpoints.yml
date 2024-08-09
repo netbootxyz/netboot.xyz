@@ -621,13 +621,13 @@ endpoints:
     os: redorescue
     version: 4.0.0
   mint-lmde-cinnamon-squash:
-    path: /debian-squash/releases/download/6-dc29210f/
+    path: /debian-squash/releases/download/6-1834227b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: mint
-    version: lmde
+    version: '6'
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon-squash
   mint-20-mate-squash:
