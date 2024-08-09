@@ -1676,3 +1676,13 @@ endpoints:
     version: '22'
     flavor: xfce
     kernel: mint-22-xfce-squash
+  mint-22-cinnamon-squash:
+    path: /ubuntu-squash/releases/download/22-1431f755/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '22'
+    flavor: Cinnamon
+    kernel: mint-22-cinnamon-squash
