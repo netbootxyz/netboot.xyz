@@ -1256,13 +1256,13 @@ endpoints:
     version: 6.4
     kernel: linux-lite-6-squash
   mint-21-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/22-54642d82/
+    path: /ubuntu-squash/releases/download/21-1ff19e78/
     files:
     - initrd
     - vmlinuz
     - filesystem.squashfs
     os: mint
-    version: '22'
+    version: '21'
     flavor: Cinnamon
     kernel: mint-21-cinnamon-squash
   mint-21-mate-squash:
