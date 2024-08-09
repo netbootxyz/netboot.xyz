@@ -31,7 +31,7 @@
     - "{{ netbootxyz_root }}/ipxe"
     - "{{ cert_dir }}"
 
-- name: Retreive latest wimboot
+- name: Retrieve latest wimboot
   ansible.builtin.get_url:
     url: "{{ wimboot_upstream_url }}"
     dest: "{{ netbootxyz_root }}/wimboot"
