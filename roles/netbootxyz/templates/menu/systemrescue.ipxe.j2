@@ -17,7 +17,7 @@ item --gap ${os} Versions
 iseq ${os_arch} {{ value.arch }} && item {{ value.version }}_${os_arch} ${space} ${os} {{ value.version }} ||
 {% endif %}
 {% endfor %}
-item rootpass_mac Enable rootpass=${rootpass} [ enabled: ${rootpass_enabled} ]
+item rootpass_mac Enable rootpass=${rootpass} [IP:${ip}] [ enabled: ${rootpass_enabled} ]
 choose live_version || goto live_exit
 goto ${live_version}
 
@@ -32,7 +32,7 @@ goto boot
 
 :rootpass_mac
 clear params
-iseq ${rootpass_enabled} true && set rootpass_enabled false || set rootpass_enabled true && set params rootpass=${rootpass}
+iseq ${rootpass_enabled} true && set rootpass_enabled false || set rootpass_enabled true && set params rootpass=${rootpass} nofirewall
 goto live_menu
 
 :boot
