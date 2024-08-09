@@ -6,14 +6,22 @@ goto ${menu} ||
 set os Mint Live
 menu ${os}
 item --gap ${os} Versions
+item 22 ${space} ${os} 22
 item 21 ${space} ${os} 21
 item 20 ${space} ${os} 20
-item 19 ${space} ${os} 19
 item lmde ${space} ${os} LMDE
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
 goto ${live_version}
+
+:22
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "mint" and 'squash' in key and '22' in value.version %}
+item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
+{% endif %}
+{% endfor %}
+goto flavor_select
 
 :21
 {% for key, value in endpoints.items() | sort %}
@@ -26,14 +34,6 @@ goto flavor_select
 :20
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "mint" and 'squash' in key and '20' in value.version %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
-{% endfor %}
-goto flavor_select
-
-:19
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "mint" and 'squash' in key and '19' in value.version %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}
@@ -70,6 +70,12 @@ goto {{ value.version | int }}-boot
 {% endif %}
 {% endfor %}
 
+:22-boot
+imgfree
+kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
+initrd ${kernel_url}initrd
+boot
+
 :21-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
@@ -79,12 +85,6 @@ boot
 :20-boot
 imgfree
 kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=url url=${squash_url} {{ kernel_params }}
-initrd ${kernel_url}initrd
-boot
-
-:19-boot
-imgfree
-kernel ${kernel_url}vmlinuz ip=dhcp boot=casper netboot=http fetch=${squash_url} {{ kernel_params }}
 initrd ${kernel_url}initrd
 boot
 
