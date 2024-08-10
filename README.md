@@ -181,6 +181,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Ubuntu | https://www.ubuntu.com | Yes | Yes |
 | VMware | https://www.vmware.com | User supplied media | No |
 | VMware Photon | https://vmware.github.io/photon/ | Yes | No |
+| Vanilla OS | https://vanillaos.org | No | Yes |
 | Voyager | https://voyagerlive.org | No | Yes |
 | VyOS | https://vyos.io | Yes | No |
 | Zen Installer | https://sourceforge.net/projects/revenge-installer | Yes | No |
@@ -208,6 +209,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Super Grub2 Disk | https://www.supergrubdisk.org | ISO - Memdisk |
 | System Rescue | https://system-rescue.org/ | LiveCD |
 | Ultimate Boot CD | https://www.ultimatebootcd.com | ISO - Memdisk |
+| ZFSBootMenu | https://docs.zfsbootmenu.org/ | Kernel |
 
 ### Stargazers over time
 

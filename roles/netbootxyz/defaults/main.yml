@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.06.01
-      name: 2024.06.01
+    - code_name: 2024.08.01
+      name: 2024.08.01
   blackarch:
     enabled: true
     menu: linux
@@ -189,11 +189,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 40.20240602.3.0
+    - code_name: 40.20240709.3.1
       name: stable
-    - code_name: 40.20240616.2.0
+    - code_name: 40.20240728.2.1
       name: testing
-    - code_name: 40.20240616.1.0
+    - code_name: 40.20240728.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -289,8 +289,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core186
-      name: 2.29 Core186
+    - code_name: 2.29-core187
+      name: 2.29 Core187
   k3os:
     enabled: true
     menu: linux
@@ -443,14 +443,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20240613T000428Z
-      name: 20240613T000428Z
-    - code_name: 20240530T000454Z
-      name: 20240530T000454Z
-    - code_name: 20240516T000925Z
-      name: 20240516T000925Z
-    - code_name: 20240502T000615Z
-      name: 20240502T000615Z
+    - code_name: 20240808T000421Z
+      name: 20240808T000421Z
+    - code_name: 20240726T084648Z
+      name: 20240726T084648Z
+    - code_name: 20240725T192004Z
+      name: 20240725T192004Z
+    - code_name: 20240711T031348Z
+      name: 20240711T031348Z
   talos:
     enabled: true
     menu: linux
@@ -601,8 +601,6 @@ releases:
     versions:
     - code_name: noble
       name: 24.04 LTS Noble Numbat
-    - code_name: mantic
-      name: 23.10 Mantic Minotaur
     - code_name: jammy
       name: 22.04 LTS Jammy Jellyfish
     - code_name: focal
@@ -710,10 +708,20 @@ utilitiesefi:
     enabled: true
     name: ShredOS
     type: ipxemenu
+  supergrubdisk:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.supergrubdisk.path }}supergrub2-classic-x86_64.efi
+    name: Super Grub2 Disk
+    type: direct
   systemrescue:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
+  zfsbootmenu:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.zfsbootmenu.path }}zfsbootmenu-recovery-x86_64.efi
+    name: ZFSBootMenu
+    type: direct
 utilitiespcbios32:
   clonezilla:
     enabled: true
@@ -825,7 +833,7 @@ utilitiespcbios64:
     type: ipxemenu
   supergrub:
     enabled: true
-    name: SuperGRUB
+    name: Super GRUB2 Disk
     type: memdisk
     util_path: http://master.dl.sourceforge.net/project/supergrub2/2.04s1/super_grub2_disk_2.04s1/super_grub2_disk_hybrid_2.04s1.iso
     version: 2.04s1

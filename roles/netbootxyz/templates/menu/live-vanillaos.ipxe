@@ -1,0 +1,33 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Vanilla OS
+menu ${os}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "vanilla-os" %}
+item vanilla_{{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose live_version || goto live_exit
+goto ${live_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "vanilla-os" %}
+:vanilla_{{ value.version }}
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz boot=live fetch=${kernel_url}/filesystem.squashfs config username=vanilla user-fullname=Vanilla quiet splash bgrt_disable modprobe.blacklist=nouveau initrd=initrd.magic ${cmdline}
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0
