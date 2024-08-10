@@ -1,5 +1,6 @@
 ---
 
+
 - name: Copy netboot.xyz local legacy iPXE configs
   ansible.builtin.copy:
     src: "ipxe/local/{{ item }}"
