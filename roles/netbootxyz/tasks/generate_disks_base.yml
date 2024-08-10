@@ -13,7 +13,7 @@
     - "{{ ansible_os_family | lower }}.yml"
 
 - name: Ensure EPEL is enabled
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: epel-release
     state: present
   when:
