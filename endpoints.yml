@@ -1652,7 +1652,7 @@ endpoints:
     os: zfsbootmenu
     version: 2.3.0
   supergrubdisk:
-    path: /asset-mirror/releases/download/2.06s4-0e736968/
+    path: /asset-mirror/releases/download/2.06s4-b7b838c6/
     files:
     - supergrub2-classic-x86_64.efi
     os: supergrubdisk
