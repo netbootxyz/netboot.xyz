@@ -7,6 +7,7 @@ generate_disks_linux: true
 generate_disks_rpi: false
 generate_version_file: true
 generate_local_vars: false
+make_num_jobs: 4
 bootloader_multiple: true
 bootloader_disks:
   - "netboot.xyz"
