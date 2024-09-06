@@ -245,13 +245,13 @@ endpoints:
     version: '2'
     flavor: ascii
   grml-full:
-    path: /debian-squash/releases/download/2024.02-e064bb32/
+    path: /debian-squash/releases/download/2024.02-22d50c75/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2022.11'
+    version: '2024.02'
     flavor: full
   grml-small:
     path: /debian-squash/releases/download/2024.02-7d326c39/
