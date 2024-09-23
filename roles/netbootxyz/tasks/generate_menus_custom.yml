@@ -14,3 +14,4 @@
     dest: "{{ netbootxyz_root }}/custom/{{ item.path | regex_replace('.j2', '') }}"
   with_community.general.filetree: "{{ custom_templates_dir }}"
   when: item.state == "file"
+  ignore_errors: "{{ ansible_check_mode }}"

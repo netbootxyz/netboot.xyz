@@ -52,4 +52,5 @@
     src: "{{ ipxe_source_dir }}/src/bin-x86_64-linux/slirp.linux"
     dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-linux.bin"
     remote_src: true
+  ignore_errors: "{{ ansible_check_mode }}"
   when: bootloader_filename != "netboot.xyz-metal"

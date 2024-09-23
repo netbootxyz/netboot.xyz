@@ -61,11 +61,13 @@
   ansible.builtin.template:
     src: "disks/{{ bootloader_filename }}.j2"
     dest: "{{ ipxe_source_dir }}/src/{{ bootloader_filename }}"
+  ignore_errors: "{{ ansible_check_mode }}"
 
 - name: Touch iPXE config local files
   ansible.builtin.file:
     path: "{{ ipxe_source_dir }}/{{ item }}"
     state: touch
+  ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - src/config/local/umalloc.h
     - src/config/local/nap.h

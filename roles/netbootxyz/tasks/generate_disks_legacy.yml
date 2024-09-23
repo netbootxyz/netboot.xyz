@@ -56,6 +56,7 @@
     src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
     dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
     remote_src: true
+  ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - ".pdsk"
     - ".dsk"
@@ -68,6 +69,7 @@
     src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
     dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
     remote_src: true
+  ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - ".kpxe"
   when: bootloader_filename == "netboot.xyz-metal"
@@ -77,4 +79,5 @@
     src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
     dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
     remote_src: true
+  ignore_errors: "{{ ansible_check_mode }}"
   when: bootloader_filename != "netboot.xyz-metal"
