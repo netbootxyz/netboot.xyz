@@ -2,6 +2,7 @@
 - name: Gather list of source files
   ansible.builtin.command: ls {{ netbootxyz_root }}
   register: source_files
+  check_mode: False
 
 - name: Create directories for signatures
   ansible.builtin.file:
@@ -19,3 +20,4 @@
     chdir: "{{ cert_dir }}"
   with_items:
     - "{{ source_files.stdout_lines }}"
+  ignore_errors: "{{ ansible_check_mode }}"
