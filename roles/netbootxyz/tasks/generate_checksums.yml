@@ -2,10 +2,12 @@
 - name: Register a listing of all created iPXE bootloaders
   ansible.builtin.command: ls -I {{ checksums_filename }} {{ netbootxyz_root }}/ipxe/
   register: netboot_disks
+  check_mode: False
 
 - name: Generate date
   ansible.builtin.command: date
   register: current_date
+  check_mode: False
 
 - name: Gather stat listing of directory
   ansible.builtin.command: sha256sum -b {{ item }}
@@ -14,6 +16,7 @@
   args:
     chdir: "{{ netbootxyz_root }}/ipxe/"
   register: netboot_disks_stat
+  check_mode: False
 
 - name: Generate ipxe disk checksums
   ansible.builtin.template:
@@ -24,6 +27,7 @@
   ansible.builtin.shell: toilet -f standard {{ site_name }} --html | grep span
   register: index_title
   when: ansible_os_family == "Debian"
+  check_mode: False
 
 - name: Reset bootloader filename to first in list
   ansible.builtin.set_fact:
