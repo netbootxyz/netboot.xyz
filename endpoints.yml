@@ -1697,3 +1697,14 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-24.10-amd64
     arch: amd64
+  ubuntu-netboot-24.10-arm64:
+    path: /ubuntu-squash/releases/download/24.10-f22a7742/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '24.10'
+    codename: oracular
+    flavor: netboot
+    kernel: ubuntu-netboot-24.10-arm64
+    arch: arm64
