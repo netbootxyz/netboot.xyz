@@ -1686,3 +1686,14 @@ endpoints:
     version: '22'
     flavor: mate
     kernel: mint-22-mate-squash
+  ubuntu-netboot-24.10-amd64:
+    path: /ubuntu-squash/releases/download/24.10-fcf8807c/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '24.10'
+    codename: oracular
+    flavor: netboot
+    kernel: ubuntu-netboot-24.10-amd64
+    arch: amd64
