@@ -88,6 +88,14 @@ bootloaders:
     ipxe_bin: snponly.efi
     output_bin: -snponly.efi
     type: DHCP-snponly
+  - desc: DHCP EFI Floppy boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi.dsk
+    output_bin: .efi.dsk
+    type: Floppy
+  - desc: EFI Floppy image w/ Simple Network Protocol, attempts to boot all net devices
+    ipxe_bin: snp.efi.dsk
+    output_bin: -snp.efi.dsk
+    type: Floppy-snp
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
