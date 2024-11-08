@@ -158,8 +158,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.09.01
-      name: 2024.09.01
+    - code_name: 2024.11.01
+      name: 2024.11.01
   blackarch:
     enabled: true
     menu: linux
@@ -189,11 +189,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 40.20240825.3.0
+    - code_name: 40.20241019.3.0
       name: stable
-    - code_name: 40.20240906.2.0
+    - code_name: 41.20241027.2.0
       name: testing
-    - code_name: 41.20240916.1.0
+    - code_name: 41.20241027.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -239,12 +239,10 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 41
+      name: 41
     - code_name: 40
       name: 40
-    - code_name: 39
-      name: 39
-    - code_name: 38
-      name: 38
   flatcar:
     enabled: true
     menu: linux
@@ -289,8 +287,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core188
-      name: 2.29 Core188
+    - code_name: 2.29-core189
+      name: 2.29 Core189
   k3os:
     enabled: true
     menu: linux
@@ -443,14 +441,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20240905T024838Z
-      name: 20240905T024838Z
-    - code_name: 20240822T001821Z
-      name: 20240822T001821Z
-    - code_name: 20240808T000421Z
-      name: 20240808T000421Z
-    - code_name: 20240726T084648Z
-      name: 20240726T084648Z
+    - code_name: 20241031T000342Z
+      name: 20241031T000342Z
+    - code_name: 20241017T041739Z
+      name: 20241017T041739Z
+    - code_name: 20241003T000345Z
+      name: 20241003T000345Z
+    - code_name: 20240919T000328Z
+      name: 20240919T000328Z
   talos:
     enabled: true
     menu: linux
@@ -599,6 +597,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: oracular
+      name: 24.10 Oracular Oriole
     - code_name: noble
       name: 24.04 LTS Noble Numbat
     - code_name: jammy
