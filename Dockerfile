@@ -15,7 +15,7 @@ FROM netbootxyz-${NBXYZ_OVERRIDES} AS final
 RUN \
   echo "**** running ansible ****" && \
   cd /ansible && \
-  ansible-playbook -i inventory site.yml ${EXTRA_VARS}
+  ansible-playbook site.yml ${EXTRA_VARS}
 
 # runtime stage
 FROM alpine:latest
