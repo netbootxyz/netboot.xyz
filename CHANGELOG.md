@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 
 - Moves win_base_url and rhel_base_url out of boot.cfg to local-vars.ipxe as they are
   user defined variables.
+- Adds a check in boot.cfg to see if live_endpoint is set from local-vars.ipxe. This
+  will allow the user to set their overrides locally on their network.
 
 ## [2.0.83] - 2024-11-07
 

@@ -10,8 +10,8 @@ set boot_domain {{ boot_domain }}
 # set location of memdisk
 set memdisk {{ memdisk_location }}
 
-# set location of custom netboot.xyz live assets
-set live_endpoint {{ live_endpoint }}
+# set location of custom netboot.xyz live assets, override in local-vars.ipxe
+isset ${live_endpoint} || set live_endpoint {{ live_endpoint }}
 
 # signature check enabled?
 set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
