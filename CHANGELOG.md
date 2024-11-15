@@ -7,6 +7,11 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.84] - 2024-00-00
 
+## Changed
+
+- Moves win_base_url and rhel_base_url out of boot.cfg to local-vars.ipxe as they are
+  user defined variables.
+
 ## [2.0.83] - 2024-11-07
 
 ## Changed
