@@ -1409,7 +1409,7 @@ endpoints:
     flavor: mate
     kernel: debian-12-live-kernel
   debian-12-lxde-squash:
-    path: /debian-squash/releases/download/12.7.0-b3449bd8/
+    path: /debian-squash/releases/download/12.8.0-b3449bd8/
     files:
     - filesystem.squashfs
     os: debian
