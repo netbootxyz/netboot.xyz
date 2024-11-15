@@ -1369,7 +1369,7 @@ endpoints:
     os: debian
     version: '12'
   debian-12-default-squash:
-    path: /debian-squash/releases/download/12.7.0-b545a82c/
+    path: /debian-squash/releases/download/12.8.0-b545a82c/
     files:
     - filesystem.squashfs
     os: debian
