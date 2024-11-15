@@ -25,13 +25,6 @@ iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk n
 # set default boot timeout
 set boot_timeout {{ boot_timeout }}
 
-######################################
-# Media Locations for Licensed Distros
-######################################
-
-set rhel_base_url {{ rhel_base_url | default("") }}
-set win_base_url {{ win_base_url | default("") }}
-
 ##################
 # official mirrors
 ##################
