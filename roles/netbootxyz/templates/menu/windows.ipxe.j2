@@ -43,7 +43,7 @@ isset ${win_base_url} && goto boot || echo URL not set... && goto url_set
 
 :boot
 imgfree
-iseq ${win_arch} arm64 kernel {{ wimboot_arm_location }} || kernel {{ wimboot_location }}
+iseq ${win_arch} arm64 && kernel {{ wimboot_arm_location }} || kernel {{ wimboot_location }}
 initrd -n bootmgr     ${win_base_url}/${win_arch}/bootmgr       bootmgr ||
 initrd -n bootmgr.efi ${win_base_url}/${win_arch}/bootmgr.efi   bootmgr.efi ||
 initrd -n bcd         ${win_base_url}/${win_arch}/boot/bcd      bcd ||
