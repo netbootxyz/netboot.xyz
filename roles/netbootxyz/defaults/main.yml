@@ -858,4 +858,4 @@ utilitiespcbios64:
 wimboot_location: http://${boot_domain}/wimboot
 wimboot_arm_location: http://${boot_domain}/wimboot.arm64
 wimboot_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot
-wimboot_arm64_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot
+wimboot_arm64_upstream_url: https://github.com/ipxe/wimboot/releases/latest/download/wimboot.arm64
