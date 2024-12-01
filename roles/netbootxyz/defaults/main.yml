@@ -344,6 +344,8 @@ releases:
       name: nixos-23.11
     - code_name: nixos-24.05
       name: nixos-24.05
+    - code_name: nixos-24.11
+      name: nixos-24.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
