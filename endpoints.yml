@@ -1085,13 +1085,13 @@ endpoints:
     flavor: kde-barebones
     version: 220329
   proxmox-backup-server:
-    path: /asset-mirror/releases/download/3.2-1-f308cf4b/
+    path: /asset-mirror/releases/download/3.3-1-f308cf4b/
     files:
     - initrd
     - vmlinuz
     - proxmox.iso
     os: proxmox-backup-server
-    version: 3.2-1
+    version: 3.3-1
   proxmox-ve:
     path: /asset-mirror/releases/download/8.3-1-613c19ff/
     files:
