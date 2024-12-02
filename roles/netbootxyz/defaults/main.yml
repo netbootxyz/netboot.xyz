@@ -486,7 +486,7 @@ releases:
   tinycore:
     enabled: true
     menu: linux
-    mirror: http://tinycorelinux.net
+    mirror: http://distro.ibiblio.org/tinycorelinux
     name: Tiny Core Linux
     versions:
     - arch: x86
