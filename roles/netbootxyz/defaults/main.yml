@@ -676,6 +676,12 @@ utilitiesefi:
     enabled: true
     name: Clonezilla
     type: ipxemenu
+  dts:
+    enabled: true
+    name: Dasharo Tools Suite
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version }}
+    type: direct
   gparted:
     enabled: true
     name: GParted
@@ -793,6 +799,12 @@ utilitiespcbios64:
     enabled: true
     name: DBAN
     type: ipxemenu
+  dts:
+    enabled: true
+    name: Dasharo Tools Suite
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version }}
+    type: direct
   gparted:
     enabled: true
     name: GParted
