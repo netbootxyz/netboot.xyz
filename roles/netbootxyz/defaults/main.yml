@@ -166,8 +166,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.11.01
-      name: 2024.11.01
+    - code_name: 2024.12.01
+      name: 2024.12.01
   blackarch:
     enabled: true
     menu: linux
@@ -197,11 +197,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 41.20241027.3.0
+    - code_name: 41.20241109.3.0
       name: stable
-    - code_name: 41.20241109.2.0
+    - code_name: 41.20241122.2.0
       name: testing
-    - code_name: 41.20241109.1.0
+    - code_name: 41.20241122.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -344,6 +344,8 @@ releases:
       name: nixos-23.11
     - code_name: nixos-24.05
       name: nixos-24.05
+    - code_name: nixos-24.11
+      name: nixos-24.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -449,14 +451,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
+    - code_name: 20241128T004404Z
+      name: 20241128T004404Z
     - code_name: 20241114T000536Z
       name: 20241114T000536Z
     - code_name: 20241031T000342Z
       name: 20241031T000342Z
     - code_name: 20241017T041739Z
       name: 20241017T041739Z
-    - code_name: 20241003T000345Z
-      name: 20241003T000345Z
   talos:
     enabled: true
     menu: linux
@@ -674,6 +676,12 @@ utilitiesefi:
     enabled: true
     name: Clonezilla
     type: ipxemenu
+  dts:
+    enabled: true
+    name: Dasharo Tools Suite
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version }}
+    type: direct
   gparted:
     enabled: true
     name: GParted
@@ -791,6 +799,12 @@ utilitiespcbios64:
     enabled: true
     name: DBAN
     type: ipxemenu
+  dts:
+    enabled: true
+    name: Dasharo Tools Suite
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version }}
+    type: direct
   gparted:
     enabled: true
     name: GParted
