@@ -927,13 +927,13 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20241126-plucky-c67d897c/
+    path: /ubuntu-squash/releases/download/20241201-plucky-c67d897c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20241126-plucky
+    version: 20241201-plucky
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
