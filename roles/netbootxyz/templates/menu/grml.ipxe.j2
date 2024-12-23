@@ -4,11 +4,15 @@ goto ${menu} ||
 
 :live_menu
 set os Grml
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} i386 && set os_arch x86 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
 menu ${os} - Current Arch [ ${arch} ]
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "grml" %}
-item {{ value.version }}-{{ value.flavor }} ${space} ${os} {{ value.version }} {{ value.flavor }}
+iseq ${os_arch} {{ value.arch }} && item {{ value.version }}-{{ value.flavor }}-{{ value.arch }} ${space} ${os} {{ value.version }} {{ value.flavor }} - {{ value.arch }}
 {% endif %}
 {% endfor %}
 choose live_version || goto live_exit
@@ -17,7 +21,7 @@ goto ${live_version}
 
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "grml" %}
-:{{ value.version }}-{{ value.flavor }}
+:{{ value.version }}-{{ value.flavor }}-{{ value.arch }}
 set squash_url ${live_endpoint}{{ value.path }}filesystem.squashfs
 set kernel_url ${live_endpoint}{{ value.path }}
 goto boot
