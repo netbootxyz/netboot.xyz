@@ -244,26 +244,6 @@ endpoints:
     os: devuan
     version: '2'
     flavor: ascii
-  grml-full:
-    path: /debian-squash/releases/download/2024.12-0bd182b6/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: grml
-    version: '2024.12'
-    flavor: full
-    arch: amd64
-  grml-small:
-    path: /debian-squash/releases/download/2024.12-2124936f/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: grml
-    version: '2024.12'
-    flavor: small
-    arch: amd64
   gparted-stable:
     path: /debian-squash/releases/download/1.6.0-10-cff72999/
     files:
