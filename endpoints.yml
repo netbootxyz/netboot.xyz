@@ -1727,3 +1727,13 @@ endpoints:
     version: '2024.12'
     flavor: small
     arch: amd64
+  grml-full-amd64:
+    path: /debian-squash/releases/download/2024.12-f98bba95/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: grml
+    version: '2024.12'
+    flavor: full
+    arch: amd64
