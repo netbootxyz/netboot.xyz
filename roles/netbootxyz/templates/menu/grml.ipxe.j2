@@ -6,7 +6,6 @@ goto ${menu} ||
 set os Grml
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
-iseq ${os_arch} i386 && set os_arch x86 ||
 iseq ${os_arch} arm64 && set os_arch arm64 ||
 menu ${os} - Current Arch [ ${arch} ]
 item --gap ${os} Versions
