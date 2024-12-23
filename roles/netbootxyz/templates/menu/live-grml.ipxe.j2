@@ -11,7 +11,7 @@ menu ${os} - Current Arch [ ${arch} ]
 item --gap ${os} Versions
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "grml" %}
-iseq ${os_arch} {{ value.arch }} && item {{ value.version }}-{{ value.flavor }}-{{ value.arch }} ${space} ${os} {{ value.version }} {{ value.flavor }} - {{ value.arch }}
+iseq ${os_arch} {{ value.arch }} && item {{ value.version }}-{{ value.flavor }}-{{ value.arch }} ${space} ${os} {{ value.version }} {{ value.flavor }} - {{ value.arch }} ||
 {% endif %}
 {% endfor %}
 choose live_version || goto live_exit
