@@ -17,7 +17,6 @@ iseq ${os_arch} {{ value.arch }} && item {{ value.version }}-{{ value.flavor }}-
 choose live_version || goto live_exit
 goto ${live_version}
 
-
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "grml" %}
 :{{ value.version }}-{{ value.flavor }}-{{ value.arch }}

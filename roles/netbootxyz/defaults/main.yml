@@ -688,10 +688,6 @@ utilitiesefi:
     enabled: true
     name: GParted
     type: ipxemenu
-  grml:
-    enabled: true
-    name: Grml
-    type: ipxemenu
   kaspersky:
     enabled: true
     name: Kaspersky Rescue Disk
@@ -812,10 +808,6 @@ utilitiespcbios64:
   gparted:
     enabled: true
     name: GParted
-    type: ipxemenu
-  grml:
-    enabled: true
-    name: Grml
     type: ipxemenu
   kaspersky:
     enabled: true
