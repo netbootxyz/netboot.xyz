@@ -845,13 +845,13 @@ endpoints:
     version: 2024.02.2_26.0_x86-64_0.37
     arch: x86_64
   archlinux-32:
-    path: /asset-mirror/releases/download/2023.03.02-f7a7f796/
+    path: /asset-mirror/releases/download/2024.07.10-1d684723/
     files:
     - airootfs.sfs
     - initramfs-linux.img
     - vmlinuz-linux
     os: archlinux
-    version: 2023.03.02
+    version: 2024.07.10
     arch: i686
   clonezilla-debian-stable-i686:
     path: /debian-squash/releases/download/3.2.0-5-ef1ff756/
