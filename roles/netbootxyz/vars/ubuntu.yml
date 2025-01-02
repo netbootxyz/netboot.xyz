@@ -15,6 +15,7 @@ netbootxyz_packages:
   - syslinux
   - syslinux-common
   - toilet
+  - mtools
 
 pipxe_packages:
   - acpica-tools
