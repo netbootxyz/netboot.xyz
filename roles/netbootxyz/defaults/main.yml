@@ -654,7 +654,7 @@ utilitiesarm:
   uefishell:
     enabled: true
     kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-aarch64.efi
-    name: UEFI Shell - {{ endpoints.uefishell.version }}
+    name: UEFI Shell
     type: direct
 utilitiesefi:
   4mlinux:
@@ -739,7 +739,7 @@ utilitiesefi:
   uefishell:
     enabled: true
     kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-x64.efi
-    name: UEFI Shell - {{ endpoints.uefishell.version }}
+    name: UEFI Shell
     type: direct
   zfsbootmenu:
     enabled: true
