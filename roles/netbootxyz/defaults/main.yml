@@ -651,6 +651,11 @@ utilitiesarm:
     kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
     name: Memtest86 Free - {{ endpoints.memtest86.version }}
     type: sanboot
+  uefi-shell:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.uefi-shell.path }}uefi-shell-aarch64.efi
+    name: UEFI Shell - {{ endpoints.uefi-shell.version }}
+    type: direct
 utilitiesefi:
   4mlinux:
     enabled: true
@@ -731,6 +736,11 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
+  uefi-shell:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.uefi-shell.path }}uefi-shell-x64.efi
+    name: UEFI Shell - {{ endpoints.uefi-shell.version }}
+    type: direct
   zfsbootmenu:
     enabled: true
     kernel: ${live_endpoint}{{ endpoints.zfsbootmenu.path }}zfsbootmenu-recovery-x86_64.efi
