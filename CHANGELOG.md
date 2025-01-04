@@ -5,7 +5,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.84] - 2024-00-00
+## [2.0.84] - 2025-01-04
+
+## Added
+
+- UEFI Shell available under utilities for x86/ARM UEFI mode
+- Floppy boot images for UEFI
+- Dasharo Tools Suite
+- Latest GRML added with ARM support
 
 ## Changed
 
