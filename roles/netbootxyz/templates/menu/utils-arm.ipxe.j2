@@ -20,7 +20,9 @@ goto utils_exit
 :{{ key }}
 imgfree
 kernel {{ value.kernel }}
+{% if value.initrd is defined and value.initrd %}
 initrd {{ value.initrd }}
+{% endif %}
 boot
 goto utils_exit
 {% endif %}
