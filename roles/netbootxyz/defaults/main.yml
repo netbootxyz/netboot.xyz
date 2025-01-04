@@ -88,6 +88,14 @@ bootloaders:
     ipxe_bin: snponly.efi
     output_bin: -snponly.efi
     type: DHCP-snponly
+  - desc: DHCP EFI Floppy boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi.dsk
+    output_bin: .efi.dsk
+    type: Floppy
+  - desc: EFI Floppy image w/ Simple Network Protocol, attempts to boot all net devices
+    ipxe_bin: snp.efi.dsk
+    output_bin: -snp.efi.dsk
+    type: Floppy-snp
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
@@ -147,8 +155,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.20
-      name: '3.20'
+    - code_name: v3.21
+      name: '3.21'
     - code_name: edge
       name: Edge (development)
   archlinux:
@@ -158,8 +166,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.11.01
-      name: 2024.11.01
+    - code_name: 2025.01.01
+      name: 2025.01.01
   blackarch:
     enabled: true
     menu: linux
@@ -189,11 +197,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 40.20241019.3.0
+    - code_name: 41.20241122.3.0
       name: stable
-    - code_name: 41.20241027.2.0
+    - code_name: 41.20241215.2.0
       name: testing
-    - code_name: 41.20241027.1.0
+    - code_name: 41.20241215.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -287,8 +295,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core189
-      name: 2.29 Core189
+    - code_name: 2.29-core190
+      name: 2.29 Core190
   k3os:
     enabled: true
     menu: linux
@@ -336,6 +344,8 @@ releases:
       name: nixos-23.11
     - code_name: nixos-24.05
       name: nixos-24.05
+    - code_name: nixos-24.11
+      name: nixos-24.11
     - code_name: nixos-unstable
       name: nixos-unstable
   openEuler:
@@ -441,14 +451,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20241031T000342Z
-      name: 20241031T000342Z
-    - code_name: 20241017T041739Z
-      name: 20241017T041739Z
-    - code_name: 20241003T000345Z
-      name: 20241003T000345Z
-    - code_name: 20240919T000328Z
-      name: 20240919T000328Z
+    - code_name: 20241226T000807Z
+      name: 20241226T000807Z
+    - code_name: 20241212T000748Z
+      name: 20241212T000748Z
+    - code_name: 20241128T004404Z
+      name: 20241128T004404Z
+    - code_name: 20241114T000536Z
+      name: 20241114T000536Z
   talos:
     enabled: true
     menu: linux
@@ -641,6 +651,11 @@ utilitiesarm:
     kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
     name: Memtest86 Free - {{ endpoints.memtest86.version }}
     type: sanboot
+  uefishell:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-aarch64.efi
+    name: UEFI Shell
+    type: direct
 utilitiesefi:
   4mlinux:
     enabled: true
@@ -666,13 +681,17 @@ utilitiesefi:
     enabled: true
     name: Clonezilla
     type: ipxemenu
+  dts:
+    enabled: true
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version
+      }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version
+      }}
+    name: Dasharo Tools Suite
+    type: direct
   gparted:
     enabled: true
     name: GParted
-    type: ipxemenu
-  grml:
-    enabled: true
-    name: Grml
     type: ipxemenu
   kaspersky:
     enabled: true
@@ -717,6 +736,11 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
+  uefishell:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-x64.efi
+    name: UEFI Shell
+    type: direct
   zfsbootmenu:
     enabled: true
     kernel: ${live_endpoint}{{ endpoints.zfsbootmenu.path }}zfsbootmenu-recovery-x86_64.efi
@@ -783,13 +807,17 @@ utilitiespcbios64:
     enabled: true
     name: DBAN
     type: ipxemenu
+  dts:
+    enabled: true
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version
+      }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version
+      }}
+    name: Dasharo Tools Suite
+    type: direct
   gparted:
     enabled: true
     name: GParted
-    type: ipxemenu
-  grml:
-    enabled: true
-    name: Grml
     type: ipxemenu
   kaspersky:
     enabled: true
