@@ -653,8 +653,8 @@ utilitiesarm:
     type: sanboot
   uefishell:
     enabled: true
-    kernel: ${live_endpoint}{{ endpoints.uefi-shell.path }}uefi-shell-aarch64.efi
-    name: UEFI Shell - {{ endpoints.uefi-shell.version }}
+    kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-aarch64.efi
+    name: UEFI Shell - {{ endpoints.uefishell.version }}
     type: direct
 utilitiesefi:
   4mlinux:
@@ -738,8 +738,8 @@ utilitiesefi:
     type: ipxemenu
   uefishell:
     enabled: true
-    kernel: ${live_endpoint}{{ endpoints.uefi-shell.path }}uefi-shell-x64.efi
-    name: UEFI Shell - {{ endpoints.uefi-shell.version }}
+    kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-x64.efi
+    name: UEFI Shell - {{ endpoints.uefishell.version }}
     type: direct
   zfsbootmenu:
     enabled: true
