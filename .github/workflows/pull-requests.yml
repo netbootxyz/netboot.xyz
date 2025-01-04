@@ -25,7 +25,7 @@ jobs:
 
     - name: Syntax Check
       run: |
-        ansible-playbook -i inventory site.yml --syntax-check
+        ansible-playbook site.yml --syntax-check
 
     - name: Ansible lint
       run: |

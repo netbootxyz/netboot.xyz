@@ -90,7 +90,7 @@ Please see the [self-hosting docs](https://netboot.xyz/docs/selfhosting/) for mo
 To generate, run:
 
 ```
-ansible-playbook -i inventory site.yml
+ansible-playbook site.yml
 ```
 
 The build output will be located in /var/www/html by default.
@@ -98,8 +98,8 @@ The build output will be located in /var/www/html by default.
 #### Deploying with Docker
 
 ```
-docker build -t localbuild -f Dockerfile .
-docker run --rm -it -v $(pwd):/buildout localbuild
+docker build -t localbuild --platform=linux/amd64 -f Dockerfile .
+docker run --rm -it --platform=linux/amd64 -v $(pwd):/buildout localbuild
 ```
 
 The build output will be in the generated folder `buildout`
