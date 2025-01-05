@@ -218,15 +218,6 @@ endpoints:
     os: oracle
     version: '8'
     arch: x86_64
-  oracle-7:
-    path: /asset-mirror/releases/download/u9-41493433/
-    files:
-    - vmlinuz
-    - initrd
-    - squashfs.img
-    os: oracle
-    version: '7'
-    arch: x86_64
   kodachi-6:
     path: /ubuntu-squash/releases/download/6.2-2a23039c/
     files:
