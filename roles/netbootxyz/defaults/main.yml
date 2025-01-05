@@ -403,7 +403,6 @@ releases:
     mirror: https://yum.oracle.com
     name: Oracle Linux
     paths:
-      7: /repo/OracleLinux/OL7/latest
       8: /repo/OracleLinux/OL8/baseos/latest
       9: /repo/OracleLinux/OL9/baseos/latest
   photon:
