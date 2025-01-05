@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.85] - 2025-00-00
+
 ## [2.0.84] - 2025-01-04
 
 ## Added
