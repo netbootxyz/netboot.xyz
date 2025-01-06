@@ -1736,3 +1736,9 @@ endpoints:
     - uefi-shell-arm.efi
     os: uefi-shell
     version: edk2-stable202002
+  uefi-shell-x64:
+    path: /asset-mirror/releases/download/edk2-stable202002-4c8abfeb/
+    files:
+    - uefi-shell-x64.efi
+    os: uefi-shell-x64
+    version: edk2-stable202002
