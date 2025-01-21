@@ -1,6 +1,6 @@
 #!ipxe
 
-# CentOS Operating System
+# CentOS Stream
 # http://www.centos.org
 
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
@@ -20,8 +20,7 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
-iseq ${os_arch} x86_64 && set dir ${centos_base_dir}/${osversion}/BaseOS/${os_arch}/os ||
-iseq ${os_arch} aarch64 && set dir altarch/${osversion}/BaseOS/${os_arch}/os ||
+set dir ${osversion}/BaseOS/${os_arch}/os ||
 set repo ${centos_mirror}/${dir}
 goto boottype
 
@@ -60,9 +59,6 @@ goto boottype
 
 :bootos_images
 imgfree
-iseq ${osversion} 9-stream && set centos_mirror http://mirror.rackspace.com/centos-stream ||
-iseq ${osversion} 9-stream && set dir ${osversion}/BaseOS/${os_arch}/os ||
-iseq ${osversion} 9-stream && set repo ${centos_mirror}/${dir} ||
 kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} ${install_mode} ${params} ${ipparam} {{ kernel_params }}
 initrd ${centos_mirror}/${dir}/images/pxeboot/initrd.img
 echo

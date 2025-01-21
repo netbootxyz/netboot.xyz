@@ -176,20 +176,16 @@ releases:
     - code_name: current
       name: current
   centos:
-    base_dir: centos
+    base_dir: centos-stream
     enabled: true
     menu: linux
-    mirror: http://mirror.centos.org
-    name: CentOS
+    mirror: https://mirror.stream.centos.org
+    name: CentOS Stream
     versions:
+    - code_name: 10-stream
+      name: 10.0 Stream
     - code_name: 9-stream
       name: 9.0 Stream
-    - code_name: 8.5.2111
-      name: '8.5'
-    - code_name: 8
-      name: 8.x Latest
-    - code_name: 8-stream
-      name: 8.0 Stream
   coreos:
     base_dir: prod/streams
     enabled: true
