@@ -363,7 +363,7 @@ releases:
     base_dir: pub/OpenBSD
     enabled: true
     menu: bsd
-    mirror: https://cdn.openbsd.org
+    mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
     - code_name: '7.6'
