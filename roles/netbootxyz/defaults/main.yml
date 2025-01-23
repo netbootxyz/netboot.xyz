@@ -176,7 +176,7 @@ releases:
     - code_name: current
       name: current
   centos:
-    base_dir: centos-stream
+    base_dir: null
     enabled: true
     menu: linux
     mirror: https://mirror.stream.centos.org
