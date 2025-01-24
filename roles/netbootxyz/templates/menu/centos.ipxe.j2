@@ -20,7 +20,7 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 {% endfor %}
 isset ${osversion} || choose osversion || goto linux_menu
 echo ${cls}
-set dir ${osversion}/BaseOS/${os_arch}/os ||
+set dir ${centos_base_dir}/${osversion}/BaseOS/${os_arch}/os ||
 set repo ${centos_mirror}/${dir}
 goto boottype
 
