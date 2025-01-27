@@ -829,11 +829,11 @@ endpoints:
     version: 0.34_32-bit_20221231
     arch: i686
   shredos-x86_64:
-    path: /asset-mirror/releases/download/2024.02.2_26.0_x86-64_0.37-bd59ed1f/
+    path: /asset-mirror/releases/download/2024.11_27_x86-64_0.38-fa89876c/
     files:
     - shredos
     os: shredos
-    version: 2024.02.2_26.0_x86-64_0.37
+    version: 2024.11_27_x86-64_0.38
     arch: x86_64
   archlinux-32:
     path: /asset-mirror/releases/download/2024.07.10-1d684723/
