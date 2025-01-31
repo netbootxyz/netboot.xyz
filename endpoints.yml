@@ -236,7 +236,7 @@ endpoints:
     version: '2'
     flavor: ascii
   gparted-stable:
-    path: /debian-squash/releases/download/1.6.0-10-cff72999/
+    path: /debian-squash/releases/download/1.7.0-1-cff72999/
     files:
     - filesystem.squashfs
     - initrd
