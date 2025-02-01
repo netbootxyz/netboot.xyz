@@ -1283,13 +1283,13 @@ endpoints:
     version: '9'
     arch: aarch64
   parrot-home:
-    path: /debian-squash/releases/download/6.2-897b335c/
+    path: /debian-squash/releases/download/6.3.2-37ae0f27/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: parrot
-    version: '6.2'
+    version: 6.3.2
     flavor: home
   parrot-security:
     path: /debian-squash/releases/download/6.2-6288c350/
