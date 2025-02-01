@@ -1292,13 +1292,13 @@ endpoints:
     version: 6.3.2
     flavor: home
   parrot-security:
-    path: /debian-squash/releases/download/6.2-6288c350/
+    path: /debian-squash/releases/download/6.3.2-999ed7ad/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: parrot
-    version: '6.2'
+    version: 6.3.2
     flavor: security
   xcp-ng:
     path: /asset-mirror/releases/download/8.2-55521b28/
