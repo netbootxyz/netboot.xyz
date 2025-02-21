@@ -349,8 +349,10 @@ releases:
     mirror: http://repo.openeuler.org
     name: openEuler
     versions:
-    - code_name: openEuler-23.09
-      name: openEuler-23.09
+    - code_name: openEuler-24.09
+      name: openEuler-24.09
+    - code_name: openEuler-24.03-LTS-SP1
+      name: openEuler-24.03-LTS-SP1
     - code_name: openEuler-20.03-LTS-SP3
       name: openEuler-20.03-LTS-SP3
     - code_name: openEuler-22.03-LTS
