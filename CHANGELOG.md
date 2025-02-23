@@ -3,18 +3,23 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [2.0.85] - 2025-02-23
+
+### Changed
+
+- Various version updates
+- Checks for boot timeout from local-vars.ipxe
 
 ## [2.0.84] - 2025-01-04
 
-## Added
+### Added
 
 - UEFI Shell available under utilities for x86/ARM UEFI mode
 - Floppy boot images for UEFI
 - Dasharo Tools Suite
 - Latest GRML added with ARM support
 
-## Changed
+### Changed
 
 - Moves win_base_url and rhel_base_url out of boot.cfg to local-vars.ipxe as they are
   user defined variables.
@@ -23,19 +28,19 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.83] - 2024-11-07
 
-## Changed
+### Changed
 
 - Various version updates
 
 ## [2.0.82] - 2024-09-18
 
-## Changed
+### Changed
 
 - Various version updates
 
 ## [2.0.81] - 2024-08-10
 
-## Added
+### Added
 
 - Added ZFSBootMenu
 - Added VanillaOS

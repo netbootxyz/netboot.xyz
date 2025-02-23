@@ -166,8 +166,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2025.01.01
-      name: 2025.01.01
+    - code_name: 2025.02.01
+      name: 2025.02.01
   blackarch:
     enabled: true
     menu: linux
@@ -176,20 +176,16 @@ releases:
     - code_name: current
       name: current
   centos:
-    base_dir: centos
+    base_dir: null
     enabled: true
     menu: linux
-    mirror: http://mirror.centos.org
-    name: CentOS
+    mirror: https://mirror.stream.centos.org
+    name: CentOS Stream
     versions:
+    - code_name: 10-stream
+      name: 10.0 Stream
     - code_name: 9-stream
       name: 9.0 Stream
-    - code_name: 8.5.2111
-      name: '8.5'
-    - code_name: 8
-      name: 8.x Latest
-    - code_name: 8-stream
-      name: 8.0 Stream
   coreos:
     base_dir: prod/streams
     enabled: true
@@ -197,11 +193,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 41.20241122.3.0
+    - code_name: 41.20250130.3.0
       name: stable
-    - code_name: 41.20241215.2.0
+    - code_name: 41.20250215.2.0
       name: testing
-    - code_name: 41.20241215.1.0
+    - code_name: 41.20250215.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -295,8 +291,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core190
-      name: 2.29 Core190
+    - code_name: 2.29-core191
+      name: 2.29 Core191
   k3os:
     enabled: true
     menu: linux
@@ -328,26 +324,24 @@ releases:
     menu: linux
     name: NixOS
     versions:
-    - code_name: nixos-20.09
-      name: nixos-20.09
-    - code_name: nixos-21.05
-      name: nixos-21.05
-    - code_name: nixos-21.11
-      name: nixos-21.11
-    - code_name: nixos-22.05
-      name: nixos-22.05
-    - code_name: nixos-22.11
-      name: nixos-22.11
-    - code_name: nixos-23.05
-      name: nixos-23.05
-    - code_name: nixos-23.11
-      name: nixos-23.11
-    - code_name: nixos-24.05
-      name: nixos-24.05
     - code_name: nixos-24.11
       name: nixos-24.11
-    - code_name: nixos-unstable
-      name: nixos-unstable
+    - code_name: nixos-24.05
+      name: nixos-24.05
+    - code_name: nixos-23.11
+      name: nixos-23.11
+    - code_name: nixos-23.05
+      name: nixos-23.05
+    - code_name: nixos-22.11
+      name: nixos-22.11
+    - code_name: nixos-22.05
+      name: nixos-22.05
+    - code_name: nixos-21.11
+      name: nixos-21.11
+    - code_name: nixos-21.05
+      name: nixos-21.05
+    - code_name: nixos-20.09
+      name: nixos-20.09
   openEuler:
     base_dir: null
     enabled: true
@@ -355,8 +349,10 @@ releases:
     mirror: http://repo.openeuler.org
     name: openEuler
     versions:
-    - code_name: openEuler-23.09
-      name: openEuler-23.09
+    - code_name: openEuler-24.09
+      name: openEuler-24.09
+    - code_name: openEuler-24.03-LTS-SP1
+      name: openEuler-24.03-LTS-SP1
     - code_name: openEuler-20.03-LTS-SP3
       name: openEuler-20.03-LTS-SP3
     - code_name: openEuler-22.03-LTS
@@ -372,18 +368,15 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
-    - code_name: '7.4'
-      image_ver: '74'
-      name: '7.4'
-    - code_name: '7.3'
-      image_ver: '73'
-      name: '7.3'
-    - code_name: '7.2'
-      image_ver: '72'
-      name: '7.2'
+    - code_name: '7.6'
+      image_ver: '76'
+      name: '7.6'
+    - code_name: '7.5'
+      image_ver: '75'
+      name: '7.5'
     - code_name: snapshots
-      image_ver: '74'
-      name: 7.4 Latest Snapshot
+      image_ver: '76'
+      name: 7.6 Latest Snapshot
   opensuse:
     base_dir: distribution/leap
     enabled: true
@@ -403,7 +396,6 @@ releases:
     mirror: https://yum.oracle.com
     name: Oracle Linux
     paths:
-      7: /repo/OracleLinux/OL7/latest
       8: /repo/OracleLinux/OL8/baseos/latest
       9: /repo/OracleLinux/OL9/baseos/latest
   photon:
@@ -451,14 +443,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20241226T000807Z
-      name: 20241226T000807Z
-    - code_name: 20241212T000748Z
-      name: 20241212T000748Z
-    - code_name: 20241128T004404Z
-      name: 20241128T004404Z
-    - code_name: 20241114T000536Z
-      name: 20241114T000536Z
+    - code_name: 20250220T074131Z
+      name: 20250220T074131Z
+    - code_name: 20250220T000340Z
+      name: 20250220T000340Z
+    - code_name: 20250206T001102Z
+      name: 20250206T001102Z
+    - code_name: 20250124T134639Z
+      name: 20250124T134639Z
   talos:
     enabled: true
     menu: linux
