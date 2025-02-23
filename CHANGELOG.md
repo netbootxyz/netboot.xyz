@@ -3,7 +3,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.0.85] - 2025-00-00
+## [2.0.85] - 2025-02-23
+
+### Changed
+
+- Various version updates
+- Checks for boot timeout from local-vars.ipxe
 
 ## [2.0.84] - 2025-01-04
 
