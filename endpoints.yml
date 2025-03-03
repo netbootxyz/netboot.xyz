@@ -1081,13 +1081,13 @@ endpoints:
     os: proxmox-ve
     version: 8.3-1
   proxmox-mailgateway:
-    path: /asset-mirror/releases/download/8.1-1-8374c64d/
+    path: /asset-mirror/releases/download/8.2-1-8374c64d/
     files:
     - initrd
     - vmlinuz
     - proxmox.iso
     os: proxmox-mailgateway
-    version: 8.1-1
+    version: 8.2-1
   tails-beta:
     path: /asset-mirror/releases/download/5.0b1-ebdb1fb3/
     files:
