@@ -80,7 +80,7 @@ goto kairos
 :kairos_boot
 imgfree
 set release_prefix ${kairos_mirror}/download/${kairos_version}/kairos-${kairos_platform}-core-${os_arch}-generic-${kairos_version}
-kernel ${release_prefix}-kernel root=live:${release_prefix}.squashfs rd.neednet=1 ip=dhcp rd.cos.disable netboot ${kairos_mode} config_url=${kairos_config_url} console=tty1 console=ttyS0 ${cmdline} initrd=initrd.magic
+kernel ${release_prefix}-kernel root=live:${release_prefix}.squashfs rd.neednet=1 ip=dhcp rd.cos.disable netboot ${kairos_mode} config_url=${kairos_config_url} selinux=0 console=tty1 console=ttyS0 ${cmdline} initrd=initrd.magic
 initrd ${release_prefix}-initrd
 
 echo
