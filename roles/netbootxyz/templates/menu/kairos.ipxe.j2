@@ -41,10 +41,11 @@ goto kairos_exit
 
 :kairos_mode
 menu ${os} Modes
-item install-mode-interactive Interactive Install Mode
-item install-mode Regular Install Mode
-item kairos.remote_recovery_mode Remote Recovery Mode
-choose --default ${kairos_mode} kairos_mode
+item --gap Set Boot Mode:
+item install-mode-interactive ${space} Interactive Install Mode
+item install-mode ${space} Regular Install Mode
+item kairos.remote_recovery_mode ${space} Remote Recovery Mode
+choose --default ${kairos_mode} kairos_mode  || clear menu
 goto kairos
 
 :kairos_version_latest
@@ -70,11 +71,12 @@ clear menu
 goto kairos
 
 :kairos_platform
-menu ${os} platforms
+menu ${os} Platforms
+item --gap Set Platform:
 {% for item in releases.kairos.platforms %}
 item {{ item.key }} ${space} {{ item.name }}
 {% endfor %}
-choose --default ${kairos_platform} kairos_platform
+choose --default ${kairos_platform} kairos_platform || clear menu
 goto kairos
 
 :kairos_boot
@@ -85,7 +87,7 @@ initrd ${release_prefix}-initrd
 
 echo
 echo MD5sums:
-md5sum kairos-${kairos_platform}-core-${os_arch}-generic-${kairos_version}-kernel kairos-${kairos_platform}-${kairos_flavor}-${os_arch}-generic-${kairos_version}-initrd
+md5sum kairos-${kairos_platform}-core-${os_arch}-generic-${kairos_version}-kernel kairos-${kairos_platform}-core-${os_arch}-generic-${kairos_version}-initrd
 boot
 
 :kairos_exit
