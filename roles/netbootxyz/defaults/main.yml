@@ -293,12 +293,16 @@ releases:
     versions:
     - code_name: 2.29-core191
       name: 2.29 Core191
+  k3os:
+    enabled: true
+    menu: linux
+    mirror: https://github.com/rancher/k3os/releases
+    name: k3OS
   kairos:
     enabled: true
     menu: linux
     mirror: https://github.com/kairos-io/kairos/releases
     name: Kairos
-    version: v3.3.1
     platforms:
     - key: alpine-3.19
       name: Alpine Linux 3.19
@@ -322,11 +326,7 @@ releases:
       name: Ubuntu 24.04
     - key: ubuntu-24.10
       name: Ubuntu 24.10
-  k3os:
-    enabled: true
-    menu: linux
-    mirror: https://github.com/rancher/k3os/releases
-    name: k3OS
+    version: v3.3.1
   kali:
     base_dir: kali
     enabled: true
