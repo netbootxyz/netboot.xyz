@@ -32,7 +32,7 @@ goto kairos_exit
 
 :kairos_version
 menu ${os} version
-item latest ${space} ${kairos_version}
+item ${kairos_version} ${space} ${kairos_version}
 item custom ${space} Set custom version
 choose --default ${version} version || goto kairos_exit
 echo ${cls}
