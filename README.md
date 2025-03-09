@@ -146,6 +146,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | hrmpf | https://github.com/leahneukirchen/hrmpf/ | No | Yes |
 | IPFire | https://www.ipfire.org | Yes | No |
 | K3OS | https://k3os.io/ | Yes | Yes |
+| Kairos | https://kairos.io/ | Yes | No |
 | Kali Linux | https://www.kali.org | Yes | Yes |
 | KDE Neon | https://neon.kde.org | No | Yes |
 | Kodachi | https://www.digi77.com/linux-kodachi/ | No | Yes |
