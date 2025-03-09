@@ -1,0 +1,93 @@
+#!ipxe
+
+# Kairos
+# https://github.com/kairos-io/kairos/releases
+
+goto ${menu} ||
+
+:kairos
+#set os {{ releases.kairos.name }}
+set os Kairos
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+isset ${kairos_version} || set kairos_version {{ releases.kairos.version }}
+# isset ${kairos_mirror} || set kairos_mirror {{ releases.kairos.mirror }}
+isset ${kairos_mirror} || set kairos_mirror https://github.com/kairos-io/kairos/releases
+isset ${kairos_platform} || set kairos_platform {{ releases.kairos.platforms[0].key }}
+isset ${kairos_mode} || set kairos_mode install-mode-interactive 
+
+menu ${os}
+item --gap Kairos:
+item kairos_boot ${space} Begin install ${os} ${kairos_version}
+item --gap Parameters:
+item kairos_version ${space} ${os} version: ${kairos_version}
+item kairos_mode ${space} Set install mode: ${kairos_mode}
+item kairos_config_url ${space} Set config file URL: ${kairos_config_url}
+item kairos_mirror ${space} Set mirror URL: ${kairos_mirror}
+item kairos_platform ${space} Set platform: ${kairos_platform}
+choose --default ${menu} menu || goto kairos_exit
+echo ${cls}
+goto ${menu} ||
+goto kairos_exit
+
+:kairos_version
+menu ${os} version
+item latest ${space} ${kairos_version}
+item custom ${space} Set custom version
+choose --default ${version} version || goto kairos_exit
+echo ${cls}
+goto kairos_version_${version} ||
+goto kairos_exit
+
+:kairos_mode
+menu ${os} Modes
+item install-mode-interactive Interactive Install Mode
+item install-mode Regular Install Mode
+item kairos.remote_recovery_mode Remote Recovery Mode
+choose --default ${kairos_mode} kairos_mode
+goto kairos
+
+:kairos_version_latest
+set kairos_version latest
+set kairos_base_url ${kairos_mirror}/latest/download
+goto kairos
+
+:kairos_version_custom
+clear kairos_version
+echo -n Please set Kairos version manually (in format vX.Y.Z):  && read kairos_version
+set kairos_base_url ${kairos_mirror}/download/${kairos_version}
+clear menu
+goto kairos
+
+:kairos_mirror
+echo -n Set mirror URL:  && read kairos_mirror
+clear menu
+goto kairos
+
+:kairos_config_url
+echo -n Set config file URL:  && read kairos_config_url
+clear menu
+goto kairos
+
+:kairos_platform
+menu ${os} platforms
+{% for item in releases.kairos.platforms %}
+item {{ item.key }} ${space} {{ item.name }}
+{% endfor %}
+choose --default ${kairos_platform} kairos_platform
+goto kairos
+
+:kairos_boot
+imgfree
+set release_prefix ${kairos_mirror}/download/${kairos_version}/kairos-${kairos_platform}-core-${os_arch}-generic-${kairos_version}
+kernel ${release_prefix}-kernel root=live:${release_prefix}.squashfs rd.neednet=1 ip=dhcp rd.cos.disable netboot ${kairos_mode} config_url=${kairos_config_url} console=tty1 console=ttyS0 ${cmdline} initrd=initrd.magic
+initrd ${release_prefix}-initrd
+
+echo
+echo MD5sums:
+md5sum kairos-${kairos_platform}-core-${os_arch}-generic-${kairos_version}-kernel kairos-${kairos_platform}-${kairos_flavor}-${os_arch}-generic-${kairos_version}-initrd
+boot
+
+:kairos_exit
+clear menu
+exit 0
