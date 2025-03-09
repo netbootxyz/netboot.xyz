@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.86] - 2025-00-00
 
+### Added
+
+- Support for Kairos
+
 ## [2.0.85] - 2025-02-23
 
 ### Changed
