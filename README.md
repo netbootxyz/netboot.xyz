@@ -128,7 +128,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Bluestar Linux | https://sourceforge.net/projects/bluestarlinux | No | Yes |
 | Bodhi Linux | https://www.bodhilinux.com | No | Yes |
 | CentOS | https://centos.org | Yes | No |
-| CoreOS | http://coreos.com/ | Yes | No |
+| Fedora CoreOS | https://getfedora.org/en/coreos?stream=stable | Yes | No |
 | Debian | https://debian.org | Yes | Yes|
 | Deepin | https://www.deepin.org | No | Yes |
 | Devuan | https://devuan.org | Yes | No |
