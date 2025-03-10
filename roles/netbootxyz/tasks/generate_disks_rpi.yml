@@ -18,11 +18,13 @@
   ansible.builtin.template:
     src: "disks/{{ bootloader_filename }}.j2"
     dest: "{{ pipxe_source_dir }}/ipxe/src/{{ bootloader_filename }}"
+  ignore_errors: "{{ ansible_check_mode }}"
 
 - name: Copy netboot.xyz local EFI iPXE configs
   ansible.builtin.copy:
     src: "ipxe/local/{{ item }}"
     dest: "{{ pipxe_source_dir }}/ipxe/src/config/local/{{ item }}"
+  ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - colour.h
     - console.h
@@ -32,6 +34,7 @@
   ansible.builtin.copy:
     src: "ipxe/local/general.h.efi"
     dest: "{{ pipxe_source_dir }}/ipxe/src/config/local/general.h"
+  ignore_errors: "{{ ansible_check_mode }}"
 
 - name: Set trust file to ipxe ca
   ansible.builtin.set_fact:
@@ -59,6 +62,7 @@
     src: "{{ pipxe_source_dir }}/{{ item.src }}"
     dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
     remote_src: true
+  ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - {src: "sdcard.img", dest: "{{ bootloader_filename }}-rpi4-sdcard.img"}
     - {src: "ipxe/src/bin-arm64-efi/snp.efi", dest: "{{ bootloader_filename }}-rpi4-snp.efi"}
