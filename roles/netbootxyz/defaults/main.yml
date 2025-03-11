@@ -331,7 +331,7 @@ releases:
       name: Ubuntu 20.04
     - key: ubuntu-22.04
       name: Ubuntu 22.04
-    - key: ububtu-24.04
+    - key: ubuntu-24.04
       name: Ubuntu 24.04
     - key: ubuntu-24.10
       name: Ubuntu 24.10
