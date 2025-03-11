@@ -300,6 +300,15 @@ releases:
     name: k3OS
   kairos:
     enabled: true
+    flavors:
+    - key: core
+      name: Core
+    - key: k3sv1.30.8+k3s1
+      name: k3s v1.30.8+k3s1 (Standard)
+    - key: k3sv1.31.4+k3s1
+      name: k3s v1.31.4+k3s1 (Standard)
+    - key: k3sv1.32.1+k3s1
+      name: k3s v1.32.1+k3s1 (Standard)
     menu: linux
     mirror: https://github.com/kairos-io/kairos/releases
     name: Kairos
