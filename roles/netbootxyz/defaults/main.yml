@@ -323,8 +323,8 @@ releases:
       name: Fedora 40
     - key: opensuse-leap-15.6
       name: openSUSE Leap 15.6
-    - key: openstack-tumbleweed
-      name: Openstack Tumbleweed
+    - key: opensuse-tumbleweed
+      name: openSUSE Tumbleweed
     - key: rockylinux-9
       name: Rocky Linux 9
     - key: ubuntu-20.04
