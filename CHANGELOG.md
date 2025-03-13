@@ -3,6 +3,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.86] - 2025-03-13
+
+### Added
+
+- Support for Kairos
+- Enabled NFS support in iPXE
+
 ## [2.0.85] - 2025-02-23
 
 ### Changed
