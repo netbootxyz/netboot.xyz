@@ -867,13 +867,13 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20241010-oracular-48403403/
+    path: /ubuntu-squash/releases/download/20250303-oracular-48403403/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20241010-oracular
+    version: 20250303-oracular
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
