@@ -166,8 +166,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2025.02.01
-      name: 2025.02.01
+    - code_name: 2025.03.01
+      name: 2025.03.01
   blackarch:
     enabled: true
     menu: linux
@@ -193,11 +193,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 41.20250130.3.0
+    - code_name: 41.20250215.3.0
       name: stable
-    - code_name: 41.20250215.2.0
+    - code_name: 41.20250302.2.0
       name: testing
-    - code_name: 41.20250215.1.0
+    - code_name: 41.20250302.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -291,13 +291,51 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core191
-      name: 2.29 Core191
+    - code_name: 2.29-core192
+      name: 2.29 Core192
   k3os:
     enabled: true
     menu: linux
     mirror: https://github.com/rancher/k3os/releases
     name: k3OS
+  kairos:
+    enabled: true
+    flavors:
+    - key: core
+      name: Core
+    - key: k3sv1.30.8+k3s1
+      name: k3s v1.30.8+k3s1 (Standard)
+    - key: k3sv1.31.4+k3s1
+      name: k3s v1.31.4+k3s1 (Standard)
+    - key: k3sv1.32.1+k3s1
+      name: k3s v1.32.1+k3s1 (Standard)
+    menu: linux
+    mirror: https://github.com/kairos-io/kairos/releases
+    name: Kairos
+    platforms:
+    - key: alpine-3.19
+      name: Alpine Linux 3.19
+    - key: debian-bookworm
+      name: Debian Bookworm
+    - key: debian-testing
+      name: Debian Testing
+    - key: fedora-40
+      name: Fedora 40
+    - key: opensuse-leap-15.6
+      name: openSUSE Leap 15.6
+    - key: opensuse-tumbleweed
+      name: openSUSE Tumbleweed
+    - key: rockylinux-9
+      name: Rocky Linux 9
+    - key: ubuntu-20.04
+      name: Ubuntu 20.04
+    - key: ubuntu-22.04
+      name: Ubuntu 22.04
+    - key: ubuntu-24.04
+      name: Ubuntu 24.04
+    - key: ubuntu-24.10
+      name: Ubuntu 24.10
+    version: v3.3.1
   kali:
     base_dir: kali
     enabled: true
@@ -443,14 +481,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
+    - code_name: 20250306T000316Z
+      name: 20250306T000316Z
     - code_name: 20250220T074131Z
       name: 20250220T074131Z
     - code_name: 20250220T000340Z
       name: 20250220T000340Z
     - code_name: 20250206T001102Z
       name: 20250206T001102Z
-    - code_name: 20250124T134639Z
-      name: 20250124T134639Z
   talos:
     enabled: true
     menu: linux

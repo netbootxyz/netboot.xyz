@@ -71,13 +71,13 @@ endpoints:
     flavor: mate
     kernel: debian-10-live-kernel
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2024.4-54fc2a3c/
+    path: /debian-squash/releases/download/2025.1-8e024a88/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: '2024.4'
+    version: '2025.1'
     flavor: xfce
     kernel: kali-xfce-squash
   kde-neon-user:
@@ -401,7 +401,7 @@ endpoints:
     version: current
     flavor: TheSSS
   4mlinux-bakandimg:
-    path: /asset-mirror/releases/download/47.0-d0598ee4/
+    path: /asset-mirror/releases/download/48.0-d0598ee4/
     files:
     - initrd
     - vmlinuz
@@ -409,7 +409,7 @@ endpoints:
     version: current
     flavor: BakAndImg
   4mlinux-antivirus:
-    path: /asset-mirror/releases/download/47.0-1.4.1-43b0f75b/
+    path: /asset-mirror/releases/download/48.0-1.4.2-43b0f75b/
     files:
     - initrd
     - vmlinuz
@@ -532,7 +532,7 @@ endpoints:
     version: 5.8
     kernel: linux-lite-5-squash
   vyos-rolling:
-    path: /debian-squash/releases/download/1.5-rolling-202502190007-0d0f700e/
+    path: /debian-squash/releases/download/2025.03.06-0018-rolling-0d0f700e/
     files:
     - filesystem.squashfs
     - initrd
@@ -746,32 +746,32 @@ endpoints:
     version: 20241209T170323Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20250119T234827Z-d5972d15/
+    path: /asset-mirror/releases/download/20250202T230326Z-d5972d15/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20250119T234827Z
+    version: 20250202T230326Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20250115T221822Z-63d6ec39/
+    path: /asset-mirror/releases/download/20250202T154819Z-63d6ec39/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20250115T221822Z
+    version: 20250202T154819Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/6.12-911e1aab/
+    path: /asset-mirror/releases/download/6.13-911e1aab/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     - tails-amd64.iso
     os: tails
-    version: '6.12'
+    version: '6.13'
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20231124-1008bb6d/
@@ -867,24 +867,24 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20241010-oracular-48403403/
+    path: /ubuntu-squash/releases/download/20250303-oracular-48403403/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20241010-oracular
+    version: 20250303-oracular
     flavor: stable
     kernel: clonezilla-ubuntu-stable-amd64
     arch: amd64
   clonezilla-debian-testing-amd64:
-    path: /debian-squash/releases/download/3.2.1-7-9e73bfe5/
+    path: /debian-squash/releases/download/3.2.1-9-9e73bfe5/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.2.1-7
+    version: 3.2.1-9
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
@@ -900,18 +900,18 @@ endpoints:
     kernel: clonezilla-debian-testing-i686
     arch: i686
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20250218-plucky-c67d897c/
+    path: /ubuntu-squash/releases/download/20250303-plucky-c67d897c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20250218-plucky
+    version: 20250303-plucky
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
   garuda-dr460nized-gaming:
-    path: /asset-mirror/releases/download/240428-a96201bb/
+    path: /asset-mirror/releases/download/250308-a96201bb/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -923,9 +923,9 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: dr460nized-gaming
-    version: 240428
+    version: 250308
   garuda-dr460nized:
-    path: /asset-mirror/releases/download/240428-f610be58/
+    path: /asset-mirror/releases/download/250308-f610be58/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -937,9 +937,9 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: dr460nized
-    version: 240428
+    version: 250308
   garuda-xfce:
-    path: /asset-mirror/releases/download/240428-c866e6bf/
+    path: /asset-mirror/releases/download/250308-c866e6bf/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -951,9 +951,9 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: xfce
-    version: 240428
+    version: 250308
   garuda-gnome:
-    path: /asset-mirror/releases/download/240428-c80a21be/
+    path: /asset-mirror/releases/download/250308-c80a21be/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -965,7 +965,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: gnome
-    version: 240428
+    version: 250308
   garuda-lxqt-kwin:
     path: /asset-mirror/releases/download/230501-f13b4b24/
     files:
@@ -1009,7 +1009,7 @@ endpoints:
     flavor: qtile
     version: 231029
   garuda-i3wm:
-    path: /asset-mirror/releases/download/240428-d48b8f05/
+    path: /asset-mirror/releases/download/250308-d48b8f05/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1021,9 +1021,9 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: i3wm
-    version: 240428
+    version: 250308
   garuda-sway:
-    path: /asset-mirror/releases/download/240428-8d451890/
+    path: /asset-mirror/releases/download/250308-8d451890/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1035,7 +1035,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: sway
-    version: 240428
+    version: 250308
   garuda-mate:
     path: /asset-mirror/releases/download/230501-3af08aa6/
     files:
@@ -1081,13 +1081,13 @@ endpoints:
     os: proxmox-ve
     version: 8.3-1
   proxmox-mailgateway:
-    path: /asset-mirror/releases/download/8.1-1-8374c64d/
+    path: /asset-mirror/releases/download/8.2-1-8374c64d/
     files:
     - initrd
     - vmlinuz
     - proxmox.iso
     os: proxmox-mailgateway
-    version: 8.1-1
+    version: 8.2-1
   tails-beta:
     path: /asset-mirror/releases/download/5.0b1-ebdb1fb3/
     files:
@@ -1309,7 +1309,7 @@ endpoints:
     os: xcp-ng
     version: '8.2'
   garuda-cinnamon:
-    path: /asset-mirror/releases/download/240428-0b360492/
+    path: /asset-mirror/releases/download/250308-0b360492/
     files:
     - amd_ucode.img
     - desktopfs.sfs
@@ -1321,7 +1321,7 @@ endpoints:
     - vmlinuz
     os: garuda
     flavor: cinnamon
-    version: 240428
+    version: 250308
   elementaryos-7-default-squash:
     path: /ubuntu-squash/releases/download/7-3e6e05f6/
     files:
@@ -1607,7 +1607,7 @@ endpoints:
     version: 40
     flavor: GNOME
   ubuntu-24.04-default-squash:
-    path: /ubuntu-squash/releases/download/24.04.1-03d79d20/
+    path: /ubuntu-squash/releases/download/24.04.2-03d79d20/
     files:
     - filesystem.squashfs
     - initrd
