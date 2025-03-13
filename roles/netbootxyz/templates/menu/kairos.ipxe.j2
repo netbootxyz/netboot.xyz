@@ -11,8 +11,7 @@ set os Kairos
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
 isset ${kairos_version} || set kairos_version {{ releases.kairos.version }}
-# isset ${kairos_mirror} || set kairos_mirror {{ releases.kairos.mirror }}
-isset ${kairos_mirror} || set kairos_mirror https://github.com/kairos-io/kairos/releases
+isset ${kairos_mirror} || set kairos_mirror {{ releases.kairos.mirror }}
 isset ${kairos_platform} || set kairos_platform {{ releases.kairos.platforms[0].key }}
 isset ${kairos_mode} || set kairos_mode install-mode-interactive
 isset ${kairos_flavor} || set kairos_flavor core
