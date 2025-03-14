@@ -1,5 +1,4 @@
 ---
-
 - name: Gathering facts
   ansible.builtin.setup:
 
@@ -35,6 +34,11 @@
   ansible.builtin.get_url:
     url: "{{ wimboot_upstream_url }}"
     dest: "{{ netbootxyz_root }}/wimboot"
+
+- name: Retrieve latest wimboot.arm64
+  ansible.builtin.get_url:
+    url: "{{ wimboot_arm64_upstream_url }}"
+    dest: "{{ netbootxyz_root }}/wimboot.arm64"
 
 - name: Copy helper apps
   ansible.builtin.copy:
