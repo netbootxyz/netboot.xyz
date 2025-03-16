@@ -813,13 +813,13 @@ endpoints:
     version: 9.03
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/11.03-e17908dd/
+    path: /asset-mirror/releases/download/12.00-e17908dd/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: systemrescue
-    version: 11.03
+    version: 12.0
     arch: amd64
   shredos-i686:
     path: /asset-mirror/releases/download/0.34_32-bit_20221231-3adcc4d0/
