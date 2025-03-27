@@ -1539,13 +1539,13 @@ endpoints:
     os: freebsd
     version: '14'
   zorin-core-squash:
-    path: /ubuntu-squash/releases/download/17.2-a87e018b/
+    path: /ubuntu-squash/releases/download/17.3-a87e018b/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: zorin
-    version: '17.2'
+    version: '17.3'
     flavor: Core
     kernel: zorin-core-squash
   q4os-plasma-squash:
