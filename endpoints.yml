@@ -1342,7 +1342,7 @@ endpoints:
     flavor: LXQT
     kernel: ubuntu-20.04-LXQT-squash
   debian-12-live-kernel:
-    path: /debian-core-12/releases/download/12.7.0-e814dabe/
+    path: /debian-core-12/releases/download/12.10.0-7dc3f9f3/
     files:
     - initrd
     - vmlinuz
