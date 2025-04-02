@@ -195,7 +195,7 @@ releases:
     versions:
     - code_name: 41.20250302.3.2
       name: stable
-    - code_name: 41.20250315.2.0
+    - code_name: 41.20250331.2.0
       name: testing
     - code_name: 42.20250316.1.0
       name: next
