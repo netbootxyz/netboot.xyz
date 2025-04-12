@@ -197,7 +197,7 @@ releases:
       name: stable
     - code_name: 41.20250331.2.0
       name: testing
-    - code_name: 42.20250407.1.0
+    - code_name: 42.20250410.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
