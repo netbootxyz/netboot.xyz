@@ -1607,11 +1607,14 @@ endpoints:
     version: 40
     flavor: GNOME
   ubuntu-24.04-default-squash:
-    path: /ubuntu-squash/releases/download/24.04.2-03d79d20/
+    path: /ubuntu-squash/releases/download/24.04.2-8efa196d/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
+    - minimal.standard.live.squashfs
+    - minimal.standard.squashfs
+    - minimal.squashfs
     os: ubuntu
     version: '24.04'
     flavor: GNOME
