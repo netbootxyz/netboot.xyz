@@ -1756,3 +1756,14 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-25.04-amd64
     arch: amd64
+  ubuntu-netboot-25.04-arm64:
+    path: /ubuntu-squash/releases/download/25.04-e56e947a/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '25.04'
+    codename: plucky
+    flavor: netboot
+    kernel: ubuntu-netboot-25.04-arm64
+    arch: arm64
