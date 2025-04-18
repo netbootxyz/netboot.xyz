@@ -1745,3 +1745,14 @@ endpoints:
     - uefi-shell-x64.efi
     os: uefi-shell-x64
     version: edk2-stable202002
+  ubuntu-netboot-25.04-amd64:
+    path: /ubuntu-squash/releases/download/25.04-8094159e/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '25.04'
+    codename: plucky
+    flavor: netboot
+    kernel: ubuntu-netboot-25.04-amd64
+    arch: amd64
