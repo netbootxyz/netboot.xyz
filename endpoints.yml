@@ -29,42 +29,6 @@ endpoints:
     version: current
     flavor: ubuntu
     kernel: regolith-current
-  linux-lite-4-squash:
-    path: /ubuntu-squash/releases/download/4.8-feb35fae/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: lite
-    version: '4'
-    kernel: linux-lite-4-squash
-  deepin-15-squash:
-    path: /debian-squash/releases/download/15.11-387f0ae3/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: Deepin
-    version: '15'
-    kernel: deepin-15-squash
-  feren-squash:
-    path: /ubuntu-squash/releases/download/2023.01-2aadd48c/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: feren
-    version: '2023.01'
-    kernel: feren-squash
-  feren-classic-squash:
-    path: /ubuntu-squash/releases/download/12-2019-b43afc5c/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: feren
-    version: classic
-    kernel: feren-classic-squash
   breakin:
     path: /asset-mirror/releases/download/4.26.1-f22abf78/
     files:
