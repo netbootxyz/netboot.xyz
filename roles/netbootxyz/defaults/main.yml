@@ -299,22 +299,20 @@ releases:
     flavors:
     - key: core
       name: Core
-    - key: k3sv1.30.8+k3s1
-      name: k3s v1.30.8+k3s1 (Standard)
-    - key: k3sv1.31.4+k3s1
-      name: k3s v1.31.4+k3s1 (Standard)
-    - key: k3sv1.32.1+k3s1
-      name: k3s v1.32.1+k3s1 (Standard)
+    - key: k3sv1.30.11-k3s1
+      name: k3s v1.30.11-k3s1 (Standard)
+    - key: k3sv1.31.7-k3s1
+      name: k3s v1.31.7-k3s1 (Standard)
+    - key: k3sv1.32.3-k3s1
+      name: k3s v1.32.3-k3s1 (Standard)
     menu: linux
     mirror: https://github.com/kairos-io/kairos/releases
     name: Kairos
     platforms:
-    - key: alpine-3.19
-      name: Alpine Linux 3.19
-    - key: debian-bookworm
-      name: Debian Bookworm
-    - key: debian-testing
-      name: Debian Testing
+    - key: alpine-3.21
+      name: Alpine Linux 3.21
+    - key: debian-12
+      name: Debian 12
     - key: fedora-40
       name: Fedora 40
     - key: opensuse-leap-15.6
@@ -323,8 +321,6 @@ releases:
       name: openSUSE Tumbleweed
     - key: rockylinux-9
       name: Rocky Linux 9
-    - key: ubuntu-20.04
-      name: Ubuntu 20.04
     - key: ubuntu-22.04
       name: Ubuntu 22.04
     - key: ubuntu-24.04
