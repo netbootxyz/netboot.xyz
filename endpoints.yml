@@ -1459,3 +1459,13 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-25.04-arm64
     arch: arm64
+  mint-20-xfce-squash:
+    path: /ubuntu-squash/releases/download/20.3-7abfea92/
+    files:
+    - initrd
+    - vmlinuz
+    - filesystem.squashfs
+    os: mint
+    version: '20.3'
+    flavor: xfce
+    kernel: mint-20-xfce-squash
