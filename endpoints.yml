@@ -1489,3 +1489,13 @@ endpoints:
     version: '20.3'
     flavor: mate
     kernel: mint-20-mate-squash
+  mint-lmde-cinnamon-squash:
+    path: /debian-squash/releases/download/6-1834227b/
+    files:
+    - filesystem.squashfs
+    - initrd
+    - vmlinuz
+    os: mint
+    version: '6'
+    flavor: Cinnamon
+    kernel: mint-lmde-cinnamon-squash
