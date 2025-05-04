@@ -281,14 +281,14 @@ releases:
     menu: linux
     name: Harvester
   ipfire:
-    base_dir: releases/ipfire-.x
+    base_dir: releases/ipfire-2.x
     enabled: true
     menu: linux
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: null
-      name: null
+    - code_name: 2.29-core193
+      name: 2.29 Core193
   k3os:
     enabled: true
     menu: linux
