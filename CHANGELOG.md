@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Various version updates
+- Cleanup of older distros from endpoints
 
 ## [2.0.86] - 2025-03-13
 
