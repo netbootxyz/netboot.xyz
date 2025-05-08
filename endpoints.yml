@@ -1499,3 +1499,10 @@ endpoints:
     version: '6'
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon-squash
+  ubuntu-spins:
+    path: /asset-mirror/releases/download/0.0.2-fb924c06/
+    files:
+    - vmlinuz
+    - initrd
+    os: ubuntu-spins
+    version: 0.0.2
