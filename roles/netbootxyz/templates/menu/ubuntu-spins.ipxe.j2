@@ -11,10 +11,10 @@ item --gap ${os} Versions
 item spins_{{ value.version }} ${space} ${os} {{ value.version }}
 {% endif %}
 {% endfor %}
-choose live_version || goto live_exit
+choose ubuntu_spins || goto live_exit
 menu ${os}
 item --gap ${os} Flavors
-goto ${boot_spins}
+goto ${ubuntu_spins}
 
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "ubuntu-spins" %}
