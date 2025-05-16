@@ -130,7 +130,6 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | CentOS | https://centos.org | Yes | No |
 | Fedora CoreOS | https://getfedora.org/en/coreos?stream=stable | Yes | No |
 | Debian | https://debian.org | Yes | Yes|
-| Deepin | https://www.deepin.org | No | Yes |
 | Devuan | https://devuan.org | Yes | No |
 | Elementary OS | https://elementary.io | No | Yes |
 | EndeavourOS | https://endeavouros.com | No | Yes |

@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.88] - Unreleased
 
+### Removed
+
+- Deepin
+
 ## [2.0.87] - 2025-05-08
 
 ### Added
