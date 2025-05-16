@@ -1414,13 +1414,13 @@ endpoints:
     flavor: full
     arch: arm64
   grml-small-arm64:
-    path: /debian-squash/releases/download/2024.12-31472c87/
+    path: /debian-squash/releases/download/2025.05-8700c181/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2024.12'
+    version: '2025.05'
     flavor: small
     arch: arm64
   uefishell:
