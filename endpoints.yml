@@ -1497,3 +1497,11 @@ endpoints:
     - initrd
     os: ubuntu-spins
     version: 0.0.2
+  cachyos:
+    path: /asset-mirror/releases/download/250422-a356a1d0/
+    files:
+    - airootfs.sfs
+    - initrd
+    - vmlinuz
+    os: cachyos
+    version: '250422'
