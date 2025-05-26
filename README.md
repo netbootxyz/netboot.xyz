@@ -127,14 +127,15 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | BlackArch Linux | https://blackarch.org | Yes | Yes |
 | Bluestar Linux | https://sourceforge.net/projects/bluestarlinux | No | Yes |
 | Bodhi Linux | https://www.bodhilinux.com | No | Yes |
+| CachyOS | https://cachyos.org | No | Yes |
 | CentOS | https://centos.org | Yes | No |
-| Fedora CoreOS | https://getfedora.org/en/coreos?stream=stable | Yes | No |
 | Debian | https://debian.org | Yes | Yes|
 | Devuan | https://devuan.org | Yes | No |
 | Elementary OS | https://elementary.io | No | Yes |
 | EndeavourOS | https://endeavouros.com | No | Yes |
 | Fatdog64 | https://distro.ibiblio.org/fatdog/web/ | No | Yes |
 | Fedora | https://fedoraproject.org | Yes | Yes |
+| Fedora CoreOS | https://getfedora.org/en/coreos?stream=stable | Yes | No |
 | Feren OS | https://ferenos.weebly.com/ | Yes | No |
 | Flatcar Container Linux | https://www.flatcar.org | Yes | No |
 | FreeBSD | https://freebsd.org | Yes, disk image | No |
