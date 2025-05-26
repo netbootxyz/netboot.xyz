@@ -461,13 +461,13 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Galileo-11-2023-e0c48f1f/
+    path: /asset-mirror/releases/download/Neo-2025.03.19-aaf870af/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: endeavouros
-    version: Galileo-11-2023
+    version: Neo-2025.03.19
   kodachi-8:
     path: /ubuntu-squash/releases/download/8.2-625e11fa/
     files:
