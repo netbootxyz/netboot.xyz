@@ -1498,10 +1498,11 @@ endpoints:
     os: ubuntu-spins
     version: 0.0.2
   cachyos:
-    path: /asset-mirror/releases/download/250422-e24c7317/
+    path: /asset-mirror/releases/download/250422-4337df9e/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
+    - archiso_pxe_http
     os: cachyos
     version: '250422'
