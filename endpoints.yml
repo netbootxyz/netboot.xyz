@@ -537,14 +537,14 @@ endpoints:
     version: 20250518T165514Z
     arch: amd64
   tails:
-    path: /asset-mirror/releases/download/6.15-00388326/
+    path: /asset-mirror/releases/download/6.15.1-00388326/
     files:
     - vmlinuz
     - initrd.img
     - 9990-misc-helpers.sh
     - tails-amd64.iso
     os: tails
-    version: '6.15'
+    version: 6.15.1
     arch: amd64
   hrmpf:
     path: /asset-mirror/releases/download/20231124-1008bb6d/
