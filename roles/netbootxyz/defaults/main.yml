@@ -356,6 +356,8 @@ releases:
     menu: linux
     name: NixOS
     versions:
+    - code_name: nixos-25.05
+      name: nixos-25.05
     - code_name: nixos-24.11
       name: nixos-24.11
     - code_name: nixos-24.05
