@@ -618,17 +618,6 @@ endpoints:
     os: archlinux
     version: 2024.07.10
     arch: i686
-  clonezilla-debian-stable-i686:
-    path: /debian-squash/releases/download/3.2.0-5-ef1ff756/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: 3.2.0-5
-    flavor: stable
-    kernel: clonezilla-debian-stable-i686
-    arch: i686
   clonezilla-debian-stable-amd64:
     path: /debian-squash/releases/download/3.2.2-5-5641363c/
     files:
@@ -662,17 +651,6 @@ endpoints:
     flavor: testing
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
-  clonezilla-debian-testing-i686:
-    path: /debian-squash/releases/download/3.2.0-3-d1702a7a/
-    files:
-    - filesystem.squashfs
-    - initrd
-    - vmlinuz
-    os: clonezilla
-    version: 3.2.0-3
-    flavor: testing
-    kernel: clonezilla-debian-testing-i686
-    arch: i686
   clonezilla-ubuntu-testing-amd64:
     path: /ubuntu-squash/releases/download/20250604-questing-c67d897c/
     files:
