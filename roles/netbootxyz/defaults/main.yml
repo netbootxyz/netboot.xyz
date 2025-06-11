@@ -451,6 +451,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 10
+      name: 10 (Latest)
     - code_name: 9
       name: 9 (Latest)
     - code_name: 8
