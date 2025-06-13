@@ -1,12 +1,12 @@
 endpoints:
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2025.1c-8e024a88/
+    path: /debian-squash/releases/download/2025.2-8e024a88/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: kali
-    version: 2025.1c
+    version: '2025.2'
     flavor: xfce
     kernel: kali-xfce-squash
   kde-neon-user:
