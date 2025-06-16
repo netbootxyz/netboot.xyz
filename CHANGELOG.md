@@ -13,6 +13,13 @@ All notable changes to this project will be documented in this file.
 
 - Deepin
 
+### Fixed
+
+- Loading of tftpmenu local-vars.ipxe, HOSTANEM-${hostname}.ipxe,
+  MAC-${mac:hexraw}.ipxe, MAC-${mac:hexhyp}.ipxe and custom menu.ipxe from the
+  root of the tftp server. The root `tftp-root-path` is a variable and can be
+  set in `local-vars.ipxe` to override. The default is `/`.
+
 ## [2.0.87] - 2025-05-08
 
 ### Added
