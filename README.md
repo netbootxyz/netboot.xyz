@@ -217,5 +217,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 [![Stargazers over time](https://starchart.cc/netbootxyz/netboot.xyz.svg)](https://starchart.cc/netbootxyz/netboot.xyz)
 
 ### Feedback
+asdfadsf
+asfsdf
 
 Feel free to open up an [issue](https://github.com/netbootxyz/netboot.xyz/issues) on Github or ping us on [Discord](https://discord.gg/An6PA2a).  Follow us on [Twitter](https://twitter.com/netbootxyz) and like us on [Facebook](https://www.facebook.com/netboot.xyz)!
