@@ -329,7 +329,7 @@ releases:
       name: Ubuntu 24.04
     - key: ubuntu-24.10
       name: Ubuntu 24.10
-    version: null
+    version: v3.4.2
   kali:
     base_dir: kali
     enabled: true
