@@ -1477,14 +1477,14 @@ endpoints:
     os: ubuntu-spins
     version: 0.0.2
   cachyos:
-    path: /asset-mirror/releases/download/250530-4337df9e/
+    path: /asset-mirror/releases/download/250713-4337df9e/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     - archiso_pxe_http
     os: cachyos
-    version: '250530'
+    version: '250713'
   deepin-20-squash:
     path: /debian-squash/releases/download/20.9-e3a3a399/
     files:
