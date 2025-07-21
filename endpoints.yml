@@ -825,13 +825,13 @@ endpoints:
     os: proxmox-backup-server
     version: 3.4-1
   proxmox-ve:
-    path: /asset-mirror/releases/download/8.4-1-613c19ff/
+    path: /asset-mirror/releases/download/9.0-BETA-1-613c19ff/
     files:
     - initrd
     - proxmox.iso
     - vmlinuz
     os: proxmox-ve
-    version: 8.4-1
+    version: 9.0-BETA-1
   proxmox-mailgateway:
     path: /asset-mirror/releases/download/8.2-1-8374c64d/
     files:
