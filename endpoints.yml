@@ -445,13 +445,13 @@ endpoints:
     flavor: gnome
     kernel: pureos-gnome
   rescuezilla:
-    path: /asset-mirror/releases/download/2.6-2ace42ce/
+    path: /asset-mirror/releases/download/2.6.1-2ace42ce/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: rescuezilla
-    version: '2.6'
+    version: 2.6.1
   nitrux-release:
     path: /ubuntu-squash/releases/download/2022.02.28-e364d0a5/
     files:
