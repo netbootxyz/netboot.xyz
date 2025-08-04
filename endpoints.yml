@@ -817,13 +817,13 @@ endpoints:
     flavor: kde-barebones
     version: 220329
   proxmox-backup-server:
-    path: /asset-mirror/releases/download/3.4-1-f308cf4b/
+    path: /asset-mirror/releases/download/4.0-BETA-1-f308cf4b/
     files:
     - initrd
     - vmlinuz
     - proxmox.iso
     os: proxmox-backup-server
-    version: 3.4-1
+    version: 4.0-BETA-1
   proxmox-ve:
     path: /asset-mirror/releases/download/8.4-1-613c19ff/
     files:
