@@ -1,11 +1,19 @@
 ---
 
 # overrides defaults in netbootxyz role
-generate_menus: true
+generate_menus: false
 generate_disks: true
 generate_checksums: true
-generate_local_vars: true
+generate_local_vars: false
 make_num_jobs: 1
+
+# Disable other bootloader types to build only EFI
+generate_disks_legacy: false
+generate_disks_linux: false
+generate_disks_arm: false
+generate_disks_rpi: false
+generate_disks_hybrid: false
+generate_disks_efi: true
 
 # set desired site name
 # site_name: mysitename.com
