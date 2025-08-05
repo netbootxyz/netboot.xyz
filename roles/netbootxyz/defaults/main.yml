@@ -264,7 +264,7 @@ releases:
     menu: bsd
     name: FreeBSD
   freedos:
-    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.3/official
+    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.4/official
     enabled: true
     menu: dos
     mirror: http://www.ibiblio.org
