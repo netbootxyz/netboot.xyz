@@ -630,7 +630,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20250620-plucky-48403403/
+    path: /ubuntu-squash/releases/download/20250620-plucky-24b2fcf3/
     files:
     - filesystem.squashfs
     - initrd
