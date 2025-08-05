@@ -270,10 +270,10 @@ releases:
     mirror: http://www.ibiblio.org
     name: FreeDOS
     versions:
-    - code_name: FD13-FullUSB
-      name: 1.3 Full Installer
-    - code_name: FD13-LiteUSB
-      name: 1.3 Lite Installer
+    - code_name: FD14-FullUSB
+      name: 1.4 Full Installer
+    - code_name: FD14-LiteUSB
+      name: 1.4 Lite Installer
   gentoo:
     enabled: true
     menu: linux
