@@ -153,12 +153,12 @@ endpoints:
     os: caine
     version: '13.0'
   dts:
-    path: /dts/v2.0.0
+    path: /dts/v2.6.0
     files:
     - initrd
     - vmlinuz
     os: dts
-    version: 2.0.0
+    version: 2.6.0
   bootrepair:
     path: /ubuntu-squash/releases/download/current-e035b00c/
     files:
