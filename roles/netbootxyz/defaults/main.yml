@@ -210,11 +210,13 @@ releases:
     name: Debian
     versions:
       stable:
+      - code_name: trixie
+        name: 13.0 (trixie)
       - code_name: bookworm
         name: 12.0 (bookworm)
       testing:
-      - code_name: trixie
-        name: trixie (testing)
+      - code_name: forky
+        name: forky (testing)
       - code_name: sid
         name: sid (unstable)
   devuan:
