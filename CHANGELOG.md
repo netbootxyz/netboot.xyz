@@ -7,18 +7,32 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- CachyOS
+- CachyOS live distribution with archiso boot configuration
+- Ubuntu Spins distribution template for Ubuntu flavor variants  
+- Debian 13 (Trixie) net installer
+- Rocky Linux 10 and AlmaLinux 10 
+- Flatcar Container Linux ARM64 architecture support
+- Proxmox VE 9.0
+- Dasharo Tools Suite updated to v2.6.0
+- SystemRescue archiso_pxe_http initrd support
 
-### Removed
+### Changed
 
-- Deepin
+- FreeDOS updated to v1.4 with corrected URLs
+- Various distribution version updates and endpoint refreshes
+- Improved MAC address handling in TFTP boot configuration
 
 ### Fixed
 
-- Loading of tftpmenu local-vars.ipxe, HOSTANEM-${hostname}.ipxe,
+- Loading of TFTP menu files (fixed HOSTNAME typo): local-vars.ipxe, HOSTNAME-${hostname}.ipxe,
   MAC-${mac:hexraw}.ipxe, MAC-${mac:hexhyp}.ipxe and custom menu.ipxe from the
   root of the tftp server. The root `tftp-root-path` is a variable and can be
-  set in `local-vars.ipxe` to override. The default is `/`.
+  set in `local-vars.ipxe` to override. The default is `/`
+- Fedora CoreOS kernel filename format corrected
+
+### Removed
+
+- Deepin distribution completely removed from the system
 
 ## [2.0.87] - 2025-05-08
 
