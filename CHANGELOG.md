@@ -3,7 +3,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.0.88] - Unreleased
+## [2.0.89] - Unreleased
+
+## [2.0.88] - 2025-08-09
 
 ### Added
 
