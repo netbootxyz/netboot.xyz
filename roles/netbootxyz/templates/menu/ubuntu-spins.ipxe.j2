@@ -1,0 +1,35 @@
+#!ipxe
+
+goto ${menu} ||
+
+:live_menu
+set os Ubuntu Spins
+menu ${os}
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu-spins" %}
+item spins_{{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose ubuntu_spins || goto live_exit
+menu ${os}
+item --gap ${os} Flavors
+goto ${ubuntu_spins}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu-spins" %}
+:spins_{{ value.version }}
+set kernel_url ${live_endpoint}{{ value.path }}
+goto boot
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${kernel_url}vmlinuz iso-chooser-menu boot=casper ip=dhcp initrd=initrd.magic ${cmdline}
+initrd ${kernel_url}initrd
+boot
+
+:live_exit
+clear menu
+exit 0

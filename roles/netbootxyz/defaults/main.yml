@@ -144,6 +144,8 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 10
+      name: 10 (Latest)
     - code_name: 9
       name: 9 (Latest)
     - code_name: 8
@@ -155,8 +157,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.21
-      name: '3.21'
+    - code_name: v3.22
+      name: '3.22'
     - code_name: edge
       name: Edge (development)
   archlinux:
@@ -166,8 +168,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2025.05.01
-      name: 2025.05.01
+    - code_name: 2025.08.01
+      name: 2025.08.01
   blackarch:
     enabled: true
     menu: linux
@@ -193,11 +195,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 42.20250410.3.2
+    - code_name: 42.20250721.3.0
       name: stable
-    - code_name: 42.20250427.2.0
+    - code_name: 42.20250803.2.0
       name: testing
-    - code_name: 42.20250427.1.0
+    - code_name: 42.20250803.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -208,11 +210,13 @@ releases:
     name: Debian
     versions:
       stable:
+      - code_name: trixie
+        name: 13.0 (trixie)
       - code_name: bookworm
         name: 12.0 (bookworm)
       testing:
-      - code_name: trixie
-        name: trixie (testing)
+      - code_name: forky
+        name: forky (testing)
       - code_name: sid
         name: sid (unstable)
   devuan:
@@ -262,16 +266,16 @@ releases:
     menu: bsd
     name: FreeBSD
   freedos:
-    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.3/official
+    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.4
     enabled: true
     menu: dos
     mirror: http://www.ibiblio.org
     name: FreeDOS
     versions:
-    - code_name: FD13-FullUSB
-      name: 1.3 Full Installer
-    - code_name: FD13-LiteUSB
-      name: 1.3 Lite Installer
+    - code_name: FD14-FullUSB
+      name: 1.4 Full Installer
+    - code_name: FD14-LiteUSB
+      name: 1.4 Lite Installer
   gentoo:
     enabled: true
     menu: linux
@@ -287,8 +291,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core193
-      name: 2.29 Core193
+    - code_name: 2.29-core196
+      name: 2.29 Core196
   k3os:
     enabled: true
     menu: linux
@@ -327,7 +331,7 @@ releases:
       name: Ubuntu 24.04
     - key: ubuntu-24.10
       name: Ubuntu 24.10
-    version: v3.3.1
+    version: v3.5.0
   kali:
     base_dir: kali
     enabled: true
@@ -354,6 +358,8 @@ releases:
     menu: linux
     name: NixOS
     versions:
+    - code_name: nixos-25.05
+      name: nixos-25.05
     - code_name: nixos-24.11
       name: nixos-24.11
     - code_name: nixos-24.05
@@ -447,6 +453,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 10
+      name: 10 (Latest)
     - code_name: 9
       name: 9 (Latest)
     - code_name: 8
@@ -473,14 +481,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20250501T000434Z
-      name: 20250501T000434Z
-    - code_name: 20250417T003816Z
-      name: 20250417T003816Z
-    - code_name: 20250403T000540Z
-      name: 20250403T000540Z
-    - code_name: 20250320T000454Z
-      name: 20250320T000454Z
+    - code_name: 20250807T000218Z
+      name: 20250807T000218Z
+    - code_name: 20250724T001011Z
+      name: 20250724T001011Z
+    - code_name: 20250710T000436Z
+      name: 20250710T000436Z
+    - code_name: 20250626T191621Z
+      name: 20250626T191621Z
   talos:
     enabled: true
     menu: linux
