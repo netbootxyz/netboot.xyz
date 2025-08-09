@@ -15,6 +15,7 @@ set boot_domain {{ boot_domain }}
 set ipxe_version ${version}
 set version {{ boot_version }}
 set conn_type https
+set tftp-root-path /
 
 :start
 echo ${bold}${fg_gre}${site_name} - ${fg_whi}v${version}${boldoff}
@@ -45,6 +46,12 @@ isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}.efi && goto t
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-snp.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-snponly.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-arm64.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-undionly.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-snp.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-snponly.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-arm64.efi && goto tftpmenu ||
 goto menu
 
 :failsafe
@@ -98,7 +105,8 @@ goto menu || goto failsafe
 :tftpmenu
 chain tftp://${tftp-server}/local-vars.ipxe || echo ${VARS_ERR}
 isset ${hostname} && chain --autofree tftp://${tftp-server}/HOSTNAME-${hostname}.ipxe || echo Custom boot by Hostname not found trying MAC...
-chain --autofree tftp://${tftp-server}/MAC-${mac:hexraw}.ipxe || echo Custom boot by MAC not found booting default...
+chain --autofree tftp://${tftp-server}/MAC-${mac:hexraw}.ipxe || echo Custom boot by MAC (hexraw) not found, attempting by MAC (hexhyp)...
+chain --autofree tftp://${tftp-server}/MAC-${mac:hexhyp}.ipxe || echo Custom boot by MAC (hexhyp) not found, booting default...
 chain --autofree tftp://${tftp-server}/menu.ipxe || echo ${TFTP_ERR} && goto menu
 
 :menu

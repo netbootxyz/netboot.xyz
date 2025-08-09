@@ -3,7 +3,7 @@
 # Alpine Linux
 # https://alpinelinux.org
 
-isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}::eth0:none:${dns}
+isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}::::${dns}
 
 goto ${menu}
 
