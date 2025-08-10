@@ -26,10 +26,6 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Loading of TFTP menu files (fixed HOSTNAME typo): local-vars.ipxe, HOSTNAME-${hostname}.ipxe,
-  MAC-${mac:hexraw}.ipxe, MAC-${mac:hexhyp}.ipxe and custom menu.ipxe from the
-  root of the tftp server. The root `tftp-root-path` is a variable and can be
-  set in `local-vars.ipxe` to override. The default is `/`
 - Fedora CoreOS kernel filename format corrected
 
 ### Removed
