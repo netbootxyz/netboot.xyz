@@ -53,7 +53,7 @@ endpoints:
     flavor: xfce-min
     kernel: sparky-stable-mingui
   sparky-stable-gui:
-    path: /debian-squash/releases/download/7.8-d38c17d0/
+    path: /debian-squash/releases/download/8.0-d38c17d0/
     files:
     - filesystem.squashfs
     - initrd
