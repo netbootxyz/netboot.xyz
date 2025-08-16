@@ -1501,3 +1501,11 @@ endpoints:
     - vmlinuz
     os: debian
     version: '13'
+  debian-13-default-squash:
+    path: /debian-squash/releases/download/13.0.0-c861067e/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: 13.0.0
+    flavor: core
+    kernel: debian-13-live-kernel
