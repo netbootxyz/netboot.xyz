@@ -1509,3 +1509,11 @@ endpoints:
     version: 13.0.0
     flavor: core
     kernel: debian-13-live-kernel
+  debian-13-lxde-squash:
+    path: /debian-squash/releases/download/13.0.0-bdd2535b/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: 13.0.0
+    flavor: lxde
+    kernel: debian-13-live-kernel
