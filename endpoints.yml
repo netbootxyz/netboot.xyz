@@ -1541,3 +1541,11 @@ endpoints:
     version: 13.0.0
     flavor: lxqt
     kernel: debian-13-live-kernel
+  debian-13-mate-squash:
+    path: /debian-squash/releases/download/13.0.0-6c351d25/
+    files:
+    - filesystem.squashfs
+    os: debian
+    version: 13.0.0
+    flavor: mate
+    kernel: debian-13-live-kernel
