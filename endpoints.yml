@@ -1100,7 +1100,7 @@ endpoints:
     flavor: core
     kernel: debian-12-live-kernel
   debian-12-gnome-squash:
-    path: /debian-squash/releases/download/13.0.0-d2c07a8a/
+    path: /debian-squash/releases/download/12.11.0-d2c07a8a/
     files:
     - filesystem.squashfs
     os: debian
