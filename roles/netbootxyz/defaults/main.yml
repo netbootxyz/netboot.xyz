@@ -188,6 +188,25 @@ releases:
       name: 10.0 Stream
     - code_name: 9-stream
       name: 9.0 Stream
+  centos-coreos:
+    base_dir: centos/scos
+    enabled: true
+    menu: linux
+    mirror: https://cloud.centos.org
+    name: CentOS Stream CoreOS
+    versions:
+    - code_name: 9.0.20250222-0
+      name: 9.0.20250222-0
+      major_version: 9
+    - code_name: 9.0.20250411-0
+      name: 9.0.20250411-0
+      major_version: 9
+    - code_name: 9.0.20250510-0
+      name: 9.0.20250510-0
+      major_version: 9
+    - code_name: 10.0.20250628-0
+      name: 10.0.20250628-0
+      major_version: 10
   coreos:
     base_dir: prod/streams
     enabled: true
@@ -442,6 +461,25 @@ releases:
     enabled: true
     menu: linux
     name: Proxmox
+  rhcos:
+    base_dir: pub/openshift-v4
+    enabled: true
+    menu: linux
+    mirror: https://mirror.openshift.com
+    name: Red Hat Enterprise Linux CoreOS
+    versions:
+      - code_name: 4.12
+        name: 4.12 [Extended Support]
+      - code_name: 4.14
+        name: 4.14 [Extended Support]
+      - code_name: 4.16
+        name: 4.16 [Maintenance Support]
+      - code_name: 4.17
+        name: 4.17 [Maintenance Support]
+      - code_name: 4.18
+        name: 4.18 [Full Support]
+      - code_name: 4.19
+        name: 4.19 [Full Support]
   rhel:
     enabled: true
     menu: linux

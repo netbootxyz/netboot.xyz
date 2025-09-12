@@ -129,6 +129,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Bodhi Linux | https://www.bodhilinux.com | No | Yes |
 | CachyOS | https://cachyos.org | No | Yes |
 | CentOS | https://centos.org | Yes | No |
+| CentOS CoreOS | https://centos.org | Yes | No |
 | Debian | https://debian.org | Yes | Yes|
 | Devuan | https://devuan.org | Yes | No |
 | Elementary OS | https://elementary.io | No | Yes |
@@ -170,6 +171,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | Q4OS | https://q4os.org | No | Yes |
 | Raizo | https://sourceforge.net/projects/live-raizo/ | No | Yes |
 | Red Hat Enterprise Linux | https://www.redhat.com | User supplied media | No |
+| Red Hat Enterprise Linux CoreOS | https://openshift.com | Yes | No |
 | Regolith | https://regolith-linux.org | No | Yes |
 | Rocky Linux | https://rockylinux.org/ | Yes | No |
 | Septor | https://septor.sourceforge.io | No | Yes |
