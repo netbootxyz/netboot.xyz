@@ -1,0 +1,14 @@
+#!ipxe
+
+# ObsidianOS
+# https://obsidianos.xyz
+
+imgfree
+kernel https://files.obsidianos.xyz/latest.iso || goto failed
+boot
+exit 0
+:failed
+echo Boot failed.
+sleep 3
+exit 1
+
