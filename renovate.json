@@ -1,5 +1,25 @@
 {
   "extends": [
     "config:recommended"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.github\\/workflows\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        // match: pip install package==1.2.3  (with optional -U/--upgrade and optional flags after version)
+        "(?:pip(?:3)?\\s+install(?:\\s+(?:-U|--upgrade))?\\s+)([A-Za-z0-9_.+\\-]+(?:\\[[^\\]]+\\])?)==(?<currentValue>\\d+(?:\\.\\d+)*)"
+      ],
+      "datasourceTemplate": "pypi",
+      "depNameTemplate": "$1"
+    },
+    {
+      "fileMatch": ["^\\.github\\/workflows\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        // match: pip install -r requirements.txt (capture filename)
+        "(?:pip(?:3)?\\s+install)\\s+-r\\s+([^\\s]+)"
+      ],
+      "datasourceTemplate": "file",
+      "depNameTemplate": "$1"
+    }
   ]
 }
