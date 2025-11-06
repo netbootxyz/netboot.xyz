@@ -68,6 +68,7 @@
     src: "{{ ipxe_source_dir }}/src/{{ item.src }}"
     dest: "{{ netbootxyz_root }}/ipxe/{{ item.dest }}"
     remote_src: true
+  ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - {src: "bin-x86_64-efi/ipxe.efi", dest: "{{ bootloader_filename }}.efi"}
     - {src: "bin-x86_64-efi/snp.efi", dest: "{{ bootloader_filename }}-snp.efi"}
