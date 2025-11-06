@@ -1,0 +1,103 @@
+#!ipxe
+
+# Kairos
+# https://github.com/kairos-io/kairos/releases
+
+goto ${menu} ||
+
+:kairos
+#set os {{ releases.kairos.name }}
+set os Kairos
+set os_arch ${arch}
+iseq ${os_arch} x86_64 && set os_arch amd64 ||
+isset ${kairos_version} || set kairos_version {{ releases.kairos.version }}
+isset ${kairos_mirror} || set kairos_mirror {{ releases.kairos.mirror }}
+isset ${kairos_platform} || set kairos_platform {{ releases.kairos.platforms[0].key }}
+isset ${kairos_mode} || set kairos_mode install-mode-interactive
+isset ${kairos_flavor} || set kairos_flavor core
+
+menu ${os}
+item --gap Kairos:
+item kairos_boot ${space} Begin install ${os} ${kairos_version}
+item --gap Parameters:
+item kairos_version ${space} ${os} version: ${kairos_version}
+item kairos_mode ${space} Set install mode: ${kairos_mode}
+item kairos_config_url ${space} Set config file URL: ${kairos_config_url}
+item kairos_mirror ${space} Set mirror URL: ${kairos_mirror}
+item kairos_platform ${space} Set platform: ${kairos_platform}
+item kairos_flavor ${space} Set flavor: ${kairos_flavor}
+choose --default ${menu} menu || goto kairos_exit
+echo ${cls}
+goto ${menu} ||
+goto kairos_exit
+
+:kairos_version
+menu ${os} version
+item ${kairos_version} ${space} ${kairos_version}
+item custom ${space} Set custom version
+choose --default ${version} version || goto kairos_exit
+echo ${cls}
+goto kairos_version_${version} ||
+goto kairos_exit
+
+:kairos_mode
+menu ${os} Modes
+item --gap Set Boot Mode:
+item install-mode-interactive ${space} Interactive Install Mode
+item install-mode ${space} Regular Install Mode
+item kairos.remote_recovery_mode ${space} Remote Recovery Mode
+choose --default ${kairos_mode} kairos_mode  || clear menu
+goto kairos
+
+:kairos_platform
+menu ${os} Platforms
+item --gap Set Platform:
+{% for item in releases.kairos.platforms %}
+item {{ item.key }} ${space} {{ item.name }}
+{% endfor %}
+choose --default ${kairos_platform} kairos_platform || clear menu
+goto kairos
+
+:kairos_flavor
+menu ${os} Flavor
+item --gap Set Flavor:
+{% for item in releases.kairos.flavors %}
+item {{ item.key }} ${space} {{ item.name }}
+{% endfor %}
+choose --default ${kairos_flavor} kairos_flavor || clear menu
+goto kairos
+
+:kairos_version_custom
+clear kairos_version
+echo -n Please set Kairos version manually (in format vX.Y.Z):  && read kairos_version
+set kairos_base_url ${kairos_mirror}/download/${kairos_version}
+clear menu
+goto kairos
+
+:kairos_mirror
+echo -n Set mirror URL:  && read kairos_mirror
+clear menu
+goto kairos
+
+:kairos_config_url
+echo -n Set config file URL:  && read kairos_config_url
+clear menu
+goto kairos
+
+:kairos_boot
+imgfree
+iseq ${kairos_flavor} core && set kairos_flavor_family core || set kairos_flavor_family standard
+iseq ${kairos_flavor} core && set release_prefix ${kairos_mirror}/download/${kairos_version}/kairos-${kairos_platform}-${kairos_flavor_family}-${os_arch}-generic-${kairos_version} ||
+iseq ${kairos_flavor} core || set release_prefix ${kairos_mirror}/download/${kairos_version}/kairos-${kairos_platform}-${kairos_flavor_family}-${os_arch}-generic-${kairos_version}-${kairos_flavor}
+set kairos_kernel_args root=live:${release_prefix}.squashfs rd.neednet=1 ip=dhcp rd.cos.disable netboot ${kairos_mode} config_url=${kairos_config_url} selinux=0 console=tty1 console=ttyS0 ${cmdline} initrd=initrd.magic
+kernel ${release_prefix}-kernel root=live:${release_prefix}.squashfs ${kairos_kernel_args}
+initrd ${release_prefix}-initrd
+
+echo
+echo MD5sums:
+md5sum kairos-${kairos_platform}-${kairos_flavor_family}-${os_arch}-generic-${kairos_version}-${kairos_flavor}-kernel kairos-${kairos_platform}-${kairos_flavor_family}-${os_arch}-generic-${kairos_version}-${kairos_flavor}-initrd
+boot
+
+:kairos_exit
+clear menu
+exit 0

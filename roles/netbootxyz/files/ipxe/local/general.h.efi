@@ -2,6 +2,7 @@
 #define CONSOLE_CMD           /* Console command */
 #define DIGEST_CMD            /* Image crypto digest commands */
 #define DOWNLOAD_PROTO_HTTPS  /* Secure Hypertext Transfer Protocol */
+#define DOWNLOAD_PROTO_NFS    /* NFS */
 #define IMAGE_TRUST_CMD       /* Image trust management commands */
 #define IMAGE_GZIP            /* GZIP image support */
 #define IMAGE_PNG             /* PNG image support */

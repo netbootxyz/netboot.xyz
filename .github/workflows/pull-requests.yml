@@ -12,20 +12,21 @@ jobs:
     name: Test Pull Request
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
       with:
-        python-version: '3.10'
+        python-version: '3.13' # renovate: datasource=github-tags depName=python
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install ansible==10.2.0 ansible-lint==24.7.0
+        pip install ansible==12.1.0 # renovate: datasource=pypi depName=ansible
+        pip install ansible-lint==25.9.2 # renovate: datasource=pypi depName=ansible-lint
 
     - name: Syntax Check
       run: |
-        ansible-playbook -i inventory site.yml --syntax-check
+        ansible-playbook site.yml --syntax-check
 
     - name: Ansible lint
       run: |
@@ -35,9 +36,9 @@ jobs:
     name: Build Pull Request
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
 
     - name: Build PR release
       run: |

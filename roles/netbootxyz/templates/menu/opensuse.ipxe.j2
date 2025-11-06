@@ -68,12 +68,26 @@ item {{ item.code_name }} ${space} ${os} {{ item.name }}
 choose version || goto opensuse_exit
 set dir ${opensuse_base_dir}/${version}/repo/oss
 iseq ${version} tumbleweed && set dir ${version}/repo/oss ||
+iseq ${version} 16.0 && set dir distribution/leap/${version}/offline ||
 
 imgfree
 set kernel_url boot/${os_arch}/loader 
 iseq ${os_arch} aarch64 && set kernel_url boot/${os_arch} ||
+
+# Special handling for openSUSE 16.0 live ISO boot
+iseq ${version} 16.0 && goto opensuse_16_boot || goto opensuse_standard_boot
+
+:opensuse_16_boot
+kernel ${opensuse_mirror}/${dir}/${kernel_url}/linux root=live:${opensuse_mirror}/${dir}/Leap-${version}-online-installer-${os_arch}.install.iso ${netsetup} ${params} {{ kernel_params }}
+initrd ${opensuse_mirror}/${dir}/${kernel_url}/initrd
+goto boot_os
+
+:opensuse_standard_boot
 kernel ${opensuse_mirror}/${dir}/${kernel_url}/linux ${netsetup} install=${opensuse_mirror}/${dir} ${params} {{ kernel_params }}
 initrd ${opensuse_mirror}/${dir}/${kernel_url}/initrd
+goto boot_os
+
+:boot_os
 echo MD5sums:
 md5sum linux initrd
 boot

@@ -6,3 +6,4 @@ skip_list:
   - no-changed-when  # Commands should not change things if nothing needs doing.
   - risky-shell-pipe  # Shells that use pipes should set the pipefail option.
   - literal-compare  # Don't compare to literal True/False.
+  - var-naming[no-role-prefix]  # Internal variables don't need role prefix.

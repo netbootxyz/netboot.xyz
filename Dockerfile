@@ -1,6 +1,6 @@
 ARG NBXYZ_OVERRIDES=default
 
-FROM ghcr.io/netbootxyz/builder:latest as builder
+FROM ghcr.io/netbootxyz/builder:latest AS builder
 
 # repo for build
 COPY . /ansible
@@ -11,11 +11,11 @@ ENV EXTRA_VARS=""
 FROM builder AS netbootxyz-production
 ENV EXTRA_VARS="--extra-vars @script/netbootxyz-overrides.yml"
 
-FROM netbootxyz-${NBXYZ_OVERRIDES} as final
+FROM netbootxyz-${NBXYZ_OVERRIDES} AS final
 RUN \
   echo "**** running ansible ****" && \
   cd /ansible && \
-  ansible-playbook -i inventory site.yml ${EXTRA_VARS}
+  ansible-playbook site.yml ${EXTRA_VARS}
 
 # runtime stage
 FROM alpine:latest

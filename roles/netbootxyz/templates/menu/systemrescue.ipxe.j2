@@ -39,6 +39,7 @@ goto live_menu
 imgfree
 kernel ${url}vmlinuz archisobasedir=sysresccd ${ipparam} archiso_http_srv=${url} ${params} {{ kernel_params }}
 initrd ${url}initrd
+initrd ${url}archiso_pxe_http /hooks/archiso_pxe_http mode=755
 boot
 
 :live_exit

@@ -88,6 +88,14 @@ bootloaders:
     ipxe_bin: snponly.efi
     output_bin: -snponly.efi
     type: DHCP-snponly
+  - desc: DHCP EFI Floppy boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi.dsk
+    output_bin: .efi.dsk
+    type: Floppy
+  - desc: EFI Floppy image w/ Simple Network Protocol, attempts to boot all net devices
+    ipxe_bin: snp.efi.dsk
+    output_bin: -snp.efi.dsk
+    type: Floppy-snp
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
@@ -136,6 +144,8 @@ releases:
     mirror: http://repo.almalinux.org
     name: AlmaLinux
     versions:
+    - code_name: 10
+      name: 10 (Latest)
     - code_name: 9
       name: 9 (Latest)
     - code_name: 8
@@ -147,8 +157,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.20
-      name: '3.20'
+    - code_name: v3.23
+      name: '3.23'
     - code_name: edge
       name: Edge (development)
   archlinux:
@@ -158,8 +168,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2024.09.01
-      name: 2024.09.01
+    - code_name: 2025.11.01
+      name: 2025.11.01
   blackarch:
     enabled: true
     menu: linux
@@ -168,20 +178,16 @@ releases:
     - code_name: current
       name: current
   centos:
-    base_dir: centos
+    base_dir: null
     enabled: true
     menu: linux
-    mirror: http://mirror.centos.org
-    name: CentOS
+    mirror: https://mirror.stream.centos.org
+    name: CentOS Stream
     versions:
+    - code_name: 10-stream
+      name: 10.0 Stream
     - code_name: 9-stream
       name: 9.0 Stream
-    - code_name: 8.5.2111
-      name: '8.5'
-    - code_name: 8
-      name: 8.x Latest
-    - code_name: 8-stream
-      name: 8.0 Stream
   coreos:
     base_dir: prod/streams
     enabled: true
@@ -189,11 +195,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 40.20240825.3.0
+    - code_name: 42.20251012.3.0
       name: stable
-    - code_name: 40.20240906.2.0
+    - code_name: 43.20251024.2.0
       name: testing
-    - code_name: 41.20240916.1.0
+    - code_name: 43.20251027.1.0
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -204,15 +210,13 @@ releases:
     name: Debian
     versions:
       stable:
+      - code_name: trixie
+        name: 13.0 (trixie)
       - code_name: bookworm
         name: 12.0 (bookworm)
-      - code_name: bullseye
-        name: 11.0 (bullseye)
-      - code_name: buster
-        name: 10.0 (buster)
       testing:
-      - code_name: trixie
-        name: trixie (testing)
+      - code_name: forky
+        name: forky (testing)
       - code_name: sid
         name: sid (unstable)
   devuan:
@@ -239,12 +243,10 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
-    - code_name: 40
-      name: 40
-    - code_name: 39
-      name: 39
-    - code_name: 38
-      name: 38
+    - code_name: 42
+      name: 42
+    - code_name: 41
+      name: 41
   flatcar:
     enabled: true
     menu: linux
@@ -264,16 +266,16 @@ releases:
     menu: bsd
     name: FreeBSD
   freedos:
-    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.3/official
+    base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.4
     enabled: true
     menu: dos
     mirror: http://www.ibiblio.org
     name: FreeDOS
     versions:
-    - code_name: FD13-FullUSB
-      name: 1.3 Full Installer
-    - code_name: FD13-LiteUSB
-      name: 1.3 Lite Installer
+    - code_name: FD14-FullUSB
+      name: 1.4 Full Installer
+    - code_name: FD14-LiteUSB
+      name: 1.4 Lite Installer
   gentoo:
     enabled: true
     menu: linux
@@ -289,13 +291,47 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core188
-      name: 2.29 Core188
+    - code_name: 2.29-core198
+      name: 2.29 Core198
   k3os:
     enabled: true
     menu: linux
     mirror: https://github.com/rancher/k3os/releases
     name: k3OS
+  kairos:
+    enabled: true
+    flavors:
+    - key: core
+      name: Core
+    - key: k3sv1.30.11-k3s1
+      name: k3s v1.30.11-k3s1 (Standard)
+    - key: k3sv1.31.7-k3s1
+      name: k3s v1.31.7-k3s1 (Standard)
+    - key: k3sv1.32.3-k3s1
+      name: k3s v1.32.3-k3s1 (Standard)
+    menu: linux
+    mirror: https://github.com/kairos-io/kairos/releases
+    name: Kairos
+    platforms:
+    - key: alpine-3.21
+      name: Alpine Linux 3.21
+    - key: debian-12
+      name: Debian 12
+    - key: fedora-40
+      name: Fedora 40
+    - key: opensuse-leap-15.6
+      name: openSUSE Leap 15.6
+    - key: opensuse-tumbleweed
+      name: openSUSE Tumbleweed
+    - key: rockylinux-9
+      name: Rocky Linux 9
+    - key: ubuntu-22.04
+      name: Ubuntu 22.04
+    - key: ubuntu-24.04
+      name: Ubuntu 24.04
+    - key: ubuntu-24.10
+      name: Ubuntu 24.10
+    version: v3.5.3
   kali:
     base_dir: kali
     enabled: true
@@ -322,24 +358,26 @@ releases:
     menu: linux
     name: NixOS
     versions:
-    - code_name: nixos-20.09
-      name: nixos-20.09
-    - code_name: nixos-21.05
-      name: nixos-21.05
-    - code_name: nixos-21.11
-      name: nixos-21.11
-    - code_name: nixos-22.05
-      name: nixos-22.05
-    - code_name: nixos-22.11
-      name: nixos-22.11
-    - code_name: nixos-23.05
-      name: nixos-23.05
-    - code_name: nixos-23.11
-      name: nixos-23.11
+    - code_name: nixos-25.05
+      name: nixos-25.05
+    - code_name: nixos-24.11
+      name: nixos-24.11
     - code_name: nixos-24.05
       name: nixos-24.05
-    - code_name: nixos-unstable
-      name: nixos-unstable
+    - code_name: nixos-23.11
+      name: nixos-23.11
+    - code_name: nixos-23.05
+      name: nixos-23.05
+    - code_name: nixos-22.11
+      name: nixos-22.11
+    - code_name: nixos-22.05
+      name: nixos-22.05
+    - code_name: nixos-21.11
+      name: nixos-21.11
+    - code_name: nixos-21.05
+      name: nixos-21.05
+    - code_name: nixos-20.09
+      name: nixos-20.09
   openEuler:
     base_dir: null
     enabled: true
@@ -347,8 +385,10 @@ releases:
     mirror: http://repo.openeuler.org
     name: openEuler
     versions:
-    - code_name: openEuler-23.09
-      name: openEuler-23.09
+    - code_name: openEuler-24.09
+      name: openEuler-24.09
+    - code_name: openEuler-24.03-LTS-SP1
+      name: openEuler-24.03-LTS-SP1
     - code_name: openEuler-20.03-LTS-SP3
       name: openEuler-20.03-LTS-SP3
     - code_name: openEuler-22.03-LTS
@@ -364,18 +404,15 @@ releases:
     mirror: http://ftp.openbsd.org
     name: OpenBSD
     versions:
-    - code_name: '7.4'
-      image_ver: '74'
-      name: '7.4'
-    - code_name: '7.3'
-      image_ver: '73'
-      name: '7.3'
-    - code_name: '7.2'
-      image_ver: '72'
-      name: '7.2'
+    - code_name: '7.7'
+      image_ver: '77'
+      name: '7.7'
+    - code_name: '7.6'
+      image_ver: '76'
+      name: '7.6'
     - code_name: snapshots
-      image_ver: '74'
-      name: 7.4 Latest Snapshot
+      image_ver: '77'
+      name: 7.7 Latest Snapshot
   opensuse:
     base_dir: distribution/leap
     enabled: true
@@ -383,10 +420,10 @@ releases:
     mirror: http://download.opensuse.org
     name: openSUSE
     versions:
+    - code_name: '16.0'
+      name: openSUSE Leap 16.0
     - code_name: '15.6'
       name: openSUSE Leap 15.6
-    - code_name: '15.5'
-      name: openSUSE Leap 15.5
     - code_name: tumbleweed
       name: openSUSE tumbleweed
   oracle:
@@ -395,7 +432,6 @@ releases:
     mirror: https://yum.oracle.com
     name: Oracle Linux
     paths:
-      7: /repo/OracleLinux/OL7/latest
       8: /repo/OracleLinux/OL8/baseos/latest
       9: /repo/OracleLinux/OL9/baseos/latest
   photon:
@@ -417,6 +453,8 @@ releases:
     mirror: http://download.rockylinux.org
     name: Rocky Linux
     versions:
+    - code_name: 10
+      name: 10 (Latest)
     - code_name: 9
       name: 9 (Latest)
     - code_name: 8
@@ -443,14 +481,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20240919T000328Z
-      name: 20240919T000328Z
-    - code_name: 20240905T024838Z
-      name: 20240905T024838Z
-    - code_name: 20240822T001821Z
-      name: 20240822T001821Z
-    - code_name: 20240808T000421Z
-      name: 20240808T000421Z
+    - code_name: 20251030T000436Z
+      name: 20251030T000436Z
+    - code_name: 20251016T000143Z
+      name: 20251016T000143Z
+    - code_name: 20251002T000521Z
+      name: 20251002T000521Z
+    - code_name: 20250918T000550Z
+      name: 20250918T000550Z
   talos:
     enabled: true
     menu: linux
@@ -493,13 +531,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /15.x/x86/release/distribution_files/core.gz
-      kernel: /15.x/x86/release/distribution_files/vmlinuz
+      initrd: /16.x/x86/release/distribution_files/core.gz
+      kernel: /16.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /15.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /15.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /16.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /16.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
@@ -599,6 +637,12 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
+    - code_name: questing
+      name: 25.10 Questing Quokka
+    - code_name: plucky
+      name: 25.04 Plucky Puffin
+    - code_name: oracular
+      name: 24.10 Oracular Oriole
     - code_name: noble
       name: 24.04 LTS Noble Numbat
     - code_name: jammy
@@ -641,6 +685,11 @@ utilitiesarm:
     kernel: ${live_endpoint}{{ endpoints.memtest86.path }}memtest86-usb.img
     name: Memtest86 Free - {{ endpoints.memtest86.version }}
     type: sanboot
+  uefishell:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-aarch64.efi
+    name: UEFI Shell
+    type: direct
 utilitiesefi:
   4mlinux:
     enabled: true
@@ -666,13 +715,17 @@ utilitiesefi:
     enabled: true
     name: Clonezilla
     type: ipxemenu
+  dts:
+    enabled: true
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version
+      }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version
+      }}
+    name: Dasharo Tools Suite
+    type: direct
   gparted:
     enabled: true
     name: GParted
-    type: ipxemenu
-  grml:
-    enabled: true
-    name: Grml
     type: ipxemenu
   kaspersky:
     enabled: true
@@ -717,6 +770,11 @@ utilitiesefi:
     enabled: true
     name: System Rescue CD
     type: ipxemenu
+  uefishell:
+    enabled: true
+    kernel: ${live_endpoint}{{ endpoints.uefishell.path }}uefi-shell-x64.efi
+    name: UEFI Shell
+    type: direct
   zfsbootmenu:
     enabled: true
     kernel: ${live_endpoint}{{ endpoints.zfsbootmenu.path }}zfsbootmenu-recovery-x86_64.efi
@@ -783,13 +841,17 @@ utilitiespcbios64:
     enabled: true
     name: DBAN
     type: ipxemenu
+  dts:
+    enabled: true
+    initrd: https://boot.dasharo.com{{ endpoints.dts.path }}/dts-base-image-v{{ endpoints.dts.version
+      }}.cpio.gz
+    kernel: https://boot.dasharo.com{{ endpoints.dts.path }}/bzImage-v{{ endpoints.dts.version
+      }}
+    name: Dasharo Tools Suite
+    type: direct
   gparted:
     enabled: true
     name: GParted
-    type: ipxemenu
-  grml:
-    enabled: true
-    name: Grml
     type: ipxemenu
   kaspersky:
     enabled: true

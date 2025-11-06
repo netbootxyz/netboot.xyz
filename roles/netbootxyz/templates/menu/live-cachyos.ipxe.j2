@@ -1,0 +1,39 @@
+#!ipxe
+
+# CachyOS Operating System
+# https://cachyos.org
+
+goto ${menu} ||
+
+:live_menu
+set os CachyOS
+menu ${os}
+set ipparam BOOTIF=${netX/mac} ip=dhcp net.ifnames=0
+item --gap ${os} Versions
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "cachyos" %}
+item {{ value.version }} ${space} ${os} {{ value.version }}
+{% endif %}
+{% endfor %}
+choose live_version || goto live_exit
+goto ${live_version}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "cachyos" %}
+:{{ value.version }}
+set url ${live_endpoint}{{ value.path }}
+goto boot
+
+{% endif %}
+{% endfor %}
+
+:boot
+imgfree
+kernel ${url}vmlinuz ${ipparam} archiso_http_srv=${url} cow_spacesize=10G copytoram=auto module_blacklist=nvidia,nvidia_modeset,nvidia_uvm,nvidia_drm,pcspkr nouveau.modeset=1 i915.modeset=1 radeon.modeset=1 nvme_load=yes initrd=initrd.magic console=tty1 {{ kernel_params }}
+initrd ${url}initrd
+initrd ${url}archiso_pxe_http /hooks/archiso_pxe_http mode=755
+boot
+
+:live_exit
+clear menu
+exit 0

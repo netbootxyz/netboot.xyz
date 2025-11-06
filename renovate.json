@@ -1,5 +1,14 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.github\\/workflows\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        "pip(?:3)?\\s+install(?:\\s+(?:-U|--upgrade))?\\s+(?<depName>[A-Za-z0-9_.+-]+(?:\\[[^\\]]+\\])?)==(?<currentValue>\\d+(?:\\.\\d+)*)"
+      ],
+      "datasourceTemplate": "pypi"
+    }
   ]
 }
