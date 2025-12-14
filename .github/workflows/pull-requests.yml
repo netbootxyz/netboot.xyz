@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install ansible==12.3.0 # renovate: datasource=pypi depName=ansible
+        pip install ansible==13.1.0 # renovate: datasource=pypi depName=ansible
         pip install ansible-lint==25.11.0 # renovate: datasource=pypi depName=ansible-lint
 
     - name: Syntax Check
