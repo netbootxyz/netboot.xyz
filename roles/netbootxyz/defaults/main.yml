@@ -124,17 +124,17 @@ ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_debug_enabled: false
 ipxe_debug_options: httpcore,tls
-ipxe_repo: https://https://github.z4.cn/https://github.com/ipxe/ipxe
+ipxe_repo: https://github.z4.cn/https://github.com/ipxe/ipxe
 ipxe_source_dir: /usr/src/ipxe
 kernel_params: initrd=initrd.magic ${cmdline}
-live_endpoint: https://https://github.z4.cn/https://github.com/netbootxyz
+live_endpoint: https://github.z4.cn/https://github.com/netbootxyz
 make_num_jobs: 1
 memdisk_location: http://${boot_domain}/memdisk
 netbootxyz_conf_dir: /etc/netbootxyz
 netbootxyz_root: /var/www/html
 pciids_url: https://raw.githubusercontent.com/netbootxyz/pciids/master/pciids.ipxe
 pipxe_branch: master
-pipxe_repo: https://https://github.z4.cn/https://github.com/netbootxyz/pipxe
+pipxe_repo: https://github.z4.cn/https://github.com/netbootxyz/pipxe
 pipxe_source_dir: /usr/src/pipxe
 releases:
   almalinux:
@@ -296,7 +296,7 @@ releases:
   k3os:
     enabled: true
     menu: linux
-    mirror: https://https://github.z4.cn/https://github.com/rancher/k3os/releases
+    mirror: https://github.z4.cn/https://github.com/rancher/k3os/releases
     name: k3OS
   kairos:
     enabled: true
@@ -310,7 +310,7 @@ releases:
     - key: k3sv1.32.3-k3s1
       name: k3s v1.32.3-k3s1 (Standard)
     menu: linux
-    mirror: https://https://github.z4.cn/https://github.com/kairos-io/kairos/releases
+    mirror: https://github.z4.cn/https://github.com/kairos-io/kairos/releases
     name: Kairos
     platforms:
     - key: alpine-3.21
@@ -492,7 +492,7 @@ releases:
   talos:
     enabled: true
     menu: linux
-    mirror: https://https://github.z4.cn/https://github.com/siderolabs/talos/releases
+    mirror: https://github.z4.cn/https://github.com/siderolabs/talos/releases
     name: Talos
     platforms:
     - key: metal
@@ -910,4 +910,4 @@ utilitiespcbios64:
     util_path: https://mirror.sysadminguide.net/ubcd/ubcd539.iso
     version: '539'
 wimboot_location: http://${boot_domain}/wimboot
-wimboot_upstream_url: https://https://github.z4.cn/https://github.com/ipxe/wimboot/releases/latest/download/wimboot
+wimboot_upstream_url: https://github.z4.cn/https://github.com/ipxe/wimboot/releases/latest/download/wimboot
