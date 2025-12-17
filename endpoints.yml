@@ -1357,13 +1357,13 @@ endpoints:
     kernel: ubuntu-netboot-24.10-arm64
     arch: arm64
   grml-small-amd64:
-    path: /debian-squash/releases/download/2025.08-abcbd950/
+    path: /debian-squash/releases/download/2025.12-0bd573f3/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: grml
-    version: '2025.08'
+    version: '2025.12'
     flavor: small
     arch: amd64
   grml-full-amd64:
