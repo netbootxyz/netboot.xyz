@@ -735,7 +735,7 @@ utilitiesefi:
     enabled: true
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.efi
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}mt86p_x86_64
     version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
@@ -795,7 +795,7 @@ utilitiespcbios32:
     enabled: true
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}mt86p_i586
     version: '{{ endpoints.memtest86plus.version }}'
   shredos:
     enabled: true
@@ -867,7 +867,7 @@ utilitiespcbios64:
     enabled: true
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.bin
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}mt86p_x86_64
     version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
