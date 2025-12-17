@@ -1229,14 +1229,14 @@ endpoints:
     flavor: trinity
     kernel: q4os-default-squash
   memtest86plus:
-    path: /asset-mirror/releases/download/7.20-014832f7/
+    path: /asset-mirror/releases/download/8.00-4991621b/
     files:
     - memtest32.bin
     - memtest32.efi
     - memtest64.bin
     - memtest64.efi
     os: memtest86-plus
-    version: '7.20'
+    version: '8.00'
   ubuntu-netboot-24.04-arm64:
     path: /ubuntu-squash/releases/download/24.04.3-7b71a472/
     files:
