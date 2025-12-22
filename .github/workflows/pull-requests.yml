@@ -22,7 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install ansible==13.1.0 # renovate: datasource=pypi depName=ansible
-        pip install ansible-lint==25.12.1 # renovate: datasource=pypi depName=ansible-lint
+        pip install ansible-lint==25.12.2 # renovate: datasource=pypi depName=ansible-lint
 
     - name: Syntax Check
       run: |
