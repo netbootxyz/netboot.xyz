@@ -1583,7 +1583,7 @@ endpoints:
     flavor: cinnamon
     kernel: debian-13-live-kernel
   debian-13-xfce-squash:
-    path: /debian-squash/releases/download/13.2.0-6e8d6d0d/
+    path: /debian-squash/releases/download/13.2.0-5048a26b/
     files:
     - filesystem.squashfs
     os: debian
