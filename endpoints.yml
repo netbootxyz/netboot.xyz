@@ -1505,7 +1505,7 @@ endpoints:
     os: debian
     version: '13'
   debian-13-default-squash:
-    path: /debian-squash/releases/download/13.2.0-d074da9b/
+    path: /debian-squash/releases/download/13.2.0-9d9b777e/
     files:
     - filesystem.squashfs
     os: debian
