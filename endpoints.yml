@@ -494,7 +494,7 @@ endpoints:
     version: '6'
     kernel: elementaryos-6-default-squash
   voyager-bullseye-squash:
-    path: /debian-squash/releases/download/bullseye-f449bf64/
+    path: /debian-squash/releases/download/bullseye-a59d37d9/
     files:
     - filesystem.squashfs
     - initrd
