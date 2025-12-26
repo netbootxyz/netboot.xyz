@@ -1,6 +1,6 @@
 endpoints:
   kali-xfce-squash:
-    path: /debian-squash/releases/download/2025.4-8e024a88/
+    path: /debian-squash/releases/download/2025.4-f03c4b56/
     files:
     - filesystem.squashfs
     - initrd
