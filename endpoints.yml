@@ -1219,7 +1219,7 @@ endpoints:
     flavor: plasma
     kernel: q4os-default-squash
   q4os-default-squash:
-    path: /debian-squash/releases/download/6.4-d1a34866/
+    path: /debian-squash/releases/download/6.4-5d30850e/
     files:
     - filesystem.squashfs
     - initrd
