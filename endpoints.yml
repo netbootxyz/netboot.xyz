@@ -1489,7 +1489,7 @@ endpoints:
     os: cachyos
     version: '251209'
   deepin-20-squash:
-    path: /debian-squash/releases/download/20.9-e3a3a399/
+    path: /debian-squash/releases/download/20.9-a4ce5fe4/
     files:
     - filesystem.squashfs
     - initrd
