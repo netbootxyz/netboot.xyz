@@ -461,7 +461,7 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/2025.11.24-e095cbc8/
+    path: /asset-mirror/releases/download/2025.11.24-a0604436/
     files:
     - airootfs.sfs
     - initrd
