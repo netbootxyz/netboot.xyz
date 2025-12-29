@@ -951,7 +951,7 @@ endpoints:
     version: '4.0'
     arch: x86_64
   vmware-photon-aarch64:
-    path: /asset-mirror/releases/download/4.0-4e0c6bec/
+    path: /asset-mirror/releases/download/4.0-ed208546/
     files:
     - initrd.img
     - vmlinuz
