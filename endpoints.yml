@@ -1293,7 +1293,7 @@ endpoints:
     os: vanilla-os
     version: 2-20240728
   zfsbootmenu:
-    path: /asset-mirror/releases/download/3.0.1-bfc4188e/
+    path: /asset-mirror/releases/download/3.0.1-1620b6a3/
     files:
     - zfsbootmenu-recovery-x86_64.efi
     os: zfsbootmenu
