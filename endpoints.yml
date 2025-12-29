@@ -510,7 +510,7 @@ endpoints:
     os: memtest86-free
     version: '11.5'
   gentoo-x86:
-    path: /asset-mirror/releases/download/20241209T170323Z-5b773f72/
+    path: /asset-mirror/releases/download/20241209T170323Z-4e10abc5/
     files:
     - image.squashfs
     - initrd
