@@ -504,7 +504,7 @@ endpoints:
     flavor: bullseye
     kernel: voyager-bullseye-squash
   memtest86:
-    path: /asset-mirror/releases/download/11.5-2ae1d21b/
+    path: /asset-mirror/releases/download/11.5-0a2bf7d3/
     files:
     - memtest86-usb.img
     os: memtest86-free
