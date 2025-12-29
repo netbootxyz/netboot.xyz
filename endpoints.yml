@@ -1405,7 +1405,7 @@ endpoints:
     os: uefi-shell
     version: edk2-stable202002
   uefi-shell-x64:
-    path: /asset-mirror/releases/download/edk2-stable202002-4c8abfeb/
+    path: /asset-mirror/releases/download/edk2-stable202002-a9ce7096/
     files:
     - uefi-shell-x64.efi
     os: uefi-shell-x64
