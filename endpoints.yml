@@ -350,7 +350,7 @@ endpoints:
     flavor: Budgie
     kernel: ubuntu-20.04-Budgie-squash
   ubuntu-20.04-MATE-squash:
-    path: /ubuntu-squash/releases/download/20.04.6-8e277cc9/
+    path: /ubuntu-squash/releases/download/20.04.6-b988c78f/
     files:
     - filesystem.squashfs
     - initrd
