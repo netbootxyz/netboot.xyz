@@ -1156,7 +1156,7 @@ endpoints:
     flavor: kde
     kernel: debian-12-live-kernel
   ubuntu-22.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/22.04.5-e60a4189/
+    path: /ubuntu-squash/releases/download/22.04.5-81dbf90b/
     files:
     - filesystem.squashfs
     - initrd
