@@ -1305,7 +1305,7 @@ endpoints:
     os: supergrubdisk
     version: 2.06s4
   mint-22-xfce-squash:
-    path: /ubuntu-squash/releases/download/22-42f238bf/
+    path: /ubuntu-squash/releases/download/22-e45bc094/
     files:
     - initrd
     - vmlinuz
