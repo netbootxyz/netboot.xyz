@@ -1066,7 +1066,7 @@ endpoints:
     flavor: cinnamon
     version: 250801
   elementaryos-7-default-squash:
-    path: /ubuntu-squash/releases/download/7-3e6e05f6/
+    path: /ubuntu-squash/releases/download/7-82f69428/
     files:
     - initrd
     - vmlinuz
