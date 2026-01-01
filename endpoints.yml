@@ -1335,7 +1335,7 @@ endpoints:
     flavor: mate
     kernel: mint-22-mate-squash
   ubuntu-netboot-24.10-amd64:
-    path: /ubuntu-squash/releases/download/24.10-fcf8807c/
+    path: /ubuntu-squash/releases/download/24.10-01d20dde/
     files:
     - initrd
     - vmlinuz
