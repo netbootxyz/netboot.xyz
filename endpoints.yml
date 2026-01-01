@@ -1075,7 +1075,7 @@ endpoints:
     version: '7'
     kernel: elementaryos-7-default-squash
   ubuntu-20.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/20.04.5-95f04bf8/
+    path: /ubuntu-squash/releases/download/20.04.5-07228691/
     files:
     - filesystem.squashfs
     - initrd
