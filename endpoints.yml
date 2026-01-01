@@ -1553,7 +1553,7 @@ endpoints:
     flavor: mate
     kernel: debian-13-live-kernel
   ubuntu-netboot-25.10-amd64:
-    path: /ubuntu-squash/releases/download/25.10-5a657310/
+    path: /ubuntu-squash/releases/download/25.10-64f54a86/
     files:
     - initrd
     - vmlinuz
