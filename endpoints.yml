@@ -852,7 +852,7 @@ endpoints:
     kernel: ubuntu-netboot-22.04-amd64
     arch: amd64
   ubuntu-netboot-22.04-arm64:
-    path: /ubuntu-squash/releases/download/22.04.5-32a0e326/
+    path: /ubuntu-squash/releases/download/22.04.5-9d9df014/
     files:
     - initrd
     - vmlinuz
