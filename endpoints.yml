@@ -1411,7 +1411,7 @@ endpoints:
     os: uefi-shell-x64
     version: edk2-stable202002
   ubuntu-netboot-25.04-amd64:
-    path: /ubuntu-squash/releases/download/25.04-8094159e/
+    path: /ubuntu-squash/releases/download/25.04-fa10ffe9/
     files:
     - initrd
     - vmlinuz
