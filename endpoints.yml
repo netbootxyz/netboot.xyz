@@ -528,13 +528,13 @@ endpoints:
     version: 20251207T230055Z
     arch: arm64
   gentoo-amd64:
-    path: /asset-mirror/releases/download/20251130T164554Z-9aa997ef/
+    path: /asset-mirror/releases/download/20251207T170056Z-9aa997ef/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20251130T164554Z
+    version: 20251207T170056Z
     arch: amd64
   tails:
     path: /asset-mirror/releases/download/7.3.1-17629562/
