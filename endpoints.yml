@@ -1325,7 +1325,7 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-22-cinnamon-squash
   mint-22-mate-squash:
-    path: /ubuntu-squash/releases/download/22-979f0303/
+    path: /ubuntu-squash/releases/download/22-482b71dc/
     files:
     - initrd
     - vmlinuz
