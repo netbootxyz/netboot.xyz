@@ -504,11 +504,11 @@ endpoints:
     flavor: bullseye
     kernel: voyager-bullseye-squash
   memtest86:
-    path: /asset-mirror/releases/download/11.5-0a2bf7d3/
+    path: /asset-mirror/releases/download/11.6-0a2bf7d3/
     files:
     - memtest86-usb.img
     os: memtest86-free
-    version: '11.5'
+    version: '11.6'
   gentoo-x86:
     path: /asset-mirror/releases/download/20241209T170323Z-4e10abc5/
     files:
