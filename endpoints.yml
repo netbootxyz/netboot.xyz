@@ -1035,7 +1035,7 @@ endpoints:
     version: 6.3.2
     flavor: home
   parrot-security:
-    path: /debian-squash/releases/download/6.3.2-999ed7ad/
+    path: /debian-squash/releases/download/6.3.2-b763048a/
     files:
     - filesystem.squashfs
     - initrd
