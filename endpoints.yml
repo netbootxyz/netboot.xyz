@@ -652,13 +652,13 @@ endpoints:
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20260112-resolute-bea81d96/
+    path: /ubuntu-squash/releases/download/20260115-resolute-bea81d96/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20260112-resolute
+    version: 20260115-resolute
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
