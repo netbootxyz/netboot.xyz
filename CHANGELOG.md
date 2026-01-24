@@ -3,7 +3,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [3.0.0-RC] - 2026-01-24
+## [3.0.0] - 2026-01-24
 
 ### Breaking Changes
 
