@@ -11,8 +11,6 @@ All notable changes to this project will be documented in this file.
 - Users with 2.x bootloaders will be automatically upgraded to 3.x on first boot
 - Bumped major version to 3.x series due to code signing certificate updates requiring bootloader update
 
-## [2.0.90] - 2025-01-24
-
 ## [2.0.89] - 2025-11-08
 
 ### Added
