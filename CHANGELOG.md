@@ -27,13 +27,7 @@ All notable changes to this project will be documented in this file.
 - Updated GitHub Actions:
   - actions/checkout to v6
   - ffurrer2/extract-release-notes to v3
-- Various distribution version updates:
-  - Arch Linux updated to 2026.01.01
-  - SmartOS updated to 20260122T000642Z
-  - Fedora CoreOS updated to 43.20260105.3.0-stable, 43.20260119.2.1-testing, 43.20260119.1.1-next
-  - IPFire updated to 2.29-core199
-  - Debian 13 (Trixie) updated to 13.3.0
-  - OpenBSD updated to 7.8 with CDN mirror support
+- Various distribution version updates and refreshes
 - OpenBSD mirror switched from ftp.openbsd.org to cdn.openbsd.org for better performance
 - OpenBSD snapshots now default to first menu entry (recommended)
 - Flatcar Container Linux now uses CDN URL to avoid redirects
