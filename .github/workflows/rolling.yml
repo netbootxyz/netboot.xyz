@@ -1,12 +1,14 @@
 name: rolling
 
 on:
-  push:
-    paths:
-      - 'endpoints.yml'
-      - 'roles/netbootxyz/defaults/main.yml'
-    branches:
-      - development
+  workflow_dispatch:
+  # Disabled automatic rolling releases during version updates
+  # push:
+  #   paths:
+  #     - 'endpoints.yml'
+  #     - 'roles/netbootxyz/defaults/main.yml'
+  #   branches:
+  #     - development
 
 env:
   DISCORD_HOOK_URL: ${{ secrets.DISCORD_HOOK_URL }}
@@ -20,7 +22,7 @@ jobs:
       id-token: write
       contents: write
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         ref: 'master'
 

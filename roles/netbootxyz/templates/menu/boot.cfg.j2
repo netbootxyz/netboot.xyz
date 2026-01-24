@@ -82,7 +82,7 @@ set menu_pci 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :efi
-set menu_bsd 0
+set menu_bsd 1
 set menu_freedos 0
 set menu_unix 0
 set menu_pci 0
@@ -121,7 +121,7 @@ goto clouds_end
 :metal_arm64
 set cmdline console=ttyAMA0,115200
 set ipxe_disk netboot.xyz-metal-arm64-snp.efi
-set menu_bsd 0
+set menu_bsd 1
 set menu_freedos 0
 set menu_live 0
 set menu_windows 0

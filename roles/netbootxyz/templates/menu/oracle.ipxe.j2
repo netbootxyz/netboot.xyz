@@ -12,14 +12,33 @@ set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} arm64 && set os_arch aarch64 ||
 item --gap ${os} Versions
+{% set defined_versions = {} %}
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "oracle" %}
-item {{ value.version }} ${space} ${os} {{ value.version }}
+{% if value.version not in defined_versions %}
+{% set _ = defined_versions.update({value.version: []}) %}
+{% endif %}
+{% set _ = defined_versions[value.version].append(value.arch) %}
+{% endif %}
+{% endfor %}
+{% for version, archs in defined_versions.items() | sort %}
+{% if archs | length > 1 %}
+item {{ version }} ${space} ${os} {{ version }}
+{% else %}
+iseq ${os_arch} {{ archs[0] }} && item {{ version }} ${space} ${os} {{ version }} ||
 {% endif %}
 {% endfor %}
 choose version || goto oracle_exit
-goto ${version}_${os_arch}
+goto ${version}
 
+{% for version, archs in defined_versions.items() | sort %}
+:{{ version }}
+{% for arch in archs %}
+iseq ${os_arch} {{ arch }} && goto {{ version }}_{{ arch }} ||
+{% endfor %}
+goto oracle_exit
+
+{% endfor %}
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "oracle" %}
 :{{ value.version }}_{{ value.arch }}

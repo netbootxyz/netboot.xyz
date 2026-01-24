@@ -69,6 +69,9 @@ choose version || goto opensuse_exit
 set dir ${opensuse_base_dir}/${version}/repo/oss
 iseq ${version} tumbleweed && set dir ${version}/repo/oss ||
 
+# Tumbleweed ARM64 uses ports mirror
+iseq ${version} tumbleweed && iseq ${os_arch} aarch64 && set dir ports/aarch64/${version}/repo/oss ||
+
 # Check if version needs live ISO boot method (16.0 and later)
 iseq ${version} 16.0 && set dir distribution/leap/${version}/repo/oss && set iso_dir distribution/leap/${version}/offline && set use_live_iso true ||
 
