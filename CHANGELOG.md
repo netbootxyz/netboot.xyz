@@ -3,7 +3,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.0.90] - Unreleased
+## [3.0.0] - Unreleased
+
+### Changed
+
+- **BREAKING**: Updated embedded certificates used for image signature verification in iPXE bootloaders
+- Users with 2.x bootloaders will be automatically upgraded to 3.x on first boot
+- Bumped major version to 3.x series due to code signing certificate updates requiring bootloader update
+
+## [2.0.90] - 2025-01-24
 
 ## [2.0.89] - 2025-11-08
 

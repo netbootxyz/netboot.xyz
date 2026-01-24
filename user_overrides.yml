@@ -14,7 +14,7 @@ make_num_jobs: 1
 # boot_domain: boot.mysitename.com
 
 # set boot version
-# boot_version: "2.x"
+# boot_version: "3.x"
 
 # bootloader_tftp_enabled: false
 # bootloader_https_enabled: true

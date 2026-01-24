@@ -1,6 +1,6 @@
 boot_domain: boot.netboot.xyz
 boot_timeout: 300000
-boot_version: 2.x
+boot_version: 3.x
 bootloader_disks:
 - netboot.xyz
 bootloader_http_enabled: true
