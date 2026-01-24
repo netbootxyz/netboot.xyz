@@ -3,6 +3,9 @@ set -e
 
 # retrieve certs
 git clone https://$GIT_USER:$GIT_AUTH@$GIT_URL certs
+echo "Retrieved certs from repository at commit:"
+git -C certs log -1 --format="SHA: %H%nAuthor: %an <%ae>%nDate: %ad" --date=short
+echo ""
 cp certs/certs.tar.enc .
 openssl aes-256-cbc -pass pass:$CERTS_KEY -d -salt -pbkdf2 -a -in certs.tar.enc -out certs.tar
 tar xf certs.tar -C certs

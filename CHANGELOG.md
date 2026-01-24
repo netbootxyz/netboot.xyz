@@ -3,6 +3,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2026-01-24
+
+### Added
+
+- Proxmox Datacenter Manager support with text and debug installation modes
+- Memtest86+ v8.00 series support
+
+### Changed
+
+- **BREAKING**: Updated embedded certificates used for image signature verification in iPXE bootloaders
+- Users with 2.x bootloaders will be automatically upgraded to 3.x on first boot
+- Bumped major version to 3.x series due to code signing certificate updates requiring bootloader update
+- Various distribution version updates across all supported operating systems
+- Improved certificate retrieval script with commit SHA validation output
+
+### Fixed
+
+- Oracle Linux menu items now properly filter by architecture (x86_64 vs aarch64)
+- OpenSUSE Tumbleweed ARM64 build configuration corrected to use ports mirror
+- Flatcar Container Linux boot redirect issue resolved
+
 ## [2.0.89] - 2025-11-08
 
 ### Added

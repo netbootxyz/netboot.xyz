@@ -17,7 +17,7 @@ jobs:
       id-token: write
       contents: write
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         ref: master
 
@@ -61,7 +61,7 @@ jobs:
 
     - name: Extract release notes
       id: extract-release-notes
-      uses: ffurrer2/extract-release-notes@v2
+      uses: ffurrer2/extract-release-notes@v3
 
     - name: Create Release and Upload Assets
       uses: svenstaro/upload-release-action@v2

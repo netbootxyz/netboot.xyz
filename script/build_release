@@ -2,8 +2,8 @@
 set -e
 
 TYPE=$1
-HARD_RELEASE="2.x"
-HARD_RC="2.x-RC"
+HARD_RELEASE="3.x"
+HARD_RC="3.x-RC"
 DEV_URL="dev.boot.netboot.xyz"
 STAGING_URL="staging.boot.netboot.xyz"
 PROD_URL="boot.netboot.xyz"
@@ -24,7 +24,7 @@ elif [[ "${TYPE}" == "release" ]]; then
   BOOT_VERSION=$(cat version.txt)
   BOOT_DOMAIN="${PROD_URL}/${BOOT_VERSION}"
 elif [[ "${TYPE}" == "rolling" ]]; then
-  HARD_RELEASE="2.x"
+  HARD_RELEASE="3.x"
   PROD_URL="boot.netboot.xyz"
 fi
 

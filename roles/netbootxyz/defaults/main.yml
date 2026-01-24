@@ -1,6 +1,6 @@
 boot_domain: boot.netboot.xyz
 boot_timeout: 300000
-boot_version: 2.x
+boot_version: 3.x
 bootloader_disks:
 - netboot.xyz
 bootloader_http_enabled: true
@@ -168,8 +168,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2025.11.01
-      name: 2025.11.01
+    - code_name: 2026.01.01
+      name: 2026.01.01
   blackarch:
     enabled: true
     menu: linux
@@ -195,11 +195,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 42.20251012.3.0
+    - code_name: 43.20260105.3.0
       name: stable
-    - code_name: 43.20251024.2.0
+    - code_name: 43.20260119.2.1
       name: testing
-    - code_name: 43.20251027.1.0
+    - code_name: 43.20260119.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -243,10 +243,10 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 43
+      name: 43
     - code_name: 42
       name: 42
-    - code_name: 41
-      name: 41
   flatcar:
     enabled: true
     menu: linux
@@ -291,8 +291,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core198
-      name: 2.29 Core198
+    - code_name: 2.29-core199
+      name: 2.29 Core199
   k3os:
     enabled: true
     menu: linux
@@ -358,6 +358,8 @@ releases:
     menu: linux
     name: NixOS
     versions:
+    - code_name: nixos-25.11
+      name: nixos-25.11
     - code_name: nixos-25.05
       name: nixos-25.05
     - code_name: nixos-24.11
@@ -401,18 +403,18 @@ releases:
     base_dir: pub/OpenBSD
     enabled: true
     menu: bsd
-    mirror: http://ftp.openbsd.org
+    mirror: http://cdn.openbsd.org
     name: OpenBSD
     versions:
+    - code_name: snapshots
+      image_ver: '78'
+      name: 7.8 Latest Snapshot
+    - code_name: '7.8'
+      image_ver: '78'
+      name: '7.8'
     - code_name: '7.7'
       image_ver: '77'
       name: '7.7'
-    - code_name: '7.6'
-      image_ver: '76'
-      name: '7.6'
-    - code_name: snapshots
-      image_ver: '77'
-      name: 7.7 Latest Snapshot
   opensuse:
     base_dir: distribution/leap
     enabled: true
@@ -481,14 +483,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20251030T000436Z
-      name: 20251030T000436Z
-    - code_name: 20251016T000143Z
-      name: 20251016T000143Z
-    - code_name: 20251002T000521Z
-      name: 20251002T000521Z
-    - code_name: 20250918T000550Z
-      name: 20250918T000550Z
+    - code_name: 20260122T000642Z
+      name: 20260122T000642Z
+    - code_name: 20260108T003758Z
+      name: 20260108T003758Z
+    - code_name: 20251211T000906Z
+      name: 20251211T000906Z
+    - code_name: 20251127T000410Z
+      name: 20251127T000410Z
   talos:
     enabled: true
     menu: linux
@@ -735,7 +737,7 @@ utilitiesefi:
     enabled: true
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.efi
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}mt86p_x86_64
     version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true
@@ -795,7 +797,7 @@ utilitiespcbios32:
     enabled: true
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest32.bin
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}mt86p_i586
     version: '{{ endpoints.memtest86plus.version }}'
   shredos:
     enabled: true
@@ -867,7 +869,7 @@ utilitiespcbios64:
     enabled: true
     name: Memtest86+ {{ endpoints.memtest86plus.version }}
     type: memtest
-    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}memtest64.bin
+    util_path: ${live_endpoint}{{ endpoints.memtest86plus.path }}mt86p_x86_64
     version: '{{ endpoints.memtest86plus.version }}'
   redorescue:
     enabled: true

@@ -23,6 +23,12 @@ item pmg-normal ${space} ${os} Mail Gateway {{ value.version }}
 item pmg-text ${space} ${os} Mail Gateway {{ value.version }} (Text)
 item pmg-debug ${space} ${os} Mail Gateway {{ value.version }} (Debug)
 {% endif %}
+{% if value.os == "proxmox-datacenter-manager" %}
+item --gap ${os} Datacenter Manager
+item pdm-normal ${space} ${os} Datacenter Manager {{ value.version }}
+item pdm-text ${space} ${os} Datacenter Manager {{ value.version }} (Text)
+item pdm-debug ${space} ${os} Datacenter Manager {{ value.version }} (Debug)
+{% endif %}
 {% if value.os == "proxmox-ve" %}
 item --gap ${os} VE
 item pve-normal ${space} ${os} VE {{ value.version }}
@@ -32,6 +38,18 @@ item pve-debug ${space} ${os} VE {{ value.version }} (Debug)
 {% endfor %}
 choose proxmox_choice || goto proxmox_exit
 goto ${proxmox_choice}
+
+:pdm-normal
+set params splash=silent
+goto boot-pdm
+
+:pdm-text
+set params splash=silent proxtui
+goto boot-pdm
+
+:pdm-debug
+set params splash=verbose proxdebug
+goto boot-pdm
 
 :pve-normal
 set params splash=silent
@@ -85,6 +103,19 @@ boot
 :boot-pmg
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "proxmox-mailgateway" %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set proxmox_version {{ value.version }}
+{% endif %}
+{% endfor %}
+imgfree
+kernel ${kernel_url}vmlinuz vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet ${params} {{ kernel_params }}
+initrd ${kernel_url}initrd
+initrd ${kernel_url}proxmox.iso /proxmox.iso
+boot
+
+:boot-pdm
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "proxmox-datacenter-manager" %}
 set kernel_url ${live_endpoint}{{ value.path }}
 set proxmox_version {{ value.version }}
 {% endif %}

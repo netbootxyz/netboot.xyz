@@ -10,7 +10,11 @@ menu BSD Installers - Current Arch [ ${arch} ]
 item --gap BSD Based Operating Systems
 {% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.enabled is defined and value.menu == "bsd" and value.enabled | bool %}
+{% if key == "freebsd" %}
+iseq ${platform} efi || item {{ key }} ${space} {{ value.name }}
+{% else %}
 item {{ key }} ${space} {{ value.name }}
+{% endif %}
 {% endif %}
 {% endfor %}
 choose menu || goto bsd_exit
