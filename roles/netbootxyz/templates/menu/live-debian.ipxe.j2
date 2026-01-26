@@ -7,7 +7,6 @@ set os Debian Live
 menu ${os}
 item --gap ${os} Versions
 item trixie ${space} ${os} 13 (trixie)
-item bookworm ${space} ${os} 12 (bookworm)
 choose live_version || goto live_exit
 menu ${os} ${live_version}
 item --gap ${os} Flavors
@@ -16,14 +15,6 @@ goto ${live_version}
 :trixie
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "debian" and 'squash' in key and value.version == "13" %}
-item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
-{% endif %}
-{% endfor %}
-goto flavor_select
-
-:bookworm
-{% for key, value in endpoints.items() | sort %}
-{% if value.os == "debian" and 'squash' in key and value.version == "12" %}
 item {{ key }} ${space} {{ value.os | title }} {{ value.version }} {{ value.flavor | title}}
 {% endif %}
 {% endfor %}
