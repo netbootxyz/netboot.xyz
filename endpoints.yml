@@ -1170,12 +1170,12 @@ endpoints:
     os: memtest86-plus
     version: '8.00'
   ubuntu-netboot-24.04-arm64:
-    path: /ubuntu-squash/releases/download/24.04.3-b13d6c2e/
+    path: /ubuntu-squash/releases/download/24.04.4-b13d6c2e/
     files:
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 24.04.3
+    version: 24.04.4
     codename: noble
     flavor: netboot
     kernel: ubuntu-netboot-24.04-arm64
