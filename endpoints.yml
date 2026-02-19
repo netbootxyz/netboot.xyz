@@ -1181,12 +1181,12 @@ endpoints:
     kernel: ubuntu-netboot-24.04-arm64
     arch: arm64
   ubuntu-netboot-24.04-amd64:
-    path: /ubuntu-squash/releases/download/24.04.3-717d3a1a/
+    path: /ubuntu-squash/releases/download/24.04.4-717d3a1a/
     files:
     - initrd
     - vmlinuz
     os: ubuntu
-    version: 24.04.3
+    version: 24.04.4
     codename: noble
     flavor: netboot
     kernel: ubuntu-netboot-24.04-amd64
