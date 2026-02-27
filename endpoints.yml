@@ -619,13 +619,13 @@ endpoints:
     version: 2024.07.10
     arch: i686
   clonezilla-debian-stable-amd64:
-    path: /debian-squash/releases/download/3.3.0-33-1a41a72c/
+    path: /debian-squash/releases/download/3.3.1-35-1a41a72c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 3.3.0-33
+    version: 3.3.1-35
     flavor: stable
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
