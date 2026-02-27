@@ -63,7 +63,7 @@ endpoints:
     flavor: xfce
     kernel: sparky-stable-gui
   sparky-stable-lxqt:
-    path: /debian-squash/releases/download/8.1-16df4761/
+    path: /debian-squash/releases/download/8.2-16df4761/
     files:
     - filesystem.squashfs
     - initrd
