@@ -97,6 +97,12 @@ bootloaders:
     output_bin: -snp.efi.dsk
     type: Floppy-snp
   secureboot_x86_64:
+  - desc: Secure Boot x86_64 ISO for CD/DVD/Virtual Media
+    output_bin: -sb.iso
+    type: ISO
+  - desc: Secure Boot x86_64 USB image
+    output_bin: -sb.img
+    type: IMG
   - desc: Secure Boot x86_64 shim, loads iPXE with built-in NIC drivers
     output_bin: ipxe-shim.efi
     type: Secure Boot
@@ -113,6 +119,12 @@ bootloaders:
     output_bin: autoexec.ipxe
     type: Script
   secureboot_arm64:
+  - desc: Secure Boot ARM64 ISO for CD/DVD/Virtual Media
+    output_bin: -sb-arm64.iso
+    type: ISO
+  - desc: Secure Boot ARM64 USB image
+    output_bin: -sb-arm64.img
+    type: IMG
   - desc: Secure Boot ARM64 shim, loads iPXE with built-in NIC drivers
     output_bin: ipxe-shim.efi
     type: Secure Boot

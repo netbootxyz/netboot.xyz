@@ -136,7 +136,7 @@ exit
 {% endif %}
 
 {% if generate_disks_secureboot == true %}
-  <p>x86_64 UEFI Secure Boot iPXE Bootloaders (place all files from directory together)</p>
+  <p>x86_64 UEFI Secure Boot iPXE Bootloaders</p>
 
   <table style="width:100%">
     <!-- table header -->
@@ -149,14 +149,18 @@ exit
     {% for item in bootloaders.secureboot_x86_64 %}
     <tr>
        <td> {{ item.type }} </td>
+       {% if item.type in ['ISO', 'IMG'] %}
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
+       {% else %}
        <td> <a href="ipxe/secureboot-x86_64/{{ item.output_bin }}">{{ item.output_bin }}</a> </td>
+       {% endif %}
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
   </table>
 
 {% if generate_disks_arm == true %}
-  <p>ARM64 UEFI Secure Boot iPXE Bootloaders (place all files from directory together)</p>
+  <p>ARM64 UEFI Secure Boot iPXE Bootloaders</p>
 
   <table style="width:100%">
     <!-- table header -->
@@ -169,7 +173,11 @@ exit
     {% for item in bootloaders.secureboot_arm64 %}
     <tr>
        <td> {{ item.type }} </td>
+       {% if item.type in ['ISO', 'IMG'] %}
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
+       {% else %}
        <td> <a href="ipxe/secureboot-arm64/{{ item.output_bin }}">{{ item.output_bin }}</a> </td>
+       {% endif %}
        <td> {{ item.desc }} </td>
     </tr>
     {% endfor %}
