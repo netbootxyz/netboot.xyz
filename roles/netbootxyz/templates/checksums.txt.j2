@@ -4,3 +4,21 @@
 {% for item in netboot_disks_stat.results %}
 {{ item.stdout }}
 {% endfor %}
+{% if secureboot_x86_64_disks_stat is defined and secureboot_x86_64_disks_stat.results is defined %}
+
+# Secure Boot x86_64 (iPXE {{ ipxe_secureboot_version }})
+{% for item in secureboot_x86_64_disks_stat.results %}
+{% if item.stdout is defined %}
+{{ item.stdout | replace('*', '*secureboot-x86_64/') }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if secureboot_arm64_disks_stat is defined and secureboot_arm64_disks_stat.results is defined %}
+
+# Secure Boot ARM64 (iPXE {{ ipxe_secureboot_version }})
+{% for item in secureboot_arm64_disks_stat.results %}
+{% if item.stdout is defined %}
+{{ item.stdout | replace('*', '*secureboot-arm64/') }}
+{% endif %}
+{% endfor %}
+{% endif %}

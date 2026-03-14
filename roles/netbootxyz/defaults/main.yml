@@ -96,6 +96,38 @@ bootloaders:
     ipxe_bin: snp.efi.dsk
     output_bin: -snp.efi.dsk
     type: Floppy-snp
+  secureboot_x86_64:
+  - desc: Secure Boot x86_64 shim, loads iPXE with built-in NIC drivers
+    output_bin: ipxe-shim.efi
+    type: Secure Boot
+  - desc: Secure Boot x86_64 iPXE, built-in NIC drivers (loaded via shim)
+    output_bin: ipxe.efi
+    type: Secure Boot
+  - desc: Secure Boot x86_64 SNP only, boots from chained device (loaded via shim)
+    output_bin: snponly.efi
+    type: Secure Boot
+  - desc: Secure Boot x86_64 SNP shim, loads SNP-only iPXE
+    output_bin: snponly-shim.efi
+    type: Secure Boot
+  - desc: Secure Boot autoexec.ipxe boot script
+    output_bin: autoexec.ipxe
+    type: Script
+  secureboot_arm64:
+  - desc: Secure Boot ARM64 shim, loads iPXE with built-in NIC drivers
+    output_bin: ipxe-shim.efi
+    type: Secure Boot
+  - desc: Secure Boot ARM64 iPXE, built-in NIC drivers (loaded via shim)
+    output_bin: ipxe.efi
+    type: Secure Boot
+  - desc: Secure Boot ARM64 SNP only, boots from chained device (loaded via shim)
+    output_bin: snponly.efi
+    type: Secure Boot
+  - desc: Secure Boot ARM64 SNP shim, loads SNP-only iPXE
+    output_bin: snponly-shim.efi
+    type: Secure Boot
+  - desc: Secure Boot autoexec.ipxe boot script
+    output_bin: autoexec.ipxe
+    type: Script
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
@@ -115,6 +147,7 @@ generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_linux: false
 generate_disks_rpi: false
+generate_disks_secureboot: false
 generate_local_vars: true
 generate_menus: true
 generate_signatures: false
@@ -122,6 +155,8 @@ generate_version_file: true
 ipxe_branch: master
 ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
+ipxe_secureboot_version: v2.0.0
+ipxe_secureboot_archive_url: "https://github.com/ipxe/ipxe/releases/download/{{ ipxe_secureboot_version }}/ipxeboot.tar.gz"
 ipxe_debug_enabled: false
 ipxe_debug_options: httpcore,tls
 ipxe_repo: https://github.com/ipxe/ipxe

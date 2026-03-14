@@ -34,3 +34,9 @@
   when:
     - generate_disks_hybrid | default(false) | bool
     - bootloader_filename == "netboot.xyz"
+
+- name: Generate Secure Boot iPXE bootloaders
+  ansible.builtin.include_tasks: generate_disks_secureboot.yml
+  when:
+    - generate_disks_secureboot | default(false) | bool
+    - bootloader_filename == "netboot.xyz"
