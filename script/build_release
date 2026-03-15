@@ -54,6 +54,7 @@ if ! [[ "${TYPE}" == "rolling" ]]; then
   # ships the boot script that chains into the menu system.
   if [[ -f "githubout/secureboot-x86_64/autoexec.ipxe" ]]; then
     cp githubout/secureboot-x86_64/autoexec.ipxe githubout/autoexec.ipxe
+    cp githubout/secureboot-x86_64/autoexec.ipxe s3out/autoexec.ipxe
   fi
   # Remove secureboot directories from githubout since the signed binaries
   # are not re-distributed as netboot.xyz release assets
