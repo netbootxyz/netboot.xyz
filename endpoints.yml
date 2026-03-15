@@ -1527,3 +1527,14 @@ endpoints:
     - vmlinuz
     os: proxmox-datacenter-manager
     version: 1.0-2
+  ubuntu-netboot-hwe-24.04-amd64:
+    path: /ubuntu-squash/releases/download/24.04.4-5d65e4e9/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: 24.04.4
+    codename: noble
+    flavor: netboot-hwe
+    kernel: ubuntu-netboot-hwe-24.04-amd64
+    arch: amd64
