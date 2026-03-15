@@ -75,49 +75,6 @@ bootloaders:
     ipxe_bin: snp.efi
     output_bin: -rpi4-snp.efi
     type: DHCP-snp
-  uefi:
-  - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
-    ipxe_bin: ipxe.efi
-    output_bin: .efi
-    type: DHCP
-  - desc: EFI w/ Simple Network Protocol, attempts to boot all net devices
-    ipxe_bin: snp.efi
-    output_bin: -snp.efi
-    type: DHCP-snp
-  - desc: EFI w/ Simple Network Protocol, only boots from device chained from
-    ipxe_bin: snponly.efi
-    output_bin: -snponly.efi
-    type: DHCP-snponly
-  - desc: DHCP EFI Floppy boot image file, uses built-in iPXE NIC drivers
-    ipxe_bin: ipxe.efi.dsk
-    output_bin: .efi.dsk
-    type: Floppy
-  - desc: EFI Floppy image w/ Simple Network Protocol, attempts to boot all net devices
-    ipxe_bin: snp.efi.dsk
-    output_bin: -snp.efi.dsk
-    type: Floppy-snp
-  secureboot_x86_64:
-  - desc: Secure Boot x86_64 ISO for CD/DVD/Virtual Media
-    output_bin: -sb.iso
-    type: ISO
-  - desc: Secure Boot x86_64 USB image
-    output_bin: -sb.img
-    type: IMG
-  - desc: Secure Boot x86_64 shim, loads iPXE with built-in NIC drivers
-    output_bin: ipxe-shim.efi
-    type: Secure Boot
-  - desc: Secure Boot x86_64 iPXE, built-in NIC drivers (loaded via shim)
-    output_bin: ipxe.efi
-    type: Secure Boot
-  - desc: Secure Boot x86_64 SNP only, boots from chained device (loaded via shim)
-    output_bin: snponly.efi
-    type: Secure Boot
-  - desc: Secure Boot x86_64 SNP shim, loads SNP-only iPXE
-    output_bin: snponly-shim.efi
-    type: Secure Boot
-  - desc: Secure Boot autoexec.ipxe boot script
-    output_bin: autoexec.ipxe
-    type: Script
   secureboot_arm64:
   - desc: Secure Boot ARM64 ISO for CD/DVD/Virtual Media
     output_bin: -sb-arm64.iso
@@ -140,6 +97,49 @@ bootloaders:
   - desc: Secure Boot autoexec.ipxe boot script
     output_bin: autoexec.ipxe
     type: Script
+  secureboot_x86_64:
+  - desc: Secure Boot x86_64 ISO for CD/DVD/Virtual Media
+    output_bin: -sb.iso
+    type: ISO
+  - desc: Secure Boot x86_64 USB image
+    output_bin: -sb.img
+    type: IMG
+  - desc: Secure Boot x86_64 shim, loads iPXE with built-in NIC drivers
+    output_bin: ipxe-shim.efi
+    type: Secure Boot
+  - desc: Secure Boot x86_64 iPXE, built-in NIC drivers (loaded via shim)
+    output_bin: ipxe.efi
+    type: Secure Boot
+  - desc: Secure Boot x86_64 SNP only, boots from chained device (loaded via shim)
+    output_bin: snponly.efi
+    type: Secure Boot
+  - desc: Secure Boot x86_64 SNP shim, loads SNP-only iPXE
+    output_bin: snponly-shim.efi
+    type: Secure Boot
+  - desc: Secure Boot autoexec.ipxe boot script
+    output_bin: autoexec.ipxe
+    type: Script
+  uefi:
+  - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi
+    output_bin: .efi
+    type: DHCP
+  - desc: EFI w/ Simple Network Protocol, attempts to boot all net devices
+    ipxe_bin: snp.efi
+    output_bin: -snp.efi
+    type: DHCP-snp
+  - desc: EFI w/ Simple Network Protocol, only boots from device chained from
+    ipxe_bin: snponly.efi
+    output_bin: -snponly.efi
+    type: DHCP-snponly
+  - desc: DHCP EFI Floppy boot image file, uses built-in iPXE NIC drivers
+    ipxe_bin: ipxe.efi.dsk
+    output_bin: .efi.dsk
+    type: Floppy
+  - desc: EFI Floppy image w/ Simple Network Protocol, attempts to boot all net devices
+    ipxe_bin: snp.efi.dsk
+    output_bin: -snp.efi.dsk
+    type: Floppy-snp
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
@@ -167,11 +167,12 @@ generate_version_file: true
 ipxe_branch: master
 ipxe_ca_filename: ca-ipxe-org.crt
 ipxe_ca_url: http://ca.ipxe.org/ca.crt
-ipxe_secureboot_version: v2.0.0
-ipxe_secureboot_archive_url: "https://github.com/ipxe/ipxe/releases/download/{{ ipxe_secureboot_version }}/ipxeboot.tar.gz"
 ipxe_debug_enabled: false
 ipxe_debug_options: httpcore,tls
 ipxe_repo: https://github.com/ipxe/ipxe
+ipxe_secureboot_archive_url: https://github.com/ipxe/ipxe/releases/download/{{ ipxe_secureboot_version
+  }}/ipxeboot.tar.gz
+ipxe_secureboot_version: v2.0.0
 ipxe_source_dir: /usr/src/ipxe
 kernel_params: initrd=initrd.magic ${cmdline}
 live_endpoint: https://github.com/netbootxyz
