@@ -97,6 +97,20 @@
     chdir: "{{ ipxe_source_dir }}/src"
   when: generate_disks_arm | default(false) | bool
 
+- name: Copy autoexec.ipxe to ipxe root as standalone release asset
+  ansible.builtin.copy:
+    src: "{{ netbootxyz_root }}/ipxe/secureboot-x86_64/autoexec.ipxe"
+    dest: "{{ netbootxyz_root }}/ipxe/autoexec.ipxe"
+    remote_src: true
+
+- name: Remove Secure Boot directories after ISO/USB generation
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ netbootxyz_root }}/ipxe/secureboot-x86_64"
+    - "{{ netbootxyz_root }}/ipxe/secureboot-arm64"
+
 - name: Clean up Secure Boot archive
   ansible.builtin.file:
     path: "{{ item }}"

@@ -82,21 +82,6 @@ bootloaders:
   - desc: Secure Boot ARM64 USB image
     output_bin: -sb-arm64.img
     type: IMG
-  - desc: Secure Boot ARM64 shim, loads iPXE with built-in NIC drivers
-    output_bin: ipxe-shim.efi
-    type: Secure Boot
-  - desc: Secure Boot ARM64 iPXE, built-in NIC drivers (loaded via shim)
-    output_bin: ipxe.efi
-    type: Secure Boot
-  - desc: Secure Boot ARM64 SNP only, boots from chained device (loaded via shim)
-    output_bin: snponly.efi
-    type: Secure Boot
-  - desc: Secure Boot ARM64 SNP shim, loads SNP-only iPXE
-    output_bin: snponly-shim.efi
-    type: Secure Boot
-  - desc: Secure Boot autoexec.ipxe boot script
-    output_bin: autoexec.ipxe
-    type: Script
   secureboot_x86_64:
   - desc: Secure Boot x86_64 ISO for CD/DVD/Virtual Media
     output_bin: -sb.iso
@@ -104,21 +89,6 @@ bootloaders:
   - desc: Secure Boot x86_64 USB image
     output_bin: -sb.img
     type: IMG
-  - desc: Secure Boot x86_64 shim, loads iPXE with built-in NIC drivers
-    output_bin: ipxe-shim.efi
-    type: Secure Boot
-  - desc: Secure Boot x86_64 iPXE, built-in NIC drivers (loaded via shim)
-    output_bin: ipxe.efi
-    type: Secure Boot
-  - desc: Secure Boot x86_64 SNP only, boots from chained device (loaded via shim)
-    output_bin: snponly.efi
-    type: Secure Boot
-  - desc: Secure Boot x86_64 SNP shim, loads SNP-only iPXE
-    output_bin: snponly-shim.efi
-    type: Secure Boot
-  - desc: Secure Boot autoexec.ipxe boot script
-    output_bin: autoexec.ipxe
-    type: Script
   uefi:
   - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.efi
