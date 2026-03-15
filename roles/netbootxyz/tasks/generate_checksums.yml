@@ -15,41 +15,6 @@
     chdir: "{{ netbootxyz_root }}/ipxe/"
   register: netboot_disks_stat
 
-- name: Register Secure Boot x86_64 bootloaders
-  ansible.builtin.shell: ls {{ netbootxyz_root }}/ipxe/secureboot-x86_64/ 2>/dev/null || true
-  register: secureboot_x86_64_disks
-  when: generate_disks_secureboot | default(false) | bool
-
-- name: Gather Secure Boot x86_64 checksums
-  ansible.builtin.command: sha256sum -b {{ item }}
-  with_items:
-    - "{{ secureboot_x86_64_disks.stdout_lines | default([]) }}"
-  args:
-    chdir: "{{ netbootxyz_root }}/ipxe/secureboot-x86_64/"
-  register: secureboot_x86_64_disks_stat
-  when:
-    - generate_disks_secureboot | default(false) | bool
-    - secureboot_x86_64_disks.stdout_lines | default([]) | length > 0
-
-- name: Register Secure Boot ARM64 bootloaders
-  ansible.builtin.shell: ls {{ netbootxyz_root }}/ipxe/secureboot-arm64/ 2>/dev/null || true
-  register: secureboot_arm64_disks
-  when:
-    - generate_disks_secureboot | default(false) | bool
-    - generate_disks_arm | default(false) | bool
-
-- name: Gather Secure Boot ARM64 checksums
-  ansible.builtin.command: sha256sum -b {{ item }}
-  with_items:
-    - "{{ secureboot_arm64_disks.stdout_lines | default([]) }}"
-  args:
-    chdir: "{{ netbootxyz_root }}/ipxe/secureboot-arm64/"
-  register: secureboot_arm64_disks_stat
-  when:
-    - generate_disks_secureboot | default(false) | bool
-    - generate_disks_arm | default(false) | bool
-    - secureboot_arm64_disks.stdout_lines | default([]) | length > 0
-
 - name: Generate ipxe disk checksums
   ansible.builtin.template:
     src: checksums.txt.j2
