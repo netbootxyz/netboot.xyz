@@ -48,16 +48,16 @@ if ! [[ "${TYPE}" == "rolling" ]]; then
   cp buildout/version.ipxe s3outver/
   mkdir -p githubout
   mv buildout/ipxe/* githubout/
-  # Package Secure Boot directories into tarballs for GitHub release assets
-  # (GitHub releases are flat; subdirectories can't be uploaded directly)
-  if [ -d "githubout/secureboot-x86_64" ]; then
-    tar -czf githubout/secureboot-x86_64.tar.gz -C githubout secureboot-x86_64
-    rm -rf githubout/secureboot-x86_64
+  # Extract autoexec.ipxe as a standalone release asset for Secure Boot.
+  # The signed iPXE binaries are consumed directly from the upstream iPXE
+  # release (ipxeboot.tar.gz) to preserve provenance; netboot.xyz only
+  # ships the boot script that chains into the menu system.
+  if [[ -f "githubout/secureboot-x86_64/autoexec.ipxe" ]]; then
+    cp githubout/secureboot-x86_64/autoexec.ipxe githubout/autoexec.ipxe
   fi
-  if [ -d "githubout/secureboot-arm64" ]; then
-    tar -czf githubout/secureboot-arm64.tar.gz -C githubout secureboot-arm64
-    rm -rf githubout/secureboot-arm64
-  fi
+  # Remove secureboot directories from githubout since the signed binaries
+  # are not re-distributed as netboot.xyz release assets
+  rm -rf githubout/secureboot-x86_64 githubout/secureboot-arm64
   cd buildout
   rm -Rf ipxe
   tar -czf menus.tar.gz *
