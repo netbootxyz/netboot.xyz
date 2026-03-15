@@ -8,6 +8,7 @@ iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} i386 && set os_arch i686 ||
 isset ${dhcp-server} || goto static_ip
 set ipparam BOOTIF=${netX/mac} ip=dhcp
+# archlinux_mirror is set in boot.cfg.j2 with isset guard, safe to use here
 set real_archlinux_mirror ${archlinux_mirror}
 goto goto_menu
 

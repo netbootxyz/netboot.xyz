@@ -2,25 +2,25 @@
 
 :global_vars
 # set site name
-set site_name {{ site_name }}
+isset ${site_name} || set site_name {{ site_name }}
 
 # set boot domain
-set boot_domain {{ boot_domain }}
+isset ${boot_domain} || set boot_domain {{ boot_domain }}
 
 # set location of memdisk
-set memdisk {{ memdisk_location }}
+isset ${memdisk} || set memdisk {{ memdisk_location }}
 
 # set location of custom netboot.xyz live assets, override in local-vars.ipxe
 isset ${live_endpoint} || set live_endpoint {{ live_endpoint }}
 
 # signature check enabled?
-set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
+isset ${sigs_enabled} || set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
 
 # set location of signatures for sources
-set sigs {{ sigs_location }}
+isset ${sigs} || set sigs {{ sigs_location }}
 
 # set location of latest iPXE
-iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
+isset ${ipxe_disk} || iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
 
 # set default boot timeout
 isset ${boot_timeout} || set boot_timeout {{ boot_timeout }}
@@ -32,8 +32,8 @@ isset ${boot_timeout} || set boot_timeout {{ boot_timeout }}
 {% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.mirror is defined and value.base_dir is defined %}
 ### {{ value.name }}
-set {{ key }}_mirror {{ value.mirror }}
-set {{ key }}_base_dir {{ value.base_dir }}
+isset ${{{ key }}_mirror} || set {{ key }}_mirror {{ value.mirror }}
+isset ${{{ key }}_base_dir} || set {{ key }}_base_dir {{ value.base_dir }}
 
 {% endif %}
 {% endfor %}
@@ -41,51 +41,51 @@ set {{ key }}_base_dir {{ value.base_dir }}
 # determine architectures and enable menu options
 #################################################
 :architectures
-set menu_linux 1
-set menu_bsd 1
-set menu_unix 1
-set menu_freedos 1
-set menu_live 1
-set menu_pci 1
-set menu_windows 1
-set menu_utils 1
+isset ${menu_linux} || set menu_linux 1
+isset ${menu_bsd} || set menu_bsd 1
+isset ${menu_unix} || set menu_unix 1
+isset ${menu_freedos} || set menu_freedos 1
+isset ${menu_live} || set menu_live 1
+isset ${menu_pci} || set menu_pci 1
+isset ${menu_windows} || set menu_windows 1
+isset ${menu_utils} || set menu_utils 1
 iseq ${arch} i386 && goto i386 ||
 iseq ${arch} x86_64 && goto x86_64 ||
 iseq ${arch} arm64 && goto arm64 ||
 goto architectures_end
 :x86_64
-set menu_linux_i386 0
+isset ${menu_linux_i386} || set menu_linux_i386 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :i386
-set menu_linux 0
-set menu_linux_i386 1
-set menu_bsd 1
-set menu_unix 0
-set menu_freedos 1
-set menu_live 0
-set menu_windows 0
-set menu_utils 1
+isset ${menu_linux} || set menu_linux 0
+isset ${menu_linux_i386} || set menu_linux_i386 1
+isset ${menu_bsd} || set menu_bsd 1
+isset ${menu_unix} || set menu_unix 0
+isset ${menu_freedos} || set menu_freedos 1
+isset ${menu_live} || set menu_live 0
+isset ${menu_windows} || set menu_windows 0
+isset ${menu_utils} || set menu_utils 1
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :arm64
-set menu_linux 0
-set menu_linux_arm 1
-set menu_unix 0
-set menu_freedos 0
-set menu_live 0
-set menu_live_arm 1
-set menu_windows 0
-set menu_utils 0
-set menu_utils_arm 1
-set menu_pci 0
+isset ${menu_linux} || set menu_linux 0
+isset ${menu_linux_arm} || set menu_linux_arm 1
+isset ${menu_unix} || set menu_unix 0
+isset ${menu_freedos} || set menu_freedos 0
+isset ${menu_live} || set menu_live 0
+isset ${menu_live_arm} || set menu_live_arm 1
+isset ${menu_windows} || set menu_windows 0
+isset ${menu_utils} || set menu_utils 0
+isset ${menu_utils_arm} || set menu_utils_arm 1
+isset ${menu_pci} || set menu_pci 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :efi
-set menu_bsd 1
-set menu_freedos 0
-set menu_unix 0
-set menu_pci 0
+isset ${menu_bsd} || set menu_bsd 1
+isset ${menu_freedos} || set menu_freedos 0
+isset ${menu_unix} || set menu_unix 0
+isset ${menu_pci} || set menu_pci 0
 goto architectures_end
 :architectures_end
 goto clouds
@@ -100,7 +100,7 @@ iseq ${ipxe_cloud_config} packet && goto metal ||
 goto clouds_end
 
 :gce
-set cmdline console=ttyS0,115200n8
+isset ${cmdline} || set cmdline console=ttyS0,115200n8
 goto clouds_end
 
 :metal
@@ -110,23 +110,23 @@ iseq ${arch} arm64 && goto metal_arm64 ||
 goto clouds_end
 
 :metal_x86_64
-set cmdline console=ttyS1,115200n8
-iseq ${platform} efi && set ipxe_disk netboot.xyz-metal-snp.efi || set ipxe_disk netboot.xyz-metal.kpxe
-set menu_linux_i386 0
-set menu_freedos 0
-set menu_windows 0
-iseq ${platform} efi && set menu_pci 0 ||
+isset ${cmdline} || set cmdline console=ttyS1,115200n8
+isset ${ipxe_disk} || iseq ${platform} efi && set ipxe_disk netboot.xyz-metal-snp.efi || set ipxe_disk netboot.xyz-metal.kpxe
+isset ${menu_linux_i386} || set menu_linux_i386 0
+isset ${menu_freedos} || set menu_freedos 0
+isset ${menu_windows} || set menu_windows 0
+isset ${menu_pci} || iseq ${platform} efi && set menu_pci 0 ||
 goto clouds_end
 
 :metal_arm64
-set cmdline console=ttyAMA0,115200
-set ipxe_disk netboot.xyz-metal-arm64-snp.efi
-set menu_bsd 1
-set menu_freedos 0
-set menu_live 0
-set menu_windows 0
-set menu_utils 0
-set menu_pci 0
+isset ${cmdline} || set cmdline console=ttyAMA0,115200
+isset ${ipxe_disk} || set ipxe_disk netboot.xyz-metal-arm64-snp.efi
+isset ${menu_bsd} || set menu_bsd 1
+isset ${menu_freedos} || set menu_freedos 0
+isset ${menu_live} || set menu_live 0
+isset ${menu_windows} || set menu_windows 0
+isset ${menu_utils} || set menu_utils 0
+isset ${menu_pci} || set menu_pci 0
 goto clouds_end
 
 :clouds_end

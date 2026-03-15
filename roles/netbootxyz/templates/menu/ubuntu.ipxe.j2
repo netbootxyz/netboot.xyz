@@ -33,7 +33,7 @@ goto mirrorcfg
 
 :older_release
 set older_release true
-set ubuntu_mirror {{ releases.ubuntu.archive_mirror }}
+isset ${ubuntu_mirror} || set ubuntu_mirror {{ releases.ubuntu.archive_mirror }}
 echo Setting mirror to ${ubuntu_mirror}
 clear ubuntu_version
 echo -n Please set enter code name of release: ${} && read ubuntu_version

@@ -3,7 +3,7 @@
 # Tiny Core Linux
 # http://tinycorelinux.net/downloads.html
 
-set tinycore_mirror {{ releases.tinycore.mirror }}
+isset ${tinycore_mirror} || set tinycore_mirror {{ releases.tinycore.mirror }}
 
 :arch_menu
 set os Tiny Core Linux
