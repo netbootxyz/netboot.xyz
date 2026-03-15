@@ -88,7 +88,7 @@ bootloaders:
     type: ISO
   - desc: Secure Boot x86_64 USB image
     output_bin: -sb.img
-    type: Script
+    type: IMG
   uefi:
   - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.efi
