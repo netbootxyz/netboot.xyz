@@ -48,6 +48,16 @@ if ! [[ "${TYPE}" == "rolling" ]]; then
   cp buildout/version.ipxe s3outver/
   mkdir -p githubout
   mv buildout/ipxe/* githubout/
+  # Package Secure Boot directories into tarballs for GitHub release assets
+  # (GitHub releases are flat; subdirectories can't be uploaded directly)
+  if [ -d "githubout/secureboot-x86_64" ]; then
+    tar -czf githubout/secureboot-x86_64.tar.gz -C githubout secureboot-x86_64
+    rm -rf githubout/secureboot-x86_64
+  fi
+  if [ -d "githubout/secureboot-arm64" ]; then
+    tar -czf githubout/secureboot-arm64.tar.gz -C githubout secureboot-arm64
+    rm -rf githubout/secureboot-arm64
+  fi
   cd buildout
   rm -Rf ipxe
   tar -czf menus.tar.gz *
