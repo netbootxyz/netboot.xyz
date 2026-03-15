@@ -40,3 +40,10 @@
   when:
     - generate_disks_secureboot | default(false) | bool
     - bootloader_filename == "netboot.xyz"
+
+- name: Remove stale autoexec.ipxe when Secure Boot is disabled
+  ansible.builtin.file:
+    path: "{{ netbootxyz_root }}/ipxe/autoexec.ipxe"
+    state: absent
+  when:
+    - not (generate_disks_secureboot | default(false) | bool)
