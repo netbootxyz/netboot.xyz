@@ -1538,3 +1538,14 @@ endpoints:
     flavor: netboot-hwe
     kernel: ubuntu-netboot-hwe-24.04-amd64
     arch: amd64
+  ubuntu-netboot-hwe-24.04-arm64:
+    path: /ubuntu-squash/releases/download/24.04.4-940f2f1c/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: 24.04.4
+    codename: noble
+    flavor: netboot-hwe
+    kernel: ubuntu-netboot-hwe-24.04-arm64
+    arch: arm64
