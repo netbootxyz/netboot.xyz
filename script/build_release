@@ -48,24 +48,6 @@ if ! [[ "${TYPE}" == "rolling" ]]; then
   cp buildout/version.ipxe s3outver/
   mkdir -p githubout
   mv buildout/ipxe/* githubout/
-  # Extract autoexec.ipxe as a standalone release asset for Secure Boot.
-  # The signed iPXE binaries are consumed directly from the upstream iPXE
-  # release (ipxeboot.tar.gz) to preserve provenance; netboot.xyz only
-  # ships the boot script that chains into the menu system.
-  if [[ -f "githubout/secureboot-x86_64/autoexec.ipxe" ]]; then
-    cp githubout/secureboot-x86_64/autoexec.ipxe githubout/autoexec.ipxe
-    cp githubout/secureboot-x86_64/autoexec.ipxe s3out/autoexec.ipxe
-  fi
-  # Remove secureboot directories from githubout since the signed binaries
-  # are not re-distributed as netboot.xyz release assets
-  rm -rf githubout/secureboot-x86_64 githubout/secureboot-arm64
-  # Update checksums: remove stale secureboot-* entries, add autoexec.ipxe
-  if [[ -f githubout/*-sha256-checksums.txt ]]; then
-    sed -i '/secureboot-/d' githubout/*-sha256-checksums.txt
-    if [[ -f githubout/autoexec.ipxe ]]; then
-      (cd githubout && sha256sum autoexec.ipxe >> *-sha256-checksums.txt)
-    fi
-  fi
   cd buildout
   rm -Rf ipxe
   tar -czf menus.tar.gz *
