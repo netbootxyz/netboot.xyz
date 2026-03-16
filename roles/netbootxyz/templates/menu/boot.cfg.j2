@@ -20,7 +20,7 @@ isset ${sigs_enabled} || set sigs_enabled {{ sigs_enabled | default(false) | boo
 isset ${sigs} || set sigs {{ sigs_location }}
 
 # set location of latest iPXE
-isset ${ipxe_disk} || iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
+iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
 
 # set default boot timeout
 isset ${boot_timeout} || set boot_timeout {{ boot_timeout }}
@@ -41,51 +41,51 @@ isset {{ '${' + key + '_base_dir}' }} || set {{ key }}_base_dir {{ value.base_di
 # determine architectures and enable menu options
 #################################################
 :architectures
-isset ${menu_linux} || set menu_linux 1
-isset ${menu_bsd} || set menu_bsd 1
-isset ${menu_unix} || set menu_unix 1
-isset ${menu_freedos} || set menu_freedos 1
-isset ${menu_live} || set menu_live 1
-isset ${menu_pci} || set menu_pci 1
-isset ${menu_windows} || set menu_windows 1
-isset ${menu_utils} || set menu_utils 1
+set menu_linux 1
+set menu_bsd 1
+set menu_unix 1
+set menu_freedos 1
+set menu_live 1
+set menu_pci 1
+set menu_windows 1
+set menu_utils 1
 iseq ${arch} i386 && goto i386 ||
 iseq ${arch} x86_64 && goto x86_64 ||
 iseq ${arch} arm64 && goto arm64 ||
 goto architectures_end
 :x86_64
-isset ${menu_linux_i386} || set menu_linux_i386 0
+set menu_linux_i386 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :i386
-isset ${menu_linux} || set menu_linux 0
-isset ${menu_linux_i386} || set menu_linux_i386 1
-isset ${menu_bsd} || set menu_bsd 1
-isset ${menu_unix} || set menu_unix 0
-isset ${menu_freedos} || set menu_freedos 1
-isset ${menu_live} || set menu_live 0
-isset ${menu_windows} || set menu_windows 0
-isset ${menu_utils} || set menu_utils 1
+set menu_linux 0
+set menu_linux_i386 1
+set menu_bsd 1
+set menu_unix 0
+set menu_freedos 1
+set menu_live 0
+set menu_windows 0
+set menu_utils 1
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :arm64
-isset ${menu_linux} || set menu_linux 0
-isset ${menu_linux_arm} || set menu_linux_arm 1
-isset ${menu_unix} || set menu_unix 0
-isset ${menu_freedos} || set menu_freedos 0
-isset ${menu_live} || set menu_live 0
-isset ${menu_live_arm} || set menu_live_arm 1
-isset ${menu_windows} || set menu_windows 0
-isset ${menu_utils} || set menu_utils 0
-isset ${menu_utils_arm} || set menu_utils_arm 1
-isset ${menu_pci} || set menu_pci 0
+set menu_linux 0
+set menu_linux_arm 1
+set menu_unix 0
+set menu_freedos 0
+set menu_live 0
+set menu_live_arm 1
+set menu_windows 0
+set menu_utils 0
+set menu_utils_arm 1
+set menu_pci 0
 iseq ${platform} efi && goto efi ||
 goto architectures_end
 :efi
-isset ${menu_bsd} || set menu_bsd 1
-isset ${menu_freedos} || set menu_freedos 0
-isset ${menu_unix} || set menu_unix 0
-isset ${menu_pci} || set menu_pci 0
+set menu_bsd 1
+set menu_freedos 0
+set menu_unix 0
+set menu_pci 0
 goto architectures_end
 :architectures_end
 goto clouds
@@ -111,22 +111,22 @@ goto clouds_end
 
 :metal_x86_64
 isset ${cmdline} || set cmdline console=ttyS1,115200n8
-isset ${ipxe_disk} || iseq ${platform} efi && set ipxe_disk netboot.xyz-metal-snp.efi || set ipxe_disk netboot.xyz-metal.kpxe
-isset ${menu_linux_i386} || set menu_linux_i386 0
-isset ${menu_freedos} || set menu_freedos 0
-isset ${menu_windows} || set menu_windows 0
-isset ${menu_pci} || iseq ${platform} efi && set menu_pci 0 ||
+iseq ${platform} efi && set ipxe_disk netboot.xyz-metal-snp.efi || set ipxe_disk netboot.xyz-metal.kpxe
+set menu_linux_i386 0
+set menu_freedos 0
+set menu_windows 0
+iseq ${platform} efi && set menu_pci 0 ||
 goto clouds_end
 
 :metal_arm64
 isset ${cmdline} || set cmdline console=ttyAMA0,115200
-isset ${ipxe_disk} || set ipxe_disk netboot.xyz-metal-arm64-snp.efi
-isset ${menu_bsd} || set menu_bsd 1
-isset ${menu_freedos} || set menu_freedos 0
-isset ${menu_live} || set menu_live 0
-isset ${menu_windows} || set menu_windows 0
-isset ${menu_utils} || set menu_utils 0
-isset ${menu_pci} || set menu_pci 0
+set ipxe_disk netboot.xyz-metal-arm64-snp.efi
+set menu_bsd 1
+set menu_freedos 0
+set menu_live 0
+set menu_windows 0
+set menu_utils 0
+set menu_pci 0
 goto clouds_end
 
 :clouds_end

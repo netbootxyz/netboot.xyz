@@ -30,7 +30,7 @@ goto mirrorcfg
 
 :older_release
 set older_release true
-isset ${debian_mirror} || set debian_mirror {{ releases.debian.archive_mirror }}
+set debian_mirror {{ releases.debian.archive_mirror }}
 echo Setting mirror to ${debian_mirror}
 clear debian_version
 echo -n Please set enter code name of release: ${} && read debian_version
