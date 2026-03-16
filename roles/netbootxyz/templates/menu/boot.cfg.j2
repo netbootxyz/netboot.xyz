@@ -32,8 +32,8 @@ isset ${boot_timeout} || set boot_timeout {{ boot_timeout }}
 {% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.mirror is defined and value.base_dir is defined %}
 ### {{ value.name }}
-isset ${{{ key }}_mirror} || set {{ key }}_mirror {{ value.mirror }}
-isset ${{{ key }}_base_dir} || set {{ key }}_base_dir {{ value.base_dir }}
+isset {{ '${' + key + '_mirror}' }} || set {{ key }}_mirror {{ value.mirror }}
+isset {{ '${' + key + '_base_dir}' }} || set {{ key }}_base_dir {{ value.base_dir }}
 
 {% endif %}
 {% endfor %}
