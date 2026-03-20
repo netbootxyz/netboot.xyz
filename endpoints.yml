@@ -1512,11 +1512,11 @@ endpoints:
     flavor: cinnamon
     kernel: debian-13-live-kernel
   debian-13-xfce-squash:
-    path: /debian-squash/releases/download/13.3.0-5048a26b/
+    path: /debian-squash/releases/download/13.4.0-5048a26b/
     files:
     - filesystem.squashfs
     os: debian
-    version: 13.3.0
+    version: 13.4.0
     flavor: xfce
     kernel: debian-13-live-kernel
   proxmox-datacenter-manager:
