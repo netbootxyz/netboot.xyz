@@ -1148,13 +1148,13 @@ endpoints:
     flavor: plasma
     kernel: q4os-default-squash
   q4os-default-squash:
-    path: /debian-squash/releases/download/6.4-5d30850e/
+    path: /debian-squash/releases/download/6.6-5d30850e/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: Q4OS
-    version: '6.4'
+    version: '6.6'
     flavor: trinity
     kernel: q4os-default-squash
   memtest86plus:
