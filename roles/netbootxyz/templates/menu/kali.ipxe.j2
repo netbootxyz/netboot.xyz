@@ -37,6 +37,8 @@ initrd ${kali_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
+iseq ${os_arch} amd64 && shim ${kali_mirror}/${dir}/bootnetx64.efi ||
+iseq ${os_arch} arm64 && shim ${kali_mirror}/${dir}/bootnetaa64.efi ||
 boot
 
 :kali_exit
