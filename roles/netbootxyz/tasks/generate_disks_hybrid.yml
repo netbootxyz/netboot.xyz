@@ -1,5 +1,14 @@
 ---
 
+- name: Symlink syslinux mbr.bin to searchable path
+  ansible.builtin.file:
+    src: /usr/lib/syslinux/mbr/mbr.bin
+    dest: /usr/lib/syslinux/mbr.bin
+    state: link
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - ansible_facts['os_family'] == "Debian"
+
 - name: Generate hybrid ISO x86_64 image
   ansible.builtin.shell: |
     ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}.iso \
