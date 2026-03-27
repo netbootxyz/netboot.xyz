@@ -5,6 +5,7 @@
     src: /usr/lib/syslinux/mbr/mbr.bin
     dest: /usr/lib/syslinux/mbr.bin
     state: link
+    force: true
   when:
     - generate_disks_hybrid | default(false) | bool
     - ansible_facts['os_family'] == "Debian"
