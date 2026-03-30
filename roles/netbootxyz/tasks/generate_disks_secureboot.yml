@@ -1,0 +1,120 @@
+---
+
+- name: Create Secure Boot output directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ netbootxyz_root }}/ipxe/secureboot-x86_64"
+    - "{{ netbootxyz_root }}/ipxe/secureboot-arm64"
+
+- name: Download iPXE Secure Boot archive
+  ansible.builtin.get_url:
+    url: "{{ ipxe_secureboot_archive_url }}"
+    dest: "/tmp/ipxeboot.tar.gz"
+
+- name: Extract iPXE Secure Boot archive
+  ansible.builtin.unarchive:
+    src: "/tmp/ipxeboot.tar.gz"
+    dest: "/tmp"
+    remote_src: true
+
+- name: Copy x86_64 Secure Boot binaries to output directory
+  ansible.builtin.copy:
+    src: "/tmp/ipxeboot/x86_64-sb/{{ item }}"
+    dest: "{{ netbootxyz_root }}/ipxe/secureboot-x86_64/{{ item }}"
+    remote_src: true
+  with_items:
+    - ipxe.efi
+    - ipxe-shim.efi
+    - shimx64.efi
+    - snponly.efi
+    - snponly-shim.efi
+
+- name: Copy ARM64 Secure Boot binaries to output directory
+  ansible.builtin.copy:
+    src: "/tmp/ipxeboot/arm64-sb/{{ item }}"
+    dest: "{{ netbootxyz_root }}/ipxe/secureboot-arm64/{{ item }}"
+    remote_src: true
+  with_items:
+    - ipxe.efi
+    - ipxe-shim.efi
+    - shimaa64.efi
+    - snponly.efi
+    - snponly-shim.efi
+  when: generate_disks_arm | default(false) | bool
+
+- name: Template autoexec.ipxe for x86_64 Secure Boot
+  ansible.builtin.template:
+    src: "disks/autoexec.ipxe.j2"
+    dest: "{{ netbootxyz_root }}/ipxe/secureboot-x86_64/autoexec.ipxe"
+
+- name: Template autoexec.ipxe for ARM64 Secure Boot
+  ansible.builtin.template:
+    src: "disks/autoexec.ipxe.j2"
+    dest: "{{ netbootxyz_root }}/ipxe/secureboot-arm64/autoexec.ipxe"
+  when: generate_disks_arm | default(false) | bool
+
+- name: Generate Secure Boot x86_64 ISO image
+  ansible.builtin.shell: |
+    ./util/genfsimg \
+      -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-sb.iso \
+      -s {{ netbootxyz_root }}/ipxe/secureboot-x86_64/autoexec.ipxe \
+      -e /tmp/ipxeboot/x86_64-sb/shimx64.efi \
+      /tmp/ipxeboot/x86_64-sb/ipxe.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+
+- name: Generate Secure Boot x86_64 USB image
+  ansible.builtin.shell: |
+    ./util/genfsimg \
+      -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-sb.img \
+      -s {{ netbootxyz_root }}/ipxe/secureboot-x86_64/autoexec.ipxe \
+      -e /tmp/ipxeboot/x86_64-sb/shimx64.efi \
+      /tmp/ipxeboot/x86_64-sb/ipxe.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+
+- name: Generate Secure Boot ARM64 ISO image
+  ansible.builtin.shell: |
+    ./util/genfsimg \
+      -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-sb-arm64.iso \
+      -s {{ netbootxyz_root }}/ipxe/secureboot-arm64/autoexec.ipxe \
+      -e /tmp/ipxeboot/arm64-sb/shimaa64.efi \
+      /tmp/ipxeboot/arm64-sb/ipxe.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when: generate_disks_arm | default(false) | bool
+
+- name: Generate Secure Boot ARM64 USB image
+  ansible.builtin.shell: |
+    ./util/genfsimg \
+      -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-sb-arm64.img \
+      -s {{ netbootxyz_root }}/ipxe/secureboot-arm64/autoexec.ipxe \
+      -e /tmp/ipxeboot/arm64-sb/shimaa64.efi \
+      /tmp/ipxeboot/arm64-sb/ipxe.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when: generate_disks_arm | default(false) | bool
+
+- name: Copy autoexec.ipxe to ipxe root as standalone release asset
+  ansible.builtin.copy:
+    src: "{{ netbootxyz_root }}/ipxe/secureboot-x86_64/autoexec.ipxe"
+    dest: "{{ netbootxyz_root }}/ipxe/autoexec.ipxe"
+    remote_src: true
+
+- name: Remove Secure Boot directories after ISO/USB generation
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ netbootxyz_root }}/ipxe/secureboot-x86_64"
+    - "{{ netbootxyz_root }}/ipxe/secureboot-arm64"
+
+- name: Clean up Secure Boot archive
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "/tmp/ipxeboot.tar.gz"
+    - "/tmp/ipxeboot"

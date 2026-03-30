@@ -3,6 +3,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.1] - 2026-03-27
+
+### Added
+
+- UEFI Secure Boot support using iPXE v2.0.0 signed binaries with ISO, USB, and tarball release assets
+  - See [Secure Boot documentation](https://netboot.xyz/docs/kb/hardware/secureboot) for details
+- Ubuntu installer HWE (Hardware Enablement) kernel support
+- Debian 13 (Trixie) live images
+
+### Changed
+
+- Updated Ansible to v13.4.0
+- Updated aws-actions/configure-aws-credentials action to v6
+- Dropped Debian 12 live images in favor of Debian 13
+- Various distribution version updates across all supported operating systems
+
+### Fixed
+
+- Ansible INJECT_FACTS_AS_VARS deprecation warnings resolved
+- Stale HWE kernel selection cleared on Ubuntu menu re-entry
+- Secure Boot checksum and asset path handling corrected
+- Secure Boot x86_64 USB image type corrected from Script to IMG
+
 ## [3.0.0] - 2026-01-24
 
 ### Added

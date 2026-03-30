@@ -135,6 +135,48 @@ exit
   </table>
 {% endif %}
 
+{% if generate_disks_secureboot == true %}
+  <p>x86_64 UEFI Secure Boot iPXE Bootloaders</p>
+
+  <table style="width:100%">
+    <!-- table header -->
+    <tr>
+       <th style="width:10%;"> Type </th>
+       <th style="width:20%;"> Bootloader </th>
+       <th style="width:70%;"> Description </th>
+    </tr>
+    <!-- table rows -->
+    {% for item in bootloaders.secureboot_x86_64 %}
+    <tr>
+       <td> {{ item.type }} </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
+       <td> {{ item.desc }} </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+{% if generate_disks_arm == true %}
+  <p>ARM64 UEFI Secure Boot iPXE Bootloaders</p>
+
+  <table style="width:100%">
+    <!-- table header -->
+    <tr>
+       <th style="width:10%;"> Type </th>
+       <th style="width:20%;"> Bootloader </th>
+       <th style="width:70%;"> Description </th>
+    </tr>
+    <!-- table rows -->
+    {% for item in bootloaders.secureboot_arm64 %}
+    <tr>
+       <td> {{ item.type }} </td>
+       <td> <a href="ipxe/{{ bootloader_filename }}{{ item.output_bin }}">{{ bootloader_filename }}{{ item.output_bin }}</a> </td>
+       <td> {{ item.desc }} </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+{% endif %}
+
 {% if generate_disks_rpi == true %}
   <p>Raspberry Pi iPXE Bootloaders</p>
 

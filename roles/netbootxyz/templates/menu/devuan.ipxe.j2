@@ -9,6 +9,7 @@ goto ${menu}
 set os Devuan
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
+iseq ${os_arch} arm64 && set os_arch arm64 ||
 clear devuan_version
 clear older_release
 menu ${os} - ${os_arch}
@@ -71,6 +72,8 @@ initrd ${devuan_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
+iseq ${os_arch} amd64 && shim ${devuan_mirror}/${dir}/bootnetx64.efi ||
+iseq ${os_arch} arm64 && shim ${devuan_mirror}/${dir}/bootnetaa64.efi ||
 boot
 
 :devuan_exit

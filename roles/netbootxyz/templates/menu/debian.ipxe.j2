@@ -85,6 +85,8 @@ initrd ${debian_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
+iseq ${os_arch} amd64 && shim ${debian_mirror}/${dir}/bootnetx64.efi ||
+iseq ${os_arch} arm64 && shim ${debian_mirror}/${dir}/bootnetaa64.efi ||
 boot
 
 :debian_exit

@@ -16,6 +16,10 @@ isset ${live_endpoint} || set live_endpoint {{ live_endpoint }}
 # signature check enabled?
 set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
 
+# disable signature checks if SecureBoot is active, as imgverify is not
+# available when booting via iPXE upstream's official Secure Boot image
+iseq ${efi/SecureBoot} 01 && set sigs_enabled false ||
+
 # set location of signatures for sources
 set sigs {{ sigs_location }}
 

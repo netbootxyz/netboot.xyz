@@ -14,6 +14,7 @@ clear ubuntu_version
 clear install_type
 clear older_release
 clear install_url
+clear kernel_flavor
 set install_type sub
 set install_priority critical
 menu ${os} - ${os_arch}
@@ -27,9 +28,26 @@ choose ubuntu_version || goto ubuntu_exit
 iseq ${ubuntu_version} older_release && goto older_release ||
 iseq ${ubuntu_version} focal-legacy && set install_type deb ||
 iseq ${ubuntu_version} focal-legacy && set ubuntu_version focal ||
-iseq ${install_type} sub && goto boot_type ||
+iseq ${install_type} sub && goto kernel_type ||
 iseq ${os_arch} arm64 && echo "arm64 not supported on legacy network installs, please use 20.04 Subiquity and up" && sleep 5 && goto ubuntu ||
 goto mirrorcfg
+
+:kernel_type
+set kernel_flavor generic
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu" and value.flavor is defined and value.flavor == "netboot-hwe" and value.codename is defined and value.arch is defined %}
+iseq ${ubuntu_version} {{ value.codename }} && iseq ${os_arch} {{ value.arch }} && goto kernel_type_menu ||
+{% endif %}
+{% endfor %}
+goto boot_type
+
+:kernel_type_menu
+menu ${os} [${ubuntu_version}] ${os_arch} - Kernel Type
+item --gap Select kernel type
+item generic ${space} Generic Kernel (default)
+item hwe ${space} HWE Kernel (Hardware Enablement)
+choose --default ${kernel_flavor} kernel_flavor || goto ubuntu
+goto boot_type
 
 :older_release
 set older_release true
@@ -76,6 +94,7 @@ goto deb_install
 
 :deb_install
 iseq ${install_type} deb && goto deb_boot ||
+iseq ${kernel_flavor} hwe && goto ${ubuntu_version}_${os_arch}_hwe ||
 iseq ${install_type} sub && goto ${ubuntu_version}_${os_arch} ||
 
 :deb_boot
@@ -90,9 +109,24 @@ md5sum linux initrd.gz
 boot
 
 {% for key, value in endpoints.items() | sort %}
-{% if value.os == "ubuntu" and 'netboot' in key %}
+{% if value.os == "ubuntu" and value.flavor is defined and value.flavor == "netboot" %}
 {% set kernel_name = value.kernel %}
 :{{ value.codename }}_{{ value.arch }}
+{% for key, value in endpoints.items() | sort %}
+{% if key == kernel_name %}
+set kernel_url ${live_endpoint}{{ value.path }}
+set codename {{ value.codename }}
+set version_number {{ value.version }}
+{% endif %}
+{% endfor %}
+goto sub_boot
+{% endif %}
+{% endfor %}
+
+{% for key, value in endpoints.items() | sort %}
+{% if value.os == "ubuntu" and value.flavor is defined and value.flavor == "netboot-hwe" %}
+{% set kernel_name = value.kernel %}
+:{{ value.codename }}_{{ value.arch }}_hwe
 {% for key, value in endpoints.items() | sort %}
 {% if key == kernel_name %}
 set kernel_url ${live_endpoint}{{ value.path }}
