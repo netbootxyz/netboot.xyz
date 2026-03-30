@@ -75,6 +75,20 @@ bootloaders:
     ipxe_bin: snp.efi
     output_bin: -rpi4-snp.efi
     type: DHCP-snp
+  secureboot_arm64:
+  - desc: Secure Boot ARM64 ISO for CD/DVD/Virtual Media
+    output_bin: -sb-arm64.iso
+    type: ISO
+  - desc: Secure Boot ARM64 USB image
+    output_bin: -sb-arm64.img
+    type: IMG
+  secureboot_x86_64:
+  - desc: Secure Boot x86_64 ISO for CD/DVD/Virtual Media
+    output_bin: -sb.iso
+    type: ISO
+  - desc: Secure Boot x86_64 USB image
+    output_bin: -sb.img
+    type: IMG
   uefi:
   - desc: DHCP EFI boot image file, uses built-in iPXE NIC drivers
     ipxe_bin: ipxe.efi
@@ -115,6 +129,7 @@ generate_disks_hybrid: false
 generate_disks_legacy: true
 generate_disks_linux: false
 generate_disks_rpi: false
+generate_disks_secureboot: false
 generate_local_vars: true
 generate_menus: true
 generate_signatures: false
@@ -125,6 +140,9 @@ ipxe_ca_url: http://ca.ipxe.org/ca.crt
 ipxe_debug_enabled: false
 ipxe_debug_options: httpcore,tls
 ipxe_repo: https://github.com/ipxe/ipxe
+ipxe_secureboot_archive_url: https://github.com/ipxe/ipxe/releases/download/{{ ipxe_secureboot_version
+  }}/ipxeboot.tar.gz
+ipxe_secureboot_version: v2.0.0
 ipxe_source_dir: /usr/src/ipxe
 kernel_params: initrd=initrd.magic ${cmdline}
 live_endpoint: https://github.com/netbootxyz
@@ -168,8 +186,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2026.01.01
-      name: 2026.01.01
+    - code_name: 2026.03.01
+      name: 2026.03.01
   blackarch:
     enabled: true
     menu: linux
@@ -195,11 +213,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 43.20260105.3.0
+    - code_name: 43.20260301.3.1
       name: stable
-    - code_name: 43.20260119.2.1
+    - code_name: 43.20260316.2.1
       name: testing
-    - code_name: 43.20260119.1.1
+    - code_name: 44.20260316.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -291,8 +309,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core199
-      name: 2.29 Core199
+    - code_name: 2.29-core200
+      name: 2.29 Core200
   k3os:
     enabled: true
     menu: linux
@@ -483,14 +501,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20260122T000642Z
-      name: 20260122T000642Z
-    - code_name: 20260108T003758Z
-      name: 20260108T003758Z
-    - code_name: 20251211T000906Z
-      name: 20251211T000906Z
-    - code_name: 20251127T000410Z
-      name: 20251127T000410Z
+    - code_name: 20260319T000507Z
+      name: 20260319T000507Z
+    - code_name: 20260306T044811Z
+      name: 20260306T044811Z
+    - code_name: 20260305T000543Z
+      name: 20260305T000543Z
+    - code_name: 20260219T015737Z
+      name: 20260219T015737Z
   talos:
     enabled: true
     menu: linux
@@ -533,13 +551,13 @@ releases:
     versions:
     - arch: x86
       code_name: core
-      initrd: /16.x/x86/release/distribution_files/core.gz
-      kernel: /16.x/x86/release/distribution_files/vmlinuz
+      initrd: /17.x/x86/release/distribution_files/core.gz
+      kernel: /17.x/x86/release/distribution_files/vmlinuz
       name: Core
     - arch: x86_64
       code_name: corepure
-      initrd: /16.x/x86_64/release/distribution_files/corepure64.gz
-      kernel: /16.x/x86_64/release/distribution_files/vmlinuz64
+      initrd: /17.x/x86_64/release/distribution_files/corepure64.gz
+      kernel: /17.x/x86_64/release/distribution_files/vmlinuz64
       name: CorePure
     - arch: x86
       code_name: dcorebionic
