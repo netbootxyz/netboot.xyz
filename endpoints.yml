@@ -586,14 +586,14 @@ endpoints:
     version: 9.03
     arch: i686
   systemrescue-amd64:
-    path: /asset-mirror/releases/download/12.03-d20a63ac/
+    path: /asset-mirror/releases/download/13.00-d20a63ac/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     - archiso_pxe_http
     os: systemrescue
-    version: 12.03
+    version: 13.0
     arch: amd64
   shredos-i686:
     path: /asset-mirror/releases/download/0.34_32-bit_20221231-c4450e3a/
