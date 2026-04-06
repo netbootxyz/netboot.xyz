@@ -278,7 +278,7 @@ endpoints:
     os: raizo
     version: current
   4mlinux:
-    path: /asset-mirror/releases/download/50.1-fcaac630/
+    path: /asset-mirror/releases/download/51.0-fcaac630/
     files:
     - initrd
     - vmlinuz
