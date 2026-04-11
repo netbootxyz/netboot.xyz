@@ -38,7 +38,7 @@ Your favorite operating systems in one place!
 
 #### Legacy USB iPXE Bootloaders
 
-These bootloaders use the legacy iPXE driver set which excludes USB NIC drivers. Use these if your USB keyboard does not work with the standard bootloaders, as the inclusion of USB NIC drivers in standard iPXE builds disables the BIOS SMM-based USB legacy support that emulates a PS/2 keyboard.
+These bootloaders use the legacy iPXE driver set which excludes USB NIC drivers. Use these if your USB keyboard does not work with the standard bootloaders, as USB NIC drivers in standard iPXE builds disable the BIOS SMM-based USB legacy support that emulates a PS/2 keyboard.
 
 | Type | Bootloader | Description |
 |------|------------|-------------|

@@ -74,7 +74,7 @@ exit
 {% endif %}
 
 {% if generate_disks_hybrid == true and generate_disks_legacy_usb == true %}
-  <p>x86_64 Legacy and EFI Combined iPXE Bootloaders (Legacy USB - no USB NIC drivers, preserves USB keyboard)</p>
+  <p>x86_64 Legacy and EFI Combined iPXE Bootloaders (excludes USB NIC drivers for USB keyboard compatibility)</p>
   <table style="width:100%">
     <!-- table header -->
     <tr>
@@ -114,7 +114,7 @@ exit
 {% endif %}
 
 {% if generate_disks_legacy == true and generate_disks_legacy_usb == true %}
-  <p>x86_64 Legacy (PCBIOS) iPXE Bootloaders (Legacy USB - no USB NIC drivers, preserves USB keyboard)</p>
+  <p>x86_64 Legacy (PCBIOS) iPXE Bootloaders (excludes USB NIC drivers for USB keyboard compatibility)</p>
   <table style="width:100%">
     <!-- table header -->
     <tr>
@@ -155,7 +155,7 @@ exit
 {% endif %}
 
 {% if generate_disks_efi == true and generate_disks_legacy_usb == true %}
-  <p>x86_64 UEFI iPXE Bootloaders (Legacy USB - no USB NIC drivers, preserves USB keyboard)</p>
+  <p>x86_64 UEFI iPXE Bootloaders (excludes USB NIC drivers for USB keyboard compatibility)</p>
 
   <table style="width:100%">
     <!-- table header -->
