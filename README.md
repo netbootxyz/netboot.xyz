@@ -36,6 +36,20 @@ Your favorite operating systems in one place!
 |DHCP-snp| [netboot.xyz-snp.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-snp.efi)| EFI w/ Simple Network Protocol, attempts to boot all net devices|
 |DHCP-snponly| [netboot.xyz-snponly.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-snponly.efi)| EFI w/ Simple Network Protocol, only boots from device chained from|
 
+#### Legacy USB iPXE Bootloaders
+
+These bootloaders use the legacy iPXE driver set which excludes USB NIC drivers. Use these if your USB keyboard does not work with the standard bootloaders, as the inclusion of USB NIC drivers in standard iPXE builds disables the BIOS SMM-based USB legacy support that emulates a PS/2 keyboard.
+
+| Type | Bootloader | Description |
+|------|------------|-------------|
+|ISO| [netboot.xyz-legacy.iso](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.iso)| Legacy USB combined ISO for CD/DVD, Virtual CDs|
+|USB| [netboot.xyz-legacy.img](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.img)| Legacy USB combined IMG for USB Keys|
+|Kernel| [netboot.xyz-legacy.lkrn](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.lkrn)| Legacy USB Kernel for booting from GRUB/EXTLINUX|
+|Floppy| [netboot.xyz-legacy.dsk](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.dsk)| Legacy USB Virtual floppy disk|
+|Padded Floppy| [netboot.xyz-legacy.pdsk](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.pdsk)| Legacy USB Padded Virtual floppy disk|
+|DHCP| [netboot.xyz-legacy.kpxe](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.kpxe)| Legacy USB DHCP boot image file|
+|DHCP-efi| [netboot.xyz-legacy.efi](https://boot.netboot.xyz/ipxe/netboot.xyz-legacy.efi)| Legacy USB DHCP EFI boot image file|
+
 #### ARM64 iPXE Bootloaders
 
 | Type | Bootloader | Description |

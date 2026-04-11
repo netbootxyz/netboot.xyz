@@ -42,13 +42,17 @@ goto load-custom-ipxe
 :load-custom-ipxe
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}.kpxe && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-undionly.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-legacy.kpxe && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-legacy.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-snp.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-snponly.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} {{ bootloader_filename }}-arm64.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}.kpxe && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-undionly.kpxe && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-legacy.kpxe && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}.efi && goto tftpmenu ||
+isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-legacy.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-snp.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-snponly.efi && goto tftpmenu ||
 isset ${tftp-server} && iseq ${filename} ${tftp-root-path}{{ bootloader_filename }}-arm64.efi && goto tftpmenu ||

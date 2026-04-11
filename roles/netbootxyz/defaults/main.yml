@@ -36,6 +36,15 @@ bootloaders:
     ipxe_bin: ipxe.img
     output_bin: .img
     type: IMG
+  hybrid_legacy_usb:
+  - desc: Legacy USB ISO for CD/DVD, Virtual CDs (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.iso
+    output_bin: -legacy.iso
+    type: ISO
+  - desc: Legacy USB IMG for USB Keys (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.img
+    output_bin: -legacy.img
+    type: IMG
   legacy:
   - desc: Used for booting from GRUB/EXTLINUX
     ipxe_bin: ipxe.lkrn
@@ -57,6 +66,23 @@ bootloaders:
     ipxe_bin: undionly.kpxe
     output_bin: -undionly.kpxe
     type: DHCP-undionly
+  legacy_usb:
+  - desc: Legacy Kernel for booting from GRUB/EXTLINUX (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.lkrn
+    output_bin: -legacy.lkrn
+    type: Kernel
+  - desc: Legacy Virtual floppy disk (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.dsk
+    output_bin: -legacy.dsk
+    type: Floppy
+  - desc: Legacy Padded Virtual floppy disk (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.pdsk
+    output_bin: -legacy.pdsk
+    type: Floppy
+  - desc: Legacy DHCP boot image file (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.kpxe
+    output_bin: -legacy.kpxe
+    type: DHCP
   multiarch:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
@@ -110,6 +136,11 @@ bootloaders:
     ipxe_bin: snp.efi.dsk
     output_bin: -snp.efi.dsk
     type: Floppy-snp
+  uefi_legacy_usb:
+  - desc: Legacy DHCP EFI boot image file (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.efi
+    output_bin: -legacy.efi
+    type: DHCP
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
@@ -127,6 +158,7 @@ generate_disks_arm: false
 generate_disks_efi: true
 generate_disks_hybrid: false
 generate_disks_legacy: true
+generate_disks_legacy_usb: true
 generate_disks_linux: false
 generate_disks_rpi: false
 generate_disks_secureboot: false
