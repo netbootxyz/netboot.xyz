@@ -37,7 +37,8 @@ bootloaders:
     output_bin: .img
     type: IMG
   hybrid_legacy_usb:
-  - desc: Legacy USB ISO for CD/DVD, Virtual CDs (no USB NIC drivers, preserves USB keyboard)
+  - desc: Legacy USB ISO for CD/DVD, Virtual CDs (no USB NIC drivers, preserves USB
+      keyboard)
     ipxe_bin: ipxe-legacy.iso
     output_bin: -legacy.iso
     type: ISO
@@ -67,7 +68,8 @@ bootloaders:
     output_bin: -undionly.kpxe
     type: DHCP-undionly
   legacy_usb:
-  - desc: Legacy Kernel for booting from GRUB/EXTLINUX (no USB NIC drivers, preserves USB keyboard)
+  - desc: Legacy Kernel for booting from GRUB/EXTLINUX (no USB NIC drivers, preserves
+      USB keyboard)
     ipxe_bin: ipxe-legacy.lkrn
     output_bin: -legacy.lkrn
     type: Kernel
