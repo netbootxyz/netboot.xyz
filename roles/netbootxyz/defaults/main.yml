@@ -457,14 +457,14 @@ releases:
     name: OpenBSD
     versions:
     - code_name: snapshots
-      image_ver: '78'
-      name: 7.8 Latest Snapshot
+      image_ver: '79'
+      name: Latest Snapshot
+    - code_name: '7.9'
+      image_ver: '79'
+      name: '7.9'
     - code_name: '7.8'
       image_ver: '78'
       name: '7.8'
-    - code_name: '7.7'
-      image_ver: '77'
-      name: '7.7'
   opensuse:
     base_dir: distribution/leap
     enabled: true
