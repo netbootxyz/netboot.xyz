@@ -519,13 +519,13 @@ endpoints:
     version: 20241209T170323Z
     arch: x86
   gentoo-arm64:
-    path: /asset-mirror/releases/download/20260322T233056Z-3c528165/
+    path: /asset-mirror/releases/download/20260408T183104Z-3c528165/
     files:
     - image.squashfs
     - initrd
     - vmlinuz
     os: gentoo
-    version: 20260322T233056Z
+    version: 20260408T183104Z
     arch: arm64
   gentoo-amd64:
     path: /asset-mirror/releases/download/20260201T164555Z-9aa997ef/
