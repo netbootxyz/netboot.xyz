@@ -1560,3 +1560,14 @@ endpoints:
     flavor: netboot
     kernel: ubuntu-netboot-26.04-amd64
     arch: amd64
+  ubuntu-netboot-26.04-arm64:
+    path: /ubuntu-squash/releases/download/26.04-c15b14d8/
+    files:
+    - initrd
+    - vmlinuz
+    os: ubuntu
+    version: '26.04'
+    codename: resolute
+    flavor: netboot
+    kernel: ubuntu-netboot-26.04-arm64
+    arch: arm64
