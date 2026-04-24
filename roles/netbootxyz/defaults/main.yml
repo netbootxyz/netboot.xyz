@@ -295,6 +295,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 44
+      name: 44
     - code_name: 43
       name: 43
     - code_name: 42
