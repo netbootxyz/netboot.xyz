@@ -1,0 +1,13 @@
+# Docker named volume data (managed by Docker, not tracked in git)
+data/
+
+# Local ISO files (can be large — track only the readme placeholder)
+isos/*.iso
+
+# Environment overrides
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp

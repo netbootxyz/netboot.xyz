@@ -1,0 +1,38 @@
+services:
+  netbootxyz:
+    image: lscr.io/linuxserver/netbootxyz:latest
+    container_name: netbootxyz
+    environment:
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Named volume for persistent config/state — mirrors the data:data pattern
+      - data:/config
+      # Custom iPXE menu files — written by the iso-watcher container
+      - ./menus:/config/menus
+      # Local ISOs — drop files here; the watcher auto-updates the menu
+      # To map to another drive, replace ./isos with an absolute path:
+      #   Windows:  - D:\ISOs:/assets/isos
+      #   Linux:    - /mnt/storage/isos:/assets/isos
+      - ./isos:/assets/isos
+    ports:
+      - 3000:3000     # Web UI
+      - 69:69/udp     # TFTP (PXE boot entry point)
+      - 8080:80       # HTTP (serves bootloaders + ISOs)
+    restart: unless-stopped
+
+  iso-watcher:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.watcher
+    container_name: netbootxyz-iso-watcher
+    volumes:
+      # Read ISOs from the same folder (read-only — watcher never modifies ISOs)
+      - ./isos:/isos:ro
+      # Write the generated menu into the menus folder
+      - ./menus:/menus
+    restart: unless-stopped
+
+volumes:
+  data:               # Named volume — survives container restarts/upgrades

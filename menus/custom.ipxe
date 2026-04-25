@@ -1,0 +1,50 @@
+#!ipxe
+###
+### Custom Boot Menu
+### Includes local ISOs (from isos/ folder) and URL boot option
+###
+
+:custom_menu
+clear custom_choice
+menu Custom Boot Menu
+item local_isos    Boot a Local ISO (from isos/ folder)
+item url_boot      Boot from URL (type any ISO link)
+item --gap --
+item return        Back to main menu
+choose custom_choice || goto custom_menu_exit
+goto ${custom_choice}
+goto custom_menu_exit
+
+:local_isos
+chain local-isos.ipxe || goto no_isos
+
+:no_isos
+echo No local ISOs found.
+echo Run ./generate-iso-menu.sh on the host to build the menu,
+echo then drop .iso files into the isos/ folder.
+echo.
+prompt Press any key to return...
+goto custom_menu
+
+:url_boot
+clear boot_url
+echo.
+echo Enter the full URL to an ISO or image file:
+echo (e.g. http://192.168.1.10:8080/isos/ubuntu.iso)
+echo.
+read boot_url
+iseq ${boot_url} && goto url_boot ||
+echo.
+echo Booting ${boot_url} ...
+kernel http://${boot_domain}/memdisk raw iso
+initrd ${boot_url}
+boot || goto url_boot_fail
+
+:url_boot_fail
+echo.
+echo Boot failed. Check the URL and that the server is reachable.
+prompt Press any key to go back...
+goto custom_menu
+
+:custom_menu_exit
+exit 1

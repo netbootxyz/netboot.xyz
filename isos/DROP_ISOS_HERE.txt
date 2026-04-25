@@ -1,0 +1,41 @@
+DROP .ISO FILES IN THIS FOLDER
+================================
+
+Just drop any .iso file here — the menu updates automatically.
+No scripts, no restarts, nothing else to do.
+
+You can also use subfolders to keep things organised:
+
+  isos/
+    linux/
+      ubuntu-24.04.iso
+      debian-12.iso
+    windows/
+      windows11.iso
+    tools/
+      proxmox-8.iso
+    rescue.iso
+
+Subfolders show up as category labels in the boot menu.
+ISOs in the root of this folder appear under "General".
+
+TO MAP THIS FOLDER TO ANOTHER DRIVE
+-------------------------------------
+Edit the docker-compose.yml line:
+
+    - ./isos:/assets/isos
+
+Replace ./isos with the full path to your drive:
+
+    Windows:  - D:\MyISOs:/assets/isos
+    Linux:    - /mnt/nas/isos:/assets/isos
+
+Then restart the stack in Portainer.
+
+HOW TO BOOT
+------------
+In the netboot.xyz menu, go to:
+  Custom... → Custom Boot Menu → Boot a Local ISO
+
+You can also boot any ISO by URL:
+  Custom... → Custom Boot Menu → Boot from URL
