@@ -174,6 +174,7 @@ In addition to being able to host netboot.xyz locally, you can also create your 
 | MirOS                           | http://www.mirbsd.org | Yes | No |
 | Nitrux                          | https://nxos.org/ | No | Yes |
 | NixOS                           | https://nixos.org | Yes | No |
+| Omarchy                         | https://omarchy.org | No | Yes |
 | OpenBSD                         | https://openbsd.org | Yes | No |
 | openEuler                       | https://openeuler.org | Yes | No |
 | openSUSE                        | https://opensuse.org | Yes | No |
