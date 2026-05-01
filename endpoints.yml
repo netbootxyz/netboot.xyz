@@ -270,7 +270,7 @@ endpoints:
     os: fatdog
     version: current
   raizo:
-    path: /debian-squash/releases/download/v17.26.01.25i-5c171de0/
+    path: /debian-squash/releases/download/v17.26.04.26i-5c171de0/
     files:
     - filesystem.squashfs
     - initrd
