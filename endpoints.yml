@@ -1572,7 +1572,7 @@ endpoints:
     kernel: ubuntu-netboot-26.04-arm64
     arch: arm64
   omarchy:
-    path: /asset-mirror/releases/download/3.6.0-1f22f020/
+    path: /asset-mirror/releases/download/3.6.0-974ea963/
     files:
     - airootfs.sfs
     - initrd
