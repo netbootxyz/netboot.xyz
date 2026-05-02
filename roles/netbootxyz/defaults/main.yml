@@ -748,12 +748,6 @@ releases:
     versions:
     - code_name: resolute
       name: 26.04 LTS Resolute Raccoon
-    - code_name: questing
-      name: 25.10 Questing Quokka
-    - code_name: plucky
-      name: 25.04 Plucky Puffin
-    - code_name: oracular
-      name: 24.10 Oracular Oriole
     - code_name: noble
       name: 24.04 LTS Noble Numbat
     - code_name: jammy
