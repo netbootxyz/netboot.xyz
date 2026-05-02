@@ -1402,12 +1402,12 @@ endpoints:
     flavor: Cinnamon
     kernel: mint-lmde-cinnamon-squash
   ubuntu-spins:
-    path: /asset-mirror/releases/download/0.0.3-d0cf8373/
+    path: /asset-mirror/releases/download/0.0.5-d0cf8373/
     files:
     - vmlinuz
     - initrd
     os: ubuntu-spins
-    version: 0.0.3
+    version: 0.0.5
   cachyos:
     path: /asset-mirror/releases/download/260426-b5de98b7/
     files:
