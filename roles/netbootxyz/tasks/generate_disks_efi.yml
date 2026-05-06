@@ -74,3 +74,36 @@
     - {src: "bin-x86_64-efi/snponly.efi", dest: "{{ bootloader_filename }}-snponly.efi"}
     - {src: "bin-x86_64-efi/ipxe.efi.dsk", dest: "{{ bootloader_filename }}.efi.dsk"}
     - {src: "bin-x86_64-efi/snp.efi.dsk", dest: "{{ bootloader_filename }}-snp.efi.dsk"}
+
+- name: Compile iPXE legacy-driver bootloader for EFI
+  ansible.builtin.shell: |
+    make -j{{ make_num_jobs }} \
+         EMBED={{ bootloader_filename }} \
+         TRUST={{ trust_files }} \
+         bin-x86_64-efi/ipxe-legacy.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_legacy_usb | default(true) | bool
+    - ipxe_debug_enabled | bool == false
+
+- name: Compile iPXE legacy-driver bootloader for EFI with debug flags
+  ansible.builtin.shell: |
+    make -j{{ make_num_jobs }} \
+         EMBED={{ bootloader_filename }} \
+         DEBUG={{ ipxe_debug_options }} \
+         TRUST={{ trust_files }} \
+         bin-x86_64-efi/ipxe-legacy.efi
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_legacy_usb | default(true) | bool
+    - ipxe_debug_enabled | bool
+
+- name: Copy iPXE legacy-driver EFI build to http directory
+  ansible.builtin.copy:
+    src: "{{ ipxe_source_dir }}/src/bin-x86_64-efi/ipxe-legacy.efi"
+    dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.efi"
+    remote_src: true
+  when:
+    - generate_disks_legacy_usb | default(true) | bool

@@ -36,6 +36,16 @@ bootloaders:
     ipxe_bin: ipxe.img
     output_bin: .img
     type: IMG
+  hybrid_legacy_usb:
+  - desc: Legacy USB ISO for CD/DVD, Virtual CDs (no USB NIC drivers, preserves USB
+      keyboard)
+    ipxe_bin: ipxe-legacy.iso
+    output_bin: -legacy.iso
+    type: ISO
+  - desc: Legacy USB IMG for USB Keys (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.img
+    output_bin: -legacy.img
+    type: IMG
   legacy:
   - desc: Used for booting from GRUB/EXTLINUX
     ipxe_bin: ipxe.lkrn
@@ -57,6 +67,24 @@ bootloaders:
     ipxe_bin: undionly.kpxe
     output_bin: -undionly.kpxe
     type: DHCP-undionly
+  legacy_usb:
+  - desc: Legacy Kernel for booting from GRUB/EXTLINUX (no USB NIC drivers, preserves
+      USB keyboard)
+    ipxe_bin: ipxe-legacy.lkrn
+    output_bin: -legacy.lkrn
+    type: Kernel
+  - desc: Legacy Virtual floppy disk (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.dsk
+    output_bin: -legacy.dsk
+    type: Floppy
+  - desc: Legacy Padded Virtual floppy disk (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.pdsk
+    output_bin: -legacy.pdsk
+    type: Floppy
+  - desc: Legacy DHCP boot image file (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.kpxe
+    output_bin: -legacy.kpxe
+    type: DHCP
   multiarch:
   - desc: Used for CD/DVD, Virtual CDs, DRAC/iLO, VMware, Virtual Box
     ipxe_bin: ipxe.iso
@@ -110,6 +138,11 @@ bootloaders:
     ipxe_bin: snp.efi.dsk
     output_bin: -snp.efi.dsk
     type: Floppy-snp
+  uefi_legacy_usb:
+  - desc: Legacy DHCP EFI boot image file (no USB NIC drivers, preserves USB keyboard)
+    ipxe_bin: ipxe-legacy.efi
+    output_bin: -legacy.efi
+    type: DHCP
 cert_dir: /etc/netbootxyz/certs
 cert_file_filename: ca-netboot-xyz.crt
 checksums_filename: '{{ site_name }}-sha256-checksums.txt'
@@ -127,6 +160,7 @@ generate_disks_arm: false
 generate_disks_efi: true
 generate_disks_hybrid: false
 generate_disks_legacy: true
+generate_disks_legacy_usb: true
 generate_disks_linux: false
 generate_disks_rpi: false
 generate_disks_secureboot: false
@@ -186,8 +220,8 @@ releases:
     mirror: mirrors.kernel.org
     name: Arch Linux
     versions:
-    - code_name: 2026.03.01
-      name: 2026.03.01
+    - code_name: 2026.05.01
+      name: 2026.05.01
   blackarch:
     enabled: true
     menu: linux
@@ -213,11 +247,11 @@ releases:
     mirror: https://builds.coreos.fedoraproject.org
     name: Fedora CoreOS
     versions:
-    - code_name: 43.20260301.3.1
+    - code_name: 43.20260413.3.2
       name: stable
-    - code_name: 43.20260316.2.1
+    - code_name: 44.20260419.2.1
       name: testing
-    - code_name: 44.20260316.1.1
+    - code_name: 44.20260426.1.1
       name: next
   debian:
     archive_mirror: http://archive.debian.org
@@ -261,6 +295,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Fedora
     versions:
+    - code_name: 44
+      name: 44
     - code_name: 43
       name: 43
     - code_name: 42
@@ -309,8 +345,8 @@ releases:
     mirror: https://downloads.ipfire.org
     name: IPFire
     versions:
-    - code_name: 2.29-core200
-      name: 2.29 Core200
+    - code_name: 2.29-core201
+      name: 2.29 Core201
   k3os:
     enabled: true
     menu: linux
@@ -425,14 +461,14 @@ releases:
     name: OpenBSD
     versions:
     - code_name: snapshots
-      image_ver: '78'
-      name: 7.8 Latest Snapshot
+      image_ver: '79'
+      name: Latest Snapshot
+    - code_name: '7.9'
+      image_ver: '79'
+      name: '7.9'
     - code_name: '7.8'
       image_ver: '78'
       name: '7.8'
-    - code_name: '7.7'
-      image_ver: '77'
-      name: '7.7'
   opensuse:
     base_dir: distribution/leap
     enabled: true
@@ -462,6 +498,37 @@ releases:
     enabled: true
     menu: linux
     name: Proxmox
+  rhcos:
+    base_dir: pub/openshift-v
+    enabled: true
+    menu: linux
+    mirror: https://mirror.openshift.com
+    name: Red Hat Enterprise Linux CoreOS
+    versions:
+    - code_name: 4.12
+      major_version: 4
+      name: 4.12 [Extended Support]
+    - code_name: 4.14
+      major_version: 4
+      name: 4.14 [Extended Support]
+    - code_name: 4.16
+      major_version: 4
+      name: 4.16 [Extended Support]
+    - code_name: 4.17
+      major_version: 4
+      name: 4.17 [Maintenance Support]
+    - code_name: 4.18
+      major_version: 4
+      name: 4.18 [Maintenance Support]
+    - code_name: 4.19
+      major_version: 4
+      name: 4.19 [Maintenance Support]
+    - code_name: 4.2
+      major_version: 4
+      name: 4.20 [Full Support]
+    - code_name: 4.21
+      major_version: 4
+      name: 4.21 [Full Support]
   rhel:
     enabled: true
     menu: linux
@@ -479,6 +546,28 @@ releases:
       name: 9 (Latest)
     - code_name: 8
       name: 8 (Latest)
+  scos:
+    base_dir: centos/scos
+    enabled: true
+    menu: linux
+    mirror: https://cloud.centos.org
+    name: CentOS Stream CoreOS
+    versions:
+    - code_name: 9.0.20250222-0
+      major_version: 9
+      name: 9.0.20250222-0
+    - code_name: 9.0.20250411-0
+      major_version: 9
+      name: 9.0.20250411-0
+    - code_name: 9.0.20250510-0
+      major_version: 9
+      name: 9.0.20250510-0
+    - code_name: 10.0.20250628-0
+      major_version: 10
+      name: 10.0.20250628-0
+    - code_name: 10.0.20251103-0
+      major_version: 10
+      name: 10.0.20251103-0
   slackware:
     base_dir: slackware
     enabled: true
@@ -501,14 +590,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
-    - code_name: 20260319T000507Z
-      name: 20260319T000507Z
-    - code_name: 20260306T044811Z
-      name: 20260306T044811Z
-    - code_name: 20260305T000543Z
-      name: 20260305T000543Z
-    - code_name: 20260219T015737Z
-      name: 20260219T015737Z
+    - code_name: 20260430T145637Z
+      name: 20260430T145637Z
+    - code_name: 20260430T003027Z
+      name: 20260430T003027Z
+    - code_name: 20260416T000037Z
+      name: 20260416T000037Z
+    - code_name: 20260402T000627Z
+      name: 20260402T000627Z
   talos:
     enabled: true
     menu: linux
@@ -657,12 +746,8 @@ releases:
     mirror: http://archive.ubuntu.com
     name: Ubuntu
     versions:
-    - code_name: questing
-      name: 25.10 Questing Quokka
-    - code_name: plucky
-      name: 25.04 Plucky Puffin
-    - code_name: oracular
-      name: 24.10 Oracular Oriole
+    - code_name: resolute
+      name: 26.04 LTS Resolute Raccoon
     - code_name: noble
       name: 24.04 LTS Noble Numbat
     - code_name: jammy

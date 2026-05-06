@@ -88,3 +88,31 @@
   when:
     - generate_disks_hybrid | default(false) | bool
     - generate_disks_arm | default(false) | bool
+
+- name: Generate legacy-driver hybrid ISO x86_64 image
+  ansible.builtin.shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.iso \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.efi \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.lkrn
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
+    - generate_disks_efi | default(true) | bool
+    - generate_disks_legacy_usb | default(true) | bool
+
+- name: Generate legacy-driver hybrid USB x86_64 image
+  ansible.builtin.shell: |
+    ./util/genfsimg -o {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.img \
+      -s {{ bootloader_filename }} \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.efi \
+      {{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.lkrn
+  args:
+    chdir: "{{ ipxe_source_dir }}/src"
+  when:
+    - generate_disks_hybrid | default(false) | bool
+    - generate_disks_legacy | default(true) | bool
+    - generate_disks_efi | default(true) | bool
+    - generate_disks_legacy_usb | default(true) | bool
