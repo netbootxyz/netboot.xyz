@@ -3,6 +3,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.2] - 2026-05-05
+
+### Added
+
+- Omarchy Linux live image support
+- Ubuntu 26.04 LTS (Resolute Raccoon) installer and live images
+- Fedora 44 installer support
+- CentOS Stream CoreOS (SCOS) and Red Hat Enterprise Linux CoreOS (RHCOS) menu entries
+- Legacy USB iPXE bootloader variants (`netboot.xyz-legacy.*`) for systems where USB NIC drivers prevent USB keyboard input under BIOS
+
+### Changed
+
+- Updated Ansible to v13.6.0
+- Updated ansible-lint to v26.4.0
+- Removed older Ubuntu versions from the menu
+- Updated OpenBSD release information
+- Improved readability of legacy USB bootloader descriptions in README
+- Various distribution version updates across all supported operating systems
+
+### Fixed
+
+- live-debian major version filter now uses `.startswith()` to avoid matching unintended versions
+
 ## [3.0.1] - 2026-03-27
 
 ### Added
