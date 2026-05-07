@@ -38,7 +38,7 @@ set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${os_arch}/cur
 goto deb_boot_type
 
 :mirrorcfg
-set debian_mirror ${debian_mirror}
+# debian_mirror is set in boot.cfg.j2 with isset guard, no need to reassign
 set mirrorcfg mirror/suite=${debian_version}
 set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${os_arch}/current/images/netboot/
 goto deb_boot_type
