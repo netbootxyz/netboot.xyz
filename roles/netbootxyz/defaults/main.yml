@@ -217,7 +217,7 @@ releases:
     base_dir: archlinux
     enabled: true
     menu: linux
-    mirror: mirrors.kernel.org
+    mirror: http://mirrors.kernel.org
     name: Arch Linux
     versions:
     - code_name: 2026.05.01
