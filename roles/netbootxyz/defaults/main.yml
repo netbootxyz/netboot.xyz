@@ -590,14 +590,14 @@ releases:
     mirror: https://netboot.smartos.org/os/
     name: SmartOS
     versions:
+    - code_name: 20260528T000227Z
+      name: 20260528T000227Z
+    - code_name: 20260522T154557Z
+      name: 20260522T154557Z
+    - code_name: 20260514T000317Z
+      name: 20260514T000317Z
     - code_name: 20260430T145637Z
       name: 20260430T145637Z
-    - code_name: 20260430T003027Z
-      name: 20260430T003027Z
-    - code_name: 20260416T000037Z
-      name: 20260416T000037Z
-    - code_name: 20260402T000627Z
-      name: 20260402T000627Z
   talos:
     enabled: true
     menu: linux
