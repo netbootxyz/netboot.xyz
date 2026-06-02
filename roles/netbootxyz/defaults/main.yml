@@ -412,6 +412,8 @@ releases:
     menu: linux
     name: NixOS
     versions:
+    - code_name: nixos-26.05
+      name: nixos-26.05
     - code_name: nixos-25.11
       name: nixos-25.11
     - code_name: nixos-25.05
