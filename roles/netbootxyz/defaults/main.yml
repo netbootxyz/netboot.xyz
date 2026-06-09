@@ -209,8 +209,8 @@ releases:
     mirror: http://dl-cdn.alpinelinux.org
     name: Alpine Linux
     versions:
-    - code_name: v3.23
-      name: '3.23'
+    - code_name: v3.24
+      name: '3.24'
     - code_name: edge
       name: Edge (development)
   archlinux:
