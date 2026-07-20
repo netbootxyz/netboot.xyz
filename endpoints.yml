@@ -1572,11 +1572,11 @@ endpoints:
     kernel: ubuntu-netboot-26.04-arm64
     arch: arm64
   omarchy:
-    path: /asset-mirror/releases/download/3.8.2-3639c4d9/
+    path: /asset-mirror/releases/download/3.8.3-f4e4b0ed/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     - archiso_pxe_http
     os: omarchy
-    version: 3.8.2
+    version: 3.8.3
