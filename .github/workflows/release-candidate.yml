@@ -18,7 +18,7 @@ jobs:
       id-token: write
       contents: write
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         ref: RC
 
