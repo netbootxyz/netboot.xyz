@@ -1520,7 +1520,7 @@ endpoints:
     flavor: xfce
     kernel: debian-13-live-kernel
   proxmox-datacenter-manager:
-    path: /asset-mirror/releases/download/1.1-1-6fa12487/
+    path: /asset-mirror/releases/download/1.1-1-c313fdaf/
     files:
     - initrd
     - proxmox.iso
