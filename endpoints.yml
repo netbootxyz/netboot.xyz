@@ -1580,3 +1580,12 @@ endpoints:
     - archiso_pxe_http
     os: omarchy
     version: 3.8.4
+  proxmox-ve-arm64:
+    path: /asset-mirror/releases/download/9.2-1-ab708b5c/
+    files:
+    - initrd
+    - proxmox.iso
+    - vmlinuz
+    os: proxmox-ve
+    version: 9.2-1
+    arch: arm64
