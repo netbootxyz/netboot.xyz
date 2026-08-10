@@ -302,7 +302,7 @@ endpoints:
     version: current
     flavor: BakAndImg
   4mlinux-antivirus:
-    path: /asset-mirror/releases/download/52.0-1.5.2-6a1b14f1/
+    path: /asset-mirror/releases/download/52.0-1.5.2-4d985abe/
     files:
     - initrd
     - vmlinuz
