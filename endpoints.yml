@@ -566,7 +566,7 @@ endpoints:
     kernel: ubuntu-netboot-20.04-arm64
     arch: arm64
   ubuntu-netboot-20.04-amd64:
-    path: /ubuntu-squash/releases/download/20.04.6-b13ed0a8/
+    path: /ubuntu-squash/releases/download/20.04.6-5e5212b4/
     files:
     - initrd
     - vmlinuz
