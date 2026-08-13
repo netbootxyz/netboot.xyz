@@ -1244,7 +1244,7 @@ endpoints:
     flavor: xfce
     kernel: mint-22-xfce-squash
   mint-22-cinnamon-squash:
-    path: /ubuntu-squash/releases/download/22-14b93ac4/
+    path: /ubuntu-squash/releases/download/22-2b593d38/
     files:
     - initrd
     - vmlinuz
