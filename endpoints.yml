@@ -1362,7 +1362,7 @@ endpoints:
     kernel: ubuntu-netboot-25.04-arm64
     arch: arm64
   mint-20-xfce-squash:
-    path: /ubuntu-squash/releases/download/20.3-af4b8d97/
+    path: /ubuntu-squash/releases/download/20.3-68ef39b2/
     files:
     - initrd
     - vmlinuz
