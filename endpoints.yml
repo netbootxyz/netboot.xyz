@@ -1528,7 +1528,7 @@ endpoints:
     os: proxmox-datacenter-manager
     version: 1.1-1
   ubuntu-netboot-hwe-24.04-amd64:
-    path: /ubuntu-squash/releases/download/24.04.4-5d65e4e9/
+    path: /ubuntu-squash/releases/download/24.04.4-404ef3c5/
     files:
     - initrd
     - vmlinuz
