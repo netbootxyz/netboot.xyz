@@ -652,13 +652,13 @@ endpoints:
     kernel: clonezilla-debian-testing-amd64
     arch: amd64
   clonezilla-ubuntu-testing-amd64:
-    path: /ubuntu-squash/releases/download/20260804-stonking-bea81d96/
+    path: /ubuntu-squash/releases/download/20260812-stonking-2558197c/
     files:
     - filesystem.squashfs
     - initrd
     - vmlinuz
     os: clonezilla
-    version: 20260804-stonking
+    version: 20260812-stonking
     flavor: testing
     kernel: clonezilla-ubuntu-testing-amd64
     arch: amd64
