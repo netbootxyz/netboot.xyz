@@ -1561,7 +1561,7 @@ endpoints:
     kernel: ubuntu-netboot-26.04-amd64
     arch: amd64
   ubuntu-netboot-26.04-arm64:
-    path: /ubuntu-squash/releases/download/26.04-c15b14d8/
+    path: /ubuntu-squash/releases/download/26.04-d4149848/
     files:
     - initrd
     - vmlinuz
