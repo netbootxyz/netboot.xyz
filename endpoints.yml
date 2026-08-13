@@ -630,7 +630,7 @@ endpoints:
     kernel: clonezilla-debian-stable-amd64
     arch: amd64
   clonezilla-ubuntu-stable-amd64:
-    path: /ubuntu-squash/releases/download/20260705-resolute-b835723b/
+    path: /ubuntu-squash/releases/download/20260705-resolute-e29c1458/
     files:
     - filesystem.squashfs
     - initrd
