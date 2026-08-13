@@ -841,7 +841,7 @@ endpoints:
     os: proxmox-mailgateway
     version: 9.1-1
   ubuntu-netboot-22.04-amd64:
-    path: /ubuntu-squash/releases/download/22.04.5-be230164/
+    path: /ubuntu-squash/releases/download/22.04.5-3b4b797c/
     files:
     - initrd
     - vmlinuz
