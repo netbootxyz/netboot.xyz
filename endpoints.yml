@@ -1105,7 +1105,7 @@ endpoints:
     flavor: desktop
     kernel: backbox-default-squash
   bodhi-standard:
-    path: /ubuntu-squash/releases/download/7.0.0-f22738f2/
+    path: /ubuntu-squash/releases/download/7.0.0-0b77b753/
     files:
     - filesystem.squashfs
     - initrd
