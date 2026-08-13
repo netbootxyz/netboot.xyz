@@ -1085,7 +1085,7 @@ endpoints:
     flavor: LXQT
     kernel: ubuntu-20.04-LXQT-squash
   ubuntu-22.04-LXQT-squash:
-    path: /ubuntu-squash/releases/download/22.04.5-81dbf90b/
+    path: /ubuntu-squash/releases/download/22.04.5-898ace36/
     files:
     - filesystem.squashfs
     - initrd
