@@ -1442,7 +1442,7 @@ endpoints:
     flavor: core
     kernel: debian-13-live-kernel
   debian-13-lxde-squash:
-    path: /debian-squash/releases/download/13.6.0-98209c44/
+    path: /debian-squash/releases/download/13.6.0-f94e83c4/
     files:
     - filesystem.squashfs
     os: debian
