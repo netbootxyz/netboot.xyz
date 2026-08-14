@@ -1504,7 +1504,7 @@ endpoints:
     kernel: ubuntu-netboot-25.10-arm64
     arch: arm64
   debian-13-cinnamon-squash:
-    path: /debian-squash/releases/download/13.6.0-bcf1dab7/
+    path: /debian-squash/releases/download/13.6.0-b92f504b/
     files:
     - filesystem.squashfs
     os: debian
