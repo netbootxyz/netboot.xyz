@@ -1466,7 +1466,7 @@ endpoints:
     flavor: gnome
     kernel: debian-13-live-kernel
   debian-13-lxqt-squash:
-    path: /debian-squash/releases/download/13.6.0-6936b7a0/
+    path: /debian-squash/releases/download/13.6.0-7b24d038/
     files:
     - filesystem.squashfs
     os: debian
