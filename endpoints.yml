@@ -1306,7 +1306,7 @@ endpoints:
     flavor: full
     arch: amd64
   grml-full-arm64:
-    path: /debian-squash/releases/download/2026.04-af8f6d6d/
+    path: /debian-squash/releases/download/2026.04-8ad6c3d2/
     files:
     - filesystem.squashfs
     - initrd
