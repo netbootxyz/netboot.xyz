@@ -1458,7 +1458,7 @@ endpoints:
     flavor: kde
     kernel: debian-13-live-kernel
   debian-13-gnome-squash:
-    path: /debian-squash/releases/download/13.6.0-0aea8fe2/
+    path: /debian-squash/releases/download/13.6.0-fb71121c/
     files:
     - filesystem.squashfs
     os: debian
