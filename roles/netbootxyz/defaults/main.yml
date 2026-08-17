@@ -516,9 +516,6 @@ releases:
     - code_name: 4.16
       major_version: 4
       name: 4.16 [Extended Support]
-    - code_name: 4.17
-      major_version: 4
-      name: 4.17 [Maintenance Support]
     - code_name: 4.18
       major_version: 4
       name: 4.18 [Maintenance Support]
@@ -527,10 +524,13 @@ releases:
       name: 4.19 [Maintenance Support]
     - code_name: 4.2
       major_version: 4
-      name: 4.20 [Full Support]
+      name: 4.20 [Maintenance Support]
     - code_name: 4.21
       major_version: 4
       name: 4.21 [Full Support]
+    - code_name: 4.22
+      major_version: 4
+      name: 4.22 [Full Support]
   rhel:
     enabled: true
     menu: linux
