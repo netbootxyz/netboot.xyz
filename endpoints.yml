@@ -1409,7 +1409,7 @@ endpoints:
     os: ubuntu-spins
     version: 0.0.5
   cachyos:
-    path: /asset-mirror/releases/download/260809-b5de98b7/
+    path: /asset-mirror/releases/download/260809-5e532368/
     files:
     - airootfs.sfs
     - initrd
