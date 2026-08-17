@@ -1326,7 +1326,7 @@ endpoints:
     flavor: small
     arch: arm64
   uefishell:
-    path: /asset-mirror/releases/download/edk2-stable202002-ff72f15a/
+    path: /asset-mirror/releases/download/edk2-stable202002-40a49dfd/
     files:
     - uefi-shell-x64.efi
     - uefi-shell-aarch64.efi
