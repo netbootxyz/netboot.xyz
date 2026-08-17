@@ -461,7 +461,7 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Titan-Neo-2026.04.27-accd7e0f/
+    path: /asset-mirror/releases/download/Titan-Neo-2026.04.27-a87b6a2f/
     files:
     - airootfs.sfs
     - initrd
