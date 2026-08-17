@@ -833,7 +833,7 @@ endpoints:
     os: proxmox-ve
     version: 9.2-1
   proxmox-mailgateway:
-    path: /asset-mirror/releases/download/9.1-1-ded4eba1/
+    path: /asset-mirror/releases/download/9.1-1-fdfe5b69/
     files:
     - initrd
     - vmlinuz
