@@ -3,6 +3,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.3] - 2026-08-17
+
+### Added
+
+- Proxmox VE arm64 installer support
+- NixOS 26.05 and nixos-unstable rolling release
+- Mageia 10
+
+### Changed
+
+- Proxmox menu entries and boot targets are now gated by architecture, so each platform only sees the products available for it
+- VGA framebuffer kernel parameters are now only applied to amd64 Proxmox boots
+- Updated Alpine Linux to 3.24
+- Updated Arch Linux to 2026.08.01
+- Updated Fedora CoreOS to 44.20260707.3.1 (stable), 44.20260720.2.1 (testing), and 44.20260720.1.1 (next)
+- Updated IPFire to 2.29 Core203
+- Updated SmartOS to 20260723T000757Z
+- Updated actions/checkout to v7
+- Updated actions/setup-python to v7
+- Various distribution version updates across all supported operating systems
+
+### Fixed
+
+- Duplicate Proxmox VE menu entries and an incorrect kernel URL that appeared once a second Proxmox VE endpoint was defined for another architecture
+- Custom menu options (GitHub, URL, and local `custom.ipxe`) now clear the menu before showing the error screen when the chain fails, breaking a fallback loop
+- Empty Mageia menu entry caused by the version checker tracking a release directory that no longer exists on the mirror
+
 ## [3.0.2] - 2026-05-05
 
 ### Added
