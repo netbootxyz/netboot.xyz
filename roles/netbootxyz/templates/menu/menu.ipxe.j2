@@ -126,13 +126,17 @@ chain https://boot.netboot.xyz/about.ipxe || chain about.ipxe
 goto main_menu
 
 :custom-github
-chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || goto error
+chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom.ipxe || goto custom-failed
 goto main_menu
 
 :custom-url
-chain ${custom_url}/custom.ipxe || goto error
+chain ${custom_url}/custom.ipxe || goto custom-failed
 goto main_menu
 
 :custom-user
-chain custom/custom.ipxe
+chain custom/custom.ipxe || goto custom-failed
 goto main_menu
+
+:custom-failed
+clear menu
+goto error
