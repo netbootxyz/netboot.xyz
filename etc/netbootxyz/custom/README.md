@@ -13,7 +13,7 @@ custom_templates_dir: "{{ netbootxyz_conf_dir }}/custom"
 
 the menu will add an option for custom menus and attempt to load into
 custom/custom.ipxe.  From there custom options can be built and
-maintained seperately from the netboot.xyz source tree so that both
+maintained separately from the netboot.xyz source tree so that both
 menus can be updated independently.
 
 A sample menu is provided to demonstrate how to configure and set up
