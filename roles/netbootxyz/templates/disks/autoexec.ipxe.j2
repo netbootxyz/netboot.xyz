@@ -29,6 +29,11 @@ prompt --key m --timeout 4000 Hit the ${bold}m${boldoff} key to open failsafe me
 :dhcp
 echo
 dhcp || goto netconfig
+# iPXE 2.0 can leave the NIC closed after using cached DHCP info, which
+# causes the first network transmit to fail with "Network unreachable".
+# Explicitly open the interface (the "||" keeps the script going even if
+# there is no net0) so the subsequent chainload does not hit that (see #1793).
+ifopen net0 ||
 goto menu
 
 :failsafe
