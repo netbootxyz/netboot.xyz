@@ -461,13 +461,13 @@ endpoints:
     os: nitrux
     version: 2022.02.28
   endeavouros:
-    path: /asset-mirror/releases/download/Titan-Neo-2026.04.27-a87b6a2f/
+    path: /asset-mirror/releases/download/Titan-Nova-2026.08.15-a87b6a2f/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     os: endeavouros
-    version: Titan-Neo-2026.04.27
+    version: Titan-Nova-2026.08.15
   kodachi-8:
     path: /ubuntu-squash/releases/download/8.2-625e11fa/
     files:
