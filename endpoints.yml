@@ -1572,14 +1572,14 @@ endpoints:
     kernel: ubuntu-netboot-26.04-arm64
     arch: arm64
   omarchy:
-    path: /asset-mirror/releases/download/4.0.0-abf09efd/
+    path: /asset-mirror/releases/download/4.0.2-7f85bc92/
     files:
     - airootfs.sfs
     - initrd
     - vmlinuz
     - archiso_pxe_http
     os: omarchy
-    version: 4.0.0
+    version: 4.0.2
   proxmox-ve-arm64:
     path: /asset-mirror/releases/download/9.2-1-ab708b5c/
     files:
