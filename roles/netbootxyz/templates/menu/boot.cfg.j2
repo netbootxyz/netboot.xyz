@@ -2,26 +2,26 @@
 
 :global_vars
 # set site name
-set site_name {{ site_name }}
+isset ${site_name} || set site_name {{ site_name }}
 
 # set boot domain
-set boot_domain {{ boot_domain }}
+isset ${boot_domain} || set boot_domain {{ boot_domain }}
 
 # set location of memdisk
-set memdisk {{ memdisk_location }}
+isset ${memdisk} || set memdisk {{ memdisk_location }}
 
 # set location of custom netboot.xyz live assets, override in local-vars.ipxe
 isset ${live_endpoint} || set live_endpoint {{ live_endpoint }}
 
 # signature check enabled?
-set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
+isset ${sigs_enabled} || set sigs_enabled {{ sigs_enabled | default(false) | bool | lower }}
 
 # disable signature checks if SecureBoot is active, as imgverify is not
 # available when booting via iPXE upstream's official Secure Boot image
 iseq ${efi/SecureBoot} 01 && set sigs_enabled false ||
 
 # set location of signatures for sources
-set sigs {{ sigs_location }}
+isset ${sigs} || set sigs {{ sigs_location }}
 
 # set location of latest iPXE
 iseq ${platform} efi && set ipxe_disk netboot.xyz-snponly.efi || set ipxe_disk netboot.xyz-undionly.kpxe
@@ -36,8 +36,8 @@ isset ${boot_timeout} || set boot_timeout {{ boot_timeout }}
 {% for key, value in releases.items() | sort(attribute='1.name') %}
 {% if value.mirror is defined and value.base_dir is defined %}
 ### {{ value.name }}
-set {{ key }}_mirror {{ value.mirror }}
-set {{ key }}_base_dir {{ value.base_dir }}
+isset {{ '${' + key + '_mirror}' }} || set {{ key }}_mirror {{ value.mirror }}
+isset {{ '${' + key + '_base_dir}' }} || set {{ key }}_base_dir {{ value.base_dir }}
 
 {% endif %}
 {% endfor %}
@@ -104,7 +104,7 @@ iseq ${ipxe_cloud_config} packet && goto metal ||
 goto clouds_end
 
 :gce
-set cmdline console=ttyS0,115200n8
+isset ${cmdline} || set cmdline console=ttyS0,115200n8
 goto clouds_end
 
 :metal
@@ -114,7 +114,7 @@ iseq ${arch} arm64 && goto metal_arm64 ||
 goto clouds_end
 
 :metal_x86_64
-set cmdline console=ttyS1,115200n8
+isset ${cmdline} || set cmdline console=ttyS1,115200n8
 iseq ${platform} efi && set ipxe_disk netboot.xyz-metal-snp.efi || set ipxe_disk netboot.xyz-metal.kpxe
 set menu_linux_i386 0
 set menu_freedos 0
@@ -123,7 +123,7 @@ iseq ${platform} efi && set menu_pci 0 ||
 goto clouds_end
 
 :metal_arm64
-set cmdline console=ttyAMA0,115200
+isset ${cmdline} || set cmdline console=ttyAMA0,115200
 set ipxe_disk netboot.xyz-metal-arm64-snp.efi
 set menu_bsd 1
 set menu_freedos 0
