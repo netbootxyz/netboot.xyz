@@ -1561,12 +1561,12 @@ endpoints:
     kernel: ubuntu-netboot-26.04-amd64
     arch: amd64
   ubuntu-netboot-26.04-arm64:
-    path: /ubuntu-squash/releases/download/26.04-d4149848/
+    path: /ubuntu-squash/releases/download/26.04.1-d4149848/
     files:
     - initrd
     - vmlinuz
     os: ubuntu
-    version: '26.04'
+    version: 26.04.1
     codename: resolute
     flavor: netboot
     kernel: ubuntu-netboot-26.04-arm64
