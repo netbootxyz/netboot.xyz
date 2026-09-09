@@ -61,23 +61,12 @@
     - ".dsk"
     - ".lkrn"
     - ".kpxe"
-  when: bootloader_filename != "netboot.xyz-metal"
-
-- name: Copy iPXE files for Legacy BIOS to http directory
-  ansible.builtin.copy:
-    src: "{{ ipxe_source_dir }}/src/bin/ipxe{{ item }}"
-    dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}{{ item }}"
-    remote_src: true
-  with_items:
-    - ".kpxe"
-  when: bootloader_filename == "netboot.xyz-metal"
 
 - name: Copy undionly.kpxe for Legacy BIOS to http directory
   ansible.builtin.copy:
     src: "{{ ipxe_source_dir }}/src/bin/undionly.kpxe"
     dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-undionly.kpxe"
     remote_src: true
-  when: bootloader_filename != "netboot.xyz-metal"
 
 - name: Compile iPXE legacy-driver bootloader for Legacy BIOS
   ansible.builtin.shell: |
@@ -122,13 +111,3 @@
     - ".kpxe"
   when:
     - generate_disks_legacy_usb | default(true) | bool
-    - bootloader_filename != "netboot.xyz-metal"
-
-- name: Copy iPXE legacy-driver kpxe for Legacy BIOS to http directory
-  ansible.builtin.copy:
-    src: "{{ ipxe_source_dir }}/src/bin/ipxe-legacy.kpxe"
-    dest: "{{ netbootxyz_root }}/ipxe/{{ bootloader_filename }}-legacy.kpxe"
-    remote_src: true
-  when:
-    - generate_disks_legacy_usb | default(true) | bool
-    - bootloader_filename == "netboot.xyz-metal"
