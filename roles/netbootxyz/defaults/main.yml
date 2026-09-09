@@ -616,8 +616,6 @@ releases:
       name: Azure
     - key: digitalocean
       name: Digital Ocean
-    - key: equinixMetal
-      name: Equinix Metal
     - key: gcp
       name: GCP
     - key: hcloud
