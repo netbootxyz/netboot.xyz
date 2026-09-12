@@ -36,9 +36,9 @@ iseq ${os_arch} i686 && goto boot32 ||
 :boot
 imgfree
 set dir ${archlinux_base_dir}/iso/${arch_version}/arch/boot
-set params archiso_http_srv=http://${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch cms_verify=y ${ipparam} net.ifnames=0 {{ kernel_params }}
-kernel http://${archlinux_mirror}/${dir}/${os_arch}/vmlinuz-linux ${params}
-initrd http://${archlinux_mirror}/${dir}/${os_arch}/initramfs-linux.img
+set params archiso_http_srv=${real_archlinux_mirror}/${archlinux_base_dir}/iso/${arch_version}/ archisobasedir=arch cms_verify=y ${ipparam} net.ifnames=0 {{ kernel_params }}
+kernel ${archlinux_mirror}/${dir}/${os_arch}/vmlinuz-linux ${params}
+initrd ${archlinux_mirror}/${dir}/${os_arch}/initramfs-linux.img
 echo
 echo MD5sums:
 md5sum vmlinuz-linux initramfs-linux.img
