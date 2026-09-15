@@ -21,7 +21,7 @@ clear shredos_version
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "shredos" %}
 iseq ${os_arch} {{ value.arch }} && set kernel_url ${live_endpoint}{{ value.path }}shredos ||
-set shredos_version {{ value.version }}
+iseq ${os_arch} {{ value.arch }} && set shredos_version {{ value.version }} ||
 {% endif %}
 {% endfor %}
 menu ShredOS ${shredos_version}
