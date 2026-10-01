@@ -4,8 +4,8 @@
 # set site name
 set site_name {{ site_name }}
 
-# set boot domain
-set boot_domain {{ boot_domain }}
+# set location of custom boot domain, override in local-vars.ipxe
+isset ${boot_domain} || set boot_domain {{ boot_domain }}
 
 # set location of memdisk
 set memdisk {{ memdisk_location }}
