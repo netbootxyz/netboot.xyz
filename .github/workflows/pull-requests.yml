@@ -16,7 +16,7 @@ jobs:
 
     - uses: actions/setup-python@v7
       with:
-        python-version: '3.14' # renovate: datasource=github-tags depName=python
+        python-version: '3.15' # renovate: datasource=github-tags depName=python
 
     - name: Install dependencies
       run: |
