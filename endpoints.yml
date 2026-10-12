@@ -603,11 +603,11 @@ endpoints:
     version: 2025.11_32_i686_0.43.1
     arch: i686
   shredos-x86_64:
-    path: /asset-mirror/releases/download/2025.11_31_x86-64_0.42-5918787c/
+    path: /asset-mirror/releases/download/2025.11_32_x86-64_0.43.1-5918787c/
     files:
     - shredos
     os: shredos
-    version: 2025.11_31_x86-64_0.42
+    version: 2025.11_32_x86-64_0.43.1
     arch: x86_64
   archlinux-32:
     path: /asset-mirror/releases/download/2024.07.10-a0d44609/
