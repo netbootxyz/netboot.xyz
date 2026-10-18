@@ -7,6 +7,9 @@ on:
       - RC
       - master
 
+permissions:
+  contents: read
+
 jobs:
   test-pr:
     name: Test Pull Request
