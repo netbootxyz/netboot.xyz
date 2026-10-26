@@ -14,6 +14,7 @@ iseq ${os_arch} arm64 && set os_arch arm64 ||
 isset ${talos_version} || set talos_version latest
 isset ${talos_mirror} || set talos_mirror {{ releases.talos.mirror }}
 isset ${talos_platform} || set talos_platform metal
+isset ${install_timeout} || set install_timeout 60000
 menu ${os} by Talos Systems
 menu ${os} install
 item --gap Talos:
@@ -23,7 +24,7 @@ item talos_version ${space} ${os} version: ${talos_version}
 item talos_config_url ${space} Set userdata.yaml URL: ${talos_config_url}
 item talos_mirror ${space} Set mirror URL: ${talos_mirror}
 item talos_platform ${space} Set platform: ${talos_platform}
-choose --default ${menu} menu || goto talos_exit
+choose --timeout ${install_timeout} --default ${menu} menu || goto talos_exit
 echo ${cls}
 goto ${menu} ||
 goto talos_exit
