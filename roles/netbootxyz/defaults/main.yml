@@ -249,7 +249,7 @@ releases:
     versions:
     - code_name: 44.20261023.3.1
       name: stable
-    - code_name: 44.20261023.2.1
+    - code_name: 45.20261030.2.1
       name: testing
     - code_name: 45.20261030.1.1
       name: next
