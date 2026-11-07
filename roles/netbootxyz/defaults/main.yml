@@ -402,8 +402,8 @@ releases:
     mirror: http://mirrors.kernel.org
     name: Mageia
     versions:
-    - code_name: ''
-      name: ''
+    - code_name: '10'
+      name: '10'
     - code_name: cauldron
       name: cauldron
   nixos:
