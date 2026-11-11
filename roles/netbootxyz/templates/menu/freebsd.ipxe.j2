@@ -5,6 +5,7 @@
 
 :freebsd_menu
 set os {{ releases.freebsd.name }}
+iseq ${platform} efi && goto efi_menu ||
 menu ${os}
 {% for key, value in endpoints.items() | sort %}
 {% if value.os == "freebsd" %}
@@ -35,6 +36,25 @@ echo bsdinstall
 initrd ${live_endpoint}${ver}${type}
 chain ${memdisk} harddisk raw
 exit
+
+:efi_menu
+menu ${os}
+{% for item in releases.freebsd.versions %}
+item {{ item.code_name }} ${space} {{ item.name }} (mini-memstick)
+{% endfor %}
+choose ver || goto freebsd_exit
+goto boot_efi
+
+:boot_efi
+# patched loader.efi downloads the official memstick into RAM and roots off it
+imgfree
+chain --replace {{ releases.freebsd.efi_loader }} memdisk=${freebsd_mirror}/${freebsd_base_dir}/${ver}/FreeBSD-${ver}-RELEASE-amd64-mini-memstick.img.xz || goto error
+goto freebsd_menu
+
+:error
+echo Error occurred, press any key to return to menu
+prompt
+goto freebsd_menu
 
 :freebsd_exit
 clear menu
