@@ -30,9 +30,9 @@ goto boot
 
 :boot
 imgfree
-kernel ${url}vmlinuz ip=dhcp root=/dev/ram0 init=/linuxrc loop=/image.squashfs looptype=squashfs cdroot=1 {{ kernel_params }}
+kernel ${url}vmlinuz ip=dhcp root=live:/image.img {{ kernel_params }}
 initrd ${url}initrd
-initrd ${url}image.squashfs /image.squashfs
+initrd ${url}image.squashfs /image.img
 boot
 
 :gentoo_exit
