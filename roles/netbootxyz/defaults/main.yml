@@ -316,9 +316,15 @@ releases:
     - code_name: edge
       name: Edge Channel
   freebsd:
+    base_dir: releases/amd64/amd64/ISO-IMAGES
+    efi_loader: https://people.freebsd.org/~olivier/iPXE/loader.x64.efi
     enabled: true
     menu: bsd
+    mirror: https://download.freebsd.org
     name: FreeBSD
+    versions:
+    - code_name: '15.1'
+      name: 15.1-RELEASE
   freedos:
     base_dir: pub/micro/pc-stuff/freedos/files/distributions/1.4
     enabled: true
