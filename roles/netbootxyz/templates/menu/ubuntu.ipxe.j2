@@ -140,8 +140,15 @@ goto sub_boot
 
 :sub_boot
 imgfree
-iseq ${os_arch} amd64 && set ubuntu_iso_url http://releases.ubuntu.com/${codename}/ubuntu-${version_number}-live-server-${os_arch}.iso ||
-iseq ${os_arch} arm64 && set ubuntu_iso_url http://cdimage.ubuntu.com/releases/${version_number}/release/ubuntu-${version_number}-live-server-${os_arch}.iso ||
+set ubuntu_iso ubuntu-${version_number}-live-server-${os_arch}
+iseq ${os_arch} amd64 && set ubuntu_iso_base http://releases.ubuntu.com/${codename}/${ubuntu_iso} ||
+iseq ${os_arch} arm64 && set ubuntu_iso_base http://cdimage.ubuntu.com/releases/${version_number}/release/${ubuntu_iso} ||
+# The kernel and initrd only boot the ISO of the same point release. Ubuntu moves
+# superseded and EOL ISOs to old-releases, so probe the small manifest published
+# next to the ISO and follow it there rather than fail on a missing ISO.
+imgfetch --name ubuntu_iso_check ${ubuntu_iso_base}.manifest || set ubuntu_iso_base {{ releases.ubuntu.archive_mirror }}/releases/${codename}/${ubuntu_iso}
+imgfree ubuntu_iso_check ||
+set ubuntu_iso_url ${ubuntu_iso_base}.iso
 clear netboot_params
 isset ${netX/ip} && set netboot_params ip=${netX/ip}::${netX/gateway}:${netX/netmask}:::off:${dns} BOOTIF=01-${netX/mac:hexhyp} url=${ubuntu_iso_url} ||
 isset ${dhcp-server} && set netboot_params ip=dhcp url=${ubuntu_iso_url} ||
