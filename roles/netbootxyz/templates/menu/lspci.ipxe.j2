@@ -14,7 +14,7 @@ set spaces4:hex 20:20:20:20
 imgfetch pciids.ipxe
 iseq ${sigs_enabled} true && goto verify_sigs || goto skip_verify
 :verify_sigs
-imgverify pciids.ipxe ${sigs}pciids.ipxe.sig ||
+imgverify pciids.ipxe ${sigs}pciids.ipxe.sig || goto verify_failed
 :skip_verify
 
 clear addr
@@ -33,3 +33,8 @@ choose press_enter ||
 
 imgfree pciids.ipxe
 exit
+
+:verify_failed
+echo Signature verification failed for pciids.ipxe
+imgfree pciids.ipxe ||
+exit 1
